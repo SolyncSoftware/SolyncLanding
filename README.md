@@ -1,4 +1,5 @@
-# Svelte library
+# Project NetroWorks (NetroWeb V4)
+## The goal is to make this as minimal as possible and open source. We're using bun, tailwindcss, and typescript. Internal discussions happen in Discord, and the readme is to be updated.
 
 Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
 
