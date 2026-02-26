@@ -1,6 +1,12 @@
 <script>
     let { children } = $props();
     import "../styles/tailwind.css";
+    import Header from "$lib/components/Header.svelte";
+    import Footer from "$lib/components/Footer.svelte";
 </script>
 
-{@render children()}
+<Header />
+<main>
+    {@render children()}
+</main>
+<Footer />
