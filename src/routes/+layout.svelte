@@ -7,7 +7,7 @@
 </script>
 
 <Header />
-<main>
+<main class="px-16.5">
     {@render children()}
 </main>
 <Footer />
