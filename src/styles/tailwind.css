@@ -44,3 +44,8 @@
 @theme {
     --font-display: 'Panchang-Variable', sans-serif;
 }
+
+html {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
