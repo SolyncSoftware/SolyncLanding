@@ -27,25 +27,32 @@
     font-weight: 200 700;
 }
 
-@layer base {
-    :root {
-        /* Colors */
-        --color-accent: #0037ff;
-        --color-black: #000000;
-        --color-white: #ffffff;
-        --color-warning: #e9a700;
-        --color-error: #fa1849;
-
-        /* Typography */
-        --font-sans: 'Red Hat Display', sans-serif;
-    }
-}
-
 @theme {
+    /* Colors */
+    --color-accent: #0037ff;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-warning: #e9a700;
+    --color-error: #fa1849;
+
+    /* Typography */
+    --font-sans: 'Red Hat Display', sans-serif;
     --font-display: 'Panchang-Variable', sans-serif;
 }
+
+/* General styles */
 
 html {
     background-color: var(--color-black);
     color: var(--color-white);
+}
+
+body {
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
