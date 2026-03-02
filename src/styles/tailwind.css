@@ -1,1 +1,46 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@font-face {
+    font-family: 'Panchang-Variable';
+    src:
+        url('/fonts/Panchang/Panchang-Variable.woff2') format('woff2'),
+        url('/fonts/Panchang/Panchang-Variable.woff') format('woff'),
+        url('/fonts/Panchang/Panchang-Variable.ttf') format('truetype');
+    font-weight: 200 800;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('/fonts/RedHatDisplay/RedHatDisplay-VariableFont_wght.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 200 700;
+}
+
+@font-face {
+    font-family: 'Red Hat Italic';
+    src: url('/fonts/RedHatDisplay/RedHatDisplay-Italic-VariableFont_wght.woff') format('woff');
+    font-display: swap;
+    font-style: italic;
+    font-weight: 200 700;
+}
+
+@layer base {
+    :root {
+        /* Colors */
+        --color-accent: #0037ff;
+        --color-black: #000000;
+        --color-white: #ffffff;
+        --color-warning: #e9a700;
+        --color-error: #fa1849;
+
+        /* Typography */
+        --font-sans: 'Red Hat Display', sans-serif;
+    }
+}
+
+@theme {
+    --font-display: 'Panchang-Variable', sans-serif;
+}
