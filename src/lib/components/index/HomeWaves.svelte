@@ -11,7 +11,7 @@
             <img src="/logo-blue.svg" alt="netro logo" />
         </div>
 
-        <div class="flex flex-row items-center gap-4 bg-black pl-35.5">
+        <div class="flex animate-bounce flex-row items-center gap-4 bg-black pl-35.5">
             <span class="font-display">SCROLL</span>
             <img src="/arrow-default.png" alt="arrow pointing down" />
         </div>
