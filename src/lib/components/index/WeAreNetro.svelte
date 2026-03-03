@@ -1,4 +1,4 @@
-<section class="relative flex items-center justify-between pb-80">
+<section class="relative flex items-center justify-between">
     <div class="z-100">
         <span class="font-display text-[140px]">WE ARE <span class="text-accent font-extrabold">NETRO</span></span>
         <div class="font-display max-w-237 text-3xl">

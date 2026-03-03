@@ -6,7 +6,7 @@
 
 <HomeWaves />
 
-<div class="flex flex-col gap-16">
+<div class="flex flex-col gap-60">
     <WeAreNetro />
 
     <WhatWeDo />
