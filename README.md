@@ -1,40 +1,31 @@
+<p align="center">
+  <img width="800" alt="netro logo" src="https://github.com/NetroCorp/NetroWorks/blob/main/static/logo-blue.svg?raw=true">
+</p>
+
 # Project NetroWorks (NetroWeb V4)
-## The goal is to make this as minimal as possible and open source. We're using bun, tailwindcss, and typescript. Internal discussions happen in Discord, and the readme is to be updated.
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+## Getting Started
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+> [!IMPORTANT]
+> Please make sure to install [Bun](https://bun.sh/). This project is optimized for Bun.
+> Also install [Prettier](https://prettier.io/docs/editors).
 
-```sh
-bun run dev
-```
+To begin development and testing locally, please follow these steps in your terminal of choice:
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+1. Clone the repo by running `git clone https://github.com/NetroCorp/NetroWorks.git`.
+2. Go inside the newly cloned folder (`cd NetroWords`).
+3. Run `bun install` to install the packages.
+4. Great! Now run `bun run dev` to run the development server.
+5. Enter the URL it provides (by default, it is <http://localhost:5137>) in your browser.
 
-## Building
+## Goals
+- Minimize bloat
+- Open source
+- Internal initiative-driven tasks with a [Kanban Board](https://github.com/orgs/NetroCorp/projects/7/views/2).
 
-To build your library:
-
-```sh
-bun pack
-```
-
-To create a production version of your showcase app:
-
-```sh
-bun run build
-```
-
-You can preview the production build with `bun run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```sh
-bun publish
-```
+## Resources
+- [SvelteKit documentation](https://kit.svelte.dev/docs)
+- [Bun Documentation](https://bun.sh/docs)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- [TailwindCSS Official Docs](https://tailwindcss.com/docs/)
+- [Netro Community Discord](https://discord.com/invite/HdKeWtV)
