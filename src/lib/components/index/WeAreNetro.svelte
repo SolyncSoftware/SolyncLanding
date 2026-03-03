@@ -24,6 +24,6 @@
     <!-- todo: make it dynamic -->
     <div
         class="absolute top-0 right-0 bottom-0 h-172.5 w-213.5 bg-cover bg-right bg-no-repeat"
-        style="background-image: url('/logo-ascii.svg');"
+        style="background-image: url('/logo-ascii.png');"
     ></div>
 </section>

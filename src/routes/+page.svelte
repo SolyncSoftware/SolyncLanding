@@ -1,12 +1,15 @@
 <script>
     import HomeWaves from '$lib/components/index/HomeWaves.svelte';
     import WeAreNetro from '$lib/components/index/WeAreNetro.svelte';
+    import WhatWeDo from '$lib/components/index/WhatWeDo.svelte';
 </script>
 
 <HomeWaves />
 
 <div class="flex flex-col gap-16">
     <WeAreNetro />
+
+    <WhatWeDo />
 
     <!-- content block template -->
     <section class="bg-error/30 relative">
