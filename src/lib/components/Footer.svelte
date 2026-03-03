@@ -52,7 +52,7 @@
                 </a>
             </li>
         </ul>
-        <div class="text-lg">
+        <div class="font-mono text-lg">
             <span class="mr-6">v2026.03.3</span>
             <span>
                 Made with
