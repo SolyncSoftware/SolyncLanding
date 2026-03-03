@@ -96,4 +96,11 @@
             </a>
         {/each}
     </div>
+
+    <a href="/join" class="bg-accent hover:bg-accent/90 mt-15 ml-auto flex w-fit flex-row items-center gap-4 p-5">
+        <span class="font-display text-2xl text-black">
+            You could be here as well, consider <span class="text-white">joining us</span>
+        </span>
+        <img src="/arrow-default.png" alt="arrow pointing down" class="-rotate-90" />
+    </a>
 </section>
