@@ -22,8 +22,15 @@
     </div>
 
     <!-- todo: make it dynamic -->
-    <div
+    <!-- <div
         class="absolute top-0 right-0 bottom-0 h-172.5 w-213.5 bg-cover bg-right bg-no-repeat"
         style="background-image: url('/logo-ascii.png');"
+    ></div> -->
+
+    <div
+        class="unicorn-embed"
+        data-us-project-src="/netro_glyph.json"
+        data-us-lazyload="true"
+        style="width: 100%; height: 100vh; image: url(/logo-ascii.png);"
     ></div>
 </section>
