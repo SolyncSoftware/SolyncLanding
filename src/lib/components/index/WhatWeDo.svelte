@@ -3,19 +3,19 @@
         {
             title: 'NETROHOST',
             href: 'https://netro.host/',
-            imageSrc: '/placeholder.svg',
+            imageSrc: '/netrohost.png',
             alt: 'screenshot of netrohost'
         },
         {
             title: 'GARDENS WIKI',
             href: 'https://alpha.potaro.wiki/news/gardens-wiki',
-            imageSrc: '/placeholder2.svg',
+            imageSrc: '/gardens-wiki.png',
             alt: 'screenshot of gardens wiki'
         },
         {
             title: 'THEACEAE COLLECTIVE',
             href: 'https://theaceae.org/',
-            imageSrc: '/waves.png',
+            imageSrc: '/theaceae-collective.png',
             alt: 'screenshot of theaceae collective'
         }
     ];
