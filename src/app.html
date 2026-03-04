@@ -10,15 +10,4 @@
     <body data-sveltekit-preload-data="hover">
         <div style="display: contents">%sveltekit.body%</div>
     </body>
-
-    <script>
-        UnicornStudio.init()
-            .then((scenes) => {
-                // Scenes are ready
-                console.log('UnicornStudio scenes initialized:', scenes);
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    </script>
 </html>

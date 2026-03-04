@@ -4,6 +4,16 @@
     import Header from '$lib/components/Header.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import DevBanner from '$lib/components/DevBanner.svelte';
+
+    import { afterNavigate } from '$app/navigation';
+    import { onMount } from 'svelte';
+
+    function initUnicorn() {
+        UnicornStudio.init().catch(console.error);
+    }
+
+    onMount(initUnicorn);
+    afterNavigate(initUnicorn);
 </script>
 
 <Header />

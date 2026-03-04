@@ -21,7 +21,7 @@
     ];
 </script>
 
-<section>
+<section id="what-we-do">
     <span class="font-display text-[140px]"><span class="text-accent">WHAT</span> WE DO</span>
     <div class="flex w-full flex-col items-start gap-8.5">
         {#each services as service}
