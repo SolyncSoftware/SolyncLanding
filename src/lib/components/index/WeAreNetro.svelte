@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div class="absolute inset-y-0 right-0 bottom-0 -z-100 h-full w-1/2 translate-x-14 -translate-y-43">
+    <div class="absolute inset-y-0 right-0 bottom-0 -z-100 h-full w-1/2 translate-x-16 -translate-y-43">
         <div
             class="unicorn-embed"
             data-us-project-src="/netro_glyph.json"
