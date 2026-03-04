@@ -1,5 +1,4 @@
 <section class="relative mt-7 flex items-center justify-between">
-    <!-- STUPID STUPDI STPUID STUPDI STPUID STUPDI STPUI STUPDI STPUI -->
     <div class="z-10 pb-22">
         <span class="font-display text-[140px]">WE ARE <span class="text-accent font-extrabold">NETRO</span></span>
         <div class="font-display max-w-237 text-3xl">
