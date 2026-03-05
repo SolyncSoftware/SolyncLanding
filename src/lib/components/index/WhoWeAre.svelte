@@ -85,9 +85,8 @@
             <a href={member.href} target="_blank" class="relative flex flex-row items-stretch gap-6 pt-5 pl-5">
                 <div class="bg-accent absolute top-0 right-0 left-0 -z-10 h-9"></div>
 
-                <img src={member.avatarSrc} alt={member.name} class="h-44 w-44 object-cover" />
+                <img loading="lazy" src={member.avatarSrc} alt={member.name} class="h-44 w-44 object-cover" />
 
-                <!-- max-w-87 -->
                 <div class="flex flex-col justify-between overflow-hidden">
                     <span class="font-display truncate pt-10 pr-24 text-3xl text-white">
                         {member.name} <br /><span class="font-extralight">{member.name2}</span>

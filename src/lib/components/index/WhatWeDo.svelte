@@ -3,19 +3,19 @@
         {
             title: 'NETROHOST',
             href: 'https://netro.host/',
-            imageSrc: '/netrohost.png',
+            imageSrc: '/placeholder.svg',
             alt: 'screenshot of netrohost'
         },
         {
             title: 'GARDENS WIKI',
             href: 'https://alpha.potaro.wiki/news/gardens-wiki',
-            imageSrc: '/gardens-wiki.png',
+            imageSrc: '/placeholder2.svg',
             alt: 'screenshot of gardens wiki'
         },
         {
             title: 'THEACEAE COLLECTIVE',
             href: 'https://theaceae.org/',
-            imageSrc: '/theaceae-collective.png',
+            imageSrc: '/placeholder.svg',
             alt: 'screenshot of theaceae collective'
         }
     ];
@@ -26,7 +26,12 @@
     <div class="flex w-full flex-col items-start gap-8.5">
         {#each services as service}
             <div class="relative w-full">
-                <img src={service.imageSrc} alt={service.alt} class="h-auto max-h-95 w-full object-cover pt-8 pr-42 pb-4.5 pl-10" />
+                <img
+                    loading="lazy"
+                    src={service.imageSrc}
+                    alt={service.alt}
+                    class="h-auto max-h-95 w-full object-cover pt-8 pr-42 pb-4.5 pl-10"
+                />
                 <span class="font-display bg-accent absolute top-0 left-0 z-10 py-3.5 pr-44 pl-7 text-6xl font-bold text-black">
                     {service.title}
                 </span>
