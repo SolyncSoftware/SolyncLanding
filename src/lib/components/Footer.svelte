@@ -2,10 +2,18 @@
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
 </script>
 
-<footer>
-    <div class="bg-accent flex flex-col gap-8.5 px-16.5 py-9">
+<footer class="relative">
+    <div
+        class="unicorn-embed absolute -z-100"
+        data-us-project-src="/netro_waves.json"
+        data-us-lazyload="true"
+        data-us-scale="0.8"
+        style="width: 100%; height: 100%; overflow: hidden; image: url(/waves.png);"
+    ></div>
+
+    <div class="flex flex-col gap-8.5 px-16.5 py-9">
         <div class="flex flex-row justify-between">
-            <span class="font-display text-[40px] font-bold text-black">&copy; Netro 2026</span>
+            <span class="font-display text-[40px] font-bold text-white">&copy; Netro 2026</span>
             <div class="flex flex-row gap-20">
                 <div class="flex flex-col gap-5 text-right text-2xl">
                     <a href="/services" class="footer-links">Services</a>
@@ -23,7 +31,7 @@
         </div>
 
         <div class="flex flex-row justify-between">
-            <img src="/logo-black.svg" alt="netro logo" class="justify-center" />
+            <img src="/logo-white.svg" alt="netro logo" class="justify-center" />
             <a href="https://untone.org/blog/2026-02-22_netro" class="font-display footer-links flex gap-3 self-end text-2xl"
                 >Design assistance by <img src="/untone.svg" alt="untone logo" /></a
             >
@@ -52,7 +60,7 @@
                 </a>
             </li>
         </ul>
-        <div class="font-mono text-lg">
+        <div class="text-lg">
             <span class="mr-6">v2026.03.3</span>
             <span>
                 Made with
