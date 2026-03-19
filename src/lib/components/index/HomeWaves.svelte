@@ -40,6 +40,7 @@
         </div>
     </div>
 
+    <!-- news section -->
     <div class="flex h-screen max-w-100 flex-col items-end gap-6 bg-black/75 pt-26 pr-18">
         <span class="font-display text-5xl font-bold">News</span>
 
@@ -60,9 +61,29 @@
             <div class="text-accent border-accent border-b-12 px-6 py-4 text-2xl font-bold">AWESOME NEWS POST TITLE</div>
         </div>
 
-        <a href="/apply" class="flex flex-row items-center gap-4 hover:opacity-70">
+        <a href="/news" class="flex flex-row items-center gap-4 hover:opacity-70">
             <span class="font-display">READ MORE</span>
             <img src="/arrow-default.png" alt="arrow pointing down" />
+        </a>
+    </div>
+
+    <div class="absolute bottom-21 left-24 grid grid-cols-2 gap-8">
+        <a href="/test" class="relative">
+            <img src="/placeholder.svg" alt="placeholder" class="h-40 max-w-134 object-cover" />
+            <span
+                class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black"
+            >
+                NETROHOST
+            </span>
+        </a>
+
+        <a href="/test" class="relative">
+            <img src="/placeholder.svg" alt="placeholder" class="h-40 max-w-134 object-cover" />
+            <span
+                class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black"
+            >
+                GAYGAYGAY
+            </span>
         </a>
     </div>
 </section>
