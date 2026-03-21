@@ -1,17 +1,12 @@
 <script lang="ts">
     // import waves from '../../../../static/waves.png';
     // import arrow from '../../../../static/arrow-default.png';
+    import Waves from '$lib/components/assets/Waves.svelte';
 </script>
 
 <section class="relative -mx-16 flex h-screen items-start">
     <!-- <div class="absolute inset-0 -z-100 bg-cover bg-bottom bg-no-repeat" style="background-image: url(/waves.png);"></div> -->
-    <div
-        class="unicorn-embed"
-        data-us-project-src="/netro_waves_dark.json"
-        data-us-lazyload="true"
-        data-us-scale="0.8"
-        style="width: 100%; height: 100vh; image: url(/waves.png);"
-    ></div>
+    <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" />
 
     <!-- container inside the waves section -->
     <div class="absolute z-10 flex w-full flex-col items-start gap-12 p-21 text-xl">

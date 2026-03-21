@@ -1,16 +1,10 @@
 <script>
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
+    import Waves from '$lib/components/assets/Waves.svelte';
 </script>
 
 <footer class="relative">
-    <div
-        class="unicorn-embed absolute -z-100"
-        data-us-project-src="/netro_waves.json"
-        data-us-lazyload="true"
-        data-us-scale="0.8"
-        style="width: 100%; height: 100%; overflow: hidden; image: url(/waves.png);"
-    ></div>
-
+    <Waves className="absolute -z-100" style="height: 100%; overflow: hidden;" wavesType="/netro_waves.json" />
     <div class="flex flex-col gap-8.5 px-16.5 py-9">
         <div class="flex flex-row justify-between">
             <span class="font-display text-[40px] font-bold text-white">&copy; Netro 2026</span>
