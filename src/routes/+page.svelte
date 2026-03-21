@@ -9,8 +9,8 @@
 <HomeWaves />
 
 <div class="flex flex-col gap-20">
-    <!-- <WeAreNetro />
+    <WeAreNetro />
     <WhatWeDo />
     <WhoWeAre />
-    <OurPartners /> -->
+    <OurPartners />
 </div>
