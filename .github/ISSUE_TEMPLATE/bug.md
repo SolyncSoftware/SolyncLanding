@@ -5,31 +5,32 @@ about: Should always come with replication steps on how to recreate the bug alon
 title: ''
 labels: BUG
 assignees: ''
+type: Bug
 
 ---
 
-h2. Background/Goal
+# Bug Goal
 When doing [boop] it should not [beep]
 
-h3. Replication Steps
-# ....
+## Replication Steps
+1. Go to [place]
+2. Then head to [feature]
 
-h3. Acceptance Criteria
-* ....
+## Acceptance Criteria
+- As a user I should now be able to [beep]
 
-h3. Notes
-* <Additional notes/links here...>
+## UX Review
+- List any new or changes to existing UIs on figma board 
 
-h2. UX Review
-* <List any new or changes to existing UIs on figma board> 
+## Testing
+- *Secondary Testers:* N/A
+- *Browsers:* Preferred|Any
+- *Notes:* N/A
+- *Branch:* NW-X-branch_name_here
+- *Test alongside:* Optional list of issue IDs
 
-h2. Testing
-Secondary Testers: N/A
-Browsers: Preferred|Any
-Notes: N/A
-Environment: Testing
-Branch: feature/NA-...
-Test alongside:
+## Steps
+1. fill in with numbered steps
 
-h3. Steps
-<fill in with numbered steps>
+## Notes
+- Additional notes/links here...
