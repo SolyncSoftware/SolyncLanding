@@ -10,6 +10,7 @@
 
 <!-- <div class="flex flex-col gap-20">
 this is to be scrapped as seen in the figma designs
+aaaaa
     <WeAreNetro />
     <WhatWeDo />
     <WhoWeAre />
