@@ -4,7 +4,7 @@
 
 <section class="-mx-16 grid min-h-screen">
     <div class="col-start-1 row-start-1 h-full w-full">
-        <Waves style="height: 100vh; width: 100%;" wavesType="/netro_waves_dark.json" />
+        <Waves style="height: 100%; width: 100%;" wavesType="/netro_waves_dark.json" />
     </div>
     <div class="z-10 col-start-1 row-start-1 flex flex-col items-start gap-12 p-21">
         <img src="/logo-blue.svg" alt="netro logo" width="540" height="118" />
