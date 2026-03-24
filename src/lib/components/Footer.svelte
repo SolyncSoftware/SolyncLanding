@@ -5,7 +5,7 @@
 
 <footer class="relative">
     <Waves className="absolute -z-100" style="height: 100%; overflow: hidden;" wavesType="/netro_waves.json" />
-    <div class="flex flex-col px-16.5 py-9">
+    <div class="flex flex-col gap-7 px-16.5 py-9">
         <div class="flex flex-row justify-between">
             <span class="font-display text-[40px] font-bold text-white">&copy; Netro 2026</span>
             <div class="flex flex-row gap-20">
