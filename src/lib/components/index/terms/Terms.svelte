@@ -1,5 +1,6 @@
 <script>
     import Waves from '$lib/components/assets/Waves.svelte';
+    import Header from '$lib/components/Header.svelte';
 </script>
 
 <section class="-mx-16 grid min-h-screen">
@@ -7,9 +8,9 @@
         <Waves style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -110;" wavesType="/netro_waves_dark.json" />
     </div>
     <div class="z-10 col-start-1 row-start-1 flex flex-col items-start gap-12 p-21">
-        <img src="/logo-blue.svg" alt="netro logo" width="540" height="118" />
-        <h1 class="font-display text-[50px] leading-16.5 font-bold">TERMS OF SERVICE</h1>
-        <div class="border-t-accent h-auto w-301 border-t-11 bg-black p-6.25">
+        <!-- page content -->
+        <h1 class="font-display text-5xl leading-16.5 font-bold">TERMS OF SERVICE</h1>
+        <div class="border-t-accent h-auto w-301 border-t-11 bg-black p-6">
             <span class="font-sans text-2xl">
                 <p class="text-accent">Last revised April 1st, 2025</p>
                 <h2 class="font-display my-6 text-3xl font-bold">INTRODUCTION</h2>

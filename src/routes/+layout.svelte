@@ -16,7 +16,7 @@
     afterNavigate(initUnicorn);
 </script>
 
-<!-- <Header /> -->
+<Header />
 <main class="px-16.5">
     {@render children()}
 </main>

@@ -1,8 +1,6 @@
 <!-- todo: make it dynamic  -->
-<header class="font-display absolute top-0 left-0 z-50 w-full px-20 py-11.5">
-    <ol class="flex justify-end gap-13 text-xl">
-        <li><span class="font-extrabold">HOME</span></li>
-        <li><span>NEWS</span></li>
-        <li><span>SERVICES</span></li>
-    </ol>
+<header class="px-21 pt-21">
+    <a href="/">
+        <img src="/logo-blue.svg" alt="netro logo" width="540" height="118" />
+    </a>
 </header>
