@@ -19,7 +19,6 @@
                     <a href="/terms" class="footer-links">Terms of service</a>
                     <a href="/privacy" class="footer-links">Privacy policy</a>
                     <a href="/support" class="footer-links">NetroHost support</a>
-                    <a href="/bug-report" class="footer-links">Report a bug</a>
                 </div>
             </div>
         </div>
