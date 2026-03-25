@@ -18,8 +18,8 @@
                 </div>
                 <div class="flex flex-col gap-5 text-right text-2xl">
                     <a href="/contact" class="footer-links">Contact us</a>
-                    <a href="/terms" class="footer-links">Terms of service</a>
-                    <a href="/privacy" class="footer-links">Privacy policy</a>
+                    <a href="/legal/terms" class="footer-links">Terms of service</a>
+                    <a href="/legal/privacy" class="footer-links">Privacy policy</a>
                     <a href="/support" class="footer-links">NetroHost support</a>
                 </div>
             </div>
