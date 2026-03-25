@@ -1,6 +1,10 @@
 <script>
     import Waves from '$lib/components/assets/Waves.svelte';
-    export let title = '';
+    import { page } from '$app/state';
+
+    let { children } = $props();
+
+    const title = page.data.title;
 </script>
 
 <section class="-mx-16 grid min-h-screen">
@@ -12,7 +16,7 @@
         <h1 class="font-display text-5xl leading-16.5 font-bold">{title}</h1>
         <div class="border-t-accent h-auto w-301 border-t-11 bg-black p-6">
             <span class="font-sans text-2xl">
-                <slot />
+                {@render children()}
             </span>
         </div>
     </div>
