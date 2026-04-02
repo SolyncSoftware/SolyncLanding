@@ -56,7 +56,6 @@
             </li>
         </ul>
         <div class="text-lg">
-            <span class="mr-6">v2026.03.3</span>
             <span>
                 Made with
                 <span class="heart text-error inline-block">&#10084;</span>
