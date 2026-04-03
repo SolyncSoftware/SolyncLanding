@@ -16,7 +16,7 @@
         },
         {
             id: 36048627,
-            realName: '"Dexter"',
+            realName: '"Dex"',
             username: 'RealDxT',
             bio: 'infrastructure person, chronic linux user & uncertified nerd'
         },
