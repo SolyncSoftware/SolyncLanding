@@ -9,15 +9,20 @@
             src: '/untone.svg',
             alt: 'Untone logo',
             href: 'https://untone.org/'
+        },
+        {
+            src: '/placeholder2.svg',
+            alt: 'Placeholder logo',
+            href: 'https://untone.org/'
         }
     ];
 </script>
 
-<section class="pb-15">
-    <span class="font-display text-[140px]">OUR <span class="text-accent">PARTNERS</span></span>
+<!-- code could be improved  -->
+<section>
     <div class="grid grid-cols-3 gap-5">
         {#each partners as partner}
-            <div class="relative h-50 overflow-hidden border border-[#222222] px-12">
+            <div class="border-accent relative overflow-hidden border-2 bg-black/50 p-10">
                 {#if partner.href}
                     <a
                         href={partner.href}
