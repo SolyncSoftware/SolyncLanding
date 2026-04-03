@@ -21,7 +21,7 @@ To begin development and testing locally, please follow these steps in your term
 ## Goals
 - Minimize bloat
 - Open source
-- Internal initiative-driven tasks with a [Kanban Board](https://github.com/orgs/NetroCorp/projects/7/views/2).
+- Internal initiative-driven tasks with a [Kanban Board](https://github.com/orgs/NetroSoftware/projects/7/views/2).
 
 ## Resources
 - [SvelteKit documentation](https://kit.svelte.dev/docs)
