@@ -35,7 +35,7 @@
         },
         {
             id: 79934414,
-            realName: 'Para',
+            realName: 'Ian',
             username: 'parakeet-live',
             bio: 'parakeet (or para)'
         },
