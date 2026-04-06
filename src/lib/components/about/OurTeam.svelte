@@ -1,5 +1,5 @@
 <script>
-    import { SiBluesky, SiDiscord, SiGithub } from '@icons-pack/svelte-simple-icons';
+    import { SiBluesky, SiGithub } from '@icons-pack/svelte-simple-icons';
 
     const team = [
         {
@@ -12,7 +12,8 @@
             id: 72106503,
             realName: 'John',
             username: 'papertek',
-            bio: 'i am papertek! i usually work on designs, frontend, hardware, and hr. i also like doing whatever!'
+            bio: 'i am papertek! i usually work on designs, frontend, hardware, and hr. i also like doing whatever!',
+            bsky: 'j6chocomint.bsky.social'
         },
         {
             id: 36048627,
@@ -68,32 +69,47 @@
         realName: member.realName,
         username: member.username,
         bio: member.bio,
-        href: member.id > 0 ? `https://github.com/${member.username}` : '#',
+        bluesky: member.bsky ? `https://bsky.app/profile/${member.bsky}` : '#',
+        github: member.id > 0 ? `https://github.com/${member.username}` : '#',
         avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/avatarplaceholder.svg'
     }));
 </script>
 
-<section>
-    <!-- todo: make it 1:1 to design. also make the links flexible and stuff -->
-    {#each members as member}
-        <div class="flex flex-row items-center gap-4">
-            <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
-            <p class="text-4xl font-bold">{member.realName}</p>
-            <p class="text-2xl font-light">{member.username}</p>
+<section class="flex flex-col gap-4">
+    <!-- todo: add dynamic bios and make links more flexible -->
+    {#each members as member, i}
+        <!-- the hover bg is placeholder -->
+        <div class="flex flex-col gap-3 hover:bg-white/10">
+            <div class="flex flex-row items-center justify-center gap-4 align-middle">
+                <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
+                <p class="text-4xl font-bold">{member.realName}</p>
+                <p class="text-2xl font-light">{member.username}</p>
 
-            <div class="ml-auto flex flex-row items-center gap-4">
-                <a href="https://github.com/papertek" target="_blank" class="hover:text-gray-400">
-                    <SiGithub class="h-7 w-7" />
-                </a>
-                <a href="https://bsky.app/profile/j6chocomint.bsky.social" target="_blank" class="hover:text-gray-400">
-                    <SiBluesky class="h-7 w-7" />
-                </a>
-                <!-- {member.href} -->
+                <div class="ml-auto flex flex-row items-center gap-4">
+                    {#if member.github !== '#'}
+                        <a href={member.github} target="_blank" class="hover:text-gray-400">
+                            <SiGithub class="h-7 w-7" title="GitHub" />
+                        </a>
+                    {/if}
+                    {#if member.bluesky !== '#'}
+                        <a href={member.bluesky} target="_blank" class="hover:text-gray-400">
+                            <SiBluesky class="h-7 w-7" title="Bluesky" />
+                        </a>
+                    {/if}
+                    <!-- {member.github} -->
+                </div>
             </div>
+            <p class="font-sans text-xl">
+                {member.bio}
+            </p>
         </div>
-        <p class="mt-3 font-sans text-xl">
-            {member.bio}
-        </p>
-        <div class="mt-4 h-px w-full bg-white/15"></div>
+        <!-- da line -->
+        {#if i < members.length - 1}
+            <hr class="text-white/15" />
+        {/if}
     {/each}
+    <div class="mt-12 flex flex-row items-center justify-end">
+        <p>Want to join our team?</p>
+        <span>JOIN NETRO</span>
+    </div>
 </section>
