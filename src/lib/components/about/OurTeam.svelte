@@ -108,8 +108,10 @@
             <hr class="text-white/15" />
         {/if}
     {/each}
-    <div class="mt-12 flex flex-row items-center justify-end">
-        <p>Want to join our team?</p>
-        <span>JOIN NETRO</span>
+    <div class="mt-12 flex flex-row items-center justify-end gap-6 text-xl">
+        <span class="font-bold">Think you'd be a good addition?</span>
+        <a href="/apply" class="bg-accent hover:bg-accent/70 flex items-center gap-4 py-4 pr-4 pl-7 font-bold">
+            JOIN NETRO<img src="/arrow-default.png" alt="arrow pointing down" />
+        </a>
     </div>
 </section>
