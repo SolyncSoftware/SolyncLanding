@@ -34,12 +34,6 @@
             bio: 'Full stack developer: PHP / MYSQL / C#'
         },
         {
-            id: 56894431,
-            realName: 'Gabriele',
-            username: 'gabrielemidulla',
-            bio: 'Fullstack Developer: TypeScript / PHP / SQL'
-        },
-        {
             id: 79934414,
             realName: 'Para',
             username: 'parakeet-live',
