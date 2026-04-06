@@ -47,7 +47,7 @@
         },
         {
             id: 0,
-            realName: 'Joker',
+            realName: 'Joel',
             username: 'jokerlaul',
             bio: 'Accountant. I do not have a GitHub account, but I am a valuable member of the team nonetheless.'
         },
