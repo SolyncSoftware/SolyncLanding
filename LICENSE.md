@@ -8,4 +8,4 @@ You may copy, merge, publish, and distribute the Software and any modifications,
 
 The Software is provided "AS IS" without warranties of any kind, express or implied, including but not limited to merchantability, non-infringement, or fitness for a particular purpose. Netro and its partners are not liable for any damages arising from the use or inability to use the Software, including, but not limited to, business or organizational interruptions, damage, loss of profits, or other financial losses, even if advised of the possibility of such damages.
 
-If you would like to use our Software for a commercial purpose, please connect with our owners at <hello@netrocorp.net>.
+If you would like to use our Software for a commercial purpose, please connect with our owners at <hello@netro.works>.

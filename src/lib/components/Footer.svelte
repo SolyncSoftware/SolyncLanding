@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://github.com/NetroCorp">
+                <a href="https://github.com/NetroSoftware">
                     <SiGithub class="text-3xl" />
                 </a>
             </li>
