@@ -19,8 +19,7 @@
 
 <Header />
 <main class="font-display flex flex-col gap-5 px-21 py-16">
-    <!-- im not sure if tanza wanted the position fixed or absolute -->
-    <div class="absolute top-0 left-0 -z-10 w-full">
+    <div class="fixed top-0 left-0 -z-10 w-full">
         <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" />
     </div>
     {@render children()}
