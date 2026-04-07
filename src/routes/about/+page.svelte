@@ -4,7 +4,6 @@
 </script>
 
 <h1 class="text-5xl font-bold">About Us</h1>
-<!-- may need to be shorten -->
 <div class="flex max-w-200 flex-col gap-4 text-xl">
     <p>
         Netro is driven by simple principles: putting users first, challenging tradition with originality, and constantly improving. We
