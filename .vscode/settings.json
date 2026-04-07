@@ -3,5 +3,5 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
-    "conventionalCommits.scopes": ["homepage", "about us"]
+    "conventionalCommits.scopes": ["homepage", "about us", "legal"]
 }
