@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     export const load = () => {
         return {
             title: 'TERMS OF SERVICE'
@@ -16,7 +16,7 @@
 <p class="mb-2">
     By accessing, interacting, or of any way, shape, or form of utilizing any of the Services, we assume you accept these Terms in full. If
     you do not accept any or all of the Term stated, discontinue use of the Services. If you have any questions or concerns regarding these
-    Terms, please contact us at legal@netrocorp.net.
+    Terms, please contact us at legal@netro.works.
 </p>
 <h2 class="font-display my-6 text-3xl font-bold">1. YOUR PRIVACY</h2>
 <p class="mb-2">

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     export const load = () => {
         return {
             title: 'PRIVACY POLICY'
@@ -16,7 +16,7 @@
 <p class="mb-2">
     By accessing, interacting, or of any way, shape, or form of utilizing any of the Services, we assume you accept the Policy in full. If
     you do not accept any or all of the Term stated, discontinue use of the Services. If you have any questions or concerns regarding this
-    Policy, please contact us at legal@netrocorp.net.
+    Policy, please contact us at legal@netro.works.
 </p>
 <h2 class="font-display my-6 text-3xl font-bold">1. INTERACTIVE SERVICES</h2>
 <p class="mb-2">
