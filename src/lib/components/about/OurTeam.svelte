@@ -68,15 +68,10 @@
         avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/avatarplaceholder.svg'
     }));
 
-    let expandedMembers = new Set();
-    const toggleBio = (index: number) => {
-        if (expandedMembers.has(index)) {
-            expandedMembers.delete(index);
-        } else {
-            expandedMembers.add(index);
-        }
-        expandedMembers = expandedMembers;
-    };
+    let expandedIndex = $state(null);
+    function toggleBio(i: any) {
+        expandedIndex = expandedIndex === i ? null : i;
+    }
 </script>
 
 <section class="flex flex-col gap-4">
@@ -88,8 +83,8 @@
                 <button
                     onclick={() => toggleBio(i)}
                     class="hover:text-accent flex cursor-pointer flex-row items-end gap-4 text-left transition"
-                    class:text-white={!expandedMembers.has(i)}
-                    class:text-accent={expandedMembers.has(i)}
+                    class:text-white={expandedIndex !== i}
+                    class:text-accent={expandedIndex === i}
                 >
                     <p class="text-4xl font-bold">{member.realName}</p>
                     <p class="text-2xl font-light">{member.username}</p>
@@ -110,12 +105,12 @@
             </div>
             <p
                 class="pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out"
-                class:opacity-0={!expandedMembers.has(i)}
-                class:opacity-100={expandedMembers.has(i)}
-                class:max-h-0={!expandedMembers.has(i)}
-                class:max-h-96={expandedMembers.has(i)}
-                class:leading-0={!expandedMembers.has(i)}
-                class:leading-4={expandedMembers.has(i)}
+                class:opacity-0={expandedIndex !== i}
+                class:opacity-100={expandedIndex === i}
+                class:max-h-0={expandedIndex !== i}
+                class:max-h-96={expandedIndex === i}
+                class:leading-0={expandedIndex !== i}
+                class:leading-4={expandedIndex === i}
             >
                 {member.bio}
             </p>
