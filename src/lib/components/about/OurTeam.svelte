@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { SiBluesky, SiGithub } from '@icons-pack/svelte-simple-icons';
 
     const team = [
@@ -67,17 +67,34 @@
         github: member.id > 0 ? `https://github.com/${member.username}` : '#',
         avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/avatarplaceholder.svg'
     }));
+
+    let expandedMembers = new Set();
+    const toggleBio = (index: number) => {
+        if (expandedMembers.has(index)) {
+            expandedMembers.delete(index);
+        } else {
+            expandedMembers.add(index);
+        }
+        expandedMembers = expandedMembers;
+    };
 </script>
 
 <section class="flex flex-col gap-4">
     <!-- todo: add dynamic bios and make links more flexible -->
     {#each members as member, i}
         <!-- the hover bg is placeholder -->
-        <div class="flex flex-col gap-3 hover:bg-white/10">
+        <div class="flex flex-col">
             <div class="flex flex-row items-center justify-center gap-4 align-middle">
                 <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
-                <p class="text-4xl font-bold">{member.realName}</p>
-                <p class="text-2xl font-light">{member.username}</p>
+                <button
+                    onclick={() => toggleBio(i)}
+                    class="hover:text-accent flex cursor-pointer flex-row items-end gap-4 text-left transition"
+                    class:text-white={!expandedMembers.has(i)}
+                    class:text-accent={expandedMembers.has(i)}
+                >
+                    <p class="text-4xl font-bold">{member.realName}</p>
+                    <p class="text-2xl font-light">{member.username}</p>
+                </button>
 
                 <div class="ml-auto flex flex-row items-center gap-4">
                     {#if member.github !== '#'}
@@ -90,14 +107,20 @@
                             <SiBluesky class="h-7 w-7" title="Bluesky" />
                         </a>
                     {/if}
-                    <!-- {member.github} -->
                 </div>
             </div>
-            <p class="font-sans text-xl">
+            <p
+                class="text-left font-sans text-xl transition-all duration-300 ease-in-out"
+                class:opacity-0={!expandedMembers.has(i)}
+                class:opacity-100={expandedMembers.has(i)}
+                class:max-h-0={!expandedMembers.has(i)}
+                class:max-h-96={expandedMembers.has(i)}
+                class:mt-0={!expandedMembers.has(i)}
+                class:mt-3={expandedMembers.has(i)}
+            >
                 {member.bio}
             </p>
         </div>
-        <!-- da line -->
         {#if i < members.length - 1}
             <hr class="text-white/15" />
         {/if}
