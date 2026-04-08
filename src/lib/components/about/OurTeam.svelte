@@ -82,7 +82,6 @@
 <section class="flex flex-col gap-4">
     <!-- todo: make links more flexible -->
     {#each members as member, i}
-        <!-- the hover bg is placeholder -->
         <div class="flex flex-col">
             <div class="flex flex-row items-center justify-center gap-4 align-middle">
                 <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
@@ -110,13 +109,13 @@
                 </div>
             </div>
             <p
-                class="text-left font-sans text-xl transition-all duration-300 ease-in-out"
+                class="pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out"
                 class:opacity-0={!expandedMembers.has(i)}
                 class:opacity-100={expandedMembers.has(i)}
                 class:max-h-0={!expandedMembers.has(i)}
                 class:max-h-96={expandedMembers.has(i)}
-                class:mt-0={!expandedMembers.has(i)}
-                class:mt-3={expandedMembers.has(i)}
+                class:leading-0={!expandedMembers.has(i)}
+                class:leading-4={expandedMembers.has(i)}
             >
                 {member.bio}
             </p>
