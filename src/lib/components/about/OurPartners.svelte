@@ -27,7 +27,24 @@
                     <a
                         href={partner.href}
                         target="_blank"
-                        class="absolute inset-0 z-10 flex items-center justify-center"
+<section>
+    <div class="grid grid-cols-3 gap-5">
+        {#each partners as partner}
+            {#snippet partnerImg()}
+                <img src={partner.src} alt={partner.alt} class="h-full w-full object-contain" />
+            {/snippet}
+            <div class="border-accent relative items-center border-2 bg-black/50 p-10">
+                {#if partner.href}
+                    <a href={partner.href} target="_blank" rel="noopener noreferrer" aria-label={partner.alt}>
+                        {@render partnerImg()}
+                    </a>
+                {:else}
+                    {@render partnerImg()}
+                {/if}
+            </div>
+        {/each}
+    </div>
+</section>```
                         aria-label={partner.alt}
                     >
                     </a>
