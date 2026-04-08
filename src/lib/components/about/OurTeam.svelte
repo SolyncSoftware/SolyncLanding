@@ -80,7 +80,7 @@
 </script>
 
 <section class="flex flex-col gap-4">
-    <!-- todo: add dynamic bios and make links more flexible -->
+    <!-- todo: make links more flexible -->
     {#each members as member, i}
         <!-- the hover bg is placeholder -->
         <div class="flex flex-col">
