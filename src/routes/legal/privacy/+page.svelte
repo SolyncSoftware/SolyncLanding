@@ -1,9 +1,5 @@
 <script lang="ts">
-    export const load = () => {
-        return {
-            title: 'PRIVACY POLICY'
-        };
-    };
+    let { data } = $props();
 </script>
 
 <p class="text-accent">Last revised April 1st, 2025</p>
