@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from '$app/state';
     let { children } = $props();
-    const title = page.data.title;
+    const title = $derived(page.data.title);
 </script>
 
 <h1 class="text-5xl font-bold">{title}</h1>
