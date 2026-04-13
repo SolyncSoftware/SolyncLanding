@@ -10,46 +10,48 @@
     </div> -->
     <div class="col-start-1 row-start-1 flex flex-col gap-7 px-16.5 py-9">
         <div class="flex flex-row justify-between">
-            <div class="flex flex-col gap-9 text-lg">
+            <div class="flex flex-col gap-18 text-lg">
                 <img src="/logo-white.svg" alt="netro logo" class="justify-center" />
-                <div>
-                    <span
-                        >&copy; 2026 Netro LLC. All rights reserved. Design assistance by <a
-                            href="https://untone.org/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="underline">UNTONE</a
-                        >.</span
-                    >
-                    <br />
-                    <span>
-                        Made with
-                        <span class="heart text-error inline-block">&#10084;</span>
-                        in Texas.
-                    </span>
+                <div class="flex flex-col gap-6">
+                    <div>
+                        <span
+                            >&copy; 2026 Netro LLC. All rights reserved. Design assistance by <a
+                                href="https://untone.org/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="underline">UNTONE</a
+                            >.</span
+                        >
+                        <br />
+                        <span>
+                            Made with
+                            <span class="heart text-error inline-block">&#10084;</span>
+                            in Texas.
+                        </span>
+                    </div>
+                    <ul class="flex flex-row items-center gap-6">
+                        <li>
+                            <a href="https://discord.gg/HdKeWtV">
+                                <SiDiscord class="text-3xl" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/@NetroCorp">
+                                <SiYoutube class="text-3xl" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://bsky.app/profile/netrocorp.net">
+                                <SiBluesky class="text-3xl" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/NetroSoftware">
+                                <SiGithub class="text-3xl" />
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="flex flex-row items-center gap-6">
-                    <li>
-                        <a href="https://discord.gg/HdKeWtV">
-                            <SiDiscord class="text-3xl" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com/@NetroCorp">
-                            <SiYoutube class="text-3xl" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://bsky.app/profile/netrocorp.net">
-                            <SiBluesky class="text-3xl" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/NetroSoftware">
-                            <SiGithub class="text-3xl" />
-                        </a>
-                    </li>
-                </ul>
             </div>
             <div class="flex flex-row gap-17 text-2xl">
                 <div class="flex flex-col gap-4">
