@@ -86,12 +86,12 @@
         <div class="flex flex-col">
             <button
                 onclick={() => toggleBio(i)}
-                class="hover:text-accent flex flex-row items-center justify-center gap-4 align-middle"
+                class="hover:text-accent flex cursor-pointer flex-row items-center justify-center gap-4 align-middle"
                 class:text-white={expandedIndex !== i}
                 class:text-accent={expandedIndex === i}
             >
                 <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
-                <div class="flex cursor-pointer flex-row items-end gap-4 text-left transition">
+                <div class="flex flex-row items-end gap-4 text-left transition">
                     <p class="text-4xl font-bold">{member.realName}</p>
                     <p class="text-2xl font-light">{member.username}</p>
                 </div>
@@ -110,7 +110,7 @@
                 </div>
             </button>
             <p
-                class="pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out"
+                class="cursor-default pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out"
                 class:opacity-0={expandedIndex !== i}
                 class:opacity-100={expandedIndex === i}
                 class:max-h-0={expandedIndex !== i}
