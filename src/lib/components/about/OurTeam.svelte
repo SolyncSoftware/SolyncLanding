@@ -6,13 +6,13 @@
             id: 30270106,
             realName: 'Matthew',
             username: 'Aisuruneko',
-            bio: 'I do things.'
+            bio: 'Matthew founded the company in 2022. He is a full stack developer and he really enjoys NetroHost, his passion project. Give him a hug!'
         },
         {
             id: 72106503,
             realName: 'John',
             username: 'papertek',
-            bio: 'i am papertek! i usually work on designs, frontend, hardware, and hr. i also like doing whatever!',
+            bio: 'i am papertek! i usually work on designs, websites, hardware, human resources, and public relations. i also like experimenting and iterating on whatever comes to mind!',
             bsky: 'j6chocomint.bsky.social'
         },
         {
@@ -31,25 +31,25 @@
             id: 177717694,
             realName: 'Spenser',
             username: 'co00k1e',
-            bio: 'Full stack developer: PHP / MYSQL / C#'
+            bio: 'Spenser is a full stack developer whos really good at PHP, MYSQL, C#. He is also a big fan of tea time because he was caught making tea during meetings.'
         },
         {
             id: 79934414,
             realName: 'Ian',
             username: 'parakeet-live',
-            bio: 'parakeet (or para)'
+            bio: 'Ian is a software developer who enjoys working on games and backend. He created Novarin and is also a fan of Just Dance.'
         },
         {
             id: 90116898,
             realName: 'Laith Hijazi',
             username: 'gapva',
-            bio: 'software developer, game designer, musician, motion graphic artist, and OSS-supporter'
+            bio: 'Laith is a software developer, game designer, musician, motion graphic artist, and OSS-supporter. He is known for his work on Super Mario 127, Novastra, and Rhythia.'
         },
         {
             id: 0,
             realName: 'Joel',
             username: 'jokerlaul',
-            bio: 'Accountant. I do not have a GitHub account, but I am a valuable member of the team nonetheless.'
+            bio: "I'm the accountant. I do not have a GitHub account, but I am a valuable member of the team nonetheless."
         },
         {
             id: 65369281,
@@ -110,7 +110,7 @@
                 class:max-h-0={expandedIndex !== i}
                 class:max-h-96={expandedIndex === i}
                 class:leading-0={expandedIndex !== i}
-                class:leading-4={expandedIndex === i}
+                class:leading-6={expandedIndex === i}
             >
                 {member.bio}
             </p>
