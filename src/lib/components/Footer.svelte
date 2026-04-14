@@ -3,12 +3,12 @@
     import Waves from '$lib/components/assets/Waves.svelte';
 </script>
 
-<footer class="overflow-hidden bg-black">
+<footer class="relative overflow-hidden">
     <!-- this is commented out for now until we get the json file -->
-    <!-- <div class="col-start-1 row-start-1 h-full w-full">
+    <div class="col-start-1 row-start-1 h-full w-full">
         <Waves style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -110;" wavesType="/netro_waves.json" />
-    </div> -->
-    <div class="col-start-1 row-start-1 flex flex-col gap-7 px-16.5 py-9">
+    </div>
+    <div class="col-start-1 row-start-1 flex flex-col gap-7 px-16 py-9">
         <div class="flex flex-row justify-between">
             <div class="flex flex-col gap-18 text-lg">
                 <img src="/logo-white.svg" alt="netro logo" class="justify-center" />
