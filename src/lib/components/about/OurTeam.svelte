@@ -74,39 +74,43 @@
     function toggleBio(i: any) {
         expandedIndex = expandedIndex === i ? null : i;
     }
+
+    function stopPropagation(e: MouseEvent) {
+        e.stopPropagation();
+    }
 </script>
 
 <section class="flex flex-col gap-4">
     <!-- todo: make links more flexible -->
     {#each sortedMembers as member, i}
         <div class="flex flex-col">
-            <div class="flex flex-row items-center justify-center gap-4 align-middle">
+            <button
+                onclick={() => toggleBio(i)}
+                class="hover:text-accent flex cursor-pointer flex-row items-center justify-center gap-4 align-middle"
+                class:text-white={expandedIndex !== i}
+                class:text-accent={expandedIndex === i}
+            >
                 <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
-                <button
-                    onclick={() => toggleBio(i)}
-                    class="hover:text-accent flex cursor-pointer flex-row items-end gap-4 text-left transition"
-                    class:text-white={expandedIndex !== i}
-                    class:text-accent={expandedIndex === i}
-                >
+                <div class="flex flex-row items-end gap-4 text-left transition">
                     <p class="text-4xl font-bold">{member.realName}</p>
                     <p class="text-2xl font-light">{member.username}</p>
-                </button>
+                </div>
 
-                <div class="ml-auto flex flex-row items-center gap-4">
+                <div class="ml-auto flex flex-row items-center gap-4 text-white">
                     {#if member.github !== '#'}
-                        <a href={member.github} target="_blank" class="hover:text-gray-400">
+                        <a href={member.github} target="_blank" class="hover:text-gray-400" onclick={stopPropagation}>
                             <SiGithub class="h-7 w-7" title="GitHub" />
                         </a>
                     {/if}
                     {#if member.bluesky !== '#'}
-                        <a href={member.bluesky} target="_blank" class="hover:text-gray-400">
+                        <a href={member.bluesky} target="_blank" class="hover:text-gray-400" onclick={stopPropagation}>
                             <SiBluesky class="h-7 w-7" title="Bluesky" />
                         </a>
                     {/if}
                 </div>
-            </div>
+            </button>
             <p
-                class="pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out"
+                class="cursor-default pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out"
                 class:opacity-0={expandedIndex !== i}
                 class:opacity-100={expandedIndex === i}
                 class:max-h-0={expandedIndex !== i}
