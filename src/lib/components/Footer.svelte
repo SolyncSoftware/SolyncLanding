@@ -4,7 +4,6 @@
 </script>
 
 <footer class="relative overflow-hidden">
-    <!-- this is commented out for now until we get the json file -->
     <div class="col-start-1 row-start-1 h-full w-full">
         <Waves style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;" wavesType="/netro_footer.json" />
     </div>
