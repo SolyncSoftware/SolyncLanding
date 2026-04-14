@@ -17,7 +17,7 @@
         },
         {
             id: 36048627,
-            realName: '"Dex"',
+            realName: 'Dex',
             username: 'RealDxT',
             bio: 'infrastructure person, chronic linux user & uncertified nerd'
         },
@@ -68,6 +68,8 @@
         avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/avatarplaceholder.svg'
     }));
 
+    let sortedMembers = [...members].sort((a, b) => a.realName.localeCompare(b.realName));
+
     let expandedIndex = $state(null);
     function toggleBio(i: any) {
         expandedIndex = expandedIndex === i ? null : i;
@@ -76,7 +78,7 @@
 
 <section class="flex flex-col gap-4">
     <!-- todo: make links more flexible -->
-    {#each members as member, i}
+    {#each sortedMembers as member, i}
         <div class="flex flex-col">
             <div class="flex flex-row items-center justify-center gap-4 align-middle">
                 <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
