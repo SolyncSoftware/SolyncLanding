@@ -7,8 +7,6 @@
     import Textbox from '$lib/components/Textbox.svelte';
 </script>
 
-<Textbox />
-
 <!-- <HomeWaves /> -->
 
 <!-- <div class="flex flex-col gap-20">
