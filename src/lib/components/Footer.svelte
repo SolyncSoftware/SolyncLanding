@@ -14,7 +14,7 @@
                 <div class="flex flex-col gap-6">
                     <div>
                         <span
-                            >&copy; 2026 Netro LLC. All rights reserved. Design assistance by <a
+                            >&copy; 2022-2026 Netro LLC. All rights reserved. Design assistance by <a
                                 href="https://untone.org/"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -57,7 +57,7 @@
                     <span class="font-display font-semibold">NETRO</span>
                     <a href="/about" class="footer-links">About Netro</a>
                     <a href="/apply" class="footer-links">Work at Netro</a>
-                    <a href="/donate" class="footer-links">Netro Support</a>
+                    <a href="/contact" class="footer-links">Netro Support</a>
                 </div>
                 <div class="flex flex-col gap-4">
                     <span class="font-display font-semibold">LEGAL</span>
