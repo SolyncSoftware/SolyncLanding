@@ -4,6 +4,7 @@
     import WeAreNetro from '$lib/components/index/WeAreNetro.svelte';
     import WhatWeDo from '$lib/components/index/WhatWeDo.svelte';
     import WhoWeAre from '$lib/components/about/OurTeam.svelte';
+    import Textbox from '$lib/components/Textbox.svelte';
 </script>
 
 <!-- <HomeWaves /> -->
