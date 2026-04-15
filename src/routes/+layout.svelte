@@ -7,6 +7,7 @@
 
     import { afterNavigate } from '$app/navigation';
     import { onMount } from 'svelte';
+    import { page } from '$app/state';
     import Waves from '$lib/components/assets/Waves.svelte';
 
     function initUnicorn() {
@@ -15,6 +16,8 @@
 
     onMount(initUnicorn);
     afterNavigate(initUnicorn);
+
+    const title = $derived(page.data.title);
 </script>
 
 <Header />
@@ -22,6 +25,7 @@
     <div class="fixed top-0 left-0 -z-10 w-full">
         <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" />
     </div>
+    <h1 class="text-5xl font-bold">{title}</h1>
     {@render children()}
 </main>
 <Footer />
