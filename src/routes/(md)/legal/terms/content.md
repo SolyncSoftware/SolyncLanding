@@ -10,7 +10,7 @@ These Terms of Service (the "Terms") outline the rules and regulations for the u
 agree that you are or thereof over the age of 13 or meet the minimum age required by the laws in your country.
 
 By accessing, interacting, or of any way, shape, or form of utilizing any of the Services, we assume you accept these Terms in full. If
-you do not accept any or all of the Term stated, discontinue use of the Services. If you have any questions or concerns regarding these
+you do not accept any or all of the Terms stated, discontinue use of the Services. If you have any questions or concerns regarding these
 Terms, please contact us at legal@netro.works.
 
 ## 1. YOUR PRIVACY
