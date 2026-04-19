@@ -49,6 +49,11 @@
 	"dependencies": {
 		"@icons-pack/svelte-simple-icons": "^7.1.0",
 		"@tailwindcss/vite": "^4.2.0",
-		"tailwindcss": "^4.2.0"
+		"remark-frontmatter": "^5.0.0",
+		"remark-parse": "^11.0.0",
+		"remark-stringify": "^11.0.0",
+		"tailwindcss": "^4.2.0",
+		"to-vfile": "^8.0.0",
+		"unified": "^11.0.5"
 	}
 }
