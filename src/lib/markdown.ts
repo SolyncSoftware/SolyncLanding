@@ -5,11 +5,11 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import { parse as parseYaml } from 'yaml';
 import type { Root, Yaml } from 'mdast';
-import source from './privacy.md?raw';
 
-type Frontmatter = {
-    title: string;
-    revised: string;
+export type Frontmatter = {
+    title?: string;
+    revised?: string;
+    [key: string]: unknown;
 };
 
 declare module 'vfile' {
@@ -21,26 +21,21 @@ declare module 'vfile' {
 const extractFrontmatter: Plugin<[], Root> = function () {
     return (tree, file) => {
         const node = tree.children.find((n): n is Yaml => n.type === 'yaml');
-        if (node) {
-            file.data.frontmatter = parseYaml(node.value) as Frontmatter;
-        }
+        if (node) file.data.frontmatter = parseYaml(node.value) as Frontmatter;
     };
 };
 
-export const load = async () => {
-    const file = await unified()
-        .use(remarkParse)
-        .use(remarkFrontmatter, ['yaml'])
-        .use(extractFrontmatter)
-        .use(remarkRehype)
-        .use(rehypeStringify)
-        .process(source);
+const processor = unified()
+    .use(remarkParse)
+    .use(remarkFrontmatter, ['yaml'])
+    .use(extractFrontmatter)
+    .use(remarkRehype)
+    .use(rehypeStringify);
 
-    const frontmatter = file.data.frontmatter!;
-
+export async function renderMarkdown(source: string) {
+    const file = await processor.process(source);
     return {
-        title: frontmatter.title,
-        revised: frontmatter.revised,
+        ...(file.data.frontmatter ?? {}),
         html: String(file)
     };
-};
+}
