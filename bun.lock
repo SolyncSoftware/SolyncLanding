@@ -11,7 +11,6 @@
         "tailwindcss": "^4.2.0",
         "to-vfile": "^8.0.0",
         "unified": "^11.0.5",
-        "yaml": "^2.8.3",
       },
       "devDependencies": {
         "@sveltejs/adapter-auto": "^7.0.0",
