@@ -1,6 +1,1 @@
-<script lang="ts">
-    import LegalPage from '$lib/components/Legal.svelte';
-    let { data } = $props();
-</script>
-
-<LegalPage {data} />
+<!-- content rendered by (md)/+layout.svelte from content.md -->
