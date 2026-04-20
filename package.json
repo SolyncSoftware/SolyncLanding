@@ -51,6 +51,7 @@
 		"@icons-pack/svelte-simple-icons": "^7.1.0",
 		"@tailwindcss/vite": "^4.2.0",
 		"rehype-stringify": "^10.0.1",
+		"shiki": "^4.0.2",
 		"tailwindcss": "^4.2.0",
 		"to-vfile": "^8.0.0",
 		"unified": "^11.0.5"
