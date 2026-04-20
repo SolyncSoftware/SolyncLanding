@@ -1,6 +1,6 @@
-<script>
-    export let data;
-    let Content = data.content;
+<script lang="ts">
+    let { data } = $props();
+    let Content = $derived(data.content);
 </script>
 
 <Content />
