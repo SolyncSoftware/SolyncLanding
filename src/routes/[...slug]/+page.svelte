@@ -2,6 +2,7 @@
     let { data } = $props();
 </script>
 
+<h1 class="text-5xl font-bold uppercase">{data.meta.title}</h1>
 <div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black p-8">
     <span class="font-sans text-2xl">
         <p class="text-accent">Written/Revised on {data.meta.date}</p>
