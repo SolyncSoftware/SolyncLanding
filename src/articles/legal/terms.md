@@ -1,6 +1,11 @@
 ---
-title: TERMS OF SERVICE
-revised: April 1st, 2025
+title: Terms Of Service
+description: First post.
+date: 'April 1st, 2025'
+categories:
+  - legal
+published: true
+revised: 'tetsfsadf'
 ---
 
 ## INTRODUCTION
@@ -11,7 +16,7 @@ agree that you are or thereof over the age of 13 or meet the minimum age require
 
 By accessing, interacting, or of any way, shape, or form of utilizing any of the Services, we assume you accept these Terms in full. If
 you do not accept any or all of the Terms stated, discontinue use of the Services. If you have any questions or concerns regarding these
-Terms, please contact us at legal@netro.works.
+Terms, please contact us at <legal@netro.works>.
 
 ## 1. YOUR PRIVACY
 
@@ -23,12 +28,12 @@ and completely replace any prior agreements between you and Company relating to 
 
 Some of Our Services, including but not limited to TheCodingBot, are interactive (the "Interactive Services"). You are prohibited from:
 
- - Abusing such Interactive Services
- - Automation on such Interactive Services
- - Performing actions to gain an unfair advantage over other users on the Interactive Service, which includes but is not limited to:
-   - Using macros, scripts, etc.
-   - Using multiple accounts
-   - Trading any items within the Interactive Service outside of the Interactive Service itself
+- Abusing such Interactive Services
+- Automation on such Interactive Services
+- Performing actions to gain an unfair advantage over other users on the Interactive Service, which includes but is not limited to:
+  - Using macros, scripts, etc.
+  - Using multiple accounts
+  - Trading any items within the Interactive Service outside of the Interactive Service itself
 
 ## 3. CONTENT IN OUR SERVICES
 

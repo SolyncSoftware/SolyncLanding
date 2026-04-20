@@ -1,15 +1,17 @@
-<script lang="ts">
-    let { data } = $props();
-    let html = data.html;
-    let revised = data.revised;
+<script>
+    export let title;
+    // export let author;
+    export let date;
 </script>
 
+Test, news layout. this will be replaced
+<h1 class="text-5xl font-bold uppercase">{title}</h1>
 <div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black p-8">
     <span class="font-sans text-2xl">
-        <p class="text-accent">Last revised {revised}</p>
+        <p class="text-accent">Written/Revised on {date}</p>
 
         <div class="markdown">
-            {@html html}
+            <slot></slot>
         </div>
     </span>
 </div>

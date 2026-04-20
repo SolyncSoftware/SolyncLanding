@@ -1,6 +1,11 @@
 ---
-title: PRIVACY POLICY
-revised: April 1st, 2025
+title: Privacy Policy
+description: second post.
+date: 'April 1st, 2025'
+categories:
+  - legal
+published: true
+revised: 'tetsfsadf'
 ---
 
 ## INTRODUCTION
@@ -11,7 +16,7 @@ practices of how we handle any information collected, personal or not, for the u
 
 By accessing, interacting, or of any way, shape, or form of utilizing any of the Services, we assume you accept the Policy in full. If
 you do not accept any or all of the Term stated, discontinue use of the Services. If you have any questions or concerns regarding this
-Policy, please contact us at legal@netro.works.
+Policy, please contact us at <legal@netro.works>.
 
 ## 1. INTERACTIVE SERVICES
 
