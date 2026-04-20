@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import type { Component } from 'svelte'; // 👈 Change this import
+import type { Component } from 'svelte';
 import type { Article } from '$lib/utils/types.ts';
 
 interface MdsvexModule {

@@ -8,10 +8,6 @@ published: true
 revised: 'tetsfsadf'
 ---
 
-```ts
-test
-```
-
 ## INTRODUCTION
 
 Thank you for choosing Netro ("we", "us", "our", the "Company"). We are committed to protecting your personal information and your right
