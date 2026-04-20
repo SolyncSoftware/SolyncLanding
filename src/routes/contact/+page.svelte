@@ -8,7 +8,7 @@
 <h1 class="text-5xl font-bold">CONTACT US</h1>
 <div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8">
     <div class="grid grid-cols-2 gap-4 font-sans text-2xl">
-        <div class="flex w-full flex-col gap-6">
+        <div class="mb-35 flex w-full flex-col gap-6">
             <div class="flex items-center gap-4">
                 <img src="/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
                 <div class="font-display flex flex-col">
@@ -34,17 +34,21 @@
             </div>
         </div>
 
+        <!-- wip -->
         <div class="flex flex-col gap-4">
             <div class="grid grid-cols-2 gap-4">
-                <Textbox />
-                <Textbox />
+                <Textbox rows="1" placeholder="Your name" />
+                <Textbox rows="1" placeholder="Your email" />
             </div>
-            <Textbox />
 
-            <!-- utter shit -->
+            <div class="flex-1">
+                <Textbox class="h-full w-full" placeholder="Message content" />
+            </div>
+
+            <!-- wip -->
             <a
-                href="/apply"
-                class="bg-accent hover:bg-accent/70 font-display flex items-center justify-end gap-4 py-4 pr-4 pl-7 text-lg font-bold"
+                href="/submit"
+                class="bg-accent hover:bg-accent/70 font-display flex items-center gap-4 self-end py-4 pr-4 pl-7 text-lg font-bold"
             >
                 SEND MESSAGE
                 <img src="/arrow-default.png" alt="arrow pointing down" />
