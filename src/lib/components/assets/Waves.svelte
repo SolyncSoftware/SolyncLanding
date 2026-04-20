@@ -9,5 +9,7 @@
     data-us-project-src={wavesType}
     data-us-lazyload="true"
     data-us-scale="0.8"
+    data-us-dpi="1"
+    data-us-fps="60"
     style={`width: 100%; background-image: url(/waves.png); ${style}`}
 ></div>
