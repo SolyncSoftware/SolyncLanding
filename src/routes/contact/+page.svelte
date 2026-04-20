@@ -2,9 +2,6 @@
     import Textbox from '$lib/components/Textbox.svelte';
 </script>
 
-<!-- todo: waiting for the global title pages. also heavily reconsidering redesigning this because it looks poop. 
- the button isnt good because it needs to be outside the container while the textbox needs to span the container's height -->
-
 <h1 class="text-5xl font-bold">CONTACT US</h1>
 <div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8">
     <div class="grid grid-cols-2 gap-4 font-sans text-2xl">
