@@ -10,23 +10,37 @@
                 <img src="/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
                 <div class="font-display flex flex-col">
                     <span class="text-accent">Email</span>
-                    <span>hello@netro.works</span>
+                    <a href="mailto:hello@netro.works" class="hover:text-white/70 hover:underline">hello@netro.works</a>
                 </div>
             </div>
 
             <div class="flex items-center gap-4">
                 <img src="/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
                 <div class="font-display flex flex-col">
-                    <span class="text-accent">Email</span>
-                    <span>hello@netro.works</span>
+                    <span class="text-accent">Discord</span>
+                    <a
+                        href="https://discord.gg/HdKeWtV"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-white/70 hover:underline"
+                    >
+                        Click to join our server!
+                    </a>
                 </div>
             </div>
 
             <div class="flex items-center gap-4">
                 <img src="/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
                 <div class="font-display flex flex-col">
-                    <span class="text-accent">Email</span>
-                    <span>hello@netro.works</span>
+                    <span class="text-accent">GitHub</span>
+                    <a
+                        href="https://github.com/NetroSoftware"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-white/70 hover:underline"
+                    >
+                        Click to visit our GitHub!
+                    </a>
                 </div>
             </div>
         </div>
