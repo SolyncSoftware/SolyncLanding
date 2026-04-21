@@ -53,9 +53,9 @@
         },
         {
             id: 141666866,
-            realName: 'Evan',
+            realName: 'Leon',
             username: 'oddbyte',
-            bio: 'Evan describes himself as "just a goober who does things" but we see him being obsessed with security and his work. He\'s a full stack developer and a fan of Bazzite Linux.'
+            bio: 'Leon describes himself as "just a goober who does things" but we see him being obsessed with security and his work. He\'s a full stack developer and a fan of Bazzite Linux.'
         }
     ];
 
