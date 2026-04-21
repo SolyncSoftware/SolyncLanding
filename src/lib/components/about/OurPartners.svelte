@@ -9,11 +9,6 @@
             src: '/untone.svg',
             alt: 'Untone logo',
             href: 'https://untone.org/'
-        },
-        {
-            src: '/placeholder2.svg',
-            alt: 'Placeholder logo',
-            href: 'https://untone.org/'
         }
     ];
 </script>
