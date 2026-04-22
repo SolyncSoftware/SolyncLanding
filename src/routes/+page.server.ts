@@ -3,5 +3,5 @@ import type { Article } from '$lib/utils/types.ts';
 export async function load({ fetch }) {
     const response = await fetch('/api/articles');
     const articles: Article[] = await response.json();
-    return { articles };
+    return { articles, hideHeader: true };
 }
