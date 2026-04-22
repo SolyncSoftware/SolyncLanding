@@ -7,7 +7,7 @@
     <div class="grid grid-cols-2 gap-4 font-sans text-2xl">
         <div class="mb-35 flex w-full flex-col gap-6">
             <div class="flex items-center gap-4">
-                <img src="/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
+                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
                 <div class="font-display flex flex-col">
                     <span class="text-accent">Email</span>
                     <a href="mailto:hello@netro.works" class="hover:text-white/70 hover:underline">hello@netro.works</a>
@@ -15,7 +15,7 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <img src="/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
+                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
                 <div class="font-display flex flex-col">
                     <span class="text-accent">Discord</span>
                     <a
@@ -30,7 +30,7 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <img src="/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
+                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
                 <div class="font-display flex flex-col">
                     <span class="text-accent">GitHub</span>
                     <a
@@ -62,7 +62,7 @@
                 class="bg-accent hover:bg-accent/70 font-display flex items-center gap-4 self-end py-4 pr-4 pl-7 text-lg font-bold"
             >
                 SEND MESSAGE
-                <img src="/arrow-default.png" alt="arrow pointing down" />
+                <img src="/images/arrow-default.png" alt="arrow pointing down" />
             </a>
         </div>
     </div>

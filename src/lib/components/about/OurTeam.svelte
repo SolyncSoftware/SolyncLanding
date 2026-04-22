@@ -65,7 +65,7 @@
         bio: member.bio,
         bluesky: member.bsky ? `https://bsky.app/profile/${member.bsky}` : '#',
         github: member.id > 0 ? `https://github.com/${member.username}` : '#',
-        avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/avatarplaceholder.svg'
+        avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/images/avatarplaceholder.svg'
     }));
 
     let sortedMembers = [...members].sort((a, b) => a.realName.localeCompare(b.realName));
@@ -128,7 +128,7 @@
     <div class="mt-12 flex flex-row items-center justify-end gap-6 text-xl">
         <span class="font-bold">Think you'd be a good addition?</span>
         <a href="/apply" class="bg-accent hover:bg-accent/70 flex items-center gap-4 py-4 pr-4 pl-7 font-bold">
-            JOIN NETRO<img src="/arrow-default.png" alt="arrow pointing down" />
+            JOIN NETRO<img src="/images/arrow-default.png" alt="arrow pointing down" />
         </a>
     </div>
 </section>

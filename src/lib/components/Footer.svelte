@@ -10,7 +10,7 @@
     <div class="col-start-1 row-start-1 flex flex-col gap-7 px-16 py-9">
         <div class=" flex flex-row justify-between">
             <div class="flex flex-col gap-18 text-lg">
-                <img src="/logo-white.svg" alt="netro logo" class="justify-center" />
+                <img src="/images/logo-white.svg" alt="netro logo" class="justify-center" />
                 <div class="flex flex-col gap-6">
                     <div>
                         <span

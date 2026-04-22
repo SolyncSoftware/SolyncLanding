@@ -16,7 +16,7 @@
     <div class="transform-0 col-start-1 row-start-1 flex flex-col items-start gap-12">
         <div class="pt-21">
             <a href="/">
-                <img src="/logo-blue.svg" alt="netro logo" width="540" height="118" />
+                <img src="/images/logo-blue.svg" alt="netro logo" width="540" height="118" />
             </a>
         </div>
         <span class="font-display max-w-194 text-xl">
@@ -30,12 +30,12 @@
         <div class="flex flex-row items-start gap-8 text-xl">
             <a href="/about" class="flex flex-row items-center gap-4 hover:opacity-70">
                 <span class="font-display">LEARN MORE</span>
-                <img src="/arrow-default.png" alt="arrow pointing down" />
+                <img src="/images/arrow-default.png" alt="arrow pointing down" />
             </a>
 
             <a href="/apply" class="flex flex-row items-center gap-4 hover:opacity-70">
                 <span class="font-display">JOIN US</span>
-                <img src="/arrow-default.png" alt="arrow pointing down" />
+                <img src="/images/arrow-default.png" alt="arrow pointing down" />
             </a>
         </div>
     </div>
@@ -43,7 +43,7 @@
     <!-- todo: fit in new projects -->
     <div class="col-start-1 row-start-2 mt-12 flex gap-8">
         <a href="https://netro.host/" class="relative">
-            <img src="/placeholder.svg" alt="placeholder" class="h-40 max-w-134 object-cover" />
+            <img src="/images/netrohost.png" alt="NetroHost" class="h-40 w-134 object-cover" />
             <span
                 class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black"
             >
@@ -52,7 +52,7 @@
         </a>
 
         <a href="https://alpha.potaro.wiki/news/gardens-wiki" class="relative">
-            <img src="/placeholder2.svg" alt="placeholder" class="h-40 max-w-134 object-cover" />
+            <img src="/images/gardens-wiki.png" alt="Gardens Wiki" class="h-40 w-134 object-cover" />
             <span
                 class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black"
             >
@@ -66,7 +66,7 @@
         <h2 class="mb-8 text-5xl font-bold">News</h2>
         <div class="flex flex-col gap-6">
             <div class="font-display w-100 bg-black/75 text-right">
-                <img loading="lazy" src="/placeholder2.svg" alt="screenshot of news post" class="h-56 w-full object-cover" />
+                <img loading="lazy" src="/images/placeholder2.svg" alt="screenshot of news post" class="h-56 w-full object-cover" />
                 <div class="bg-accent absolute -translate-x-2 -translate-y-6 justify-self-end px-2 py-1 text-xl font-bold text-black">
                     ANNOUNCEMENT
                 </div>
@@ -74,7 +74,7 @@
             </div>
 
             <div class="font-display w-100 bg-black/75 text-right">
-                <img loading="lazy" src="/placeholder2.svg" alt="screenshot of news post" class="h-56 w-full object-cover" />
+                <img loading="lazy" src="/images/placeholder2.svg" alt="screenshot of news post" class="h-56 w-full object-cover" />
                 <div class="bg-accent absolute -translate-x-2 -translate-y-6 justify-self-end px-2 py-1 text-xl font-bold text-black">
                     ANNOUNCEMENT
                 </div>
@@ -83,7 +83,7 @@
         </div>
         <a href="/news" class="flex flex-row items-center gap-4 pt-8 pl-22 hover:opacity-70">
             <span class="font-display text-xl">READ MORE</span>
-            <img src="/arrow-default.png" alt="arrow pointing down" />
+            <img src="/images/arrow-default.png" alt="arrow pointing down" />
         </a>
     </aside>
 </section>

@@ -6,7 +6,7 @@
     }
     export let partners: Partner[] = [
         {
-            src: '/untone.svg',
+            src: '/images/untone.svg',
             alt: 'Untone logo',
             href: 'https://untone.org/'
         }
