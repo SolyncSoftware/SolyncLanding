@@ -4,7 +4,7 @@
 </script>
 
 <h1 class="text-5xl font-bold">About Us</h1>
-<div class="flex max-w-200 flex-col gap-4 text-xl">
+<div class="mt-6 flex max-w-200 flex-col gap-4 text-xl">
     <p>
         Netro is driven by simple principles: putting users first, challenging tradition with originality, and constantly improving. We
         don't sell out, make empty promises, or cut corners for profit. Our products and services are a direct reflection of that
