@@ -56,6 +56,12 @@
             realName: 'Leon',
             username: 'oddbyte',
             bio: 'Leon describes himself as "just a goober who does things" but we see him being obsessed with security and his work. He\'s a full stack developer and a fan of Bazzite Linux.'
+        },
+        {
+            id: 65369281,
+            realName: 'Jason',
+            username: 'flustix',
+            bio: 'A rhythm game dev with a nanahira and choccy milk addiction.'
         }
     ];
 
