@@ -55,9 +55,9 @@
             <div class="flex flex-row gap-17 text-2xl">
                 <div class="flex flex-col gap-4">
                     <span class="font-display font-semibold">NETRO</span>
-                    <a href="/about" class="footer-links">About Netro</a>
+                    <a href="/about" class="footer-links">About Us</a>
                     <a href="/apply" class="footer-links">Work at Netro</a>
-                    <a href="/contact" class="footer-links">Netro Support</a>
+                    <a href="/contact" class="footer-links">Customer Support</a>
                 </div>
                 <div class="flex flex-col gap-4">
                     <span class="font-display font-semibold">LEGAL</span>
