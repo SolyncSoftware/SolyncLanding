@@ -18,10 +18,14 @@
 
 <div class="mt-24 flex max-w-301 flex-col gap-4 text-xl">
     <h1 class="text-5xl font-bold">Our Partners</h1>
+    <p class="text-lg">The partner program is currently closed but we will reopen applications eventually.</p>
     <OurPartners />
 </div>
 
-<div class="mt-24 flex max-w-301 flex-col gap-9 text-xl">
+<div class="mt-24 flex max-w-301 flex-col gap-4 text-xl">
     <h1 class="text-5xl font-bold">Our Team</h1>
+    <p class="text-lg">
+        Our company is flat by design! There are no bosses and we priortize collectivism, empathy, trust, and mutual respect.
+    </p>
     <OurTeam />
 </div>
