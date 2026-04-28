@@ -63,7 +63,7 @@
 
     <!-- todo: make it grab from article api -->
     <aside class="z-5 col-start-2 row-span-2 row-start-1 flex h-full flex-col items-end bg-black/60 py-18 pr-16 text-white">
-        <h2 class="mb-8 text-5xl font-bold">News</h2>
+        <h2 class="mb-8 text-5xl font-bold">Blog</h2>
         <div class="flex flex-col gap-6">
             <div class="font-display w-100 bg-black/75 text-right">
                 <img loading="lazy" src="/images/placeholder2.svg" alt="screenshot of news post" class="h-56 w-full object-cover" />
