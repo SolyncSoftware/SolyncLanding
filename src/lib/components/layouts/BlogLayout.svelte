@@ -21,18 +21,21 @@
 </div> -->
 
 <article>
-    <img src={image || '/images/fallback.png'} alt="screenshot of news post" class="h-94 w-full object-cover" />
+    <img src={image || '/images/fallback.png'} alt="screenshot of news post" class="mb-16 h-94 w-full object-cover" />
 
     <div class="flex gap-8">
+        <!-- todo: probably need to add a max-width -->
         <div class="markdown flex-2 font-sans text-2xl">
             <h1 class="font-display text-5xl font-bold uppercase">{title}</h1>
             <slot></slot>
         </div>
-        <div class="flex-1">the other shit...</div>
+        <!-- todo: github api pfp, probably using author for username or real name. need category, need date -->
+        <div class="bg-accent/20 flex-1">read todo notes</div>
     </div>
 </article>
 
 <style>
+    /* todo: proper markdown styling */
     .markdown :global(h2) {
         font-family: var(--font-sans);
         margin-top: 1.5rem;
