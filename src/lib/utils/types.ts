@@ -1,4 +1,4 @@
-export type Categories = 'sveltekit' | 'svelte' | 'legal' | 'other';
+export type Categories = 'sveltekit' | 'svelte' | 'legal' | 'other' | 'blog';
 
 export type Article = {
     title: string;
@@ -7,4 +7,5 @@ export type Article = {
     date: string;
     categories: Categories[];
     published: boolean;
+    image?: string;
 };

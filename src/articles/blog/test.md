@@ -4,8 +4,8 @@ description: Small description about this news post and what it is, spaghetti ho
 date: 'April 1st, 2025'
 categories:
   - news
-tag: news
 published: true
+image: /images/gardens-wiki.png
 ---
 
 ## test article
