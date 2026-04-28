@@ -97,7 +97,12 @@
                         >
                             {article.categories[0]}
                         </div>
-                        <div class=" border-accent line-clamp-2 border-b-12 px-6 py-4 text-2xl font-bold uppercase">{article.title}</div>
+                        <!-- jack shit because it would show 3 lines even with line-clamp -->
+                        <div class="border-accent border-b-12 px-6 py-4">
+                            <div class="line-clamp-2 text-2xl font-bold uppercase">
+                                {article.title}
+                            </div>
+                        </div>
                     </a>
                 {/each}
             </div>

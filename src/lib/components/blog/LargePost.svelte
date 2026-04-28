@@ -11,7 +11,7 @@
     <div class="bg-accent absolute ml-8 -translate-y-6 justify-self-start px-2 py-1 text-xl font-bold text-black uppercase">{category}</div>
     <div class="flex flex-row justify-between p-8">
         <div class="flex max-w-190 flex-col">
-            <div class="text-accent text-3xl font-bold">{title}</div>
+            <div class="text-accent line-clamp-1 text-3xl font-bold uppercase">{title}</div>
             <p class="line-clamp-3 text-xl">
                 {description}
             </p>
