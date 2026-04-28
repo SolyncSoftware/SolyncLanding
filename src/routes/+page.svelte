@@ -88,7 +88,7 @@
                     >
                         <img
                             loading="lazy"
-                            src={article.image || '/images/favicon.svg'}
+                            src={article.image || '/images/fallback.png'}
                             alt="screenshot of news post"
                             class="h-56 w-full object-cover"
                         />

@@ -15,7 +15,7 @@
     });
 </script>
 
-<h1 class="text-5xl font-bold">LATEST NEWS</h1>
+<h1 class="text-5xl font-bold">LATEST ARTICLES</h1>
 <div class="mt-6 flex max-w-301 flex-col gap-12">
     {#if loading}
         <p class="text-xl">Loading contents please wait...</p>
@@ -23,12 +23,24 @@
         <p class="text-error text-xl">No articles found!</p>
     {:else}
         <div class="mt-6 flex max-w-301 flex-col gap-12">
-            <LargePost title={blogArticles[0].title} description={blogArticles[0].description} link={blogArticles[0].slug} />
+            <LargePost
+                title={blogArticles[0].title}
+                description={blogArticles[0].description}
+                link={blogArticles[0].slug}
+                category={blogArticles[0].categories[0]}
+                image={blogArticles[0].image}
+            />
 
             {#if blogArticles.length > 1}
                 <div class="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2">
                     {#each blogArticles.slice(1) as article (article.slug)}
-                        <SmallPost title={article.title} description={article.description} link={article.slug} />
+                        <SmallPost
+                            title={article.title}
+                            description={article.description}
+                            link={article.slug}
+                            category={article.categories[0]}
+                            image={article.image}
+                        />
                     {/each}
                 </div>
             {/if}
