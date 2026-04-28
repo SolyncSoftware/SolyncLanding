@@ -7,7 +7,7 @@
 </script>
 
 <div class="font-display border-accent relative border-b-12 bg-black/75">
-    <img loading="lazy" src={image || '/images/fallback.png'} alt="screenshot of news post" class="h-56 w-full object-cover" />
+    <img loading="lazy" src={image || '/images/fallback.png'} alt="screenshot of news post" class="h-92 w-full object-cover" />
     <div class="bg-accent absolute ml-8 -translate-y-6 justify-self-start px-2 py-1 text-xl font-bold text-black uppercase">{category}</div>
     <div class="flex flex-row justify-between p-8">
         <div class="flex max-w-190 flex-col">
