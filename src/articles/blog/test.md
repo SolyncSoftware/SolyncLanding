@@ -1,6 +1,7 @@
 ---
 title: Introducint our new hish distrubution system
 description: Small description about this news post and what it is, spaghetti hoops - can be many paragraphs and probably 3 lines but it can be longer if you want 
+author: papertek
 date: 'April 1st, 2025'
 categories:
   - news

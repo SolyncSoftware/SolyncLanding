@@ -1,15 +1,19 @@
 <script>
     export let title;
-    // export let author;
+    export let author;
     export let date;
+    export let categories;
+    export let image;
 </script>
 
-Test, news layout. this will be replaced
 <h1 class="text-5xl font-bold uppercase">{title}</h1>
 <div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black p-8">
     <span class="font-sans text-2xl">
         <p class="text-accent">Written/Revised on {date}</p>
 
+        <p class="text-accent">By {author}</p>
+        <p class="text-accent">Categories: {categories.join(', ')}</p>
+        <img src={image || '/images/fallback.png'} alt="screenshot of news post" class="h-56 w-full object-cover" />
         <div class="markdown">
             <slot></slot>
         </div>
