@@ -32,6 +32,8 @@
         <!-- todo: github api pfp, probably using author for username or real name. need category, need date -->
         <div class="bg-accent/20 flex-1">read todo notes</div>
     </div>
+
+    <!-- todo: read more section. grab latest articles -->
 </article>
 
 <style>
