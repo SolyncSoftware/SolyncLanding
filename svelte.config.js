@@ -24,7 +24,7 @@ const mdsvexOptions = {
 	},
 	layout: {
 		_: path.join(dirname, './src/lib/components/layouts/DefaultLayout.svelte'),
-		news: path.join(dirname, './src/lib/components/layouts/NewsLayout.svelte')
+		blog: path.join(dirname, './src/lib/components/layouts/BlogLayout.svelte')
 	},
 }
 

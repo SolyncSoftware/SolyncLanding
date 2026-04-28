@@ -81,7 +81,7 @@
                 <div class="text-accent border-accent border-b-12 px-6 py-4 text-2xl font-bold">AWESOME NEWS POST TITLE</div>
             </div>
         </div>
-        <a href="/news" class="flex flex-row items-center gap-4 pt-8 pl-22 hover:opacity-70">
+        <a href="/blog" class="flex flex-row items-center gap-4 pt-8 pl-22 hover:opacity-70">
             <span class="font-display text-xl">READ MORE</span>
             <img src="/images/arrow-default.png" alt="arrow pointing down" />
         </a>
