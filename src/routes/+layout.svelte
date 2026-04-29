@@ -1,14 +1,14 @@
 <script lang="ts">
-    let { children } = $props() as any;
-    import '../styles/tailwind.css';
-    import Header from '$lib/components/Header.svelte';
-    import Footer from '$lib/components/Footer.svelte';
-    import DevBanner from '$lib/components/DevBanner.svelte';
-
-    import { page } from '$app/state';
     import { afterNavigate } from '$app/navigation';
-    import { onMount } from 'svelte';
+    import { page } from '$app/state';
     import Waves from '$lib/components/assets/Waves.svelte';
+    import DevBanner from '$lib/components/DevBanner.svelte';
+    import Footer from '$lib/components/Footer.svelte';
+    import Header from '$lib/components/Header.svelte';
+    import { onMount, type Snippet } from 'svelte';
+    import '../styles/tailwind.css';
+
+    let { children }: { children: Snippet } = $props();
 
     function initUnicorn() {
         UnicornStudio.init().catch(console.error);

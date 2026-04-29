@@ -1,5 +1,16 @@
 <script lang="ts">
     import NetroGlobe from '$lib/components/assets/NetroGlobe.svelte';
+    import type { Article } from '$lib/utils/types.js';
+    import { onMount } from 'svelte';
+
+    let blogArticles = $state<Article[]>([]);
+    let loading = $state(true);
+    onMount(async () => {
+        const res = await fetch('/api/articles?type=blog'),
+            articles: Article[] = await res.json();
+        blogArticles = articles.slice(0, 2);
+        loading = false;
+    });
 </script>
 
 <section class="relative -my-16 -mr-21 grid min-h-screen grid-cols-[1fr_410px] grid-rows-[auto_auto]">
@@ -61,27 +72,42 @@
         </a>
     </div>
 
-    <!-- todo: make it grab from article api -->
     <aside class="z-5 col-start-2 row-span-2 row-start-1 flex h-full flex-col items-end bg-black/60 py-18 pr-16 text-white">
-        <h2 class="mb-8 text-5xl font-bold">News</h2>
-        <div class="flex flex-col gap-6">
-            <div class="font-display w-100 bg-black/75 text-right">
-                <img loading="lazy" src="/images/placeholder2.svg" alt="screenshot of news post" class="h-56 w-full object-cover" />
-                <div class="bg-accent absolute -translate-x-2 -translate-y-6 justify-self-end px-2 py-1 text-xl font-bold text-black">
-                    ANNOUNCEMENT
-                </div>
-                <div class="text-accent border-accent border-b-12 px-6 py-4 text-2xl font-bold">AWESOME NEWS POST TITLE</div>
+        <h2 class="mb-8 text-5xl font-bold">Blog</h2>
+        {#if loading}
+            <div class="text-xl">Loading contents please wait...</div>
+        {:else if blogArticles.length === 0}
+            <div class="text-error text-xl">No articles found!</div>
+        {:else}
+            <div class="flex flex-col gap-6">
+                {#each blogArticles as article (article.slug)}
+                    <a
+                        href={article.slug}
+                        class="font-display text-accent w-100 bg-black/75 text-right transition-colors duration-300 hover:text-white"
+                    >
+                        <img
+                            loading="lazy"
+                            src={article.image || '/images/fallback.png'}
+                            alt="screenshot of news post"
+                            class="h-56 w-full object-cover"
+                        />
+                        <div
+                            class="bg-accent absolute -translate-x-2 -translate-y-6 justify-self-end px-2 py-1 text-xl font-bold text-black uppercase"
+                        >
+                            {article.categories[0]}
+                        </div>
+                        <!-- jack shit because it would show 3 lines even with line-clamp -->
+                        <div class="border-accent border-b-12 px-6 py-4">
+                            <div class="line-clamp-2 text-2xl font-bold uppercase">
+                                {article.title}
+                            </div>
+                        </div>
+                    </a>
+                {/each}
             </div>
+        {/if}
 
-            <div class="font-display w-100 bg-black/75 text-right">
-                <img loading="lazy" src="/images/placeholder2.svg" alt="screenshot of news post" class="h-56 w-full object-cover" />
-                <div class="bg-accent absolute -translate-x-2 -translate-y-6 justify-self-end px-2 py-1 text-xl font-bold text-black">
-                    ANNOUNCEMENT
-                </div>
-                <div class="text-accent border-accent border-b-12 px-6 py-4 text-2xl font-bold">AWESOME NEWS POST TITLE</div>
-            </div>
-        </div>
-        <a href="/news" class="flex flex-row items-center gap-4 pt-8 pl-22 hover:opacity-70">
+        <a href="/blog" class="flex flex-row items-center gap-4 pt-8 pl-22 hover:opacity-70">
             <span class="font-display text-xl">READ MORE</span>
             <img src="/images/arrow-default.png" alt="arrow pointing down" />
         </a>
