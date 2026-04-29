@@ -3,67 +3,50 @@
 </script>
 
 <h1 class="text-5xl font-bold">WORK AT NETRO</h1>
-<div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8">
-    <div class="grid grid-cols-2 gap-4 font-sans text-2xl">
-        <div class="mb-35 flex w-full flex-col gap-6">
-            <div class="flex items-center gap-4">
-                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
-                <div class="font-display flex flex-col">
-                    <span class="text-accent">Email</span>
-                    <a href="mailto:hello@netro.works" class="hover:text-white/70 hover:underline">hello@netro.works</a>
-                </div>
-            </div>
+<div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8 font-sans">
+    <div class="mb-6 grid grid-cols-2 gap-4">
+        <Textbox rows="1" placeholder="Your name" />
+        <Textbox rows="1" placeholder="Your email" />
+    </div>
 
-            <div class="flex items-center gap-4">
-                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
-                <div class="font-display flex flex-col">
-                    <span class="text-accent">Discord</span>
-                    <a
-                        href="https://discord.gg/HdKeWtV"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-white/70 hover:underline"
-                    >
-                        Click to join our server!
-                    </a>
-                </div>
+    <div class="mb-6 flex flex-row justify-between gap-4 text-xl">
+        <div class="flex w-full flex-col gap-6">
+            <div class="flex w-full flex-col gap-2">
+                <span>How did you discover Netro?</span>
+                <!-- todo: make this look nicer ig lol -->
+                <select class="border-accent/50 focus:ring-accent border bg-black/30 px-5 py-4 text-white placeholder:text-white/50">
+                    <option value="" disabled selected>Please select one</option>
+                    <option value="social-media">Social Media</option>
+                    <option value="partners">Partners</option>
+                    <option value="referral">Referral</option>
+                    <option value="word-of-mouth">Word of mouth</option>
+                    <option value="other">Other</option>
+                </select>
             </div>
-
-            <div class="flex items-center gap-4">
-                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
-                <div class="font-display flex flex-col">
-                    <span class="text-accent">GitHub</span>
-                    <a
-                        href="https://github.com/NetroSoftware"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-white/70 hover:underline"
-                    >
-                        Click to visit our GitHub!
-                    </a>
-                </div>
-            </div>
+            <p>
+                Attach your documents. Please include a resume (.doc, .docx, .pdf). If you can't provide this, please include a link to your
+                portfolio site.
+            </p>
+            <Textbox rows="1" placeholder="Your portfolio site" />
         </div>
-
-        <!-- wip -->
-        <div class="flex flex-col gap-4">
-            <div class="grid grid-cols-2 gap-4">
-                <Textbox rows="1" placeholder="Your name" />
-                <Textbox rows="1" placeholder="Your email" />
+        <!-- todo: add file upload functionality -->
+        <div class="flex w-full flex-col gap-6">
+            <div class="border-accent/80 flex flex-1 flex-col items-center justify-center border-2 border-dashed bg-black/44">
+                <span class="text-accent font-bold">Choose files</span>
+                <span class="text-white/44">or drop them here</span>
             </div>
-
-            <div class="flex-1">
-                <Textbox class="h-full w-full" placeholder="Message content" />
-            </div>
-
-            <!-- wip -->
-            <a
-                href="/submit"
-                class="bg-accent hover:bg-accent/70 font-display flex items-center gap-4 self-end py-4 pr-4 pl-7 text-lg font-bold"
-            >
-                SEND MESSAGE
-                <img src="/images/arrow-default.png" alt="arrow pointing down" />
-            </a>
+            <span><span class="text-accent">Choose files.</span> No files chosen</span>
         </div>
+    </div>
+
+    <!-- button -->
+    <div class="flex justify-end">
+        <a
+            href="/submit"
+            class="bg-accent hover:bg-accent/70 font-display flex items-center gap-4 self-end py-4 pr-4 pl-7 text-lg font-bold"
+        >
+            SEND APPLICATION
+            <img src="/images/arrow-default.png" alt="arrow pointing down" />
+        </a>
     </div>
 </div>
