@@ -3,6 +3,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 import { mdsvex, escapeSvelte } from 'mdsvex'
 import { createHighlighter } from 'shiki'
+import rehypeFigure from 'rehype-figure'
 
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,6 +23,7 @@ const mdsvexOptions = {
 			return `{@html \`${html}\` }`
 		}
 	},
+	rehypePlugins: [rehypeFigure],
 	layout: {
 		_: path.join(dirname, './src/lib/components/layouts/DefaultLayout.svelte'),
 		blog: path.join(dirname, './src/lib/components/layouts/BlogLayout.svelte')
