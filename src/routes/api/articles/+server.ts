@@ -1,20 +1,20 @@
-import type { Article } from '$lib/utils/types.ts';
+import type { Article, MdsvexModule } from '$lib/utils/types.ts';
 import { json } from '@sveltejs/kit';
 
 async function getArticles(articleType?: string) {
     let articles: Article[] = [];
 
-    const paths = import.meta.glob(`/src/articles/**/*.md`, { eager: true });
+    const paths = import.meta.glob<MdsvexModule>(`/src/articles/**/*.md`, { eager: true });
 
-    for (const path in paths) {
-        const file = paths[path];
-        const slug = path.replace('/src/articles/', '').replace(/\.md$/, '');
-
-        if (file && typeof file === 'object' && 'metadata' in file && slug && (!articleType || slug.startsWith(articleType))) {
-            const metadata = file.metadata as Omit<Article, 'slug'>;
-            const article = { ...metadata, slug } satisfies Article;
-            article.published && articles.push(article);
-        }
+    for (const { file, slug } of Object.keys(paths)
+        .map((path) => ({
+            file: paths[path],
+            slug: path.replace('/src/articles/', '').replace(/\.md$/, '')
+        }))
+        .filter((path) => !articleType || path.slug.startsWith(articleType))) {
+        const metadata = file.metadata as Omit<Article, 'slug'>;
+        const article = { ...metadata, slug } satisfies Article;
+        if (article.published) articles.push(article);
     }
     articles = articles.sort((first, second) => new Date(second.date).getTime() - new Date(first.date).getTime());
 

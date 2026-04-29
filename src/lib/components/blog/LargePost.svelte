@@ -1,9 +1,14 @@
 <script lang="ts">
-    export let title;
-    export let description;
-    export let link;
-    export let category;
-    export let image;
+    import type { Article } from '$lib/utils/types.js';
+
+    interface Props {
+        title: Article['title'];
+        description: Article['description'];
+        link: string;
+        category: Article['categories'][number];
+        image: Article['image'];
+    }
+    const { title, description, link, category, image }: Props = $props();
 </script>
 
 <div class="font-display border-accent relative border-b-12 bg-black/75">

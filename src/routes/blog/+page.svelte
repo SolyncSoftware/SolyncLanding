@@ -1,16 +1,15 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import LargePost from '$lib/components/blog/LargePost.svelte';
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
     import type { Article } from '$lib/utils/types.js';
-    let articles: Article[] = [];
-    let blogArticles: Article[] = [];
-    let loading = true;
+    import { onMount } from 'svelte';
+
+    let blogArticles = $state<Article[]>([]);
+    let loading = $state(true);
 
     onMount(async () => {
-        const res = await fetch('/api/articles');
-        articles = await res.json();
-        blogArticles = articles.filter((article) => article.slug.includes('blog'));
+        const res = await fetch('/api/articles?type=blog');
+        blogArticles = await res.json();
         loading = false;
     });
 </script>

@@ -1,15 +1,14 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import NetroGlobe from '$lib/components/assets/NetroGlobe.svelte';
-
     import type { Article } from '$lib/utils/types.js';
-    let articles: Article[] = [];
-    let blogArticles: Article[] = [];
-    let loading = true;
+    import { onMount } from 'svelte';
+
+    let blogArticles = $state<Article[]>([]);
+    let loading = $state(true);
     onMount(async () => {
-        const res = await fetch('/api/articles');
-        articles = await res.json();
-        blogArticles = articles.filter((article) => article.slug.includes('blog')).slice(0, 2);
+        const res = await fetch('/api/articles?type=blog'),
+            articles: Article[] = await res.json();
+        blogArticles = articles.slice(0, 2);
         loading = false;
     });
 </script>

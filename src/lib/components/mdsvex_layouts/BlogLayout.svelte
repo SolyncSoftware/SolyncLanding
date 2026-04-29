@@ -1,23 +1,22 @@
+<!-- 
+    Layout used for blog articles.
+-->
+
 <script lang="ts">
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
     import type { Article } from '$lib/utils/types.js';
-    import { onMount } from 'svelte';
+    import { onMount, type Snippet } from 'svelte';
     import type { TransformedMember } from '../../../routes/api/team/+server.js';
 
-    export let title;
-    export let author;
-    export let date;
-    export let categories;
-    export let image;
+    const { title, author, date, categories, image, children }: Article & { children: Snippet } = $props();
 
-    let articles: Article[] = [];
-    let blogArticles: Article[] = [];
-    let loading = true;
-    let teamMember: TransformedMember | undefined;
+    let blogArticles = $state<Article[]>([]);
+    let loading = $state(true);
+    let teamMember = $state<TransformedMember | undefined>();
 
     onMount(async () => {
         const res = await fetch('/api/articles?type=blog');
-        articles = await res.json();
+        const articles: Article[] = await res.json();
         blogArticles = articles
             .map((article) => {
                 article.slug = article.slug.replace('blog', '/blog');
@@ -40,7 +39,7 @@
     <div class="flex gap-8">
         <div class="markdown flex-2 font-sans text-2xl">
             <h1 class="font-display mb-12 text-5xl font-bold uppercase">{title}</h1>
-            <slot></slot>
+            {@render children()}
         </div>
         <div class="flex-1">
             <p class="bg-accent mb-11 w-fit py-4 pr-10 pl-5 text-3xl font-bold text-black uppercase">{categories[0]}</p>
