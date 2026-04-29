@@ -69,6 +69,12 @@ const teamData: TeamMember[] = [
         realName: 'Jason',
         username: 'flustix',
         bio: 'A rhythm game dev with a nanahira and choccy milk addiction.'
+    },
+    {
+        id: 50887230,
+        realName: 'Alex',
+        username: 'xela.codes',
+        bio: 'stupid coding nerd who knows a few things'
     }
 ];
 
