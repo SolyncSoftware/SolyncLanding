@@ -34,9 +34,10 @@
             <div class="flex flex-col">
                 <button
                     onclick={() => toggleBio(i)}
-                    class="hover:text-accent flex cursor-pointer flex-row items-center justify-center gap-4 align-middle"
-                    class:text-white={expandedIndex !== i}
-                    class:text-accent={expandedIndex === i}
+                    class={[
+                        'hover:text-accent flex cursor-pointer flex-row items-center justify-center gap-4 align-middle',
+                        expandedIndex === i ? 'text-accent' : 'text-white'
+                    ]}
                 >
                     <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
                     <div class="flex flex-row items-end gap-4 text-left transition">
@@ -58,13 +59,10 @@
                     </div>
                 </button>
                 <p
-                    class="cursor-default pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out"
-                    class:opacity-0={expandedIndex !== i}
-                    class:opacity-100={expandedIndex === i}
-                    class:max-h-0={expandedIndex !== i}
-                    class:max-h-96={expandedIndex === i}
-                    class:leading-0={expandedIndex !== i}
-                    class:leading-6={expandedIndex === i}
+                    class={[
+                        'cursor-default pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out',
+                        expandedIndex == i ? 'max-h-96 leading-6 opacity-100' : 'max-h-0 leading-0 opacity-0'
+                    ]}
                 >
                     {member.bio}
                 </p>
