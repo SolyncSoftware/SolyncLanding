@@ -44,19 +44,3 @@
 
     <!-- todo: read more section. grab latest articles -->
 </article>
-
-<style>
-    /* todo: proper markdown styling */
-    /* .markdown :global(h2) {
-        font-family: var(--font-sans);
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-        font-size: 1.875rem;
-        line-height: 2.25rem;
-        font-weight: 700;
-    }
-
-    .markdown :global(p) {
-        margin-bottom: 0.5rem;
-    } */
-</style>

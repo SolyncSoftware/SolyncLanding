@@ -54,14 +54,13 @@
 
 /* Links */
 .markdown a {
-    color: var(--color-accent);
+    color: var(--color-cyan-500);
     text-decoration: none;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
 }
 
 .markdown a:hover {
-    border-bottom-color: var(--color-accent);
+    border-bottom-color: var(--color-cyan-500);
 }
 
 /* Lists */
@@ -98,6 +97,10 @@
     color: rgba(255, 255, 255, 0.8);
     font-style: italic;
     background-color: var(--color-black);
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 /* Horizontal rules */
@@ -177,6 +180,7 @@
     margin-right: 0.5rem;
     vertical-align: middle;
     accent-color: var(--color-accent);
+    color: var(--color-accent);
 }
 
 /* Footnotes (if used with rehype-footnotes) */
