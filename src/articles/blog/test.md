@@ -20,7 +20,7 @@ I was feigning relief Wasn′t calm until now
 
 I need your guidance, will you see me? Can you see I need you now? This curse overwhelms me Can't you see I need you now? Oh, I need allegiance When you find me coming down I'll have only known the sound of your absence
 
-![stupid endermen](/images/fallback.png)
+![COOL ENDERMEN STANDING STILL](/images/fallback.png)
 
 Lunar studded starscape Doldrums in the calm Drama of dark choirs, God′s teeth shatter His black smile muted in padded shadow What is life? I don't know All I know is its price
 
