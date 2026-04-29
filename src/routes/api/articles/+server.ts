@@ -4,7 +4,7 @@ import { json } from '@sveltejs/kit';
 async function getArticles(articleType?: string) {
     let articles: Article[] = [];
 
-    const paths = import.meta.glob<MdsvexModule>(`/src/articles/**/*.md`, { eager: true });
+    const paths = import.meta.glob<MdsvexModule>('/src/articles/**/*.md', { eager: true });
 
     for (const { file, slug } of Object.keys(paths)
         .map((path) => ({
