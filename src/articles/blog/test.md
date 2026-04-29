@@ -2,13 +2,13 @@
 title: Introducint our new hish distrubution system
 description: Small description about this news post and what it is, spaghetti hoops - can be many paragraphs and probably 3 lines but it can be longer if you want 
 author: papertek
-date: 'April 1st, 2025'
+date: 'April 4th, 2026'
 categories:
   - announcement
   - news
   - blog
-published: true
 image: /images/gardens-wiki.png
+published: true
 ---
 
 Lunar studded starscape Doldrums in the calm Drama of dark choirs, God′s teeth shatter His black smile muted in padded shadow What is life? I don't know All I know is its price

@@ -1,12 +1,13 @@
 ---
 title: Test article 2
 description: Small description about this news post and what it is, spaghetti hoops - can be many paragraphs and probably 3 lines but it can be longer if you want 
-author: papertek
-date: 'April 1st, 2025'
+author: gapva
+date: 'April 4th, 2026'
 categories:
+  - announcement
   - news
   - blog
-  - holy moly
+image: "/images/avatarplaceholder.svg"
 published: true
 ---
 

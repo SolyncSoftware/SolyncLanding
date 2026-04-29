@@ -26,8 +26,10 @@
 
         const teamRes = await fetch('/api/team');
         const team = await teamRes.json();
-        teamMember = team.find((member: any) => member.username === author);
-
+        teamMember = team.find(
+            (member: any) =>
+                member.username?.toLowerCase() === author?.toLowerCase() || member.realName?.toLowerCase() === author?.toLowerCase()
+        );
         loading = false;
     });
 </script>
@@ -46,7 +48,9 @@
             <div class="border-accent flex flex-col border-l-6 pl-9">
                 <img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class="mb-3 h-46 w-46" />
                 <span class="text-3xl font-bold">{teamMember?.realName || 'No name lol'}</span>
-                <span class="font-sans text-2xl leading-7 font-light text-white/75">{author || 'Please add a author'}</span>
+                <span class="font-sans text-2xl leading-7 font-light text-white/75">
+                    {teamMember?.username || author || 'Please add a author'}
+                </span>
                 <span class="mt-8 font-sans text-2xl font-bold">{date}</span>
                 <span class="font-sans text-lg font-light text-white/75">Tags: {categories.join(', ')}</span>
             </div>
