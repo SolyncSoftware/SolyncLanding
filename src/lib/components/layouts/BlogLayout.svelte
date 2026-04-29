@@ -11,6 +11,7 @@
     let articles: Article[] = [];
     let blogArticles: Article[] = [];
     let loading = true;
+    let teamMember: any;
 
     onMount(async () => {
         const res = await fetch('/api/articles');
@@ -22,6 +23,11 @@
                 slug: article.slug.replace('blog', '/blog')
             }))
             .slice(0, 3);
+
+        const teamRes = await fetch('/api/team');
+        const team = await teamRes.json();
+        teamMember = team.find((member: any) => member.username === author);
+
         loading = false;
     });
 </script>
@@ -38,10 +44,9 @@
             <p class="bg-accent mb-11 w-fit py-4 pr-10 pl-5 text-3xl font-bold text-black uppercase">{categories[0]}</p>
 
             <div class="border-accent flex flex-col border-l-6 pl-9">
-                <!-- todo: profile pic from gh. possible endpoint -->
-                <img src="/images/avatarplaceholder.svg" alt="Profile" class="mb-3 h-46 w-46" />
-                <span class="text-3xl font-bold">RealName</span>
-                <span class="font-sans text-3xl leading-7 font-light">@{author}</span>
+                <img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class="mb-3 h-46 w-46" />
+                <span class="text-3xl font-bold">{teamMember?.realName || 'No name lol'}</span>
+                <span class="font-sans text-2xl leading-7 font-light text-white/75">{author || 'Please add a author'}</span>
                 <span class="mt-8 font-sans text-2xl font-bold">{date}</span>
                 <span class="font-sans text-lg font-light text-white/75">Tags: {categories.join(', ')}</span>
             </div>
