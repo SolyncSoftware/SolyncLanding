@@ -1,34 +1,34 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
+    import type { Article } from '$lib/utils/types.js';
+    import { onMount } from 'svelte';
+    import type { TransformedMember } from '../../../routes/api/team/+server.js';
+
     export let title;
     export let author;
     export let date;
     export let categories;
     export let image;
 
-    import type { Article } from '$lib/utils/types.js';
     let articles: Article[] = [];
     let blogArticles: Article[] = [];
     let loading = true;
-    let teamMember: any;
+    let teamMember: TransformedMember | undefined;
 
     onMount(async () => {
-        const res = await fetch('/api/articles');
+        const res = await fetch('/api/articles?type=blog');
         articles = await res.json();
         blogArticles = articles
-            .filter((article) => article.slug.includes('blog'))
-            .map((article) => ({
-                ...article,
-                slug: article.slug.replace('blog', '/blog')
-            }))
+            .map((article) => {
+                article.slug = article.slug.replace('blog', '/blog');
+                return article;
+            })
             .slice(0, 3);
 
         const teamRes = await fetch('/api/team');
-        const team = await teamRes.json();
+        const team: TransformedMember[] = await teamRes.json();
         teamMember = team.find(
-            (member: any) =>
-                member.username?.toLowerCase() === author?.toLowerCase() || member.realName?.toLowerCase() === author?.toLowerCase()
+            (member) => member.username?.toLowerCase() === author?.toLowerCase() || member.realName?.toLowerCase() === author?.toLowerCase()
         );
         loading = false;
     });
