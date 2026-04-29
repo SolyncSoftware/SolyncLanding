@@ -1,15 +1,14 @@
 <script lang="ts">
     import { SiBluesky, SiGithub } from '@icons-pack/svelte-simple-icons';
     import { onMount } from 'svelte';
+    import type { TransformedMember } from '../../../routes/api/team/+server.js';
 
-    // ???
-    let members = $state<any[]>([]);
-    let sortedMembers = $state<any[]>([]);
+    let sortedMembers = $state<TransformedMember[]>([]);
     let loading = $state(true);
 
     onMount(async () => {
-        const res = await fetch('/api/team');
-        members = await res.json();
+        const res = await fetch('/api/team'),
+            members = await res.json();
         sortedMembers = [...members].sort((a, b) => a.realName.localeCompare(b.realName));
         loading = false;
     });
@@ -70,7 +69,7 @@
                     {member.bio}
                 </p>
             </div>
-            {#if i < members.length - 1}
+            {#if i < sortedMembers.length - 1}
                 <hr class="text-white/15" />
             {/if}
         {/each}

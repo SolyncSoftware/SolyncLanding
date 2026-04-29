@@ -72,7 +72,7 @@ const teamData: TeamMember[] = [
     }
 ];
 
-interface TransformedMember {
+export interface TransformedMember {
     realName: string;
     username: string;
     bio: string;
