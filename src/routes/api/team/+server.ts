@@ -5,6 +5,7 @@ interface TeamMember {
     realName: string;
     username: string;
     bio: string;
+    github?: string;
     bsky?: string;
 }
 
@@ -74,6 +75,7 @@ const teamData: TeamMember[] = [
         id: 50887230,
         realName: 'Alex',
         username: 'xela.codes',
+        github: 'itzthemeow',
         bio: 'stupid coding nerd who knows a few things'
     }
 ];
@@ -93,7 +95,7 @@ function transformTeam(team: TeamMember[]): TransformedMember[] {
         username: member.username,
         bio: member.bio,
         bluesky: member.bsky ? `https://bsky.app/profile/${member.bsky}` : '#',
-        github: member.id > 0 ? `https://github.com/${member.username}` : '#',
+        github: member.id > 0 ? `https://github.com/${member.github || member.username}` : '#',
         avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/images/avatarplaceholder.svg'
     }));
 }
