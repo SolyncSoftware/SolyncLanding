@@ -1,9 +1,29 @@
-<script>
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import SmallPost from '$lib/components/blog/SmallPost.svelte';
     export let title;
     export let author;
     export let date;
     export let categories;
     export let image;
+
+    import type { Article } from '$lib/utils/types.js';
+    let articles: Article[] = [];
+    let blogArticles: Article[] = [];
+    let loading = true;
+
+    onMount(async () => {
+        const res = await fetch('/api/articles');
+        articles = await res.json();
+        blogArticles = articles
+            .filter((article) => article.slug.includes('blog'))
+            .map((article) => ({
+                ...article,
+                slug: article.slug.replace('blog', '/blog')
+            }))
+            .slice(0, 3);
+        loading = false;
+    });
 </script>
 
 <article>
@@ -28,5 +48,24 @@
         </div>
     </div>
 
-    <!-- todo: read more section. grab latest articles -->
+    <div class="mt-26">
+        <p class="font-display mb-9 text-5xl font-bold">READ MORE</p>
+        {#if loading}
+            <p class="text-xl">Loading articles...</p>
+        {:else if blogArticles.length === 0}
+            <p class="text-xl text-gray-400">No articles found.</p>
+        {:else}
+            <div class="grid grid-cols-3 gap-8">
+                {#each blogArticles as article}
+                    <SmallPost
+                        title={article.title}
+                        description={article.description}
+                        link={article.slug}
+                        category={article.categories[0]}
+                        image={article.image}
+                    />
+                {/each}
+            </div>
+        {/if}
+    </div>
 </article>
