@@ -4,7 +4,7 @@ description: Small description about this news post and what it is, spaghetti ho
 author: papertek
 date: 'April 1st, 2025'
 categories:
-  - news
+  - announcement
 published: true
 image: /images/gardens-wiki.png
 ---

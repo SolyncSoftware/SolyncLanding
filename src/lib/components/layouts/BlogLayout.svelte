@@ -1,8 +1,8 @@
 <script>
     export let title;
-    // export let author;
-    // export let date;
-    // export let categories;
+    export let author;
+    export let date;
+    export let categories;
     export let image;
 </script>
 
@@ -29,8 +29,17 @@
             <h1 class="font-display text-5xl font-bold uppercase">{title}</h1>
             <slot></slot>
         </div>
-        <!-- todo: github api pfp, probably using author for username or real name. need category, need date -->
-        <div class="bg-accent/20 flex-1">read todo notes</div>
+        <div class="flex-1">
+            <p class="bg-accent mb-11 w-fit py-4 pr-10 pl-5 text-3xl font-bold text-black uppercase">{categories[0]}</p>
+
+            <div class="border-accent flex flex-col border-l-6 pl-9">
+                <!-- todo: profile pic from gh. possible endpoint -->
+                <img src="/images/avatarplaceholder.svg" alt="Profile" class="mb-3 h-46 w-46" />
+                <span class="text-3xl font-bold">RealName</span>
+                <span class="font-sans text-3xl leading-7">@{author}</span>
+                <span class="mt-8 font-sans text-2xl font-bold">{date}</span>
+            </div>
+        </div>
     </div>
 
     <!-- todo: read more section. grab latest articles -->
