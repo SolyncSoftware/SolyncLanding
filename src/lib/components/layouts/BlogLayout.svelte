@@ -47,7 +47,7 @@
 
 <style>
     /* todo: proper markdown styling */
-    .markdown :global(h2) {
+    /* .markdown :global(h2) {
         font-family: var(--font-sans);
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
@@ -58,11 +58,5 @@
 
     .markdown :global(p) {
         margin-bottom: 0.5rem;
-    }
-
-    .markdown :global(ul) {
-        margin-bottom: 0.5rem;
-        margin-left: 1.5rem;
-        list-style-type: disc;
-    }
+    } */
 </style>
