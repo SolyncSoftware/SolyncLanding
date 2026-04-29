@@ -13,18 +13,18 @@
 
 @font-face {
     font-family: 'Red Hat Display';
-    src: url('/fonts/RedHatDisplay/RedHatDisplay-VariableFont_wght.woff') format('woff');
+    src: url('/fonts/RedHatDisplay/RedHatDisplay-VariableFont_wght.woff2') format('woff2');
     font-display: swap;
     font-style: normal;
-    font-weight: 200 700;
+    font-weight: 300 700;
 }
 
 @font-face {
     font-family: 'Red Hat Italic';
-    src: url('/fonts/RedHatDisplay/RedHatDisplay-Italic-VariableFont_wght.woff') format('woff');
+    src: url('/fonts/RedHatDisplay/RedHatDisplay-Italic.woff2') format('woff2');
     font-display: swap;
     font-style: italic;
-    font-weight: 200 700;
+    font-weight: 300 700;
 }
 
 @theme {
