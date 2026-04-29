@@ -47,6 +47,7 @@
     /* Typography */
     --font-sans: 'Red Hat Display', sans-serif;
     --font-display: 'Panchang-Variable', sans-serif;
+    --font-monospace: 'Red Hat Monospace', monospace;
 }
 
 /* General styles */
