@@ -1,12 +1,11 @@
 ---
-title: Test article 2
-description: Small description about this news post and what it is, spaghetti hoops - can be many paragraphs and probably 3 lines but it can be longer if you want 
+title: Test article
+description: Check out this markdown test article
 author: gapva
-date: 'April 4th, 2026'
+date: '2026-04-29T12:00:00.000Z'
 categories:
-  - announcement
-  - news
   - blog
+  - news
 image: "/images/avatarplaceholder.svg"
 published: true
 ---

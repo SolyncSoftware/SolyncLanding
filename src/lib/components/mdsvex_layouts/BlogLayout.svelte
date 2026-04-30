@@ -7,6 +7,7 @@
     import type { Article } from '$lib/utils/types.js';
     import { onMount, type Snippet } from 'svelte';
     import type { TransformedMember } from '../../../routes/api/team/+server.js';
+    import Formatting from '$lib/utils/formatting.js';
 
     const { title, author, date, categories, image, children }: Article & { children: Snippet } = $props();
 
@@ -50,7 +51,7 @@
                 <span class="font-sans text-2xl leading-7 font-light text-white/75">
                     {teamMember?.username || author || 'Please add a author'}
                 </span>
-                <span class="mt-8 font-sans text-2xl font-bold">{date}</span>
+                <span class="mt-8 font-sans text-2xl font-bold">{Formatting.formatDate(new Date(date).getTime() / 1000)}</span>
                 <span class="font-sans text-lg font-light text-white/75">Tags: {categories.join(', ')}</span>
             </div>
         </div>

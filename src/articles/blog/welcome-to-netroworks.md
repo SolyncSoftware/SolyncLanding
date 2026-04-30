@@ -1,8 +1,8 @@
 ---
-title: Introducing our new hish distribution system
-description: Small description about this news post and what it is, spaghetti hoops - can be many paragraphs and probably 3 lines but it can be longer if you want 
+title: Welcome to NetroWorks
+description: See our design process and thoughts developing this website and the future direction of Netro.
 author: papertek
-date: 'April 4th, 2026'
+date: '2026-04-30T12:00:00.000Z'
 categories:
   - announcement
   - news
