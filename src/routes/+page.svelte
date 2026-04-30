@@ -13,6 +13,10 @@
     });
 </script>
 
+<svelte:head>
+    <title>NetroWorks</title>
+</svelte:head>
+
 <section class="relative -my-16 -mr-21 grid min-h-screen grid-cols-[1fr_410px] grid-rows-[auto_auto]">
     <div class="pointer-events-none absolute inset-0 overflow-hidden">
         <NetroGlobe
