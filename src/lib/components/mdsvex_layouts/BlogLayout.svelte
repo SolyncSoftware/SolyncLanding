@@ -35,7 +35,7 @@
 </script>
 
 <article>
-    <img src={image || '/images/fallback.png'} alt="screenshot of news post" class="mb-16 h-94 w-full object-cover" />
+    <img src={image || '/images/articles/fallback.png'} alt="screenshot of news post" class="mb-16 h-94 w-full object-cover" />
 
     <div class="flex gap-18">
         <div class="markdown flex-2 font-sans text-2xl">

@@ -27,7 +27,7 @@
                 description={blogArticles[0].description}
                 link={blogArticles[0].slug}
                 category={blogArticles[0].categories[0]}
-                image={blogArticles[0].image}
+                image={blogArticles[0].image || '/images/articles/fallback.png'}
             />
 
             {#if blogArticles.length > 1}
@@ -38,7 +38,7 @@
                             description={article.description}
                             link={article.slug}
                             category={article.categories[0]}
-                            image={article.image}
+                            image={article.image || '/images/articles/fallback.png'}
                         />
                     {/each}
                 </div>
