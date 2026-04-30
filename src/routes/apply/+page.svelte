@@ -31,7 +31,9 @@
         </div>
         <!-- todo: add file upload functionality -->
         <div class="flex w-full flex-col gap-6">
-            <div class="border-accent/80 flex flex-1 flex-col items-center justify-center border-2 border-dashed bg-black/44">
+            <div
+                class="border-accent/80 flex flex-1 cursor-pointer flex-col items-center justify-center border-2 border-dashed bg-black/44"
+            >
                 <span class="text-accent font-bold">Choose files</span>
                 <span class="text-white/44">or drop them here</span>
             </div>
