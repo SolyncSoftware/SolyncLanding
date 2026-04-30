@@ -11,22 +11,14 @@ image: /images/articles/netroworks-article@2x.jpg
 published: true
 ---
 
-Lunar studded starscape Doldrums in the calm Drama of dark choirs, God′s teeth shatter His black smile muted in padded shadow What is life? I don't know All I know is its price
+From the deepest pits of the basement, we are finally ready to unveil NetroWorks.
 
-Savaging left me incomplete So I army-crawled toward a glow of craving and release Travesty in a gloomy world Where the embers of honeyed heat Formed a tar of black beginnings
+NetroWorks is our brand new landing page and the start of a new era for Netro. We tried to fianlize our branding so it's consistent throughout all platforms and we believe we have reached that goal. We plan to improve more stuff as we go on within the software industry!
 
-Where I own every want Always seeking to enter A taker begging for closure Go, I need aloneness
-I was feigning relief Wasn′t calm until now
+## Defining a new era
 
-I need your guidance, will you see me? Can you see I need you now? This curse overwhelms me Can't you see I need you now? Oh, I need allegiance When you find me coming down I'll have only known the sound of your absence
+The new era for Netro began by dropping "Corporation" from our name. We pushed this sentiment a lot internally because we don't believe it's good for branding, nor are people really thrilled seeing "Corporation" in a company's name. Our new "official" company name is Netro LLC (or Netro Software if we don't steal Netro).
+
+IM GAY IM GAY IMGAY
 
 ![COOL ENDERMEN STANDING STILL](/images/articles/fallback.png)
-
-Lunar studded starscape Doldrums in the calm Drama of dark choirs, God′s teeth shatter His black smile muted in padded shadow What is life? I don't know All I know is its price
-
-Savaging left me incomplete So I army-crawled toward a glow of craving and release Travesty in a gloomy world Where the embers of honeyed heat Formed a tar of black beginnings
-
-Where I own every want Always seeking to enter A taker begging for closure Go, I need aloneness
-I was feigning relief Wasn′t calm until now
-
-I need your guidance, will you see me? Can you see I need you now? This curse overwhelms me Can't you see I need you now? Oh, I need allegiance When you find me coming down I'll have only known the sound of your absence
