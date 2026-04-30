@@ -7,6 +7,7 @@ interface TeamMember {
     bio: string;
     github?: string;
     bsky?: string;
+    showUser?: boolean;
 }
 
 const teamData: TeamMember[] = [
@@ -77,6 +78,13 @@ const teamData: TeamMember[] = [
         username: 'xela.codes',
         github: 'itzthemeow',
         bio: 'stupid coding nerd who knows a few things'
+    },
+    {
+        id: 59844890,
+        realName: 'Team Netro',
+        username: '@NetroSoftware',
+        bio: 'The Netro Organization account',
+        showUser: false
     }
 ];
 
@@ -87,6 +95,7 @@ export interface TransformedMember {
     bluesky: string;
     github: string;
     avatarSrc: string;
+    showUser: boolean;
 }
 
 function transformTeam(team: TeamMember[]): TransformedMember[] {
@@ -96,7 +105,8 @@ function transformTeam(team: TeamMember[]): TransformedMember[] {
         bio: member.bio,
         bluesky: member.bsky ? `https://bsky.app/profile/${member.bsky}` : '#',
         github: member.id > 0 ? `https://github.com/${member.github || member.username}` : '#',
-        avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/images/avatarplaceholder.svg'
+        avatarSrc: member.id > 0 ? `https://avatars.githubusercontent.com/u/${member.id}` : '/images/avatarplaceholder.svg',
+        showUser: member.showUser !== false
     }));
 }
 

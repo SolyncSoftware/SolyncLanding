@@ -9,7 +9,7 @@
     onMount(async () => {
         const res = await fetch('/api/team'),
             members = await res.json();
-        sortedMembers = [...members].sort((a, b) => a.realName.localeCompare(b.realName));
+        sortedMembers = [...members].filter((member) => member.showUser).sort((a, b) => a.realName.localeCompare(b.realName));
         loading = false;
     });
 
