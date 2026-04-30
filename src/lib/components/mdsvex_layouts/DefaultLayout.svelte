@@ -1,20 +1,24 @@
-<script>
-    export let title;
-    // export let author;
-    export let date;
+<!--
+    Default fallback layout used for legal articles and articles without a specific layout.
+-->
+
+<script lang="ts">
+    import type { Article } from '$lib/utils/types.js';
+    import type { Snippet } from 'svelte';
+
+    const { title, date, children }: Article & { children: Snippet } = $props();
 </script>
 
-Test, news layout. this will be replaced
 <h1 class="text-5xl font-bold uppercase">{title}</h1>
-<div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black p-8">
+<article class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black p-8">
     <span class="font-sans text-2xl">
         <p class="text-accent">Written/Revised on {date}</p>
 
         <div class="markdown">
-            <slot></slot>
+            {@render children()}
         </div>
     </span>
-</div>
+</article>
 
 <style>
     .markdown :global(h2) {
