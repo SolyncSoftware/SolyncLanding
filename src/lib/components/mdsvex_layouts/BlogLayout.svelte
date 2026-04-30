@@ -36,7 +36,7 @@
 <article>
     <img src={image || '/images/fallback.png'} alt="screenshot of news post" class="mb-16 h-94 w-full object-cover" />
 
-    <div class="flex gap-8">
+    <div class="flex gap-18">
         <div class="markdown flex-2 font-sans text-2xl">
             <h1 class="font-display mb-12 text-5xl font-bold uppercase">{title}</h1>
             {@render children()}
