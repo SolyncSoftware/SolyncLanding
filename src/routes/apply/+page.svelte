@@ -3,6 +3,8 @@
 </script>
 
 <h1 class="text-5xl font-bold">WORK AT NETRO</h1>
+
+<!-- todo: redesign -->
 <div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8 font-sans">
     <div class="mb-6 grid grid-cols-2 gap-4">
         <Textbox rows="1" placeholder="Your name" />
