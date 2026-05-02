@@ -4,15 +4,17 @@
 
 <h1 class="text-5xl font-bold">WORK AT NETRO</h1>
 
-<!-- todo: redesign -->
 <div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8 font-sans">
-    <div class="mb-6 grid grid-cols-2 gap-4">
+    <!-- <div class="mb-6 grid grid-cols-2 gap-4">
         <Textbox rows="1" placeholder="Your name" />
         <Textbox rows="1" placeholder="Your email" />
-    </div>
+    </div> -->
 
     <div class="mb-6 flex flex-row justify-between gap-4 text-xl">
         <div class="flex w-full flex-col gap-6">
+            <Textbox rows="1" placeholder="Your name" />
+            <Textbox rows="1" placeholder="Your email" />
+
             <div class="flex w-full flex-col gap-2">
                 <span>How did you discover Netro?</span>
                 <!-- todo: make this look nicer ig lol -->
@@ -25,14 +27,14 @@
                     <option value="other">Other</option>
                 </select>
             </div>
-            <p>
-                Attach your documents. Please include a resume (.doc, .docx, .pdf). If you can't provide this, please include a link to your
-                portfolio site.
-            </p>
-            <Textbox rows="1" placeholder="Your portfolio site" />
+            <div class="flex w-full flex-col gap-2">
+                <p>If you can't include a resume, please include a link to your portfolio site.</p>
+                <Textbox rows="1" placeholder="Your portfolio site" />
+            </div>
         </div>
         <!-- todo: add file upload functionality -->
         <div class="flex w-full flex-col gap-6">
+            <p class="max-w-90">Attach your documents. Please include a resume (.doc, .docx, .pdf).</p>
             <div
                 class="border-accent/80 flex flex-1 cursor-pointer flex-col items-center justify-center border-2 border-dashed bg-black/44"
             >
