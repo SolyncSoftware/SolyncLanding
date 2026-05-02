@@ -66,12 +66,12 @@
             </span>
         </a>
 
-        <a href="https://alpha.potaro.wiki/news/gardens-wiki" class="relative">
-            <img src="/images/gardens-wiki.png" alt="Gardens Wiki" class="h-40 w-134 object-cover" />
+        <a href="https://theaceae.org/" class="relative">
+            <img src="/images/theaceae-banner@2x.jpg" alt="Gardens Wiki" class="h-40 w-134 object-cover" />
             <span
                 class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black"
             >
-                GARDENS WIKI
+                THEACEAE
             </span>
         </a>
     </div>
