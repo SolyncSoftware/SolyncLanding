@@ -13,14 +13,17 @@
                 <img src="/images/logo-white.svg" alt="netro logo" class="justify-center" />
                 <div class="flex flex-col gap-6">
                     <div>
-                        <span
-                            >&copy; 2022-2026 Netro LLC. All rights reserved. Design assistance by <a
+                        <span>
+                            &copy; 2022-2026 Netro LLC. All rights reserved. Design assistance by <a
                                 href="https://untone.org/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="underline">UNTONE</a
-                            >.</span
-                        >
+                                class="underline"
+                            >
+                                UNTONE
+                            </a>
+                            .
+                        </span>
                         <br />
                         <span>
                             Made with
@@ -57,7 +60,7 @@
                     <span class="font-display font-semibold">NETRO</span>
                     <a href="/about" class="footer-links">About Us</a>
                     <a href="/apply" class="footer-links">Work at Netro</a>
-                    <a href="/contact" class="footer-links">Customer Support</a>
+                    <a href="/contact" class="footer-links">Contact us</a>
                 </div>
                 <div class="flex flex-col gap-4">
                     <span class="font-display font-semibold">LEGAL</span>
@@ -71,6 +74,9 @@
                     <!-- <a href="https://gardens.wiki/" class="footer-links">Gardens Wiki</a> -->
                     <a href="https://theaceae.org/" class="footer-links">Theaceae Collective</a>
                     <a href="https://my.netro.works/" class="footer-links">myNetro Account</a>
+                    <a href="https://github.com/sponsors/NetroSoftware" target="_blank" rel="noopener noreferrer" class="footer-links">
+                        GitHub Sponsors
+                    </a>
                 </div>
             </div>
         </div>
