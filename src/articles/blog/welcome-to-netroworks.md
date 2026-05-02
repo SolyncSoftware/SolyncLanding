@@ -7,7 +7,7 @@ categories:
   - announcement
   - news
   - blog
-image: /images/articles/netroworks-article@2x.jpg
+image: /images/articles/fallback.png
 published: true
 ---
 

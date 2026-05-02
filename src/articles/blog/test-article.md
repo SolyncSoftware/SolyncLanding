@@ -6,7 +6,6 @@ date: '2026-04-29T12:00:00.000Z'
 categories:
   - blog
   - news
-image: "/images/avatarplaceholder.svg"
 published: true
 ---
 
