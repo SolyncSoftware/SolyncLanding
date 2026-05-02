@@ -34,12 +34,12 @@
                 <img src="/images/logo-blue.svg" alt="netro logo" width="540" height="118" />
             </a>
         </div>
-        <span class="font-display max-w-194 text-xl">
-            <p>We create software, NetroHost, Gardens Wiki, and more.</p>
+        <span class="font-display max-w-200 text-xl">
+            <p>We own software like NetroHost, Gardens Wiki, Theaceace, and more.</p>
             <br />
             <p>
-                We're a small software collective creating what we love. It's not only because we want to, we need to. We collaborate to
-                create what's next.
+                We're a small software collective creating user-first experiences. It's not only because we love to, but we think it's
+                ethical. We collaborate to create what's next.
             </p>
         </span>
         <div class="flex flex-row items-start gap-8 text-xl">
