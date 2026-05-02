@@ -71,7 +71,7 @@
                         description={article.description}
                         link={article.slug}
                         category={article.categories[0]}
-                        image={article.image}
+                        image={article.image || '/images/articles/fallback.png'}
                     />
                 {/each}
             </div>
