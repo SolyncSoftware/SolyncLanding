@@ -1,5 +1,6 @@
 <script lang="ts">
     import NetroGlobe from '$lib/components/assets/NetroGlobe.svelte';
+    import ButtonSimple from '$lib/components/ButtonSimple.svelte';
     import NetroLogo from '$lib/components/NetroLogo.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
@@ -44,15 +45,8 @@
             </p>
         </span>
         <div class="flex flex-row items-start gap-8 text-xl">
-            <a href="/about" class="flex flex-row items-center gap-4 hover:opacity-70">
-                <span class="font-display">LEARN MORE</span>
-                <img src="/images/arrow-default.png" alt="arrow pointing down" />
-            </a>
-
-            <a href="/apply" class="flex flex-row items-center gap-4 hover:opacity-70">
-                <span class="font-display">JOIN US</span>
-                <img src="/images/arrow-default.png" alt="arrow pointing down" />
-            </a>
+            <ButtonSimple text="LEARN MORE" href="/about" />
+            <ButtonSimple text="JOIN US" href="/apply" />
         </div>
     </div>
 
@@ -64,6 +58,7 @@
                 <img
                     src="/images/netrohost.png"
                     alt="NetroHost"
+                    loading="lazy"
                     class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
                 />
                 <span
@@ -77,6 +72,7 @@
                 <img
                     src="/images/theaceae-banner@2x.jpg"
                     alt="Gardens Wiki"
+                    loading="lazy"
                     class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
                 />
                 <span
@@ -123,10 +119,6 @@
                 {/each}
             </div>
         {/if}
-
-        <a href="/blog" class="flex flex-row items-center gap-4 pt-8 pl-22 hover:opacity-70">
-            <span class="font-display text-xl">READ MORE</span>
-            <img src="/images/arrow-default.png" alt="arrow pointing down" />
-        </a>
+        <ButtonSimple text="READ MORE" href="/blog" class="pt-8 pl-22 text-xl" />
     </aside>
 </section>

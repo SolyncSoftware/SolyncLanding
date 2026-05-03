@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Article } from '$lib/utils/types.js';
+    import ButtonSimple from '../ButtonSimple.svelte';
 
     interface Props {
         title: Article['title'];
@@ -21,9 +22,6 @@
                 {description}
             </p>
         </div>
-        <a href={link} class="flex flex-row items-center gap-4 self-end hover:opacity-70">
-            <span class="font-display text-lg">READ MORE</span>
-            <img src="/images/arrow-default.png" alt="arrow pointing down" />
-        </a>
+        <ButtonSimple text="READ MORE" href={link} class="self-end text-lg" />
     </div>
 </div>
