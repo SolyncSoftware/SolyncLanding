@@ -1,76 +1,86 @@
 <script lang="ts">
     import { onMount, tick } from 'svelte';
+    import Page from '../../../routes/+page.svelte';
+    let {
+        style = '',
+        className = '',
+        wavesType = '',
+        backgroundImage = '/images/waves.png',
+        backgroundSize = 'cover',
+        autoFallback = true,
+        fpsThreshold = 45,
+        sampleDurationMs = 1000
+    } = $props();
 
-    export let style = '';
-    export let className = '';
-    export let wavesType = '';
-    export let backgroundImage = '/images/waves.png';
-    export let backgroundSize = 'cover';
-    export let autoFallback = true;
-    export let fpsThreshold = 45;
-    export let sampleDurationMs = 2000;
+    let useWebgl = $state(false);
+    let perfChecked = $state(false);
+    let embedEl = $state<HTMLDivElement | null>(null);
 
-    let useWebgl = false;
-    let embedEl: HTMLDivElement | null = null;
+    const fpsMonitor = (duration: number): Promise<number> => {
+        return new Promise((resolve) => {
+            let frames = 0;
+            const start = performance.now();
+            let rafId: number;
 
-    async function initUnicorn() {
+            const check = (now: number) => {
+                frames++;
+                if (now - start >= duration) {
+                    resolve((frames * 1000) / (now - start));
+                    return;
+                }
+                rafId = requestAnimationFrame(check);
+            };
+            rafId = requestAnimationFrame(check);
+        });
+    };
+
+    const initUnicorn = async () => {
         await tick();
-        if (!embedEl || typeof UnicornStudio === 'undefined') {
-            return;
+        if (!embedEl || typeof UnicornStudio === 'undefined') return;
+        try {
+            await UnicornStudio.init();
+        } catch (e) {
+            console.error('Unicorn oopsie!:', e);
         }
-        UnicornStudio.init().catch(console.error);
-    }
+    };
 
     onMount(() => {
-        let isMounted = false;
-
-        if (!autoFallback) {
-            useWebgl = true;
-            initUnicorn();
-
-            return () => {
-                isMounted = true;
-            };
-        }
-
-        if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+        if (autoFallback && window.matchMedia('(prefers-reduced-motion: reduce)').matches && navigator.hardwareConcurrency <= 2) {
             return;
         }
+        let active = true;
 
-        let frameCount = 0;
-        let startTime = performance.now();
-        let raf = 0;
-
-        const perfCheck = (now: number) => {
-            frameCount++;
-
-            if (now - startTime >= sampleDurationMs) {
-                const framesAvg = (now - startTime) / frameCount;
-                if (1000 / framesAvg >= fpsThreshold) {
-                    useWebgl = true;
-                    void initUnicorn().catch(console.error);
-                }
-                return;
+        async function runChecks() {
+            if (autoFallback) {
+                const initialFps = await fpsMonitor(sampleDurationMs);
+                if (initialFps < fpsThreshold || !active) return;
             }
-            raf = requestAnimationFrame(perfCheck);
-        };
 
-        raf = requestAnimationFrame(perfCheck);
+            useWebgl = true;
+            perfChecked = true;
+            await initUnicorn();
 
+            const postFps = await fpsMonitor(sampleDurationMs);
+            if (postFps < fpsThreshold && active) {
+                console.error('Bad waves performance, unmounting');
+                useWebgl = false;
+                perfChecked = false;
+            }
+        }
+        runChecks();
         return () => {
-            isMounted = false;
-            cancelAnimationFrame(raf);
+            active = false;
         };
     });
 </script>
 
-<div class={`relative overflow-hidden ${className}`} style={`width: 100%; ${style}`}>
+<div class="relative overflow-hidden {className}" style="width: 100%; {style}">
     <div
         class="absolute inset-0 z-0"
-        style={`background-image: url(${backgroundImage}); background-size: ${backgroundSize}; background-position: center;`}
+        style="background-image: url({backgroundImage}); background-size: {backgroundSize}; background-position: center;"
     ></div>
 
-    {#if useWebgl}
+    {#if useWebgl && perfChecked}
         <div
             bind:this={embedEl}
             class="unicorn-embed pointer-events-none absolute inset-0 z-1"
