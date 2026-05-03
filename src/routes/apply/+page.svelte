@@ -1,5 +1,6 @@
 <script lang="ts">
     import Textbox from '$lib/components/Textbox.svelte';
+    import Button from '$lib/components/Button.svelte';
 </script>
 
 <h1 class="text-5xl font-bold">WORK AT NETRO</h1>
@@ -38,14 +39,7 @@
         </div>
     </div>
 
-    <!-- todo: replace with button component from main branch -->
     <div class="flex justify-end">
-        <a
-            href="/submit"
-            class="bg-accent hover:bg-accent/70 font-display flex items-center gap-4 self-end py-4 pr-4 pl-7 text-lg font-bold"
-        >
-            SEND APPLICATION
-            <img src="/images/arrow-default.png" alt="arrow pointing down" />
-        </a>
+        <Button href="/submit" text="send application" />
     </div>
 </div>
