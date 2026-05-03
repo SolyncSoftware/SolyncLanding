@@ -3,7 +3,7 @@
 
     export let style = '';
     export let className = '';
-    export let wavesType = '/netro_glyph.json';
+    export let wavesType = '/netro_glyph_old.json';
     export let backgroundImage = '/images/logo-ascii.png';
     export let backgroundSize = 'contain';
     export let autoFallback = true;
