@@ -12,7 +12,7 @@
 <h1 class="text-5xl font-bold uppercase">{title}</h1>
 <article class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black p-8">
     <span class="font-sans text-2xl">
-        <p class="text-accent">Written/Revised on {date}</p>
+        <p class="text-accent font-bold">Written/Revised on {date}</p>
 
         <div class="markdown">
             {@render children()}
@@ -28,6 +28,7 @@
         font-size: 1.875rem;
         line-height: 2.25rem;
         font-weight: 700;
+        text-transform: uppercase;
     }
 
     .markdown :global(p) {
