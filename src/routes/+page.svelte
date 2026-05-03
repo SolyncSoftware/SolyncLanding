@@ -64,6 +64,7 @@
                 <img
                     src="/images/netrohost.png"
                     alt="NetroHost"
+                    loading="lazy"
                     class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
                 />
                 <span
@@ -77,6 +78,7 @@
                 <img
                     src="/images/theaceae-banner@2x.jpg"
                     alt="Gardens Wiki"
+                    loading="lazy"
                     class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
                 />
                 <span
