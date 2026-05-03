@@ -69,13 +69,9 @@
                     <span class="heart text-error inline-block">&#10084;</span>
                     in Texas.
                 </span>
-                <span class="text-xs tracking-[24%] text-white/40"
-                    >&copy; 2022-2026 NETRO LLC // Design assistance by <a
-                        href="https://untone.org/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-white/40 underline hover:text-white">UNTONE</a
-                    >.
+                <span class="text-xs tracking-[24%] text-white/40">
+                    &copy; 2022-2026 NETRO LLC // Design assistance by
+                    <a href="https://untone.org/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">UNTONE</a>.
                 </span>
             </div>
         </div>
@@ -83,10 +79,10 @@
             <div class="flex flex-row gap-14">
                 {#each footerSections as section}
                     <div class="flex flex-col gap-4">
-                        <span class="bg-accent font-display w-fit py-2 pr-2 pl-4 text-right font-semibold text-black">
+                        <span class="bg-accent font-display w-fit px-3 py-2 font-semibold text-black">
                             {section.title}
                         </span>
-                        <nav class="flex flex-col gap-4 border-l-2 border-white/10 pl-4">
+                        <nav class="border-accent flex flex-col gap-4 border-l-2 pl-4">
                             {#each section.links as link}
                                 <a
                                     href={link.href}
@@ -124,7 +120,7 @@
 <style scoped>
     a.footer-links {
         &:hover {
-            color: #e5e7eb;
+            color: #ffffff;
         }
     }
 
