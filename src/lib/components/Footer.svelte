@@ -1,6 +1,7 @@
 <script>
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
     import Waves from '$lib/components/assets/Waves.svelte';
+    import NetroLogo from './NetroLogo.svelte';
 </script>
 
 <footer class="border-accent relative overflow-hidden border-t-8">
@@ -11,7 +12,7 @@
         <div class=" flex flex-row justify-between">
             <div class="flex flex-col gap-18 text-lg">
                 <a href="/">
-                    <img src="/images/logo-white.svg" alt="netro logo" class="justify-center" />
+                    <NetroLogo class="hover:fill-accent fill-white transition-colors duration-300 ease-in-out" width="653" height="143" />
                 </a>
                 <div class="flex flex-col gap-6">
                     <div>
