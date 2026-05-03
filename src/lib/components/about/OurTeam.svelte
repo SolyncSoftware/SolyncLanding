@@ -36,11 +36,19 @@
                 <button
                     onclick={() => toggleBio(i)}
                     class={[
-                        'hover:text-accent flex cursor-pointer flex-row items-center justify-center gap-4 align-middle',
+                        'hover:text-accent group flex cursor-pointer flex-row items-center justify-center gap-4 align-middle',
                         expandedIndex === i ? 'text-accent' : 'text-white'
                     ]}
                 >
-                    <img class="h-19 w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
+                    <img
+                        class={[
+                            'h-19 w-19 outline-2 transition',
+                            expandedIndex === i ? 'outline-accent outline' : 'group-hover:outline-accent outline outline-transparent'
+                        ]}
+                        loading="lazy"
+                        src={member.avatarSrc}
+                        alt={member.realName}
+                    />
                     <div class="flex flex-row items-end gap-4 text-left transition">
                         <p class="text-4xl font-bold">{member.realName}</p>
                         <p class="text-2xl font-light">{member.username}</p>
