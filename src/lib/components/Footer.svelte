@@ -58,13 +58,13 @@
             <a href="/">
                 <NetroLogo class="hover:fill-accent mb-8 fill-white transition-colors duration-300 ease-in-out" width="540" height="118" />
             </a>
-            <div class="border-accent border-l-4 pl-6">
+            <div class="border-accent flex flex-col gap-6 border-l-4 pl-6">
                 <p class="max-w-[42ch]">
                     Home of the future. We're a small software collective creating user-first experiences. We collaborate to create what's
                     next.
                 </p>
-                <br />
-                <span class="mb-4 block">
+
+                <span>
                     Made with
                     <span class="heart text-error inline-block">&#10084;</span>
                     in Texas.
