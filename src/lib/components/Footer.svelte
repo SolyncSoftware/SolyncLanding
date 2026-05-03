@@ -49,8 +49,10 @@
 
     <div class="col-start-1 row-start-1 h-full w-full">
         <Waves
-            style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background-image: url(/images/static-footer.jpg);"
+            style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;"
             wavesType="/netro_footer.json"
+            backgroundImage="/images/static-footer.jpg"
+            backgroundSize="contain"
         />
     </div>
     <!-- the actual footer -->
