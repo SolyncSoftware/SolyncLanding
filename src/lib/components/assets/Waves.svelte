@@ -7,7 +7,7 @@
     export let backgroundImage = '/images/waves.png';
     export let backgroundSize = 'cover';
     export let autoFallback = true;
-    export let fpsThreshold = 15;
+    export let fpsThreshold = 45;
     export let sampleDurationMs = 2000;
 
     let useWebgl = false;
@@ -48,7 +48,7 @@
                 const framesAvg = (now - startTime) / frameCount;
                 if (1000 / framesAvg >= fpsThreshold) {
                     useWebgl = true;
-                    void initUnicorn();
+                    void initUnicorn().catch(console.error);
                 }
                 return;
             }
