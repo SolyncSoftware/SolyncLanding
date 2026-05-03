@@ -5,11 +5,6 @@
 <h1 class="text-5xl font-bold">WORK AT NETRO</h1>
 
 <div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8 font-sans">
-    <!-- <div class="mb-6 grid grid-cols-2 gap-4">
-        <Textbox rows="1" placeholder="Your name" />
-        <Textbox rows="1" placeholder="Your email" />
-    </div> -->
-
     <div class="mb-6 flex flex-row justify-between gap-4 text-xl">
         <div class="flex w-full flex-col gap-6">
             <Textbox rows="1" placeholder="Your name" />
@@ -43,7 +38,7 @@
         </div>
     </div>
 
-    <!-- button -->
+    <!-- todo: replace with button component from main branch -->
     <div class="flex justify-end">
         <a
             href="/submit"
