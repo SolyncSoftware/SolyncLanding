@@ -1,5 +1,6 @@
 <script lang="ts">
     import NetroGlobe from '$lib/components/assets/NetroGlobe.svelte';
+    import NetroLogo from '$lib/components/NetroLogo.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
 
@@ -31,7 +32,7 @@
     <div class="transform-0 col-start-1 row-start-1 flex flex-col items-start gap-12">
         <div class="pt-21">
             <a href="/">
-                <img src="/images/logo-blue.svg" alt="netro logo" width="540" height="118" />
+                <NetroLogo class="fill-accent transition-colors duration-300 ease-in-out hover:fill-white" width="540" height="118" />
             </a>
         </div>
         <span class="font-display max-w-200 text-xl">
