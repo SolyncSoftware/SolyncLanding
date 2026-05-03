@@ -60,7 +60,7 @@
     <div class="col-start-1 row-start-2 mt-12 flex flex-col gap-5">
         <!-- Row for the project banners -->
         <div class="flex gap-8">
-            <a href="https://netro.host" class="group relative inline-block h-fit">
+            <a href="https://netro.host" target="_blank" rel="noopener noreferrer" class="group relative inline-block h-fit">
                 <img
                     src="/images/netrohost.png"
                     alt="NetroHost"
@@ -73,7 +73,7 @@
                 </span>
             </a>
 
-            <a href="https://theaceae.org/" class="group relative inline-block h-fit">
+            <a href="https://theaceae.org/" target="_blank" rel="noopener noreferrer" class="group relative inline-block h-fit">
                 <img
                     src="/images/theaceae-banner@2x.jpg"
                     alt="Gardens Wiki"
