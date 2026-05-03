@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount, tick } from 'svelte';
-    import Page from '../../../routes/+page.svelte';
+
     let {
         style = '',
         className = '',
