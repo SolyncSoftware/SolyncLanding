@@ -2,6 +2,7 @@
     import { SiBluesky, SiGithub } from '@icons-pack/svelte-simple-icons';
     import { onMount } from 'svelte';
     import type { TransformedMember } from '../../../routes/api/team/+server.js';
+    import Button from '../Button.svelte';
 
     let sortedMembers = $state<TransformedMember[]>([]);
     let loading = $state(true);
@@ -74,8 +75,6 @@
     {/if}
     <div class="mt-12 flex flex-row items-center justify-end gap-6 text-xl">
         <span class="font-bold">Think you'd be a good addition?</span>
-        <a href="/apply" class="bg-accent hover:bg-accent/70 flex items-center gap-4 py-4 pr-4 pl-7 font-bold">
-            JOIN NETRO<img src="/images/arrow-default.png" alt="arrow pointing down" />
-        </a>
+        <Button href="/apply" text="JOIN NETRO" class="text-xl" />
     </div>
 </section>
