@@ -19,7 +19,7 @@ NetroWorks isn't just 30 buckets of fresh, wet paint; we have overhauled how we 
 
 ## Defining a new era
 
-The biggest change we've made was dropping "corporation" from our name. For years, "corporation" was something we used but it felt at odds with who we really are. We're don't have any board members and we don't want any, either. We are a collective of creators, developers, designers, and IT who all work together.
+The biggest change we've made was dropping "corporation" from our name. For years, "corporation" was something we used but it felt at odds with who we really are. We don't have any board members and we don't want any, either. We are a collective of creators, developers, designers, and IT who all work together.
 
 Internally, we were also pushing for change. We didn't want a brand that gave people the wrong impression just because we had "corporation" in the name. We also believed that software is built by humans, for humans. So, we nuked "corporation" to reflect this new direction.
 
