@@ -4,7 +4,7 @@
     import { dev } from '$app/environment';
     import Waves from '$lib/components/assets/Waves.svelte';
     import DevBanner from '$lib/components/DevBanner.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+    import Footer from '$lib/components/footer/Footer.svelte';
     import Header from '$lib/components/Header.svelte';
     import { onMount, type Snippet } from 'svelte';
     import '../styles/tailwind.css';
