@@ -24,7 +24,7 @@
 {/if}
 <main class="font-display flex flex-col px-21 py-16">
     <div class="fixed top-0 left-0 -z-10 w-full">
-        <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" />
+        <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
     </div>
     <h1 class="text-5xl font-bold">{page?.data?.title}</h1>
     {@render children()}
