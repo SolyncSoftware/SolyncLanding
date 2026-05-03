@@ -48,7 +48,7 @@
             <div class="flex flex-row gap-14">
                 <div class="flex flex-col gap-4">
                     <span class="bg-accent font-display w-fit py-2 pr-2 pl-4 text-right font-semibold text-black">NETRO</span>
-                    <span class="flex flex-col gap-4 border-l border-white/10 pl-4">
+                    <span class="flex flex-col gap-4 border-l-2 border-white/10 pl-4">
                         <a href="/about" class="footer-links">About Us</a>
                         <a href="/apply" class="footer-links">Work at Netro</a>
                         <!-- <a href="/partnerships" class="footer-links">Partnerships</a> -->
@@ -57,16 +57,16 @@
                 </div>
                 <div class="flex flex-col gap-4">
                     <span class="bg-accent font-display w-fit py-2 pr-2 pl-4 text-right font-semibold text-black">SERVICES</span>
-                    <span class="flex flex-col gap-4 border-l border-white/10 pl-4">
-                        <a href="https://netro.host/" class="footer-links">NetroHost</a>
-                        <a href="https://theaceae.org/" class="footer-links">Theaceae Collective</a>
-                        <!-- <a href="https://gardens.wiki" class="footer-links">Gardens Wiki</a> -->
+                    <span class="flex flex-col gap-4 border-l-2 border-white/10 pl-4">
+                        <a href="https://netro.host/" target="_blank" class="footer-links">NetroHost</a>
+                        <a href="https://theaceae.org/" target="_blank" class="footer-links">Theaceae Collective</a>
+                        <!-- <a href="https://gardens.wiki" target="_blank" class="footer-links">Gardens Wiki</a> -->
                         <a href="https://my.netro.works/" class="footer-links">myNetro</a>
                     </span>
                 </div>
                 <div class="flex flex-col gap-4">
                     <span class="bg-accent font-display w-fit py-2 pr-2 pl-4 text-right font-semibold text-black">MORE</span>
-                    <span class="flex flex-col gap-4 border-l border-white/10 pl-4">
+                    <span class="flex flex-col gap-4 border-l-2 border-white/10 pl-4">
                         <a href="/legal/privacy" class="footer-links">Privacy Policy</a>
                         <a href="/legal/terms" class="footer-links">Terms of Service</a>
                         <a href="/legal/netrohost/terms" class="footer-links">NetroHost Terms</a>
