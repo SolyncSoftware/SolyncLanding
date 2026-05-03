@@ -1,7 +1,7 @@
 <script lang="ts">
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
-    import Waves from '../assets/Waves.svelte';
-    import NetroLogo from '../NetroLogo.svelte';
+    import Waves from './assets/Waves.svelte';
+    import NetroLogo from './NetroLogo.svelte';
 
     let footerSections = $state([
         {
