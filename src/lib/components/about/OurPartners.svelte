@@ -4,13 +4,16 @@
         alt: string;
         href?: string;
     }
-    export let partners: Partner[] = [
-        {
-            src: '/images/untone.svg',
-            alt: 'Untone logo',
-            href: 'https://untone.org/'
-        }
-    ];
+
+    let {
+        partners = [
+            {
+                src: '/images/untone.svg',
+                alt: 'Untone logo',
+                href: 'https://untone.org/'
+            }
+        ]
+    }: { partners?: Partner[] } = $props();
 </script>
 
 <section>
@@ -19,15 +22,21 @@
             {#snippet partnerImg()}
                 <img src={partner.src} alt={partner.alt} class="h-full w-full object-contain" />
             {/snippet}
-            <div class="border-accent relative items-center border-2 bg-black/50 p-10">
-                {#if partner.href}
-                    <a href={partner.href} target="_blank" rel="noopener noreferrer" aria-label={partner.alt}>
-                        {@render partnerImg()}
-                    </a>
-                {:else}
+
+            {#if partner.href}
+                <a
+                    href={partner.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group border-accent relative flex items-center border-2 bg-black/50 p-10 transition-all hover:border-white hover:bg-black/70"
+                >
                     {@render partnerImg()}
-                {/if}
-            </div>
+                </a>
+            {:else}
+                <div class="border-accent relative flex items-center border-2 bg-black/50 p-10">
+                    {@render partnerImg()}
+                </div>
+            {/if}
         {/each}
     </div>
 </section>
