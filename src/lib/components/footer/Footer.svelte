@@ -1,7 +1,42 @@
-<script>
+<script lang="ts">
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
     import Waves from '../assets/Waves.svelte';
     import NetroLogo from '../NetroLogo.svelte';
+
+    let footerSections = $state([
+        {
+            title: 'NETRO',
+            links: [
+                { name: 'About Us', href: '/about' },
+                { name: 'Work at Netro', href: '/apply' },
+                { name: 'Contact us', href: '/contact' }
+            ]
+        },
+        {
+            title: 'SERVICES',
+            links: [
+                { name: 'NetroHost', href: 'https://netro.host/', external: true },
+                { name: 'Theaceae Collective', href: 'https://theaceae.org/', external: true },
+                { name: 'myNetro', href: 'https://my.netro.works/' }
+            ]
+        },
+        {
+            title: 'MORE',
+            links: [
+                { name: 'Privacy Policy', href: '/legal/privacy' },
+                { name: 'Terms of Service', href: '/legal/terms' },
+                { name: 'NetroHost Terms', href: '/legal/netrohost/terms' },
+                { name: 'GitHub Sponsors', href: 'https://github.com/sponsors/NetroSoftware', external: true }
+            ]
+        }
+    ]);
+
+    let socials = $state([
+        { icon: SiDiscord, href: 'https://discord.gg/HdKeWtV' },
+        { icon: SiYoutube, href: 'https://youtube.com/@NetroCorp' },
+        { icon: SiBluesky, href: 'https://bsky.app/profile/netrocorp.net' },
+        { icon: SiGithub, href: 'https://github.com/NetroSoftware' }
+    ]);
 </script>
 
 <footer class="border-accent relative overflow-hidden border-t-8">
@@ -40,65 +75,46 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="text-white/40 underline hover:text-white">UNTONE</a
-                    >.</span
-                >
+                    >.
+                </span>
             </div>
         </div>
         <div class="flex flex-col justify-between">
             <div class="flex flex-row gap-14">
-                <div class="flex flex-col gap-4">
-                    <span class="bg-accent font-display w-fit py-2 pr-2 pl-4 text-right font-semibold text-black">NETRO</span>
-                    <span class="flex flex-col gap-4 border-l-2 border-white/10 pl-4">
-                        <a href="/about" class="footer-links">About Us</a>
-                        <a href="/apply" class="footer-links">Work at Netro</a>
-                        <!-- <a href="/partnerships" class="footer-links">Partnerships</a> -->
-                        <a href="/contact" class="footer-links">Contact us</a>
-                    </span>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <span class="bg-accent font-display w-fit py-2 pr-2 pl-4 text-right font-semibold text-black">SERVICES</span>
-                    <span class="flex flex-col gap-4 border-l-2 border-white/10 pl-4">
-                        <a href="https://netro.host/" target="_blank" class="footer-links">NetroHost</a>
-                        <a href="https://theaceae.org/" target="_blank" class="footer-links">Theaceae Collective</a>
-                        <!-- <a href="https://gardens.wiki" target="_blank" class="footer-links">Gardens Wiki</a> -->
-                        <a href="https://my.netro.works/" class="footer-links">myNetro</a>
-                    </span>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <span class="bg-accent font-display w-fit py-2 pr-2 pl-4 text-right font-semibold text-black">MORE</span>
-                    <span class="flex flex-col gap-4 border-l-2 border-white/10 pl-4">
-                        <a href="/legal/privacy" class="footer-links">Privacy Policy</a>
-                        <a href="/legal/terms" class="footer-links">Terms of Service</a>
-                        <a href="/legal/netrohost/terms" class="footer-links">NetroHost Terms</a>
-                        <a href="https://github.com/sponsors/NetroSoftware" target="_blank" rel="noopener noreferrer" class="footer-links">
-                            GitHub Sponsors
-                        </a>
-                    </span>
-                </div>
+                {#each footerSections as section}
+                    <div class="flex flex-col gap-4">
+                        <span class="bg-accent font-display w-fit py-2 pr-2 pl-4 text-right font-semibold text-black">
+                            {section.title}
+                        </span>
+                        <nav class="flex flex-col gap-4 border-l-2 border-white/10 pl-4">
+                            {#each section.links as link}
+                                <a
+                                    href={link.href}
+                                    class="footer-links transition-colors"
+                                    target={link.external ? '_blank' : undefined}
+                                    rel={link.external ? 'noopener noreferrer' : undefined}
+                                >
+                                    {link.name}
+                                </a>
+                            {/each}
+                        </nav>
+                    </div>
+                {/each}
             </div>
-
             <div>
                 <ul class="flex flex-row items-center justify-end gap-4 text-white">
-                    <li class="border-accent border-2 bg-black p-3 transition hover:border-white">
-                        <a href="https://discord.gg/HdKeWtV">
-                            <SiDiscord />
-                        </a>
-                    </li>
-                    <li class="border-accent border-2 bg-black p-3 transition hover:border-white">
-                        <a href="https://youtube.com/@NetroCorp">
-                            <SiYoutube />
-                        </a>
-                    </li>
-                    <li class="border-accent border-2 bg-black p-3 transition hover:border-white">
-                        <a href="https://bsky.app/profile/netrocorp.net">
-                            <SiBluesky />
-                        </a>
-                    </li>
-                    <li class="border-accent border-2 bg-black p-3 transition hover:border-white">
-                        <a href="https://github.com/NetroSoftware">
-                            <SiGithub />
-                        </a>
-                    </li>
+                    {#each socials as { icon: Icon, href }}
+                        <li>
+                            <a
+                                {href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="border-accent flex items-center justify-center border-2 bg-black p-3 transition hover:border-white"
+                            >
+                                <Icon class="text-white" />
+                            </a>
+                        </li>
+                    {/each}
                 </ul>
             </div>
         </div>
