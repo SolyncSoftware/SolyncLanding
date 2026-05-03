@@ -57,32 +57,36 @@
     </div>
 
     <!-- todo: refactor to include projects page and have latest projects be displayed -->
-    <div class="col-start-1 row-start-2 mt-12 flex gap-8">
-        <a href="https://netro.host" class="group relative inline-block">
-            <img
-                src="/images/netrohost.png"
-                alt="NetroHost"
-                class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
-            />
-            <span
-                class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black transition-colors group-hover:bg-white"
-            >
-                NETROHOST
-            </span>
-        </a>
+    <div class="col-start-1 row-start-2 mt-12 flex flex-col gap-5">
+        <!-- Row for the project banners -->
+        <div class="flex gap-8">
+            <a href="https://netro.host" class="group relative inline-block h-fit">
+                <img
+                    src="/images/netrohost.png"
+                    alt="NetroHost"
+                    class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
+                />
+                <span
+                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black transition-colors group-hover:bg-white"
+                >
+                    NETROHOST
+                </span>
+            </a>
 
-        <a href="https://theaceae.org/" class="group relative inline-block">
-            <img
-                src="/images/theaceae-banner@2x.jpg"
-                alt="Gardens Wiki"
-                class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
-            />
-            <span
-                class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black transition-colors group-hover:bg-white"
-            >
-                THEACEAE
-            </span>
-        </a>
+            <a href="https://theaceae.org/" class="group relative inline-block h-fit">
+                <img
+                    src="/images/theaceae-banner@2x.jpg"
+                    alt="Gardens Wiki"
+                    class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
+                />
+                <span
+                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-20 pl-2.5 text-3xl font-bold text-black transition-colors group-hover:bg-white"
+                >
+                    THEACEAE
+                </span>
+            </a>
+        </div>
+        <!-- <a href="/projects" class="self-start text-xl transition-all hover:underline">View more projects button thing</a> -->
     </div>
 
     <aside class="z-5 col-start-2 row-span-2 row-start-1 flex h-full flex-col items-end bg-black/60 py-18 pr-16 text-white">
