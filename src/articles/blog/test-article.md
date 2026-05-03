@@ -4,8 +4,8 @@ description: Check out this markdown test article
 author: gapva
 date: '2026-04-29T12:00:00.000Z'
 categories:
+  - testing
   - blog
-  - news
 published: true
 ---
 
