@@ -9,7 +9,8 @@
             links: [
                 { name: 'About Us', href: '/about' },
                 { name: 'Work at Netro', href: '/apply' },
-                { name: 'Contact us', href: '/contact' }
+                { name: 'Contact us', href: '/contact' },
+                { name: 'Our Blog', href: '/blog' }
             ]
         },
         {
@@ -17,6 +18,8 @@
             links: [
                 { name: 'NetroHost', href: 'https://netro.host/', external: true },
                 { name: 'Theaceae Collective', href: 'https://theaceae.org/', external: true },
+                { name: 'Potaro Wiki', href: 'https://alpha.potaro.wiki/', external: true },
+
                 { name: 'myNetro', href: 'https://my.netro.works/' }
             ]
         },
@@ -58,7 +61,7 @@
             <a href="/">
                 <NetroLogo class="hover:fill-accent mb-8 fill-white transition-colors duration-300 ease-in-out" width="540" height="118" />
             </a>
-            <div class="border-accent flex flex-col gap-6 border-l-4 pl-6">
+            <div class="border-accent flex flex-col gap-7 border-l-4 pl-6">
                 <p class="max-w-[42ch]">
                     Home of the future. We're a small software collective creating user-first experiences. We collaborate to create what's
                     next.
