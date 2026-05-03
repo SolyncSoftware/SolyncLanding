@@ -7,7 +7,7 @@
     export let backgroundImage = '/images/logo-ascii.png';
     export let backgroundSize = 'contain';
     export let autoFallback = true;
-    export let fpsThreshold = 15;
+    export let fpsThreshold = 45;
     export let sampleDurationMs = 2000;
 
     let useWebgl = false;
