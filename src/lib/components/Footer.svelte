@@ -18,8 +18,9 @@
             links: [
                 { name: 'NetroHost', href: 'https://netro.host/', external: true },
                 { name: 'Theaceae Collective', href: 'https://theaceae.org/', external: true },
-                { name: 'Potaro Wiki', href: 'https://alpha.potaro.wiki/', external: true },
-                { name: 'myNetro', href: 'https://my.netro.works/' }
+                { name: 'Gardens Wiki', href: 'https://alpha.potaro.wiki/news/gardens-wiki', external: true },
+                { name: 'Potaro Wiki', href: 'https://alpha.potaro.wiki/', external: true }
+                // { name: 'myNetro', href: 'https://my.netro.works/' }
             ]
         },
         {
