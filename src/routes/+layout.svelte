@@ -11,12 +11,11 @@
 
     let { children }: { children: Snippet } = $props();
 
-    function initUnicorn() {
-        UnicornStudio.init().catch(console.error);
-    }
+    import runGlobalPerformanceCheck from '$lib/utils/performanceCheck.js';
 
-    onMount(initUnicorn);
-    afterNavigate(initUnicorn);
+    onMount(() => {
+        runGlobalPerformanceCheck().catch(console.error);
+    });
 </script>
 
 {#if !page?.data?.hideHeader}
