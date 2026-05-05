@@ -1,7 +1,8 @@
 <script lang="ts">
     import { onMount, tick } from 'svelte';
     import performanceStore from '$lib/stores/performance.js';
-    import { initIfAllowed } from '$lib/utils/unicornLifecycle.js';
+    import { initIfAllowed, resetUnicornLifecycle } from '$lib/utils/unicornLifecycle.js';
+    import { afterNavigate, beforeNavigate } from '$app/navigation';
 
     let { style = '', className = '', wavesType = '', backgroundImage = '/images/waves.png', backgroundSize = 'cover' } = $props();
 
@@ -17,13 +18,13 @@
         await initIfAllowed(embedEl);
     }
 
-    onMount(() => {
+    function doUnicornStuff() {
         const unsubscribe = performanceStore.subscribe((state) => {
             if (!state.checked) return;
             if (state.canUseWebgl && !state.globalHardDisabled) {
                 useWebgl = true;
                 perfChecked = true;
-                startUnicorn().catch((e) => console.error('Unicorn init (waves) failed', e));
+                startUnicorn().catch((e) => console.error('Unicorn init (globe) failed', e));
             } else {
                 useWebgl = false;
                 perfChecked = false;
@@ -33,6 +34,19 @@
         return () => {
             unsubscribe();
         };
+    }
+
+    // check unicornLifecycle.ts
+    onMount(() => {
+        doUnicornStuff();
+    });
+
+    beforeNavigate(() => {
+        resetUnicornLifecycle();
+    });
+
+    afterNavigate(() => {
+        doUnicornStuff();
     });
 </script>
 

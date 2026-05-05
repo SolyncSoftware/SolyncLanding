@@ -7,6 +7,12 @@ let unicornInitialized = false;
 
 const POST_INIT_SAMPLE_MS = 400;
 
+// should we be doing this? this is mostly for NetroGlobe.svelte but it affects everything
+export function resetUnicornLifecycle() {
+    unicornInitialized = false;
+    initPromise = null;
+}
+
 export async function initIfAllowed(embedEl?: HTMLElement | null) {
     if (!embedEl) return;
     const state = get(performanceStore);
@@ -17,49 +23,49 @@ export async function initIfAllowed(embedEl?: HTMLElement | null) {
     if (initPromise) return initPromise;
 
     initPromise = (async () => {
-    try {
-        await UnicornStudio.init();
-        unicornInitialized = true;
+        try {
+            await UnicornStudio.init();
+            unicornInitialized = true;
 
-        const postInitFps = await fpsMonitor(POST_INIT_SAMPLE_MS);
-        const shouldDisable = postInitFps < DEFAULT_FPS_THRESHOLD;
+            const postInitFps = await fpsMonitor(POST_INIT_SAMPLE_MS);
+            const shouldDisable = postInitFps < DEFAULT_FPS_THRESHOLD;
 
-        performanceStore.update((s) => ({
-            ...s,
-            postInitFps,
-            checked: true,
-            canUseWebgl: !shouldDisable,
-            disableReason: shouldDisable ? 'post-init-low-fps' : null
-        }));
+            performanceStore.update((s) => ({
+                ...s,
+                postInitFps,
+                checked: true,
+                canUseWebgl: !shouldDisable,
+                disableReason: shouldDisable ? 'post-init-low-fps' : null
+            }));
 
-        if (shouldDisable) {
-            markGlobalFailureAndDisableAll('post-init-low-fps');
+            if (shouldDisable) {
+                markGlobalFailureAndDisableAll('post-init-low-fps');
+            }
+        } catch (error) {
+            markGlobalFailureAndDisableAll('unicorn-init-error');
+            console.error('Error initializing UnicornStudio', error);
+        } finally {
+            initPromise = null;
         }
-    } catch (error) {
-        markGlobalFailureAndDisableAll('unicorn-init-error');
-        console.error('Error initializing UnicornStudio', error);
-    } finally {
-        initPromise = null;
-    }
-  })();
+    })();
 
-  return initPromise;
+    return initPromise;
 }
 
 export function markGlobalFailureAndDisableAll(reason?: string) {
-  unicornInitialized = false;
-  performanceStore.update((s) => ({ ...s, globalHardDisabled: true, canUseWebgl: false, disableReason: reason ?? 'global-failure' }));
-  destroyAllIfAvailable();
+    unicornInitialized = false;
+    performanceStore.update((s) => ({ ...s, globalHardDisabled: true, canUseWebgl: false, disableReason: reason ?? 'global-failure' }));
+    destroyAllIfAvailable();
 }
 
 export function destroyAllIfAvailable() {
-  try {
-    if (typeof UnicornStudio !== 'undefined' && typeof UnicornStudio.destroy === 'function') {
-      UnicornStudio.destroy();
+    try {
+        if (typeof UnicornStudio !== 'undefined' && typeof UnicornStudio.destroy === 'function') {
+            UnicornStudio.destroy();
+        }
+    } catch (e) {
+        console.error('Error destroying UnicornStudio', e);
     }
-  } catch (e) {
-    console.error('Error destroying UnicornStudio', e);
-  }
 }
 
-export default { initIfAllowed, markGlobalFailureAndDisableAll, destroyAllIfAvailable };
+export default { initIfAllowed, markGlobalFailureAndDisableAll, destroyAllIfAvailable, resetUnicornLifecycle };

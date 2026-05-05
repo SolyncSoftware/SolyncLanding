@@ -1,7 +1,8 @@
 <script lang="ts">
     import { onMount, tick } from 'svelte';
     import performanceStore from '$lib/stores/performance.js';
-    import { initIfAllowed } from '$lib/utils/unicornLifecycle.js';
+    import { initIfAllowed, resetUnicornLifecycle } from '$lib/utils/unicornLifecycle.js';
+    import { afterNavigate, beforeNavigate } from '$app/navigation';
 
     let {
         style = '',
@@ -23,7 +24,7 @@
         await initIfAllowed(embedEl);
     }
 
-    onMount(() => {
+    function doUnicornStuff() {
         const unsubscribe = performanceStore.subscribe((state) => {
             if (!state.checked) return;
             if (state.canUseWebgl && !state.globalHardDisabled) {
@@ -39,6 +40,19 @@
         return () => {
             unsubscribe();
         };
+    }
+
+    // check unicornLifecycle.ts
+    onMount(() => {
+        doUnicornStuff();
+    });
+
+    beforeNavigate(() => {
+        resetUnicornLifecycle();
+    });
+
+    afterNavigate(() => {
+        doUnicornStuff();
     });
 </script>
 
