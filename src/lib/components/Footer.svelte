@@ -84,7 +84,7 @@
             <div class="flex flex-row gap-14">
                 {#each footerSections as section}
                     <div class="flex flex-col gap-4">
-                        <span class="bg-accent font-display w-fit px-3 py-2 font-semibold text-black">
+                        <span class="bg-accent font-display w-fit px-2 py-1 font-bold text-black">
                             {section.title}
                         </span>
                         <nav class="border-accent flex flex-col gap-4 border-l-2 pl-4">
