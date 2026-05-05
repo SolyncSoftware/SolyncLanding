@@ -24,7 +24,7 @@
             if (state.canUseWebgl && !state.globalHardDisabled) {
                 useWebgl = true;
                 perfChecked = true;
-                startUnicorn().catch((e) => console.error('Unicorn init (globe) failed', e));
+                startUnicorn().catch((e) => console.error('Unicorn init (waves) failed', e));
             } else {
                 useWebgl = false;
                 perfChecked = false;
