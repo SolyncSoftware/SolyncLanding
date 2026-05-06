@@ -32,7 +32,7 @@
                    height: 1400px !important; 
                    object-position: bottom right !important; 
                    mix-blend-mode: screen; 
-                   transform: translate(47%, 0%);"
+                   transform: translate(53%, 0%);"
         />
     </div>
 
