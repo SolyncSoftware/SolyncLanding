@@ -46,9 +46,3 @@
 {#if dev}
     <DevBanner />
 {/if}
-
-<style>
-    .invisible {
-        opacity: 0;
-    }
-</style>
