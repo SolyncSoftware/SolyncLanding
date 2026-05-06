@@ -46,14 +46,6 @@
     onMount(() => {
         doUnicornStuff();
     });
-
-    beforeNavigate(() => {
-        resetUnicornLifecycle();
-    });
-
-    afterNavigate(() => {
-        doUnicornStuff();
-    });
 </script>
 
 <div class="relative overflow-hidden {className}" style="width: 100%; {style}">
