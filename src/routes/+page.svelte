@@ -1,5 +1,4 @@
 <script lang="ts">
-    import NetroGlobe from '$lib/components/assets/NetroGlobe.svelte';
     import ButtonSimple from '$lib/components/ButtonSimple.svelte';
     import NetroLogo from '$lib/components/NetroLogo.svelte';
     import type { Article } from '$lib/utils/types.js';
@@ -20,16 +19,6 @@
 </svelte:head>
 
 <section class="relative -my-16 -mr-21 grid min-h-screen grid-cols-[1fr_410px] grid-rows-[auto_auto]">
-    <div class="pointer-events-none absolute inset-0 overflow-hidden">
-        <NetroGlobe
-            style="position: absolute !important; 
-                   width: 1400px !important; 
-                   height: 1400px !important; 
-                   object-position: bottom right !important; 
-                   mix-blend-mode: screen; 
-                   transform: translate(47%, 0%);"
-        />
-    </div>
     <div class="transform-0 col-start-1 row-start-1 flex flex-col items-start gap-12">
         <div class="pt-21">
             <a href="/">
@@ -56,7 +45,7 @@
         <div class="flex gap-8">
             <a href="https://netro.host" target="_blank" rel="noopener noreferrer" class="group relative inline-block h-fit">
                 <img
-                    src="/images/netrohost.png"
+                    src="/images/netrohost.webp"
                     alt="NetroHost"
                     loading="lazy"
                     class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
@@ -70,7 +59,7 @@
 
             <a href="https://theaceae.org/" target="_blank" rel="noopener noreferrer" class="group relative inline-block h-fit">
                 <img
-                    src="/images/theaceae-banner@2x.jpg"
+                    src="/images/theaceae-banner.webp"
                     alt="Gardens Wiki"
                     loading="lazy"
                     class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
