@@ -19,7 +19,7 @@
     <title>NetroWorks</title>
 </svelte:head>
 
-<section class="relative grid min-h-screen grid-cols-1 grid-rows-[auto_auto] lg:-my-16 lg:-mr-21 lg:grid-cols-[1fr_410px]">
+<section class="relative grid min-h-screen grid-cols-1 grid-rows-[auto_auto] lg:-my-16 xl:-mr-21 xl:grid-cols-[1fr_410px]">
     <div class="lg:transform-0 col-start-1 row-start-1 flex flex-col items-start gap-12">
         <div class="lg:pt-21">
             <a href="/">
@@ -43,22 +43,21 @@
     </div>
 
     <div class="col-start-1 row-start-2 mt-12 flex flex-col gap-5">
-        <div class="flex flex-col gap-12 lg:flex-row lg:gap-8">
-            <!-- Project 1 -->
+        <div class="flex flex-col gap-12 xl:flex-row xl:gap-8">
             <a
                 href="https://netro.host"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative inline-block h-fit w-full lg:w-fit"
+                class="group relative inline-block h-fit w-full xl:w-fit"
             >
                 <img
                     src="/images/netrohost.webp"
                     alt="NetroHost"
                     loading="lazy"
-                    class="outline-accent h-40 w-full object-cover outline-2 transition-all group-hover:outline-white lg:w-134"
+                    class="outline-accent h-40 w-full object-cover outline-2 transition-all group-hover:outline-white xl:w-134"
                 />
                 <span
-                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-colors group-hover:bg-white lg:pr-20 lg:text-3xl"
+                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-colors group-hover:bg-white xl:pr-20 xl:text-3xl"
                 >
                     NETROHOST
                 </span>
@@ -68,16 +67,16 @@
                 href="https://theaceae.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative mt-8 inline-block h-fit w-full lg:mt-0 lg:w-fit"
+                class="group relative mt-8 inline-block h-fit w-full xl:mt-0 xl:w-fit"
             >
                 <img
                     src="/images/theaceae-banner.webp"
                     alt="Theaceae"
                     loading="lazy"
-                    class="outline-accent h-40 w-full object-cover outline-2 transition-all group-hover:outline-white lg:w-134"
+                    class="outline-accent h-40 w-full object-cover outline-2 transition-all group-hover:outline-white xl:w-134"
                 />
                 <span
-                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-colors group-hover:bg-white lg:pr-20 lg:text-3xl"
+                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-colors group-hover:bg-white xl:pr-20 xl:text-3xl"
                 >
                     THEACEAE
                 </span>
@@ -86,34 +85,34 @@
     </div>
 
     <aside
-        class="z-5 col-start-1 row-span-1 row-start-3 flex h-full flex-col items-start text-white lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:items-end lg:bg-black/60 lg:py-18 lg:pr-16"
+        class="z-5 col-start-1 row-span-1 row-start-3 flex h-full flex-col items-start text-white xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:items-end xl:bg-black/60 xl:py-18 xl:pr-16"
     >
-        <h2 class="mt-8 mb-8 text-4xl font-bold lg:mt-0 lg:text-5xl">Blog</h2>
+        <h2 class="mt-8 mb-8 text-4xl font-bold xl:mt-0 xl:text-5xl">Blog</h2>
 
         {#if loading}
             <div class="text-xl">Loading contents...</div>
         {:else if blogArticles.length === 0}
             <div class="text-error text-xl">No articles found!</div>
         {:else}
-            <div class="flex w-full flex-col items-center gap-10 lg:items-end lg:gap-6">
+            <div class="flex w-full flex-col items-center gap-10 xl:items-end xl:gap-6">
                 {#each blogArticles as article (article.slug)}
                     <a
                         href={article.slug}
-                        class="font-display text-accent relative w-full bg-black/75 text-left transition-colors duration-300 hover:text-white lg:w-100 lg:text-right"
+                        class="font-display text-accent relative w-full bg-black/75 text-left transition-colors duration-300 hover:text-white xl:w-100 xl:text-right"
                     >
                         <img
                             loading="lazy"
                             src={article.image || '/images/articles/fallback.png'}
                             alt=""
-                            class="h-48 w-full object-cover lg:h-56"
+                            class="h-48 w-full object-cover xl:h-56"
                         />
                         <div
                             class="bg-accent absolute top-auto right-auto -translate-x-2 -translate-y-6 justify-self-end px-2 py-1 text-xl font-bold text-black uppercase"
                         >
                             {article.categories[0]}
                         </div>
-                        <div class="border-accent border-b-8 px-6 py-4 lg:border-b-12">
-                            <div class="line-clamp-2 text-xl font-bold uppercase lg:text-2xl">
+                        <div class="border-accent border-b-8 px-6 py-4 xl:border-b-12">
+                            <div class="line-clamp-2 text-xl font-bold uppercase xl:text-2xl">
                                 {article.title}
                             </div>
                         </div>
@@ -121,6 +120,6 @@
                 {/each}
             </div>
         {/if}
-        <ButtonSimple text="READ MORE" href="/blog" class="mt-8 text-xl lg:pl-22" />
+        <ButtonSimple text="READ MORE" href="/blog" class="mt-8 mb-8 text-xl xl:mb-0 xl:pl-22" />
     </aside>
 </section>
