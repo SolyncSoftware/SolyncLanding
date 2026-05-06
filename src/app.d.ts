@@ -9,11 +9,9 @@ declare global {
         // interface Platform {}
     }
 
-
     interface UnicornStudioNamespace {
         init(): Promise<any>;
         destroy(): void;
-
     }
 
     const UnicornStudio: UnicornStudioNamespace;
