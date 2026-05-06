@@ -45,7 +45,7 @@
         <div class="flex gap-8">
             <a href="https://netro.host" target="_blank" rel="noopener noreferrer" class="group relative inline-block h-fit">
                 <img
-                    src="/images/netrohost.png"
+                    src="/images/netrohost.webp"
                     alt="NetroHost"
                     loading="lazy"
                     class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
@@ -59,7 +59,7 @@
 
             <a href="https://theaceae.org/" target="_blank" rel="noopener noreferrer" class="group relative inline-block h-fit">
                 <img
-                    src="/images/theaceae-banner@2x.jpg"
+                    src="/images/theaceae-banner.webp"
                     alt="Gardens Wiki"
                     loading="lazy"
                     class="outline-accent h-40 w-134 object-cover outline-2 transition-all group-hover:outline-white"
