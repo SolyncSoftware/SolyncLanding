@@ -11,13 +11,23 @@
                 src: '/images/untone.svg',
                 alt: 'Untone logo',
                 href: 'https://untone.org/'
+            },
+            {
+                src: '/images/untone.svg',
+                alt: 'Untone logo',
+                href: 'https://untone.org/'
+            },
+            {
+                src: '/images/untone.svg',
+                alt: 'Untone logo',
+                href: 'https://untone.org/'
             }
         ]
     }: { partners?: Partner[] } = $props();
 </script>
 
 <section>
-    <div class="grid grid-cols-3 gap-5">
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
         {#each partners as partner}
             {#snippet partnerImg()}
                 <img src={partner.src} alt={partner.alt} class="h-full w-full object-contain" />

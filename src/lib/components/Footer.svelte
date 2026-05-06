@@ -58,15 +58,15 @@
         />
     </div>
     <!-- the actual footer -->
-    <div class="col-start-1 row-start-1 flex flex-col justify-between gap-7 px-16 py-9 text-xl font-bold text-white/70 xl:flex-row">
+    <div class="col-start-1 row-start-1 flex flex-col justify-between gap-7 px-5 py-9 text-xl font-bold text-white/70 lg:px-16 xl:flex-row">
         <!-- logo with text and love -->
         <div>
-            <a href="/">
+            <a href="/" class="flex justify-center xl:block">
                 <NetroLogo
                     class="hover:fill-accent mb-8 w-70 fill-white transition-colors duration-300 ease-in-out lg:w-135 lg:md:h-29.5"
                 />
             </a>
-            <div class="border-accent flex flex-col gap-7 md:border-l-4 md:pl-6">
+            <div class="border-accent flex flex-col items-center gap-7 text-center xl:items-start xl:border-l-4 xl:pl-6 xl:text-left">
                 <p class="max-w-[42ch]">
                     Home of the future. We're a small software collective creating user-first experiences. We collaborate to create what's
                     next.
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="flex flex-col justify-between">
-            <div class="flex flex-row flex-wrap gap-14">
+            <div class="flex flex-row flex-wrap justify-center gap-14 xl:justify-start">
                 {#each footerSections as section}
                     <div class="flex flex-col gap-4">
                         <span class="bg-accent font-display w-fit px-2 py-1 font-bold text-black">
@@ -106,7 +106,7 @@
                 {/each}
             </div>
             <div>
-                <ul class="mt-4 flex flex-row items-center justify-end gap-4 text-white lg:mt-0">
+                <ul class="mt-4 flex flex-row items-center justify-center gap-4 text-white xl:mt-0 xl:justify-end">
                     {#each socials as { icon: Icon, href }}
                         <li>
                             <a

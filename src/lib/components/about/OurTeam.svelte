@@ -36,7 +36,7 @@
                 <button
                     onclick={() => toggleBio(i)}
                     class={[
-                        'hover:text-accent group flex cursor-pointer flex-row items-center justify-center gap-4 align-middle',
+                        'hover:text-accent group flex cursor-pointer flex-col items-start justify-center gap-4 align-middle md:flex-row md:items-center',
                         expandedIndex === i ? 'text-accent' : 'text-white'
                     ]}
                 >
@@ -49,12 +49,12 @@
                         src={member.avatarSrc}
                         alt={member.realName}
                     />
-                    <div class="flex flex-row items-end gap-4 text-left transition">
+                    <div class="flex flex-col text-left transition md:flex-row md:items-end md:gap-4">
                         <p class="text-4xl font-bold">{member.realName}</p>
                         <p class="text-2xl font-light">{member.username}</p>
                     </div>
 
-                    <div class="ml-auto flex flex-row items-center gap-4 text-white">
+                    <div class="mb-4 flex flex-row items-center gap-4 text-white md:mb-0 md:ml-auto">
                         {#if member.github !== '#'}
                             <a href={member.github} target="_blank" class="hover:text-gray-400" onclick={stopPropagation}>
                                 <SiGithub class="h-7 w-7" title="GitHub" />
@@ -69,7 +69,7 @@
                 </button>
                 <p
                     class={[
-                        'cursor-default pl-23 text-left font-sans text-xl transition-all duration-300 ease-in-out',
+                        'cursor-default text-left font-sans text-xl transition-all duration-300 ease-in-out md:pl-23',
                         expandedIndex == i ? 'max-h-96 leading-6 opacity-100' : 'max-h-0 leading-0 opacity-0'
                     ]}
                 >
@@ -81,7 +81,7 @@
             {/if}
         {/each}
     {/if}
-    <div class="mt-12 flex flex-row items-center justify-end gap-6 text-xl">
+    <div class="mt-12 flex flex-col justify-end gap-6 text-xl md:flex-row md:items-center">
         <span class="font-bold">Think you'd be a good addition?</span>
         <Button href="/apply" text="JOIN NETRO" class="text-xl" />
     </div>
