@@ -23,7 +23,7 @@
 {#if !page?.data?.hideHeader}
     <Header />
 {/if}
-<main class="font-display flex flex-col px-21 py-16">
+<main class="font-display flex flex-col px-5 py-10 lg:px-21 lg:py-16">
     <!-- this displays in the homepage only -->
     <div class="pointer-events-none absolute inset-0 overflow-hidden" class:invisible={!showGlobe}>
         <NetroGlobe
