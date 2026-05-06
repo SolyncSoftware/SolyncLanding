@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { afterNavigate } from '$app/navigation';
+    import NetroGlobe from '$lib/components/assets/NetroGlobe.svelte';
     import { page } from '$app/state';
     import { dev } from '$app/environment';
     import Waves from '$lib/components/assets/Waves.svelte';
@@ -22,6 +22,19 @@
     <Header />
 {/if}
 <main class="font-display flex flex-col px-21 py-16">
+    <!-- this displays in the homepage only -->
+    {#if page?.data?.hideHeader}
+        <div class="pointer-events-none absolute inset-0 overflow-hidden">
+            <NetroGlobe
+                style="position: absolute !important; 
+                   width: 1400px !important; 
+                   height: 1400px !important; 
+                   object-position: bottom right !important; 
+                   mix-blend-mode: screen; 
+                   transform: translate(47%, 0%);"
+            />
+        </div>
+    {/if}
     <div class="fixed top-0 left-0 -z-10 w-full">
         <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
     </div>
