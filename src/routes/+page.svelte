@@ -29,11 +29,11 @@
             </a>
         </div>
 
-        <span class="font-display text-lg md:max-w-200 md:text-xl">
-            <p>We own software like NetroHost, Gardens Wiki, Theaceace, and more.</p>
+        <span class="font-display text-lg md:max-w-206 md:text-xl">
+            <p class="md:max-w-200">We own software like NetroHost, Gardens Wiki, Theaceae, and more.</p>
             <br />
             <p>
-                We're a small software collective creating user-first experiences. It's not only because we love to, but we think it's
+                We're a independent software collective creating user-first experiences. It's not only because we love to, but we think it's
                 ethical. We collaborate to create what's next.
             </p>
         </span>

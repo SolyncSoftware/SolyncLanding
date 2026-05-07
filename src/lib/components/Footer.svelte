@@ -68,8 +68,8 @@
             </a>
             <div class="border-accent flex flex-col items-center gap-7 text-center xl:items-start xl:border-l-4 xl:pl-6 xl:text-left">
                 <p class="max-w-[42ch]">
-                    Home of the future. We're a small software collective creating user-first experiences. We collaborate to create what's
-                    next.
+                    Home of the future. We're a independent software collective creating user-first experiences. We collaborate to create
+                    what's next.
                 </p>
 
                 <span>
