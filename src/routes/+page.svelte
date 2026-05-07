@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div class="col-start-1 row-start-2 mt-12 flex flex-col gap-5">
+    <div class="col-start-1 row-start-2 mt-12 flex w-fit flex-col gap-5">
         <div class="flex flex-col gap-12 xl:flex-row xl:gap-8">
             <!-- todo: refactor into component and endpoint -->
             <a
@@ -103,6 +103,7 @@
                 </div>
             </a>
         </div>
+        <!-- <ButtonSimple text="SEE MORE" href="/services" class="w-fit self-end text-xl" /> -->
     </div>
 
     <aside
