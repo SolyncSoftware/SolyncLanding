@@ -105,7 +105,7 @@
                 {/each}
             </div>
             <div>
-                <ul class="mt-4 flex flex-row items-center justify-center gap-4 text-white xl:mt-0 xl:justify-end">
+                <ul class="mt-7 flex flex-row items-center justify-center gap-4 text-white xl:mt-0 xl:justify-end">
                     {#each socials as { icon: Icon, href }}
                         <li>
                             <a
