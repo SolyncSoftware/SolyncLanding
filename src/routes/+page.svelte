@@ -33,8 +33,8 @@
             <p class="md:max-w-200">We own software like NetroHost, Gardens Wiki, Theaceae, and more.</p>
             <br />
             <p>
-                We're a independent software collective creating user-first experiences. It's not only because we love to, but we think it's
-                ethical. We collaborate to create what's next.
+                We're an independent software collective creating user-first experiences. It's not only because we love to, but we think
+                it's ethical. We collaborate to create what's next.
             </p>
         </span>
 
@@ -70,7 +70,7 @@
                     <p
                         class="font-sans text-sm font-medium tracking-tight text-white transition-colors group-hover:text-black xl:text-base"
                     >
-                        (WIP) Hosting that's simple, progressive, fast, awesome.
+                        Hosting that's simple, affordable, fast, and awesome.
                     </p>
                 </div>
             </a>
