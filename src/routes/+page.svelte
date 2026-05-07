@@ -44,23 +44,33 @@
 
     <div class="col-start-1 row-start-2 mt-12 flex flex-col gap-5">
         <div class="flex flex-col gap-12 xl:flex-row xl:gap-8">
+            <!-- todo: refactor into component and endpoint -->
             <a
-                href="https://netro.host"
+                href="https://netro.host/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative inline-block h-fit w-full xl:w-fit"
+                class="group relative mt-8 inline-block h-fit w-full xl:mt-0 xl:w-fit"
             >
                 <img
                     src="/images/netrohost.webp"
                     alt="NetroHost"
                     loading="lazy"
-                    class="outline-accent h-40 w-full object-cover outline-2 transition-all group-hover:outline-white xl:w-134"
+                    class="outline-accent h-40 w-full object-cover outline-2 transition-transform duration-500 group-hover:scale-102 group-hover:outline-white xl:h-40 xl:w-134"
                 />
                 <span
-                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-colors group-hover:bg-white xl:pr-20 xl:text-3xl"
+                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-all duration-300 group-hover:-translate-y-5 group-hover:bg-white xl:pr-20 xl:text-3xl"
                 >
                     NETROHOST
                 </span>
+                <div
+                    class="absolute right-0 bottom-0 bg-black/80 p-3 backdrop-blur-sm transition-transform duration-300 group-hover:bg-white/90"
+                >
+                    <p
+                        class="font-sans text-sm font-medium tracking-tight text-white transition-colors group-hover:text-black xl:text-base"
+                    >
+                        (WIP) Hosting that's simple, progressive, fast, awesome.
+                    </p>
+                </div>
             </a>
 
             <a
@@ -73,13 +83,22 @@
                     src="/images/theaceae-banner.webp"
                     alt="Theaceae"
                     loading="lazy"
-                    class="outline-accent h-40 w-full object-cover outline-2 transition-all group-hover:outline-white xl:w-134"
+                    class="outline-accent h-40 w-full object-cover outline-2 transition-transform duration-500 group-hover:scale-102 group-hover:outline-white xl:h-40 xl:w-134"
                 />
                 <span
-                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-colors group-hover:bg-white xl:pr-20 xl:text-3xl"
+                    class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-all duration-300 group-hover:-translate-y-5 group-hover:bg-white xl:pr-20 xl:text-3xl"
                 >
                     THEACEAE
                 </span>
+                <div
+                    class="absolute right-0 bottom-0 bg-black/80 p-3 backdrop-blur-sm transition-transform duration-300 group-hover:bg-white/90"
+                >
+                    <p
+                        class="font-sans text-sm font-medium tracking-tight text-white transition-colors group-hover:text-black xl:text-base"
+                    >
+                        Helping make personal and community projects come to life.
+                    </p>
+                </div>
             </a>
         </div>
     </div>
