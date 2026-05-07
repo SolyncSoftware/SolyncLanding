@@ -22,8 +22,10 @@
 <section class="relative grid min-h-screen grid-cols-1 grid-rows-[auto_auto] lg:-my-16 xl:-mr-21 xl:grid-cols-[1fr_410px]">
     <div class="lg:transform-0 col-start-1 row-start-1 flex flex-col items-start gap-12">
         <div class="lg:pt-21">
-            <a href="/">
-                <NetroLogo class="fill-accent w-70 transition-colors duration-300 ease-in-out hover:fill-white lg:w-135 lg:md:h-29.5" />
+            <a href="/" class="group">
+                <NetroLogo
+                    class="fill-accent w-70 transition-all duration-300 ease-in-out group-hover:scale-102 hover:fill-white lg:w-135 lg:md:h-29.5"
+                />
             </a>
         </div>
 

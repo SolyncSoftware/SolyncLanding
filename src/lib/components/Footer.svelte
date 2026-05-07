@@ -61,9 +61,9 @@
     <div class="col-start-1 row-start-1 flex flex-col justify-between gap-7 px-5 py-9 text-xl font-bold text-white/70 lg:px-16 xl:flex-row">
         <!-- logo with text and love -->
         <div>
-            <a href="/" class="flex justify-center xl:block">
+            <a href="/" class="group flex justify-center xl:block">
                 <NetroLogo
-                    class="hover:fill-accent mb-8 w-70 fill-white transition-colors duration-300 ease-in-out lg:w-135 lg:md:h-29.5"
+                    class="hover:fill-accent mb-8 w-70 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 lg:w-135 lg:md:h-29.5"
                 />
             </a>
             <div class="border-accent flex flex-col items-center gap-7 text-center xl:items-start xl:border-l-4 xl:pl-6 xl:text-left">
