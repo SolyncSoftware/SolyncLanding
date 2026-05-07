@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="flex flex-col justify-between">
-            <div class="flex flex-row flex-wrap justify-center gap-14 xl:justify-start">
+            <div class="flex flex-row flex-wrap gap-14 md:justify-center xl:justify-start">
                 {#each footerSections as section}
                     <div class="flex flex-col gap-4">
                         <span class="bg-accent font-display w-fit px-2 py-1 font-bold text-black">
