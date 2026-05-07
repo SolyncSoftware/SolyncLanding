@@ -19,7 +19,7 @@
 <div class="mt-24 flex max-w-301 flex-col gap-4 text-xl">
     <h1 class="text-5xl font-bold">OUR PARTNERS</h1>
     <p class="text-lg opacity-90">
-        By partnering with Netro, we share resources, talent, and expertise to create better software. We collaborate on projects, exchange
+        By partnering with Netro, we share resources, talent, and expertise to create cool stuff. We collaborate on projects, exchange
         ideas, and support one another.
     </p>
     <p class="text-lg opacity-90">The partner program is currently closed, but we will reopen applications in the near future.</p>
