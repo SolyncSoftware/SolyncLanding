@@ -4,9 +4,9 @@
 </script>
 
 <h1 class="text-5xl font-bold">CONTACT US</h1>
-<div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8">
-    <div class="grid grid-cols-2 gap-4 font-sans text-2xl">
-        <div class="mb-35 flex w-full flex-col gap-6">
+<div class="border-t-accent mt-6 h-auto border-t-11 bg-black/50 p-8 xl:w-301">
+    <div class="grid gap-4 font-sans text-2xl xl:grid-cols-2">
+        <div class="flex w-full flex-col gap-6 xl:mb-35">
             <div class="flex items-center gap-4">
                 <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
                 <div class="font-display flex flex-col">
