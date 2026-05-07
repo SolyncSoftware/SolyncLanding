@@ -3,17 +3,16 @@
 </script>
 
 <a {href} class={`group relative flex flex-row items-center gap-4 transition-all ${className}`} {...rest}>
-    <span class="relative z-100 inline-flex items-center gap-4">
-        <span
-            class="group-hover:outline-accent absolute -inset-2 -z-10 outline-2
-                   outline-white/0 transition-all duration-300
-                   ease-in-out group-hover:bg-black group-hover:outline-2"
-        ></span>
-
-        <span class="relative">
-            <span class="transform transition-all duration-300">{text}</span>
+    <span class="relative z-10 inline-flex w-max flex-nowrap items-center gap-4">
+        <span class="transform whitespace-nowrap transition-all duration-300 group-hover:tracking-[10%]">
+            {text}
         </span>
-
-        <img src="/images/arrow-default.png" alt="arrow pointing right" class="transition-transform duration-900" />
+        <span
+            class="group-hover:border-accent absolute -inset-2 -z-10 border-2
+                   border-white/0 transition-all duration-300
+                   ease-in-out group-hover:bg-black"
+        >
+        </span>
+        <img src="/images/arrow-default.png" alt="arrow pointing right" class="shrink-0 transition-all duration-800 group-hover:pl-2" />
     </span>
 </a>
