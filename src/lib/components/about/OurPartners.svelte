@@ -11,16 +11,6 @@
                 src: '/images/untone.svg',
                 alt: 'Untone logo',
                 href: 'https://untone.org/'
-            },
-            {
-                src: '/images/untone.svg',
-                alt: 'Untone logo',
-                href: 'https://untone.org/'
-            },
-            {
-                src: '/images/untone.svg',
-                alt: 'Untone logo',
-                href: 'https://untone.org/'
             }
         ]
     }: { partners?: Partner[] } = $props();
