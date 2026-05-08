@@ -1,6 +1,7 @@
 <script lang="ts">
     import LargePost from '$lib/components/blog/LargePost.svelte';
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
+    import ButtonSimple from '$lib/components/ButtonSimple.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
 
@@ -14,7 +15,10 @@
     });
 </script>
 
-<h1 class="text-5xl font-bold">LATEST ARTICLES</h1>
+<div class="flex w-full items-center justify-between">
+    <h1 class="text-5xl font-bold">LATEST ARTICLES</h1>
+    <ButtonSimple href="/blog/create" variant="outline" text="Create new article" />
+</div>
 <div class="mt-6 flex max-w-301 flex-col gap-12">
     {#if loading}
         <p class="text-xl">Loading contents please wait...</p>
