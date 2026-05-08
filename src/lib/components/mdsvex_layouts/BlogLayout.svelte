@@ -8,6 +8,7 @@
     import { onMount, type Snippet } from 'svelte';
     import type { TransformedMember } from '../../../routes/api/team/+server.js';
     import Formatting from '$lib/utils/formatting.js';
+    import ButtonSimple from '$lib/components/ButtonSimple.svelte';
 
     const { title, author, date, categories, image, children }: Article & { children: Snippet } = $props();
 
@@ -53,6 +54,8 @@
                 </span>
                 <span class="mt-8 font-sans text-2xl font-bold">{Formatting.formatDate(new Date(date).getTime() / 1000)}</span>
                 <span class="font-sans text-lg font-light text-white/75">Tags: {categories.join(', ')}</span>
+                <!-- todo: only show this if the user is logged into mynetro -->
+                <a href="/blog/edit" class="font-sans text-lg font-light text-white/75 hover:underline">Edit this article</a>
             </div>
         </div>
     </div>
