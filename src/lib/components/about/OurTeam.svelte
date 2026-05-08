@@ -26,6 +26,7 @@
 
 <section class="flex flex-col gap-4">
     <!-- todo: make links more flexible -->
+    <p class="text-lg opacity-90">Click a team member to view their bio!</p>
     {#if loading}
         <p class="text-xl">Loading team members...</p>
     {:else if sortedMembers.length === 0}
@@ -56,12 +57,12 @@
 
                     <div class="mb-4 flex flex-row items-center gap-4 text-white md:mb-0 md:ml-auto">
                         {#if member.github !== '#'}
-                            <a href={member.github} target="_blank" class="hover:text-gray-400" onclick={stopPropagation}>
+                            <a href={member.github} target="_blank" class="hover:text-accent transition-colors" onclick={stopPropagation}>
                                 <SiGithub class="h-7 w-7" title="GitHub" />
                             </a>
                         {/if}
                         {#if member.bluesky !== '#'}
-                            <a href={member.bluesky} target="_blank" class="hover:text-gray-400" onclick={stopPropagation}>
+                            <a href={member.bluesky} target="_blank" class="hover:text-accent transition-colors" onclick={stopPropagation}>
                                 <SiBluesky class="h-7 w-7" title="Bluesky" />
                             </a>
                         {/if}
