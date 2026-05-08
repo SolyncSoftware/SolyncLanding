@@ -17,6 +17,7 @@
 
 <div class="flex w-full items-center justify-between">
     <h1 class="text-5xl font-bold">LATEST ARTICLES</h1>
+    <!-- todo: only show this if the user is logged into mynetro -->
     <ButtonSimple href="/blog/create" variant="outline" text="Create new article" />
 </div>
 <div class="mt-6 flex max-w-301 flex-col gap-12">
