@@ -40,7 +40,7 @@
 
         <div class="flex flex-col items-start gap-4 text-xl md:flex-row">
             <ButtonSimple text="LEARN MORE" href="/about" />
-            <ButtonSimple text="JOIN US" href="/apply" class="[&>span]:ml-auto" />
+            <ButtonSimple text="JOIN US" href="/apply" />
         </div>
     </div>
 
