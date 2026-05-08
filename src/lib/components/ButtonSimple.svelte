@@ -1,8 +1,10 @@
 <script lang="ts">
-    let { class: className = '', href = '#', text = 'add message', ...rest } = $props();
+    import type { HTMLAnchorAttributes } from 'svelte/elements';
+
+    let { class: className = '', href = '#', text = 'add message', ...rest }: HTMLAnchorAttributes & { text?: string } = $props();
 </script>
 
-<a {href} class={`group relative flex flex-row items-center gap-4 transition-all ${className}`} {...rest}>
+<a {href} class={['group relative flex flex-row items-center gap-4 transition-all', className]} {...rest}>
     <span class="relative z-10 inline-flex w-max flex-nowrap items-center gap-4">
         <span class="transform whitespace-nowrap transition-all duration-300 group-hover:tracking-[10%]">
             {text}
