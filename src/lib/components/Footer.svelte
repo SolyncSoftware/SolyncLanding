@@ -57,7 +57,9 @@
         />
     </div>
     <!-- the actual footer -->
-    <div class="col-start-1 row-start-1 flex flex-col justify-between gap-7 px-5 py-9 text-xl font-bold text-white/70 lg:px-16 xl:flex-row">
+    <div
+        class="3xl:max-w-560 3xl:mx-auto col-start-1 row-start-1 flex flex-col justify-between gap-7 px-5 py-9 text-xl font-bold text-white/70 lg:px-16 xl:flex-row"
+    >
         <!-- logo with text and love -->
         <div>
             <a href="/" class="group flex justify-center xl:block">
