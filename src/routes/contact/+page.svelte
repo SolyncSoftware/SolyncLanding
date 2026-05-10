@@ -52,7 +52,18 @@
                 <Textbox rows="1" placeholder="Your name" />
                 <Textbox rows="1" placeholder="Your email" />
             </div>
-
+            <div class="flex flex-col gap-1">
+                <span>Reason for contact</span>
+                <!-- todo: make this work -->
+                <select class="border-accent/50 focus:ring-accent border bg-black px-5 py-4 text-white placeholder:text-white/50">
+                    <option value="" disabled selected>Please select one</option>
+                    <option value="support">Support</option>
+                    <option value="question">Questions</option>
+                    <option value="partners">Partners</option>
+                    <option value="trust-and-safety">Trust and Safety</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
             <div class="flex-1">
                 <Textbox class="h-full w-full" placeholder="Message content" />
             </div>
