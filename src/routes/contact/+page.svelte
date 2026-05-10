@@ -52,7 +52,7 @@
                 <Textbox rows="1" placeholder="Your name" />
                 <Textbox rows="1" placeholder="Your email" />
             </div>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1 text-xl">
                 <span>Reason for contact</span>
                 <!-- todo: make this work -->
                 <select class="border-accent/50 focus:ring-accent border bg-black px-5 py-4 text-white placeholder:text-white/50">
