@@ -1,6 +1,15 @@
 <script lang="ts">
-    import Textbox from '$lib/components/Textbox.svelte';
-    import Button from '$lib/components/Button.svelte';
+    import Form from '$lib/components/Form.svelte';
+
+    async function handleSubmit(formData: Record<string, string>) {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        return response;
+    }
 </script>
 
 <h1 class="text-5xl font-bold">CONTACT US</h1>
@@ -47,14 +56,13 @@
         </div>
 
         <!-- wip -->
-        <div class="flex flex-col gap-4">
+        <!-- <div class="flex flex-col gap-4">
             <div class="grid grid-cols-2 gap-4">
                 <Textbox rows="1" placeholder="Your name" />
                 <Textbox rows="1" placeholder="Your email" />
             </div>
             <div class="flex flex-col gap-1 text-xl">
                 <span>Reason for contact</span>
-                <!-- todo: make this work -->
                 <select class="border-accent/50 focus:ring-accent border bg-black px-5 py-4 text-white placeholder:text-white/50">
                     <option value="" disabled selected>Please select one</option>
                     <option value="support">Support</option>
@@ -68,8 +76,32 @@
                 <Textbox class="h-full w-full" placeholder="Message content" />
             </div>
 
-            <!-- wip -->
             <Button href="/submit" text="send message" />
-        </div>
+        </div> -->
+
+        <Form
+            fields={[
+                { name: 'name', placeholder: 'Your name', type: 'text', span: 1 },
+                { name: 'email', placeholder: 'Your email', type: 'text', span: 1 },
+                {
+                    name: 'reason',
+                    type: 'select',
+                    label: 'Reason for contact',
+                    options: [
+                        { value: 'support', label: 'Support' },
+                        { value: 'question', label: 'Questions' },
+                        { value: 'partners', label: 'Partners' },
+                        { value: 'trust-and-safety', label: 'Trust and Safety' },
+                        { value: 'other', label: 'Other' }
+                    ],
+                    span: 2
+                },
+                { name: 'message', placeholder: 'Message content', type: 'textarea', rows: 3, span: 2 }
+            ]}
+            button={{
+                text: 'Send message',
+                onClick: handleSubmit
+            }}
+        />
     </div>
 </div>
