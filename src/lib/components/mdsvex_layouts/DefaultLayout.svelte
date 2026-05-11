@@ -10,7 +10,7 @@
 </script>
 
 <h1 class="text-5xl font-bold uppercase">{title}</h1>
-<article class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black p-8">
+<article class="border-t-accent mt-6 h-auto border-t-11 bg-black p-8 xl:w-301">
     <span class="font-sans text-2xl">
         <p class="text-accent font-bold">Written/Revised on {date}</p>
 
