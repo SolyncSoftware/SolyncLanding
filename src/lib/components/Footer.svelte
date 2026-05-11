@@ -124,7 +124,10 @@
                 <div class="mt-4 flex justify-center gap-2 xl:justify-end">
                     <img src="/images/badges/csshard.gif" alt="css is hard" />
                     <a href="https://netro.works/" rel="noopener noreferrer">
-                        <img src="/images/badges/netrov1.gif" alt="css is hard" />
+                        <img src="/images/badges/netrov1.gif" alt="NetroWorks 1" />
+                    </a>
+                    <a href="https://netro.works/" rel="noopener noreferrer">
+                        <img src="/images/badges/netrov2.gif" alt="NetroWorks 2" />
                     </a>
                 </div>
             </div>
