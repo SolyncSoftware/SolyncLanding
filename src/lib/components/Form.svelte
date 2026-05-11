@@ -42,17 +42,34 @@
     let formData = $state(buildInitial());
     let loading = $state(false);
 
+    function requiredFieldsMissing(): boolean {
+        for (const f of fields) {
+            if (f.required && !formData[f.name]?.trim()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     function handleSubmit() {
         if (loading) {
             return;
         }
         loading = true;
         console.log('loading?:', loading);
+
+        if (requiredFieldsMissing()) {
+            alert('Please fill in all required fields.');
+            loading = false;
+            return;
+        }
+
         try {
             button?.onClick?.(formData);
             console.log('loading?:', loading);
         } finally {
             loading = false;
+            alert('Message sent! We will get back to you as soon as possible.');
         }
     }
 </script>

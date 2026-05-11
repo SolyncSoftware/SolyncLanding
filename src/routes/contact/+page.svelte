@@ -81,12 +81,13 @@
 
         <Form
             fields={[
-                { name: 'name', placeholder: 'Your name', type: 'text', span: 1 },
-                { name: 'email', placeholder: 'Your email', type: 'text', span: 1 },
+                { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 1 },
+                { name: 'email', placeholder: 'Your email', type: 'text', required: true, span: 1 },
                 {
                     name: 'reason',
                     type: 'select',
                     label: 'Reason for contact',
+                    required: true,
                     options: [
                         { value: 'support', label: 'Support' },
                         { value: 'question', label: 'Questions' },
@@ -96,7 +97,7 @@
                     ],
                     span: 2
                 },
-                { name: 'message', placeholder: 'Message content', type: 'textarea', rows: 3, span: 2 }
+                { name: 'message', placeholder: 'Message content', type: 'textarea', rows: 3, required: true, span: 2 }
             ]}
             button={{
                 text: 'Send message',
