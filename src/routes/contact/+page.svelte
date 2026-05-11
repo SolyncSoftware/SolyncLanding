@@ -2,13 +2,15 @@
     import Form from '$lib/components/Form.svelte';
 
     async function handleSubmit(formData: Record<string, string>) {
-        const response = await fetch('/api/contact', {
+        const res = await fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         });
-
-        return response;
+        const result = await res.json();
+        if (!res.ok) {
+            throw new Error(result.error || 'error submitting form');
+        }
     }
 </script>
 
