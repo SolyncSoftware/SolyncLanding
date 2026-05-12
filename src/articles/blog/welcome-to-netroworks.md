@@ -15,11 +15,11 @@ From the deepest pits of the basement, we are finally ready to unveil NetroWorks
 
 NetroWorks is our brand new landing page and the foundation for a new era at Netro. We finalized our branding to ensure it's consistent across all platforms, and we've reached that goal.
 
-NetroWorks isn't just 30 buckets of fresh, wet paint; we have overhauled how we present ourselves to the world and how we communicate our values. It portrays us as a brand-new startup transitioning to a worker-owned structure making cool software.
+NetroWorks isn't just 30 buckets of fresh, wet paint; we have overhauled how we present ourselves to the world and how we communicate our values. It portrays us as a brand-new startup transitioning to a worker-owned structure, making cool software.
 
 ## Defining a new era
 
-The biggest change we've made was dropping "corporation" from our name. For years, "corporation" was something we used but it felt at odds with who we really are. We don't have any board members and we don't want any, either. We are a collective of creators, developers, designers, and IT who all work together.
+The biggest change we've made was dropping "corporation" from our name. For years, "corporation" was something we used, but it felt at odds with who we really are. We don't have any board members, and we don't want any, either. We are a collective of creators, developers, designers, and IT professionals who all work together.
 
 Internally, we were also pushing for change. We didn't want a brand that gave people the wrong impression just because we had "corporation" in the name. We also believed that software is built by humans, for humans. So, we nuked "corporation" to reflect this new direction.
 
@@ -35,7 +35,7 @@ NetroWorks is a response to the criticism of NetroWeb V3, both internally and pu
 
 As stated earlier, NetroWorks is the beginning of a new era for Netro. We have big plans for the rest of the year:
 
-- **NetroHost** is our main priority now. It will have an overhauled design that's more professional and easier to use. Expect big improvements to the user experience and instance creation flow. (As if [NetroHost](https://netro.host/) prioritizes user experience, lol).
+- **NetroHost** is our main priority now. It will have an overhauled design that's more professional and easier to use. Expect big improvements to the user experience and instance creation flow. (As if [NetroHost](https://netro.host/) prioritized user experience, lol).
 - **Gardens Wiki** is still on our radar. It's not a priority at the moment, but we do have many ideas for it.
 - **Internal tools** are being reworked, such as myNetro and our member VPN. The goal is to make the backend experience smoother for us internally.
 
