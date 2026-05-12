@@ -47,7 +47,7 @@ Thank you for reading. We will keep improving as an organization and keep listen
 
 If you believe in ethical and collaborative work and a worker-owned workplace, consider joining us! We're always hiring based on our performance. Here's our [apply page](/apply).
 
-Got any questions? Check out our new [contact](/contact) page and send something!
+Got any questions? Check out our new [contact page](/contact) and send something!
 
 ~ Team Netro
 
