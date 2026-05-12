@@ -6,9 +6,9 @@
 <h1 class="text-5xl font-bold">ABOUT US</h1>
 <div class="mt-6 flex max-w-200 flex-col gap-4 text-xl">
     <p>
-        <span class="text-accent font-bold">NETRO</span> is driven by simple principles: putting users first, challenging tradition with originality,
-        and constantly improving. We don't sell out, make empty promises, or cut corners for profit. What we create is a direct reflection of
-        that commitment.
+        <span class="text-accent font-bold">NETRO</span> is a software collective driven by simple principles: putting users first, challenging
+        tradition with originality, and constantly improving. We don't sell out, make empty promises, or cut corners for profit. What we create
+        is a direct reflection of that commitment.
     </p>
     <p>
         We iterate quickly and thoughtfully, refining what works and fixing what doesn't. Continuous growth means owning our impact and
