@@ -8,7 +8,7 @@
     let {
         partners = [
             {
-                src: '/images/untone.svg',
+                src: '/images/partners/untone.svg',
                 alt: 'Untone logo',
                 href: 'https://untone.org/'
             }
