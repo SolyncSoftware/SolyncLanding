@@ -16,7 +16,48 @@ type PersistedPerformanceCheck = {
     initialFps: number | null;
     postInitFps: number | null;
     disableReason: string | null;
+    softwareRenderer?: boolean;
 };
+
+function doCaching(
+    canUseWebgl: boolean,
+    disableReason: string | null,
+    initialFps: number | null = null,
+    postInitFps: number | null = null
+) {
+    if (!browser) return;
+    try {
+        const payload: PersistedPerformanceCheck = {
+            timestamp: Date.now(),
+            canUseWebgl,
+            initialFps,
+            postInitFps,
+            disableReason
+        };
+        localStorage.setItem(PERFORMANCE_CHECK_STORAGE_KEY, JSON.stringify(payload));
+    } catch (e) {
+        console.warn('Unable to persist performance check cache', e);
+    }
+}
+
+function isHardwareAccelerated(): boolean {
+    console.log('hardware acceleration check');
+    if (!browser) return true;
+
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') as WebGLRenderingContext | null;
+    if (!gl) return false;
+
+    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+    if (!debugInfo) return true;
+
+    const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+    const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+
+    const softwareKeywords = ['swiftshader', 'llvmpipe', 'software', 'basic render', 'mesa offscreen'];
+    const combined = (renderer + ' ' + vendor).toLowerCase();
+    return !softwareKeywords.some((keyword) => combined.includes(keyword));
+}
 
 export const fpsMonitor = (duration: number): Promise<number> => {
     return new Promise((resolve) => {
@@ -38,27 +79,18 @@ export const fpsMonitor = (duration: number): Promise<number> => {
 
 export async function runGlobalPerformanceCheck(opts?: { duration?: number; fpsThreshold?: number }) {
     if (cachedCheck) return cachedCheck;
+
     const duration = opts?.duration ?? DEFAULT_FPS_SAMPLE_MS;
     const fpsThreshold = opts?.fpsThreshold ?? DEFAULT_FPS_THRESHOLD;
 
     cachedCheck = (async () => {
-        const current: PerformanceState = get(performanceStore);
-
-        if (current.prefersReducedMotion || current.hardwareConcurrency <= 2) {
-            const disableReason = 'low-power or reduced-motion';
-            performanceStore.update((s: PerformanceState) => ({ ...s, checked: true, canUseWebgl: false, disableReason }));
-            return;
-        }
-
         if (browser) {
             try {
                 const raw = localStorage.getItem(PERFORMANCE_CHECK_STORAGE_KEY);
                 if (raw) {
                     const cached = JSON.parse(raw) as PersistedPerformanceCheck;
-                    const isFresh = Date.now() - cached.timestamp < PERFORMANCE_CHECK_TTL_MS;
-
-                    if (isFresh) {
-                        performanceStore.update((s: PerformanceState) => ({
+                    if (Date.now() - cached.timestamp < PERFORMANCE_CHECK_TTL_MS) {
+                        performanceStore.update((s) => ({
                             ...s,
                             checked: true,
                             canUseWebgl: cached.canUseWebgl,
@@ -70,34 +102,34 @@ export async function runGlobalPerformanceCheck(opts?: { duration?: number; fpsT
                     }
                 }
             } catch (e) {
-                console.warn('Unable to read performance check cache', e);
+                console.warn('Unable to persist performance check cache', e);
             }
+        }
+
+        const current = get(performanceStore);
+        if (current.prefersReducedMotion || current.hardwareConcurrency <= 2) {
+            const disableReason = 'low-power or reduced-motion';
+            performanceStore.update((s) => ({ ...s, checked: true, canUseWebgl: false, disableReason }));
+            doCaching(false, disableReason);
+            return;
+        }
+
+        if (browser && !isHardwareAccelerated()) {
+            const disableReason = 'software-renderer';
+            performanceStore.update((s) => ({ ...s, checked: true, canUseWebgl: false, disableReason }));
+            doCaching(false, disableReason);
+            return;
         }
 
         try {
             const initialFps = await fpsMonitor(duration);
             const can = initialFps >= fpsThreshold;
             const disableReason = can ? null : 'low-fps';
-            performanceStore.update((s: PerformanceState) => ({ ...s, checked: true, canUseWebgl: can, initialFps, disableReason }));
-
-            if (browser) {
-                try {
-                    const current = get(performanceStore);
-                    const payload: PersistedPerformanceCheck = {
-                        timestamp: Date.now(),
-                        canUseWebgl: can,
-                        initialFps,
-                        postInitFps: current.postInitFps,
-                        disableReason
-                    };
-                    localStorage.setItem(PERFORMANCE_CHECK_STORAGE_KEY, JSON.stringify(payload));
-                } catch (e) {
-                    console.warn('Unable to persist performance check cache', e);
-                }
-            }
+            performanceStore.update((s) => ({ ...s, checked: true, canUseWebgl: can, initialFps, disableReason }));
+            doCaching(can, disableReason, initialFps);
         } catch (e) {
-            performanceStore.update((s: PerformanceState) => ({ ...s, checked: true, canUseWebgl: false, disableReason: 'error' }));
-            console.error('Global performance check error', e);
+            performanceStore.update((s) => ({ ...s, checked: true, canUseWebgl: false, disableReason: 'error' }));
+            doCaching(false, 'error');
         }
     })();
 
