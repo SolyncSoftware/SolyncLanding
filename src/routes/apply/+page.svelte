@@ -17,10 +17,9 @@
 </script>
 
 <h1 class="text-5xl font-bold">WORK AT NETRO</h1>
-
-<div class="border-t-accent mt-6 h-auto w-301 border-t-11 bg-black/50 p-8 font-sans">
-    <div class="mb-6 flex flex-row justify-between gap-4 text-xl">
-        <!-- <div class="flex w-full flex-col gap-6">
+<div class="border-t-accent mt-6 h-auto border-t-11 bg-black/50 p-8 font-sans xl:w-301">
+    <div class="mb-6 flex flex-col justify-between gap-4 text-xl xl:flex-row">
+        <div class="flex w-full flex-col gap-6">
             <Textbox rows="1" placeholder="Your name" />
             <Textbox rows="1" placeholder="Your email" />
 
@@ -70,7 +69,9 @@
         <!-- todo: add file upload functionality -->
         <div class="flex w-full flex-col gap-6">
             <p class="max-w-90">Attach your documents. Please include a resume (.doc, .docx, .pdf).</p>
-            <div class="border-accent/80 flex flex-1 cursor-pointer flex-col items-center justify-center border-2 border-dashed bg-black">
+            <div
+                class="border-accent/80 flex flex-1 cursor-pointer flex-col items-center justify-center border-2 border-dashed bg-black py-10"
+            >
                 <span class="text-accent font-bold">Choose files</span>
                 <span class="text-white/44">or drop them here</span>
             </div>

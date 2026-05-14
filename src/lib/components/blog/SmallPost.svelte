@@ -20,6 +20,6 @@
             <div class="text-accent line-clamp-2 text-2xl font-bold uppercase">{title}</div>
             <p class="line-clamp-2 text-lg">{description}</p>
         </div>
-        <ButtonSimple text="READ MORE" href={link} class="justify-self-end text-lg" />
+        <ButtonSimple text="READ MORE" href={link} class="ml-auto w-fit justify-self-end text-lg" />
     </div>
 </div>

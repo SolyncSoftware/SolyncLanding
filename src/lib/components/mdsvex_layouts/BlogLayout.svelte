@@ -37,12 +37,26 @@
 <article>
     <img src={image || '/images/articles/fallback.png'} alt="screenshot of news post" class="mb-16 h-94 w-full object-cover" />
 
-    <div class="flex gap-18">
-        <div class="markdown flex-2 font-sans text-2xl">
-            <h1 class="font-display mb-12 text-5xl font-bold uppercase">{title}</h1>
+    <div class="flex flex-col gap-18 xl:flex-row">
+        <div class="markdown font-sans text-2xl xl:flex-2">
+            <h1 class="font-display mb-12 truncate text-4xl font-bold text-wrap uppercase xl:text-5xl">{title}</h1>
+
+            <div class="font-display mb-6 xl:hidden">
+                <p class="bg-accent mb-11 w-fit truncate p-4 text-2xl font-bold text-black uppercase">{categories[0]}</p>
+                <div class="border-accent flex flex-col border-l-6 pl-9">
+                    <img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class="m-0! mb-3! h-46 w-46" />
+                    <span class="text-3xl font-bold">{teamMember?.realName || 'No name lol'}</span>
+                    <span class="font-sans text-2xl leading-7 font-light text-white/75">
+                        {teamMember?.username || author || 'Please add a author'}
+                    </span>
+                    <span class="mt-8 font-sans text-2xl font-bold">{Formatting.formatDate(new Date(date).getTime() / 1000)}</span>
+                    <span class="font-sans text-lg font-light text-white/75">Tags: {categories.join(', ')}</span>
+                </div>
+            </div>
+
             {@render children()}
         </div>
-        <div class="flex-1">
+        <div class="hidden flex-1 xl:block">
             <p class="bg-accent mb-11 w-fit py-4 pr-10 pl-5 text-3xl font-bold text-black uppercase">{categories[0]}</p>
 
             <div class="border-accent flex flex-col border-l-6 pl-9">
@@ -64,7 +78,7 @@
         {:else if blogArticles.length === 0}
             <p class="text-xl text-gray-400">No articles found.</p>
         {:else}
-            <div class="grid grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 gap-8 xl:grid-cols-3">
                 {#each blogArticles as article}
                     <SmallPost
                         title={article.title}
