@@ -1,5 +1,4 @@
 import performanceStore from '$lib/stores/performance.js';
-import type { PerformanceState } from '$lib/stores/performance.js';
 import { browser } from '$app/environment';
 import { get } from 'svelte/store';
 
@@ -25,7 +24,6 @@ function doCaching(
     initialFps: number | null = null,
     postInitFps: number | null = null
 ) {
-    if (!browser) return;
     try {
         const payload: PersistedPerformanceCheck = {
             timestamp: Date.now(),
@@ -77,6 +75,7 @@ export const fpsMonitor = (duration: number): Promise<number> => {
 };
 
 export async function runGlobalPerformanceCheck(opts?: { duration?: number; fpsThreshold?: number }) {
+    if (!browser) return;
     if (cachedCheck) return cachedCheck;
 
     const duration = opts?.duration ?? DEFAULT_FPS_SAMPLE_MS;
