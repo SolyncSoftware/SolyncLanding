@@ -41,7 +41,6 @@ function doCaching(
 }
 
 function isHardwareAccelerated(): boolean {
-    console.log('hardware acceleration check');
     if (!browser) return true;
 
     const canvas = document.createElement('canvas');
