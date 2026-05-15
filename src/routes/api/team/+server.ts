@@ -55,10 +55,10 @@ const teamData: TeamMember[] = [
         bio: 'Laith is a software developer, game designer, musician, motion graphic artist, and OSS-supporter. He is known for his work on Super Mario 127, Novastra, and Rhythia.'
     },
     {
-        id: 0,
+        id: 285055260,
         realName: 'Joel',
         username: 'jokerlaul',
-        bio: "I'm the accountant. I do not have a GitHub account, but I am a valuable member of the team nonetheless."
+        bio: 'Hello! Mainly an accountant, but not afraid of the unknown!'
     },
     {
         id: 141666866,
