@@ -45,7 +45,7 @@
     <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={showGlobe}>
         <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
     </div>
-    <h1 class="text-5xl font-bold">{page?.data?.title}</h1>
+    <!-- <h1 class="text-5xl font-bold">{page?.data?.title}</h1> -->
     {@render children()}
 </main>
 <Footer />
