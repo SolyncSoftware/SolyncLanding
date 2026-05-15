@@ -25,7 +25,8 @@
 {/if}
 <main class="font-display 3xl:mx-auto flex max-w-560 flex-col px-5 py-10 lg:px-21 lg:py-16">
     <!-- this displays in the homepage only -->
-    <div class="pointer-events-none absolute inset-0 overflow-hidden" class:invisible={!showGlobe}>
+    <!-- this goes unused lol -->
+    <!-- <div class="pointer-events-none absolute inset-0 overflow-hidden" class:invisible={!showGlobe}>
         <NetroGlobe
             style="position: absolute !important; 
                    width: 1400px !important; 
@@ -34,9 +35,14 @@
                    mix-blend-mode: screen; 
                    transform: translate(53%, 0%);"
         />
-    </div>
+    </div> -->
 
-    <div class="fixed top-0 left-0 -z-10 w-full">
+    <!-- show in homepage only -->
+    <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={!showGlobe}>
+        <Waves style="height: 100vh;" wavesType="/netro_waves_with_globe.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
+    </div>
+    <!-- display everywhere else -->
+    <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={showGlobe}>
         <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
     </div>
     <h1 class="text-5xl font-bold">{page?.data?.title}</h1>
