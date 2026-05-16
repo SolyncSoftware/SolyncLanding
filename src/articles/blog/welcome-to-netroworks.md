@@ -23,7 +23,7 @@ The biggest change we've made was dropping "corporation" from our name. For year
 
 Internally, we were also pushing for change. We didn't want a brand that gave people the wrong impression just because we had "corporation" in the name. We also believed that software is built by humans, for humans. So, we nuked "corporation" to reflect this new direction.
 
-Our new "official" company name is Netro LLC (or Netro Software if we don't steal Netro). CORPORATION IS GONE!!!!!
+Our new "official" company name is Netro (or Netro Software if we don't steal Netro). CORPORATION IS GONE!!!!!
 
 ## NetroCorp.net
 

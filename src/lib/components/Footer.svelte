@@ -79,7 +79,7 @@
                     in Texas.
                 </span>
                 <span class="text-xs tracking-[24%] text-white/40">
-                    &copy; 2022-2026 NETRO LLC // Design assistance by
+                    &copy; 2022-2026 NETRO // Design assistance by
                     <a href="https://untone.org/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">UNTONE</a>.
                 </span>
             </div>

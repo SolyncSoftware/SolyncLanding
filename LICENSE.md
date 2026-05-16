@@ -1,8 +1,8 @@
-# TC-PUBLIC: Netro LLC SOFTWARE/ASSETS LICENSE
+# TC-PUBLIC: Netro SOFTWARE/ASSETS LICENSE
 
-Copyright (c) 2026 Netro LLC
+Copyright (c) 2026 Netro
 
-THIS DOCUMENT IS A CONTRACT BETWEEN YOU AND NETRO LLC ("Netro"). BY DOWNLOADING OR USING OUR SOFTWARE/ASSETS ("Software"), YOU ACCEPT THIS LICENSE. IF YOU DO NOT AGREE TO ITS TERMS, DO NOT DOWNLOAD OR USE OUR SOFTWARE.
+THIS DOCUMENT IS A CONTRACT BETWEEN YOU AND NETRO ("Netro"). BY DOWNLOADING OR USING OUR SOFTWARE/ASSETS ("Software"), YOU ACCEPT THIS LICENSE. IF YOU DO NOT AGREE TO ITS TERMS, DO NOT DOWNLOAD OR USE OUR SOFTWARE.
 
 You may copy, merge, publish, and distribute the Software and any modifications, but only for free. Commercial use, including selling, sublicensing, or other profit-driven activities, is prohibited without explicit written permission from Netro. Any distribution of our Software must include this LICENSE file, the above copyright notice, and all liability and warranty terms below.
 
