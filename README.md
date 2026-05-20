@@ -12,8 +12,8 @@
 
 To begin development and testing locally, please follow these steps in your terminal of choice:
 
-1. Clone the repo by running `git clone https://github.com/NetroSoftware/NetroWorks.git`.
-2. Go inside the newly cloned folder (`cd NetroWorks`).
+1. Clone the repo by running `git clone https://github.com/TheaceaeCollective/SolyncLanding.git`.
+2. Go inside the newly cloned folder (`cd SolyncLanding`).
 3. Run `bun install` to install the packages.
 4. Great! Now run `bun run dev` to run the development server.
 5. Enter the URL it provides (by default, it is <http://localhost:5137>) in your browser.
