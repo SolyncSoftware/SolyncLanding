@@ -30,7 +30,7 @@
         </div>
 
         <span class="font-display text-lg md:max-w-206 md:text-xl">
-            <p class="md:max-w-200">We own software like SolyncHost, Gardens Wiki, Theaceae, and more.</p>
+            <p class="md:max-w-200">We own software like Solynchosting, Gardens Wiki, Theaceae, and more.</p>
             <br />
             <p>
                 We're an independent software collective creating user-first experiences. It's not only because we love to, but we think
@@ -54,15 +54,15 @@
                 class="group relative mt-8 inline-block h-fit w-full xl:mt-0 xl:w-fit"
             >
                 <img
-                    src="/images/solynchost.webp"
-                    alt="SolyncHost"
+                    src="/images/solynchosting.webp"
+                    alt="Solynchosting"
                     loading="lazy"
                     class="outline-accent h-40 w-full object-cover outline-2 transition-transform duration-500 group-hover:scale-102 group-hover:outline-white xl:h-40 xl:w-134"
                 />
                 <span
                     class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-all duration-300 group-hover:-translate-y-5 group-hover:bg-white xl:pr-20 xl:text-3xl"
                 >
-                    SOLYNCHOST
+                    SOLYNCHOSTING
                 </span>
                 <div
                     class="absolute right-0 bottom-0 bg-black/80 p-3 backdrop-blur-sm transition-transform duration-300 group-hover:bg-white/90"

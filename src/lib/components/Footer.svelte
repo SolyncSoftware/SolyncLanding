@@ -16,7 +16,7 @@
         {
             title: 'SERVICES',
             links: [
-                { name: 'SolyncHost', href: 'https:/solync.host/', external: true },
+                { name: 'Solynchosting', href: 'https://solync.host/', external: true },
                 { name: 'Theaceae Collective', href: 'https://theaceae.org/', external: true },
                 { name: 'Gardens Wiki', href: 'https://alpha.potaro.wiki/news/gardens-wiki', external: true }
                 // { name: 'mySolync', href: 'https://mysolync.works/' }
@@ -27,7 +27,7 @@
             links: [
                 { name: 'Privacy Policy', href: '/legal/privacy' },
                 { name: 'Terms of Service', href: '/legal/terms' },
-                { name: 'SolyncHost Terms', href: '/legalsolynchost/terms' },
+                { name: 'Solynchosting Terms', href: '/legal/solynchosting/terms' },
                 { name: 'GitHub Sponsors', href: 'https://github.com/sponsors/SolyncSoftware', external: true }
             ]
         }
