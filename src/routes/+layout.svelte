@@ -1,5 +1,5 @@
 <script lang="ts">
-    import NetroGlobe from '$lib/components/assets/NetroGlobe.svelte';
+    import SolyncGlobe from '$lib/components/assets/SolyncGlobe.svelte';
     import { page } from '$app/state';
     import { dev } from '$app/environment';
     import Waves from '$lib/components/assets/Waves.svelte';
@@ -27,7 +27,7 @@
     <!-- this displays in the homepage only -->
     <!-- this goes unused lol -->
     <!-- <div class="pointer-events-none absolute inset-0 overflow-hidden" class:invisible={!showGlobe}>
-        <NetroGlobe
+        <SolyncGlobe
             style="position: absolute !important; 
                    width: 1400px !important; 
                    height: 1400px !important; 
@@ -39,11 +39,11 @@
 
     <!-- show in homepage only -->
     <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={!showGlobe}>
-        <Waves style="height: 100vh;" wavesType="/netro_waves_with_globe.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
+        <Waves style="height: 100vh;" wavesType="/solync_waves_with_globe.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
     </div>
     <!-- display everywhere else -->
     <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={showGlobe}>
-        <Waves style="height: 100vh;" wavesType="/netro_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
+        <Waves style="height: 100vh;" wavesType="/solync_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
     </div>
     <!-- <h1 class="text-5xl font-bold">{page?.data?.title}</h1> -->
     {@render children()}

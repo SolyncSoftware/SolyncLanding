@@ -3,7 +3,7 @@
     import Button from '$lib/components/Button.svelte';
 </script>
 
-<h1 class="text-5xl font-bold">WORK AT NETRO</h1>
+<h1 class="text-5xl font-bold">WORK AT SOLYNC</h1>
 <div class="border-t-accent mt-6 h-auto border-t-11 bg-black/50 p-8 font-sans xl:w-301">
     <div class="mb-6 flex flex-col justify-between gap-4 text-xl xl:flex-row">
         <div class="flex w-full flex-col gap-6">
@@ -11,7 +11,7 @@
             <Textbox rows="1" placeholder="Your email" />
 
             <div class="flex w-full flex-col gap-2">
-                <span>How did you discover Netro?</span>
+                <span>How did you discover Solync?</span>
                 <!-- todo: make this look nicer ig lol -->
                 <select class="border-accent/50 focus:ring-accent border bg-black px-5 py-4 text-white placeholder:text-white/50">
                     <option value="" disabled selected>Please select one</option>

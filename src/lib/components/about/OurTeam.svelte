@@ -84,6 +84,6 @@
     {/if}
     <div class="mt-12 flex flex-col justify-end gap-6 text-xl md:flex-row md:items-center">
         <span class="font-bold">Think you'd be a good addition?</span>
-        <Button href="/apply" text="JOIN NETRO" class="text-xl" />
+        <Button href="/apply" text="JOIN SOLYNC" class="text-xl" />
     </div>
 </section>

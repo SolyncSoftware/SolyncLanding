@@ -1,7 +1,3 @@
-<!-- <p align="center">
-  <img width="600" alt="netro logo" src="https://github.com/NetroSoftware/NetroWorks/blob/main/static/images/placeholders/logo-blue.svg?raw=true">
-</p> -->
-
 # Solync landing page
 
 ## Getting Started
@@ -12,7 +8,7 @@
 
 To begin development and testing locally, please follow these steps in your terminal of choice:
 
-1. Clone the repo by running `git clone https://github.com/TheaceaeCollective/SolyncLanding.git`.
+1. Clone the repo by running `git clone https://github.com/SolyncSoftware/SolyncLanding.git`.
 2. Go inside the newly cloned folder (`cd SolyncLanding`).
 3. Run `bun install` to install the packages.
 4. Great! Now run `bun run dev` to run the development server.

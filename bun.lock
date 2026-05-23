@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "netroworks",
+      "name": "solynclanding",
       "dependencies": {
         "@icons-pack/svelte-simple-icons": "^7.1.0",
         "@tailwindcss/vite": "^4.2.0",

@@ -1,6 +1,6 @@
 <script lang="ts">
     import ButtonSimple from '$lib/components/ButtonSimple.svelte';
-    import NetroLogo from '$lib/components/NetroLogo.svelte';
+    import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
 
@@ -16,21 +16,21 @@
 </script>
 
 <svelte:head>
-    <title>NetroWorks</title>
+    <title>Solync / Building what comes next, together.</title>
 </svelte:head>
 
 <section class="relative grid min-h-screen grid-cols-1 grid-rows-[auto_auto] lg:-my-16 xl:-mr-21 xl:grid-cols-[1fr_410px]">
     <div class="lg:transform-0 col-start-1 row-start-1 flex flex-col items-start gap-12">
         <div class="lg:pt-21">
             <a href="/" class="group">
-                <NetroLogo
+                <SolyncLogo
                     class="fill-accent w-70 transition-all duration-300 ease-in-out group-hover:scale-102 hover:fill-white lg:w-135 lg:md:h-29.5"
                 />
             </a>
         </div>
 
         <span class="font-display text-lg md:max-w-206 md:text-xl">
-            <p class="md:max-w-200">We own software like NetroHost, Gardens Wiki, Theaceae, and more.</p>
+            <p class="md:max-w-200">We own software like SolyncHost, Gardens Wiki, Theaceae, and more.</p>
             <br />
             <p>
                 We're an independent software collective creating user-first experiences. It's not only because we love to, but we think
@@ -48,21 +48,21 @@
         <div class="flex flex-col gap-12 xl:flex-row xl:gap-8">
             <!-- todo: refactor into component and endpoint -->
             <a
-                href="https://netro.host/"
+                href="https://solync.host/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="group relative mt-8 inline-block h-fit w-full xl:mt-0 xl:w-fit"
             >
                 <img
-                    src="/images/netrohost.webp"
-                    alt="NetroHost"
+                    src="/images/solynchost.webp"
+                    alt="SolyncHost"
                     loading="lazy"
                     class="outline-accent h-40 w-full object-cover outline-2 transition-transform duration-500 group-hover:scale-102 group-hover:outline-white xl:h-40 xl:w-134"
                 />
                 <span
                     class="font-display bg-accent absolute top-0 left-0 -translate-x-3 -translate-y-4 py-1.5 pr-10 pl-2.5 text-2xl font-bold text-black transition-all duration-300 group-hover:-translate-y-5 group-hover:bg-white xl:pr-20 xl:text-3xl"
                 >
-                    NETROHOST
+                    SOLYNCHOST
                 </span>
                 <div
                     class="absolute right-0 bottom-0 bg-black/80 p-3 backdrop-blur-sm transition-transform duration-300 group-hover:bg-white/90"

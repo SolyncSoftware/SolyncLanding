@@ -1,14 +1,14 @@
 <script lang="ts">
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
     import Waves from './assets/Waves.svelte';
-    import NetroLogo from './NetroLogo.svelte';
+    import SolyncLogo from './SolyncLogo.svelte';
 
     let footerSections = $state([
         {
-            title: 'NETRO',
+            title: 'SOLYNC',
             links: [
                 { name: 'About Us', href: '/about' },
-                { name: 'Work at Netro', href: '/apply' },
+                { name: 'Work at Solync', href: '/apply' },
                 { name: 'Contact us', href: '/contact' },
                 { name: 'Our Blog', href: '/blog' }
             ]
@@ -16,10 +16,10 @@
         {
             title: 'SERVICES',
             links: [
-                { name: 'NetroHost', href: 'https://netro.host/', external: true },
+                { name: 'SolyncHost', href: 'https:/solync.host/', external: true },
                 { name: 'Theaceae Collective', href: 'https://theaceae.org/', external: true },
                 { name: 'Gardens Wiki', href: 'https://alpha.potaro.wiki/news/gardens-wiki', external: true }
-                // { name: 'myNetro', href: 'https://my.netro.works/' }
+                // { name: 'mySolync', href: 'https://mysolync.works/' }
             ]
         },
         {
@@ -27,17 +27,17 @@
             links: [
                 { name: 'Privacy Policy', href: '/legal/privacy' },
                 { name: 'Terms of Service', href: '/legal/terms' },
-                { name: 'NetroHost Terms', href: '/legal/netrohost/terms' },
-                { name: 'GitHub Sponsors', href: 'https://github.com/sponsors/NetroSoftware', external: true }
+                { name: 'SolyncHost Terms', href: '/legalsolynchost/terms' },
+                { name: 'GitHub Sponsors', href: 'https://github.com/sponsors/SolyncSoftware', external: true }
             ]
         }
     ]);
 
     let socials = $state([
         { icon: SiDiscord, href: 'https://discord.gg/HdKeWtV' },
-        { icon: SiYoutube, href: 'https://youtube.com/@NetroCorp' },
-        { icon: SiBluesky, href: 'https://bsky.app/profile/netrocorp.net' },
-        { icon: SiGithub, href: 'https://github.com/NetroSoftware' }
+        { icon: SiYoutube, href: 'https://youtube.com/@SolyncCorp' },
+        { icon: SiBluesky, href: 'https://bsky.app/profile/solynccorp.net' },
+        { icon: SiGithub, href: 'https://github.com/SolyncSoftware' }
     ]);
 </script>
 
@@ -51,7 +51,7 @@
         <Waves
             className="lg:h-screen h-full"
             style="position: absolute; top: 0; left: 0; width: 100vw; z-index: -1;"
-            wavesType="/netro_footer.json"
+            wavesType="/solync_footer.json"
             backgroundImage="/images/static-footer.jpg"
             backgroundSize="contain"
         />
@@ -63,7 +63,7 @@
         <!-- logo with text and love -->
         <div>
             <a href="/" class="group flex justify-center xl:block">
-                <NetroLogo
+                <SolyncLogo
                     class="hover:fill-accent mb-8 w-70 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 lg:w-135 lg:md:h-29.5"
                 />
             </a>
@@ -79,7 +79,7 @@
                     in Texas.
                 </span>
                 <span class="text-xs tracking-[24%] text-white/40">
-                    &copy; 2022-2026 NETRO // Design assistance by
+                    &copy; 2022-2026 SOLYNC // Design assistance by
                     <a href="https://untone.org/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">UNTONE</a>.
                 </span>
             </div>
@@ -123,12 +123,6 @@
                 </ul>
                 <div class="mt-4 flex justify-center gap-2 xl:justify-end">
                     <img src="/images/badges/csshard.gif" alt="css is hard" />
-                    <a href="https://netro.works/" rel="noopener noreferrer">
-                        <img src="/images/badges/netrov1.gif" alt="NetroWorks 1" />
-                    </a>
-                    <a href="https://netro.works/" rel="noopener noreferrer">
-                        <img src="/images/badges/netrov2.gif" alt="NetroWorks 2" />
-                    </a>
                 </div>
             </div>
         </div>

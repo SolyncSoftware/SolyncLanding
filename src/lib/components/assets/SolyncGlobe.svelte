@@ -6,7 +6,7 @@
     let {
         style = '',
         className = '',
-        wavesType = '/netro_glyph_old.json',
+        wavesType = '/solync_glyph_old.json',
         backgroundImage = '/images/logo-ascii.png',
         backgroundSize = 'contain'
     } = $props();

@@ -15,7 +15,7 @@ const teamData: TeamMember[] = [
         id: 30270106,
         realName: 'Matthew',
         username: 'Aisuruneko',
-        bio: 'Matthew founded the company in 2022. He is a full stack developer and he really enjoys NetroHost, his passion project. Give him a hug!'
+        bio: 'Matthew founded the company in 2022. He is a full stack developer and he really enjoys SolyncHost, his passion project. Give him a hug!'
     },
     {
         id: 72106503,
@@ -81,9 +81,9 @@ const teamData: TeamMember[] = [
     },
     {
         id: 59844890,
-        realName: 'Team Netro',
-        username: '@NetroSoftware',
-        bio: 'The Netro Organization account',
+        realName: 'Team Solync',
+        username: '@SolyncSoftware',
+        bio: 'The Solync Organization account',
         showUser: false
     }
 ];
