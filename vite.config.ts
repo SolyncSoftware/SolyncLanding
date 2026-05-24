@@ -3,8 +3,5 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    plugins: [sveltekit(), tailwindcss()],
-    server: {
-        allowedHosts: ['potaro.wiki', '.potaro.wiki']
-    }
+    plugins: [sveltekit(), tailwindcss()]
 });
