@@ -50,6 +50,13 @@ const teamData: TeamMember[] = [
         bio: 'stupid coding nerd who knows a few things'
     },
     {
+        id: 151549235,
+        realName: 'Peter',
+        username: 'pastadudes',
+        github: 'pastadudes',
+        bio: 'he really likes pasta'
+    },
+    {
         id: 155797753,
         realName: 'Team Solync',
         username: '@SolyncSoftware',
