@@ -51,10 +51,10 @@ const teamData: TeamMember[] = [
     },
     {
         id: 151549235,
-        realName: 'Peter',
-        username: 'pastadudes',
+        realName: 'Mr. Pasta',
+        username: 'pastaya',
         github: 'pastadudes',
-        bio: 'he really likes pasta'
+        bio: 'emacs warrior #67 and knows how to program 75% of the time'
     },
     {
         id: 155797753,
