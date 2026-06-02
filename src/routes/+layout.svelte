@@ -1,8 +1,5 @@
 <script lang="ts">
-    import SolyncGlobe from '$lib/components/assets/SolyncGlobe.svelte';
-    import { page } from '$app/state';
     import { dev } from '$app/environment';
-    import Waves from '$lib/components/assets/Waves.svelte';
     import DevBanner from '$lib/components/DevBanner.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import Header from '$lib/components/Header.svelte';
@@ -16,36 +13,10 @@
     onMount(() => {
         runGlobalPerformanceCheck().catch(console.error);
     });
-
-    let showGlobe = $derived(page.url.pathname === '/');
 </script>
 
-{#if !page?.data?.hideHeader}
-    <Header />
-{/if}
+<Header />
 <main class="font-display 3xl:mx-auto flex max-w-560 flex-col px-5 py-10 lg:px-21 lg:py-16">
-    <!-- this displays in the homepage only -->
-    <!-- this goes unused lol -->
-    <!-- <div class="pointer-events-none absolute inset-0 overflow-hidden" class:invisible={!showGlobe}>
-        <SolyncGlobe
-            style="position: absolute !important; 
-                   width: 1400px !important; 
-                   height: 1400px !important; 
-                   object-position: bottom right !important; 
-                   mix-blend-mode: screen; 
-                   transform: translate(53%, 0%);"
-        />
-    </div> -->
-
-    <!-- show in homepage only -->
-    <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={!showGlobe}>
-        <Waves style="height: 100vh;" wavesType="/solync_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
-    </div>
-    <!-- display everywhere else -->
-    <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={showGlobe}>
-        <Waves style="height: 100vh;" wavesType="/solync_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
-    </div>
-    <!-- <h1 class="text-5xl font-bold">{page?.data?.title}</h1> -->
     {@render children()}
 </main>
 <Footer />
