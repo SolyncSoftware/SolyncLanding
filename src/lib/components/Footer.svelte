@@ -51,8 +51,8 @@
         <Waves
             className="lg:h-screen h-full"
             style="position: absolute; top: 0; left: 0; width: 100vw; z-index: -1;"
-            wavesType="/solync_footer.json"
-            backgroundImage="/images/static-footer.jpg"
+            wavesType="/solync_waves.json"
+            backgroundImage="/images/static-footer.png"
             backgroundSize="contain"
         />
     </div>

@@ -39,7 +39,7 @@
 
     <!-- show in homepage only -->
     <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={!showGlobe}>
-        <Waves style="height: 100vh;" wavesType="/solync_waves_with_globe.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
+        <Waves style="height: 100vh;" wavesType="/solync_waves_dark.json" backgroundImage="/images/waves.png" backgroundSize="cover" />
     </div>
     <!-- display everywhere else -->
     <div class="fixed top-0 left-0 -z-10 w-full" class:invisible={showGlobe}>
