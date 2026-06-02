@@ -26,7 +26,7 @@ When doing [boop] it should not [beep]
 - *Secondary Testers:* N/A
 - *Browsers:* Preferred|Any
 - *Notes:* N/A
-- *Branch:* NW-X-branch_name_here
+- *Branch:* SL-X-branch_name_here
 - *Test alongside:* Optional list of issue IDs
 
 ## Steps

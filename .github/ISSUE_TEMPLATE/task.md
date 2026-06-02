@@ -24,7 +24,7 @@ Refactoring [system feature] | Given [system state] [boops], when [trigger], the
 ## Testing
 - *Tools:* Bruno | CLI | Logs | N/A
 - *Notes:* N/A
-- *Branch:* NW-00-branch_name_here
+- *Branch:* SL-00-branch_name_here
 - *Test alongside: optional issues/tools
 
 ### Steps
