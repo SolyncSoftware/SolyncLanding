@@ -60,7 +60,7 @@ const teamData: TeamMember[] = [
         id: 155797753,
         realName: 'Team Solync',
         username: '@SolyncSoftware',
-        bio: 'The Solync Organization account',
+        bio: 'The Solync account',
         showUser: false
     }
 ];
