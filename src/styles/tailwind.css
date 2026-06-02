@@ -122,10 +122,10 @@
 @theme {
     /* Colors */
     --color-accent: #f36647;
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --color-warning: #e9a700;
-    --color-error: #fa1849;
+    --color-black: #222222;
+    --color-white: #fff8f7;
+    --color-warning: #f0c92d;
+    --color-error: #f02d31;
 
     /* Typography */
     --font-sans: 'Cabinet Grotesk', sans-serif;
