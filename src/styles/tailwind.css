@@ -1,31 +1,114 @@
 @import 'tailwindcss';
 @import './markdown.css';
 
+/* cabinet grotesk */
 @font-face {
-    font-family: 'Panchang-Variable';
+    font-family: 'Cabinet Grotesk';
     src:
-        url('/fonts/Panchang/Panchang-Variable.woff2') format('woff2'),
-        url('/fonts/Panchang/Panchang-Variable.woff') format('woff'),
-        url('/fonts/Panchang/Panchang-Variable.ttf') format('truetype');
-    font-weight: 200 800;
-    font-display: swap;
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Variable.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Variable.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Variable.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Variable.eot') format('embedded-opentype');
+    font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
+}
+
+/* static weights as fallbacks */
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src:
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Thin.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Thin.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Thin.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Thin.eot') format('embedded-opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Red Hat Display';
-    src: url('/fonts/RedHatDisplay/RedHatDisplay-VariableFont_wght.woff2') format('woff2');
-    font-display: swap;
+    font-family: 'Cabinet Grotesk';
+    src:
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Extralight.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Extralight.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Extralight.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Extralight.eot') format('embedded-opentype');
+    font-weight: 200;
     font-style: normal;
-    font-weight: 300 700;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Red Hat Italic';
-    src: url('/fonts/RedHatDisplay/RedHatDisplay-Italic.woff2') format('woff2');
+    font-family: 'Cabinet Grotesk';
+    src:
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Light.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Light.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Light.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Light.eot') format('embedded-opentype');
+    font-weight: 300;
+    font-style: normal;
     font-display: swap;
-    font-style: italic;
-    font-weight: 300 700;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src:
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Regular.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Regular.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Regular.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Regular.eot') format('embedded-opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src:
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Medium.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Medium.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Medium.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Medium.eot') format('embedded-opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src:
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Bold.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Bold.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Bold.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Bold.eot') format('embedded-opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src:
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.eot') format('embedded-opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src:
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Black.woff2') format('woff2'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Black.woff') format('woff'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Black.ttf') format('truetype'),
+        url('fonts/CabinetGrotesk/CabinetGrotesk-Black.eot') format('embedded-opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -45,19 +128,24 @@
     --color-error: #fa1849;
 
     /* Typography */
-    --font-sans: 'Red Hat Display', sans-serif;
-    --font-display: 'Panchang-Variable', sans-serif;
+    --font-sans: 'Cabinet Grotesk', sans-serif;
+    --font-display: 'Cabinet Grotesk', sans-serif;
     --font-monospace: 'Red Hat Monospace', monospace;
 
     /* Responsiveness */
     --breakpoint-3xl: 2100px; /* Wide screen */
 }
 
+/* hi, john here. this is here because font-display needs to be bolded. thats all */
+.font-display {
+    font-weight: bold;
+}
+
 /* General styles */
 
 html {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-black);
 }
 
 body {

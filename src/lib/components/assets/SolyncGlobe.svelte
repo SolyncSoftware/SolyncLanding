@@ -7,7 +7,7 @@
         style = '',
         className = '',
         wavesType = '/solync_glyph_old.json',
-        backgroundImage = '/images/logo-ascii.png',
+        backgroundImage = '/images/waves.png',
         backgroundSize = 'contain'
     } = $props();
 
