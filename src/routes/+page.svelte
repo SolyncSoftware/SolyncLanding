@@ -15,10 +15,6 @@
     });
 </script>
 
-<svelte:head>
-    <title>Solync / Building what comes next, together.</title>
-</svelte:head>
-
 <section class="relative grid min-h-screen grid-cols-1 grid-rows-[auto_auto] lg:-my-16 xl:-mr-21 xl:grid-cols-[1fr_410px]">
     <div class="lg:transform-0 col-start-1 row-start-1 flex flex-col items-start gap-12">
         <div class="lg:pt-21">
