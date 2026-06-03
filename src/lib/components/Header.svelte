@@ -8,7 +8,7 @@
     let currentPath = $derived(page.url.pathname);
 
     function isActive(path: string): string {
-        return currentPath === path ? 'bg-white !text-accent font-display px-8 py-2 rounded-full' : '';
+        return currentPath === path ? 'bg-white !text-accent font-display px-8 py-2 rounded-full no-underline!' : '';
     }
 </script>
 
@@ -21,9 +21,9 @@
             />
         </a>
 
-        <ButtonSimple href="/" text="Home" class={`text-white hover:font-bold hover:text-white ${isActive('/')}`} />
-        <ButtonSimple href="/donate" text="Donate" class={`text-white hover:font-bold hover:text-white ${isActive('/donate')}`} />
-        <ButtonSimple href="/about" text="Learn more" class={`text-white hover:font-bold hover:text-white ${isActive('/about')}`} />
+        <ButtonSimple href="/" text="Home" class={`text-white hover:text-white hover:underline ${isActive('/')}`} />
+        <ButtonSimple href="/donate" text="Donate" class={`text-white hover:text-white hover:underline ${isActive('/donate')}`} />
+        <ButtonSimple href="/about" text="Learn more" class={`text-white hover:text-white hover:underline ${isActive('/about')}`} />
     </nav>
 
     <div class="ml-auto flex justify-end">
