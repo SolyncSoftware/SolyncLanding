@@ -46,10 +46,9 @@
             <a href="/" class="group flex w-fit justify-center xl:block">
                 <SolyncLogo class="fill-accent mb-8 w-70 transition-all duration-300 ease-in-out group-hover:scale-102 hover:fill-white " />
             </a>
-            <div class="flex flex-col items-center gap-7 text-center xl:items-start xl:text-left">
+            <div class="flex flex-col items-center gap-5 text-center xl:items-start xl:text-left">
                 <p class="max-w-[42ch]">
-                    Home of the future. We're a independent software collective creating user-first experiences. We collaborate to create
-                    what's next.
+                    We're a independent software collective creating user-first experiences. We collaborate to create what's next.
                 </p>
 
                 <span>
@@ -57,10 +56,15 @@
                     <span class="heart text-error inline-block">&#10084;</span>
                     in Texas.
                 </span>
-                <span class="text-xs text-white/50">
-                    &copy; 2026 Solync // Design assistance by
-                    <a href="https://untone.org/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">UNTONE</a>.
-                </span>
+                <ul class="flex flex-row items-center justify-center gap-5 text-white xl:mt-0 xl:justify-end">
+                    {#each socials as { icon: Icon, href }}
+                        <li>
+                            <a {href} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center transition">
+                                <Icon class="hover:text-accent" />
+                            </a>
+                        </li>
+                    {/each}
+                </ul>
             </div>
         </div>
         <div class="flex flex-col justify-between">
@@ -70,7 +74,7 @@
                         <span class="text-accent font-display w-fit">
                             {section.title}
                         </span>
-                        <nav class="flex flex-col gap-4">
+                        <nav class="flex flex-col gap-4 text-white/75">
                             {#each section.links as link}
                                 <a
                                     href={link.href}
@@ -85,24 +89,8 @@
                     </div>
                 {/each}
             </div>
-            <div>
-                <ul class="mt-7 flex flex-row items-center justify-center gap-4 text-white xl:mt-0 xl:justify-end">
-                    {#each socials as { icon: Icon, href }}
-                        <li>
-                            <a
-                                {href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="border-accent flex items-center justify-center border-2 bg-black p-3 transition hover:border-white"
-                            >
-                                <Icon class="text-white" />
-                            </a>
-                        </li>
-                    {/each}
-                </ul>
-                <div class="mt-4 flex justify-center gap-2 xl:justify-end">
-                    <img src="/images/badges/csshard.gif" alt="css is hard" />
-                </div>
+            <div class="flex justify-center gap-2 xl:justify-end">
+                <img src="/images/badges/csshard.gif" alt="css is hard" />
             </div>
         </div>
     </div>
