@@ -21,9 +21,9 @@
             />
         </a>
 
-        <ButtonSimple href="/" text="Home" class={`text-white hover:text-black ${isActive('/')}`} />
-        <ButtonSimple href="/donate" text="Donate" class={`text-white hover:text-black ${isActive('/donate')}`} />
-        <ButtonSimple href="/about" text="Learn more" class={`text-white hover:text-black ${isActive('/about')}`} />
+        <ButtonSimple href="/" text="Home" class={`text-white hover:font-bold hover:text-white ${isActive('/')}`} />
+        <ButtonSimple href="/donate" text="Donate" class={`text-white hover:font-bold hover:text-white ${isActive('/donate')}`} />
+        <ButtonSimple href="/about" text="Learn more" class={`text-white hover:font-bold hover:text-white ${isActive('/about')}`} />
     </nav>
 
     <div class="ml-auto flex justify-end">
