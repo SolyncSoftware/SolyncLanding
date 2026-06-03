@@ -4,20 +4,18 @@
 
     let footerSections = $state([
         {
-            title: 'Solync',
+            title: 'Resources',
             links: [
                 { name: 'About Us', href: '/about' },
-                { name: 'Work at Solync', href: '/apply' },
-                { name: 'Contact us', href: '/contact' },
+                { name: 'Jobs', href: '/apply' },
                 { name: 'Our Blog', href: '/blog' }
             ]
         },
         {
             title: 'Services',
             links: [
-                { name: 'Solynchosting', href: 'https://solync.host/', external: true },
-                { name: 'Theaceae Collective', href: 'https://theaceae.org/', external: true },
-                { name: 'Gardens Wiki', href: 'https://alpha.potaro.wiki/news/gardens-wiki', external: true },
+                // { name: 'StreamSkinner', href: 'https://streamskinner.com/', external: true },
+                { name: 'Gardens Wiki', href: 'https://gardens.wiki/', external: true },
                 { name: 'SolyncORBIT', href: 'https://orbit.solync.org/' }
             ]
         },
@@ -26,8 +24,7 @@
             links: [
                 { name: 'Privacy Policy', href: '/legal/privacy' },
                 { name: 'Terms of Service', href: '/legal/terms' },
-                { name: 'Solynchosting Terms', href: '/legal/solynchosting/terms' },
-                { name: 'GitHub Sponsors', href: 'https://github.com/sponsors/SolyncSoftware', external: true }
+                { name: 'Contact us', href: '/contact' }
             ]
         }
     ]);
