@@ -122,6 +122,7 @@
 @theme {
     /* Colors */
     --color-accent: #f36647;
+    --color-offaccent: #ff7657;
     --color-black: #222222;
     --color-white: #fff8f7;
     --color-warning: #f0c92d;
