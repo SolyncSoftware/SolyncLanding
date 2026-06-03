@@ -1,6 +1,7 @@
 <script lang="ts">
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
     import SolyncLogo from './SolyncLogo.svelte';
+    import Button from './Button.svelte';
 
     let footerSections = $state([
         {
@@ -37,8 +38,20 @@
     ]);
 </script>
 
-<footer class="bg-black text-white">
-    <div class="3xl:max-w-560 3xl:mx-auto mx-auto px-5 py-6 xl:px-70">
+<footer class="bg-black text-xl text-white">
+    <div class="3xl:max-w-560 3xl:mx-auto mx-auto px-5 py-12 xl:px-70">
+        <div class="mb-18">
+            <p class="font-display mb-2 max-w-277 text-6xl">
+                We're an independent software collective creating user-first experiences. We build what comes next, together.
+            </p>
+            <p class="mb-20 text-5xl">Join us on our journey</p>
+            <Button
+                href="/apply"
+                text="Apply to Solync"
+                class="text-accent! font-display hover:bg-accent! w-fit bg-white px-18 py-5 text-4xl! hover:text-white!"
+            />
+        </div>
+
         <div class="flex flex-col gap-10 xl:flex-row xl:justify-between">
             <div class="flex flex-col items-center text-center xl:items-start xl:text-left">
                 <a href="/" class="group mb-5 block w-fit">
@@ -46,10 +59,8 @@
                         class="group-hover:fill-accent w-70 fill-white transition-all duration-300 ease-in-out group-hover:scale-102"
                     />
                 </a>
-                <!-- <p class="max-w-[42ch] text-xl">
-                    We're an independent software collective creating user-first experiences. We collaborate to create what's next.
-                </p> -->
-                <span class="text-xl">
+
+                <span>
                     &copy; {new Date().getFullYear()} Solync. Made with
                     <span class="heart text-error inline-block" aria-hidden="true">&#10084;</span>
                     in Texas.
@@ -58,7 +69,7 @@
 
             <div class="flex flex-wrap justify-center gap-8 md:gap-14 xl:justify-end">
                 {#each footerSections as section}
-                    <div class="flex flex-col gap-4 text-xl">
+                    <div class="flex flex-col gap-4">
                         <span class="font-display text-accent w-fit">
                             {section.title}
                         </span>
@@ -111,6 +122,11 @@
 
     a:hover {
         color: #bbbbbb;
+    }
+
+    footer {
+        background-image: linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, #000000 76%), url(/images/articles/fallback.png);
+        background-size: cover;
     }
 
     .heart {
