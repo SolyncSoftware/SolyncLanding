@@ -41,15 +41,15 @@
     <div class="3xl:max-w-560 3xl:mx-auto flex flex-col justify-between gap-7 px-5 py-6 text-xl xl:flex-row xl:px-70">
         <div>
             <a href="/" class="group flex w-fit justify-center xl:block">
-                <SolyncLogo class="fill-accent mb-8 w-70 transition-all duration-300 ease-in-out group-hover:scale-102 hover:fill-white " />
+                <SolyncLogo class="hover:fill-accent mb-8 w-70 fill-white transition-all duration-300 ease-in-out group-hover:scale-102" />
             </a>
             <div class="flex flex-col items-center gap-5 text-center xl:items-start xl:text-left">
                 <p class="max-w-[42ch]">
                     We're a independent software collective creating user-first experiences. We collaborate to create what's next.
                 </p>
 
-                <span>
-                    Made with
+                <span class="text-base text-white/75">
+                    &copy; {new Date().getFullYear()} Solync. Made with
                     <span class="heart text-error inline-block">&#10084;</span>
                     in Texas.
                 </span>
