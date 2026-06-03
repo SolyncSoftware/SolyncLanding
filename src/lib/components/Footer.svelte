@@ -38,44 +38,35 @@
 </script>
 
 <footer class="bg-black text-white">
-    <div class="3xl:max-w-560 3xl:mx-auto flex flex-col justify-between gap-7 px-5 py-6 text-xl xl:flex-row xl:px-70">
-        <div>
-            <a href="/" class="group flex w-fit justify-center xl:block">
-                <SolyncLogo class="hover:fill-accent mb-8 w-70 fill-white transition-all duration-300 ease-in-out group-hover:scale-102" />
-            </a>
-            <div class="flex flex-col items-center gap-5 text-center xl:items-start xl:text-left">
-                <p class="max-w-[42ch]">
-                    We're a independent software collective creating user-first experiences. We collaborate to create what's next.
-                </p>
-
-                <span class="text-base text-white/75">
+    <div class="3xl:max-w-560 3xl:mx-auto mx-auto px-5 py-6 xl:px-70">
+        <div class="flex flex-col gap-10 xl:flex-row xl:justify-between">
+            <div class="flex flex-col items-center text-center xl:items-start xl:text-left">
+                <a href="/" class="group mb-5 block w-fit">
+                    <SolyncLogo
+                        class="group-hover:fill-accent w-70 fill-white transition-all duration-300 ease-in-out group-hover:scale-102"
+                    />
+                </a>
+                <!-- <p class="max-w-[42ch] text-xl">
+                    We're an independent software collective creating user-first experiences. We collaborate to create what's next.
+                </p> -->
+                <span class="text-xl">
                     &copy; {new Date().getFullYear()} Solync. Made with
-                    <span class="heart text-error inline-block">&#10084;</span>
+                    <span class="heart text-error inline-block" aria-hidden="true">&#10084;</span>
                     in Texas.
                 </span>
-                <ul class="flex flex-row items-center justify-center gap-5 text-white xl:mt-0 xl:justify-end">
-                    {#each socials as { icon: Icon, href }}
-                        <li>
-                            <a {href} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center transition">
-                                <Icon class="hover:text-accent transition" />
-                            </a>
-                        </li>
-                    {/each}
-                </ul>
             </div>
-        </div>
-        <div class="flex flex-col justify-between">
-            <div class="flex flex-row flex-wrap gap-14 md:justify-center xl:justify-start">
+
+            <div class="flex flex-wrap justify-center gap-8 md:gap-14 xl:justify-end">
                 {#each footerSections as section}
-                    <div class="flex flex-col gap-4">
-                        <span class="text-accent font-display w-fit">
+                    <div class="flex flex-col gap-4 text-xl">
+                        <span class="font-display text-accent w-fit">
                             {section.title}
                         </span>
                         <nav class="flex flex-col gap-4 text-white/75">
                             {#each section.links as link}
                                 <a
                                     href={link.href}
-                                    class="footer-links transition-colors"
+                                    class="footer-links hover:text-accent transition-colors"
                                     target={link.external ? '_blank' : undefined}
                                     rel={link.external ? 'noopener noreferrer' : undefined}
                                 >
@@ -86,8 +77,26 @@
                     </div>
                 {/each}
             </div>
-            <div class="flex justify-center gap-2 xl:justify-end">
-                <img src="/images/badges/csshard.gif" alt="css is hard" />
+        </div>
+
+        <div class="flex flex-col items-center justify-between gap-6 pt-5 md:flex-row">
+            <ul class="flex flex-row items-center gap-5">
+                {#each socials as { icon: Icon, href }}
+                    <li>
+                        <a
+                            {href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={'Social link'}
+                            class="hover:text-accent flex items-center justify-center transition"
+                        >
+                            <Icon class="h-6 w-6 transition" />
+                        </a>
+                    </li>
+                {/each}
+            </ul>
+            <div class="flex justify-center">
+                <img src="/images/badges/csshard.gif" alt="css is hard" class="h-auto max-h-8 w-auto" />
             </div>
         </div>
     </div>
