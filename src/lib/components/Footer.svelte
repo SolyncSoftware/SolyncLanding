@@ -31,8 +31,8 @@
 
     let socials = $state([
         { icon: SiDiscord, href: 'https://discord.gg/HdKeWtV' },
-        { icon: SiYoutube, href: 'https://youtube.com/@SolyncCorp' },
-        { icon: SiBluesky, href: 'https://bsky.app/profile/solynccorp.net' },
+        // { icon: SiYoutube, href: 'https://youtube.com/@SolyncCorp' },
+        // { icon: SiBluesky, href: 'https://bsky.app/profile/solynccorp.net' },
         { icon: SiGithub, href: 'https://github.com/SolyncSoftware' }
     ]);
 </script>
