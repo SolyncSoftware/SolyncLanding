@@ -57,7 +57,7 @@
                     <span class="heart text-error inline-block">&#10084;</span>
                     in Texas.
                 </span>
-                <span class="text-xs tracking-[24%] text-white/40">
+                <span class="text-xs text-white/50">
                     &copy; 2026 Solync // Design assistance by
                     <a href="https://untone.org/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">UNTONE</a>.
                 </span>
