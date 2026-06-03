@@ -60,7 +60,7 @@
                     {#each socials as { icon: Icon, href }}
                         <li>
                             <a {href} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center transition">
-                                <Icon class="hover:text-accent" />
+                                <Icon class="hover:text-accent transition" />
                             </a>
                         </li>
                     {/each}
