@@ -16,7 +16,8 @@
 </script>
 
 <Header />
-<main class="font-display 3xl:mx-auto flex max-w-560 flex-col px-5 py-10 lg:px-21 lg:py-16">
+<!-- pretty hard coded for the header but yeah. negative values work best -->
+<main class="3xl:mx-auto mx-5 -mt-32 flex max-w-560 flex-col font-sans xl:mx-70">
     {@render children()}
 </main>
 <Footer />

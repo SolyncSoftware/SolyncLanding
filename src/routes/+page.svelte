@@ -21,7 +21,7 @@
 
 <section class="flex">
     <span class="font-display text-lg md:max-w-206 md:text-xl">
-        <p class="md:max-w-200">We own software like Solynchosting, Gardens Wiki, Theaceae, and more.</p>
+        <p class="md:max-w-200">We create software like StreamSkinner, Gardens Wiki, and more.</p>
         <br />
         <p>
             We're an independent software collective creating user-first experiences. It's not only because we love to, but we think it's

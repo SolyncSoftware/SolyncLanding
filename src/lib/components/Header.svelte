@@ -12,7 +12,7 @@
     }
 </script>
 
-<header class="bg-accent flex items-center px-5 pt-6 pb-40 xl:px-70">
+<header class="bg-accent flex w-full items-center px-5 pt-6 pb-40 xl:px-70">
     <nav class="flex items-center gap-7">
         <a href="/" class="group inline-block">
             <SolyncLogo
@@ -21,9 +21,9 @@
             />
         </a>
 
-        <ButtonSimple href="/" text="Home" class={`text-white hover:text-white hover:underline ${isActive('/')}`} />
-        <ButtonSimple href="/donate" text="Donate" class={`text-white hover:text-white hover:underline ${isActive('/donate')}`} />
-        <ButtonSimple href="/about" text="Learn more" class={`text-white hover:text-white hover:underline ${isActive('/about')}`} />
+        <ButtonSimple href="/" text="Home" class={`z-0 text-white hover:text-white hover:underline ${isActive('/')}`} />
+        <ButtonSimple href="/donate" text="Donate" class={`z-0 text-white hover:text-white hover:underline ${isActive('/donate')}`} />
+        <ButtonSimple href="/about" text="Learn more" class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`} />
     </nav>
 
     <div class="ml-auto flex justify-end">
