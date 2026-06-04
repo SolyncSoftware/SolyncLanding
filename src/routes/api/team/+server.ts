@@ -31,9 +31,10 @@ const teamData: TeamMember[] = [
         bio: 'Spenser is a full stack developer whos really good at PHP, MYSQL, C#. He is also a big fan of tea time because he was caught making tea during meetings.'
     },
     {
-        id: 285055260,
+        id: 109701210,
         realName: 'Joel',
         username: 'jokerlaul',
+        github: 'thejokerlol9785',
         bio: 'Hello! Mainly an accountant, but not afraid of the unknown!'
     },
     {
