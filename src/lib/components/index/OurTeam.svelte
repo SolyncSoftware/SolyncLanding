@@ -30,7 +30,7 @@
         <p class="text-xl text-black">No team members found!</p>
     {:else}
         {#each sortedMembers as member, i}
-            <div class="flex flex-col rounded-4xl bg-white p-4 shadow-xl/4">
+            <div class="flex flex-col rounded-4xl bg-white/80 p-4 shadow-xl/4">
                 <div
                     class={[
                         'group flex flex-col items-start justify-center gap-4 align-middle md:flex-row md:items-center',
@@ -56,7 +56,7 @@
                             <a
                                 href={member.github}
                                 target="_blank"
-                                class="hover:bg-accent bg-offwhite/70 rounded-full p-4 shadow-xl/6 transition-colors hover:text-white"
+                                class="hover:bg-accent rounded-full bg-white p-4 shadow-xl/6 transition-colors hover:text-white"
                                 onclick={stopPropagation}
                             >
                                 <SiGithub class="h-7 w-7" title="GitHub" />
@@ -66,7 +66,7 @@
                             <a
                                 href={member.bluesky}
                                 target="_blank"
-                                class="hover:bg-accent bg-offwhite/70 rounded-full p-4 shadow-xl/6 transition-colors hover:text-white"
+                                class="hover:bg-accent rounded-full bg-white p-4 shadow-xl/6 transition-colors hover:text-white"
                                 onclick={stopPropagation}
                             >
                                 <SiBluesky class="h-7 w-7" title="Bluesky" />
