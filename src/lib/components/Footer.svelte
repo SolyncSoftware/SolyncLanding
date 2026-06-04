@@ -39,7 +39,7 @@
 </script>
 
 <footer class="bg-black text-xl text-white">
-    <div class="3xl:max-w-560 3xl:mx-auto mx-auto px-5 py-12 xl:px-70">
+    <div class="3xl:max-w-560 3xl:mx-auto mx-auto px-5 py-12 2xl:px-70">
         <div class="mb-18">
             <p class="font-display mb-2 max-w-277 text-6xl">
                 We're an independent software collective creating user-first experiences. We build what comes next, together.
