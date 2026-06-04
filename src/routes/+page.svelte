@@ -2,6 +2,7 @@
     import ButtonSimple from '$lib/components/ButtonSimple.svelte';
     import Waves from '$lib/components/assets/Waves.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
+    import OurTeam from '$lib/components/about/OurTeam.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
 
@@ -20,7 +21,7 @@
     <title>Solync / Building what comes next, together.</title>
 </svelte:head>
 
-<section class="flex">
+<section class="flex flex-col">
     <div class="border-offwhite relative w-full overflow-hidden rounded-4xl border-4 text-white">
         <Waves
             className="lg:h-full h-fit overflow-hidden"
@@ -40,4 +41,6 @@
             </p>
         </div>
     </div>
+
+    <OurTeam />
 </section>
