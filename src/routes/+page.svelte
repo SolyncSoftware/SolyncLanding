@@ -29,7 +29,7 @@
         </p>
     </span> -->
 
-    <div class="bg-accent w-full rounded-4xl border-4 border-white p-12 text-white">
+    <div class="bg-accent border-offwhite w-full rounded-4xl border-4 p-12 text-white">
         <SolyncLogo class="mb-24 w-110 fill-white" />
         <h1 class="font-display text-4xl md:text-5xl">Building what comes next, together.</h1>
         <p class="mt-4 text-lg md:max-w-206 md:text-xl">
