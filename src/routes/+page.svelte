@@ -32,9 +32,10 @@
     <div class="bg-accent border-offwhite w-full rounded-4xl border-4 p-12 text-white">
         <SolyncLogo class="mb-24 w-110 fill-white" />
         <h1 class="font-display text-4xl md:text-5xl">Building what comes next, together.</h1>
-        <p class="mt-4 text-lg md:max-w-206 md:text-xl">
-            We create software like StreamSkinner, Gardens Wiki, and more. We're an independent software collective creating user-first
-            experiences. It's not only because we love to, but we think it's ethical. We collaborate to create what's next.
+        <p class="mt-4 text-lg md:max-w-170 md:text-xl">We're Solync. We create software like StreamSkinner, Gardens Wiki, and more.</p>
+        <p class="mt-4 text-lg md:max-w-170 md:text-xl">
+            We're an independent software collective creating user-first experiences. It's not only because we love to, but we think it's
+            ethical. We collaborate to create what's next.
         </p>
     </div>
 </section>
