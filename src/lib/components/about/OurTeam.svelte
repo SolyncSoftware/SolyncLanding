@@ -31,7 +31,7 @@
         <p class="text-xl text-black">No team members found!</p>
     {:else}
         {#each sortedMembers as member, i}
-            <div class="flex flex-col rounded-4xl bg-white p-4">
+            <div class="flex flex-col rounded-4xl bg-white p-4 shadow-xl/4">
                 <div
                     class={[
                         'group flex flex-col items-start justify-center gap-4 align-middle md:flex-row md:items-center',
@@ -52,23 +52,41 @@
                         <p class="text-2xl font-light">{member.realName}</p>
                     </div>
 
-                    <!-- <div class="mb-4 flex flex-row items-center gap-4 text-black md:mb-0 md:ml-auto">
+                    <div class="mb-4 flex flex-row items-center gap-4 text-black md:mb-0 md:ml-auto">
                         {#if member.github !== '#'}
-                            <a href={member.github} target="_blank" class="hover:text-accent transition-colors" onclick={stopPropagation}>
+                            <a
+                                href={member.github}
+                                target="_blank"
+                                class="hover:bg-accent bg-offwhite/70 rounded-full p-4 shadow-xl/6 transition-colors hover:text-white"
+                                onclick={stopPropagation}
+                            >
                                 <SiGithub class="h-7 w-7" title="GitHub" />
                             </a>
                         {/if}
                         {#if member.bluesky !== '#'}
-                            <a href={member.bluesky} target="_blank" class="hover:text-accent transition-colors" onclick={stopPropagation}>
+                            <a
+                                href={member.bluesky}
+                                target="_blank"
+                                class="hover:bg-accent bg-offwhite/70 rounded-full p-4 shadow-xl/6 transition-colors hover:text-white"
+                                onclick={stopPropagation}
+                            >
                                 <SiBluesky class="h-7 w-7" title="Bluesky" />
                             </a>
                         {/if}
-                    </div> -->
 
-                    <button
-                        onclick={() => toggleBio(i)}
-                        class={['hover:text-accent group md:ml-auto', expandedIndex === i ? 'text-accent' : 'text-black']}>Arrow</button
-                    >
+                        <button
+                            onclick={() => toggleBio(i)}
+                            class="bg-accent group cursor-pointer rounded-full px-8 py-6 shadow-xl/6 transition hover:bg-black"
+                            class:bg-black={expandedIndex === i}
+                        >
+                            <img
+                                src="/images/arrow-default.svg"
+                                alt="Arrow"
+                                class="h-4 w-8 overflow-hidden transition-transform duration-200"
+                                class:rotate-180={expandedIndex === i}
+                            />
+                        </button>
+                    </div>
                 </div>
                 <p
                     class={[
