@@ -32,28 +32,27 @@
     {:else}
         {#each sortedMembers as member, i}
             <div class="flex flex-col rounded-4xl bg-white p-4">
-                <button
-                    onclick={() => toggleBio(i)}
+                <div
                     class={[
-                        'hover:text-accent group flex cursor-pointer flex-col items-start justify-center gap-4 align-middle md:flex-row md:items-center',
+                        'group flex flex-col items-start justify-center gap-4 align-middle md:flex-row md:items-center',
                         expandedIndex === i ? 'text-accent' : 'text-black'
                     ]}
                 >
                     <img
                         class={[
                             'h-19 w-19 rounded-3xl outline-2 transition',
-                            expandedIndex === i ? 'outline-accent outline' : 'group-hover:outline-accent outline outline-transparent'
+                            expandedIndex === i ? 'outline-accent outline' : 'outline outline-transparent'
                         ]}
                         loading="lazy"
                         src={member.avatarSrc}
                         alt={member.realName}
                     />
                     <div class="flex flex-col text-left transition">
-                        <p class="text-4xl font-bold">{member.realName}</p>
-                        <p class="text-2xl font-light">{member.username}</p>
+                        <p class="text-accent text-4xl font-bold">{member.username}</p>
+                        <p class="text-2xl font-light">{member.realName}</p>
                     </div>
 
-                    <div class="mb-4 flex flex-row items-center gap-4 text-black md:mb-0 md:ml-auto">
+                    <!-- <div class="mb-4 flex flex-row items-center gap-4 text-black md:mb-0 md:ml-auto">
                         {#if member.github !== '#'}
                             <a href={member.github} target="_blank" class="hover:text-accent transition-colors" onclick={stopPropagation}>
                                 <SiGithub class="h-7 w-7" title="GitHub" />
@@ -64,8 +63,13 @@
                                 <SiBluesky class="h-7 w-7" title="Bluesky" />
                             </a>
                         {/if}
-                    </div>
-                </button>
+                    </div> -->
+
+                    <button
+                        onclick={() => toggleBio(i)}
+                        class={['hover:text-accent group md:ml-auto', expandedIndex === i ? 'text-accent' : 'text-black']}>Arrow</button
+                    >
+                </div>
                 <p
                     class={[
                         'cursor-default text-left font-sans text-xl transition-all duration-300 ease-in-out md:pl-23',
