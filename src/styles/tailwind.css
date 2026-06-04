@@ -160,12 +160,12 @@ main {
 }
 
 ::selection {
-    background: var(--color-accent);
+    background: var(--color-offaccent);
     color: var(--color-white);
     text-shadow: none;
 }
 
 ::-moz-selection {
-    background: var(--color-accent);
+    background: var(--color-offaccent);
     color: var(--color-white);
 }
