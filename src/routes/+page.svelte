@@ -1,5 +1,6 @@
 <script lang="ts">
     import ButtonSimple from '$lib/components/ButtonSimple.svelte';
+    import Waves from '$lib/components/assets/Waves.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
@@ -20,22 +21,22 @@
 </svelte:head>
 
 <section class="flex">
-    <!-- <span class="font-display text-lg md:max-w-206 md:text-xl">
-        <p class="md:max-w-200">We create software like StreamSkinner, Gardens Wiki, and more.</p>
-        <br />
-        <p>
-            We're an independent software collective creating user-first experiences. It's not only because we love to, but we think it's
-            ethical. We collaborate to create what's next.
-        </p>
-    </span> -->
+    <div class="border-offwhite relative w-full rounded-4xl border-4 p-12 text-white">
+        <Waves
+            className="absolute inset-0 z-10 h-full w-full"
+            wavesType="/solync_waves.json"
+            backgroundImage="/images/waves.png"
+            backgroundSize="contain"
+        />
 
-    <div class="bg-accent border-offwhite w-full rounded-4xl border-4 p-12 text-white">
-        <SolyncLogo class="mb-24 w-110 fill-white" />
-        <h1 class="font-display text-4xl md:text-5xl">Building what comes next, together.</h1>
-        <p class="mt-4 text-lg md:max-w-170 md:text-xl">We're Solync. We create software like StreamSkinner, Gardens Wiki, and more.</p>
-        <p class="mt-4 text-lg md:max-w-170 md:text-xl">
-            We're an independent software collective creating user-first experiences. It's not only because we love to, but we think it's
-            ethical. We collaborate to create what's next.
-        </p>
+        <div class="relative z-10">
+            <SolyncLogo class="mb-24 w-110 fill-white" />
+            <h1 class="font-display text-4xl md:text-5xl">Building what comes next, together.</h1>
+            <p class="mt-4 text-lg md:max-w-170 md:text-xl">We're Solync. We create software like StreamSkinner, Gardens Wiki, and more.</p>
+            <p class="mt-4 text-lg md:max-w-170 md:text-xl">
+                We're an independent software collective creating user-first experiences. It's not only because we love to, but we think
+                it's ethical. We collaborate to create what's next.
+            </p>
+        </div>
     </div>
 </section>
