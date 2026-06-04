@@ -58,6 +58,13 @@ const teamData: TeamMember[] = [
         bio: 'emacs warrior #67 and knows how to program 75% of the time'
     },
     {
+        id: 102817779,
+        realName: 'Sup',
+        username: 'Sup#2.0',
+        github: 'Sup2point0',
+        bio: 'jack of all knives, none of a kind, kind of a none, just having fun ^v^'
+    },
+    {
         id: 155797753,
         realName: 'Team Solync',
         username: '@SolyncSoftware',
