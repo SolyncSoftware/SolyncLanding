@@ -1,6 +1,9 @@
 <script lang="ts">
-    import ButtonSimple from '$lib/components/ButtonSimple.svelte';
+    import Button from '$lib/components/Button.svelte';
+    import Waves from '$lib/components/assets/Waves.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
+    import OurTeam from '$lib/components/index/OurTeam.svelte';
+    import OurProjects from '$lib/components/index/OurProjects.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
 
@@ -19,22 +22,35 @@
     <title>Solync / Building what comes next, together.</title>
 </svelte:head>
 
-<section class="flex">
-    <!-- <span class="font-display text-lg md:max-w-206 md:text-xl">
-        <p class="md:max-w-200">We create software like StreamSkinner, Gardens Wiki, and more.</p>
-        <br />
-        <p>
-            We're an independent software collective creating user-first experiences. It's not only because we love to, but we think it's
-            ethical. We collaborate to create what's next.
-        </p>
-    </span> -->
+<section class="flex flex-col gap-14">
+    <div class="border-offwhite relative z-100 w-full overflow-hidden rounded-4xl border-4 text-white">
+        <Waves
+            className="lg:h-full h-fit overflow-hidden"
+            style="z-index: -1; overflow: hidden;"
+            wavesType="/solync_waves.json"
+            backgroundImage="/images/waves.png"
+            backgroundSize="cover"
+        />
 
-    <div class="bg-accent border-offwhite w-full rounded-4xl border-4 p-12 text-white">
-        <SolyncLogo class="mb-24 w-110 fill-white" />
-        <h1 class="font-display text-4xl md:text-5xl">Building what comes next, together.</h1>
-        <p class="mt-4 text-lg md:max-w-206 md:text-xl">
-            We create software like StreamSkinner, Gardens Wiki, and more. We're an independent software collective creating user-first
-            experiences. It's not only because we love to, but we think it's ethical. We collaborate to create what's next.
-        </p>
+        <div class="relative z-10 p-12">
+            <SolyncLogo class="mb-24 w-110 fill-white" />
+            <h1 class="text-4xl font-bold md:text-5xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+            <p class="mt-4 text-lg md:max-w-170 md:text-xl">We're Solync. We create software like StreamSkinner, Gardens Wiki, and more.</p>
+            <p class="mt-4 text-lg md:max-w-170 md:text-xl">
+                We're an independent software collective creating user-first experiences. It's not only because we love to, but we think
+                it's ethical. We collaborate to create what's next.
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-accent mb-4 text-5xl font-bold">Our Projects</h2>
+        <OurProjects />
+        <Button text="See More" href="/projects" class="mt-4 w-fit text-xl! font-bold" />
+    </div>
+
+    <div>
+        <h2 class="text-accent mb-4 text-5xl font-bold">Our People</h2>
+        <OurTeam />
     </div>
 </section>

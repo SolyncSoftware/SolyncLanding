@@ -20,7 +20,7 @@
     });
 </script>
 
-<div class="relative overflow-hidden {className}" style="width: 100%; {style}">
+<div class="relative overflow-hidden {className}" style="position: absolute; top: 0; left: 0; width: 100%; {style}">
     <div
         class="absolute inset-0 z-0"
         style="background-image: url({backgroundImage}); background-size: {backgroundSize}; background-position: center;"

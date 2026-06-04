@@ -12,7 +12,7 @@
     }
 </script>
 
-<header class="bg-accent flex w-full items-center px-5 pt-6 pb-40 xl:px-70">
+<header class="bg-accent flex w-full items-center px-5 pt-6 pb-40 2xl:px-70">
     <nav class="flex items-center gap-7">
         <a href="/" class="group inline-block">
             <SolyncLogo

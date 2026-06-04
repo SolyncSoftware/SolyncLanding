@@ -1,6 +1,6 @@
 <script>
     import OurPartners from '$lib/components/about/OurPartners.svelte';
-    import OurTeam from '$lib/components/about/OurTeam.svelte';
+    import OurTeam from '$lib/components/index/OurTeam.svelte';
 </script>
 
 <h1 class="text-5xl font-bold">ABOUT US</h1>
