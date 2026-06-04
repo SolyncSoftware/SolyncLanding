@@ -2,7 +2,8 @@
     import ButtonSimple from '$lib/components/ButtonSimple.svelte';
     import Waves from '$lib/components/assets/Waves.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
-    import OurTeam from '$lib/components/about/OurTeam.svelte';
+    import OurTeam from '$lib/components/index/OurTeam.svelte';
+    import OurProjects from '$lib/components/index/OurProjects.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
 
@@ -42,5 +43,6 @@
         </div>
     </div>
 
+    <OurProjects />
     <OurTeam />
 </section>

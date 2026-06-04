@@ -1,8 +1,7 @@
 <script lang="ts">
-    import { SiBluesky, SiGithub } from '@icons-pack/svelte-simple-icons';
-    import { onMount } from 'svelte';
     import type { TransformedMember } from '../../../routes/api/team/+server.js';
-    import Button from '../Button.svelte';
+    import { onMount } from 'svelte';
+    import { SiBluesky, SiGithub } from '@icons-pack/svelte-simple-icons';
 
     let sortedMembers = $state<TransformedMember[]>([]);
     let loading = $state(true);
