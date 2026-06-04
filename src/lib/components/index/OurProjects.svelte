@@ -22,7 +22,7 @@
     {:else}
         <div class="lg:grid-bg-red-500 grid grid-cols-1 gap-2 md:grid-cols-3">
             {#each sortedProjects as project}
-                <div class="border-offwhite flex flex-col overflow-hidden rounded-4xl bg-white transition">
+                <div class="border-offwhite flex flex-col overflow-hidden rounded-4xl bg-white shadow-xl/4 transition">
                     <img
                         loading="lazy"
                         src={project.imageSrc}
