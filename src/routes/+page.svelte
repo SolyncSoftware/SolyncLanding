@@ -22,7 +22,7 @@
     <title>Solync / Building what comes next, together.</title>
 </svelte:head>
 
-<section class="flex flex-col">
+<section class="flex flex-col gap-14">
     <div class="border-offwhite relative w-full overflow-hidden rounded-4xl border-4 text-white">
         <Waves
             className="lg:h-full h-fit overflow-hidden"
@@ -43,6 +43,13 @@
         </div>
     </div>
 
-    <OurProjects />
-    <OurTeam />
+    <div>
+        <h2 class="text-accent mb-4 text-5xl font-bold">Our Projects</h2>
+        <OurProjects />
+    </div>
+
+    <div>
+        <h2 class="text-accent mb-4 text-5xl font-bold">Our People</h2>
+        <OurTeam />
+    </div>
 </section>
