@@ -20,14 +20,14 @@
     {:else if sortedProjects.length === 0}
         <p class="text-xl text-black">No projects found!</p>
     {:else}
-        <div class="lg:grid-bg-red-500 grid grid-cols-1 gap-2 md:grid-cols-3">
+        <div class="lg:grid-bg-red-500 grid grid-cols-1 gap-4 md:grid-cols-2">
             {#each sortedProjects as project}
                 <div class="border-offwhite flex flex-col overflow-hidden rounded-4xl bg-white shadow-xl/4 transition">
                     <img
                         loading="lazy"
                         src={project.imageSrc}
                         alt={`${project.title} logo`}
-                        class="h-40 w-full rounded-4xl object-cover p-1"
+                        class="h-55 w-full rounded-4xl object-cover p-1"
                     />
                     <div class="flex h-full flex-col px-6 pt-1 pb-6 text-lg">
                         <h3 class="text-accent text-2xl font-bold">{project.title}</h3>
