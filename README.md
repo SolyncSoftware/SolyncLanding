@@ -1,8 +1,4 @@
-<p align="center">
-  <img width="600" alt="netro logo" src="https://github.com/NetroSoftware/NetroWorks/blob/main/static/images/placeholders/logo-blue.svg?raw=true">
-</p>
-
-# Project NetroWorks (NetroWeb V4)
+# Solync landing page
 
 ## Getting Started
 
@@ -12,8 +8,8 @@
 
 To begin development and testing locally, please follow these steps in your terminal of choice:
 
-1. Clone the repo by running `git clone https://github.com/NetroSoftware/NetroWorks.git`.
-2. Go inside the newly cloned folder (`cd NetroWorks`).
+1. Clone the repo by running `git clone https://github.com/SolyncSoftware/SolyncLanding.git`.
+2. Go inside the newly cloned folder (`cd SolyncLanding`).
 3. Run `bun install` to install the packages.
 4. Great! Now run `bun run dev` to run the development server.
 5. Enter the URL it provides (by default, it is <http://localhost:5137>) in your browser.
@@ -22,7 +18,7 @@ To begin development and testing locally, please follow these steps in your term
 
 - Minimize bloat
 - Open source
-- Internal initiative-driven tasks with a [Kanban Board](https://github.com/orgs/NetroSoftware/projects/7/views/2).
+- Internal initiative-driven tasks with a [Kanban Board](https://github.com/orgs/TheaceaeCollective/projects/7/views/2).
 
 ## Resources
 
@@ -30,4 +26,4 @@ To begin development and testing locally, please follow these steps in your term
 - [Bun Documentation](https://bun.sh/docs)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [TailwindCSS Official Docs](https://tailwindcss.com/docs/)
-- [Netro Community Discord](https://discord.com/invite/HdKeWtV)
+- [Solync Community Discord](https://discord.com/invite/nUeRyRtDYC)

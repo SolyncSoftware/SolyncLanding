@@ -22,7 +22,7 @@ As a user, given I have [boop], when I [beep], then I should [baap]
 - *Browsers:* Preferred|Any 
 - *Notes:* N/A
 - *Environment:* Testing
-- *Branch:* NW-X-branch_name_here
+- *Branch:* SL-X-branch_name_here
 - *Test alongside:* Optional list of issue IDs
 
 ### Steps

@@ -12,23 +12,11 @@ interface TeamMember {
 
 const teamData: TeamMember[] = [
     {
-        id: 30270106,
-        realName: 'Matthew',
-        username: 'Aisuruneko',
-        bio: 'Matthew founded the company in 2022. He is a full stack developer and he really enjoys NetroHost, his passion project. Give him a hug!'
-    },
-    {
         id: 72106503,
         realName: 'John',
         username: 'papertek',
         bio: 'i am papertek! i usually work on designs, websites, hardware, human resources, and public relations. i also like experimenting and iterating on whatever comes to mind!',
         bsky: 'j6chocomint.bsky.social'
-    },
-    {
-        id: 36048627,
-        realName: 'Dex',
-        username: 'RealDxT',
-        bio: 'infrastructure person, chronic linux user & uncertified nerd'
     },
     {
         id: 65809047,
@@ -43,34 +31,17 @@ const teamData: TeamMember[] = [
         bio: 'Spenser is a full stack developer whos really good at PHP, MYSQL, C#. He is also a big fan of tea time because he was caught making tea during meetings.'
     },
     {
-        id: 79934414,
-        realName: 'Ian',
-        username: 'parakeet-live',
-        bio: 'Ian is a software developer who enjoys working on games and backend. He created Novarin and is also a fan of Just Dance.'
-    },
-    {
-        id: 90116898,
-        realName: 'Laith Hijazi',
-        username: 'gapva',
-        bio: 'Laith is a software developer, game designer, musician, motion graphic artist, and OSS-supporter. He is known for his work on Super Mario 127, Novastra, and Rhythia.'
-    },
-    {
-        id: 0,
+        id: 109701210,
         realName: 'Joel',
         username: 'jokerlaul',
-        bio: "I'm the accountant. I do not have a GitHub account, but I am a valuable member of the team nonetheless."
+        github: 'thejokerlol9785',
+        bio: 'Hello! Mainly an accountant, but not afraid of the unknown!'
     },
     {
         id: 141666866,
         realName: 'Leon',
         username: 'oddbyte',
         bio: 'Leon describes himself as "just a goober who does things" but we see him being obsessed with security and his work. He\'s a full stack developer and a fan of Bazzite Linux.'
-    },
-    {
-        id: 65369281,
-        realName: 'Jason',
-        username: 'flustix',
-        bio: 'A rhythm game dev with a nanahira and choccy milk addiction.'
     },
     {
         id: 50887230,
@@ -80,10 +51,31 @@ const teamData: TeamMember[] = [
         bio: 'stupid coding nerd who knows a few things'
     },
     {
-        id: 59844890,
-        realName: 'Team Netro',
-        username: '@NetroSoftware',
-        bio: 'The Netro Organization account',
+        id: 151549235,
+        realName: 'Mr. Pasta',
+        username: 'pastaya',
+        github: 'pastadudes',
+        bio: 'emacs warrior #67 and knows how to program 75% of the time'
+    },
+    {
+        id: 102817779,
+        realName: 'Sup',
+        username: 'Sup#2.0',
+        github: 'Sup2point0',
+        bio: 'jack of all knives, none of a kind, kind of a none, just having fun ^v^'
+    },
+    {
+        id: 33783503,
+        realName: 'Archie',
+        username: 'Tanza',
+        github: 'Tanza3D',
+        bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics."
+    },
+    {
+        id: 155797753,
+        realName: 'Team Solync',
+        username: '@SolyncSoftware',
+        bio: 'The Solync account',
         showUser: false
     }
 ];

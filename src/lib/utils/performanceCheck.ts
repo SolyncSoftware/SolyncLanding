@@ -7,7 +7,7 @@ let cachedCheck: Promise<void> | null = null;
 export const DEFAULT_FPS_THRESHOLD = 45;
 export const DEFAULT_FPS_SAMPLE_MS = 2000;
 export const PERFORMANCE_CHECK_TTL_MS = 24 * 60 * 60 * 1000;
-const PERFORMANCE_CHECK_STORAGE_KEY = 'netroworks:performance-check:v1';
+const PERFORMANCE_CHECK_STORAGE_KEY = 'solync:performance-check:v1';
 
 type PersistedPerformanceCheck = {
     timestamp: number;

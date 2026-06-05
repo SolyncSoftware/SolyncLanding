@@ -1,11 +1,32 @@
 <script lang="ts">
-    import NetroLogo from './NetroLogo.svelte';
+    import { page } from '$app/state';
+
+    import SolyncLogo from './SolyncLogo.svelte';
+    import Button from './Button.svelte';
+    import ButtonSimple from './ButtonSimple.svelte';
+
+    let currentPath = $derived(page.url.pathname);
+
+    function isActive(path: string): string {
+        return currentPath === path ? 'bg-white !text-accent font-display px-8 py-2 rounded-full no-underline!' : '';
+    }
 </script>
 
-<header class="3xl:max-w-560 mx-auto w-full px-5 pt-10 lg:px-21 lg:pt-21">
-    <a href="/" class="group inline-block">
-        <NetroLogo
-            class="fill-accent w-70  transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-white lg:w-135 lg:md:h-29.5"
-        />
-    </a>
+<header class="bg-accent flex w-full items-center px-5 pt-6 pb-40 2xl:px-70">
+    <nav class="flex items-center gap-7">
+        <a href="/" class="group inline-block">
+            <SolyncLogo
+                iconOnly={true}
+                class="w-20 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black"
+            />
+        </a>
+
+        <ButtonSimple href="/" text="Home" class={`z-0 text-white hover:text-white hover:underline ${isActive('/')}`} />
+        <ButtonSimple href="/donate" text="Donate" class={`z-0 text-white hover:text-white hover:underline ${isActive('/donate')}`} />
+        <ButtonSimple href="/about" text="Learn more" class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`} />
+    </nav>
+
+    <div class="ml-auto flex justify-end">
+        <Button href="https://orbit.solync.org" text="Manage Account" />
+    </div>
 </header>
