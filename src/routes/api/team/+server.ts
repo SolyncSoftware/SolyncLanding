@@ -65,6 +65,13 @@ const teamData: TeamMember[] = [
         bio: 'jack of all knives, none of a kind, kind of a none, just having fun ^v^'
     },
     {
+        id: 33783503,
+        realName: 'Archie',
+        username: 'Tanza',
+        github: 'Tanza3D',
+        bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics."
+    },
+    {
         id: 155797753,
         realName: 'Team Solync',
         username: '@SolyncSoftware',
