@@ -2,6 +2,7 @@
     import Button from '$lib/components/Button.svelte';
     import Waves from '$lib/components/assets/Waves.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
+    import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import OurTeam from '$lib/components/index/OurTeam.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import type { Article } from '$lib/utils/types.js';
@@ -23,25 +24,15 @@
 </svelte:head>
 
 <section class="flex flex-col gap-14">
-    <div class="border-offwhite relative z-100 w-full overflow-hidden rounded-4xl border-4 text-white">
-        <Waves
-            className="lg:h-full h-fit overflow-hidden"
-            style="z-index: -1; overflow: hidden;"
-            wavesType="/solync_waves.json"
-            backgroundImage="/images/waves.png"
-            backgroundSize="cover"
-        />
-
-        <div class="relative z-10 p-12">
-            <SolyncLogo class="mb-24 w-110 fill-white" />
-            <h1 class="text-4xl font-bold md:text-5xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-            <p class="mt-4 text-lg md:max-w-170 md:text-xl">We're Solync. We create software like StreamSkinner, Gardens Wiki, and more.</p>
-            <p class="mt-4 text-lg md:max-w-170 md:text-xl">
-                We're an independent software collective creating user-first experiences. It's not only because we love to, but we think
-                it's ethical. We collaborate to create what's next.
-            </p>
-        </div>
-    </div>
+    <PageContainer>
+        <SolyncLogo class="mb-24 w-110 fill-white" />
+        <h1 class="text-4xl font-bold md:text-5xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+        <p class="mt-4 text-lg md:max-w-170 md:text-xl">We're Solync. We create software like StreamSkinner, Gardens Wiki, and more.</p>
+        <p class="mt-4 text-lg md:max-w-170 md:text-xl">
+            We're an independent software collective creating user-first experiences. It's not only because we love to, but we think it's
+            ethical. We collaborate to create what's next.
+        </p>
+    </PageContainer>
 
     <div>
         <h2 class="text-accent mb-4 text-5xl font-bold">Our Projects</h2>
