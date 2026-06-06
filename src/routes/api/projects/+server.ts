@@ -35,7 +35,7 @@ const projectData: SolyncProject[] = [
     {
         date: '2024-12-4',
         title: 'yell0w.net',
-        // website: 'https://yell0w.net/',
+        website: 'https://yell0w.net/',
         image: 'yellow.png',
         desc: 'Before we were Solync, we helped make personal projects come to life by establishing connections with other developers.',
         github: 'dayellowwebsite'
