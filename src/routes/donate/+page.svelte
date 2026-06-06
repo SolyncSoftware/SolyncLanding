@@ -27,9 +27,3 @@
         </div>
     </div>
 </PageContainer>
-
-<style scoped>
-    .color-shit {
-        color: #ffffff00;
-    }
-</style>
