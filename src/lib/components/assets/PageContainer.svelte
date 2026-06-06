@@ -9,7 +9,7 @@
     <div class="absolute inset-0 z-1 bg-black/10"></div>
 
     <Waves
-        className="lg:h-full h-fit overflow-hidden"
+        className="h-full overflow-hidden"
         style="z-index: -1; overflow: hidden;"
         wavesType="/solync_waves.json"
         backgroundImage="/images/waves.png"
