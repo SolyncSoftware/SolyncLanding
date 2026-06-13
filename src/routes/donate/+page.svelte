@@ -2,7 +2,7 @@
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
 </script>
 
-<PageContainer>
+<PageContainer className="bg-pink-400">
     <div class="flex flex-col justify-between xl:flex-row">
         <div>
             <h1 class="text-4xl font-bold md:text-5xl">Build a better Solync.</h1>
