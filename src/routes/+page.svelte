@@ -23,7 +23,7 @@
 </svelte:head>
 
 <section class="flex flex-col gap-14">
-    <PageContainer>
+    <PageContainer className="bg-purple-500">
         <SolyncLogo class="mb-24 w-110 fill-white" />
         <h1 class="text-4xl font-bold md:text-5xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
         <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
