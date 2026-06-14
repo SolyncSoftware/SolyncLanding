@@ -27,6 +27,6 @@
     </nav>
 
     <div class="ml-auto flex justify-end">
-        <Button href="https://orbit.solync.org" text="Manage Account" />
+        <Button href="https://orbit.solync.org" class="shadow-none" text="Manage Account" />
     </div>
 </header>
