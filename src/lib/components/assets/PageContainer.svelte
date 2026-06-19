@@ -15,7 +15,7 @@
         backgroundSize="cover"
     />
     <div class="{className} absolute inset-0 z-5 mix-blend-plus-lighter"></div>
-    <div class="relative z-10 p-12">
+    <div class="relative z-10 p-9">
         {@render children()}
     </div>
 </div>
