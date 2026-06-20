@@ -35,10 +35,10 @@ export async function initIfAllowed(embedEl?: HTMLElement | null) {
             cachePostInitFpsDecision(postInitFps, !shouldDisable, shouldDisable ? 'post-init-low-fps' : null);
 
             if (shouldDisable) {
-                stopUnicorn('post-init-low-fps');
+                stopUnicorn('post-init-low-fps', true);
             }
         } catch (error) {
-            stopUnicorn('unicorn-init-error');
+            stopUnicorn('unicorn-init-error', true);
             console.error('Error initializing UnicornStudio', error);
         } finally {
             initPromise = null;
@@ -48,7 +48,7 @@ export async function initIfAllowed(embedEl?: HTMLElement | null) {
     return initPromise;
 }
 
-export function stopUnicorn(reason?: string) {
+export function stopUnicorn(reason?: string, permanent = false) {
     if (!unicornInitialized) return;
     try {
         if (typeof UnicornStudio !== 'undefined' && typeof UnicornStudio.destroy === 'function') {
@@ -69,7 +69,14 @@ export function stopUnicorn(reason?: string) {
         });
 
         unicornInitialized = false;
-        performanceStore.update((s) => ({ ...s, globalHardDisabled: true, canUseWebgl: false, disableReason: reason ?? 'global-failure' }));
+        if (permanent) {
+            performanceStore.update((s) => ({
+                ...s,
+                globalHardDisabled: true,
+                canUseWebgl: false,
+                disableReason: reason ?? 'global-failure'
+            }));
+        }
         console.log('KILLED UNICORN DIE DIE DIE. this should fix the cpu thread issue');
     } catch (e) {
         console.error('error trying to kill unicorn:', e);

@@ -16,7 +16,7 @@
         } else {
             stopUnicorn();
         }
-        return () => stopUnicorn();
+        return () => stopUnicorn(undefined, false);
     });
 </script>
 
