@@ -2,26 +2,32 @@
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
 </script>
 
-<PageContainer className="bg-pink-400 overflow-visible">
-    <div class="flex max-h-128 flex-col justify-between xl:flex-row">
-        <div class="max-w-210">
-            <h1 class="text-4xl font-bold md:text-6xl">Build a better Solync.</h1>
-            <p class="mt-4 text-lg md:text-2xl">
-                Solync is a software startup based in Texas, United States. We're a collective of thinkers who like to showcase our work
-                while staying ethical to the end user. We run scalable services (StreamSkinner, Gardens Wiki) without any CEO, board, or
-                hierarchy. If you send us money, you'll help us scale and build a better Solync.
-            </p>
-            <p class="mt-4 text-lg md:text-2xl">
-                Our greatest priority is giving back to users and empowering them with cool stuff, whether it be software or something else
-                we find interesting. We wish to create a pleasant end-user experience that's sustainable, ethical, and really cool!
-            </p>
-            <p class="mt-4 text-lg md:text-2xl">
-                We need a way to scale to build better software, and funding us helps keep Solync on that path towards sustainability. Your
-                contributions are greatly appreciated and will not go to waste. We believe in transparency, so we plan to build a platform
-                where users can view all of our donations, earnings, and more!
-            </p>
+<!-- some of the most batshit stupid shit ever written -->
+<div class="relative overflow-visible">
+    <PageContainer className="bg-pink-500/90">
+        <div class="flex max-h-128 flex-col justify-between xl:flex-row xl:pr-24">
+            <div class="max-w-210 font-medium">
+                <h1 class="text-4xl font-bold md:text-6xl">Build a better Solync.</h1>
+                <p class="mt-4 text-lg md:text-2xl">
+                    Solync is a software startup based in Texas, United States. We're a collective of thinkers who like to showcase our work
+                    while staying ethical to the end user. We run scalable services (StreamSkinner, Gardens Wiki) without any CEO, board, or
+                    hierarchy. If you send us money, you'll help us scale and build a better Solync.
+                </p>
+                <p class="mt-4 text-lg md:text-2xl">
+                    Our greatest priority is giving back to users and empowering them with cool stuff, whether it be software or something
+                    else we find interesting. We wish to create a pleasant end-user experience that's sustainable, ethical, and really cool!
+                </p>
+                <p class="mt-4 mb-6 text-lg md:text-2xl">
+                    We need a way to scale to build better software, and funding us helps keep Solync on that path towards sustainability.
+                    Your contributions are greatly appreciated and will not go to waste. We believe in transparency, so we plan to build a
+                    platform where users can view all of our donations, earnings, and more!
+                </p>
+            </div>
         </div>
-        <div class="absolute top-0 right-0 overflow-hidden rounded-3xl">
+    </PageContainer>
+
+    <div class="pointer-events-none absolute top-9 right-22 z-200 hidden xl:block xl:translate-x-12">
+        <div class="pointer-events-auto overflow-hidden rounded-3xl shadow-2xl">
             <iframe
                 id="kofiframe"
                 class="rounded-3xl"
@@ -33,10 +39,10 @@
             ></iframe>
         </div>
     </div>
-</PageContainer>
+</div>
 
-<div class="mt-10 flex w-full flex-col gap-2">
-    <h2 class="ml-9 text-5xl font-extrabold text-pink-400">Monthly Donations</h2>
+<div class="mt-16 flex w-full flex-col gap-2">
+    <h2 class="ml-9 text-5xl font-extrabold text-pink-500">Monthly Donations</h2>
 
     <div class="flex w-full flex-row gap-6">
         <div class="flex-2 bg-white">Graph container</div>
