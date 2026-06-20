@@ -55,7 +55,7 @@
             </a>
 
             <div class="flex flex-row items-center gap-4 font-bold">
-                Join us on our journey! <Button class="w-fit hover:bg-white hover:text-black" text="Apply to Solync" />
+                Join us on our journey! <Button class="w-fit hover:bg-white hover:text-black" href="/apply" text="Apply to Solync" />
             </div>
 
             <ul class="flex flex-row items-center gap-4">
