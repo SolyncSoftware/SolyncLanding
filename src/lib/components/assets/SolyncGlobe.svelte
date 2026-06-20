@@ -22,7 +22,7 @@
         } else {
             stopUnicorn();
         }
-        return () => stopUnicorn(undefined, false);
+        return () => stopUnicorn();
     });
 </script>
 
