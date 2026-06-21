@@ -35,9 +35,26 @@
 </script>
 
 <article>
-    <img src={image || '/images/articles/fallback.png'} alt="screenshot of news post" class="mb-16 h-94 w-full object-cover" />
+    <div
+        class="mb-16 flex min-h-94 flex-col items-start justify-between rounded-4xl bg-cover bg-center p-4 text-lg text-white"
+        style="background-image: url({image || '/images/articles/fallback.png'})"
+    >
+        <span class="rounded-full bg-black/80 px-6 py-2 font-medium first-letter:uppercase">{categories[0]}</span>
 
-    <div class="flex flex-col gap-18 xl:flex-row">
+        <div class="flex flex-row items-center gap-2 rounded-full bg-black/80 py-2 pr-6 pl-2">
+            <img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class=" h-12 w-12 rounded-full" />
+            <div class="flex flex-col">
+                <span class="leading-5 font-medium">{teamMember?.realName || 'No name lol'}</span>
+                <span class="text-sm text-white/80">{teamMember?.username || author || 'Please add an author'}</span>
+            </div>
+        </div>
+    </div>
+    <h1 class="font-display mb-12 truncate text-4xl font-bold text-wrap uppercase xl:text-5xl">{title}</h1>
+    {@render children()}
+
+    <!-- <img src={image || '/images/articles/fallback.png'} alt="screenshot of news post" class="h-94 w-full rounded-4xl object-cover" /> -->
+
+    <!-- <div class="flex flex-col gap-18 xl:flex-row">
         <div class="markdown font-sans text-2xl xl:flex-2">
             <h1 class="font-display mb-12 truncate text-4xl font-bold text-wrap uppercase xl:text-5xl">{title}</h1>
 
@@ -69,10 +86,10 @@
                 <span class="font-sans text-lg font-light text-black/75">Tags: {categories.join(', ')}</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="mt-26">
-        <p class="font-display mb-9 text-5xl font-bold">READ MORE</p>
+        <p class="text-accent mb-9 text-5xl font-bold">Read More</p>
         {#if loading}
             <p class="text-xl">Loading articles...</p>
         {:else if blogArticles.length === 0}
