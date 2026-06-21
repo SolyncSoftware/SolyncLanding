@@ -1,7 +1,7 @@
 .markdown {
     font-family: var(--font-sans);
     line-height: 1.6;
-    color: var(--color-white);
+    color: var(--color-black);
 }
 
 /* Headings */
@@ -36,7 +36,7 @@
 
 .markdown h6 {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
+    /* color: rgba(255, 255, 255, 0.7); */
 }
 
 /* Paragraphs */
@@ -46,13 +46,13 @@
 
 /* Links */
 .markdown a {
-    color: var(--color-cyan-500);
+    color: var(--color-accent);
     text-decoration: none;
     border-bottom: 1px solid transparent;
 }
 
 .markdown a:hover {
-    border-bottom-color: var(--color-cyan-500);
+    border-bottom-color: var(--color-accent);
 }
 
 /* Lists */
@@ -86,7 +86,7 @@
     margin: 1rem 0;
     padding: 1rem;
     border-left: 4px solid var(--color-accent);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
     font-style: italic;
     background-color: var(--color-black);
 
@@ -115,7 +115,7 @@
 /* Code blocks (fenced) */
 .markdown pre {
     background-color: #0a0a0a;
-    color: #e2e8f0;
+    color: var(--color-black);
     padding: 1rem;
     overflow-x: auto;
     margin: 1rem 0;
@@ -174,7 +174,7 @@
 
 .markdown figcaption {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
     font-style: italic;
 }
 
