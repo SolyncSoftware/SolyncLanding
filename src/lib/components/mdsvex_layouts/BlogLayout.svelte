@@ -36,7 +36,7 @@
 
 <article>
     <div
-        class="mb-16 flex min-h-94 flex-col items-start justify-between rounded-4xl bg-cover bg-center p-4 text-lg text-white"
+        class="mb-8 flex min-h-94 flex-col items-start justify-between rounded-4xl bg-cover bg-center p-4 text-lg text-white"
         style="background-image: url({image || '/images/articles/fallback.png'})"
     >
         <span class="rounded-full bg-black/80 px-6 py-2 font-medium first-letter:uppercase">{categories[0]}</span>
@@ -49,8 +49,16 @@
             </div>
         </div>
     </div>
-    <h1 class="font-display mb-12 truncate text-4xl font-bold text-wrap uppercase xl:text-5xl">{title}</h1>
-    {@render children()}
+    <h1 class="text-accent ml-9 truncate text-4xl font-black text-wrap xl:text-5xl">{title}</h1>
+    <div class="mb-8 ml-9 flex flex-row items-center gap-4">
+        <span class="text-2xl font-black text-black/90">{Formatting.formatDate(new Date(date).getTime() / 1000)}</span>
+        <span class="h-fit rounded-full bg-black/90 p-1"></span>
+        <span class="text-lg text-black/80">{categories.join(', ')}</span>
+    </div>
+
+    <div class="markdown rounded-4xl bg-white p-9 text-2xl">
+        {@render children()}
+    </div>
 
     <!-- <img src={image || '/images/articles/fallback.png'} alt="screenshot of news post" class="h-94 w-full rounded-4xl object-cover" /> -->
 
