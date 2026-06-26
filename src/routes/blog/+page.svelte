@@ -14,14 +14,14 @@
     });
 </script>
 
-<h1 class="text-5xl font-bold">LATEST ARTICLES</h1>
-<div class="mt-6 flex max-w-301 flex-col gap-12">
+<h1 class="text-5xl font-bold text-white">Latest Articles</h1>
+<div class="flex w-full flex-col gap-12">
     {#if loading}
-        <p class="text-xl">Loading contents please wait...</p>
+        <p class="text-xl text-white">Loading contents please wait...</p>
     {:else if blogArticles.length === 0}
         <p class="text-error text-xl">No articles found!</p>
     {:else}
-        <div class="mt-6 flex max-w-301 flex-col gap-12">
+        <div class="mt-6 flex flex-col gap-12">
             <LargePost
                 title={blogArticles[0].title}
                 description={blogArticles[0].description}

@@ -12,20 +12,6 @@
     const { title, description, link, category, image }: Props = $props();
 </script>
 
-<!-- <div class="font-display border-accent relative border-b-12 bg-white">
-    <img loading="lazy" src={image || '/images/fallback.png'} alt="screenshot of news post" class="h-92 w-full object-cover" />
-    <div class="bg-accent absolute ml-8 -translate-y-6 justify-self-start px-2 py-1 text-xl font-bold text-white uppercase">{category}</div>
-    <div class="flex flex-col justify-between p-8 xl:flex-row">
-        <div class="flex max-w-190 flex-col">
-            <div class="text-accent line-clamp-1 text-3xl font-bold uppercase">{title}</div>
-            <p class="line-clamp-3 text-xl">
-                {description}
-            </p>
-        </div>
-        <ButtonSimple text="READ MORE" href={link} class="self-end text-lg" />
-    </div>
-</div> -->
-
 <div class="border-offwhite flex flex-col overflow-hidden rounded-4xl bg-white/80 shadow-xl/4 transition">
     <img loading="lazy" src={image || '/images/fallback.png'} alt={`${image}`} class="h-92 w-full rounded-4xl object-cover p-1" />
     <div
