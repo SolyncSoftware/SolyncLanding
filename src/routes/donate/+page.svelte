@@ -4,7 +4,7 @@
 
 <!-- some of the most batshit stupid shit ever written -->
 <div class="relative overflow-visible">
-    <PageContainer className="bg-pink-500/90">
+    <PageContainer className="bg-accent">
         <div class="flex max-h-128 flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-210 font-medium">
                 <h1 class="text-4xl font-bold md:text-6xl">Build a better Solync.</h1>
