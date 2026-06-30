@@ -98,7 +98,12 @@
                 {/each}
             </div>
 
-            <img src="/images/badges/csshard.gif" alt="css is hard" />
+            <div class="flex flex-row gap-2">
+                <img src="/images/badges/csshard.gif" alt="css is hard" />
+                <a href="https://brainmade.org/" target="_blank">
+                    <img src="/images/badges/brainmade.png" alt="90% human made!" />
+                </a>
+            </div>
 
             <div>
                 &copy; {new Date().getFullYear()} Solync. Made with
