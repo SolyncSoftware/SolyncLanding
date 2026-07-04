@@ -40,6 +40,17 @@
 </script>
 
 <footer class="3xl:max-w-560 3xl:mx-auto mx-auto bg-black px-5 py-12 text-xl text-white 2xl:px-70">
+    <a
+        class="group mb-18 flex flex-row items-center justify-between rounded-2xl bg-black px-12 py-6 transition hover:bg-pink-500"
+        href="/donate"
+    >
+        <div>
+            <p class="text-4xl font-bold">Software for everyone since 2024</p>
+            <p class="text-xl">Support us by donating or becoming a sponsor</p>
+        </div>
+        <span class="heart text-error inline-block text-4xl transition group-hover:text-white" aria-hidden="true">&#10084;</span>
+    </a>
+
     <!-- top side -->
     <div class="mb-18 flex flex-col gap-3 text-6xl font-bold">
         <p class="bg-accent w-fit px-12 py-6">We're an independent software collective</p>
