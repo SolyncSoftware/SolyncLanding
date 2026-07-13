@@ -35,48 +35,37 @@
 </script>
 
 <article>
-    <img src={image || '/images/articles/fallback.png'} alt="screenshot of news post" class="mb-16 h-94 w-full object-cover" />
+    <div
+        class="mb-8 flex min-h-94 flex-col items-start justify-between rounded-4xl bg-cover bg-center p-4 text-lg text-white"
+        style="background-image: url({image || '/images/articles/fallback.png'})"
+    >
+        <span class="rounded-full bg-black/80 px-6 py-2 font-medium first-letter:uppercase">{categories[0]}</span>
 
-    <div class="flex flex-col gap-18 xl:flex-row">
-        <div class="markdown font-sans text-2xl xl:flex-2">
-            <h1 class="font-display mb-12 truncate text-4xl font-bold text-wrap uppercase xl:text-5xl">{title}</h1>
-
-            <div class="font-display mb-6 xl:hidden">
-                <p class="bg-accent mb-11 w-fit truncate p-4 text-2xl font-bold text-black uppercase">{categories[0]}</p>
-                <div class="border-accent flex flex-col border-l-6 pl-9">
-                    <img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class="m-0! mb-3! h-46 w-46" />
-                    <span class="text-3xl font-bold">{teamMember?.realName || 'No name lol'}</span>
-                    <span class="font-sans text-2xl leading-7 font-light text-black/75">
-                        {teamMember?.username || author || 'Please add a author'}
-                    </span>
-                    <span class="mt-8 font-sans text-2xl font-bold">{Formatting.formatDate(new Date(date).getTime() / 1000)}</span>
-                    <span class="font-sans text-lg font-light text-black/75">Tags: {categories.join(', ')}</span>
-                </div>
-            </div>
-
-            {@render children()}
-        </div>
-        <div class="hidden flex-1 xl:block">
-            <p class="bg-accent mb-11 w-fit py-4 pr-10 pl-5 text-3xl font-bold text-black uppercase">{categories[0]}</p>
-
-            <div class="border-accent flex flex-col border-l-6 pl-9">
-                <img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class="mb-3 h-46 w-46" />
-                <span class="text-3xl font-bold">{teamMember?.realName || 'No name lol'}</span>
-                <span class="font-sans text-2xl leading-7 font-light text-black/75">
-                    {teamMember?.username || author || 'Please add a author'}
-                </span>
-                <span class="mt-8 font-sans text-2xl font-bold">{Formatting.formatDate(new Date(date).getTime() / 1000)}</span>
-                <span class="font-sans text-lg font-light text-black/75">Tags: {categories.join(', ')}</span>
+        <div class="flex flex-row items-center gap-2 rounded-full bg-black/80 py-2 pr-6 pl-2">
+            <img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class=" h-11 w-11 rounded-full" />
+            <div class="flex flex-col">
+                <span class="leading-5 font-medium">{teamMember?.realName || 'No name lol'}</span>
+                <span class="text-sm text-white/80">{teamMember?.username || author || 'Please add an author'}</span>
             </div>
         </div>
     </div>
+    <h1 class="text-accent ml-9 truncate text-4xl font-black text-wrap xl:text-5xl">{title}</h1>
+    <div class="mb-8 ml-9 flex flex-row items-center gap-4">
+        <span class="text-2xl font-black text-black/90">{Formatting.formatDate(new Date(date).getTime() / 1000)}</span>
+        <span class="h-fit rounded-full bg-black/90 p-0.75"></span>
+        <span class="text-lg text-black/90">{categories.join(', ')}</span>
+    </div>
+
+    <div class="markdown rounded-4xl bg-white p-9 text-2xl shadow-xl/6">
+        {@render children()}
+    </div>
 
     <div class="mt-26">
-        <p class="font-display mb-9 text-5xl font-bold">READ MORE</p>
+        <p class="text-accent mb-4 text-4xl font-bold">Read More</p>
         {#if loading}
             <p class="text-xl">Loading articles...</p>
         {:else if blogArticles.length === 0}
-            <p class="text-xl text-gray-400">No articles found.</p>
+            <p class="text-xl text-black">No articles found.</p>
         {:else}
             <div class="grid grid-cols-1 gap-8 xl:grid-cols-3">
                 {#each blogArticles as article}
