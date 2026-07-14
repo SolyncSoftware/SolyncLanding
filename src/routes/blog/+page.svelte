@@ -21,7 +21,7 @@
     {:else if blogArticles.length === 0}
         <p class="text-error text-xl">No articles found!</p>
     {:else}
-        <div class="mt-6 flex flex-col gap-12">
+        <div class="mt-6 flex flex-col gap-4">
             <LargePost
                 title={blogArticles[0].title}
                 description={blogArticles[0].description}
@@ -31,7 +31,7 @@
             />
 
             {#if blogArticles.length > 1}
-                <div class="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                     {#each blogArticles.slice(1) as article (article.slug)}
                         <SmallPost
                             title={article.title}
