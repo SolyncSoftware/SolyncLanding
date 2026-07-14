@@ -1,7 +1,7 @@
 ---
 title: Test article
 description: Check out this markdown test article
-author: gapva
+author: pastaya
 date: '2026-04-29T12:00:00.000Z'
 categories:
   - testing

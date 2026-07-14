@@ -3,7 +3,7 @@
     line-height: 1.6;
     color: var(--color-black);
     --markdown-heading-border: color-mix(in srgb, var(--color-black) 12%, var(--color-white));
-    --markdown-blockquote-text: color-mix(in srgb, var(--color-black) 80%, var(--color-white));
+    --markdown-blockquote-text: color-mix(in srgb, var(--color-white) 80%, var(--color-white));
     --markdown-hr-line: color-mix(in srgb, var(--color-black) 24%, var(--color-white));
     --markdown-inline-code-bg: color-mix(in srgb, var(--color-white) 88%, var(--color-black));
     --markdown-pre-bg: color-mix(in srgb, var(--color-black) 96%, var(--color-white));
