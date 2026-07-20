@@ -1,10 +1,33 @@
-<script>
+<script lang="ts">
+    import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import OurPartners from '$lib/components/about/OurPartners.svelte';
+    import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import OurTeam from '$lib/components/index/OurTeam.svelte';
+    const title: string = 'Solync';
+    const description: string = `
+    is a software collective driven by simple principles: putting users first, challenging tradition
+    with originality, and constantly improving. We don't sell out, make empty promises, or cut corners for profit. What we create is a direct
+    reflection of that commitment.
+    We iterate quickly and thoughtfully, refining what works and fixing what doesn't. Continuous growth means owning our impact and 
+    staying open to radical feedback, ensuring we meet our own standards.
+    `;
 </script>
 
-<h1 class="text-5xl font-bold text-white">About us</h1>
-<div class="mt-6 flex max-w-200 flex-col gap-4 text-xl">
+<h1 class="text-4xl font-bold text-white md:text-6xl">About Us</h1>
+<PageContainer>
+    <SolyncLogo class="mb-24 w-110 fill-white" />
+    <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
+        <span class="text-4xl"><strong>Solync</strong></span> is a software collective driven by simple principles: putting users first, challenging
+        tradition with originality, and constantly improving. We don't sell out, make empty promises, or cut corners for profit. What we create
+        is a direct reflection of that commitment.
+    </p>
+    <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
+        We iterate quickly and thoughtfully, refining what works and fixing what doesn't. Continuous growth means owning our impact and
+        staying open to radical feedback, ensuring we meet our own standards.
+    </p>
+</PageContainer>
+
+<!--<div class=" mt-6 flex max-w-200 flex-col gap-4 text-xl">
     <p>
         <span class="font-bold">SOLYNC</span> is a software collective driven by simple principles: putting users first, challenging tradition
         with originality, and constantly improving. We don't sell out, make empty promises, or cut corners for profit. What we create is a direct
@@ -15,7 +38,7 @@
         staying open to radical feedback, ensuring we meet our own standards.
     </p>
 </div>
-
+-->
 <div class="mt-24 flex max-w-301 flex-col gap-4 text-xl">
     <h1 class="text-5xl font-bold">OUR PARTNERS</h1>
     <p class="text-lg opacity-90">
