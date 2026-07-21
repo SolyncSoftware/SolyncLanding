@@ -64,6 +64,13 @@ const projectData: SolyncProject[] = [
         image: 'killallbots.png',
         desc: 'A simple Discord moderation bot that bans users/bots when they select a specific role during onboarding.',
         github: 'KILLALLBOTS'
+    },
+    {
+        date: '7-20-2026',
+        title: 'IdeaLync',
+        image: 'idealync.png',
+        desc: 'A Discord bot that structures our pitch submissions, meetings, roles, and more.',
+        github: 'IdeaLync'
     }
 ];
 
