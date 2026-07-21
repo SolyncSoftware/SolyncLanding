@@ -15,7 +15,7 @@
     <PageContainer>
         <div class="flex max-h-128 flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-210 font-medium">
-                <h1 class="text-4xl font-bold md:text-6xl">About Solync</h1>
+                <h1 class="text-4xl font-bold md:text-6xl">Learn more about Solync</h1>
                 <p class="mt-4 text-lg md:text-2xl">
                     <span class="text-3xl"><strong>Solync</strong></span> is a software collective driven by simple principles: putting users
                     first, challenging tradition with originality, and constantly improving. We don't sell out, make empty promises, or cut corners
