@@ -30,20 +30,12 @@
     </PageContainer>
 
     <div>
-        <h2 class="text-accent mb-4 text-5xl font-bold">Our Partners</h2>
+        <h2 class="text-accent text-5xl font-bold">Our Partners</h2>
+        <p class="text-lg opacity-90">
+            By partnering with Solync, we share resources, talent, and expertise to create cool stuff. We collaborate on projects, exchange
+            ideas, and support one another.
+        </p>
+        <p class="mb-4 text-lg opacity-90">The partner program is currently closed, but we will reopen applications in the near future.</p>
         <OurPartners />
     </div>
 </section>
-
-<!--<div class=" mt-6 flex max-w-200 flex-col gap-4 text-xl">
-    <p>
-        <span class="font-bold">SOLYNC</span> is a software collective driven by simple principles: putting users first, challenging tradition
-        with originality, and constantly improving. We don't sell out, make empty promises, or cut corners for profit. What we create is a direct
-        reflection of that commitment.
-    </p>
-    <p>
-        We iterate quickly and thoughtfully, refining what works and fixing what doesn't. Continuous growth means owning our impact and
-        staying open to radical feedback, ensuring we meet our own standards.
-    </p>
-</div>
--->
