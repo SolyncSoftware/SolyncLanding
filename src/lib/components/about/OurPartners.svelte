@@ -28,12 +28,12 @@
                     href={partner.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="group border-accent relative flex items-center border-2 bg-black/50 p-10 transition-all hover:border-white hover:bg-black/70"
+                    class="group bg-accent relative flex items-center rounded-2xl p-10 transition-all hover:bg-black"
                 >
                     {@render partnerImg()}
                 </a>
             {:else}
-                <div class="border-accent relative flex items-center border-2 bg-black/50 p-10">
+                <div class="bg-accent relative flex items-center p-10">
                     {@render partnerImg()}
                 </div>
             {/if}

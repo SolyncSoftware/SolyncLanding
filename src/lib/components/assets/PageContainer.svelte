@@ -5,7 +5,7 @@
 </script>
 
 <div class="border-offwhite relative z-100 w-full overflow-hidden rounded-4xl border-4 text-white">
-    <div class="absolute inset-0 z-1 bg-black/10"></div>
+    <div class="absolute inset-0 z-1 bg-black/40"></div>
 
     <Waves
         className="h-full overflow-hidden mix-blend-plus-lighter"
