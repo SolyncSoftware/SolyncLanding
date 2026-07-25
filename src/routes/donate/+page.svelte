@@ -40,12 +40,3 @@
         </div>
     </div>
 </div>
-
-<div class="mt-16 flex w-full flex-col gap-2">
-    <h2 class="ml-9 text-5xl font-extrabold text-pink-500">Monthly Donations</h2>
-
-    <div class="flex w-full flex-row gap-6">
-        <div class="flex-2 bg-white">Graph container</div>
-        <div class="flex-1 bg-white">Latest donation container</div>
-    </div>
-</div>
