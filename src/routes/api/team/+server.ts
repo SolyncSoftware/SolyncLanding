@@ -73,10 +73,10 @@ const teamData: TeamMember[] = [
     },
     {
         id: 294897079,
-        realName: 'Leafy',
+        realName: 'fritz',
         username: 'fritzbear',
         github: 'fritzer1',
-        bio: 'i am fritz'
+        bio: 'umm hi im fritz. new bio: passionate and inspiring'
     },
     {
         id: 155797753,
