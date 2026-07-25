@@ -67,7 +67,7 @@
         {:else if blogArticles.length === 0}
             <p class="text-xl text-black">No articles found.</p>
         {:else}
-            <div class="grid grid-cols-1 gap-8 xl:grid-cols-3">
+            <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
                 {#each blogArticles as article}
                     <SmallPost
                         title={article.title}
