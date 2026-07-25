@@ -41,26 +41,33 @@
         <div class="lg:grid-bg-red-500 grid grid-cols-1 gap-4 md:grid-cols-2">
             {#each sortedProjects as project, i}
                 {#if i < 6}
-                    <div class="border-offwhite flex flex-col overflow-hidden rounded-4xl bg-white/80 shadow-xl/4 transition">
-                        <img
-                            loading="lazy"
-                            src={project.imageSrc}
-                            alt={`${project.title} logo`}
-                            class="h-55 w-full rounded-4xl object-cover p-1"
-                        />
-                        <div class="flex h-full flex-col px-6 pt-1 pb-6 text-lg">
-                            <h3 class="text-accent text-2xl font-bold">{project.title}</h3>
-                            <p class="line-clamp-3 leading-5">{project.desc}</p>
+                    <div class="flex min-h-118 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition">
+                        <div
+                            class="flex w-full flex-col justify-end gap-2 rounded-3xl bg-cover bg-center p-5 text-lg"
+                            style="background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1)), url('{project.imageSrc}');"
+                        >
+                            <h3 class="text-accent text-3xl font-bold tracking-wide">{project.title}</h3>
+                            <p>{project.desc}</p>
 
-                            <div class="mt-auto flex gap-4">
+                            <div class="flex gap-3">
                                 {#if project.page !== '#'}
-                                    <ButtonSimple text="Case Study" href={project.page} class="mt-4 self-start text-lg" />
+                                    <ButtonSimple text="Case Study" href={project.page} class="self-start text-lg! hover:text-white" />
                                 {/if}
                                 {#if project.website !== '#'}
-                                    <ButtonSimple text="Website" href={project.website} target="_blank" class="mt-4 self-start text-lg" />
+                                    <ButtonSimple
+                                        text="Website"
+                                        href={project.website}
+                                        target="_blank"
+                                        class="self-start text-lg! hover:text-white"
+                                    />
                                 {/if}
                                 {#if project.github !== '#'}
-                                    <ButtonSimple text="GitHub" href={project.github} target="_blank" class="mt-4 self-start text-lg" />
+                                    <ButtonSimple
+                                        text="GitHub"
+                                        href={project.github}
+                                        target="_blank"
+                                        class="self-start text-lg! hover:text-white"
+                                    />
                                 {/if}
                             </div>
                         </div>
