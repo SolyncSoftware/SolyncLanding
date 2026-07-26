@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { tick } from 'svelte';
+    import { onDestroy, tick } from 'svelte';
     import performanceStore from '$lib/stores/performance.js';
-    import { initIfAllowed, stopUnicorn } from '$lib/utils/unicornLifecycle.js';
+    import { disposeUnicorn, initIfAllowed, stopUnicorn } from '$lib/utils/unicornLifecycle.js';
 
     let {
         style = '',
@@ -15,14 +15,23 @@
     const active = $derived($performanceStore.checked && $performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled);
 
     $effect(() => {
+        let cancelled = false;
+
         if (active) {
             tick().then(() => {
-                if (embedEl) initIfAllowed(embedEl);
+                if (!cancelled && embedEl) initIfAllowed(embedEl);
             });
         } else {
             stopUnicorn();
         }
-        return () => stopUnicorn();
+
+        return () => {
+            cancelled = true;
+        };
+    });
+
+    onDestroy(() => {
+        disposeUnicorn();
     });
 </script>
 
