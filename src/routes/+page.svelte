@@ -38,7 +38,22 @@
     <div>
         <h2 class="text-accent mb-4 text-5xl font-bold">Our Projects</h2>
         <OurProjects />
-        <Button text="See More" href="/projects" class="mt-4 w-fit text-xl! font-bold" />
+
+        <!-- <div class="flex justify-center">
+            <Button text="See More" href="/projects" class="mt-4 w-fit text-xl! font-bold" />
+        </div> -->
+        <div class="mt-8">
+            <a
+                href="/about"
+                class="text-accent group flex items-center gap-2.5 text-4xl font-bold transition-all ease-in-out hover:text-black"
+                >See more projects
+                <img
+                    src="/images/arrow-sorange.svg"
+                    alt="Arrow"
+                    class="-rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-2"
+                />
+            </a>
+        </div>
     </div>
 
     <div>
