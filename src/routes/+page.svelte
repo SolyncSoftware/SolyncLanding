@@ -44,7 +44,7 @@
         </div> -->
         <div class="mt-8">
             <a
-                href="/about"
+                href="/about#our-work"
                 class="text-accent group flex items-center gap-2.5 text-4xl font-bold transition-all ease-in-out hover:text-black"
                 >See more projects
                 <img
@@ -59,5 +59,11 @@
     <div>
         <h2 class="text-accent mb-4 text-5xl font-bold">Our People</h2>
         <OurTeam />
+    </div>
+
+    <!-- may remove this or make it a component. so far its only in the about page -->
+    <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
+        <p>Building what comes next, together.</p>
+        <SolyncLogo iconOnly={true} class="fill-accent w-30" />
     </div>
 </section>
