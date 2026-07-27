@@ -3,6 +3,9 @@
     import { onMount } from 'svelte';
     import ButtonSimple from '../ButtonSimple.svelte';
 
+    // default count for the number of projects to display is 6, default number of columns is 2
+    let { count = 6, cols = 2 } = $props();
+
     let originalProjects = $state<TransformedProject[]>([]);
     let sortedProjects = $state<TransformedProject[]>([]);
     let loading = $state(true);
@@ -38,9 +41,9 @@
     {:else if sortedProjects.length === 0}
         <p class="text-xl text-black">No projects found!</p>
     {:else}
-        <div class="lg:grid-bg-red-500 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div class={`lg:grid-bg-red-500 grid grid-cols-1 gap-4 md:grid-cols-${cols}`}>
             {#each sortedProjects as project, i}
-                {#if i < 6}
+                {#if i < count}
                     <div class="flex min-h-118 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition">
                         <div
                             class="flex w-full flex-col justify-end gap-2 rounded-3xl bg-cover bg-center p-5 text-lg"
