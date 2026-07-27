@@ -38,7 +38,22 @@
         <div class="rounded-4xl bg-white p-9 shadow-xl/4">
             <h2 class="mb-4 text-3xl font-bold">What we build</h2>
 
-            <p class="mb-4">We've created projects like Porter Robinson Wiki, Gardens Wiki, KILLALLBOTS and more.</p>
+            <p class="mb-4">
+                We've created projects like <a
+                    href="https://github.com/SolyncSoftware/porter-wiki-frontend"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-accent hover:underline">Porter Robinson Wiki</a
+                >,
+                <a href="https://gardens.wiki" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Gardens Wiki</a
+                >,
+                <a
+                    href="https://github.com/SolyncSoftware/KILLALLBOTS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-accent hover:underline">KILLALLBOTS</a
+                > and more.
+            </p>
             <p class="mb-4">
                 Our projects come from ideas we care about. We iterate, refine, and collaborate until a project is something we're proud to
                 ship. Sometimes we may scrap everything and start over, but that's part of the process!
