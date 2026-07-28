@@ -26,9 +26,9 @@
                 </p>
 
                 <p class="mt-4 text-lg md:text-2xl">
-                    We're a collective of hobbyists who believe in worker-managed software and to provide software that we all collectively
-                    believe in. We build tools that spark our collective interest and address human needs. Every product we make is built
-                    with the end user in mind.
+                    We're a collective of hobbyists who believe in worker-managed software and create things we collectively believe in. We
+                    build tools that spark our collective interest and address human needs. Every product we make is built with the end user
+                    in mind.
                 </p>
             </div>
         </div>
@@ -55,8 +55,8 @@
                 > and more.
             </p>
             <p class="mb-4">
-                Our projects come from ideas we care about. We iterate, refine, and collaborate until a project is something we're proud to
-                ship. Sometimes we may scrap everything and start over, but that's part of the process!
+                Our projects start as pitches from anyone in the collective. We iterate, refine, and collaborate until a project is
+                something we're excited to ship. Sometimes we may scrap everything and start over, but that's part of the process!
             </p>
         </div>
 
@@ -67,7 +67,9 @@
                 Because of our flat organizational structure, we have the freedom to design, experiment, and learn from each other. We trust
                 people to be creative, self-sufficient, and responsible.
             </p>
-            <p class="mb-4">We love to focus on creating user-first experiences. Not just because we love it, but because it's ethical.</p>
+            <p class="mb-4">
+                We <span class="font-bold">build</span> user-first experiences. Not just because we love it, but because it's ethical.
+            </p>
         </div>
     </div>
     <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
