@@ -44,7 +44,7 @@
             <ul class="ml-6 list-disc">
                 <li class="mb-4">Curiosity and a willingness to learn and adapt.</li>
                 <li class="mb-4">Collaboration, like valuing working with others.</li>
-                <li class="mb-4">Self-direction like managing your own work and taking initiative.</li>
+                <li class="mb-4">Self-direction, like managing your own work and taking initiative.</li>
                 <li class="mb-4">A belief in ethical user-first experiences.</li>
             </ul>
         </div>
