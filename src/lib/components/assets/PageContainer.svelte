@@ -4,7 +4,7 @@
     import Waves from './Waves.svelte';
 </script>
 
-<div class="border-offwhite relative z-100 w-full overflow-hidden rounded-4xl border-4 text-white">
+<div class="border-offwhite relative z-100 w-full overflow-hidden rounded-4xl border-8 text-white">
     <div class="absolute inset-0 z-1 bg-black/40"></div>
 
     <Waves

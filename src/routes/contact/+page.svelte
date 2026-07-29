@@ -3,8 +3,8 @@
     import Button from '$lib/components/Button.svelte';
 </script>
 
-<h1 class="text-5xl font-bold">CONTACT US</h1>
-<div class="border-t-accent mt-6 h-auto border-t-11 bg-black/50 p-8 xl:w-301">
+<h1 class="mb-6 text-5xl font-bold">CONTACT US</h1>
+<div class="border-t-accent h-auto border-t-11 bg-black/50 p-8 xl:w-301">
     <div class="grid gap-4 font-sans text-2xl xl:grid-cols-2">
         <div class="flex w-full flex-col gap-6 xl:mb-35">
             <div class="flex items-center gap-4">
