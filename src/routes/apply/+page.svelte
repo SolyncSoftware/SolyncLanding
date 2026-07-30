@@ -31,7 +31,7 @@
             <ul class="ml-6 list-disc">
                 <li class="mb-4">An organization where the environment and schedule is extremely flexible.</li>
                 <li class="mb-4">
-                    Opportunity to collaborate with experienced developers for a learning experience, inspiration, and expanding skillsets.
+                    Opportunity to collaborate with experienced members to gain insight, inspiration, and expanding skillsets.
                 </li>
 
                 <li class="mb-4">
@@ -46,7 +46,7 @@
 
             <ul class="ml-6 list-disc">
                 <li class="mb-4">Curiosity and a willingness to learn and adapt.</li>
-                <li class="mb-4">Valuing collaboration and working with others.</li>
+                <li class="mb-4">Collaboration and working with others.</li>
                 <li class="mb-4">Self-direction, like managing your own work and taking initiative.</li>
                 <li class="mb-4">A belief in ethical user-first experiences.</li>
             </ul>
