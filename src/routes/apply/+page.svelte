@@ -7,15 +7,18 @@
 <section class="flex flex-col gap-14">
     <PageContainer className="bg-emerald-500">
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
-            <div class="max-w-210 font-medium">
+            <div class="max-w-200 font-medium">
                 <h1 class="max-w-190 text-4xl font-bold md:text-6xl">Applying to Solync.</h1>
 
-                <p class="mt-4 text-lg md:text-2xl">We aren't looking for a specific skill set, we're looking for curious collaborators.</p>
+                <p class="mt-4 text-lg md:text-2xl">
+                    We aren't looking for specific skill sets or backgrounds. Instead, we look for curious collaborators. We seek T-Shaped
+                    individuals who bring expertise in their craft while having broad curiosity across other disciplines.
+                </p>
 
                 <p class="mt-4 text-lg md:text-2xl">
-                    Because of this, we value T-Shaped people. Deep expertise in one area combined with broad knowledge in others. Whether
-                    you design, code, write, or create, we want to hear from you. We value people who are willing to learn, iterate, and
-                    grow with us.
+                    As a flat collective, we operate without any formal hierarchy or micromanagement. Joining Solync means taking direct
+                    ownership of what we build, choosing projects that align with your interests and the collective's goals, and
+                    collaborating with peers who challenge ideas without ego.
                 </p>
             </div>
         </div>
@@ -43,7 +46,7 @@
 
             <ul class="ml-6 list-disc">
                 <li class="mb-4">Curiosity and a willingness to learn and adapt.</li>
-                <li class="mb-4">Collaboration, like valuing working with others.</li>
+                <li class="mb-4">Valuing collaboration and working with others.</li>
                 <li class="mb-4">Self-direction, like managing your own work and taking initiative.</li>
                 <li class="mb-4">A belief in ethical user-first experiences.</li>
             </ul>
