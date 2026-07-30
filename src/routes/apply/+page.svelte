@@ -31,7 +31,7 @@
             <ul class="ml-6 list-disc">
                 <li class="mb-4">An organization where the environment and schedule is extremely flexible.</li>
                 <li class="mb-4">
-                    Opportunity to collaborate with experienced members to gain insight, inspiration, and expanding skillsets.
+                    Opportunity to collaborate with experienced members to gain insight, inspiration, and expansive skillsets.
                 </li>
 
                 <li class="mb-4">
