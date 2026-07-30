@@ -15,7 +15,7 @@
 </script>
 
 <section class="flex flex-col gap-14">
-    <PageContainer className="bg-cyan-500">
+    <PageContainer className="bg-cyan-600">
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 font-medium">
                 <h1 class="max-w-190 text-4xl font-bold md:text-6xl">We're just getting started.</h1>
