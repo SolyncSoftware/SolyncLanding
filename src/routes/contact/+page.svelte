@@ -10,9 +10,13 @@
             <div class="max-w-200 font-medium">
                 <h1 class="max-w-190 text-4xl font-bold md:text-6xl">Contacting Solync.</h1>
 
-                <p class="mt-4 text-lg md:text-2xl">Lore ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="mt-4 text-lg md:text-2xl">
+                    All of our messages are sent to us via Discord webhooks for centralized communication.
+                </p>
 
-                <p class="mt-4 text-lg md:text-2xl">Lore ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="mt-4 text-lg md:text-2xl">
+                    If you need customer service regarding any of our projects, please reach out to us on Discord and message @ModMail.
+                </p>
             </div>
         </div>
     </PageContainer>
