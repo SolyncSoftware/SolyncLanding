@@ -17,6 +17,40 @@
         </div>
     </PageContainer>
 
+    <!-- todo: find a way to implement this probably put into the white container below -->
+    <div class="flex items-center gap-4">
+        <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
+        <div class="font-display flex flex-col">
+            <span class="text-accent">Email</span>
+            <a href="mailto:hello@solync.works" class="hover:text-white/70 hover:underline">hello@solync.works</a>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
+        <div class="font-display flex flex-col">
+            <span class="text-accent">Discord</span>
+            <a href="https://discord.gg/HdKeWtV" target="_blank" rel="noopener noreferrer" class="hover:text-white/70 hover:underline">
+                Click to join our server!
+            </a>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
+        <div class="font-display flex flex-col">
+            <span class="text-accent">GitHub</span>
+            <a
+                href="https://github.com/SolyncSoftware"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-white/70 hover:underline"
+            >
+                Click to visit our GitHub!
+            </a>
+        </div>
+    </div>
+
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
         <h2 class="mb-4 text-3xl font-bold">Contact us!</h2>
 
