@@ -80,8 +80,8 @@
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
         <h2 class="mb-4 text-4xl font-bold">Our partners</h2>
         <p class="mb-4 max-w-210 text-lg">
-            By partnering with Solync, we share resources, talent, and expertise to create cool stuff. We collaborate on projects, exchange
-            ideas, and support one another.
+            When partnering with Solync, we share resources, talent, and expertise to create cool stuff. We collaborate on projects,
+            exchange ideas, and support one another.
         </p>
         <p class="mb-4 max-w-210 text-lg">The partner program is currently closed, but we will reopen applications in the future.</p>
         <OurPartners />
