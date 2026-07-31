@@ -56,14 +56,16 @@
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
         <h2 class="mb-4 text-3xl font-bold">Apply now!</h2>
 
-        <div class="mb-6 flex flex-col justify-between gap-4 text-xl xl:flex-row">
+        <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
             <div class="flex w-full flex-col gap-6">
                 <Textbox rows="1" placeholder="Your name" />
                 <Textbox rows="1" placeholder="Your email" />
 
                 <div class="flex w-full flex-col gap-2">
                     <span>How did you discover Solync?</span>
-                    <select class="border-accent/50 focus:ring-accent border bg-black px-5 py-4 text-white placeholder:text-white/50">
+                    <select
+                        class="focus:ring-accent bg-offwhite rounded-full border border-none px-5 py-4 text-black placeholder:text-white/50"
+                    >
                         <option value="" disabled selected>Please select one</option>
                         <option value="social-media">Social Media</option>
                         <option value="partners">Partners</option>
@@ -80,17 +82,17 @@
             <div class="flex w-full flex-col gap-6">
                 <p class="max-w-90">Attach your documents. Please include a resume (.doc, .docx, .pdf).</p>
                 <div
-                    class="border-accent/80 flex flex-1 cursor-pointer flex-col items-center justify-center border-2 border-dashed bg-black py-10"
+                    class="border-accent/80 bg-offwhite flex flex-1 cursor-pointer flex-col items-center justify-center rounded-4xl border-2 border-dashed py-10"
                 >
                     <span class="text-accent font-bold">Choose files</span>
-                    <span class="text-white/44">or drop them here</span>
+                    <span class="text-black/48">or drop them here</span>
                 </div>
                 <span><span class="text-accent font-bold underline underline-offset-5">Choose files</span>. No files chosen</span>
             </div>
         </div>
 
         <div class="flex justify-end">
-            <Button href="/submit" text="send application" />
+            <Button href="/submit" text="Send application" class="text-lg!" />
         </div>
     </div>
 </section>
