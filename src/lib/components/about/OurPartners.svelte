@@ -28,7 +28,7 @@
                     href={partner.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="group bg-accent relative flex items-center rounded-2xl p-10 transition-all hover:bg-black"
+                    class="group hover:bg-offaccent relative flex items-center rounded-2xl bg-black p-10 transition-all"
                 >
                     {@render partnerImg()}
                 </a>

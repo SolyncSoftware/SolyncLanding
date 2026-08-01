@@ -55,7 +55,7 @@
     <div class="mb-18 flex flex-col gap-3 text-6xl font-bold">
         <p class="bg-accent w-fit px-12 py-6">We're an independent software collective</p>
         <p class="bg-accent w-fit px-12 py-6">creating user-first experiences.</p>
-        <p class="bg-accent w-fit px-12 py-6">We collaborate to create what's next.</p>
+        <p class="bg-accent w-fit px-12 py-6">Building what comes next, together.</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2">
