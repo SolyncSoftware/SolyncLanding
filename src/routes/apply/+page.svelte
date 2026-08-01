@@ -11,8 +11,14 @@
                 <h1 class="max-w-190 text-4xl font-bold md:text-6xl">Applying to Solync.</h1>
 
                 <p class="mt-4 text-lg md:text-2xl">
-                    We aren't looking for specific skill sets or backgrounds. Instead, we look for curious collaborators. We seek T-Shaped
-                    individuals who bring expertise in their craft while having broad curiosity across other disciplines.
+                    We aren't looking for specific skill sets or backgrounds. Instead, we look for curious collaborators. We seek
+                    <a
+                        href="https://en.wikipedia.org/wiki/T-shaped_person"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-bold hover:underline"
+                        >T-Shaped
+                    </a> individuals who bring expertise in their craft while having broad curiosity across other disciplines.
                 </p>
 
                 <p class="mt-4 text-lg md:text-2xl">
