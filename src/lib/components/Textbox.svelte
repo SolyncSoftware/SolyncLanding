@@ -21,7 +21,7 @@
 <textarea
     // use:grow // jank and stupid
     {...rest}
-    class={`focus:ring-accent border-l-accent border-accent/50 resize-none overflow-clip border border-l-4 bg-black px-5 py-4 font-sans text-xl focus:ring-2 focus:outline-none ${className}`}
+    class={`focus:ring-accent bg-offwhite resize-none overflow-clip rounded-full px-5 py-4 font-sans text-lg focus:ring-2 focus:outline-none ${className}`}
     id="fname"
     name="fname"
     {placeholder}

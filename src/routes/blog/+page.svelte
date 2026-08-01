@@ -14,14 +14,14 @@
     });
 </script>
 
-<h1 class="text-5xl font-bold text-white">Latest Articles</h1>
+<h1 class="mb-6 text-5xl font-bold text-white">Latest Articles</h1>
 <div class="flex w-full flex-col gap-12">
     {#if loading}
         <p class="text-xl text-white">Loading contents please wait...</p>
     {:else if blogArticles.length === 0}
         <p class="text-error text-xl">No articles found!</p>
     {:else}
-        <div class="mt-6 flex flex-col gap-4">
+        <div class="flex flex-col gap-4">
             <LargePost
                 title={blogArticles[0].title}
                 description={blogArticles[0].description}
