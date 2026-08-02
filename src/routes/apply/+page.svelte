@@ -1,6 +1,5 @@
 <script lang="ts">
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import Textbox from '$lib/components/Textbox.svelte';
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
 
