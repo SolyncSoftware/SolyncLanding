@@ -78,14 +78,14 @@
     <div class="grid gap-4" style="grid-template-columns: repeat({columns}">
         {#each fields as field}
             {#if field.type === 'select'}
-                <div class="flex flex-col gap-1 text-xl" style="grid-column: span {field.span ?? 0};">
+                <div class="flex flex-col gap-1 text-lg" style="grid-column: span {field.span ?? 0};">
                     {#if field.label}
                         <span>{field.label}</span>
                     {/if}
                     <select
                         bind:value={formData[field.name]}
                         required={field.required}
-                        class="border-accent/50 focus:ring-accent border bg-black px-5 py-4 text-white placeholder:text-white/50"
+                        class="focus:ring-accent bg-offwhite rounded-full border border-none px-5 py-4 text-black placeholder:text-white/50"
                     >
                         <option value="" disabled selected>
                             {field.placeholder || 'Please select one'}

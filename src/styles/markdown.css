@@ -1,7 +1,22 @@
 .markdown {
     font-family: var(--font-sans);
     line-height: 1.6;
-    color: var(--color-white);
+    color: var(--color-black);
+    --markdown-heading-border: color-mix(in srgb, var(--color-black) 12%, var(--color-white));
+    --markdown-blockquote-text: color-mix(in srgb, var(--color-white) 80%, var(--color-white));
+    --markdown-hr-line: color-mix(in srgb, var(--color-black) 24%, var(--color-white));
+    --markdown-inline-code-bg: color-mix(in srgb, var(--color-white) 88%, var(--color-black));
+    --markdown-pre-bg: color-mix(in srgb, var(--color-black) 96%, var(--color-white));
+    --markdown-pre-border: color-mix(in srgb, var(--color-black) 88%, var(--color-white));
+    --markdown-table-border: color-mix(in srgb, var(--color-black) 14%, var(--color-white));
+    --markdown-table-header-bg: color-mix(in srgb, var(--color-white) 92%, var(--color-black));
+    --markdown-table-row-bg: color-mix(in srgb, var(--color-white) 97%, var(--color-black));
+    --markdown-image-shadow: color-mix(in srgb, var(--color-black) 30%, transparent);
+    --markdown-caption-text: color-mix(in srgb, var(--color-black) 70%, var(--color-white));
+    --markdown-kbd-bg: color-mix(in srgb, var(--color-white) 90%, var(--color-black));
+    --markdown-kbd-border: color-mix(in srgb, var(--color-black) 14%, var(--color-white));
+    --markdown-kbd-shadow: color-mix(in srgb, var(--color-white) 82%, var(--color-black));
+    --markdown-highlight-bg: color-mix(in srgb, var(--color-warning) 20%, transparent);
 }
 
 /* Headings */
@@ -18,7 +33,7 @@
 
 .markdown h2 {
     font-size: 1.875rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--markdown-heading-border);
     padding-bottom: 0.3rem;
 }
 
@@ -36,7 +51,6 @@
 
 .markdown h6 {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Paragraphs */
@@ -46,13 +60,13 @@
 
 /* Links */
 .markdown a {
-    color: var(--color-cyan-500);
+    color: var(--color-accent);
     text-decoration: none;
     border-bottom: 1px solid transparent;
 }
 
 .markdown a:hover {
-    border-bottom-color: var(--color-cyan-500);
+    border-bottom-color: var(--color-accent);
 }
 
 /* Lists */
@@ -86,7 +100,7 @@
     margin: 1rem 0;
     padding: 1rem;
     border-left: 4px solid var(--color-accent);
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--markdown-blockquote-text);
     font-style: italic;
     background-color: var(--color-black);
 
@@ -100,28 +114,28 @@
     margin: 2rem 0;
     border: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, var(--markdown-hr-line), transparent);
 }
 
 /* Inline code */
 .markdown code {
     font-family: 'Red Hat Monospace', monospace;
     font-size: 0.875em;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--markdown-inline-code-bg);
     padding: 0.2em 0.4em;
     color: var(--color-error);
 }
 
 /* Code blocks (fenced) */
 .markdown pre {
-    background-color: #0a0a0a;
-    color: #e2e8f0;
+    background-color: var(--markdown-pre-bg);
+    color: var(--color-black);
     padding: 1rem;
     overflow-x: auto;
     margin: 1rem 0;
     font-size: 0.875rem;
     line-height: 1.5;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--markdown-pre-border);
 }
 
 .markdown pre code {
@@ -144,18 +158,18 @@
 
 .markdown th,
 .markdown td {
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--markdown-table-border);
     padding: 0.5rem 0.75rem;
     text-align: left;
 }
 
 .markdown th {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--markdown-table-header-bg);
     font-weight: 600;
 }
 
 .markdown tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--markdown-table-row-bg);
 }
 
 /* Images */
@@ -164,7 +178,7 @@
     height: auto;
     display: block;
     margin: 1rem auto;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px var(--markdown-image-shadow);
 }
 
 .markdown figure {
@@ -174,7 +188,7 @@
 
 .markdown figcaption {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--markdown-caption-text);
     font-style: italic;
 }
 
@@ -200,7 +214,7 @@
 
 .markdown .footnotes {
     margin-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--markdown-heading-border);
     padding-top: 1rem;
     font-size: 0.875rem;
 }
@@ -217,16 +231,16 @@
 
 /* Keyboard keys */
 .markdown kbd {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: var(--markdown-kbd-bg);
+    border: 1px solid var(--markdown-kbd-border);
     padding: 0.1rem 0.4rem;
     font-family: monospace;
     font-size: 0.75rem;
-    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 -1px 0 var(--markdown-kbd-shadow);
 }
 
 /* Inline HTML fallback (optional) */
 .markdown :global(span.highlight) {
-    background-color: rgba(233, 167, 0, 0.2);
+    background-color: var(--markdown-highlight-bg);
     padding: 0.1rem 0.3rem;
 }

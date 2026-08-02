@@ -12,53 +12,102 @@
             throw new Error(result.error || 'error submitting form');
         }
     }
+    import PageContainer from '$lib/components/assets/PageContainer.svelte';
+    import Textbox from '$lib/components/Textbox.svelte';
+    import Button from '$lib/components/Button.svelte';
 </script>
 
-<h1 class="text-5xl font-bold">CONTACT US</h1>
-<div class="border-t-accent mt-6 h-auto border-t-11 bg-black/50 p-8 xl:w-301">
-    <div class="grid gap-4 font-sans text-2xl xl:grid-cols-2">
-        <div class="flex w-full flex-col gap-6 xl:mb-35">
-            <div class="flex items-center gap-4">
-                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
-                <div class="font-display flex flex-col">
-                    <span class="text-accent">Email</span>
-                    <a href="mailto:hello@solync.works" class="hover:text-white/70 hover:underline">hello@solync.works</a>
-                </div>
-            </div>
+<section class="flex flex-col gap-14">
+    <PageContainer className="bg-indigo-500">
+        <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
+            <div class="max-w-200 font-medium">
+                <h1 class="max-w-190 text-4xl font-bold md:text-6xl">Contacting Solync.</h1>
 
-            <div class="flex items-center gap-4">
-                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
-                <div class="font-display flex flex-col">
-                    <span class="text-accent">Discord</span>
-                    <a
-                        href="https://discord.gg/HdKeWtV"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-white/70 hover:underline"
-                    >
-                        Click to join our server!
-                    </a>
-                </div>
-            </div>
+                <p class="mt-4 text-lg md:text-2xl">
+                    All of our messages are sent to us via Discord webhooks for centralized communication.
+                </p>
 
-            <div class="flex items-center gap-4">
-                <img src="/images/@placeholder.png" alt="Contact Us" class="h-18 w-18 object-cover" />
-                <div class="font-display flex flex-col">
-                    <span class="text-accent">GitHub</span>
-                    <a
-                        href="https://github.com/SolyncSoftware"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-white/70 hover:underline"
-                    >
-                        Click to visit our GitHub!
-                    </a>
-                </div>
+                <p class="mt-4 text-lg md:text-2xl">
+                    If you need customer service regarding any of our projects, please reach out to us on Discord and message @ModMail.
+                </p>
             </div>
         </div>
+    </PageContainer>
 
-        <!-- wip -->
-        <!-- <div class="flex flex-col gap-4">
+    <div class="rounded-4xl bg-white p-9 shadow-xl/4">
+        <h2 class="mb-4 text-3xl font-bold">Contact us</h2>
+
+        <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
+            <div class="flex w-full flex-col gap-6">
+                <div class="flex items-center gap-4">
+                    <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" />
+                    <div class="font-display flex flex-col">
+                        <span class="text-accent text-2xl">Email</span>
+                        <a href="mailto:hello@solync.org" class="hover:text-accent text-xl hover:underline">hello@solync.org</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <img src="/images/placeholders/@placeholder.svg" alt="Discord" class="h-11 w-11 object-cover" />
+                    <div class="font-display flex flex-col">
+                        <span class="text-accent text-2xl">Discord</span>
+                        <a
+                            href="https://discord.gg/nUeRyRtDYC"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-accent text-xl hover:underline"
+                        >
+                            Click to join our Discord!
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <img src="/images/placeholders/@placeholder.svg" alt="GitHub" class="h-11 w-11 object-cover" />
+                    <div class="font-display flex flex-col">
+                        <span class="text-accent text-2xl">GitHub</span>
+                        <a
+                            href="https://github.com/SolyncSoftware"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-accent text-xl hover:underline"
+                        >
+                            Click to visit our GitHub!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex w-full flex-col gap-6">
+                <Form
+                    fields={[
+                        { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 1 },
+                        { name: 'email', placeholder: 'Your email', type: 'text', required: true, span: 1 },
+                        {
+                            name: 'reason',
+                            type: 'select',
+                            label: 'Reason for contact',
+                            required: true,
+                            options: [
+                                { value: 'support', label: 'Support' },
+                                { value: 'question', label: 'Questions' },
+                                { value: 'partners', label: 'Partners' },
+                                { value: 'trust-and-safety', label: 'Trust and Safety' },
+                                { value: 'other', label: 'Other' }
+                            ],
+                            span: 2
+                        },
+                        { name: 'message', placeholder: 'Message content', type: 'textarea', rows: 3, required: true, span: 2 }
+                    ]}
+                    button={{
+                        text: 'Send message',
+                        onClick: handleSubmit
+                    }}
+                />
+            </div>
+
+            <!-- wip -->
+            <!-- <div class="flex flex-col gap-4">
             <div class="grid grid-cols-2 gap-4">
                 <Textbox rows="1" placeholder="Your name" />
                 <Textbox rows="1" placeholder="Your email" />
@@ -81,7 +130,7 @@
             <Button href="/submit" text="send message" />
         </div> -->
 
-        <Form
+            <!-- <Form
             fields={[
                 { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 1 },
                 { name: 'email', placeholder: 'Your email', type: 'text', required: true, span: 1 },
@@ -105,6 +154,10 @@
                 text: 'Send message',
                 onClick: handleSubmit
             }}
-        />
+        /> -->
+            <!-- <div class="flex justify-end">
+                <Button href="/submit" text="Send message" class="text-lg!" />
+            </div> -->
+        </div>
     </div>
-</div>
+</section>
