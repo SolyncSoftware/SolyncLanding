@@ -26,7 +26,7 @@
                     </p>
                 </div>
             </div>
-            <div class="pointer-events-none z-200 flex-2 shrink-0 xl:block xl:translate-x-12 xl:pr-24">
+            <div class="pointer-events-none z-200 flex-2 shrink-0 xl:block xl:translate-x-12 xl:pr-12">
                 <div class="pointer-events-auto overflow-hidden rounded-3xl shadow-2xl">
                     <iframe
                         id="kofiframe"
