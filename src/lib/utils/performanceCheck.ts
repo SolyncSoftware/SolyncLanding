@@ -60,7 +60,6 @@ export const fpsMonitor = (duration: number): Promise<number> => {
     return new Promise((resolve) => {
         let frames = 0;
         const start = performance.now();
-        let rafId: number;
 
         const check = (now: number) => {
             frames++;
@@ -68,9 +67,9 @@ export const fpsMonitor = (duration: number): Promise<number> => {
                 resolve((frames * 1000) / (now - start));
                 return;
             }
-            rafId = requestAnimationFrame(check);
+            requestAnimationFrame(check);
         };
-        rafId = requestAnimationFrame(check);
+        requestAnimationFrame(check);
     });
 };
 
