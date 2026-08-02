@@ -108,7 +108,7 @@
 
     {#if button}
         <div class="mt-4 w-fit justify-self-end">
-            <Button onclick={handleSubmit} {loading} text={button.text} />
+            <Button onclick={handleSubmit} {loading} text={button.text} class="text-lg!" />
         </div>
     {/if}
 </div>
