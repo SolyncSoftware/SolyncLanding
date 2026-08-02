@@ -18,14 +18,15 @@
                 // { name: 'StreamSkinner', href: 'https://streamskinner.com/', external: true },
                 { name: 'Gardens Wiki', href: 'https://gardens.wiki/', external: true },
                 { name: 'Potaro Wiki', href: 'https://potaro.wiki/', external: true },
-                { name: 'Solync Orbit', href: 'https://orbit.solync.org/' }
+                { name: 'All Projects', href: '/about#our-work', external: false }
+                // { name: 'Solync Orbit', href: 'https://orbit.solync.org/' }
             ]
         },
         {
             title: 'More',
             links: [
-                { name: 'Privacy Policy', href: '/legal/privacy' },
-                { name: 'Terms of Service', href: '/legal/terms' },
+                // { name: 'Privacy Policy', href: '/legal/privacy' },
+                // { name: 'Terms of Service', href: '/legal/terms' },
                 { name: 'Contact us', href: '/contact' }
             ]
         }

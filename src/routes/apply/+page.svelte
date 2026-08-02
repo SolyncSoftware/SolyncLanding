@@ -16,7 +16,7 @@
                         href="https://en.wikipedia.org/wiki/T-shaped_person"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="font-bold hover:underline"
+                        class="underline hover:text-black"
                         >T-Shaped
                     </a> individuals who bring expertise in their craft while having broad curiosity across other disciplines.
                 </p>

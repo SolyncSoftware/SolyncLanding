@@ -30,8 +30,12 @@
             We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
         </p>
         <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
-            We're an independent software collective creating user-first experiences. It's not only because we love to, but we think it's
-            ethical. We collaborate to create what's next.
+            We're an independent software collective creating user-first experiences. Not just because we love it, but because it's ethical.
+            We collaborate to create what's next.
+        </p>
+
+        <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
+            <a href="/about" class="underline hover:text-black">Learn more about us.</a>
         </p>
     </PageContainer>
 
