@@ -10,6 +10,7 @@
         rows?: number; // for textarea, ignored otherwise
         options?: { value: string; label: string }[];
         span?: number; // how many columns the field should span (default 1)
+        class?: string;
         required?: boolean;
     }
 
@@ -100,6 +101,7 @@
                     bind:value={formData[field.name]}
                     rows={field.type === 'textarea' ? (field.rows ?? 4) : 1}
                     placeholder={field.placeholder}
+                    class={field.class}
                     style="grid-column: span {field.span ?? 1};"
                 />
             {/if}

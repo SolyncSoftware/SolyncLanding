@@ -95,7 +95,15 @@
                             ],
                             span: 2
                         },
-                        { name: 'message', placeholder: 'Message content', type: 'textarea', rows: 3, required: true, span: 2 }
+                        {
+                            name: 'message',
+                            placeholder: 'Message content',
+                            type: 'textarea',
+                            rows: 3,
+                            required: true,
+                            span: 2,
+                            class: 'rounded-4xl!'
+                        }
                     ]}
                     button={{
                         text: 'Send message',
