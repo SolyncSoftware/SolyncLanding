@@ -10,7 +10,7 @@ export const POST: RequestHandler = async ({ request }) => {
             embeds: [
                 {
                     title: 'Contact Form Submission',
-                    color: 0x0037ff,
+                    color: 0xf36647,
                     fields: [
                         { name: 'Name', value: data.name, inline: true },
                         { name: 'Email', value: data.email, inline: true },
