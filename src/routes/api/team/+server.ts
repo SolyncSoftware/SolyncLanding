@@ -15,21 +15,21 @@ const teamData: TeamMember[] = [
         id: 72106503,
         realName: 'John',
         username: 'papertek',
-        bio: 'i am papertek! i usually work on designs, websites, hardware, human resources, and public relations. i also like experimenting and iterating on whatever comes to mind!',
-        bsky: 'j6chocomint.bsky.social'
+        bsky: 'j6chocomint.bsky.social',
+        bio: 'i am papertek! i usually work on designs, websites, hardware, human resources, and public relations. i also like experimenting and iterating on whatever comes to mind!'
     },
     {
         id: 65809047,
         realName: 'Amal',
         username: 'rottenspaceman',
-        bio: "I like working on software and I like learning as well (also I'm a LAZY bum but that's not needed)",
-        bsky: 'rottenspaceman.bsky.social'
+        bsky: 'rottenspaceman.bsky.social',
+        bio: "I like working on software and I like learning as well (also I'm a LAZY bum but that's not needed)"
     },
     {
         id: 177717694,
-        realName: 'Spenser',
+        realName: 'Spencer',
         username: 'co00k1e',
-        bio: 'Spenser is a full stack developer whos really good at PHP, MYSQL, C#. He is also a big fan of tea time because he was caught making tea during meetings.'
+        bio: 'Spencer is a full stack developer whos really good at PHP, MYSQL, C#. He is also a big fan of tea time because he was caught making tea during meetings.'
     },
     {
         id: 109701210,
@@ -56,8 +56,8 @@ const teamData: TeamMember[] = [
         realName: 'Mr. Pasta',
         username: 'pastaya',
         github: 'pastadudes',
-        bio: 'emacs warrior #67 and knows how to program 75% of the time',
-        bsky: 'pastaya.dev'
+        bsky: 'pastaya.dev',
+        bio: 'emacs warrior #67 and knows how to program 75% of the time'
     },
     {
         id: 102817779,
@@ -71,8 +71,8 @@ const teamData: TeamMember[] = [
         realName: 'Archie',
         username: 'Tanza',
         github: 'Tanza3D',
-        bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics.",
-        bsky: 'tanza.me'
+        bsky: 'tanza.me',
+        bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics."
     },
     {
         id: 294897079,
@@ -80,6 +80,14 @@ const teamData: TeamMember[] = [
         username: 'fritzbear',
         github: 'fritzer1',
         bio: 'umm hi im fritz. new bio: passionate and inspiring'
+    },
+    {
+        id: 65217023,
+        realName: 'Real name',
+        username: 'almahbuby',
+        github: 'almahbubyanwar',
+        bsky: 'nekobuby.bsky.social',
+        bio: 'No bio available yet'
     },
     {
         id: 155797753,
