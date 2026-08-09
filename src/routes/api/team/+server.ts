@@ -22,7 +22,8 @@ const teamData: TeamMember[] = [
         id: 65809047,
         realName: 'Amal',
         username: 'rottenspaceman',
-        bio: "I like working on software and I like learning as well (also I'm a LAZY bum but that's not needed)"
+        bio: "I like working on software and I like learning as well (also I'm a LAZY bum but that's not needed)",
+        bsky: 'rottenspaceman.bsky.social'
     },
     {
         id: 177717694,
@@ -55,7 +56,8 @@ const teamData: TeamMember[] = [
         realName: 'Mr. Pasta',
         username: 'pastaya',
         github: 'pastadudes',
-        bio: 'emacs warrior #67 and knows how to program 75% of the time'
+        bio: 'emacs warrior #67 and knows how to program 75% of the time',
+        bsky: 'pastaya.dev'
     },
     {
         id: 102817779,
@@ -69,7 +71,8 @@ const teamData: TeamMember[] = [
         realName: 'Archie',
         username: 'Tanza',
         github: 'Tanza3D',
-        bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics."
+        bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics.",
+        bsky: 'tanza.me'
     },
     {
         id: 294897079,
@@ -81,8 +84,8 @@ const teamData: TeamMember[] = [
     {
         id: 155797753,
         realName: 'Team Solync',
-        username: '@SolyncSoftware',
-        bio: 'The Solync account',
+        username: 'Solync',
+        bio: 'The Solync user',
         showUser: false
     }
 ];

@@ -15,7 +15,7 @@ interface SolyncProject {
 // it can come later if we implement case study pages
 const projectData: SolyncProject[] = [
     {
-        date: '2024-12-05',
+        date: '2024-12-04',
         title: 'Porter Robinson Wiki',
         website: 'https://potaro.wiki/',
         image: 'potaro.png',
