@@ -1,7 +1,8 @@
 <script lang="ts">
-    import { onDestroy, tick } from 'svelte';
-    import { disposeUnicorn, initIfAllowed } from '$lib/utils/unicornLifecycle.js';
+    import { tick } from 'svelte';
+    import { initIfAllowed } from '$lib/utils/unicornLifecycle.js';
     import performanceStore from '$lib/stores/performance.js';
+    import persistentWaveStore from '$lib/stores/persistentWave.js';
 
     let {
         style = '',
@@ -19,6 +20,7 @@
         enabled?: boolean;
     }>();
 
+    let waveContainerEl = $state<HTMLDivElement | null>(null);
     let embedEl = $state<HTMLDivElement | null>(null);
 
     const autoUnicornEnabled = $derived(
@@ -26,6 +28,12 @@
     );
     const unicornEnabled = $derived(enabled !== undefined ? enabled : autoUnicornEnabled);
     const showPlaceholder = $derived(!unicornEnabled);
+
+    $effect(() => {
+        if (waveContainerEl) {
+            persistentWaveStore.setWave(waveContainerEl);
+        }
+    });
 
     $effect(() => {
         let cancelled = false;
@@ -42,13 +50,9 @@
             cancelled = true;
         };
     });
-
-    onDestroy(() => {
-        disposeUnicorn();
-    });
 </script>
 
-<div class="absolute inset-0 overflow-hidden {className}" {style}>
+<div bind:this={waveContainerEl} class="absolute inset-0 overflow-hidden {className}" {style}>
     <div
         aria-hidden="true"
         class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300 {unicornEnabled ? 'opacity-100' : 'opacity-0'}"
