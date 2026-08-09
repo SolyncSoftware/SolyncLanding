@@ -39,13 +39,15 @@
         </p>
     </PageContainer>
 
+    <!-- <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
+        <p>Curious to know more?</p>
+        <a href="/apply" class="text-accent text-4xl font-bold hover:underline">Learn more about us</a>
+    </div> -->
+
     <div>
         <h2 class="text-accent mb-4 text-5xl font-bold">Our Projects</h2>
         <OurProjects />
 
-        <!-- <div class="flex justify-center">
-            <Button text="See More" href="/projects" class="mt-4 w-fit text-xl! font-bold" />
-        </div> -->
         <div class="mt-8">
             <a
                 href="/about#our-work"
