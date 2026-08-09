@@ -49,7 +49,7 @@
         <div class="mt-8">
             <a
                 href="/about#our-work"
-                class="text-accent group flex items-center gap-2.5 text-4xl font-bold transition-all ease-in-out hover:text-black"
+                class="text-accent group flex w-fit items-center gap-2.5 text-4xl font-bold transition-all ease-in-out hover:text-black"
                 >See more projects
                 <img
                     src="/images/arrow-sorange.svg"
