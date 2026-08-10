@@ -87,7 +87,7 @@ const teamData: TeamMember[] = [
         username: 'almahbuby',
         github: 'almahbubyanwar',
         bsky: 'nekobuby.bsky.social',
-        bio: 'uhh i think im gonna think about it later wait where did you get the typing sound from. *laughs* whatever'
+        bio: "i'm a computer science student who mostly does JS/TS frontend dev, as well as UI/UX and graphic design. shoutouts to fonts btw"
     },
     {
         id: 155797753,
