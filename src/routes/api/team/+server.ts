@@ -83,11 +83,11 @@ const teamData: TeamMember[] = [
     },
     {
         id: 65217023,
-        realName: 'Real name',
+        realName: 'Buby',
         username: 'almahbuby',
         github: 'almahbubyanwar',
         bsky: 'nekobuby.bsky.social',
-        bio: 'No bio available yet'
+        bio: 'uhh i think im gonna think about it later wait where did you get the typing sound from. *laughs* whatever'
     },
     {
         id: 155797753,
