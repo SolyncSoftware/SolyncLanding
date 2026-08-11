@@ -26,9 +26,8 @@
                 </p>
 
                 <p class="mt-4 text-lg md:text-2xl">
-                    We're a collective of hobbyists who believe in worker-managed software and create things we collectively believe in. We
-                    build tools that spark our collective interest and address human needs. Every product we make is built with the end user
-                    in mind.
+                    We're a group of hobbyists who believe in worker-managed software and create things we collectively believe in. We build
+                    tools that spark our curiosity and address human needs. Every product we make is built with the end user in mind.
                 </p>
             </div>
         </div>
