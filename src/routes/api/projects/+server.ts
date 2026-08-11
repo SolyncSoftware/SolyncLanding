@@ -28,7 +28,7 @@ const projectData: SolyncProject[] = [
         title: '[PROTO EDEN]',
         website: 'https://proto-eden.com/',
         image: 'proto-eden.gif',
-        desc: 'Before we were Solync, we helped make personal projects come to life by establishing connections with other developers.',
+        desc: "[PROTO EDEN] is a personal website that showcases Eden's work and provides a platform for fans to connect with the artist. It is currently maintained by Solync.",
         github: 'proto-eden'
         // page: 'proto-eden'
     },
@@ -37,7 +37,7 @@ const projectData: SolyncProject[] = [
         title: 'yell0w.net',
         website: 'https://yell0w.net/',
         image: 'yellow.png',
-        desc: 'Before we were Solync, we helped make personal projects come to life by establishing connections with other developers.',
+        desc: "The Yell0w Website is a personal website developed by Yell0w and maintained by Solync. It is a simple website that showcases Yell0w's learning progress.",
         github: 'dayellowwebsite'
         // page: 'yell0w-net'
     },
@@ -54,7 +54,7 @@ const projectData: SolyncProject[] = [
         title: 'Gardens Wiki',
         website: 'https://gardens.wiki/',
         image: 'gardens.png',
-        desc: 'A user owned wiki builder/platform and social media site with a strong community-first focus for creative freedom.'
+        desc: 'A user owned wiki builder/platform and social media site with a strong community-first focus for creative freedom. Coming soon!'
         // github: 'gardens-wiki',
         // page: 'gardens-wiki'
     },
@@ -69,7 +69,7 @@ const projectData: SolyncProject[] = [
         date: '7-20-2026',
         title: 'IdeaLync',
         image: 'idealync.png',
-        desc: 'A Discord bot that structures our pitch submissions, meetings, roles, and more.',
+        desc: 'A Discord bot that streamlines our internal workflow such as pitching ideas, scheduling meetings, managing roles, and more. You can self host it for free!',
         github: 'IdeaLync'
     }
 ];
