@@ -49,14 +49,14 @@
             </div>
         </div>
     </div>
-    <h1 class="text-accent ml-9 truncate text-4xl font-black text-wrap xl:text-5xl">{title}</h1>
-    <div class="mb-8 ml-9 flex flex-row items-center gap-4">
+    <h1 class="text-accent ml-9 truncate text-4xl font-black text-wrap xl:text-6xl">{title}</h1>
+    <div class="mb-4 ml-9 flex flex-row items-center gap-4">
         <span class="text-2xl font-black text-black/90">{Formatting.formatDate(new Date(date).getTime() / 1000)}</span>
         <span class="h-fit rounded-full bg-black/90 p-0.75"></span>
-        <span class="text-lg text-black/90">{categories.join(', ')}</span>
+        <span class="text-lg font-semibold text-black/90">{categories.join(', ')}</span>
     </div>
 
-    <div class="markdown rounded-4xl bg-white p-9 text-2xl shadow-xl/6">
+    <div class="markdown rounded-4xl bg-white p-9 text-xl shadow-xl/6">
         {@render children()}
     </div>
 
