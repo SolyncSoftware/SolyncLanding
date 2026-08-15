@@ -21,9 +21,9 @@
         </div>
     </PageContainer>
 
+    <span class="text-accent text-7xl font-bold">Coming soon! See news on Discord.</span>
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
         <h2 class="mb-4 text-3xl font-bold">Contact us</h2>
-
         <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
             <div class="flex w-full flex-col gap-6">
                 <div class="flex items-center gap-4">
@@ -90,7 +90,7 @@
         </div>
 
         <div class="flex justify-end">
-            <Button href="/submit" text="Send message" class="text-lg!" />
+            <Button href="" text="Send message" class="text-lg!" />
         </div>
     </div>
 </section>
