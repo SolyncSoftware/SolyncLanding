@@ -1,0 +1,45 @@
+name: Deploy Alpha Environment (alpha.solync.org)
+
+on:
+    push:
+        branches:
+            - alpha
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: latest
+
+            - name: Install dependencies
+              run: bun install --frozen-lockfile
+
+            - name: Build SvelteKit application
+              run: bun run build
+              env:
+                  NODE_ENV: production
+
+            - name: Sync build output to server
+              uses: appleboy/scp-action@v0.1.7
+              with:
+                  host: ${{ secrets.SSH_HOST }}
+                  username: ${{ secrets.SSH_USER }}
+                  key: ${{ secrets.SSH_KEY }}
+                  source: 'build,package.json,bun.lock,bun.lockb'
+                  target: ${{ secrets.ALPHA_TARGET_DIR }}
+
+            - name: Restart application service
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                  host: ${{ secrets.SSH_HOST }}
+                  username: ${{ secrets.SSH_USER }}
+                  key: ${{ secrets.SSH_KEY }}
+                  script: |
+                      sudo systemctl restart alpha-solync
