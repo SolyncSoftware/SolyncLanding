@@ -1,40 +1,74 @@
 <script lang="ts">
     import { tick } from 'svelte';
+    import { initIfAllowed } from '$lib/utils/unicornLifecycle.js';
     import performanceStore from '$lib/stores/performance.js';
-    import { initIfAllowed, stopUnicorn } from '$lib/utils/unicornLifecycle.js';
+    import persistentWaveStore from '$lib/stores/persistentWave.js';
 
-    let { style = '', className = '', wavesType = '', backgroundImage = '/images/waves.png', backgroundSize = 'cover' } = $props();
+    let {
+        style = '',
+        className = '',
+        backgroundImage = '/images/waves-dark.png',
+        backgroundSize = 'cover',
+        wavesType = '/solync_waves_dark.json',
+        enabled = undefined
+    } = $props<{
+        style?: string;
+        className?: string;
+        backgroundImage?: string;
+        backgroundSize?: string;
+        wavesType?: string;
+        enabled?: boolean;
+    }>();
 
+    let waveContainerEl = $state<HTMLDivElement | null>(null);
     let embedEl = $state<HTMLDivElement | null>(null);
-    const active = $derived($performanceStore.checked && $performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled);
+
+    const autoUnicornEnabled = $derived(
+        $performanceStore.checked && $performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled
+    );
+    const unicornEnabled = $derived(enabled !== undefined ? enabled : autoUnicornEnabled);
+    const showPlaceholder = $derived(!unicornEnabled);
 
     $effect(() => {
-        if (active) {
-            tick().then(() => {
-                if (embedEl) initIfAllowed(embedEl);
-            });
-        } else {
-            stopUnicorn();
+        if (waveContainerEl) {
+            persistentWaveStore.setWave(waveContainerEl);
         }
-        return () => stopUnicorn();
+    });
+
+    $effect(() => {
+        let cancelled = false;
+
+        if (unicornEnabled) {
+            tick().then(() => {
+                if (!cancelled && embedEl) {
+                    initIfAllowed(embedEl);
+                }
+            });
+        }
+
+        return () => {
+            cancelled = true;
+        };
     });
 </script>
 
-<div class="relative overflow-hidden {className}" style="width: 100%; {style}">
+<div bind:this={waveContainerEl} class="absolute inset-0 overflow-hidden {className}" {style}>
     <div
-        class="absolute inset-0 z-0"
-        style="background-image: url({backgroundImage}); background-size: {backgroundSize}; background-position: center;"
-    ></div>
-
-    {#if active}
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300 {unicornEnabled ? 'opacity-100' : 'opacity-0'}"
+    >
         <div
             bind:this={embedEl}
-            class="unicorn-embed pointer-events-none absolute inset-0 z-1"
+            class="unicorn-embed absolute inset-0"
             data-us-project-src={wavesType}
             data-us-lazyload="true"
             data-us-scale="0.8"
             data-us-dpi="1"
             data-us-fps="60"
         ></div>
-    {/if}
+    </div>
+    <div
+        class="absolute inset-0 z-0 transition-opacity duration-300 {showPlaceholder ? 'opacity-100' : 'opacity-0'}"
+        style="background-image: url({backgroundImage}); background-size: {backgroundSize}; background-position: center;"
+    ></div>
 </div>

@@ -1,101 +1,104 @@
 <script lang="ts">
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
-    import Waves from './assets/Waves.svelte';
     import SolyncLogo from './SolyncLogo.svelte';
+    import Button from './Button.svelte';
 
     let footerSections = $state([
         {
-            title: 'SOLYNC',
+            title: 'Solync',
             links: [
-                { name: 'About Us', href: '/about' },
-                { name: 'Work at Solync', href: '/apply' },
-                { name: 'Contact us', href: '/contact' },
+                { name: 'About us', href: '/about' },
+                { name: 'Sponsor us', href: '/donate' },
                 { name: 'Our Blog', href: '/blog' }
             ]
         },
         {
-            title: 'SERVICES',
+            title: 'Projects',
             links: [
-                { name: 'Solynchosting', href: 'https://solync.host/', external: true },
-                { name: 'Theaceae Collective', href: 'https://theaceae.org/', external: true },
-                { name: 'Gardens Wiki', href: 'https://alpha.potaro.wiki/news/gardens-wiki', external: true }
-                // { name: 'mySolync', href: 'https://mysolync.works/' }
+                // { name: 'StreamSkinner', href: 'https://streamskinner.com/', external: true },
+                { name: 'Gardens Wiki', href: 'https://gardens.wiki/', external: true },
+                { name: 'Potaro Wiki', href: 'https://potaro.wiki/', external: true },
+                { name: 'All Projects', href: '/about#our-work' }
+                // { name: 'Solync Orbit', href: 'https://orbit.solync.org/' }
             ]
         },
         {
-            title: 'MORE',
+            title: 'More',
             links: [
-                { name: 'Privacy Policy', href: '/legal/privacy' },
-                { name: 'Terms of Service', href: '/legal/terms' },
-                { name: 'Solynchosting Terms', href: '/legal/solynchosting/terms' },
-                { name: 'GitHub Sponsors', href: 'https://github.com/sponsors/SolyncSoftware', external: true }
+                // { name: 'Privacy Policy', href: '/legal/privacy' },
+                // { name: 'Terms of Service', href: '/legal/terms' },
+                { name: 'Contact us', href: '/contact' }
             ]
         }
     ]);
 
     let socials = $state([
-        { icon: SiDiscord, href: 'https://discord.gg/HdKeWtV' },
-        { icon: SiYoutube, href: 'https://youtube.com/@SolyncCorp' },
-        { icon: SiBluesky, href: 'https://bsky.app/profile/solynccorp.net' },
+        { icon: SiDiscord, href: 'https://discord.gg/nUeRyRtDYC' },
+        // { icon: SiYoutube, href: 'https://youtube.com/@SolyncCorp' },
+        { icon: SiBluesky, href: 'https://bsky.app/profile/solync.org' },
         { icon: SiGithub, href: 'https://github.com/SolyncSoftware' }
     ]);
 </script>
 
-<footer class="border-accent relative overflow-hidden border-t-8">
-    <div
-        class="pointer-events-none absolute inset-0 z-0 opacity-40"
-        style="background-image: radial-gradient(circle, rgb(0 0 0) 0%, rgba(0, 0, 0, 0) 67%);"
-    ></div>
-
-    <div class="col-start-1 row-start-1 h-full w-full">
-        <Waves
-            className="lg:h-screen h-full"
-            style="position: absolute; top: 0; left: 0; width: 100vw; z-index: -1;"
-            wavesType="/solync_waves.json"
-            backgroundImage="/images/static-footer.png"
-            backgroundSize="contain"
-        />
-    </div>
-    <!-- the actual footer -->
-    <div
-        class="3xl:max-w-560 3xl:mx-auto col-start-1 row-start-1 flex flex-col justify-between gap-7 px-5 py-9 text-xl font-bold text-white/70 lg:px-16 xl:flex-row"
+<footer class="3xl:max-w-560 3xl:mx-auto mx-auto bg-black px-5 py-12 text-xl text-white 2xl:px-70">
+    <a
+        class="group mb-18 flex flex-row items-center justify-between rounded-2xl bg-black px-12 py-6 transition hover:bg-pink-500"
+        href="/donate"
     >
-        <!-- logo with text and love -->
         <div>
-            <a href="/" class="group flex justify-center xl:block">
-                <SolyncLogo
-                    class="hover:fill-accent mb-8 w-70 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 lg:w-135 lg:md:h-29.5"
-                />
-            </a>
-            <div class="border-accent flex flex-col items-center gap-7 text-center xl:items-start xl:border-l-4 xl:pl-6 xl:text-left">
-                <p class="max-w-[42ch]">
-                    Home of the future. We're a independent software collective creating user-first experiences. We collaborate to create
-                    what's next.
-                </p>
-
-                <span>
-                    Made with
-                    <span class="heart text-error inline-block">&#10084;</span>
-                    in Texas.
-                </span>
-                <span class="text-xs tracking-[24%] text-white/40">
-                    &copy; 2022-2026 SOLYNC // Design assistance by
-                    <a href="https://untone.org/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">UNTONE</a>.
-                </span>
-            </div>
+            <p class="text-4xl font-bold">Software for everyone since 2024</p>
+            <p class="text-xl">Support us by donating or becoming a sponsor</p>
         </div>
-        <div class="flex flex-col justify-between">
-            <div class="flex flex-row flex-wrap gap-14 md:justify-center xl:justify-start">
+        <span class="heart text-error inline-block text-4xl transition group-hover:text-white" aria-hidden="true">&#10084;</span>
+    </a>
+
+    <!-- top side -->
+    <div class="mb-18 flex flex-col gap-3 text-6xl font-bold">
+        <p class="bg-accent w-fit px-12 py-6">We're an independent software collective</p>
+        <p class="bg-accent w-fit px-12 py-6">creating user-first experiences.</p>
+        <p class="bg-accent w-fit px-12 py-6">Building what comes next, together.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <!-- left side -->
+        <div class="flex flex-col items-start gap-4">
+            <a href="/" class="group mb-auto block w-fit">
+                <SolyncLogo class="group-hover:fill-accent w-80 fill-white transition-all duration-300 ease-in-out group-hover:scale-102" />
+            </a>
+
+            <div class="flex flex-row items-center gap-4 font-bold">
+                Join us on our journey! <Button class="w-fit hover:bg-white hover:text-black" href="/apply" text="Apply to Solync" />
+            </div>
+
+            <ul class="flex flex-row items-center gap-4">
+                {#each socials as { icon: Icon, href }}
+                    <li>
+                        <a
+                            {href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={'Social link'}
+                            class="hover:text-accent flex items-center justify-center transition"
+                        >
+                            <Icon class="h-6 w-6 transition" />
+                        </a>
+                    </li>
+                {/each}
+            </ul>
+        </div>
+        <!-- right side -->
+        <div class="flex flex-col items-end gap-4">
+            <div class="flex flex-wrap justify-center gap-8 md:gap-14 xl:justify-end">
                 {#each footerSections as section}
                     <div class="flex flex-col gap-4">
-                        <span class="bg-accent font-display w-fit px-2 py-1 font-bold text-black">
+                        <span class="font-display text-accent w-fit">
                             {section.title}
                         </span>
-                        <nav class="border-accent flex flex-col gap-4 border-l-2 pl-4">
+                        <nav class="flex flex-col gap-4 text-white/75">
                             {#each section.links as link}
                                 <a
                                     href={link.href}
-                                    class="footer-links transition-colors"
+                                    class="footer-links hover:text-accent transition-colors"
                                     target={link.external ? '_blank' : undefined}
                                     rel={link.external ? 'noopener noreferrer' : undefined}
                                 >
@@ -106,38 +109,30 @@
                     </div>
                 {/each}
             </div>
+
+            <div class="flex flex-row gap-2">
+                <img src="/images/badges/csshard.gif" alt="css is hard" />
+                <a href="https://brainmade.org/" target="_blank">
+                    <img src="/images/badges/brainmade.png" alt="90% human made!" />
+                </a>
+            </div>
+
             <div>
-                <ul class="mt-7 flex flex-row items-center justify-center gap-4 text-white xl:mt-0 xl:justify-end">
-                    {#each socials as { icon: Icon, href }}
-                        <li>
-                            <a
-                                {href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="border-accent flex items-center justify-center border-2 bg-black p-3 transition hover:border-white"
-                            >
-                                <Icon class="text-white" />
-                            </a>
-                        </li>
-                    {/each}
-                </ul>
-                <div class="mt-4 flex justify-center gap-2 xl:justify-end">
-                    <img src="/images/badges/csshard.gif" alt="css is hard" />
-                </div>
+                &copy; {new Date().getFullYear()} Solync. Made with
+                <span class="heart text-error inline-block" aria-hidden="true">&#10084;</span>
+                in Texas.
             </div>
         </div>
     </div>
 </footer>
 
 <style scoped>
-    a.footer-links {
-        &:hover {
-            color: #ffffff;
+    footer {
+        background-image: linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, #000000 76%), url(/images/articles/fallback.png);
+        background-size: cover;
+        &:img {
+            display: block;
         }
-    }
-
-    a:hover {
-        color: #bbbbbb;
     }
 
     .heart {

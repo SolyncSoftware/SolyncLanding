@@ -1,7 +1,7 @@
 ---
 title: Test article
 description: Check out this markdown test article
-author: gapva
+author: pastaya
 date: '2026-04-29T12:00:00.000Z'
 categories:
   - testing
@@ -9,7 +9,7 @@ categories:
 published: true
 ---
 
-> <span class="text-yellow-200 font-bold">This article is a test for the markdown system. What you'll see is general formatting of text meant for visualizing styles.</span>
+> <span class="text-yellow-500 font-bold">This article is a test for the markdown system. What you'll see is general formatting of text meant for visualizing styles.</span>
 
 This is a paragraph with **bold text**, *italic text*, ~~strikethrough~~, and `inline code`.  
 Here’s a line break above. Also, a [link to Example](https://example.com) and an [internal link](#headings).

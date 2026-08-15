@@ -122,8 +122,10 @@
 @theme {
     /* Colors */
     --color-accent: #f36647;
+    --color-offaccent: #ff7657;
     --color-black: #222222;
     --color-white: #fff8f7;
+    --color-offwhite: #f8e8e5;
     --color-warning: #f0c92d;
     --color-error: #f02d31;
 
@@ -144,7 +146,7 @@
 /* General styles */
 
 html {
-    background-color: var(--color-white);
+    background-color: var(--color-offwhite);
     color: var(--color-black);
 }
 
@@ -155,16 +157,16 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 75vh;
 }
 
 ::selection {
-    background: var(--color-accent);
+    background: var(--color-offaccent);
     color: var(--color-white);
     text-shadow: none;
 }
 
 ::-moz-selection {
-    background: var(--color-accent);
+    background: var(--color-offaccent);
     color: var(--color-white);
 }
