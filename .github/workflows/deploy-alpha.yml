@@ -1,4 +1,4 @@
-name: Deploy Alpha Environment (Jump Host)
+name: Deploy Alpha Environment (Password Jump)
 
 on:
     push:
@@ -13,16 +13,14 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
 
-            - name: Prepare SSH Key
-              run: |
-                  mkdir -p ~/.ssh
-                  echo "${{ secrets.SSH_KEY }}" > ~/.ssh/deploy_key
-                  chmod 600 ~/.ssh/deploy_key
+            - name: Install sshpass
+              run: sudo apt-get update && sudo apt-get install -y sshpass
 
-            - name: Build & Run Container via Jump Host
+            - name: Build & Run Container via Password Jump
+              env:
+                  SSH_PASS: ${{ secrets.SSH_PASSWORD }}
               run: |
-                  ssh -tt -o StrictHostKeyChecking=no \
-                      -i ~/.ssh/deploy_key \
+                  sshpass -p "$SSH_PASS" ssh -T -o StrictHostKeyChecking=no \
                       -J root@ssh.solync.org \
                       root@192.168.1.206 << 'EOF'
                     set -e
