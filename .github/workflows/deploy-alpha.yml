@@ -1,4 +1,4 @@
-name: SL Deployment (ct02-debian)
+name: Deploy Alpha Environment (Jump Host)
 
 on:
     push:
@@ -10,32 +10,40 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Build & Run Container via SSH
-              uses: appleboy/ssh-action@v1.0.3
-              with:
-                  host: ${{ secrets.SSH_HOST }}
-                  username: ${{ secrets.SSH_USER }}
-                  key: ${{ secrets.SSH_KEY }}
-                  port: ${{ secrets.SSH_PORT }}
-                  script: |
-                      set -e
-                      APP_DIR="/opt/solynclanding"
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-                      if [ ! -d "$APP_DIR/.git" ]; then
-                        mkdir -p $APP_DIR
-                        git clone -b alpha https://github.com/SolyncSoftware/SolyncLanding.git $APP_DIR
-                      fi
+            - name: Prepare SSH Key
+              run: |
+                  mkdir -p ~/.ssh
+                  echo "${{ secrets.SSH_KEY }}" > ~/.ssh/deploy_key
+                  chmod 600 ~/.ssh/deploy_key
 
-                      cd $APP_DIR
-                      git fetch origin
-                      git checkout alpha
-                      git reset --hard origin/alpha
+            - name: Build & Run Container via Jump Host
+              run: |
+                  ssh -o StrictHostKeyChecking=no \
+                      -i ~/.ssh/deploy_key \
+                      -J root@ssh.solync.org \
+                      root@192.168.1.206 << 'EOF'
+                    set -e
+                    APP_DIR="/opt/solynclanding"
+                    
+                    if [ ! -d "$APP_DIR/.git" ]; then
+                      mkdir -p $APP_DIR
+                      git clone -b alpha https://github.com/SolyncSoftware/SolyncLanding.git $APP_DIR
+                    fi
 
-                      docker build -t solync-landing:alpha .
-                      docker stop solync-landing-alpha || true
-                      docker rm solync-landing-alpha || true
-                      docker run -d \
-                        --name solync-landing-alpha \
-                        --restart unless-stopped \
-                        -p 3000:3000 \
-                        solync-landing:alpha
+                    cd $APP_DIR
+                    git fetch origin
+                    git checkout alpha
+                    git reset --hard origin/alpha
+
+                    docker build -t solync-landing:alpha .
+                    docker stop solync-landing-alpha || true
+                    docker rm solync-landing-alpha || true
+                    docker run -d \
+                      --name solync-landing-alpha \
+                      --restart unless-stopped \
+                      -p 3000:3000 \
+                      solync-landing:alpha
+                  EOF
