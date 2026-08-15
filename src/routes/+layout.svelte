@@ -6,6 +6,8 @@
     import Waves from '$lib/components/assets/Waves.svelte';
     import persistentWaveStore from '$lib/stores/persistentWave.js';
     import { onMount, type Snippet } from 'svelte';
+    import { page } from '$app/state';
+    import { title as siteTitle } from '$lib/config.js';
     import '../styles/tailwind.css';
 
     let { children }: { children: Snippet } = $props();
@@ -21,7 +23,28 @@
     onMount(() => {
         runGlobalPerformanceCheck().catch(console.error);
     });
+
+    let meta = $derived(page.data?.meta ?? {});
+    const DEFAULT_TITLE = 'Solync / Building what comes next, together.';
+    const DEFAULT_DESC =
+        "Solync is a worker-owned organization building what's next. Join us on our journey to create something awesome together.";
+    const DEFAULT_IMAGE = '/images/banner.png';
 </script>
+
+<svelte:head>
+    <title>{`${meta.title ?? DEFAULT_TITLE}`}</title>
+    <meta name="description" content={meta.description ?? DEFAULT_DESC} />
+
+    <meta property="og:title" content={meta.title ?? DEFAULT_TITLE} />
+    <meta property="og:description" content={meta.description ?? DEFAULT_DESC} />
+    <meta property="og:image" content={meta.image ?? DEFAULT_IMAGE} />
+    <meta property="og:type" content={meta.type ?? 'website'} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={meta.title ?? DEFAULT_TITLE} />
+    <meta name="twitter:description" content={meta.description ?? DEFAULT_DESC} />
+    <meta name="twitter:image" content={meta.image ?? DEFAULT_IMAGE} />
+</svelte:head>
 
 <div bind:this={hostEl} class="pointer-events-none hidden" aria-hidden="true">
     <Waves
