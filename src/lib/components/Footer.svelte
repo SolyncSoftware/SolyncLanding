@@ -53,7 +53,7 @@
     </a>
 
     <!-- top side -->
-    <div class="mb-18 flex flex-col gap-3 text-6xl font-bold">
+    <div class="mb-18 flex flex-col gap-3 text-4xl font-bold sm:text-6xl">
         <p class="bg-accent w-fit px-12 py-6">We're an independent software collective</p>
         <p class="bg-accent w-fit px-12 py-6">creating user-first experiences.</p>
         <p class="bg-accent w-fit px-12 py-6">Building what comes next, together.</p>
@@ -66,7 +66,7 @@
                 <SolyncLogo class="group-hover:fill-accent w-80 fill-white transition-all duration-300 ease-in-out group-hover:scale-102" />
             </a>
 
-            <div class="flex flex-row items-center gap-4 font-bold">
+            <div class="flex flex-col items-center gap-4 font-bold sm:flex-row">
                 Join us on our journey! <Button class="w-fit hover:bg-white hover:text-black" href="/apply" text="Apply to Solync" />
             </div>
 
