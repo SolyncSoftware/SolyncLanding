@@ -7,7 +7,6 @@
     import persistentWaveStore from '$lib/stores/persistentWave.js';
     import { onMount, type Snippet } from 'svelte';
     import { page } from '$app/state';
-    import { title as siteTitle } from '$lib/config.js';
     import '../styles/tailwind.css';
 
     let { children }: { children: Snippet } = $props();
