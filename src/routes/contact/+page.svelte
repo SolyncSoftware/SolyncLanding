@@ -29,8 +29,8 @@
                 <div class="flex items-center gap-4">
                     <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" />
                     <div class="font-display flex flex-col">
-                        <span class="text-accent text-2xl">Email</span>
-                        <a href="mailto:hello@solync.org" class="hover:text-accent text-xl hover:underline">hello@solync.org</a>
+                        <span class="text-accent text-2xl">Email John</span>
+                        <a href="mailto:john@solync.org" class="hover:text-accent text-xl hover:underline">john@solync.org</a>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@
                             rel="noopener noreferrer"
                             class="hover:text-accent text-xl hover:underline"
                         >
-                            Click to join our Discord!
+                            Click to join our Discord
                         </a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                             rel="noopener noreferrer"
                             class="hover:text-accent text-xl hover:underline"
                         >
-                            Click to visit our GitHub!
+                            Click to visit our GitHub
                         </a>
                     </div>
                 </div>

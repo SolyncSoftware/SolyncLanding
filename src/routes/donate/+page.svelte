@@ -4,8 +4,9 @@
 
 <!-- some of the most batshit stupid shit ever written -->
 <div class="relative overflow-visible">
-    <PageContainer className="bg-pink-500/90">
-        <div class="flex max-h-128 flex-col justify-between xl:flex-row xl:pr-24">
+    <PageContainer className="bg-pink-500/90 text-white">
+        <div class="flex flex-col gap-8 xl:flex-row xl:items-start xl:justify-between">
+            <!-- Text Column -->
             <div class="max-w-210 font-medium">
                 <h1 class="text-4xl font-bold md:text-6xl">Build a better Solync.</h1>
                 <p class="mt-4 text-lg md:text-2xl">
@@ -22,6 +23,19 @@
                     Your contributions are greatly appreciated and will not go to waste. We believe in transparency, so we plan to build a
                     platform where users can view all of our donations, earnings, and more!
                 </p>
+            </div>
+
+            <div class="relative z-20 h-150 w-full shrink-0 xl:-mt-16 xl:-mb-16 xl:w-96">
+                <div class="pointer-events-auto overflow-hidden rounded-3xl shadow-2xl xl:hidden">
+                    <iframe
+                        id="kofiframe"
+                        class="rounded-3xl"
+                        src="https://ko-fi.com/solync/?hidefeed=true&widget=true&embed=true"
+                        style="border:none;background:var(--color-white); box-shadow:none;width:100%;"
+                        height="600"
+                        title="solync"
+                    ></iframe>
+                </div>
             </div>
         </div>
     </PageContainer>

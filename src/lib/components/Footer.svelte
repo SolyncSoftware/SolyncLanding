@@ -17,7 +17,7 @@
             links: [
                 // { name: 'StreamSkinner', href: 'https://streamskinner.com/', external: true },
                 { name: 'Gardens Wiki', href: 'https://gardens.wiki/', external: true },
-                { name: 'Potaro Wiki', href: 'https://potaro.wiki/', external: true },
+                { name: 'Potaro Wiki', href: 'https://github.com/SolyncSoftware/porter-wiki-frontend', external: true },
                 { name: 'All Projects', href: '/about#our-work' }
                 // { name: 'Solync Orbit', href: 'https://orbit.solync.org/' }
             ]

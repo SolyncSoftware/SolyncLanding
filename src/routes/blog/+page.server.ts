@@ -7,7 +7,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
     return {
         articles,
         meta: {
-            title: 'Solync / Articles and updates from Solync',
+            title: 'Solync / Blog',
             description: 'Articles and updates from Solync',
             image: '/images/banner.png'
         }
