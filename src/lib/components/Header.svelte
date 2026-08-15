@@ -12,8 +12,9 @@
     }
 </script>
 
-<header class="bg-accent flex w-full items-center px-5 pt-6 pb-40 2xl:px-70">
-    <nav class="flex items-center gap-7">
+<!-- This mobile stuff is very temporary. wanna replace with a hamburger eventually. -->
+<header class="bg-accent flex w-full flex-col items-center px-5 pt-6 pb-40 sm:flex-row 2xl:px-70">
+    <nav class="flex flex-col items-center gap-7 sm:flex-row">
         <a href="/" class="group inline-block">
             <SolyncLogo
                 iconOnly={true}
@@ -26,7 +27,7 @@
         <ButtonSimple href="/about" text="Learn more" class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`} />
     </nav>
 
-    <div class="ml-auto flex justify-end gap-2">
+    <div class="mt-7 flex gap-2 sm:mt-0 sm:ml-auto sm:justify-end">
         <Button href="/donate" class="shadow-none" text="Support us" />
         <!-- <Button href="https://orbit.solync.org" class="shadow-none" text="Manage Account" /> -->
     </div>
