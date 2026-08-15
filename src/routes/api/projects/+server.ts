@@ -17,7 +17,7 @@ const projectData: SolyncProject[] = [
     {
         date: '2024-12-04',
         title: 'Porter Robinson Wiki',
-        website: 'https://potaro.wiki/',
+        // website: 'https://potaro.wiki/',
         image: 'potaro.png',
         desc: 'Our debut started with Porter Robinson Wiki. A website created for showcasing modular wiki design and easy to use functionality unlike other wiki sites. We plan to replace this with our Gardens Wiki project.',
         github: 'porter-wiki-frontend'
@@ -46,8 +46,8 @@ const projectData: SolyncProject[] = [
         title: 'Theaceae Home',
         image: 'theaceaeSmileLogoMint.png',
         desc: 'Our old homepage before we rebranded to Solync.',
-        github: 'theaceae-home',
-        page: 'theaceae-home'
+        github: 'theaceae-home'
+        // page: 'theaceae-home'
     },
     {
         date: '2025-10-1',
