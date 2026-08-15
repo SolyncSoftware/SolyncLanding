@@ -18,10 +18,6 @@
     });
 </script>
 
-<svelte:head>
-    <title>Solync / Building what comes next, together.</title>
-</svelte:head>
-
 <section class="flex flex-col gap-14">
     <PageContainer>
         <SolyncLogo class="mb-24 w-110 fill-white" />
