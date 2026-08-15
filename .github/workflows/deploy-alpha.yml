@@ -1,4 +1,4 @@
-name: Deploy Alpha Environment (alpha.solync.org)
+name: SL Deployment (ct02-debian)
 
 on:
     push:
@@ -10,36 +10,32 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-
-            - name: Setup Bun
-              uses: oven-sh/setup-bun@v2
-              with:
-                  bun-version: latest
-
-            - name: Install dependencies
-              run: bun install --frozen-lockfile
-
-            - name: Build SvelteKit application
-              run: bun run build
-              env:
-                  NODE_ENV: production
-
-            - name: Sync build output to server
-              uses: appleboy/scp-action@v0.1.7
-              with:
-                  host: ${{ secrets.SSH_HOST }}
-                  username: ${{ secrets.SSH_USER }}
-                  key: ${{ secrets.SSH_KEY }}
-                  source: 'build,package.json,bun.lock,bun.lockb'
-                  target: ${{ secrets.ALPHA_TARGET_DIR }}
-
-            - name: Restart application service
+            - name: Build & Run Container via SSH
               uses: appleboy/ssh-action@v1.0.3
               with:
                   host: ${{ secrets.SSH_HOST }}
                   username: ${{ secrets.SSH_USER }}
                   key: ${{ secrets.SSH_KEY }}
+                  port: ${{ secrets.SSH_PORT }}
                   script: |
-                      sudo systemctl restart alpha-solync
+                      set -e
+                      APP_DIR="/opt/solynclanding"
+
+                      if [ ! -d "$APP_DIR/.git" ]; then
+                        mkdir -p $APP_DIR
+                        git clone -b alpha https://github.com/SolyncSoftware/SolyncLanding.git $APP_DIR
+                      fi
+
+                      cd $APP_DIR
+                      git fetch origin
+                      git checkout alpha
+                      git reset --hard origin/alpha
+
+                      docker build -t solync-landing:alpha .
+                      docker stop solync-landing-alpha || true
+                      docker rm solync-landing-alpha || true
+                      docker run -d \
+                        --name solync-landing-alpha \
+                        --restart unless-stopped \
+                        -p 3000:3000 \
+                        solync-landing:alpha
