@@ -1,4 +1,5 @@
 import type { MdsvexModule } from '$lib/utils/types.js';
+import { title as siteTitle } from '$lib/config.js';
 import { error } from '@sveltejs/kit';
 
 const articles = import.meta.glob<MdsvexModule>('/src/articles/**/*.md', { eager: true });
@@ -12,8 +13,15 @@ export function load({ params }) {
         error(404, `Could not find ${slug}`);
     }
 
+    const meta = module.metadata;
+
     return {
         content: module.default,
-        meta: module.metadata
+        meta: {
+            ...meta,
+            title: meta.title ? `${siteTitle} / ${meta.title}` : siteTitle
+        }
     };
 }
+
+
