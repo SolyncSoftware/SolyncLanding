@@ -4,6 +4,7 @@
         "esbenp.prettier-vscode",
         "vivaxy.vscode-conventional-commits",
         "bradlc.vscode-tailwindcss",
-        "austenc.tailwind-docs"
+        "austenc.tailwind-docs",
+        "ms-azuretools.vscode-containers"
     ]
 }
