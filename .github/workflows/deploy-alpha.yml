@@ -1,4 +1,4 @@
-name: Deploy Alpha Environment (Password Jump)
+name: Deploy Alpha Environment (Local Runner)
 
 on:
     push:
@@ -7,41 +7,19 @@ on:
 
 jobs:
     deploy:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
 
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
 
-            - name: Install sshpass
-              run: sudo apt-get update && sudo apt-get install -y sshpass
-
-            - name: Build & Run Container via Password Jump
-              env:
-                  SSH_PASS: ${{ secrets.SSH_PASSWORD }}
+            - name: Build and Run Docker Container Locally
               run: |
-                  sshpass -p "$SSH_PASS" ssh -T -o StrictHostKeyChecking=no \
-                      -J root@ssh.solync.org \
-                      root@192.168.1.206 << 'EOF'
-                    set -e
-                    APP_DIR="/opt/solynclanding"
-                    
-                    if [ ! -d "$APP_DIR/.git" ]; then
-                      mkdir -p $APP_DIR
-                      git clone -b alpha https://github.com/SolyncSoftware/SolyncLanding.git $APP_DIR
-                    fi
-
-                    cd $APP_DIR
-                    git fetch origin
-                    git checkout alpha
-                    git reset --hard origin/alpha
-
-                    docker build -t solync-landing:alpha .
-                    docker stop solync-landing-alpha || true
-                    docker rm solync-landing-alpha || true
-                    docker run -d \
-                      --name solync-landing-alpha \
-                      --restart unless-stopped \
-                      -p 3000:3000 \
-                      solync-landing:alpha
-                  EOF
+                  docker build -t solync-landing:alpha .
+                  docker stop solync-landing-alpha || true
+                  docker rm solync-landing-alpha || true
+                  docker run -d \
+                    --name solync-landing-alpha \
+                    --restart unless-stopped \
+                    -p 3000:3000 \
+                    solync-landing:alpha
