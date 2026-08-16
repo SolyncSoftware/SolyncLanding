@@ -64,19 +64,19 @@
     <!-- Main footer grid -->
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <!-- Left side -->
-        <div class="flex flex-col items-center gap-6 sm:items-start">
+        <div class="flex flex-col items-center gap-4 sm:items-start">
             <a href="/" class="group block w-fit">
                 <SolyncLogo
                     class="group-hover:fill-accent w-60 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 sm:w-80"
                 />
             </a>
 
-            <div class="flex w-full flex-col items-center gap-4 text-center font-bold sm:flex-row sm:text-left">
+            <div class="mt-auto flex w-full flex-col items-center gap-4 text-center font-bold sm:flex-row sm:text-left">
                 <span>Join us on our journey!</span>
                 <Button class="w-full hover:bg-white hover:text-black sm:w-fit" href="/apply" text="Apply to Solync" />
             </div>
 
-            <ul class="flex flex-row items-center gap-6">
+            <ul class="flex flex-row items-center gap-4">
                 {#each socials as { icon: Icon, href }}
                     <li>
                         <a
@@ -94,7 +94,7 @@
         </div>
 
         <!-- Right side -->
-        <div class="flex flex-col items-center gap-6 sm:items-end">
+        <div class="flex flex-col items-center gap-4 sm:items-end">
             <div class="flex flex-wrap justify-center gap-8 md:gap-14 xl:justify-end">
                 {#each footerSections as section}
                     <div class="flex flex-col gap-4 text-center sm:text-left">
@@ -117,7 +117,6 @@
                 {/each}
             </div>
 
-            <!-- Badges -->
             <div class="flex flex-row flex-wrap items-center justify-center gap-3">
                 <img src="/images/badges/csshard.gif" alt="css is hard" class="h-8 w-auto" />
                 <a href="https://brainmade.org/" target="_blank">
@@ -125,8 +124,7 @@
                 </a>
             </div>
 
-            <!-- Copyright -->
-            <div class="text-center text-sm sm:text-base">
+            <div class="text-center text-sm sm:text-xl">
                 &copy; {new Date().getFullYear()} Solync. Made with
                 <span class="heart text-error inline-block" aria-hidden="true">&#10084;</span>
                 in Texas.
