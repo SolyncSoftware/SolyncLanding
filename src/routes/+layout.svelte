@@ -7,6 +7,8 @@
     import persistentWaveStore from '$lib/stores/persistentWave.js';
     import { onMount, type Snippet } from 'svelte';
     import { page } from '$app/state';
+    import { fade } from 'svelte/transition';
+    import { quartInOut, sineInOut } from 'svelte/easing';
     import '../styles/tailwind.css';
 
     let { children }: { children: Snippet } = $props();
@@ -57,9 +59,11 @@
 
 <Header />
 <!-- pretty hard coded for the header but yeah. negative values work best -->
-<main class="3xl:mx-auto mx-5 -mt-32.5 mb-32.5 flex max-w-560 flex-col font-sans 2xl:mx-70">
-    {@render children()}
-</main>
+{#key page.url.pathname}
+    <main class="3xl:mx-auto mx-5 -mt-32.5 mb-32.5 flex max-w-560 flex-col font-sans 2xl:mx-70" transition:fade|global={{ duration: 400 }}>
+        {@render children()}
+    </main>
+{/key}
 <Footer />
 {#if dev}
     <DevBanner />
