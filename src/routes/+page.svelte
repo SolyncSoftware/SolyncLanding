@@ -26,14 +26,14 @@
     <PageContainer>
         <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
         <h1 class="text-4xl font-bold md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-        <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
+        <p class="mt-4 text-2xl font-semibold md:max-w-170">
             We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
         </p>
-        <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
+        <p class="mt-4 text-2xl font-semibold md:max-w-170">
             We're an independent software collective creating user-first experiences. Not just because we love it, but because it's ethical.
             We collaborate to create what's next.
         </p>
-        <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
+        <p class="mt-4 text-2xl font-semibold md:max-w-170">
             <a href="/about" class="underline hover:text-black">Learn more about us.</a>
         </p>
     </PageContainer>
