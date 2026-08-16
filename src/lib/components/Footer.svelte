@@ -61,12 +61,12 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-2">
         <!-- left side -->
-        <div class="flex flex-col items-start gap-4">
+        <div class="flex flex-col items-center gap-4 pb-4 sm:items-start sm:pb-0">
             <a href="/" class="group mb-auto block w-fit">
                 <SolyncLogo class="group-hover:fill-accent w-80 fill-white transition-all duration-300 ease-in-out group-hover:scale-102" />
             </a>
 
-            <div class="flex flex-col items-center gap-4 font-bold sm:flex-row">
+            <div class="flex flex-col items-center gap-4 text-center font-bold sm:flex-row sm:text-left">
                 Join us on our journey! <Button class="w-fit hover:bg-white hover:text-black" href="/apply" text="Apply to Solync" />
             </div>
 
@@ -87,7 +87,7 @@
             </ul>
         </div>
         <!-- right side -->
-        <div class="flex flex-col items-end gap-4">
+        <div class="flex flex-col items-center gap-4 sm:items-end">
             <div class="flex flex-wrap justify-center gap-8 md:gap-14 xl:justify-end">
                 {#each footerSections as section}
                     <div class="flex flex-col gap-4">
