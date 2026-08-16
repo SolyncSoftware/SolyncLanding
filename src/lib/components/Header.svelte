@@ -1,5 +1,7 @@
 <script lang="ts">
     import { page } from '$app/state';
+    import { slide, fade } from 'svelte/transition';
+    import { quartInOut } from 'svelte/easing';
 
     import SolyncLogo from './SolyncLogo.svelte';
     import Button from './Button.svelte';
@@ -39,19 +41,33 @@
             <ButtonSimple href="/about" text="Learn more" class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`} />
         </nav>
 
-        <!-- hamburger -->
+        <!-- hamburger noodle -->
         <button
             onclick={toggleMenu}
-            class="ml-auto text-white focus:outline-none sm:hidden"
+            class="relative ml-auto h-14 w-14 text-white focus:outline-none sm:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
         >
             {#if isMenuOpen}
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute top-1/2 left-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    transition:fade={{ duration: 200 }}
+                >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             {:else}
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute top-1/2 left-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    transition:fade={{ duration: 200 }}
+                >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             {/if}
@@ -65,8 +81,8 @@
 
 <!-- mobile menu -->
 {#if isMenuOpen}
-    <div id="mobile-menu" class="bg-accent -mt-40 px-5 pb-40 sm:hidden">
-        <nav class="flex flex-col items-center gap-7">
+    <div id="mobile-menu" class="bg-accent -mt-30 px-5 pb-40 sm:hidden" transition:slide={{ duration: 400, easing: quartInOut }}>
+        <nav class="flex flex-col items-start gap-7">
             <ButtonSimple
                 href="/"
                 text="Home"
