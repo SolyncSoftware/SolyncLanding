@@ -33,7 +33,7 @@
             <div class="flex flex-col rounded-4xl bg-white/80 p-4 shadow-xl/4">
                 <div
                     class={[
-                        'group flex flex-col items-start justify-center gap-4 align-middle md:flex-row md:items-center',
+                        'group flex flex-col items-center justify-center gap-4 align-middle md:flex-row md:items-start',
                         expandedIndex === i ? 'text-accent' : 'text-black'
                     ]}
                 >
@@ -47,8 +47,8 @@
                         alt={member.realName}
                     />
                     <div class="flex flex-col text-left transition">
-                        <p class="text-accent text-4xl font-bold">{member.username}</p>
-                        <p class="text-2xl font-light">{member.realName}</p>
+                        <p class="text-accent text-center text-4xl font-bold md:text-left">{member.username}</p>
+                        <p class="text-center text-2xl font-light md:text-left">{member.realName}</p>
                     </div>
 
                     <div class="mb-4 flex flex-row items-center gap-4 text-black md:mb-0 md:ml-auto">
