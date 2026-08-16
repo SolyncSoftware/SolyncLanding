@@ -6,6 +6,8 @@
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
+    import { slide, fade, fly } from 'svelte/transition';
+    import { quartInOut, sineInOut } from 'svelte/easing';
 
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
@@ -19,6 +21,8 @@
 </script>
 
 <section class="flex flex-col gap-14">
+    <!-- <div in:fly={{ y: -40, duration: 1000, easing: sineInOut }} class="z-100"> -->
+
     <PageContainer>
         <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
         <h1 class="text-4xl font-bold md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
@@ -29,11 +33,12 @@
             We're an independent software collective creating user-first experiences. Not just because we love it, but because it's ethical.
             We collaborate to create what's next.
         </p>
-
         <p class="mt-4 text-lg font-semibold md:max-w-170 md:text-2xl">
             <a href="/about" class="underline hover:text-black">Learn more about us.</a>
         </p>
     </PageContainer>
+
+    <!-- </div> -->
 
     <!-- <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
         <p>Curious to know more?</p>
