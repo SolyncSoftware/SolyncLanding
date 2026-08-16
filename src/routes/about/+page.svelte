@@ -92,7 +92,7 @@
         <OurProjects count={999} cols={3} />
     </div>
 
-    <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
+    <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
         <p>Building what comes next, together.</p>
         <SolyncLogo iconOnly={true} class="fill-accent w-30" />
     </div>
