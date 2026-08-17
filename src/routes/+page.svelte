@@ -1,13 +1,11 @@
 <script lang="ts">
-    import Button from '$lib/components/Button.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import OurTeam from '$lib/components/index/OurTeam.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
-    import { slide, fade, fly } from 'svelte/transition';
-    import { quartInOut, sineInOut } from 'svelte/easing';
+    import rs from 'rune-scroller';
 
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
@@ -21,7 +19,13 @@
 </script>
 
 <section class="flex flex-col gap-14">
-    <div class="holdover">
+    <div
+        use:rs={{
+            animation: 'fade-up',
+            duration: 1000,
+            repeat: false
+        }}
+    >
         <PageContainer>
             <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
             <h1 class="text-4xl font-bold md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
@@ -37,11 +41,6 @@
             </p>
         </PageContainer>
     </div>
-
-    <!-- <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
-        <p>Curious to know more?</p>
-        <a href="/apply" class="text-accent text-4xl font-bold hover:underline">Learn more about us</a>
-    </div> -->
 
     <div>
         <h2 class="text-accent mb-4 text-5xl font-bold">Our Projects</h2>
@@ -72,24 +71,3 @@
         <SolyncLogo iconOnly={true} class="fill-accent w-30" />
     </div>
 </section>
-
-<style>
-    @keyframes slideup {
-        0% {
-            opacity: 0;
-            transform: translateY(0px);
-        }
-        1% {
-            opacity: 0;
-            transform: translateY(100px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .holdover {
-        animation: slideup 1s ease;
-    }
-</style>

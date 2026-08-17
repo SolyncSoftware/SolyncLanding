@@ -1,9 +1,7 @@
 <script lang="ts">
     import type { TransformedProject } from '../../../routes/api/projects/+server.js';
     import { onMount } from 'svelte';
-
     import ProjectCard from '../assets/ProjectCard.svelte';
-    import ButtonSimple from '../ButtonSimple.svelte';
 
     // default count for the number of projects to display is 6, default number of columns is 2
     let { count = 6, cols = 2 } = $props();
