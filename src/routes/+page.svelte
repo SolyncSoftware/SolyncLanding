@@ -55,6 +55,7 @@
                     src="/images/arrow-sorange.svg"
                     alt="Arrow"
                     class="-rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-2"
+                    loading="lazy"
                 />
             </a>
         </div>

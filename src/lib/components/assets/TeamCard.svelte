@@ -34,7 +34,7 @@
             expanded ? 'text-accent' : 'text-black'
         ]}
     >
-        <img
+        <enhanced:img
             class={['h-19 w-19 rounded-3xl outline-2 transition', expanded ? 'outline-accent outline' : 'outline outline-transparent']}
             loading="lazy"
             src={member.avatarSrc}
@@ -71,12 +71,14 @@
                 onclick={handleToggle}
                 class="bg-accent group cursor-pointer rounded-full px-8 py-6 shadow-xl/6 transition hover:bg-black"
                 class:bg-black={expanded}
+                aria-label="arrow"
             >
                 <img
                     src="/images/arrow-default.svg"
                     alt="Arrow"
                     class="h-4 w-8 overflow-hidden transition-transform duration-200"
                     class:rotate-180={expanded}
+                    loading="lazy"
                 />
             </button>
         </div>

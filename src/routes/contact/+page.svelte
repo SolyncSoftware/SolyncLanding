@@ -25,7 +25,7 @@
         <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
             <div class="flex w-full flex-col gap-6">
                 <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" />
+                    <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" loading="lazy" />
                     <div class="font-display flex flex-col">
                         <span class="text-accent text-2xl">Email John</span>
                         <a href="mailto:john@solync.org" class="hover:text-accent text-xl hover:underline">john@solync.org</a>
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="Discord" class="h-11 w-11 object-cover" />
+                    <img src="/images/placeholders/@placeholder.svg" alt="Discord" class="h-11 w-11 object-cover" loading="lazy" />
                     <div class="font-display flex flex-col">
                         <span class="text-accent text-2xl">Discord</span>
                         <a
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="GitHub" class="h-11 w-11 object-cover" />
+                    <img src="/images/placeholders/@placeholder.svg" alt="GitHub" class="h-11 w-11 object-cover" loading="lazy" />
                     <div class="font-display flex flex-col">
                         <span class="text-accent text-2xl">GitHub</span>
                         <a
