@@ -6,6 +6,7 @@
     import SolyncLogo from './SolyncLogo.svelte';
     import Button from './Button.svelte';
     import ButtonSimple from './ButtonSimple.svelte';
+    import rs from 'rune-scroller';
 
     let currentPath = $derived(page.url.pathname);
 
@@ -22,11 +23,24 @@
     function closeMenu() {
         isMenuOpen = false;
     }
+
+    const navLinks = [
+        { href: '/', text: 'Home' },
+        { href: '/blog', text: 'Blog' },
+        { href: '/about', text: 'Learn more' }
+    ];
 </script>
 
 <header class="bg-accent flex w-full items-center justify-between px-5 pt-6 pb-40 2xl:px-70">
     <!-- Logo -->
-    <div class="flex w-full flex-row items-center gap-7 sm:w-auto">
+    <div
+        class="flex w-full flex-row items-center gap-7 sm:w-auto"
+        use:rs={{
+            animation: 'fade',
+            duration: 600,
+            delay: 200
+        }}
+    >
         <a href="/" class="group inline-block">
             <SolyncLogo
                 iconOnly={true}
@@ -36,9 +50,22 @@
 
         <!-- Desktop nav  -->
         <nav class="hidden flex-row items-center gap-7 sm:flex">
-            <ButtonSimple href="/" text="Home" class={`z-0 text-white hover:text-white hover:underline ${isActive('/')}`} />
-            <ButtonSimple href="/blog" text="Blog" class={`z-0 text-white hover:text-white hover:underline ${isActive('/blog')}`} />
-            <ButtonSimple href="/about" text="Learn more" class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`} />
+            {#each navLinks as link, i (link.href)}
+                <span
+                    use:rs={{
+                        animation: 'fade-up',
+                        duration: 600,
+                        delay: (i + 3) * 200,
+                        offset: 100
+                    }}
+                >
+                    <ButtonSimple
+                        href={link.href}
+                        text={link.text}
+                        class={`z-0 text-white hover:text-white hover:underline ${isActive(link.href)}`}
+                    />
+                </span>
+            {/each}
         </nav>
 
         <!-- hamburger noodle -->
@@ -74,7 +101,15 @@
         </button>
     </div>
 
-    <div class="hidden sm:ml-auto sm:flex">
+    <div
+        class="hidden sm:ml-auto sm:flex"
+        use:rs={{
+            animation: 'fade-up',
+            duration: 600,
+            delay: 1200,
+            offset: 100
+        }}
+    >
         <Button href="/donate" class="shadow-none" text="Support us" />
     </div>
 </header>
