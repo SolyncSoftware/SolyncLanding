@@ -22,9 +22,14 @@
                 </p>
 
                 <p class="mt-4 text-2xl">
-                    As a flat collective, we operate without any formal hierarchy or micromanagement. Joining Solync means taking direct
-                    ownership of what we build, choosing projects that align with your interests and the collective's goals, and
-                    collaborating with peers who challenge ideas without ego.
+                    As a <a
+                        href="https://en.wikipedia.org/wiki/Flat_organization"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="underline hover:text-black">flat collective</a
+                    >, we operate without any formal hierarchy or micromanagement. Joining Solync means taking direct ownership of what we
+                    build, choosing projects that align with your interests and the collective's goals, and collaborating with peers who
+                    challenge ideas without ego.
                 </p>
             </div>
         </div>
