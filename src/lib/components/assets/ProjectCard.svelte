@@ -24,7 +24,7 @@
             loading="lazy"
             decoding="async"
         />
-        <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-black"></div>
+        <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
 
         <h3 class="text-accent text-3xl font-bold tracking-wide">{project.title}</h3>
         <p>{project.desc}</p>
