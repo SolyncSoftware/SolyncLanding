@@ -113,7 +113,7 @@
 
 @font-face {
     font-family: 'Red Hat Monospace';
-    src: url('/fonts/RedHatDisplay/RedHatMonospace-VariableFont_wght.ttf') format('truetype');
+    src: url('/fonts/RedHatDisplay/RedHatMono-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
     font-style: monospace;
     font-weight: 300 700;

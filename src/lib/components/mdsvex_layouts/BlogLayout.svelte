@@ -8,7 +8,6 @@
     import { onMount, type Snippet } from 'svelte';
     import type { TransformedMember } from '../../../routes/api/team/+server.js';
     import Formatting from '$lib/utils/formatting.js';
-    import avatarPlaceholder from '/images/articles/fallback.png';
 
     const { title, author, date, categories, image, children }: Article & { children: Snippet } = $props();
 
@@ -43,7 +42,7 @@
         <span class="rounded-full bg-black/80 px-6 py-2 font-medium first-letter:uppercase">{categories[0]}</span>
 
         <div class="flex flex-row items-center gap-2 rounded-full bg-black/80 py-2 pr-6 pl-2">
-            <enhanced:img src={teamMember?.avatarSrc || avatarPlaceholder} alt="Profile" class=" h-11 w-11 rounded-full" />
+            <enhanced:img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class=" h-11 w-11 rounded-full" />
             <div class="flex flex-col">
                 <span class="leading-5 font-medium">{teamMember?.realName || 'No name lol'}</span>
                 <span class="text-sm text-white/80">{teamMember?.username || author || 'Please add an author'}</span>
