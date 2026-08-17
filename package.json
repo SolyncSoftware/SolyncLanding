@@ -54,6 +54,7 @@
         "@tailwindcss/vite": "^4.2.0",
         "rehype-figure": "^1.0.1",
         "rehype-stringify": "^10.0.1",
+        "rune-scroller": "^5.0.0",
         "shiki": "^4.0.2",
         "tailwindcss": "^4.2.0",
         "to-vfile": "^8.0.0",
