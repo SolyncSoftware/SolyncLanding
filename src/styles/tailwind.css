@@ -161,6 +161,10 @@ main {
     min-height: 75vh;
 }
 
+a {
+    transition: all 100ms ease-in-out;
+}
+
 ::selection {
     background: var(--color-offaccent);
     color: var(--color-white);
