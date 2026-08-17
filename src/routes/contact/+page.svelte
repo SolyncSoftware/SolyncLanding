@@ -1,5 +1,6 @@
 <script lang="ts">
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
+    import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
 
     async function handleSubmit(formData: Record<string, string>) {
@@ -30,7 +31,6 @@
         </div>
     </PageContainer>
 
-    <span class="text-accent text-7xl font-bold">Coming soon! See news on Discord.</span>
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
         <h2 class="mb-4 text-3xl font-bold">Contact us</h2>
         <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
@@ -76,6 +76,7 @@
 
             <div class="flex w-full flex-col gap-6">
                 <Form
+                    id="contact-form"
                     fields={[
                         { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 1 },
                         { name: 'email', placeholder: 'Your email', type: 'text', required: true, span: 1 },
@@ -103,11 +104,9 @@
                             class: 'rounded-4xl!'
                         }
                     ]}
-                    button={{
-                        text: 'Send message',
-                        onClick: handleSubmit
-                    }}
+                    onsubmit={handleSubmit}
                 />
+                <Button form="contact-form" type="submit" text="Send message" class="text-lg!">asdf</Button>
             </div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 <script lang="ts">
     import Textbox from './Textbox.svelte';
-    import Button from './Button.svelte';
 
     interface Field {
         name: string;
@@ -14,21 +13,18 @@
         required?: boolean;
     }
 
-    interface ButtonProps {
-        text: string;
-        onClick?: (formData: Record<string, string>) => void;
-    }
-
     let {
         fields,
         columns = 1,
         values = {},
-        button
+        id = '',
+        onsubmit
     }: {
         fields: Field[];
         columns?: number;
         values?: Record<string, string>;
-        button?: ButtonProps;
+        id?: string;
+        onsubmit?: (data: Record<string, string>) => void;
     } = $props();
 
     // Build initial form data from fields, merging any provided values
@@ -66,7 +62,7 @@
         }
 
         try {
-            button?.onClick?.(formData);
+            onsubmit?.(formData);
             console.log('loading?:', loading);
         } finally {
             loading = false;
@@ -75,7 +71,7 @@
     }
 </script>
 
-<div class="w-full font-sans text-2xl">
+<form {id} onsubmit={handleSubmit} class="w-full font-sans text-2xl">
     <div class="grid gap-4" style="grid-template-columns: repeat({columns}">
         {#each fields as field}
             {#if field.type === 'select'}
@@ -107,10 +103,4 @@
             {/if}
         {/each}
     </div>
-
-    {#if button}
-        <div class="mt-4 w-fit justify-self-end">
-            <Button onclick={handleSubmit} {loading} text={button.text} class="text-lg!" />
-        </div>
-    {/if}
-</div>
+</form>

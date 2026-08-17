@@ -82,6 +82,7 @@
 
         <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
             <Form
+                id="apply-form"
                 fields={[
                     { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 2 },
                     { name: 'email', placeholder: 'Your email', type: 'text', required: true, span: 2 },
@@ -99,12 +100,9 @@
                         ],
                         span: 2
                     },
-                    { name: 'message', placeholder: 'Your portfolio site', type: 'textarea', rows: 1, required: true, span: 2 }
+                    { name: 'message', placeholder: 'Your portfolio site', type: 'textarea', rows: 1, required: false, span: 2 }
                 ]}
-                button={{
-                    text: 'Send message',
-                    onClick: handleSubmit
-                }}
+                onsubmit={handleSubmit}
             />
             <div class="flex w-full flex-col gap-6">
                 <p class="max-w-90">Attach your documents. Please include a resume (.doc, .docx, .pdf).</p>
@@ -119,7 +117,7 @@
         </div>
 
         <div class="flex justify-end">
-            <Button on:click={handleSubmit} text="Send application" class="text-lg!" />
+            <Button form="apply-form" type="submit" text="Send application" class="text-lg!"></Button>
         </div>
     </div>
 </section>
