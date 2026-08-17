@@ -63,8 +63,13 @@
             <h2 class="mb-4 text-3xl font-bold">How we work</h2>
 
             <p class="mb-4">
-                Because of our flat organizational structure, we have the freedom to design, experiment, and learn from each other. We trust
-                people to be creative, self-sufficient, and responsible.
+                Because of our <a
+                    href="https://en.wikipedia.org/wiki/Flat_organization"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-accent hover:underline">flat organizational structure</a
+                >, we have the freedom to design, experiment, and learn from each other. We trust people to be creative, self-sufficient,
+                and responsible.
             </p>
             <p class="mb-4">
                 We <span class="font-bold">build</span> user-first experiences. Not just because we love it, but because it's ethical.
