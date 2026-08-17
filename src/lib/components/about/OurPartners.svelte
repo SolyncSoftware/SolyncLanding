@@ -20,7 +20,7 @@
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
         {#each partners as partner}
             {#snippet partnerImg()}
-                <img src={partner.src} alt={partner.alt} class="h-full w-full object-contain" />
+                <enhanced:img src={partner.src} alt={partner.alt} class="h-full w-full object-contain" />
             {/snippet}
 
             {#if partner.href}

@@ -7,6 +7,9 @@
     import persistentWaveStore from '$lib/stores/persistentWave.js';
     import { onMount, type Snippet } from 'svelte';
     import { page } from '$app/state';
+    import { fade } from 'svelte/transition';
+    import { tick } from 'svelte';
+    import 'rune-scroller/animations.css';
     import '../styles/tailwind.css';
 
     let { children }: { children: Snippet } = $props();
@@ -22,6 +25,18 @@
     onMount(() => {
         runGlobalPerformanceCheck().catch(console.error);
     });
+
+    // fixes hashes not working
+    async function handleIntroEnd() {
+        const hash = page.url.hash;
+        if (hash) {
+            await tick();
+            const el = document.querySelector(hash);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
 
     let meta = $derived(page.data?.meta ?? {});
     const DEFAULT_TITLE = 'Solync / Building what comes next, together.';
@@ -57,9 +72,16 @@
 
 <Header />
 <!-- pretty hard coded for the header but yeah. negative values work best -->
-<main class="3xl:mx-auto mx-5 -mt-32.5 mb-32.5 flex max-w-560 flex-col font-sans 2xl:mx-70">
-    {@render children()}
-</main>
+{#key page.url.pathname}
+    <main
+        class="3xl:mx-auto mx-5 -mt-32.5 mb-32.5 flex max-w-560 flex-col font-sans 2xl:mx-70"
+        in:fade={{ duration: 200, delay: 300 }}
+        out:fade={{ duration: 200 }}
+        onintroend={handleIntroEnd}
+    >
+        {@render children()}
+    </main>
+{/key}
 <Footer />
 {#if dev}
     <DevBanner />
