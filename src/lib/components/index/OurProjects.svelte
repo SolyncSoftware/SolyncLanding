@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { TransformedProject } from '../../../routes/api/projects/+server.js';
     import { onMount } from 'svelte';
+
     import ButtonSimple from '../ButtonSimple.svelte';
 
     // default count for the number of projects to display is 6, default number of columns is 2
@@ -41,14 +42,20 @@
     {:else if sortedProjects.length === 0}
         <p class="text-xl text-black">No projects found!</p>
     {:else}
-        <div class={`lg:grid-bg-red-500 grid grid-cols-1 gap-4 md:grid-cols-${cols}`}>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-{cols}">
             {#each sortedProjects as project, i}
                 {#if i < count}
-                    <div class="flex min-h-118 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition">
-                        <div
-                            class="flex w-full flex-col justify-end gap-2 rounded-3xl bg-cover bg-center p-5 text-lg"
-                            style="background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1)), url('{project.imageSrc}');"
-                        >
+                    <div class="z-1 flex min-h-118 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition">
+                        <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-3xl p-5 text-lg">
+                            <enhanced:img
+                                src={project.imageSrc}
+                                alt={project.title}
+                                class="absolute inset-0 -z-1 h-full w-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-black"></div>
+
                             <h3 class="text-accent text-3xl font-bold tracking-wide">{project.title}</h3>
                             <p>{project.desc}</p>
 
