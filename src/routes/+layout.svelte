@@ -5,6 +5,7 @@
     import Header from '$lib/components/Header.svelte';
     import Waves from '$lib/components/assets/Waves.svelte';
     import persistentWaveStore from '$lib/stores/persistentWave.js';
+    import AnimatedIntroLogo from '$lib/components/AnimatedIntroLogo.svelte';
     import { onMount, type Snippet } from 'svelte';
     import { page } from '$app/state';
     import { fade } from 'svelte/transition';
@@ -71,6 +72,8 @@
 </div>
 
 <Header />
+<AnimatedIntroLogo />
+<div class="progress-bar"></div>
 <!-- pretty hard coded for the header but yeah. negative values work best -->
 {#key page.url.pathname}
     <main
