@@ -23,7 +23,7 @@
             <div class="max-w-200 font-medium">
                 <h1 class="max-w-190 text-4xl font-bold md:text-6xl">Applying to Solync.</h1>
 
-                <p class="mt-4 text-lg md:text-2xl">
+                <p class="mt-4 text-2xl">
                     We aren't looking for specific skill sets or backgrounds. Instead, we look for curious collaborators. We seek
                     <a
                         href="https://en.wikipedia.org/wiki/T-shaped_person"
@@ -34,10 +34,15 @@
                     </a> individuals who bring expertise in their craft while having broad curiosity across other disciplines.
                 </p>
 
-                <p class="mt-4 text-lg md:text-2xl">
-                    As a flat collective, we operate without any formal hierarchy or micromanagement. Joining Solync means taking direct
-                    ownership of what we build, choosing projects that align with your interests and the collective's goals, and
-                    collaborating with peers who challenge ideas without ego.
+                <p class="mt-4 text-2xl">
+                    As a <a
+                        href="https://en.wikipedia.org/wiki/Flat_organization"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="underline hover:text-black">flat collective</a
+                    >, we operate without any formal hierarchy or micromanagement. Joining Solync means taking direct ownership of what we
+                    build, choosing projects that align with your interests and the collective's goals, and collaborating with peers who
+                    challenge ideas without ego.
                 </p>
             </div>
         </div>

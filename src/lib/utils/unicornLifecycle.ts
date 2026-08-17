@@ -67,7 +67,6 @@ export function stopUnicorn(reason?: string) {
 
             canvas.remove();
         });
-
         unicornInitialized = false;
         performanceStore.update((s) => ({ ...s, globalHardDisabled: true, canUseWebgl: false, disableReason: reason ?? 'global-failure' }));
         console.log('KILLED UNICORN DIE DIE DIE. this should fix the cpu thread issue');
@@ -76,4 +75,30 @@ export function stopUnicorn(reason?: string) {
     }
 }
 
-export default { initIfAllowed, stopUnicorn };
+export function disposeUnicorn() {
+    if (!unicornInitialized) return;
+    try {
+        if (typeof UnicornStudio !== 'undefined' && typeof UnicornStudio.destroy === 'function') {
+            UnicornStudio.destroy();
+        }
+
+        const canvases = document.querySelectorAll('canvas');
+        canvases.forEach((canvas) => {
+            canvas.width = 1;
+            canvas.height = 1;
+
+            const gl = canvas.getContext('webgl') || canvas.getContext('webgl2');
+            if (gl) {
+                gl.getExtension('WEBGL_lose_context')?.loseContext();
+            }
+
+            canvas.remove();
+        });
+
+        unicornInitialized = false;
+    } catch (e) {
+        console.error('error trying to dispose unicorn:', e);
+    }
+}
+
+export default { initIfAllowed, stopUnicorn, disposeUnicorn };

@@ -20,15 +20,14 @@
             <div class="max-w-200 font-medium">
                 <h1 class="max-w-190 text-4xl font-bold md:text-6xl">We're just getting started.</h1>
 
-                <p class="mt-4 text-lg md:text-2xl">
+                <p class="mt-4 text-2xl">
                     Solync is an independent software collective driven by passion, curiosity, experimentation, and the belief that creation
                     is art.
                 </p>
 
-                <p class="mt-4 text-lg md:text-2xl">
-                    We're a collective of hobbyists who believe in worker-managed software and create things we collectively believe in. We
-                    build tools that spark our collective interest and address human needs. Every product we make is built with the end user
-                    in mind.
+                <p class="mt-4 text-2xl">
+                    We're a group of hobbyists who believe in worker-managed software and create things we collectively believe in. We build
+                    tools that spark our curiosity and address human needs. Every product we make is built with the end user in mind.
                 </p>
             </div>
         </div>
@@ -64,17 +63,22 @@
             <h2 class="mb-4 text-3xl font-bold">How we work</h2>
 
             <p class="mb-4">
-                Because of our flat organizational structure, we have the freedom to design, experiment, and learn from each other. We trust
-                people to be creative, self-sufficient, and responsible.
+                Because of our <a
+                    href="https://en.wikipedia.org/wiki/Flat_organization"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-accent hover:underline">flat organizational structure</a
+                >, we have the freedom to design, experiment, and learn from each other. We trust people to be creative, self-sufficient,
+                and responsible.
             </p>
             <p class="mb-4">
                 We <span class="font-bold">build</span> user-first experiences. Not just because we love it, but because it's ethical.
             </p>
         </div>
     </div>
-    <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
+    <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
         <p>Think you'd be a good addition?</p>
-        <a href="/apply" class="text-accent text-4xl font-bold hover:underline">Join us today!</a>
+        <a href="/apply" class="text-accent text-center text-4xl font-bold hover:underline">Join us today!</a>
     </div>
 
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
@@ -93,7 +97,7 @@
         <OurProjects count={999} cols={3} />
     </div>
 
-    <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
+    <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
         <p>Building what comes next, together.</p>
         <SolyncLogo iconOnly={true} class="fill-accent w-30" />
     </div>

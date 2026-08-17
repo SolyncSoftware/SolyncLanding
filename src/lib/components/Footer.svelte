@@ -17,7 +17,7 @@
             links: [
                 // { name: 'StreamSkinner', href: 'https://streamskinner.com/', external: true },
                 { name: 'Gardens Wiki', href: 'https://gardens.wiki/', external: true },
-                { name: 'Potaro Wiki', href: 'https://potaro.wiki/', external: true },
+                { name: 'Potaro Wiki', href: 'https://github.com/SolyncSoftware/porter-wiki-frontend', external: true },
                 { name: 'All Projects', href: '/about#our-work' }
                 // { name: 'Solync Orbit', href: 'https://orbit.solync.org/' }
             ]
@@ -40,34 +40,40 @@
     ]);
 </script>
 
-<footer class="3xl:max-w-560 3xl:mx-auto mx-auto bg-black px-5 py-12 text-xl text-white 2xl:px-70">
+<footer class="bg-black px-5 py-12 text-xl text-white 2xl:px-70">
+    <!-- Donate banner -->
     <a
-        class="group mb-18 flex flex-row items-center justify-between rounded-2xl bg-black px-12 py-6 transition hover:bg-pink-500"
+        class="group mb-18 flex flex-col items-center justify-between gap-4 rounded-2xl bg-black px-6 py-6 transition hover:bg-pink-500 sm:flex-row sm:px-12"
         href="/donate"
     >
-        <div>
-            <p class="text-4xl font-bold">Software for everyone since 2024</p>
-            <p class="text-xl">Support us by donating or becoming a sponsor</p>
+        <div class="text-center sm:text-left">
+            <p class="text-2xl font-bold sm:text-4xl">Software for everyone since 2024</p>
+            <p class="text-base sm:text-xl">Support us by donating or becoming a sponsor</p>
         </div>
-        <span class="heart text-error inline-block text-4xl transition group-hover:text-white" aria-hidden="true">&#10084;</span>
+        <span class="heart text-error inline-block text-3xl transition group-hover:text-white sm:text-4xl" aria-hidden="true">&#10084;</span
+        >
     </a>
 
-    <!-- top side -->
-    <div class="mb-18 flex flex-col gap-3 text-6xl font-bold">
-        <p class="bg-accent w-fit px-12 py-6">We're an independent software collective</p>
-        <p class="bg-accent w-fit px-12 py-6">creating user-first experiences.</p>
-        <p class="bg-accent w-fit px-12 py-6">Building what comes next, together.</p>
+    <!-- Three bold statements -->
+    <div class="mb-18 flex flex-col gap-3 text-center text-2xl font-bold sm:text-4xl md:text-6xl">
+        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">We're an independent software collective</p>
+        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">creating user-first experiences.</p>
+        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">Building what comes next, together.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2">
-        <!-- left side -->
-        <div class="flex flex-col items-start gap-4">
-            <a href="/" class="group mb-auto block w-fit">
-                <SolyncLogo class="group-hover:fill-accent w-80 fill-white transition-all duration-300 ease-in-out group-hover:scale-102" />
+    <!-- Main footer grid -->
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <!-- Left side -->
+        <div class="flex flex-col items-center gap-4 sm:items-start">
+            <a href="/" class="group block w-fit">
+                <SolyncLogo
+                    class="group-hover:fill-accent w-60 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 sm:w-80"
+                />
             </a>
 
-            <div class="flex flex-row items-center gap-4 font-bold">
-                Join us on our journey! <Button class="w-fit hover:bg-white hover:text-black" href="/apply" text="Apply to Solync" />
+            <div class="mt-auto flex w-full flex-col items-center gap-4 text-center font-bold sm:flex-row sm:text-left">
+                <span>Join us on our journey!</span>
+                <Button class="w-full hover:bg-white hover:text-black sm:w-fit" href="/apply" text="Apply to Solync" />
             </div>
 
             <ul class="flex flex-row items-center gap-4">
@@ -80,21 +86,22 @@
                             aria-label={'Social link'}
                             class="hover:text-accent flex items-center justify-center transition"
                         >
-                            <Icon class="h-6 w-6 transition" />
+                            <Icon class="h-7 w-7 transition sm:h-6 sm:w-6" />
                         </a>
                     </li>
                 {/each}
             </ul>
         </div>
-        <!-- right side -->
-        <div class="flex flex-col items-end gap-4">
+
+        <!-- Right side -->
+        <div class="flex flex-col items-center gap-4 sm:items-end">
             <div class="flex flex-wrap justify-center gap-8 md:gap-14 xl:justify-end">
                 {#each footerSections as section}
-                    <div class="flex flex-col gap-4">
-                        <span class="font-display text-accent w-fit">
+                    <div class="flex flex-col gap-4 text-center sm:text-left">
+                        <span class="font-display text-accent w-auto">
                             {section.title}
                         </span>
-                        <nav class="flex flex-col gap-4 text-white/75">
+                        <nav class="flex flex-col gap-3 text-white/75 sm:gap-4">
                             {#each section.links as link}
                                 <a
                                     href={link.href}
@@ -110,14 +117,14 @@
                 {/each}
             </div>
 
-            <div class="flex flex-row gap-2">
-                <img src="/images/badges/csshard.gif" alt="css is hard" />
+            <div class="flex flex-row flex-wrap items-center justify-center gap-3">
+                <img src="/images/badges/csshard.gif" alt="css is hard" class="h-8 w-auto" loading="lazy" />
                 <a href="https://brainmade.org/" target="_blank">
-                    <img src="/images/badges/brainmade.png" alt="90% human made!" />
+                    <img src="/images/badges/brainmade.png" alt="90% human made" class="h-8 w-auto" loading="lazy" />
                 </a>
             </div>
 
-            <div>
+            <div class="text-center text-sm sm:text-xl">
                 &copy; {new Date().getFullYear()} Solync. Made with
                 <span class="heart text-error inline-block" aria-hidden="true">&#10084;</span>
                 in Texas.
