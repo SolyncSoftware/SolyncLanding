@@ -44,14 +44,14 @@
         <!-- hamburger noodle -->
         <button
             onclick={toggleMenu}
-            class="relative ml-auto h-14 w-14 text-white focus:outline-none sm:hidden"
+            class="relative ml-auto h-12 w-12 text-white focus:outline-none sm:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
         >
             {#if isMenuOpen}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="absolute top-1/2 left-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2"
+                    class="absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -62,7 +62,7 @@
             {:else}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="absolute top-1/2 left-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2"
+                    class="absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
