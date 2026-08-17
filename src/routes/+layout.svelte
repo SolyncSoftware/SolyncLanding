@@ -60,7 +60,11 @@
 <Header />
 <!-- pretty hard coded for the header but yeah. negative values work best -->
 {#key page.url.pathname}
-    <main class="3xl:mx-auto mx-5 -mt-32.5 mb-32.5 flex max-w-560 flex-col font-sans 2xl:mx-70" transition:fade|global={{ duration: 400 }}>
+    <main
+        class="3xl:mx-auto mx-5 -mt-32.5 mb-32.5 flex max-w-560 flex-col font-sans 2xl:mx-70"
+        in:fade={{ duration: 300, delay: 400 }}
+        out:fade={{ duration: 300 }}
+    >
         {@render children()}
     </main>
 {/key}
