@@ -2,7 +2,6 @@
     import ButtonSimple from '../ButtonSimple.svelte';
 
     import rs from 'rune-scroller';
-    import 'rune-scroller/animations.css';
 
     let { project } = $props();
 </script>

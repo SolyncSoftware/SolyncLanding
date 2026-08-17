@@ -9,6 +9,7 @@
     import { page } from '$app/state';
     import { fade } from 'svelte/transition';
     import { tick } from 'svelte';
+    import 'rune-scroller/animations.css';
     import '../styles/tailwind.css';
 
     let { children }: { children: Snippet } = $props();
