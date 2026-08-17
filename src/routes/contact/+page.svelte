@@ -10,11 +10,9 @@
             <div class="max-w-200 font-medium">
                 <h1 class="max-w-190 text-4xl font-bold md:text-6xl">Contacting Solync.</h1>
 
-                <p class="mt-4 text-lg md:text-2xl">
-                    All of our messages are sent to us via Discord webhooks for centralized communication.
-                </p>
+                <p class="mt-4 text-2xl">All of our messages are sent to us via Discord webhooks for centralized communication.</p>
 
-                <p class="mt-4 text-lg md:text-2xl">
+                <p class="mt-4 text-2xl">
                     If you need customer service regarding any of our projects, please reach out to us on Discord and message @ModMail.
                 </p>
             </div>
@@ -27,7 +25,7 @@
         <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
             <div class="flex w-full flex-col gap-6">
                 <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" />
+                    <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" loading="lazy" />
                     <div class="font-display flex flex-col">
                         <span class="text-accent text-2xl">Email John</span>
                         <a href="mailto:john@solync.org" class="hover:text-accent text-xl hover:underline">john@solync.org</a>
@@ -35,7 +33,7 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="Discord" class="h-11 w-11 object-cover" />
+                    <img src="/images/placeholders/@placeholder.svg" alt="Discord" class="h-11 w-11 object-cover" loading="lazy" />
                     <div class="font-display flex flex-col">
                         <span class="text-accent text-2xl">Discord</span>
                         <a
@@ -50,7 +48,7 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="GitHub" class="h-11 w-11 object-cover" />
+                    <img src="/images/placeholders/@placeholder.svg" alt="GitHub" class="h-11 w-11 object-cover" loading="lazy" />
                     <div class="font-display flex flex-col">
                         <span class="text-accent text-2xl">GitHub</span>
                         <a

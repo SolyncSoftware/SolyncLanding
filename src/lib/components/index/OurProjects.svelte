@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { TransformedProject } from '../../../routes/api/projects/+server.js';
     import { onMount } from 'svelte';
-    import ButtonSimple from '../ButtonSimple.svelte';
+    import ProjectCard from '../assets/ProjectCard.svelte';
 
     // default count for the number of projects to display is 6, default number of columns is 2
     let { count = 6, cols = 2 } = $props();
@@ -41,40 +41,10 @@
     {:else if sortedProjects.length === 0}
         <p class="text-xl text-black">No projects found!</p>
     {:else}
-        <div class={`lg:grid-bg-red-500 grid grid-cols-1 gap-4 md:grid-cols-${cols}`}>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-{cols}">
             {#each sortedProjects as project, i}
                 {#if i < count}
-                    <div class="flex min-h-118 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition">
-                        <div
-                            class="flex w-full flex-col justify-end gap-2 rounded-3xl bg-cover bg-center p-5 text-lg"
-                            style="background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1)), url('{project.imageSrc}');"
-                        >
-                            <h3 class="text-accent text-3xl font-bold tracking-wide">{project.title}</h3>
-                            <p>{project.desc}</p>
-
-                            <div class="flex gap-3">
-                                {#if project.page !== '#'}
-                                    <ButtonSimple text="Case Study" href={project.page} class="self-start text-lg! hover:text-white" />
-                                {/if}
-                                {#if project.website !== '#'}
-                                    <ButtonSimple
-                                        text="Website"
-                                        href={project.website}
-                                        target="_blank"
-                                        class="self-start text-lg! hover:text-white"
-                                    />
-                                {/if}
-                                {#if project.github !== '#'}
-                                    <ButtonSimple
-                                        text="GitHub"
-                                        href={project.github}
-                                        target="_blank"
-                                        class="self-start text-lg! hover:text-white"
-                                    />
-                                {/if}
-                            </div>
-                        </div>
-                    </div>
+                    <ProjectCard {project} />
                 {/if}
             {/each}
         </div>
