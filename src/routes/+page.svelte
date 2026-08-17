@@ -21,24 +21,22 @@
 </script>
 
 <section class="flex flex-col gap-14">
-    <!-- <div in:fly={{ y: -40, duration: 1000, easing: sineInOut }} class="z-100"> -->
-
-    <PageContainer>
-        <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
-        <h1 class="text-4xl font-bold md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-        <p class="mt-4 text-2xl font-semibold md:max-w-170">
-            We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
-        </p>
-        <p class="mt-4 text-2xl font-semibold md:max-w-170">
-            We're an independent software collective creating user-first experiences. Not just because we love it, but because it's ethical.
-            We collaborate to create what's next.
-        </p>
-        <p class="mt-4 text-2xl font-semibold md:max-w-170">
-            <a href="/about" class="underline hover:text-black">Learn more about us.</a>
-        </p>
-    </PageContainer>
-
-    <!-- </div> -->
+    <div class="holdover">
+        <PageContainer>
+            <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
+            <h1 class="text-4xl font-bold md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+            <p class="mt-4 text-2xl font-semibold md:max-w-170">
+                We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
+            </p>
+            <p class="mt-4 text-2xl font-semibold md:max-w-170">
+                We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
+                ethical. We collaborate to create what's next.
+            </p>
+            <p class="mt-4 text-2xl font-semibold md:max-w-170">
+                <a href="/about" class="underline hover:text-black">Learn more about us.</a>
+            </p>
+        </PageContainer>
+    </div>
 
     <!-- <div class="flex w-full flex-col items-center justify-center gap-4 text-4xl font-bold">
         <p>Curious to know more?</p>
@@ -74,3 +72,24 @@
         <SolyncLogo iconOnly={true} class="fill-accent w-30" />
     </div>
 </section>
+
+<style>
+    @keyframes slideup {
+        0% {
+            opacity: 0;
+            transform: translateY(0px);
+        }
+        1% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .holdover {
+        animation: slideup 1s ease;
+    }
+</style>
