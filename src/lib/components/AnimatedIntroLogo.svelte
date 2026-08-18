@@ -91,7 +91,7 @@
         }
     }
 
-    .fullpage-intro {
+    /* .fullpage-intro {
         position: fixed;
         top: 0;
         left: 0;
@@ -103,8 +103,8 @@
         align-items: center;
         justify-content: center;
         animation:
-            /* fullpage-zoom 4.8s cubic-bezier(0.872, 0.012, 0, 1.002) forwards, */ fullpage-fadeout 4.8s
-            cubic-bezier(0, 0.033, 1, 1.009) forwards;
+        fullpage-fadeout 4.8s
+        cubic-bezier(0, 0.033, 1, 1.009) forwards;
         animation-delay: 0.2s;
         animation-fill-mode: both;
         pointer-events: none;
@@ -142,5 +142,5 @@
         height: 164px;
         width: auto;
         color: var(--color-accent);
-    }
+    } */
 </style>

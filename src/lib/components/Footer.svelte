@@ -118,9 +118,10 @@
             </div>
 
             <div class="flex flex-row flex-wrap items-center justify-center gap-3">
-                <img src="/images/badges/csshard.gif" alt="css is hard" class="h-8 w-auto" loading="lazy" />
+                <img src="/images/badges/csshard.gif" alt="css is hard" class="w-auto" loading="lazy" />
+                <img src="/images/badges/powered-by-debian.gif" alt="powered by debian" class="w-auto" loading="lazy" />
                 <a href="https://brainmade.org/" target="_blank">
-                    <img src="/images/badges/brainmade.png" alt="90% human made" class="h-8 w-auto" loading="lazy" />
+                    <img src="/images/badges/brainmade.png" alt="90% human made" class="w-auto" loading="lazy" />
                 </a>
             </div>
 
