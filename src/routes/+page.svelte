@@ -6,6 +6,8 @@
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
     import rs from 'rune-scroller';
+    import Button from '$lib/components/Button.svelte';
+    import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
 
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
@@ -36,9 +38,29 @@
                 We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
                 ethical. We collaborate to create what's next.
             </p>
-            <p class="mt-4 text-2xl font-semibold md:max-w-170">
-                <a href="/about" class="underline hover:text-black">Learn more about us.</a>
-            </p>
+
+            <div class="mt-4 flex flex-row items-center gap-4 align-middle">
+                <Button
+                    class="bg-offwhite text-accent! hover:bg-offwhite w-fit px-14 text-xl! font-bold shadow-none
+         transition-all hover:-translate-y-1 
+         hover:shadow-[0_5px_0px_#00000022]"
+                    href="/about"
+                    text="Learn More"
+                />
+                <a
+                    href="https://discord.gg/nUeRyRtDYC"
+                    class="bg-offwhite/20 rounded-full p-4 transition-all hover:-translate-y-1
+         hover:shadow-[0_5px_0px_#00000022]"
+                    ><SiDiscord />
+                </a>
+
+                <a
+                    href="https://github.com/SolyncSoftware"
+                    class="bg-offwhite/18 rounded-full p-4 transition-all hover:-translate-y-1
+         hover:shadow-[0_5px_0px_#00000022]"
+                    ><SiGithub />
+                </a>
+            </div>
         </PageContainer>
     </div>
 
