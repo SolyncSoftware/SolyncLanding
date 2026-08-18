@@ -45,18 +45,17 @@
          transition-all hover:-translate-y-1 
          hover:shadow-[0_5px_0px_#00000022]"
                     href="/about"
-                    text="Learn more"
+                    text="Learn More"
                 />
-
                 <a
-                    href="/"
+                    href="https://discord.gg/nUeRyRtDYC"
                     class="bg-offwhite/20 rounded-full p-4 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><SiDiscord />
                 </a>
 
                 <a
-                    href="/"
+                    href="https://github.com/SolyncSoftware"
                     class="bg-offwhite/18 rounded-full p-4 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><SiGithub />
