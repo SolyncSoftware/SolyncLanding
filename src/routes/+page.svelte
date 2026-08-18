@@ -39,9 +39,9 @@
                 ethical. We collaborate to create what's next.
             </p>
 
-            <div class="mt-4 flex flex-row items-center gap-4 align-middle">
+            <div class="mt-4 flex flex-col items-center gap-4 align-middle sm:flex-row">
                 <Button
-                    class="bg-offwhite text-accent! hover:bg-offwhite w-fit px-14 text-xl! font-bold shadow-none
+                    class="bg-offwhite text-accent! hover:bg-offwhite w-fit self-center! px-14 text-xl! font-bold shadow-none
          transition-all hover:-translate-y-1 
          hover:shadow-[0_5px_0px_#00000022]"
                     href="/about"
@@ -50,7 +50,7 @@
                 <a
                     href="https://discord.gg/nUeRyRtDYC"
                     target="_blank"
-                    class="bg-offwhite/20 rounded-full p-4 transition-all hover:-translate-y-1
+                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><SiDiscord />
                 </a>
@@ -58,7 +58,7 @@
                 <a
                     href="https://github.com/SolyncSoftware"
                     target="_blank"
-                    class="bg-offwhite/18 rounded-full p-4 transition-all hover:-translate-y-1
+                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><SiGithub />
                 </a>
