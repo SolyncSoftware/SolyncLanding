@@ -49,6 +49,7 @@
                 />
                 <a
                     href="https://discord.gg/nUeRyRtDYC"
+                    target="_blank"
                     class="bg-offwhite/20 rounded-full p-4 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><SiDiscord />
@@ -56,6 +57,7 @@
 
                 <a
                     href="https://github.com/SolyncSoftware"
+                    target="_blank"
                     class="bg-offwhite/18 rounded-full p-4 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><SiGithub />
