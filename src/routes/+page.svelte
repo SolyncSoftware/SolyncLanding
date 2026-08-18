@@ -3,6 +3,7 @@
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import OurTeam from '$lib/components/index/OurTeam.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
+    import SmallPost from '$lib/components/blog/SmallPost.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
     import rs from 'rune-scroller';
@@ -88,6 +89,27 @@
     <div>
         <h2 class="text-accent mb-4 text-5xl font-bold">Our People</h2>
         <OurTeam />
+    </div>
+
+    <div>
+        <h2 class="text-accent mb-4 text-5xl font-bold">From the Blog</h2>
+        {#if loading}
+            <p class="text-xl">Loading articles...</p>
+        {:else if blogArticles.length === 0}
+            <p class="text-xl text-black">No articles found.</p>
+        {:else}
+            <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
+                {#each blogArticles as article}
+                    <SmallPost
+                        title={article.title}
+                        description={article.description}
+                        link={article.slug}
+                        category={article.categories[0]}
+                        image={article.image || '/images/articles/fallback.png'}
+                    />
+                {/each}
+            </div>
+        {/if}
     </div>
 
     <!-- may remove this or make it a component. so far its only in the about page -->

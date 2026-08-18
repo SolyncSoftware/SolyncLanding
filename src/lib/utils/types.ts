@@ -10,7 +10,7 @@ export type Article = {
     date: string;
     categories: Categories[];
     published: boolean;
-    image?: string;
+    image: string;
 };
 
 export interface MdsvexModule {
