@@ -84,12 +84,15 @@
         </div>
     </div>
 
-    <p
-        class={[
-            'cursor-default text-left font-sans text-xl transition-all duration-300 ease-in-out md:pl-23',
-            expanded ? 'max-h-96 leading-6 opacity-100' : 'max-h-0 leading-0 opacity-0'
-        ]}
+    <div
+        class="grid transition-[grid-template-rows,opacity] duration-300 ease-in-out {expanded
+            ? 'grid-rows-[1fr] opacity-100'
+            : 'grid-rows-[0fr] opacity-0'}"
     >
-        {member.bio}
-    </p>
+        <div class="overflow-hidden">
+            <p class="cursor-default text-left font-sans text-xl md:pl-23">
+                {member.bio}
+            </p>
+        </div>
+    </div>
 </div>
