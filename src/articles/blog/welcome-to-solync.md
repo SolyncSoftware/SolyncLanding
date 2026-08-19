@@ -28,7 +28,7 @@ Some of our options included Ornet, Goop, PoopCorp, Orbnyt, Solurn, Procyon, Sol
 ![Solync's early design direction](/images/articles/solync-concept-3.png)
 
 <figure class="w-full flex justify-center flex-col">
-<video width="700" height="auto" autoplay class="mb-4 self-center">
+<video width="700" height="auto" autoplay loop class="mb-4 self-center">
   <source src="/images/articles/solync-concept-video.webm" type="video/mp4">
 </video>
 <figcaption>Early animation test</figcaption>
