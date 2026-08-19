@@ -6,7 +6,12 @@
     <button
         {type}
         {form}
-        class={`bg-offaccent group button flex items-center gap-4 self-end rounded-full px-8 py-3 text-xl text-white shadow-xl/6 transition-all ease-in-out hover:cursor-pointer hover:bg-black ${className}`}
+        class={`bg-offaccent group button flex
+        items-center gap-4 self-end rounded-full
+        px-8 py-3 text-xl text-white shadow-xl/6
+        transition-all ease-in-out enabled:hover:cursor-pointer
+        enabled:hover:bg-black disabled:opacity-50
+        ${className}`}
         {...rest}
     >
         {text}
@@ -14,7 +19,12 @@
 {:else}
     <a
         {href}
-        class={`bg-offaccent group button flex items-center gap-4 self-end rounded-full px-8 py-3 text-xl text-white shadow-xl/6 transition-all ease-in-out hover:cursor-pointer hover:bg-black ${className}`}
+        class={`bg-offaccent group button flex
+        items-center gap-4 self-end rounded-full
+        px-8 py-3 text-xl text-white shadow-xl/6
+        transition-all ease-in-out enabled:hover:cursor-pointer
+        enabled:hover:bg-black disabled:opacity-50
+        ${className}`}
         {...rest}
     >
         {text}

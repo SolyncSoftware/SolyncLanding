@@ -3,7 +3,7 @@
 
     interface Field {
         name: string;
-        type: 'text' | 'textarea' | 'select';
+        type: 'text' | 'textarea' | 'select' | 'email';
         label?: string;
         placeholder?: string;
         rows?: number; // for textarea, ignored otherwise
@@ -18,13 +18,15 @@
         columns = 1,
         values = {},
         id = '',
+        loading = $bindable(false),
         onsubmit
     }: {
         fields: Field[];
         columns?: number;
         values?: Record<string, string>;
         id?: string;
-        onsubmit?: (data: Record<string, string>) => void;
+        loading?: boolean;
+        onsubmit?: (data: Record<string, string>) => Promise<void>;
     } = $props();
 
     // Build initial form data from fields, merging any provided values
@@ -37,7 +39,6 @@
     }
 
     let formData = $state(buildInitial());
-    let loading = $state(false);
 
     function requiredFieldsMissing(): boolean {
         for (const f of fields) {
@@ -48,7 +49,8 @@
         return false;
     }
 
-    function handleSubmit() {
+    async function handleSubmit(e: SubmitEvent) {
+        e.preventDefault();
         if (loading) {
             return;
         }
@@ -62,11 +64,16 @@
         }
 
         try {
-            onsubmit?.(formData);
             console.log('loading?:', loading);
-        } finally {
-            loading = false;
+            const submit = await onsubmit?.(formData);
+
+            loading = false; // sets loading to false after done await-ing
+            console.log('loading?:', loading);
             alert('Message sent! We will get back to you as soon as possible.');
+        } catch (error) {
+            alert("Something went wrong: " + error);
+            console.log('[Form Submission]', error);
+            loading = false;
         }
     }
 </script>
@@ -95,9 +102,11 @@
             {:else}
                 <Textbox
                     bind:value={formData[field.name]}
+                    type={field.type}
                     rows={field.type === 'textarea' ? (field.rows ?? 4) : 1}
                     placeholder={field.placeholder}
                     class={field.class}
+                    required={field.required}
                     style="grid-column: span {field.span ?? 1};"
                 />
             {/if}

@@ -3,6 +3,8 @@
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
 
+    let isSubmitting = $state(false);
+
     async function handleSubmit(formData: Record<string, string>) {
         const res = await fetch('/api/contact', {
             method: 'POST',
@@ -77,9 +79,10 @@
             <div class="flex w-full flex-col gap-6">
                 <Form
                     id="contact-form"
+                    bind:loading={isSubmitting}
                     fields={[
                         { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 1 },
-                        { name: 'email', placeholder: 'Your email', type: 'text', required: true, span: 1 },
+                        { name: 'email', placeholder: 'Your email', type: 'email', required: true, span: 1 },
                         {
                             name: 'reason',
                             type: 'select',
@@ -106,7 +109,10 @@
                     ]}
                     onsubmit={handleSubmit}
                 />
-                <Button form="contact-form" type="submit" text="Send message" class="text-lg!">asdf</Button>
+                <Button form="contact-form" type="submit" class="text-lg!"
+                    text={isSubmitting ? "Submitting..." : "Send message"}
+                    disabled={isSubmitting ? true : undefined}
+                ></Button>
             </div>
         </div>
     </div>
