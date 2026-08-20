@@ -23,7 +23,9 @@
     // use:grow // jank and stupid
     bind:value
     {...rest}
-    class={`focus:ring-accent bg-offwhite resize-none overflow-clip rounded-full px-5 py-4 font-sans text-lg focus:ring-2 focus:outline-none ${className}`}
+    class={`w-full min-w-0 focus:ring-accent bg-offwhite resize-none overflow-clip rounded-full
+    px-5 py-4 font-sans text-lg focus:ring-2 focus:outline-none
+    ${className}`}
     id="fname"
     name="fname"
     required={required}
@@ -35,7 +37,9 @@
     bind:value
     {...rest}
     type={type === "email" ? "email" : "text"}
-    class={`inline-block focus:ring-accent bg-offwhite resize-none overflow-clip rounded-full px-5 py-4 font-sans text-lg focus:ring-2 focus:outline-none ${className}`}
+    class={`w-full min-w-0 inline-block focus:ring-accent bg-offwhite resize-none overflow-clip rounded-full
+    px-5 py-4 font-sans text-lg focus:ring-2 focus:outline-none
+    ${className}`}
     id="fname"
     name="fname"
     required={required}

@@ -19,6 +19,7 @@
         values = {},
         id = '',
         loading = $bindable(false),
+        response = $bindable(null),
         onsubmit
     }: {
         fields: Field[];
@@ -26,6 +27,7 @@
         values?: Record<string, string>;
         id?: string;
         loading?: boolean;
+        response?: null | {type: "success"} | {type: "error", message: string}
         onsubmit?: (data: Record<string, string>) => Promise<void>;
     } = $props();
 
@@ -58,8 +60,8 @@
         console.log('loading?:', loading);
 
         if (requiredFieldsMissing()) {
-            alert('Please fill in all required fields.');
             loading = false;
+            response = {type: "error", message: "Please fill in all the required fields."}
             return;
         }
 
@@ -69,27 +71,31 @@
 
             loading = false; // sets loading to false after done await-ing
             console.log('loading?:', loading);
-            alert('Message sent! We will get back to you as soon as possible.');
+            response = {type: "success"}
         } catch (error) {
-            alert("Something went wrong: " + error);
+            response = {type: "error", message: `Something went wrong. ${error}`}
             console.log('[Form Submission]', error);
             loading = false;
         }
     }
 </script>
 
-<form {id} onsubmit={handleSubmit} class="w-full font-sans text-2xl">
-    <div class="grid gap-4" style="grid-template-columns: repeat({columns}">
+<form {id} onsubmit={handleSubmit} class="w-full min-w-0 font-sans text-2xl">
+    <div class="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
         {#each fields as field}
             {#if field.type === 'select'}
-                <div class="flex flex-col gap-1 text-lg" style="grid-column: span {field.span ?? 0};">
+                <div
+                    class={`flex min-w-0 flex-col gap-1 text-lg ${
+                        field.span && field.span > 1 ? 'md:col-span-2' : ''
+                    }`}
+                >
                     {#if field.label}
                         <span>{field.label}</span>
                     {/if}
                     <select
                         bind:value={formData[field.name]}
                         required={field.required}
-                        class="focus:ring-accent bg-offwhite rounded-full border border-none px-5 py-4 text-black placeholder:text-white/50"
+                        class="w-full min-w-0 focus:ring-accent bg-offwhite rounded-full border border-none px-5 py-4 text-black placeholder:text-white/50"
                     >
                         <option value="" disabled selected>
                             {field.placeholder || 'Please select one'}
@@ -105,9 +111,10 @@
                     type={field.type}
                     rows={field.type === 'textarea' ? (field.rows ?? 4) : 1}
                     placeholder={field.placeholder}
-                    class={field.class}
+                    class={`w-full min-w-0 ${field.class ?? ''} ${
+                        field.span && field.span > 1 ? 'md:col-span-2' : ''
+                    }`}
                     required={field.required}
-                    style="grid-column: span {field.span ?? 1};"
                 />
             {/if}
         {/each}

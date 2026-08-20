@@ -2,8 +2,11 @@
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
+    import CircleX from '@lucide/svelte/icons/circle-x';
+    import CircleCheckBig from '@lucide/svelte/icons/circle-check-big';
 
     let isSubmitting = $state(false);
+    let response: null | {type: "success"} | {type: "error", message: string} = $state(null);
 
     async function handleSubmit(formData: Record<string, string>) {
         const res = await fetch('/api/contact', {
@@ -35,7 +38,7 @@
 
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
         <h2 class="mb-4 text-3xl font-bold">Contact us</h2>
-        <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
+        <div class="mb-6 flex flex-col justify-between gap-12 text-lg xl:flex-row">
             <div class="flex w-full flex-col gap-6">
                 <div class="flex items-center gap-4">
                     <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" loading="lazy" />
@@ -76,10 +79,12 @@
                 </div>
             </div>
 
+            {#if !response || response.type !== "success"}
             <div class="flex w-full flex-col gap-6">
                 <Form
                     id="contact-form"
                     bind:loading={isSubmitting}
+                    bind:response={response}
                     fields={[
                         { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 1 },
                         { name: 'email', placeholder: 'Your email', type: 'email', required: true, span: 1 },
@@ -109,11 +114,28 @@
                     ]}
                     onsubmit={handleSubmit}
                 />
-                <Button form="contact-form" type="submit" class="text-lg!"
-                    text={isSubmitting ? "Submitting..." : "Send message"}
-                    disabled={isSubmitting ? true : undefined}
-                ></Button>
+                <div class="w-full min-w-0 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
+                    {#if response && response.type == "error"}
+                    <div class="min-w-0 flex flex-row gap-2 items-center">
+                        <CircleX class="text-error shrink-0"/>
+                        <p class="leading-[1em] text-error max-w-[12em]">{response?.message}</p>
+                    </div>
+                    {/if}
+                    <Button form="contact-form" type="submit" class="self-end! h-fit! text-lg! shrink-0"
+                        text={isSubmitting ? "Submitting..." : "Send message"}
+                        disabled={isSubmitting ? true : undefined}
+                    ></Button>
+                </div>
             </div>
+            {:else}
+            <div class="flex w-full flex-col justify-center items-center gap-2">
+                <CircleCheckBig size={72} class="text-accent"/>
+                <div class="flex flex-col items-center gap-1">
+                    <h2 class="text-3xl font-display text-accent">Message sent!</h2>
+                    <p>We will get back to you as soon as possible.</p>
+                </div>
+            </div>
+            {/if}
         </div>
     </div>
 </section>

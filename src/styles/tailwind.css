@@ -175,3 +175,7 @@ a {
     background: var(--color-offaccent);
     color: var(--color-white);
 }
+
+.debug {
+    outline: 1px solid red;
+}
