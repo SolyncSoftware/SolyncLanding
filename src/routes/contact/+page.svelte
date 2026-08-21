@@ -30,7 +30,16 @@
                 <p class="mt-4 text-2xl">All of our messages are sent to us via Discord webhooks for centralized communication.</p>
 
                 <p class="mt-4 text-2xl">
-                    If you need customer service regarding any of our projects, please reach out to us on Discord and message @ModMail.
+                    If you need customer service regarding any of our projects, please reach out to us on <a
+                        href="https://discord.gg/nUeRyRtDYC"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="underline hover:text-black"
+                        >Discord
+                    </a> and message @ModMail.
+                </p>
+                <p class="mt-4 text-2xl">
+                    For other inquiries, <a href="mailto:john@solync.org" class="underline hover:text-black">Email John</a>.
                 </p>
             </div>
         </div>

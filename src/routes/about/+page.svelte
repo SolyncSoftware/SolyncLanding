@@ -3,15 +3,7 @@
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
-
-    // const title: string = 'Solync';
-    // const description: string = `
-    // is a software collective driven by simple principles: putting users first, challenging tradition
-    // with originality, and constantly improving. We don't sell out, make empty promises, or cut corners for profit. What we create is a direct
-    // reflection of that commitment.
-    // We iterate quickly and thoughtfully, refining what works and fixing what doesn't. Continuous growth means owning our impact and
-    // staying open to radical feedback, ensuring we meet our own standards.
-    // `;
+    import Button from '$lib/components/Button.svelte';
 </script>
 
 <section class="flex flex-col gap-14">
@@ -78,7 +70,13 @@
     </div>
     <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
         <p>Think you'd be a good addition?</p>
-        <a href="/apply" class="text-accent text-center text-4xl font-bold hover:underline">Join us today!</a>
+        <Button
+            class="hover:bg-offaccent! self-center! px-14 text-xl! font-bold shadow-none 
+           transition-all hover:-translate-y-1 
+           hover:shadow-[0_5px_0px_#00000022]"
+            href="/apply"
+            text="Join us today!"
+        />
     </div>
 
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">

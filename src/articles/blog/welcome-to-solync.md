@@ -1,5 +1,5 @@
 ---
-title: Welcome to Solync
+title: Hello, Solync!
 description: See our design process and thoughts developing this website.
 author: Solync
 date: '2026-04-30T12:00:00.000Z'
@@ -7,25 +7,38 @@ categories:
   - announcement
   - news
   - blog
-image: /images/articles/fallback.png
+image: /images/articles/youtube-solync.png
 published: true
 ---
 
-From the deepest pits of the basement, we are finally ready to unveil Solync's actual landing page.
+Hi all, welcome to Solync's new landing page. Codenamed SolyncLanding, we hope you enjoy seeing the work we've done.
 
-SolyncLanding is our brand new landing page and the foundation for a new era of Theaceae's rebrand. We finalized our branding to ensure it's consistent across all platforms, and we've reached that goal.
+SolyncLanding is our brand new landing page and the foundation for a new era for Theaceae Collective's rebrand. We finalized our branding to ensure it's consistent across all platforms. We also have a [design document](https://drive.google.com/file/d/1p9lrPNFNdFDZLQv-Wl_plfgWh7SpJrwD/view?usp=sharing) for users to explore.
 
 Solync isn't just 30 buckets of fresh, wet paint; we have overhauled how we present ourselves to the world and how we communicate our values. It portrays us as a brand-new startup transitioning to a worker-owned structure, making cool software.
 
-## Defining a new era
+## Our approach to the rebrand
 
-The biggest change we've made was rebranding our organization. For years, Theaceae Collective was something we used, but it felt at odds with how we wanted to grow. We are no longer the workers of a flower. We are a collective of creators, developers, designers, and IT professionals who all work together.
+When we were fresh off the boat from the other startup, we immedately wanted to rebrand. We've noticed throughout the partnership that users were confused by Theaceae Collective's own name. When asking, some say it's hard to pronounce, others found it forgettable. Because of this reasoning we wanted to find something that really stuck out.
 
-Internally, we were also pushing for change. We have defined our structure even more based on internal documentation and iterating on that documentation. All values we had before are newly refined, future proof, and clarified.
+Some of our options included Ornet, Goop, PoopCorp, Orbnyt, Solurn, Procyon, Solyc. Here are a few concepts from when we were brainstorming:
+
+![Ornet wordmark with Solync's early logo](/images/articles/solync-concept-1.png)
+
+![Solync's early design direction](/images/articles/solync-concept-3.png)
+
+<figure class="w-full flex justify-center flex-col">
+<video width="700" height="auto" autoplay loop class="mb-4 self-center">
+  <source src="/images/articles/solync-concept-video.webm" type="video/mp4">
+</video>
+<figcaption>Early animation test</figcaption>
+</figure>
+
+Eventually, we settled on <span class="text-accent font-bold text-2xl">Solync</span> because of the Solar System, but you can also say Sol means Sun, Lync means Sync, which kinda reflects our own ethos.
+
+Internally, we have also made many changes. We've defined our structure even more based on internal documentation and iterating on that documentation based on our own experiences. All values we had before are newly refined, future proof, and clarified.
 
 We also believe that software is built by humans, for humans. So, we think defining our structure internally reflects that vision.
-
-Our new "official" company name is Solync (or Solync Software if Solync is taken).
 
 ## NetroWorks (NetroWeb V4)
 

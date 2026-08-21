@@ -3,9 +3,12 @@
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import OurTeam from '$lib/components/index/OurTeam.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
+    import SmallPost from '$lib/components/blog/SmallPost.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
     import rs from 'rune-scroller';
+    import Button from '$lib/components/Button.svelte';
+    import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
 
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
@@ -36,9 +39,31 @@
                 We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
                 ethical. We collaborate to create what's next.
             </p>
-            <p class="mt-4 text-2xl font-semibold md:max-w-170">
-                <a href="/about" class="underline hover:text-black">Learn more about us.</a>
-            </p>
+
+            <div class="mt-4 flex flex-col items-center gap-4 align-middle sm:flex-row">
+                <Button
+                    class="bg-offwhite text-accent! hover:bg-offwhite w-fit self-center! px-14 text-xl! font-bold shadow-none
+         transition-all hover:-translate-y-1 
+         hover:shadow-[0_5px_0px_#00000022]"
+                    href="/about"
+                    text="Learn More"
+                />
+                <a
+                    href="https://discord.gg/nUeRyRtDYC"
+                    target="_blank"
+                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
+         hover:shadow-[0_5px_0px_#00000022]"
+                    ><SiDiscord />
+                </a>
+
+                <a
+                    href="https://github.com/SolyncSoftware"
+                    target="_blank"
+                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
+         hover:shadow-[0_5px_0px_#00000022]"
+                    ><SiGithub />
+                </a>
+            </div>
         </PageContainer>
     </div>
 
@@ -64,6 +89,27 @@
     <div>
         <h2 class="text-accent mb-4 text-5xl font-bold">Our People</h2>
         <OurTeam />
+    </div>
+
+    <div>
+        <h2 class="text-accent mb-4 text-5xl font-bold">From the Blog</h2>
+        {#if loading}
+            <p class="text-xl">Loading articles...</p>
+        {:else if blogArticles.length === 0}
+            <p class="text-xl text-black">No articles found.</p>
+        {:else}
+            <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
+                {#each blogArticles as article}
+                    <SmallPost
+                        title={article.title}
+                        description={article.description}
+                        link={article.slug}
+                        category={article.categories[0]}
+                        image={article.image || '/images/articles/fallback.png'}
+                    />
+                {/each}
+            </div>
+        {/if}
     </div>
 
     <!-- may remove this or make it a component. so far its only in the about page -->
