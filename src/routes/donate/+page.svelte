@@ -3,10 +3,9 @@
 </script>
 
 <!-- some of the most batshit stupid shit ever written -->
-<div class="relative overflow-visible">
+<!-- <div class="relative overflow-visible">
     <PageContainer className="bg-pink-500/90 text-white">
         <div class="flex flex-col gap-8 xl:flex-row xl:items-start xl:justify-between">
-            <!-- Text Column -->
             <div class="max-w-210 font-medium">
                 <h1 class="text-4xl font-bold md:text-6xl">Build a better Solync.</h1>
                 <p class="mt-4 text-2xl">
@@ -62,4 +61,57 @@
         <div class="flex-2 bg-white">Graph container</div>
         <div class="flex-1 bg-white">Latest donation container</div>
     </div>
-</div>
+</div> -->
+
+<section class="flex flex-col gap-14">
+    <PageContainer className="bg-pink-500/90">
+        <div class="flex flex-col justify-between xl:flex-row">
+            <div class="max-w-200 font-medium">
+                <h1 class="text-4xl font-bold md:text-6xl">You can build a better Solync.</h1>
+
+                <p class="mt-4 text-2xl italic">No matter how you help, thank you for being here!</p>
+
+                <p class="mt-4 text-2xl">
+                    Solync Software is a startup based in Texas, United States. We're a collective of thinkers who like to showcase our work
+                    while staying ethical to the end user. We run scalable services (Gardens Wiki, StreamSkinner) without any CEO, board, or
+                    hierarchy. If you send us money, you'll help us scale and build a better Solync.
+                </p>
+
+                <p class="mt-4 text-2xl">
+                    Of course, being a startup in this industry is very difficult because we are entirely self-funded and
+                    community-supported. Your donations directly fund our infrastructure and keep the collective runnung!
+                </p>
+            </div>
+        </div>
+    </PageContainer>
+
+    <div class="grid grid-cols-1 gap-4 text-lg md:grid-cols-2 lg:grid-cols-2">
+        <div class="rounded-4xl bg-white p-9 shadow-xl/4">
+            <h2 class="mb-4 text-3xl font-bold">lorem ipsum dolar amet</h2>
+
+            <ul class="ml-6 list-disc">
+                <li class="mb-4">lorem</li>
+                <li class="mb-4">lorem</li>
+
+                <li class="mb-4">lorem</li>
+            </ul>
+        </div>
+
+        <div class="rounded-4xl bg-white p-9 shadow-xl/4">
+            <h2 class="mb-4 text-3xl font-bold">lorem ipsum dolar amet</h2>
+
+            <ul class="ml-6 list-disc">
+                <li class="mb-4">lorem.</li>
+                <li class="mb-4">lorem.</li>
+                <li class="mb-4">lorem.</li>
+                <li class="mb-4">lorem.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="text-center text-4xl font-bold text-pink-500">Monthly Donations</h2>
+    <div class="flex w-full flex-row gap-6">
+        <div class="flex-2 bg-white">Graph container</div>
+        <div class="flex-1 bg-white">Latest donation container</div>
+    </div>
+</section>
