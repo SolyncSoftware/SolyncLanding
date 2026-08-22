@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Article } from '$lib/utils/types.js';
     import ButtonSimple from '../ButtonSimple.svelte';
+    import rs from 'rune-scroller';
 
     interface Props {
         title: Article['title'];
@@ -12,14 +13,28 @@
     const { title, description, link, category, image }: Props = $props();
 </script>
 
-<div class="font-display border-accent relative max-h-146 border-b-12 bg-black/75">
-    <img loading="lazy" src={image || '/images/fallback.png'} alt="..." class="h-56 w-full object-cover" />
-    <div class="bg-accent absolute ml-5 -translate-y-6 justify-self-start px-2 py-1 text-xl font-bold text-black uppercase">{category}</div>
-    <div class="grid h-[calc(100%-14rem)] grid-rows-[1fr_auto] gap-6 p-6">
-        <div class="flex flex-col">
-            <div class="text-accent line-clamp-2 text-2xl font-bold uppercase">{title}</div>
-            <p class="line-clamp-2 text-lg">{description}</p>
+<div
+    class="z-1 flex min-h-118 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition"
+    use:rs={{
+        animation: 'fade-up',
+        duration: 800,
+        repeat: false,
+        delay: 0,
+        offset: 0
+    }}
+>
+    <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-3xl p-5 text-lg">
+        <enhanced:img src={image} alt={title} class="absolute inset-0 -z-1 h-full w-full object-cover" loading="lazy" decoding="async" />
+        <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
+
+        <div>
+            <h3 class="text-accent text-3xl font-bold tracking-wide">{title}</h3>
+            <p class="-mt-1.5 text-base font-light tracking-wide text-white/60">{category}</p>
         </div>
-        <ButtonSimple text="READ MORE" href={link} class="ml-auto w-fit justify-self-end text-lg" />
+        <p>{description}</p>
+
+        <div class="flex gap-3">
+            <ButtonSimple text="Read more" href={link} class="self-start text-lg! hover:text-white" />
+        </div>
     </div>
 </div>

@@ -1,19 +1,46 @@
 <script lang="ts">
     import { page } from '$app/state';
+    import { slide, fade } from 'svelte/transition';
+    import { quartInOut } from 'svelte/easing';
 
     import SolyncLogo from './SolyncLogo.svelte';
     import Button from './Button.svelte';
     import ButtonSimple from './ButtonSimple.svelte';
+    import rs from 'rune-scroller';
 
     let currentPath = $derived(page.url.pathname);
 
     function isActive(path: string): string {
         return currentPath === path ? 'bg-white !text-accent font-display px-8 py-2 rounded-full no-underline!' : '';
     }
+
+    let isMenuOpen = $state(false);
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+    }
+
+    function closeMenu() {
+        isMenuOpen = false;
+    }
+
+    const navLinks = [
+        { href: '/', text: 'Home' },
+        { href: '/blog', text: 'Blog' },
+        { href: '/about', text: 'Learn more' }
+    ];
 </script>
 
-<header class="bg-accent flex w-full items-center px-5 pt-6 pb-40 2xl:px-70">
-    <nav class="flex items-center gap-7">
+<header class="bg-accent flex w-full items-center justify-between px-5 pt-6 pb-40 2xl:px-70">
+    <!-- Logo -->
+    <div
+        class="flex w-full flex-row items-center gap-7 sm:w-auto"
+        use:rs={{
+            animation: 'fade',
+            duration: 600,
+            delay: 200
+        }}
+    >
         <a href="/" class="group inline-block">
             <SolyncLogo
                 iconOnly={true}
@@ -21,12 +48,100 @@
             />
         </a>
 
-        <ButtonSimple href="/" text="Home" class={`z-0 text-white hover:text-white hover:underline ${isActive('/')}`} />
-        <ButtonSimple href="/donate" text="Donate" class={`z-0 text-white hover:text-white hover:underline ${isActive('/donate')}`} />
-        <ButtonSimple href="/about" text="Learn more" class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`} />
-    </nav>
+        <!-- Desktop nav  -->
+        <nav class="hidden flex-row items-center gap-7 sm:flex">
+            {#each navLinks as link, i (link.href)}
+                <span
+                    use:rs={{
+                        animation: 'fade-up',
+                        duration: 600,
+                        delay: (i + 3) * 200,
+                        offset: 100
+                    }}
+                >
+                    <ButtonSimple
+                        href={link.href}
+                        text={link.text}
+                        class={`z-0 text-white hover:text-white hover:underline ${isActive(link.href)}`}
+                    />
+                </span>
+            {/each}
+        </nav>
 
-    <div class="ml-auto flex justify-end">
-        <Button href="https://orbit.solync.org" text="Manage Account" />
+        <!-- hamburger noodle -->
+        <button
+            onclick={toggleMenu}
+            class="relative ml-auto h-12 w-12 text-white focus:outline-none sm:hidden"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+        >
+            {#if isMenuOpen}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    transition:fade={{ duration: 200 }}
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            {:else}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    transition:fade={{ duration: 200 }}
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            {/if}
+        </button>
+    </div>
+
+    <div
+        class="hidden sm:ml-auto sm:flex"
+        use:rs={{
+            animation: 'fade-up',
+            duration: 600,
+            delay: 1200,
+            offset: 100
+        }}
+    >
+        <Button href="/donate" class="shadow-none" text="Support us" />
     </div>
 </header>
+
+<!-- mobile menu -->
+{#if isMenuOpen}
+    <div id="mobile-menu" class="bg-accent -mt-30 px-5 pb-40 sm:hidden" transition:slide={{ duration: 400, easing: quartInOut }}>
+        <nav class="flex flex-col items-start gap-7">
+            <ButtonSimple
+                href="/"
+                text="Home"
+                onclick={closeMenu}
+                class={`z-0 text-white hover:text-white hover:underline ${isActive('/')}`}
+            />
+            <ButtonSimple
+                href="/blog"
+                text="Blog"
+                onclick={closeMenu}
+                class={`z-0 text-white hover:text-white hover:underline ${isActive('/blog')}`}
+            />
+            <ButtonSimple
+                href="/about"
+                text="Learn more"
+                onclick={closeMenu}
+                class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`}
+            />
+            <ButtonSimple
+                href="/donate"
+                text="Support us"
+                onclick={closeMenu}
+                class={`z-0 text-white hover:text-white hover:underline ${isActive('/donate')}`}
+            />
+        </nav>
+    </div>
+{/if}

@@ -1,0 +1,25 @@
+name: Deploy Alpha Environment (Local Runner)
+
+on:
+    push:
+        branches:
+            - alpha
+
+jobs:
+    deploy:
+        runs-on: self-hosted
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Build and Run Docker Container Locally
+              run: |
+                  docker build -t solync-landing:alpha .
+                  docker stop solync-landing-alpha || true
+                  docker rm solync-landing-alpha || true
+                  docker run -d \
+                    --name solync-landing-alpha \
+                    --restart unless-stopped \
+                    -p 3000:3000 \
+                    solync-landing:alpha

@@ -20,7 +20,7 @@
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
         {#each partners as partner}
             {#snippet partnerImg()}
-                <img src={partner.src} alt={partner.alt} class="h-full w-full object-contain" />
+                <enhanced:img src={partner.src} alt={partner.alt} class="h-full w-full object-contain" />
             {/snippet}
 
             {#if partner.href}
@@ -28,12 +28,12 @@
                     href={partner.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="group border-accent relative flex items-center border-2 bg-black/50 p-10 transition-all hover:border-white hover:bg-black/70"
+                    class="group hover:bg-offaccent relative flex items-center rounded-2xl bg-black p-10 transition-all"
                 >
                     {@render partnerImg()}
                 </a>
             {:else}
-                <div class="border-accent relative flex items-center border-2 bg-black/50 p-10">
+                <div class="bg-accent relative flex items-center p-10">
                     {@render partnerImg()}
                 </div>
             {/if}
