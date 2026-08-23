@@ -110,6 +110,19 @@
                 {/each}
             </div>
         {/if}
+        <div class="mt-8">
+            <a
+                href="/blog"
+                class="text-accent group flex w-fit items-center gap-2.5 text-4xl font-bold transition-all ease-in-out hover:text-black"
+                >More from the blog
+                <img
+                    src="/images/arrow-sorange.svg"
+                    alt="Arrow"
+                    class="-rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-2"
+                    loading="lazy"
+                />
+            </a>
+        </div>
     </div>
 
     <!-- may remove this or make it a component. so far its only in the about page -->
