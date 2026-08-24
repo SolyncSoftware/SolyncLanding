@@ -95,8 +95,8 @@
                     bind:loading={isSubmitting}
                     bind:response={response}
                     fields={[
-                        { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 1 },
-                        { name: 'email', placeholder: 'Your email', type: 'email', required: true, span: 1 },
+                        { name: 'name', label: "Name", placeholder: 'ex. Cappucino Assassino', type: 'text', required: true, span: 1 },
+                        { name: 'email', label: "Email", placeholder: 'ex. alice@aol.com', type: 'email', required: true, span: 1 },
                         {
                             name: 'reason',
                             type: 'select',
@@ -113,7 +113,8 @@
                         },
                         {
                             name: 'message',
-                            placeholder: 'Message content',
+                            label: "Message",
+                            placeholder: 'ex. I need a...',
                             type: 'textarea',
                             rows: 3,
                             required: true,

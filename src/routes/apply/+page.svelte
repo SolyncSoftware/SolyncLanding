@@ -83,8 +83,8 @@
             <Form
                 id="apply-form"
                 fields={[
-                    { name: 'name', placeholder: 'Your name', type: 'text', required: true, span: 2 },
-                    { name: 'email', placeholder: 'Your email', type: 'text', required: true, span: 2 },
+                    { name: 'name', label: "Name", placeholder: 'Your name', type: 'text', required: true, span: 2 },
+                    { name: 'email', label: "Email", placeholder: 'Your email', type: 'text', required: true, span: 2 },
                     {
                         name: 'reason',
                         type: 'select',
@@ -99,7 +99,7 @@
                         ],
                         span: 2
                     },
-                    { name: 'message', placeholder: 'Your portfolio site', type: 'textarea', rows: 1, required: false, span: 2 }
+                    { name: 'message', label: "Portfolio", placeholder: 'Link to your portfolio', type: 'textarea', rows: 1, required: false, span: 2 }
                 ]}
                 onsubmit={handleSubmit}
             />

@@ -90,12 +90,12 @@
                     }`}
                 >
                     {#if field.label}
-                        <span>{field.label}</span>
+                        <label for={field.name}>{field.label}</label>
                     {/if}
                     <select
                         bind:value={formData[field.name]}
                         required={field.required}
-                        class="w-full min-w-0 focus:ring-accent bg-offwhite rounded-full border border-none px-5 py-4 text-black placeholder:text-white/50"
+                        class="peer w-full min-w-0 focus:ring-accent bg-offwhite rounded-full border border-none px-5 py-4 text-black placeholder:text-white/50"
                     >
                         <option value="" disabled selected>
                             {field.placeholder || 'Please select one'}
@@ -106,16 +106,29 @@
                     </select>
                 </div>
             {:else}
-                <Textbox
-                    bind:value={formData[field.name]}
-                    type={field.type}
-                    rows={field.type === 'textarea' ? (field.rows ?? 4) : 1}
-                    placeholder={field.placeholder}
-                    class={`w-full min-w-0 ${field.class ?? ''} ${
+                <div
+                    class={`flex min-w-0 flex-col gap-1 text-lg ${
                         field.span && field.span > 1 ? 'md:col-span-2' : ''
                     }`}
-                    required={field.required}
-                />
+                >
+                    {#if field.label}
+                        <label
+                            for={field.name}
+                            class="after:content-['*'] after:text-accent">
+                            {field.label}
+                    </label>
+                    {/if}
+                    <Textbox
+                        bind:value={formData[field.name]}
+                        type={field.type}
+                        rows={field.type === 'textarea' ? (field.rows ?? 4) : 1}
+                        placeholder={field.placeholder}
+                        class={`peer w-full min-w-0 ${field.class ?? ''} ${
+                            field.span && field.span > 1 ? 'md:col-span-2' : ''
+                        }`}
+                        required={field.required}
+                    />
+                </div>
             {/if}
         {/each}
     </div>

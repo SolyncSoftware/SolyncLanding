@@ -10,7 +10,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
         // check if input has the expected Content-Type
         const contentType = request.headers.get('Content-Type');
-        if (contentType?.includes("application/json")) {
+        if (!(contentType?.includes("application/json"))) {
             throw new Error("Invalid input type", { cause: { statusCode: 415 } });
         }
 
