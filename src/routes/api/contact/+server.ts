@@ -2,7 +2,7 @@ import { json } from '@sveltejs/kit';
 import { CONTACT_PAGE_HOOK } from '$env/static/private';
 import type { RequestHandler } from './$types.js';
 import { error } from '@sveltejs/kit';
-import contactSchema from '$lib/schema/contact.js';
+import contactSchema from '$lib/server/schema/contact.js';
 
 export const POST: RequestHandler = async ({ request }) => {
     try {
