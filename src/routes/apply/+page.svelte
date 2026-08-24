@@ -9,7 +9,6 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         });
-        console.log('formData:', formData);
         const result = await res.json();
         if (!res.ok) {
             throw new Error(result.error || 'error submitting form');

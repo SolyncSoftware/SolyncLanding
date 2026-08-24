@@ -49,8 +49,8 @@
         "svelte"
     ],
     "dependencies": {
-        "@lucide/svelte": "^1.33.0",
         "@icons-pack/svelte-simple-icons": "^7.2.0",
+        "@lucide/svelte": "^1.33.0",
         "@sveltejs/enhanced-img": "^0.11.0",
         "@tailwindcss/vite": "^4.3.3",
         "rehype-figure": "^1.0.1",
@@ -59,6 +59,7 @@
         "shiki": "^4.4.3",
         "tailwindcss": "^4.3.3",
         "to-vfile": "^8.0.0",
-        "unified": "^11.0.5"
+        "unified": "^11.0.5",
+        "zod": "^4.4.3"
     }
 }
