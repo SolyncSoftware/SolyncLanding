@@ -70,6 +70,14 @@ const teamData: TeamMember[] = [
         bio: "i'm a computer science student who mostly does JS/TS frontend dev, as well as UI/UX and graphic design. shoutouts to fonts btw"
     },
     {
+        id: 145165822,
+        realName: 'Maya',
+        username: 'λx.Maya',
+        github: 'MayaChen350',
+        bsky: 'giratina-shiny.bsky.social',
+        bio: "Maya is someone who's very passionate and curious about programming, shes interested in everything about it! Ask her about something she knows, and she will keep you busy for 40 minutes, not that we're complaining! She also found it really interesting how open Solync is. She started asking many questions as a result, so we had to dust off our internal documentation to keep up."
+    },
+    {
         id: 155797753,
         realName: 'Team Solync',
         username: 'Solync',
