@@ -9,7 +9,7 @@ permissions:
     checks: write # required for test reporter
 
 jobs:
-    validate:
+    test:
         runs-on: ubuntu-latest
 
         steps:
