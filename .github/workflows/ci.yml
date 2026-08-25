@@ -1,0 +1,40 @@
+on: [push, pull_request]
+name: Continuous Integration
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+    checks: write # required for test reporter
+
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install Bun
+              uses: oven-sh/setup-bun@v1
+              with:
+                  bun-version: latest
+
+            - name: Install Dependencies
+              run: bun install --frozen-lockfile
+
+            #   TODO: add unit tests?
+            # - name: Run Unit Tests
+            #   run: bun test
+
+            - name: Test prod build
+              run: bun run build
+
+            - name: Test Docker image build
+              run: docker build -t solynclanding:pr-test .
+
+            # Incase self hosted
+            # - name: Cleanup Docker image
+            #   if always()
+            #   run: docker rmi solynclanding:pr-test || true
