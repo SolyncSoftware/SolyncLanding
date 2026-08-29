@@ -5,7 +5,12 @@ import processError from '$lib/server/utilities/request/error.js';
 import applySchema from '$lib/server/schema/apply.js';
 
 export const POST: RequestHandler = async ({ request }) => {
-    const APPLY_PAGE_HOOK = env.APPLY_PAGE_HOOK ?? 'No_value';
+    const APPLY_PAGE_HOOK = env.APPLY_PAGE_HOOK;
+
+    if (!APPLY_PAGE_HOOK) {
+        console.error('APPLY_PAGE_HOOK is missing or empty');
+        return json({ error: 'Server misconfigured' }, { status: 500 });
+    }
 
     try {
         const rawData = await request.formData();
