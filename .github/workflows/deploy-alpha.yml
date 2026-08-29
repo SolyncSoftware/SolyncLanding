@@ -15,8 +15,8 @@ jobs:
 
             - name: Create .env file
               run: |
-                  echo "CONTACT_PAGE_HOOK="${{ secrets.CONTACT_PAGE_HOOK }}"" >> .env
-                  echo "APPLY_PAGE_HOOK="${{ secrets.APPLY_PAGE_HOOK }}"" >> .env
+                  echo "CONTACT_PAGE_HOOK=${{ secrets.CONTACT_PAGE_HOOK }}" >> .env
+                  echo "APPLY_PAGE_HOOK=${{ secrets.APPLY_PAGE_HOOK }}" >> .env
 
             - name: Build and Run Docker Container Locally
               run: |
@@ -25,6 +25,7 @@ jobs:
                   docker rm solync-landing-alpha || true
                   docker run -d \
                     --name solync-landing-alpha \
+                    --env-file .env \
                     --restart unless-stopped \
                     -p 3000:3000 \
                     solync-landing:alpha
