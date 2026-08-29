@@ -15,8 +15,10 @@ jobs:
 
             - name: Create .env file
               run: |
-                  echo "CONTACT_PAGE_HOOK=${{ secrets.CONTACT_PAGE_HOOK }}" >> .env
-                  echo "APPLY_PAGE_HOOK=${{ secrets.APPLY_PAGE_HOOK }}" >> .env
+                  cat <<'EOF' > .env
+                  CONTACT_PAGE_HOOK=${{ secrets.CONTACT_PAGE_HOOK }}
+                  APPLY_PAGE_HOOK=${{ secrets.APPLY_PAGE_HOOK }}
+                  EOF
 
             - name: Build and Run Docker Container Locally
               run: |
