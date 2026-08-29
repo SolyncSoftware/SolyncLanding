@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { APPLY_PAGE_HOOK } from '$env/static/private';
+import { APPLY_PAGE_HOOK } from '$env/dynamic/private';
 import type { RequestHandler } from './$types.js';
 import processError from '$lib/server/utilities/request/error.js';
 import applySchema from '$lib/server/schema/apply.js';

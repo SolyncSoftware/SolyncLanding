@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { CONTACT_PAGE_HOOK } from '$env/static/private';
+import { CONTACT_PAGE_HOOK } from '$env/dynamic/private';
 import type { RequestHandler } from './$types.js';
 import contactSchema from '$lib/server/schema/contact.js';
 import validateRequest from '$lib/server/utilities/request/validate.js';
