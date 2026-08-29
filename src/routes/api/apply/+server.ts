@@ -21,7 +21,10 @@ export const POST: RequestHandler = async ({ request }) => {
             email: rawData.get('email'),
             reason: rawData.get('reason'),
             message: rawData.get('message'),
-            // worked_on: rawData.get('message_one'),
+            worked_on: rawData.get('message_one'),
+            doing_now: rawData.get('message_two'),
+            skills: rawData.get('message_three'),
+            why_solync: rawData.get('message_four'),
             resume: rawData.get('resume')
         };
         const validationResult = applySchema.safeParse(candidate);
@@ -43,7 +46,10 @@ export const POST: RequestHandler = async ({ request }) => {
                         { name: 'Name', value: data.name, inline: true },
                         { name: 'Email', value: data.email, inline: true },
                         { name: 'Discovery', value: data.reason, inline: false },
-                        // { name: 'Worked On', value: data.worked_on, inline: true },
+                        { name: 'Working on', value: data.worked_on },
+                        { name: 'Doing Now', value: data.doing_now },
+                        { name: 'Skills', value: data.skills },
+                        { name: 'Why Solync', value: data.why_solync },
                         { name: 'Portfolio', value: data.message }
                     ],
                     timestamp: new Date().toISOString()

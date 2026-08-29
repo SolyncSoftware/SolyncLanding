@@ -135,14 +135,32 @@
         {#if !response || response.type !== 'success'}
             <h2 class="mb-4 text-3xl font-bold">Apply now!</h2>
 
-            <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
+            <p class="bg-offwhite border-l-warning rounded-4xl border-l-4 p-5 text-lg">
+                <strong>Note:</strong> This is currently a volunteer position. The goal is to grow and move towards creating products that generate
+                revenue. If this happens, financial compensation will be available. We are looking for talent that's collaborative (because we're
+                a flat organization), flexible with their skills, and invested in shaping the future of Solync.
+            </p>
+
+            <div class="bg-offwhite border-l-warning rounded-4xl border-l-4 p-5 text-lg">
+                <p>While there are no position titles, we have certain fields we're interested in:</p>
+                <ul>
+                    <li><strong>UI/UX Design</strong> - Figma / Affinity</li>
+                    <li><strong>Frontend Programmer</strong> - HTML / TypeScript / Vue / Astro / Svelte</li>
+                    <li><strong>Backend Programmer</strong> - Elixir / SvelteKit / MariaDB</li>
+                    <li><strong>Legal / Business Advisor</strong></li>
+                    <li><strong>IT Admin</strong></li>
+                    <li><strong>Sys Admin</strong></li>
+                </ul>
+            </div>
+
+            <div class="mb-6 flex flex-col justify-between gap-4 text-lg">
                 <Form
                     id="apply-form"
                     bind:loading={isSubmitting}
                     bind:response
                     fields={[
-                        { name: 'name', label: 'Name', placeholder: 'Your name', type: 'text', required: true, span: 2 },
-                        { name: 'email', label: 'Email', placeholder: 'Your email', type: 'email', required: true, span: 2 },
+                        { name: 'name', label: 'Name', placeholder: 'Your name', type: 'text', required: true, span: 1 },
+                        { name: 'email', label: 'Email', placeholder: 'Your email', type: 'email', required: true, span: 1 },
                         {
                             name: 'reason',
                             type: 'select',
@@ -157,20 +175,50 @@
                             ],
                             span: 2
                         },
-                        // {
-                        //     name: 'message_one',
-                        //     label: 'What projects have you worked on? ',
-                        //     placeholder: 'ex. I need a...',
-                        //     type: 'textarea',
-                        //     rows: 1,
-                        //     required: true,
-                        //     span: 2,
-                        //     class: 'rounded-4xl!'
-                        // },
+                        {
+                            name: 'message_one',
+                            label: 'What projects have you worked on? (Min char 100)',
+                            placeholder: 'ex. Mobile apps, discord bots, websites... etc',
+                            type: 'textarea',
+                            rows: 1,
+                            required: true,
+                            span: 2,
+                            class: 'rounded-4xl!'
+                        },
+                        {
+                            name: 'message_two',
+                            label: 'What are you doing now? (Min char 100)',
+                            placeholder: "ex. I have a few unfinished projects and I'm a student... etc",
+                            type: 'textarea',
+                            rows: 1,
+                            required: true,
+                            span: 2,
+                            class: 'rounded-4xl!'
+                        },
+                        {
+                            name: 'message_three',
+                            label: 'What are your skills? (Min char 100)',
+                            placeholder: 'ex. Problem solving, software engineering... etc',
+                            type: 'textarea',
+                            rows: 1,
+                            required: true,
+                            span: 2,
+                            class: 'rounded-4xl!'
+                        },
+                        {
+                            name: 'message_four',
+                            label: 'Why are you interested in Solync? (Min char 150)',
+                            placeholder: 'ex. Solync is awesome...',
+                            type: 'textarea',
+                            rows: 2,
+                            required: true,
+                            span: 2,
+                            class: 'rounded-4xl!'
+                        },
                         {
                             name: 'message',
-                            label: 'Portfolio',
-                            placeholder: 'Link to your portfolio',
+                            label: 'Portfolio / Website',
+                            placeholder: 'Link to your portfolio or website',
                             type: 'url',
                             rows: 1,
                             required: true,
@@ -190,7 +238,7 @@
                         form="apply-form"
                         required
                         accept=".doc,.docx,.pdf"
-                        class="file:bg-accent file:rounded-full file:px-4 file:py-2 file:text-white"
+                        class="file:bg-offaccent file:rounded-full file:px-8 file:py-3 file:text-white file:transition-all file:hover:cursor-pointer file:hover:bg-black"
                         onchange={handleFileChange}
                     />
                     {#if fileError}
