@@ -30,7 +30,7 @@
             <h2 class="mb-4 text-3xl font-bold">What we build</h2>
 
             <p class="mb-4">
-                We've created projects like <a
+                We've created software like <a
                     href="https://github.com/SolyncSoftware/porter-wiki-frontend"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -43,7 +43,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-accent hover:underline">KILLALLBOTS</a
-                > and more.
+                >, and we're constantly building what's next.
             </p>
             <p class="mb-4">
                 Our projects start as pitches from anyone in the collective. We iterate, refine, and collaborate until a project is
