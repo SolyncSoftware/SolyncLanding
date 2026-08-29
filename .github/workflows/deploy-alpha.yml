@@ -15,8 +15,8 @@ jobs:
 
             - name: Create .env file
               run: |
-                  echo "APP_DISCORD_TOKEN=${{ secrets.CONTACT_PAGE_HOOK }}" >> .env
-                  echo "ROLE_CHANNEL_ID=${{ secrets.APPLY_PAGE_HOOK }}" >> .env
+                  echo "CONTACT_PAGE_HOOK=${{ secrets.CONTACT_PAGE_HOOK }}" >> .env
+                  echo "APPLY_PAGE_HOOK=${{ secrets.APPLY_PAGE_HOOK }}" >> .env
 
             - name: Build and Run Docker Container Locally
               run: |
