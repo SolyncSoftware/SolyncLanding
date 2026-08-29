@@ -1,9 +1,9 @@
-name: Deploy Alpha Environment
+name: Deploy Production Environment
 
 on:
     push:
         branches:
-            - alpha
+            - deploy
 
 jobs:
     deploy:
@@ -20,12 +20,12 @@ jobs:
 
             - name: Build and Run Docker Container Locally
               run: |
-                  docker build -t solync-landing:alpha .
-                  docker stop solync-landing-alpha || true
-                  docker rm solync-landing-alpha || true
+                  docker build -t solync-landing:deploy .
+                  docker stop solync-landing-deploy || true
+                  docker rm solync-landing-deploy || true
                   docker run -d \
-                    --name solync-landing-alpha \
+                    --name solync-landing-deploy \
                     --env-file .env \
                     --restart unless-stopped \
-                    -p 3000:3000 \
-                    solync-landing:alpha
+                    -p 3000:3001 \
+                    solync-landing:deploy
