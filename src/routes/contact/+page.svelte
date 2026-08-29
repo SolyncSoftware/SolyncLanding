@@ -1,7 +1,25 @@
 <script lang="ts">
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import Textbox from '$lib/components/Textbox.svelte';
     import Button from '$lib/components/Button.svelte';
+    import Form from '$lib/components/Form.svelte';
+    import CircleX from '@lucide/svelte/icons/circle-x';
+    import CircleCheckBig from '@lucide/svelte/icons/circle-check-big';
+    import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
+
+    let isSubmitting = $state(false);
+    let response: null | { type: 'success' } | { type: 'error'; message: string } = $state(null);
+
+    async function handleSubmit(formData: Record<string, string>) {
+        const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+        const result = await res.json();
+        if (!res.ok) {
+            throw new Error(result.error || 'error submitting form');
+        }
+    }
 </script>
 
 <section class="flex flex-col gap-14">
@@ -28,10 +46,9 @@
         </div>
     </PageContainer>
 
-    <span class="text-accent text-7xl font-bold">Contact form WIP.</span>
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
         <h2 class="mb-4 text-3xl font-bold">Contact us</h2>
-        <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
+        <div class="mb-6 flex flex-col justify-between gap-12 text-lg xl:flex-row">
             <div class="flex w-full flex-col gap-6">
                 <div class="flex items-center gap-4">
                     <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" loading="lazy" />
@@ -72,32 +89,61 @@
                 </div>
             </div>
 
-            <div class="flex w-full flex-col gap-6">
-                <div class="grid grid-cols-2 gap-4">
-                    <Textbox rows="1" placeholder="Your name" />
-                    <Textbox rows="1" placeholder="Your email" />
+            {#if !response || response.type !== 'success'}
+                <div class="flex w-full flex-col gap-6">
+                    <Form
+                        id="contact-form"
+                        bind:loading={isSubmitting}
+                        bind:response
+                        fields={[
+                            { name: 'name', label: 'Name', placeholder: 'ex. Cappucino Assassino', type: 'text', required: true, span: 1 },
+                            { name: 'email', label: 'Email', placeholder: 'ex. alice@aol.com', type: 'email', required: true, span: 1 },
+                            {
+                                name: 'reason',
+                                type: 'select',
+                                label: 'Reason for contact',
+                                required: true,
+                                options: [
+                                    { value: 'support', label: 'Support' },
+                                    { value: 'question', label: 'Questions' },
+                                    { value: 'partners', label: 'Partners' },
+                                    { value: 'trust-and-safety', label: 'Trust and Safety' },
+                                    { value: 'other', label: 'Other' }
+                                ],
+                                span: 2
+                            },
+                            {
+                                name: 'message',
+                                label: 'Message',
+                                placeholder: 'ex. I need a...',
+                                type: 'textarea',
+                                rows: 3,
+                                required: true,
+                                span: 2,
+                                class: 'rounded-4xl!'
+                            }
+                        ]}
+                        onsubmit={handleSubmit}
+                    />
+                    <div class="flex w-full min-w-0 flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
+                        {#if response && response.type == 'error'}
+                            <div class="flex min-w-0 flex-row items-center gap-2">
+                                <CircleX class="text-error shrink-0" />
+                                <p class="text-error max-w-[12em] leading-[1em]">{response?.message}</p>
+                            </div>
+                        {/if}
+                        <Button
+                            form="contact-form"
+                            type="submit"
+                            class="h-fit! shrink-0 self-end! text-lg!"
+                            text={isSubmitting ? 'Submitting...' : 'Send message'}
+                            disabled={isSubmitting ? true : undefined}
+                        ></Button>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-1 text-lg">
-                    <span>Reason for contact</span>
-                    <select
-                        class="focus:ring-accent bg-offwhite rounded-full border border-none px-5 py-4 text-black placeholder:text-white/50"
-                    >
-                        <option value="" disabled selected>Please select one</option>
-                        <option value="support">Support</option>
-                        <option value="question">Questions</option>
-                        <option value="partners">Partners</option>
-                        <option value="trust-and-safety">Trust and Safety</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="flex-1">
-                    <Textbox class="h-full w-full rounded-4xl!" placeholder="Message content" />
-                </div>
-            </div>
-        </div>
-
-        <div class="flex justify-end">
-            <Button href="" text="Send message" class="text-lg!" />
+            {:else}
+                <SubmittedMessage />
+            {/if}
         </div>
     </div>
 </section>

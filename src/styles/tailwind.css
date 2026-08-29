@@ -176,6 +176,10 @@ a {
     color: var(--color-white);
 }
 
+.debug {
+    outline: 1px solid red;
+}
+
 /* fix for firefox because thanks firefox */
 .unicorn-embed canvas {
     border-radius: 32px;

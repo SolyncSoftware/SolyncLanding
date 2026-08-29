@@ -1,7 +1,74 @@
 <script lang="ts">
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import Textbox from '$lib/components/Textbox.svelte';
     import Button from '$lib/components/Button.svelte';
+    import Form from '$lib/components/Form.svelte';
+    import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
+    import CircleX from '@lucide/svelte/icons/circle-x';
+
+    let selectedFile = $state<File | null>(null);
+    let fileError = $state<string | null>(null);
+    let isSubmitting = $state(false);
+    let response: null | { type: 'success' } | { type: 'error'; message: string } = $state(null);
+
+    const MAX_FILE_SIZE = 10000000;
+    const allowedExtensions = ['pdf', 'doc', 'docx'];
+
+    function handleFileChange(event: Event) {
+        console.log('Changing file...');
+        const input = event.currentTarget as HTMLInputElement;
+
+        const file = input.files?.[0] ?? null;
+        if (!file) {
+            return;
+        }
+
+        fileError = null;
+
+        const extension = file.name.toLowerCase().split('.').pop();
+
+        if (!extension || !allowedExtensions.includes(extension)) {
+            fileError = 'Please choose a .pdf, .doc, or .docx file.';
+            input.value = '';
+            return;
+        }
+
+        if (file.size > MAX_FILE_SIZE) {
+            fileError = 'Selected file is too large.';
+            input.value = '';
+            return;
+        }
+
+        console.log(`Changed input to ${file.name} (${file.size}B)`);
+        selectedFile = file;
+    }
+
+    async function handleSubmit(formData: Record<string, string>) {
+        const file = selectedFile;
+
+        if (!file) {
+            fileError = 'Please attach a file!';
+            throw new Error('Please attach a file.');
+        }
+
+        // put the frontend's formData into a payload.
+        const payload = new FormData();
+        for (const [key, value] of Object.entries(formData)) {
+            payload.append(key, value);
+        }
+
+        // include the file in the payload.
+        payload.append('resume', file, file.name);
+
+        const res = await fetch('/api/apply', {
+            method: 'POST',
+            body: payload
+        });
+        const result = await res.json();
+
+        if (!res.ok) {
+            throw new Error(result.error || 'Error submitting form.');
+        }
+    }
 </script>
 
 <section class="flex flex-col gap-14">
@@ -64,14 +131,92 @@
         </div>
     </div>
 
-    <div class="rounded-4xl bg-white p-9 shadow-xl/4">
-        <h2 class="mb-4 text-3xl font-bold">Apply now!</h2>
+    <div class="flex flex-col gap-4 rounded-4xl bg-white p-9 shadow-xl/4">
+        {#if !response || response.type !== 'success'}
+            <h2 class="mb-4 text-3xl font-bold">Apply now!</h2>
 
-        <span class="text-accent text-7xl font-bold">Coming soon!</span>
-        <p class="text-2xl">
-            In the meantime, you can apply <a href="https://forms.gle/ovu9k8ytjag4DCd26" class="text-accent underline hover:text-black"
-                >here
-            </a>.
-        </p>
+            <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
+                <Form
+                    id="apply-form"
+                    bind:loading={isSubmitting}
+                    bind:response
+                    fields={[
+                        { name: 'name', label: 'Name', placeholder: 'Your name', type: 'text', required: true, span: 2 },
+                        { name: 'email', label: 'Email', placeholder: 'Your email', type: 'email', required: true, span: 2 },
+                        {
+                            name: 'reason',
+                            type: 'select',
+                            label: 'How did you discover Solync?',
+                            required: true,
+                            options: [
+                                { value: 'social-media', label: 'Social Media' },
+                                { value: 'partners', label: 'Partners' },
+                                { value: 'referral', label: 'Referral' },
+                                { value: 'word-of-mouth', label: 'Word of mouth' },
+                                { value: 'other', label: 'Other' }
+                            ],
+                            span: 2
+                        },
+                        // {
+                        //     name: 'message_one',
+                        //     label: 'What projects have you worked on? ',
+                        //     placeholder: 'ex. I need a...',
+                        //     type: 'textarea',
+                        //     rows: 1,
+                        //     required: true,
+                        //     span: 2,
+                        //     class: 'rounded-4xl!'
+                        // },
+                        {
+                            name: 'message',
+                            label: 'Portfolio',
+                            placeholder: 'Link to your portfolio',
+                            type: 'url',
+                            rows: 1,
+                            required: true,
+                            span: 2
+                        }
+                    ]}
+                    onsubmit={handleSubmit}
+                />
+                <div class="flex w-full flex-col gap-2">
+                    <label for="fileInput">
+                        Attach your resume (.doc, .docx, .pdf). Must be less than 10MB.<span class="text-accent">*</span>
+                    </label>
+                    <input
+                        type="file"
+                        id="fileInput"
+                        name="resume"
+                        form="apply-form"
+                        required
+                        accept=".doc,.docx,.pdf"
+                        class="file:bg-accent file:rounded-full file:px-4 file:py-2 file:text-white"
+                        onchange={handleFileChange}
+                    />
+                    {#if fileError}
+                        <p class="text-error">{fileError}</p>
+                    {/if}
+                </div>
+            </div>
+
+            <div class="flex w-full min-w-0 flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
+                {#if response && response.type == 'error'}
+                    <div class="flex min-w-0 flex-row items-center gap-2">
+                        <CircleX class="text-error shrink-0" />
+                        <p class="text-error max-w-[12em] leading-[1em]">{response?.message}</p>
+                    </div>
+                {/if}
+                <Button
+                    form="apply-form"
+                    type="submit"
+                    class="text-lg!"
+                    text={isSubmitting ? 'Submitting...' : 'Send application'}
+                    disabled={isSubmitting ? true : undefined}
+                ></Button>
+            </div>
+        {:else}
+            <SubmittedMessage />
+        {/if}
+        <div></div>
     </div>
 </section>
