@@ -53,7 +53,6 @@
         "@lucide/svelte": "^1.33.0",
         "@sveltejs/enhanced-img": "^0.11.0",
         "@tailwindcss/vite": "^4.3.3",
-        "dotenv": "^17.4.2",
         "rehype-figure": "^1.0.1",
         "rehype-stringify": "^10.0.1",
         "rune-scroller": "^5.0.0",
