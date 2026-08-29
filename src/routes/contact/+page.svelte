@@ -4,6 +4,7 @@
     import Form from '$lib/components/Form.svelte';
     import CircleX from '@lucide/svelte/icons/circle-x';
     import CircleCheckBig from '@lucide/svelte/icons/circle-check-big';
+    import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
 
     let isSubmitting = $state(false);
     let response: null | {type: "success"} | {type: "error", message: string} = $state(null);
@@ -138,13 +139,7 @@
                 </div>
             </div>
             {:else}
-            <div class="flex w-full flex-col justify-center items-center gap-2">
-                <CircleCheckBig size={72} class="text-accent"/>
-                <div class="flex flex-col items-center gap-1">
-                    <h2 class="text-3xl font-display text-accent">Message sent!</h2>
-                    <p>We will get back to you as soon as possible.</p>
-                </div>
-            </div>
+                <SubmittedMessage />
             {/if}
         </div>
     </div>

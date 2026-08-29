@@ -36,7 +36,7 @@
     // use:grow // jank and stupid
     bind:value
     {...rest}
-    type={type === "email" ? "email" : "text"}
+    type={type}
     class={`w-full min-w-0 inline-block focus:ring-accent bg-offwhite resize-none overflow-clip rounded-full
     px-5 py-4 font-sans text-lg focus:ring-2 focus:outline-none
     ${className}`}

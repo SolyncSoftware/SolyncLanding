@@ -2,16 +2,69 @@
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
+    import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
+    import CircleX from '@lucide/svelte/icons/circle-x';
+
+    let selectedFile = $state<File | null>(null);
+    let fileError = $state<string | null>(null);
+    let isSubmitting = $state(false);
+    let response: null | {type: "success"} | {type: "error", message: string} = $state(null);
+
+    const MAX_FILE_SIZE = 10000000;
+    const allowedExtensions = ['pdf', 'doc', 'docx'];
+
+    function handleFileChange(event: Event) {
+        console.log("Changing file...");
+        const input = event.currentTarget as HTMLInputElement;
+
+        const file = input.files?.[0] ?? null;
+        if (!file) { return; }
+
+        fileError = null;
+
+        const extension = file.name.toLowerCase().split('.').pop();
+
+        if (!extension || !allowedExtensions.includes(extension)) {
+            fileError = 'Please choose a .pdf, .doc, or .docx file.';
+            input.value = '';
+            return;
+        }
+
+        if (file.size > MAX_FILE_SIZE) {
+            fileError = 'Selected file is too large.'
+            input.value = '';
+            return;
+        }
+
+        console.log(`Changed input to ${file.name} (${file.size}B)`)
+        selectedFile = file;
+    }
 
     async function handleSubmit(formData: Record<string, string>) {
+        const file = selectedFile;
+
+        if (!file) {
+            fileError = "Please attach a file!"
+            throw new Error("Please attach a file.");
+        }
+
+        // put the frontend's formData into a payload.
+        const payload = new FormData();
+        for (const [key, value] of Object.entries(formData)) {
+            payload.append(key, value);
+        }
+
+        // include the file in the payload.
+        payload.append("resume", file, file.name);
+
         const res = await fetch('/api/apply', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            body: payload
         });
         const result = await res.json();
+
         if (!res.ok) {
-            throw new Error(result.error || 'error submitting form');
+            throw new Error(result.error || "Error submitting form.");
         }
     }
 </script>
@@ -76,15 +129,18 @@
         </div>
     </div>
 
-    <div class="rounded-4xl bg-white p-9 shadow-xl/4">
+    <div class="rounded-4xl bg-white p-9 shadow-xl/4 flex flex-col gap-4">
+        {#if !response || response.type !== "success"}
         <h2 class="mb-4 text-3xl font-bold">Apply now!</h2>
 
         <div class="mb-6 flex flex-col justify-between gap-4 text-lg xl:flex-row">
             <Form
                 id="apply-form"
+                bind:loading={isSubmitting}
+                bind:response={response}
                 fields={[
                     { name: 'name', label: "Name", placeholder: 'Your name', type: 'text', required: true, span: 2 },
-                    { name: 'email', label: "Email", placeholder: 'Your email', type: 'text', required: true, span: 2 },
+                    { name: 'email', label: "Email", placeholder: 'Your email', type: 'email', required: true, span: 2 },
                     {
                         name: 'reason',
                         type: 'select',
@@ -99,24 +155,52 @@
                         ],
                         span: 2
                     },
-                    { name: 'message', label: "Portfolio", placeholder: 'Link to your portfolio', type: 'textarea', rows: 1, required: false, span: 2 }
+                    { name: 'message', label: "Portfolio", placeholder: 'Link to your portfolio', type: 'url', rows: 1, required: false, span: 2 }
                 ]}
                 onsubmit={handleSubmit}
             />
-            <div class="flex w-full flex-col gap-6">
-                <p class="max-w-90">Attach your documents. Please include a resume (.doc, .docx, .pdf).</p>
+            <div class="flex w-full flex-col gap-2">
+                <!-- <p class="max-w-90">Attach your documents. Please include a resume (.doc, .docx, .pdf).</p>
                 <div
                     class="border-accent/80 bg-offwhite flex flex-1 cursor-pointer flex-col items-center justify-center rounded-4xl border-2 border-dashed py-10"
                 >
                     <span class="text-accent font-bold">Choose files</span>
                     <span class="text-black/48">or drop them here</span>
                 </div>
-                <span><span class="text-accent font-bold underline underline-offset-5">Choose files</span>. No files chosen</span>
+                <span><span class="text-accent font-bold underline underline-offset-5">Choose files</span>. No files chosen</span> -->
+                <label for="fileInput">
+                    Attach your resume (.doc, .docx, .pdf). Must be less than 10MB.<span class="text-accent">*</span>
+                </label>
+                <input
+                    type="file"
+                    id="fileInput"
+                    name="resume"
+                    form="apply-form"
+                    required
+                    accept=".doc,.docx,.pdf"
+                    class="file:bg-accent file:text-white file:py-2 file:px-4 file:rounded-full"
+                    onchange={handleFileChange}
+                />
+                {#if fileError}
+                    <p class="text-error">{fileError}</p>
+                {/if}
             </div>
         </div>
 
-        <div class="flex justify-end">
-            <Button form="apply-form" type="submit" text="Send application" class="text-lg!"></Button>
+        <div class="w-full min-w-0 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
+            {#if response && response.type == "error"}
+            <div class="min-w-0 flex flex-row gap-2 items-center">
+                <CircleX class="text-error shrink-0"/>
+                <p class="leading-[1em] text-error max-w-[12em]">{response?.message}</p>
+            </div>
+            {/if}
+            <Button form="apply-form" type="submit" class="text-lg!"
+                text={isSubmitting ? "Submitting..." : "Send message"}
+                disabled={isSubmitting ? true : undefined}
+            ></Button>
         </div>
-    </div>
+        {:else}
+            <SubmittedMessage />
+        {/if}
+    <div>
 </section>

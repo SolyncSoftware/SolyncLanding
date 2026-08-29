@@ -3,7 +3,7 @@
 
     interface Field {
         name: string;
-        type: 'text' | 'textarea' | 'select' | 'email';
+        type: 'text' | 'textarea' | 'select' | 'email' | 'url';
         label?: string;
         placeholder?: string;
         rows?: number; // for textarea, ignored otherwise
