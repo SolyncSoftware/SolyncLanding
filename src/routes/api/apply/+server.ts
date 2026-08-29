@@ -1,15 +1,17 @@
 import { json } from '@sveltejs/kit';
-import { APPLY_PAGE_HOOK } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import type { RequestHandler } from './$types.js';
 import processError from '$lib/server/utilities/request/error.js';
 import applySchema from '$lib/server/schema/apply.js';
 
 export const POST: RequestHandler = async ({ request }) => {
-    try {
-        new URL(APPLY_PAGE_HOOK);
-    } catch {
-        return json({ error: 'Invalid webhook URL' }, { status: 500 });
+    const APPLY_PAGE_HOOK = env.APPLY_PAGE_HOOK;
+
+    if (!APPLY_PAGE_HOOK) {
+        console.error('APPLY_PAGE_HOOK is missing or empty');
+        return json({ error: 'Server misconfigured' }, { status: 500 });
     }
+
     try {
         const rawData = await request.formData();
 
