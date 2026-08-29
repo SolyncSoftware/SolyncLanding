@@ -27,5 +27,5 @@ jobs:
                     --name solync-landing-deploy \
                     --env-file .env \
                     --restart unless-stopped \
-                    -p 3000:3001 \
+                    -p 3001:3000 \
                     solync-landing:deploy
