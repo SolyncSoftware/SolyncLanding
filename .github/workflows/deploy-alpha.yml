@@ -13,6 +13,11 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
 
+            - name: Create .env file
+              run: |
+                  echo "APP_DISCORD_TOKEN=${{ secrets.CONTACT_PAGE_HOOK }}" >> .env
+                  echo "ROLE_CHANNEL_ID=${{ secrets.APPLY_PAGE_HOOK }}" >> .env
+
             - name: Build and Run Docker Container Locally
               run: |
                   docker build -t solync-landing:alpha .
