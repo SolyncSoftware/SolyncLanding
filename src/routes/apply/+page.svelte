@@ -157,13 +157,23 @@
                             ],
                             span: 2
                         },
+                        // {
+                        //     name: 'message_one',
+                        //     label: 'What projects have you worked on? ',
+                        //     placeholder: 'ex. I need a...',
+                        //     type: 'textarea',
+                        //     rows: 1,
+                        //     required: true,
+                        //     span: 2,
+                        //     class: 'rounded-4xl!'
+                        // },
                         {
                             name: 'message',
                             label: 'Portfolio',
                             placeholder: 'Link to your portfolio',
                             type: 'url',
                             rows: 1,
-                            required: false,
+                            required: true,
                             span: 2
                         }
                     ]}
@@ -200,7 +210,7 @@
                     form="apply-form"
                     type="submit"
                     class="text-lg!"
-                    text={isSubmitting ? 'Submitting...' : 'Send message'}
+                    text={isSubmitting ? 'Submitting...' : 'Send application'}
                     disabled={isSubmitting ? true : undefined}
                 ></Button>
             </div>

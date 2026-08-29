@@ -5,6 +5,7 @@ const applySchema = z.object({
     email: z.email().trim().min(1).max(255),
     reason: z.enum(['social-media', 'partners', 'referral', 'word-of-mouth', 'other']),
     message: z.url().trim().min(1).max(1024),
+    // worked_on: z.string().trim().min(1).max(100),
     resume: z
         .file()
         .max(10_000_000)

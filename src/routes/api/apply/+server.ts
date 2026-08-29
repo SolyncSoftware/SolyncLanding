@@ -1,18 +1,22 @@
 import { json } from '@sveltejs/kit';
-import { APPLY_PAGE_HOOK } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import type { RequestHandler } from './$types.js';
 import processError from '$lib/server/utilities/request/error.js';
 import applySchema from '$lib/server/schema/apply.js';
 
 export const POST: RequestHandler = async ({ request }) => {
+    const APPLY_PAGE_HOOK = env.APPLY_PAGE_HOOK ?? 'No_value';
+
     try {
         const rawData = await request.formData();
 
+        // this needs to be dynamic -john
         const candidate = {
             name: rawData.get('name'),
             email: rawData.get('email'),
             reason: rawData.get('reason'),
             message: rawData.get('message'),
+            // worked_on: rawData.get('message_one'),
             resume: rawData.get('resume')
         };
         const validationResult = applySchema.safeParse(candidate);
@@ -34,6 +38,7 @@ export const POST: RequestHandler = async ({ request }) => {
                         { name: 'Name', value: data.name, inline: true },
                         { name: 'Email', value: data.email, inline: true },
                         { name: 'Discovery', value: data.reason, inline: false },
+                        // { name: 'Worked On', value: data.worked_on, inline: true },
                         { name: 'Portfolio', value: data.message }
                     ],
                     timestamp: new Date().toISOString()
