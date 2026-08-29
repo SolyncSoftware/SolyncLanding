@@ -14,18 +14,18 @@ export const POST: RequestHandler = async ({ request }) => {
             reason: rawData.get('reason'),
             message: rawData.get('message'),
             resume: rawData.get('resume')
-        }
+        };
         const validationResult = applySchema.safeParse(candidate);
 
         if (!validationResult.success) {
-            throw new Error("Invalid input fields", { cause: { statusCode: 400 } });
+            throw new Error('Invalid input fields', { cause: { statusCode: 400 } });
         }
         const data = validationResult.data;
         console.log(data);
         const resume = data.resume;
 
         const discordPayload = {
-            allowed_mentions: {parse: []},
+            allowed_mentions: { parse: [] },
             embeds: [
                 {
                     title: 'Apply Form Submission',
@@ -43,15 +43,19 @@ export const POST: RequestHandler = async ({ request }) => {
 
         const discordForm = new FormData();
         discordForm.append('payload_json', JSON.stringify(discordPayload));
-        discordForm.append('files[0]', resume, `Resume ${data.name} ${new Date().toLocaleDateString("en-CA")}.${resume.name.split('.').pop()}`)
+        discordForm.append(
+            'files[0]',
+            resume,
+            `Resume ${data.name} ${new Date().toLocaleDateString('en-CA')}.${resume.name.split('.').pop()}`
+        );
 
         const discordResponse = await fetch(APPLY_PAGE_HOOK, {
             method: 'POST',
             body: discordForm
-        })
+        });
 
         if (!discordResponse.ok) {
-            throw new Error("Failed to send application to Discord.", { cause: { statusCode: 502 } });
+            throw new Error('Failed to send application to Discord.', { cause: { statusCode: 502 } });
         }
 
         return json({ success: true });

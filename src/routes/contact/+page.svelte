@@ -7,7 +7,7 @@
     import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
 
     let isSubmitting = $state(false);
-    let response: null | {type: "success"} | {type: "error", message: string} = $state(null);
+    let response: null | { type: 'success' } | { type: 'error'; message: string } = $state(null);
 
     async function handleSubmit(formData: Record<string, string>) {
         const res = await fetch('/api/contact', {
@@ -89,55 +89,58 @@
                 </div>
             </div>
 
-            {#if !response || response.type !== "success"}
-            <div class="flex w-full flex-col gap-6">
-                <Form
-                    id="contact-form"
-                    bind:loading={isSubmitting}
-                    bind:response={response}
-                    fields={[
-                        { name: 'name', label: "Name", placeholder: 'ex. Cappucino Assassino', type: 'text', required: true, span: 1 },
-                        { name: 'email', label: "Email", placeholder: 'ex. alice@aol.com', type: 'email', required: true, span: 1 },
-                        {
-                            name: 'reason',
-                            type: 'select',
-                            label: 'Reason for contact',
-                            required: true,
-                            options: [
-                                { value: 'support', label: 'Support' },
-                                { value: 'question', label: 'Questions' },
-                                { value: 'partners', label: 'Partners' },
-                                { value: 'trust-and-safety', label: 'Trust and Safety' },
-                                { value: 'other', label: 'Other' }
-                            ],
-                            span: 2
-                        },
-                        {
-                            name: 'message',
-                            label: "Message",
-                            placeholder: 'ex. I need a...',
-                            type: 'textarea',
-                            rows: 3,
-                            required: true,
-                            span: 2,
-                            class: 'rounded-4xl!'
-                        }
-                    ]}
-                    onsubmit={handleSubmit}
-                />
-                <div class="w-full min-w-0 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
-                    {#if response && response.type == "error"}
-                    <div class="min-w-0 flex flex-row gap-2 items-center">
-                        <CircleX class="text-error shrink-0"/>
-                        <p class="leading-[1em] text-error max-w-[12em]">{response?.message}</p>
+            {#if !response || response.type !== 'success'}
+                <div class="flex w-full flex-col gap-6">
+                    <Form
+                        id="contact-form"
+                        bind:loading={isSubmitting}
+                        bind:response
+                        fields={[
+                            { name: 'name', label: 'Name', placeholder: 'ex. Cappucino Assassino', type: 'text', required: true, span: 1 },
+                            { name: 'email', label: 'Email', placeholder: 'ex. alice@aol.com', type: 'email', required: true, span: 1 },
+                            {
+                                name: 'reason',
+                                type: 'select',
+                                label: 'Reason for contact',
+                                required: true,
+                                options: [
+                                    { value: 'support', label: 'Support' },
+                                    { value: 'question', label: 'Questions' },
+                                    { value: 'partners', label: 'Partners' },
+                                    { value: 'trust-and-safety', label: 'Trust and Safety' },
+                                    { value: 'other', label: 'Other' }
+                                ],
+                                span: 2
+                            },
+                            {
+                                name: 'message',
+                                label: 'Message',
+                                placeholder: 'ex. I need a...',
+                                type: 'textarea',
+                                rows: 3,
+                                required: true,
+                                span: 2,
+                                class: 'rounded-4xl!'
+                            }
+                        ]}
+                        onsubmit={handleSubmit}
+                    />
+                    <div class="flex w-full min-w-0 flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
+                        {#if response && response.type == 'error'}
+                            <div class="flex min-w-0 flex-row items-center gap-2">
+                                <CircleX class="text-error shrink-0" />
+                                <p class="text-error max-w-[12em] leading-[1em]">{response?.message}</p>
+                            </div>
+                        {/if}
+                        <Button
+                            form="contact-form"
+                            type="submit"
+                            class="h-fit! shrink-0 self-end! text-lg!"
+                            text={isSubmitting ? 'Submitting...' : 'Send message'}
+                            disabled={isSubmitting ? true : undefined}
+                        ></Button>
                     </div>
-                    {/if}
-                    <Button form="contact-form" type="submit" class="self-end! h-fit! text-lg! shrink-0"
-                        text={isSubmitting ? "Submitting..." : "Send message"}
-                        disabled={isSubmitting ? true : undefined}
-                    ></Button>
                 </div>
-            </div>
             {:else}
                 <SubmittedMessage />
             {/if}
