@@ -1,17 +1,17 @@
 import { json } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
+import { CONTACT_PAGE_HOOK } from '$env/static/private';
 import type { RequestHandler } from './$types.js';
 import contactSchema from '$lib/server/schema/contact.js';
 import validateRequest from '$lib/server/utilities/request/validate.js';
 import processError from '$lib/server/utilities/request/error.js';
 
 export const POST: RequestHandler = async ({ request }) => {
-    const CONTACT_PAGE_HOOK = env.CONTACT_PAGE_HOOK;
-
-    if (!CONTACT_PAGE_HOOK) {
-        console.error('CONTACT_PAGE_HOOK is missing or empty');
-        return json({ error: 'Server misconfigured' }, { status: 500 });
+    try {
+        new URL(CONTACT_PAGE_HOOK);
+    } catch {
+        return json({ error: 'Invalid webhook URL' }, { status: 500 });
     }
+
     try {
         // ===== validation. perhaps can be reused within a middleware or something idk
         const data = await validateRequest(request, contactSchema);
