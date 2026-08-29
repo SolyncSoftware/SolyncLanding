@@ -1,5 +1,5 @@
 ---
-title: Hello, Solync!
+title: Hello, Solync Cho!
 description: See our design process and thoughts developing this website.
 author: Solync
 date: '2026-04-30T12:00:00.000Z'
@@ -52,8 +52,8 @@ NetroWorks was built with expansion and sustainability in mind. So, we were able
 
 As stated earlier, Solync is the beginning of a new era for us. We have big plans for the rest of the year:
 
-- **Internal tools** are being worked on, such as SolyncORBIT and our server hardware. The goal is to make the backend experience smoother for us internally, and possibly offer a new service in the future...
-- **StreamSkinner** is something we haven't announced or mentioned or blah blah  
+- **Internal tools** are being worked on, such as SolyncORBIT and our server hardware. The goal is to make the backend experience smoother for us internally, and possibly offer a new service in the future. Stay tuned!
+- **Project StreamSkinner** is something we haven't gotten into detail just yet since it's just a pitch to us. However, this project will be catered towards video editors and streamers. We will talk about it more once we're ready.
 - **Gardens Wiki** is still on our radar. It's not a priority at the moment, but we do have many ideas for it.
 
 We'll stay committed to our own values, like being a collective, rejecting corporatism, and having freedom within. Everything we've built is done for the benefit of our users and ourselves.
@@ -68,4 +68,4 @@ Got any questions? Check out our new [contact page](/contact) and send something
 
 ~ Team Solync
 
-![SolyncHosting Teaser. Image is a placeholder](/images/articles/netrohost-image.png)
+![StreamSkinner Teaser](/images/articles/streamskinner.png)
