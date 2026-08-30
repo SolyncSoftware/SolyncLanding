@@ -8,7 +8,8 @@
     import { onMount } from 'svelte';
     import rs from 'rune-scroller';
     import Button from '$lib/components/Button.svelte';
-    import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
+    import { SiDiscord, SiGithub } from '@icons-pack/svelte-simple-icons';
+    import { Mail } from '@lucide/svelte';
 
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
@@ -62,6 +63,12 @@
                     class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><SiGithub />
+                </a>
+                <a
+                    href="/contact"
+                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
+         hover:shadow-[0_5px_0px_#00000022]"
+                    ><Mail />
                 </a>
             </div>
         </PageContainer>
