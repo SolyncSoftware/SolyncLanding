@@ -128,7 +128,7 @@
     </div>
 
     <div>
-        <h2 class="text-accent mb-4 text-5xl font-bold">Our People</h2>
+        <h2 class="mb-4 text-5xl font-bold">Our People.</h2>
         <OurTeam />
     </div>
 
