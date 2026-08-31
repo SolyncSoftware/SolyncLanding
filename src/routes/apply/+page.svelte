@@ -75,7 +75,7 @@
     <PageContainer className="bg-emerald-600">
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 font-medium">
-                <h1 class="max-w-190 text-4xl font-bold md:text-6xl">Applying to Solync.</h1>
+                <h1 class="max-w-190 text-4xl md:text-6xl">Applying to Solync.</h1>
 
                 <p class="mt-4 text-2xl">
                     We aren't looking for specific skill sets or backgrounds. Instead, we look for curious collaborators. We seek

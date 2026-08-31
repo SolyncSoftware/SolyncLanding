@@ -26,7 +26,7 @@
     <PageContainer className="bg-indigo-500">
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 font-medium">
-                <h1 class="max-w-190 text-4xl font-bold md:text-6xl">Contacting Solync.</h1>
+                <h1 class="max-w-190 text-4xl md:text-6xl">Contacting Solync.</h1>
 
                 <p class="mt-4 text-2xl">All of our messages are sent to us via Discord webhooks for centralized communication.</p>
 
