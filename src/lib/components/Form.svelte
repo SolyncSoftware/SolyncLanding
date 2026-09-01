@@ -110,7 +110,7 @@
                     {#if field.label}
                         <label for={field.name} class="after:text-accent after:content-['*']">
                             {field.label}
-                            <span class="text-sm text-black/60">
+                            <span class="text-sm text-black">
                                 {charCount(field) > 0 ? ` ${charCount(field)}` : ''}
                             </span>
                         </label>
