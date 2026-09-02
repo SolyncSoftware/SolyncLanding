@@ -16,14 +16,14 @@ const teamData: TeamMember[] = [
         realName: 'John',
         username: 'papertek',
         bsky: 'j6chocomint.bsky.social',
-        bio: 'i am papertek! i usually work on designs, websites, hardware, human resources, and public relations. i also like experimenting and iterating on whatever comes to mind!'
+        bio: "I am papertek! I'm usually working on designs, business, websites, hardware, human resources, and public relations. I also like experimenting and iterating on whatever comes to mind! You may know me from projects like Porter Robinson Wiki and the original Camellia Wiki."
     },
     {
         id: 65809047,
         realName: 'Amal',
         username: 'rottenspaceman',
         bsky: 'rottenspaceman.bsky.social',
-        bio: "I like working on software and I like learning as well (also I'm a LAZY bum but that's not needed)"
+        bio: 'Software engineer currently doing my masters in computer science. I love my low level programming and full stack development too (jack of all trades, master of some).'
     },
     {
         id: 177717694,
@@ -37,7 +37,7 @@ const teamData: TeamMember[] = [
         username: 'pastaya',
         github: 'pastadudes',
         bsky: 'pastaya.dev',
-        bio: 'emacs warrior #67 and knows how to program 75% of the time'
+        bio: 'German-branded GNU Emacs zealot. I\'m the Nix guy around here, and I also enjoy high-level and low-level programming like C++, and I dabble in Elixir and other FP languages. My C++ knowledge is probably pretty respectable on the Bjarne Scale. As Alan J. Perlis once said: "A language that doesn\'t affect the way you think about programming, is not worth knowing."'
     },
     {
         id: 102817779,
@@ -67,7 +67,7 @@ const teamData: TeamMember[] = [
         username: 'almahbuby',
         github: 'almahbubyanwar',
         bsky: 'nekobuby.bsky.social',
-        bio: "i'm a computer science student who mostly does JS/TS frontend dev, as well as UI/UX and graphic design. shoutouts to fonts btw"
+        bio: "I'm a computer science student who mostly does JS/TS frontend dev, as well as UI/UX and graphic design. I like learning."
     },
     {
         id: 145165822,
