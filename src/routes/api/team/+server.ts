@@ -78,6 +78,14 @@ const teamData: TeamMember[] = [
         bio: "Maya is someone who's very passionate and curious about programming, shes interested in everything about it! Ask her about something she knows, and she will keep you busy for 40 minutes, not that we're complaining! She also found it really interesting how open Solync is. She started asking many questions as a result, so we had to dust off our internal documentation to keep up."
     },
     {
+        id: 45880278,
+        realName: 'Lizzy',
+        username: 'LizzyTheWitch',
+        github: 'LizAinslie',
+        bsky: 'mey.yuri.capital',
+        bio: 'Full-stack, backend & Kotlin engineer passionate about decentralized, privacy focused technology and user freedom. Obsessed with polish & performance. In my free time I like playing games & watching anime with my friends, reading manga, and making music.'
+    },
+    {
         id: 155797753,
         realName: 'Team Solync',
         username: 'Solync',
