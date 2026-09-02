@@ -34,9 +34,9 @@
     ];
 </script>
 
-{#if showAnnouncement == true}
+<!-- {#if showAnnouncement == true}
     <AnnouncementContainer />
-{/if}
+{/if} -->
 
 <header class="bg-accent flex w-full items-center justify-between px-5 pt-6 pb-40 2xl:px-70">
     <!-- Logo -->
