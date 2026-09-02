@@ -16,7 +16,7 @@ const teamData: TeamMember[] = [
         realName: 'John',
         username: 'papertek',
         bsky: 'j6chocomint.bsky.social',
-        bio: "I am papertek! I'm usually working on designs, business, websites, hardware, human resources, and public relations. I also like experimenting and iterating on whatever comes to mind! You may know me from projects like Porter Robinson Wiki and the original Camellia Wiki."
+        bio: "i am papertek! I'm usually working on designs, business, websites, hardware, human resources, and public relations. i also like experimenting and iterating on whatever comes to mind! you may know me from projects like Porter Robinson Wiki and the original Camellia Wiki."
     },
     {
         id: 65809047,
@@ -44,7 +44,7 @@ const teamData: TeamMember[] = [
         realName: 'Sup',
         username: 'Sup#2.0',
         github: 'Sup2point0',
-        bio: 'jack of all knives, none of a kind, kind of a none, just having fun ^v^'
+        bio: 'i worked on a space telescope before'
     },
     {
         id: 33783503,
@@ -59,7 +59,7 @@ const teamData: TeamMember[] = [
         realName: 'fritz',
         username: 'fritzbear',
         github: 'fritzer1',
-        bio: 'umm hi im fritz. new bio: passionate and inspiring'
+        bio: 'Funny person that does frontend and backend.'
     },
     {
         id: 65217023,
