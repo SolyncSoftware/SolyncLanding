@@ -44,7 +44,7 @@ const teamData: TeamMember[] = [
         realName: 'Sup',
         username: 'Sup#2.0',
         github: 'Sup2point0',
-        bio: 'i worked on a space telescope before'
+        bio: "I interned at CERN working on the Hadron Collider. Now I'm at Solync."
     },
     {
         id: 33783503,
@@ -53,13 +53,6 @@ const teamData: TeamMember[] = [
         github: 'Tanza3D',
         bsky: 'tanza.me',
         bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics."
-    },
-    {
-        id: 294897079,
-        realName: 'fritz',
-        username: 'fritzbear',
-        github: 'fritzer1',
-        bio: 'Funny person that does frontend and backend.'
     },
     {
         id: 65217023,
