@@ -33,7 +33,7 @@ const teamData: TeamMember[] = [
     },
     {
         id: 151549235,
-        realName: 'Mr. Pasta',
+        realName: 'Mohanned',
         username: 'pastaya',
         github: 'pastadudes',
         bsky: 'pastaya.dev',
