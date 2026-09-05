@@ -33,9 +33,9 @@
         <PageContainer>
             <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
             <h1 class="text-4xl md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-            <p class="mt-4 text-2xl font-medium md:max-w-170">
+            <!-- <p class="mt-4 text-2xl font-medium md:max-w-170">
                 We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
-            </p>
+            </p> -->
             <p class="mt-4 text-2xl font-medium md:max-w-170">
                 We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
                 ethical. We collaborate to create what's next.
@@ -74,27 +74,57 @@
         </PageContainer>
     </div>
 
-    <div>
-        <h2 class="mb-4 text-5xl font-bold">Our Projects.</h2>
-        <OurProjects />
+    <p class="text-5xl font-bold text-black md:max-w-240">
+        We're a group of hobbyists who believe in <span class="text-accent">worker-managed software</span> and create things we collectively believe
+        in.
+    </p>
 
-        <div class="mt-8">
+    <div class="space-y-4">
+        <h2 class="text-5xl font-bold">Our Projects.</h2>
+        <p class="text-xl font-medium md:max-w-140">
+            We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
+        </p>
+        <div>
             <a
                 href="/about#our-work"
-                class="text-accent group ml-auto flex w-fit items-center gap-2.5 text-4xl font-bold transition-all ease-in-out hover:text-black"
-                >see more
+                class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
+                >See more
                 <img
                     src="/images/arrow-sorange.svg"
                     alt="Arrow"
-                    class="w-6 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-2"
+                    class="w-7 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-1"
                     loading="lazy"
                 />
             </a>
         </div>
+        <OurProjects />
     </div>
 
-    <div>
-        <h2 class="mb-4 text-5xl font-bold">From the Blog.</h2>
+    <div class="space-y-4">
+        <h2 class="text-5xl font-bold">Meet the team.</h2>
+        <p class="text-xl font-medium md:max-w-140">
+            The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">join us</a> to learn more
+            about how to get involved.
+        </p>
+        <OurTeam />
+    </div>
+
+    <div class="space-y-4">
+        <h2 class="text-5xl font-bold">From the Blog.</h2>
+        <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
+        <div>
+            <a
+                href="/blog"
+                class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
+                >See more
+                <img
+                    src="/images/arrow-sorange.svg"
+                    alt="Arrow"
+                    class="w-7 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-1"
+                    loading="lazy"
+                />
+            </a>
+        </div>
         {#if loading}
             <p class="text-xl">Loading articles...</p>
         {:else if blogArticles.length === 0}
@@ -112,24 +142,6 @@
                 {/each}
             </div>
         {/if}
-        <div class="mt-8">
-            <a
-                href="/blog"
-                class="text-accent group ml-auto flex w-fit items-center gap-2.5 text-4xl font-bold transition-all ease-in-out hover:text-black"
-                >see more
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-6 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-2"
-                    loading="lazy"
-                />
-            </a>
-        </div>
-    </div>
-
-    <div>
-        <h2 class="mb-4 text-5xl font-bold">Our People.</h2>
-        <OurTeam />
     </div>
 
     <!-- may remove this or make it a component. so far its only in the about page -->
