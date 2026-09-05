@@ -75,8 +75,8 @@
     </div>
 
     <p class="text-5xl font-bold text-black md:max-w-240">
-        We're a group of hobbyists who believe in <span class="text-accent">worker-managed software</span> and create things we collectively believe
-        in.
+        We're a group of hobbyists who believe in <span class="font-extrabold">worker-managed software</span> and create things we collectively
+        believe in.
     </p>
 
     <div class="space-y-4">
@@ -88,7 +88,7 @@
             <a
                 href="/about#our-work"
                 class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
-                >See more
+                >see more
                 <img
                     src="/images/arrow-sorange.svg"
                     alt="Arrow"
@@ -102,21 +102,21 @@
 
     <div class="space-y-4">
         <h2 class="text-5xl font-bold">Meet the team.</h2>
-        <p class="text-xl font-medium md:max-w-140">
-            The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">join us</a> to learn more
-            about how to get involved.
+        <p class="text-xl font-medium md:max-w-110">
+            The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a> and help build
+            what comes next, together.
         </p>
         <OurTeam />
     </div>
 
     <div class="space-y-4">
         <h2 class="text-5xl font-bold">From the Blog.</h2>
-        <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
+        <p class="text-xl font-medium md:max-w-110">Words from the people behind Solync.</p>
         <div>
             <a
                 href="/blog"
                 class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
-                >See more
+                >see more
                 <img
                     src="/images/arrow-sorange.svg"
                     alt="Arrow"
