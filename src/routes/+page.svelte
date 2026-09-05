@@ -74,7 +74,14 @@
         </PageContainer>
     </div>
 
-    <p class="text-5xl font-bold text-black md:max-w-240">
+    <p
+        class="text-5xl font-bold text-black md:max-w-240"
+        use:rs={{
+            animation: 'fade',
+            duration: 1000,
+            repeat: false
+        }}
+    >
         We're a group of hobbyists who believe in <span class="font-extrabold">worker-managed software</span> and create things we collectively
         believe in.
     </p>
@@ -84,7 +91,7 @@
         <p class="text-xl font-medium md:max-w-140">
             We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
         </p>
-        <div>
+        <!-- <div>
             <a
                 href="/about#our-work"
                 class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
@@ -96,7 +103,7 @@
                     loading="lazy"
                 />
             </a>
-        </div>
+        </div> -->
         <OurProjects />
     </div>
 
