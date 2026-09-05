@@ -52,21 +52,21 @@
                 <a
                     href="https://discord.gg/nUeRyRtDYC"
                     target="_blank"
-                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
-         hover:shadow-[0_5px_0px_#00000022]"
+                    class="bg-offwhite/20 rounded-full border border-white p-3.5
+         transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
                     ><SiDiscord />
                 </a>
 
                 <a
                     href="https://github.com/SolyncSoftware"
                     target="_blank"
-                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
+                    class="bg-offwhite/20 rounded-full border border-white p-3.5 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><SiGithub />
                 </a>
                 <a
                     href="/contact"
-                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
+                    class="bg-offwhite/20 rounded-full border border-white p-3.5 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     ><Mail />
                 </a>
@@ -75,19 +75,19 @@
     </div>
 
     <p
-        class="text-5xl font-bold text-black md:max-w-240"
+        class="text-5xl leading-16 font-bold text-black md:max-w-260"
         use:rs={{
             animation: 'fade',
             duration: 1000,
             repeat: false
         }}
     >
-        We're a group of hobbyists who believe in <span class="font-extrabold">worker-managed software</span> and create things we collectively
-        believe in.
+        We're a group of hobbyists who believe in <span class="text-accent">worker-managed software</span> and create things we collectively believe
+        in.
     </p>
 
     <div class="space-y-4">
-        <h2 class="text-5xl font-bold">Our Projects.</h2>
+        <h2 class="text-5xl font-bold">Our projects.</h2>
         <p class="text-xl font-medium md:max-w-140">
             We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
         </p>
@@ -105,6 +105,20 @@
             </a>
         </div> -->
         <OurProjects />
+        <div class="flex w-full flex-col items-end">
+            <a
+                href="/about#our-work"
+                class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
+            >
+                see more projects
+                <img
+                    src="/images/arrow-sorange.svg"
+                    alt="Arrow"
+                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
+                    loading="lazy"
+                />
+            </a>
+        </div>
     </div>
 
     <div class="space-y-4">
@@ -119,7 +133,7 @@
     <div class="space-y-4">
         <h2 class="text-5xl font-bold">From the Blog.</h2>
         <p class="text-xl font-medium md:max-w-110">Words from the people behind Solync.</p>
-        <div>
+        <!-- <div>
             <a
                 href="/blog"
                 class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
@@ -131,7 +145,7 @@
                     loading="lazy"
                 />
             </a>
-        </div>
+        </div> -->
         {#if loading}
             <p class="text-xl">Loading articles...</p>
         {:else if blogArticles.length === 0}
@@ -149,6 +163,20 @@
                 {/each}
             </div>
         {/if}
+        <div class="flex w-full flex-col items-end">
+            <a
+                href="/about#our-work"
+                class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
+            >
+                more from the blog
+                <img
+                    src="/images/arrow-sorange.svg"
+                    alt="Arrow"
+                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
+                    loading="lazy"
+                />
+            </a>
+        </div>
     </div>
 
     <!-- may remove this or make it a component. so far its only in the about page -->
