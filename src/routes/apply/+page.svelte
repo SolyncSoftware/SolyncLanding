@@ -135,22 +135,55 @@
         {#if !response || response.type !== 'success'}
             <h2 class="mb-4 text-3xl font-bold">Apply now!</h2>
 
-            <p class="bg-offwhite border-l-warning rounded-4xl border-l-4 p-5 text-lg">
-                <strong>Note:</strong> This is currently a volunteer position. The goal is to grow and move towards creating products that generate
-                revenue. If this happens, financial compensation will be available. We are looking for talent that's collaborative (because we're
-                a flat organization), flexible with their skills, and invested in shaping the future of Solync.
-            </p>
+            <div class="bg-offwhite border-l-warning space-y-4 rounded-2xl border-l-4 p-5 text-lg">
+                <p class="text-black/90">
+                    <strong>Note:</strong> This is currently a volunteer position. The goal is to grow and move towards creating products that
+                    generate revenue. If this happens, financial compensation will be available. We are looking for talent that's collaborative
+                    (because we're a flat organization), flexible with their skills, and invested in shaping the future of Solync.
+                </p>
 
-            <div class="bg-offwhite border-l-warning rounded-4xl border-l-4 p-5 text-lg">
-                <p>While there are no position titles, we have certain fields we're interested in:</p>
-                <ul>
-                    <li><strong>UI/UX Design</strong> - Figma / Affinity</li>
-                    <li><strong>Frontend Programmer</strong> - HTML / TypeScript / Vue / Astro / Svelte</li>
-                    <li><strong>Backend Programmer</strong> - Elixir / SvelteKit / MariaDB</li>
-                    <li><strong>Legal / Business Advisor</strong></li>
-                    <li><strong>IT Admin</strong></li>
-                    <li><strong>Sys Admin</strong></li>
-                </ul>
+                <span class="font-medium text-black/80">
+                    While there are no position titles, we have certain fields we're interested in:
+                </span>
+
+                <!-- We can honestly make this an api call -->
+                <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-3">
+                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                        <span class="font-bold">UI/UX</span>
+                        <span class="text-black/40">|</span>
+                        <span class="text-black/80">Figma / Affinity / Adobe</span>
+                    </span>
+
+                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                        <span class="font-bold">Frontend</span>
+                        <span class="text-black/40">|</span>
+                        <span class="text-black/80">HTML / JavaScript / TypeScript / Vue / Astro / SvelteKit / Tailwind CSS</span>
+                    </span>
+
+                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                        <span class="font-bold">Backend</span>
+                        <span class="text-black/40">|</span>
+                        <span class="text-black/80">KTor / Kotlin / SvelteKit / MariaDB</span>
+                    </span>
+
+                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                        <span class="font-bold">SysAdmin</span>
+                        <span class="text-black/40">|</span>
+                        <span class="text-black/80">Proxmox / Debian / Docker / Nix</span>
+                    </span>
+
+                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                        <span class="font-bold">Social / Marketing</span>
+                        <span class="text-black/40">|</span>
+                        <span class="text-black/80">TikTok / Bluesky / IG / Twitter / YouTube</span>
+                    </span>
+
+                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                        <span class="font-bold">Legal</span>
+                        <span class="text-black/40">|</span>
+                        <span class="text-black/80">Business Advisor / Lawyer</span>
+                    </span>
+                </div>
             </div>
 
             <div class="mb-6 flex flex-col justify-between gap-4 text-lg">

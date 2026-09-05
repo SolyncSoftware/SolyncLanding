@@ -3,10 +3,13 @@
     import { slide, fade } from 'svelte/transition';
     import { quartInOut } from 'svelte/easing';
 
+    import AnnouncementContainer from './assets/AnnouncementContainer.svelte';
     import SolyncLogo from './SolyncLogo.svelte';
     import Button from './Button.svelte';
     import ButtonSimple from './ButtonSimple.svelte';
     import rs from 'rune-scroller';
+
+    let showAnnouncement = $state(false); // Set to true when we're ready
 
     let currentPath = $derived(page.url.pathname);
 
@@ -30,6 +33,10 @@
         { href: '/about', text: 'Learn more' }
     ];
 </script>
+
+<!-- {#if showAnnouncement == true}
+    <AnnouncementContainer />
+{/if} -->
 
 <header class="bg-accent flex w-full items-center justify-between px-5 pt-6 pb-40 2xl:px-70">
     <!-- Logo -->

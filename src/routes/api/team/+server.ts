@@ -16,14 +16,14 @@ const teamData: TeamMember[] = [
         realName: 'John',
         username: 'papertek',
         bsky: 'j6chocomint.bsky.social',
-        bio: 'i am papertek! i usually work on designs, websites, hardware, human resources, and public relations. i also like experimenting and iterating on whatever comes to mind!'
+        bio: "i am papertek! I'm usually working on designs, business, websites, hardware, human resources, and public relations. i also like experimenting and iterating on whatever comes to mind! you may know me from projects like Porter Robinson Wiki and the original Camellia Wiki."
     },
     {
         id: 65809047,
         realName: 'Amal',
         username: 'rottenspaceman',
         bsky: 'rottenspaceman.bsky.social',
-        bio: "I like working on software and I like learning as well (also I'm a LAZY bum but that's not needed)"
+        bio: 'Software engineer currently doing my masters in computer science. I love my low level programming and full stack development too (jack of all trades, master of some).'
     },
     {
         id: 177717694,
@@ -33,18 +33,18 @@ const teamData: TeamMember[] = [
     },
     {
         id: 151549235,
-        realName: 'Mr. Pasta',
+        realName: 'Mohanned',
         username: 'pastaya',
         github: 'pastadudes',
         bsky: 'pastaya.dev',
-        bio: 'emacs warrior #67 and knows how to program 75% of the time'
+        bio: 'German-branded GNU Emacs zealot. I\'m the Nix guy around here, and I also enjoy high-level and low-level programming like C++, and I dabble in Elixir and other FP languages. My C++ knowledge is probably pretty respectable on the Bjarne Scale. As Alan J. Perlis once said: "A language that doesn\'t affect the way you think about programming, is not worth knowing."'
     },
     {
         id: 102817779,
         realName: 'Sup',
         username: 'Sup#2.0',
         github: 'Sup2point0',
-        bio: 'jack of all knives, none of a kind, kind of a none, just having fun ^v^'
+        bio: "I interned at CERN working on the Hadron Collider. Now I'm at Solync."
     },
     {
         id: 33783503,
@@ -55,19 +55,12 @@ const teamData: TeamMember[] = [
         bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics."
     },
     {
-        id: 294897079,
-        realName: 'fritz',
-        username: 'fritzbear',
-        github: 'fritzer1',
-        bio: 'umm hi im fritz. new bio: passionate and inspiring'
-    },
-    {
         id: 65217023,
         realName: 'Buby',
         username: 'almahbuby',
         github: 'almahbubyanwar',
         bsky: 'nekobuby.bsky.social',
-        bio: "i'm a computer science student who mostly does JS/TS frontend dev, as well as UI/UX and graphic design. shoutouts to fonts btw"
+        bio: "I'm a computer science student who mostly does JS/TS frontend dev, as well as UI/UX and graphic design. I like learning."
     },
     {
         id: 145165822,
@@ -76,6 +69,14 @@ const teamData: TeamMember[] = [
         github: 'MayaChen350',
         bsky: 'giratina-shiny.bsky.social',
         bio: "Maya is someone who's very passionate and curious about programming, shes interested in everything about it! Ask her about something she knows, and she will keep you busy for 40 minutes, not that we're complaining! She also found it really interesting how open Solync is. She started asking many questions as a result, so we had to dust off our internal documentation to keep up."
+    },
+    {
+        id: 45880278,
+        realName: 'Lizzy',
+        username: 'LizzyTheWitch',
+        github: 'LizAinslie',
+        bsky: 'mey.yuri.capital',
+        bio: 'Full-stack, backend & Kotlin engineer passionate about decentralized, privacy focused technology and user freedom. Obsessed with polish & performance. In my free time I like playing games & watching anime with my friends, reading manga, and making music.'
     },
     {
         id: 155797753,
