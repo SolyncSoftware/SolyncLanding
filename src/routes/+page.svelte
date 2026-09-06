@@ -24,52 +24,59 @@
 
 <section class="flex flex-col gap-14">
     <div
+        class="text-white"
         use:rs={{
             animation: 'fade-up',
             duration: 1000,
             repeat: false
         }}
     >
-        <PageContainer>
-            <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
-            <h1 class="text-4xl md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-            <!-- <p class="mt-4 text-2xl font-medium md:max-w-170">
-                We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
-            </p> -->
-            <p class="mt-4 text-2xl font-medium md:max-w-170">
+        <PageContainer
+            containerClass="overflow-visible"
+            innerClass="py-20 min-h-184 flex flex-col items-center justify-between gap-6 text-center bg-cover bg-center"
+        >
+            <h1 class="text-shadow-home max-w-162 text-4xl font-extralight md:text-7xl">
+                Building what comes next, <span class="font-extrabold">together</span>.
+            </h1>
+            <p class="text-shadow-home text-2xl md:max-w-147">
                 We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
                 ethical. We collaborate to create what's next.
             </p>
 
-            <div class="mt-4 flex flex-col items-center gap-4 align-middle sm:flex-row">
-                <Button
-                    class="bg-offwhite text-accent! hover:bg-offwhite w-fit self-center! px-14 text-xl! font-bold shadow-none
+            <div
+                class="bg-offwhite border-offaccent absolute bottom-0 left-1/2 z-10 flex w-full -translate-x-1/2 translate-y-1/2 flex-col items-center justify-between gap-4 overflow-visible rounded-full p-4 text-black sm:flex-row md:max-w-270"
+            >
+                <div class="flex flex-row items-center gap-2">
+                    <Button
+                        class="hover:bg-offaccent! w-fit self-center! px-14 text-xl! font-bold shadow-none
          transition-all hover:-translate-y-1 
          hover:shadow-[0_5px_0px_#00000022]"
-                    href="/about"
-                    text="Learn More"
-                />
-                <a
-                    href="https://discord.gg/nUeRyRtDYC"
-                    target="_blank"
-                    class="bg-offwhite/20 rounded-full border border-white p-3.5
+                        href="/about"
+                        text="Learn More"
+                    />
+                    <a
+                        href="https://discord.gg/nUeRyRtDYC"
+                        target="_blank"
+                        class="bg-offwhite/20 border-offaccent rounded-full border p-3.5
          transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
-                    ><SiDiscord />
-                </a>
+                        ><SiDiscord class="text-offaccent" />
+                    </a>
 
-                <a
-                    href="https://github.com/SolyncSoftware"
-                    target="_blank"
-                    class="bg-offwhite/20 rounded-full border border-white p-3.5 transition-all hover:-translate-y-1
+                    <a
+                        href="https://github.com/SolyncSoftware"
+                        target="_blank"
+                        class="bg-offwhite/20 border-offaccent rounded-full border p-3.5 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
-                    ><SiGithub />
-                </a>
-                <a
-                    href="/contact"
-                    class="bg-offwhite/20 rounded-full border border-white p-3.5 transition-all hover:-translate-y-1
+                        ><SiGithub class="text-offaccent" />
+                    </a>
+                    <a
+                        href="/contact"
+                        class="bg-offwhite/20 border-offaccent rounded-full border p-3.5 transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
-                    ><Mail />
-                </a>
+                        ><Mail class="text-offaccent" />
+                    </a>
+                </div>
+                Scroll down!
             </div>
         </PageContainer>
     </div>
@@ -185,3 +192,9 @@
         <SolyncLogo iconOnly={true} class="fill-accent w-30" />
     </div>
 </section>
+
+<style>
+    .text-shadow-home {
+        text-shadow: 0px 10px 12px rgba(0, 0, 0, 0.25);
+    }
+</style>
