@@ -33,7 +33,7 @@
     >
         <PageContainer>
             <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
-            <h1 class="text-4xl md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+            <h1 class="text-4xl font-medium md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
             <p class="mt-4 text-2xl font-medium md:max-w-170">
                 We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
             </p>
@@ -124,9 +124,9 @@
 
     <div class="space-y-4">
         <h2 class="text-5xl font-bold">Meet the team.</h2>
-        <p class="text-xl font-medium md:max-w-140">
-            The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a> and help us build
-            what comes next, together.
+        <p class="text-xl font-medium md:max-w-110">
+            The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a>, and help
+            build what's next, together.
         </p>
         <OurTeam />
     </div>
@@ -166,7 +166,7 @@
         {/if}
         <div class="flex w-full flex-col items-end">
             <a
-                href="/about#our-work"
+                href="/blog"
                 class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
             >
                 more from the blog
