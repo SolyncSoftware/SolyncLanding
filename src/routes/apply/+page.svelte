@@ -184,6 +184,8 @@
                         <span class="text-black/80">Business Advisor / Lawyer</span>
                     </span>
                 </div>
+
+                <span class="text-base font-medium text-black/80">A Discord account for communications and a Github is required.</span>
             </div>
 
             <div class="mb-6 flex flex-col justify-between gap-4 text-lg">
