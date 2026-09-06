@@ -34,11 +34,11 @@
 
 <div
     bind:this={pageContainerEl}
-    class="border-accent relative z-100 mx-0 {containerClass} rounded-4xl border-4 text-white outline-5 outline-black 2xl:-mx-40"
+    class="border-accent relative z-100 mx-0 {containerClass} rounded-4xl border-4 bg-black text-white outline-5 outline-black 2xl:-mx-40"
 >
     <div bind:this={waveSlotEl} class="absolute inset-0 z-0 h-full w-full rounded-4xl"></div>
-    <div class="absolute inset-0 z-1 rounded-4xl bg-black/40"></div>
-    <div class="{className} absolute inset-0 z-5 rounded-4xl mix-blend-plus-lighter"></div>
+    <!-- <div class="absolute inset-0 z-1 rounded-4xl bg-black/40"></div> -->
+    <!-- <div class="{className} absolute inset-0 z-5 rounded-4xl mix-blend-plus-lighter"></div> -->
     <div class="relative z-10 p-9 {innerClass}">
         {@render children()}
     </div>

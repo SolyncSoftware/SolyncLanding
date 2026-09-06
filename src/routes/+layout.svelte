@@ -67,8 +67,8 @@
 <div bind:this={hostEl} class="pointer-events-none hidden" aria-hidden="true">
     <Waves
         className="h-full overflow-hidden mix-blend-plus-lighter"
-        style="z-index: -1; overflow: hidden; mask-image: linear-gradient(to right, #fff6 20%, #fffa, #fff);"
-        wavesType="/solync_waves_dark.json"
+        style="z-index: -1; overflow: hidden;"
+        wavesType="/solync_cubes.json"
         backgroundImage="/images/waves-dark.png"
         backgroundSize="cover"
     />
