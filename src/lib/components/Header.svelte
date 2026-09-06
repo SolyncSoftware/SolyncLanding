@@ -1,5 +1,6 @@
 <script lang="ts">
     import { page } from '$app/state';
+    import { getContext } from 'svelte';
     import { slide, fade } from 'svelte/transition';
     import { quartInOut } from 'svelte/easing';
 
@@ -10,6 +11,7 @@
     import rs from 'rune-scroller';
 
     let showAnnouncement = $state(false); // Set to true when we're ready
+    const pageContainer = getContext<{ height: number }>('page-container');
 
     let currentPath = $derived(page.url.pathname);
 
@@ -120,6 +122,10 @@
         <Button href="/donate" class="shadow-none" text="Support us" />
     </div>
 </header>
+<div
+    class="absolute -z-1 h-auto w-full bg-black transition-[height] duration-500 ease-out will-change-[height]"
+    style:height={`${Math.max(pageContainer.height - 42)}px`}
+></div>
 
 <!-- mobile menu -->
 {#if isMenuOpen}
