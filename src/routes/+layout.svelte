@@ -6,7 +6,7 @@
     import Waves from '$lib/components/assets/Waves.svelte';
     import persistentWaveStore from '$lib/stores/persistentWave.js';
     import AnimatedIntroLogo from '$lib/components/AnimatedIntroLogo.svelte';
-    import { onMount, setContext, type Snippet } from 'svelte';
+    import { onMount, type Snippet } from 'svelte';
     import { page } from '$app/state';
     import { fade } from 'svelte/transition';
     import { tick } from 'svelte';
@@ -14,9 +14,6 @@
     import '../styles/tailwind.css';
 
     let { children }: { children: Snippet } = $props();
-
-    const pageContainer = $state({ height: 0 });
-    setContext('page-container', pageContainer);
 
     import runGlobalPerformanceCheck from '$lib/utils/performanceCheck.js';
 

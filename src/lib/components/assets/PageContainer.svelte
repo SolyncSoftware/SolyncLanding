@@ -1,10 +1,8 @@
 <script lang="ts">
-    import { getContext } from 'svelte';
     import persistentWaveStore from '$lib/stores/persistentWave.js';
 
     let { children, className = 'bg-accent', innerClass = '', containerClass = 'overflow-hidden' } = $props();
 
-    const pageContainer = getContext<{ height: number }>('page-container');
     let pageContainerEl = $state<HTMLDivElement | null>(null);
     let waveSlotEl = $state<HTMLDivElement | null>(null);
 
@@ -15,16 +13,13 @@
             persistentWaveStore.attachTo(slot);
 
             const ro = new ResizeObserver(() => {
-                pageContainer.height = container.offsetHeight;
                 persistentWaveStore.notifyResize();
             });
-            pageContainer.height = container.offsetHeight;
             ro.observe(container);
             ro.observe(slot);
 
             return () => {
                 ro.disconnect();
-                pageContainer.height = 0;
                 persistentWaveStore.resetToHost(slot);
                 persistentWaveStore.notifyResize();
             };
