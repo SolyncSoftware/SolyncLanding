@@ -33,11 +33,11 @@
     >
         <PageContainer>
             <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
-            <h1 class="text-4xl font-bold md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-            <p class="mt-4 text-2xl font-semibold md:max-w-170">
+            <h1 class="text-4xl md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+            <p class="mt-4 text-2xl font-medium md:max-w-170">
                 We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
             </p>
-            <p class="mt-4 text-2xl font-semibold md:max-w-170">
+            <p class="mt-4 text-2xl font-medium md:max-w-170">
                 We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
                 ethical. We collaborate to create what's next.
             </p>
@@ -48,7 +48,7 @@
          transition-all hover:-translate-y-1 
          hover:shadow-[0_5px_0px_#00000022]"
                     href="/about"
-                    text="Learn More"
+                    text="Learn more"
                 />
                 <a
                     href="https://discord.gg/nUeRyRtDYC"
@@ -75,7 +75,7 @@
         </PageContainer>
     </div>
 
-    <p
+    <!-- <p
         class="text-5xl leading-16 font-bold text-black md:max-w-260"
         use:rs={{
             animation: 'fade',
@@ -85,7 +85,7 @@
     >
         We're a group of hobbyists who believe in <span class="text-accent">worker-managed software</span> and create things we collectively believe
         in.
-    </p>
+    </p> -->
 
     <div class="space-y-4">
         <h2 class="text-5xl font-bold">Our projects.</h2>
@@ -124,8 +124,8 @@
 
     <div class="space-y-4">
         <h2 class="text-5xl font-bold">Meet the team.</h2>
-        <p class="text-xl font-medium md:max-w-110">
-            The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a> and help build
+        <p class="text-xl font-medium md:max-w-140">
+            The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a> and help us build
             what comes next, together.
         </p>
         <OurTeam />
@@ -133,7 +133,7 @@
 
     <div class="space-y-4">
         <h2 class="text-5xl font-bold">From the Blog.</h2>
-        <p class="text-xl font-medium md:max-w-110">Words from the people behind Solync.</p>
+        <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
         <!-- <div>
             <a
                 href="/blog"
