@@ -65,6 +65,7 @@
 </svelte:head>
 
 <div bind:this={hostEl} class="pointer-events-none hidden" aria-hidden="true">
+    <!-- todo: make unique version of waves component for the homepage -->
     <Waves
         className="h-full overflow-hidden mix-blend-plus-lighter"
         style="z-index: -1; overflow: hidden;"
