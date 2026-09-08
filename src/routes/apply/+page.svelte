@@ -148,37 +148,37 @@
 
                 <!-- We can honestly make this an api call -->
                 <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-3">
-                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
                         <span class="font-bold">UI/UX</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">Figma / Affinity / Adobe</span>
                     </span>
 
-                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
                         <span class="font-bold">Frontend</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">HTML / JavaScript / TypeScript / Vue / Astro / SvelteKit / Tailwind CSS</span>
                     </span>
 
-                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
                         <span class="font-bold">Backend</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">KTor / Kotlin / SvelteKit / MariaDB</span>
                     </span>
 
-                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
                         <span class="font-bold">SysAdmin</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">Proxmox / Debian / Docker / Nix</span>
                     </span>
 
-                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
                         <span class="font-bold">Social / Marketing</span>
-                        <span class="text-black/40">|</span>
+                        <span class="px-1.5 text-black/40">|</span>
                         <span class="text-black/80">TikTok / Bluesky / IG / Twitter / YouTube</span>
                     </span>
 
-                    <span class="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2 text-base shadow-sm">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
                         <span class="font-bold">Legal</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">Business Advisor / Lawyer</span>
