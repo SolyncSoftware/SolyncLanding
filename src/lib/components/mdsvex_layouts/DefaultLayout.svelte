@@ -12,7 +12,7 @@
 <h1 class="text-5xl font-bold text-white first-letter:uppercase">{title}</h1>
 <article class="border-t-accent h-auto rounded-4xl border-t-11 bg-white p-9 text-2xl shadow-xl/6">
     <span class="font-sans text-2xl">
-        <p class="text-accent font-bold">Written/Revised on {date}</p>
+        <p class="text-accent font-bold">Last updated on {date}</p>
 
         <div class="markdown">
             {@render children()}
