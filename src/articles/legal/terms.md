@@ -11,7 +11,7 @@ published: true
 
 Thank you for being with Solync!
 
-These Terms of Service ("Terms") is an agreement between you and John Guajardo, trading as Solync ("we," "us," "our", the "Collective") governing your use of Our Services (collectively, the "Services"). You agree that you are or thereof over the age of 14 or the age of digital consent in your country.
+These Terms of Service ("Terms") is an agreement between you and Solync ("we," "us," "our", the "Collective") governing your use of Our Services (collectively, the "Services"). You agree that you are or thereof over the age of 14 or the age of digital consent in your country.
 
 By accessing, interacting, or of any way, shape, or form of utilizing any of the Services, we assume you accept these Terms in full. If
 you do not accept any or all of the Terms stated, discontinue use of the Services. If you have any questions or concerns regarding these

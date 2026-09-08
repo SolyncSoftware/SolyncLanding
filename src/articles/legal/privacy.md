@@ -11,7 +11,7 @@ published: true
 
 Thank you for being with Solync!
 
-This Privacy Policy describes how John Guajardo, trading as Solync ("we," "us," "our", the "Collective") collects, uses, stores, and shares your personal data when you use Our Services (collectively, the "Services").
+This Privacy Policy describes how Solync ("we," "us," "our", the "Collective") collects, uses, stores, and shares your personal data when you use Our Services (collectively, the "Services").
 
 By accessing, interacting, or of any way, shape, or form of utilizing any of the Services, we assume you accept the Policy in full. If
 you do not accept any or all of the Term stated, discontinue use of the Services. If you have any questions or concerns regarding this

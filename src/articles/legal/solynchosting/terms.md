@@ -12,7 +12,7 @@ published: true
 Thank you for choosing Solync Hosting!
 
 **Solync Hosting** (the "Service") is maintained and operated by
-**Solync** ("we", "us", "our", the "Company")
+**Solync** ("we", "us", "our", the "Collective")
 and therefore is subject to our [Terms of Service](/legal/terms)
 and [Privacy Policy](/legal/privacy).
 
@@ -28,7 +28,7 @@ at [our contact page](/contact) or message us in our [Discord](https://discord.g
 You are responsible for the content knowingly uploaded, hosted, shared, or distributed on the
 Service.
 This includes ensuring that the content complies with all applicable laws and regulations (both you
-and the Company), and
+and the Collective), and
 the guidelines set forth in our Terms of Service and Privacy Policy.
 
 For users that run Content where other users may interact and share information ("user-generated
@@ -72,9 +72,9 @@ in the Solync Hosting Panel.
 ## 4. Services "AS-IS"
 
 Our Service is provided "AS-IS" and "AS AVAILABLE".
-The Company disclaims any and all representations and warranties, whether express or implied.
-The Company does not and cannot guarantee any specific results from use of the Service.
-The Company will retain backups as per described to you per agreement, however it is important to
+The Collective disclaims any and all representations and warranties, whether express or implied.
+The Collective does not and cannot guarantee any specific results from use of the Service.
+The Collective will retain backups as per described to you per agreement, however it is important to
 maintain your own regular backups of your data.
 We do not guarantee the retention of our backups and we strongly encourage you to have an extra
 copy.
