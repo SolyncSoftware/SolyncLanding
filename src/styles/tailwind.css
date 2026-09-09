@@ -176,15 +176,15 @@
 }
 
 /* hi, john here. this is here because font-display needs to be bolded. thats all */
-.font-display {
+@utility font-display {
     font-weight: bold;
 }
 
-.font-book { /* for use with paragraphs; Regular seems too thin for body text */
+@utility font-book { /* for use with paragraphs; Regular seems too thin for body text */
     font-weight: 450;
 }
 
-.debug {
+@utility debug {
     outline: 1px solid red;
 }
 

@@ -74,7 +74,7 @@
     <!-- </div> -->
 
 
-<article class="px-4 py-12 lg:px-10 pt-24 pb-30 flex flex-col gap-14">
+<article class="px-4 py-12 lg:px-10 lg:pt-24 lg:pb-30 flex flex-col gap-14 lg:gap-30">
     <section>
         <p
             class="text-3xl md:text-5xl leading-[1.2em] font-semibold text-black md:max-w-260"
