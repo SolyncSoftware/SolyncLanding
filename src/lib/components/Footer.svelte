@@ -25,8 +25,8 @@
         {
             title: 'More',
             links: [
-                // { name: 'Privacy Policy', href: '/legal/privacy' },
-                // { name: 'Terms of Service', href: '/legal/terms' },
+                { name: 'Privacy Policy', href: '/legal/privacy' },
+                { name: 'Terms of Service', href: '/legal/terms' },
                 { name: 'Contact us', href: '/contact' }
             ]
         }
