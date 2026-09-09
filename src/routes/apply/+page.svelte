@@ -105,14 +105,11 @@
     <div class="grid grid-cols-1 gap-4 text-lg md:grid-cols-2 lg:grid-cols-2">
         <div class="rounded-4xl bg-white p-9 shadow-xl/4">
             <h2 class="mb-4 text-3xl font-bold">What we offer (so far)</h2>
-
-            <ul class="ml-6 list-disc">
-                <li class="mb-4">An organization where the environment and schedule is extremely flexible.</li>
-                <li class="mb-4">
-                    Opportunity to collaborate with experienced members to gain insight, inspiration, and expansive skillsets.
-                </li>
-
-                <li class="mb-4">
+            <ul class="ml-6 list-disc space-y-4">
+                <li>An organization where the environment and schedule is extremely flexible.</li>
+                <li>Opportunity to collaborate with experienced members to gain insight, inspiration, and expansive skillsets.</li>
+                <li>Access to infrastructure for development.</li>
+                <li>
                     Freedom to explore your own ideas and projects, and the opportunity to pitch them to the collective for feedback and
                     support.
                 </li>
@@ -122,11 +119,12 @@
         <div class="rounded-4xl bg-white p-9 shadow-xl/4">
             <h2 class="mb-4 text-3xl font-bold">What we're looking for</h2>
 
-            <ul class="ml-6 list-disc">
-                <li class="mb-4">Curiosity and a willingness to learn and adapt.</li>
-                <li class="mb-4">Collaboration and working with others.</li>
-                <li class="mb-4">Self-direction, like managing your own work and taking initiative.</li>
-                <li class="mb-4">A belief in ethical user-first experiences.</li>
+            <ul class="ml-6 list-disc space-y-4">
+                <li>Curiosity and a willingness to learn and adapt.</li>
+                <li>Collaboration and working with others.</li>
+                <li>Self-direction, like managing your own work and taking initiative.</li>
+                <li>Experience building real-world applications without relying on GenAI.</li>
+                <li>A belief in ethical user-first experiences.</li>
             </ul>
         </div>
     </div>
