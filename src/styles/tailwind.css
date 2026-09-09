@@ -16,7 +16,7 @@
 
 /* static weights as fallbacks */
 @font-face {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Cabinet Grotesk Fallback';
     src:
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Thin.woff2') format('woff2'),
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Thin.woff') format('woff'),
@@ -28,7 +28,7 @@
 }
 
 @font-face {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Cabinet Grotesk Fallback';
     src:
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Extralight.woff2') format('woff2'),
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Extralight.woff') format('woff'),
@@ -40,7 +40,7 @@
 }
 
 @font-face {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Cabinet Grotesk Fallback';
     src:
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Light.woff2') format('woff2'),
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Light.woff') format('woff'),
@@ -52,7 +52,7 @@
 }
 
 @font-face {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Cabinet Grotesk Fallback';
     src:
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Regular.woff2') format('woff2'),
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Regular.woff') format('woff'),
@@ -64,7 +64,7 @@
 }
 
 @font-face {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Cabinet Grotesk Fallback';
     src:
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Medium.woff2') format('woff2'),
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Medium.woff') format('woff'),
@@ -76,7 +76,7 @@
 }
 
 @font-face {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Cabinet Grotesk Fallback';
     src:
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Bold.woff2') format('woff2'),
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Bold.woff') format('woff'),
@@ -88,7 +88,7 @@
 }
 
 @font-face {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Cabinet Grotesk Fallback';
     src:
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.woff2') format('woff2'),
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.woff') format('woff'),
@@ -100,7 +100,7 @@
 }
 
 @font-face {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Cabinet Grotesk Fallback';
     src:
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Black.woff2') format('woff2'),
         url('/fonts/CabinetGrotesk/CabinetGrotesk-Black.woff') format('woff'),
@@ -130,8 +130,8 @@
     --color-error: #f02d31;
 
     /* Typography */
-    --font-sans: 'Cabinet Grotesk', sans-serif;
-    --font-display: 'Cabinet Grotesk', sans-serif;
+    --font-sans: 'Cabinet Grotesk', "Cabinet Grotesk Fallback", sans-serif;
+    --font-display: 'Cabinet Grotesk', "Cabinet Grotesk Fallback", sans-serif;
     --font-monospace: 'Red Hat Monospace', monospace;
 
     /* Responsiveness */

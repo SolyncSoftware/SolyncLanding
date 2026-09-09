@@ -50,7 +50,7 @@
         <a href="/" class="group inline-block">
             <SolyncLogo
                 iconOnly={true}
-                class="w-20 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black"
+                class="w-15 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black"
             />
         </a>
 
@@ -84,7 +84,7 @@
             {#if isMenuOpen}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2"
+                    class="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -95,7 +95,7 @@
             {:else}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2"
+                    class="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
