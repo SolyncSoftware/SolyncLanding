@@ -74,7 +74,7 @@
     <!-- </div> -->
 
 
-<article class="px-4 py-12 lg:px-10 lg:pt-24 lg:pb-30 flex flex-col gap-14 lg:gap-30">
+<article class="px-4 py-12 lg:px-10 lg:py-30 flex flex-col gap-14 lg:gap-30">
     <section>
         <p
             class="text-3xl md:text-5xl leading-[1.2em] font-semibold text-black md:max-w-260"
@@ -88,17 +88,18 @@
             in.
         </p>
     </section>
-    <section class="space-y-4">
-        <h2 class="text-5xl font-bold">Our projects.</h2>
-        <p class="text-xl font-medium md:max-w-140">
-            We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
-        </p>
+    <section class="space-y-6">
+        <div class="space-y-3">
+            <h2 class="text-5xl font-bold">Our projects.</h2>
+            <p class="text-xl font-medium md:max-w-140">
+                We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
+            </p>
             <div class="flex flex-col gap-3">
                 <a
                     href="/about#our-work"
-                    class="text-accent group flex w-fit items-center gap-2 text-xl font-bold transition-all ease-in-out hover:text-black"
+                    class="text-accent group flex w-fit items-center gap-2 transition-all ease-in-out hover:text-black"
                 >
-                    see more
+                    <p class="text-xl font-bold">See more</p>
                     <img
                         src="/images/arrow-sorange.svg"
                         alt="Arrow"
@@ -107,7 +108,6 @@
                     />
                 </a>
             </div>
-        <div class="flex w-full flex-col items-end">
         </div>
         <OurProjects />
         <!-- <div>
@@ -134,22 +134,36 @@
         <OurTeam />
     </section>
 
-    <section class="space-y-4">
-        <h2 class="text-5xl font-bold">From the Blog.</h2>
-        <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
-        <!-- <div>
+    <section class="space-y-6">
+        <div class="space-y-3">
+            <h2 class="text-5xl font-bold">From the Blog.</h2>
+            <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
+            <!-- <div>
+                <a
+                    href="/blog"
+                    class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
+                    >see more
+                    <img
+                        src="/images/arrow-sorange.svg"
+                        alt="Arrow"
+                        class="w-7 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-1"
+                        loading="lazy"
+                    />
+                </a>
+                </div> -->
             <a
                 href="/blog"
-                class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
-                >see more
+                class="text-accent group flex w-fit items-center gap-2 transition-all ease-in-out hover:text-black"
+            >
+                <p class="text-xl font-bold">See more</p>
                 <img
                     src="/images/arrow-sorange.svg"
                     alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-1"
+                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
                     loading="lazy"
                 />
             </a>
-        </div> -->
+        </div>
         {#if loading}
             <p class="text-xl">Loading articles...</p>
         {:else if blogArticles.length === 0}
@@ -167,20 +181,6 @@
                 {/each}
             </div>
         {/if}
-        <div class="flex w-full flex-col items-end">
-            <a
-                href="/blog"
-                class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
-            >
-                more from the blog
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
-                    loading="lazy"
-                />
-            </a>
-        </div>
     </section>
 
     <!-- may remove this or make it a component. so far its only in the about page -->

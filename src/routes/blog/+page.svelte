@@ -13,9 +13,10 @@
         loading = false;
     });
 </script>
-
-<h1 class="mb-6 text-5xl font-bold text-white">Latest Articles</h1>
-<div class="flex w-full flex-col gap-12">
+<div class="p-4 pt-12 bg-offaccent">
+    <h1 class="text-5xl font-bold text-white leading-oneline">Articles.</h1>
+</div>
+<article class="flex w-full flex-col gap-12">
     {#if loading}
         <p class="text-xl text-white">Loading contents please wait...</p>
     {:else if blogArticles.length === 0}
@@ -45,4 +46,4 @@
             {/if}
         </div>
     {/if}
-</div>
+</article>

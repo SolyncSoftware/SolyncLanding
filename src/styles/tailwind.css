@@ -163,6 +163,13 @@
         transition: all 100ms ease-in-out;
     }
 
+    article {
+        padding: 1rem;
+        @media (min-width: 1024px) {
+            padding: 2.5rem;
+        }
+    }
+
     ::selection {
         background: var(--color-offaccent);
         color: var(--color-white);
@@ -186,6 +193,10 @@
 
 @utility debug {
     outline: 1px solid red;
+}
+
+@utility leading-oneline {
+    line-height: .8em;
 }
 
 /* fix for firefox because thanks firefox */
