@@ -137,6 +137,43 @@
     /* Responsiveness */
     --breakpoint-3xl: 2100px; /* Wide screen */
 }
+/* General styles */
+@layer base {
+    p {
+        font-weight: 450;
+        font-size: 1.125rem;
+    }
+    html {
+        background-color: var(--color-offwhite);
+        color: var(--color-black);
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-height: 100vh;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        min-height: 75vh;
+    }
+
+    a {
+        transition: all 100ms ease-in-out;
+    }
+
+    ::selection {
+        background: var(--color-offaccent);
+        color: var(--color-white);
+        text-shadow: none;
+    }
+
+    ::-moz-selection {
+        background: var(--color-offaccent);
+        color: var(--color-white);
+    }
+}
 
 /* hi, john here. this is here because font-display needs to be bolded. thats all */
 .font-display {
@@ -147,50 +184,11 @@
     font-weight: 450;
 }
 
-/* General styles */
-
-html {
-    background-color: var(--color-offwhite);
-    color: var(--color-black);
-    scroll-behavior: smooth;
-}
-
-body {
-    min-height: 100vh;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    min-height: 75vh;
-}
-
-a {
-    transition: all 100ms ease-in-out;
-}
-
-p {
-    font-weight: 450;
-    font-size: 1.125em;
-    line-height: 1.25em;
-}
-
-::selection {
-    background: var(--color-offaccent);
-    color: var(--color-white);
-    text-shadow: none;
-}
-
-::-moz-selection {
-    background: var(--color-offaccent);
-    color: var(--color-white);
-}
-
 .debug {
     outline: 1px solid red;
 }
 
 /* fix for firefox because thanks firefox */
-.unicorn-embed canvas {
-    border-radius: 32px;
-}
+/*.unicorn-embed canvas {
+    /*border-radius: 32px;*/
+/*}*/

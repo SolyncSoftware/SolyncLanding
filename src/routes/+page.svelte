@@ -23,16 +23,16 @@
     });
 </script>
 
-<section class="flex flex-col gap-14">
-    <div
+<div class="flex flex-col">
+    <!-- <div
         class="text-white"
         use:rs={{
             animation: 'fade-up',
             duration: 1000,
             repeat: false
         }}
-    >
-        <Hero innerClass="flex flex-col gap-4">
+    > -->
+        <Hero innerClass="flex flex-col gap-4 text-white">
             <div class="flex flex-col gap-3 md:max-w-147">
                 <h1 class="text-6xl leading-[1em] font-light md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
                 <p class="font-medium">
@@ -71,25 +71,45 @@
                 </a>
             </div>
         </Hero>
-    </div>
+    <!-- </div> -->
 
-    <!-- <p
-        class="text-5xl leading-16 font-bold text-black md:max-w-260"
-        use:rs={{
-            animation: 'fade',
-            duration: 1000,
-            repeat: false
-        }}
-    >
-        We're a group of hobbyists who believe in <span class="text-accent">worker-managed software</span> and create things we collectively believe
-        in.
-    </p> -->
 
-    <div class="space-y-4">
+<article class="px-4 py-12 lg:px-10 pt-24 pb-30 flex flex-col gap-14">
+    <section>
+        <p
+            class="text-3xl md:text-5xl leading-[1.2em] font-semibold text-black md:max-w-260"
+            use:rs={{
+                animation: 'fade',
+                duration: 1000,
+                repeat: false
+            }}
+        >
+            We're a group of hobbyists who believe in <span class="text-accent">worker-managed software</span> and create things we collectively believe
+            in.
+        </p>
+    </section>
+    <section class="space-y-4">
         <h2 class="text-5xl font-bold">Our projects.</h2>
         <p class="text-xl font-medium md:max-w-140">
             We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
         </p>
+            <div class="flex flex-col gap-3">
+                <a
+                    href="/about#our-work"
+                    class="text-accent group flex w-fit items-center gap-2 text-xl font-bold transition-all ease-in-out hover:text-black"
+                >
+                    see more
+                    <img
+                        src="/images/arrow-sorange.svg"
+                        alt="Arrow"
+                        class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
+                        loading="lazy"
+                    />
+                </a>
+            </div>
+        <div class="flex w-full flex-col items-end">
+        </div>
+        <OurProjects />
         <!-- <div>
             <a
                 href="/about#our-work"
@@ -103,33 +123,18 @@
                 />
             </a>
         </div> -->
-        <OurProjects />
-        <div class="flex w-full flex-col items-end">
-            <a
-                href="/about#our-work"
-                class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
-            >
-                see more projects
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
-                    loading="lazy"
-                />
-            </a>
-        </div>
-    </div>
+    </section>
 
-    <div class="space-y-4">
+    <section class="space-y-4">
         <h2 class="text-5xl font-bold">Meet the team.</h2>
         <p class="text-xl font-medium md:max-w-110">
             The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a>, and help
             build what's next, together.
         </p>
         <OurTeam />
-    </div>
+    </section>
 
-    <div class="space-y-4">
+    <section class="space-y-4">
         <h2 class="text-5xl font-bold">From the Blog.</h2>
         <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
         <!-- <div>
@@ -176,11 +181,12 @@
                 />
             </a>
         </div>
-    </div>
+    </section>
 
     <!-- may remove this or make it a component. so far its only in the about page -->
-    <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
+    <!-- <section class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
         <p>Building what comes next, together.</p>
         <SolyncLogo iconOnly={true} class="fill-accent w-30" />
-    </div>
-</section>
+    </section> -->
+</article>
+</div>

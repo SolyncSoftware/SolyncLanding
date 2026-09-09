@@ -36,8 +36,8 @@
 <!-- {#if showAnnouncement == true}
     <AnnouncementContainer />
 {/if} -->
-
-<header class={`p-4 absolute top-0 z-2434 w-full flex items-center justify-between`}>
+<!-- this functions as basically a traditional nav  -->
+<header class={`p-4 bg-offaccent top-0 z-2434 w-full flex items-center justify-between`}>
     <!-- Logo -->
     <div
         class="flex w-full flex-row items-center gap-7 sm:w-auto"
@@ -122,7 +122,7 @@
 
 <!-- mobile menu -->
 {#if isMenuOpen}
-    <div id="mobile-menu" class="bg-accent -mt-30 px-5 pb-40 sm:hidden" transition:slide={{ duration: 400, easing: quartInOut }}>
+    <div id="mobile-menu" class="bg-offaccent pt-4 px-4 pb-4 sm:hidden z-2434" transition:slide={{ duration: 400, easing: quartInOut }}>
         <nav class="flex flex-col items-start gap-7">
             <ButtonSimple
                 href="/"
