@@ -45,10 +45,7 @@
     async function handleSubmit(formData: Record<string, string>) {
         const file = selectedFile;
 
-        // if (!file) {
-        //     fileError = 'Please attach a file!';
-        //     throw new Error('Please attach a file.');
-        // }
+        fileError = null;
 
         // put the frontend's formData into a payload.
         const payload = new FormData();
@@ -56,8 +53,10 @@
             payload.append(key, value);
         }
 
-        // include the file in the payload.
-        // payload.append('resume', file, file.name);
+        // include the file in the payload when provided.
+        if (file) {
+            payload.append('resume', file, file.name);
+        }
 
         const res = await fetch('/api/apply', {
             method: 'POST',
@@ -66,7 +65,8 @@
         const result = await res.json();
 
         if (!res.ok) {
-            throw new Error(result.error || 'Error submitting form.');
+            const message = typeof result.error === 'string' ? result.error : 'Error submitting form.';
+            throw new Error(message);
         }
     }
 </script>
@@ -250,26 +250,25 @@
                         },
                         {
                             name: 'message',
-                            label: 'Portfolio / Website or Resume',
-                            placeholder: 'Link to your portfolio or website or resume',
+                            label: 'Portfolio / Website (optional if you attach a resume)',
+                            placeholder: 'Link to your portfolio or website',
                             type: 'url',
                             rows: 1,
-                            required: true,
                             span: 2
                         }
                     ]}
                     onsubmit={handleSubmit}
                 />
-                <!-- <div class="flex w-full flex-col gap-2">
+                <div class="flex w-full flex-col gap-2">
                     <label for="fileInput">
-                        Attach your resume (.doc, .docx, .pdf). Must be less than 10MB.<span class="text-accent">*</span>
+                        Attach your resume (.doc, .docx, .pdf). Must be less than 10MB. Leave blank if you already linked a portfolio or
+                        website.
                     </label>
                     <input
                         type="file"
                         id="fileInput"
                         name="resume"
                         form="apply-form"
-                        required
                         accept=".doc,.docx,.pdf"
                         class="file:bg-offaccent file:rounded-full file:px-8 file:py-3 file:text-white file:transition-all file:hover:cursor-pointer file:hover:bg-black"
                         onchange={handleFileChange}
@@ -277,7 +276,7 @@
                     {#if fileError}
                         <p class="text-error">{fileError}</p>
                     {/if}
-                </div> -->
+                </div>
             </div>
 
             <div class="flex w-full min-w-0 flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">

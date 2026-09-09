@@ -24,17 +24,19 @@ export const POST: RequestHandler = async ({ request }) => {
             worked_on: rawData.get('message_one'),
             doing_now: rawData.get('message_two'),
             skills: rawData.get('message_three'),
-            why_solync: rawData.get('message_four')
-            // resume: rawData.get('resume')
+            why_solync: rawData.get('message_four'),
+            resume: rawData.get('resume')
         };
         const validationResult = applySchema.safeParse(candidate);
 
         if (!validationResult.success) {
-            throw new Error('Invalid input fields', { cause: { statusCode: 400 } });
+            const firstError = validationResult.error.issues[0]?.message || 'Invalid input fields';
+            throw new Error(firstError, { cause: { statusCode: 400 } });
         }
         const data = validationResult.data;
         console.log(data);
-        // const resume = data.resume;
+        const resume = data.resume;
+        const portfolio = data.message ?? 'No portfolio/website provided';
 
         const discordPayload = {
             allowed_mentions: { parse: [] },
@@ -50,7 +52,7 @@ export const POST: RequestHandler = async ({ request }) => {
                         { name: 'Doing Now', value: data.doing_now },
                         { name: 'Skills', value: data.skills },
                         { name: 'Why Solync', value: data.why_solync },
-                        { name: 'Portfolio', value: data.message }
+                        { name: 'Portfolio / Website', value: portfolio }
                     ],
                     timestamp: new Date().toISOString()
                 }
@@ -59,11 +61,14 @@ export const POST: RequestHandler = async ({ request }) => {
 
         const discordForm = new FormData();
         discordForm.append('payload_json', JSON.stringify(discordPayload));
-        // discordForm.append(
-        //     'files[0]',
-        //     resume,
-        //     `Resume ${data.name} ${new Date().toLocaleDateString('en-CA')}.${resume.name.split('.').pop()}`
-        // );
+
+        if (resume) {
+            discordForm.append(
+                'files[0]',
+                resume,
+                `Resume ${data.name} ${new Date().toLocaleDateString('en-CA')}.${resume.name.split('.').pop()}`
+            );
+        }
 
         const discordResponse = await fetch(APPLY_PAGE_HOOK, {
             method: 'POST',
