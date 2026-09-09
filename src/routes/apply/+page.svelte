@@ -45,10 +45,10 @@
     async function handleSubmit(formData: Record<string, string>) {
         const file = selectedFile;
 
-        if (!file) {
-            fileError = 'Please attach a file!';
-            throw new Error('Please attach a file.');
-        }
+        // if (!file) {
+        //     fileError = 'Please attach a file!';
+        //     throw new Error('Please attach a file.');
+        // }
 
         // put the frontend's formData into a payload.
         const payload = new FormData();
@@ -57,7 +57,7 @@
         }
 
         // include the file in the payload.
-        payload.append('resume', file, file.name);
+        // payload.append('resume', file, file.name);
 
         const res = await fetch('/api/apply', {
             method: 'POST',
@@ -250,8 +250,8 @@
                         },
                         {
                             name: 'message',
-                            label: 'Portfolio / Website',
-                            placeholder: 'Link to your portfolio or website',
+                            label: 'Portfolio / Website or Resume',
+                            placeholder: 'Link to your portfolio or website or resume',
                             type: 'url',
                             rows: 1,
                             required: true,
@@ -260,7 +260,7 @@
                     ]}
                     onsubmit={handleSubmit}
                 />
-                <div class="flex w-full flex-col gap-2">
+                <!-- <div class="flex w-full flex-col gap-2">
                     <label for="fileInput">
                         Attach your resume (.doc, .docx, .pdf). Must be less than 10MB.<span class="text-accent">*</span>
                     </label>
@@ -277,7 +277,7 @@
                     {#if fileError}
                         <p class="text-error">{fileError}</p>
                     {/if}
-                </div>
+                </div> -->
             </div>
 
             <div class="flex w-full min-w-0 flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
