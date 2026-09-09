@@ -143,6 +143,10 @@
     font-weight: bold;
 }
 
+.font-book { /* for use with paragraphs; Regular seems too thin for body text */
+    font-weight: 450;
+}
+
 /* General styles */
 
 html {
@@ -163,6 +167,12 @@ main {
 
 a {
     transition: all 100ms ease-in-out;
+}
+
+p {
+    font-weight: 450;
+    font-size: 1.125em;
+    line-height: 1.25em;
 }
 
 ::selection {

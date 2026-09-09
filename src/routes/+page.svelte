@@ -10,6 +10,7 @@
     import Button from '$lib/components/Button.svelte';
     import { SiDiscord, SiGithub } from '@icons-pack/svelte-simple-icons';
     import { Mail } from '@lucide/svelte';
+    import Hero from '$lib/components/assets/Hero.svelte';
 
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
@@ -31,21 +32,18 @@
             repeat: false
         }}
     >
-        <PageContainer>
-            <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
-            <h1 class="text-4xl font-medium md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-            <p class="mt-4 text-2xl font-medium md:max-w-170">
-                We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.
-            </p>
-            <p class="mt-4 text-2xl font-medium md:max-w-170">
-                We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
-                ethical. We collaborate to create what's next.
-            </p>
+        <Hero innerClass="flex flex-col gap-4">
+            <div class="flex flex-col gap-3 md:max-w-147">
+                <h1 class="text-6xl leading-[1em] font-light md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+                <p class="font-medium">
+                    We’re an independent software collective creating user-first experiences. We collaborate to create what’s next.
+                </p>
+            </div>
 
-            <div class="mt-4 flex flex-col items-center gap-4 align-middle sm:flex-row">
+            <div class="flex flex-row flex-wrap items-center gap-2 align-middle sm:flex-row">
                 <Button
-                    class="bg-offwhite text-accent! hover:bg-offwhite w-fit self-center! px-14 text-xl! font-bold shadow-none
-         transition-all hover:-translate-y-1 
+                    class="bg-offwhite text-accent! hover:bg-offwhite w-fit self-center! text-xl! font-bold shadow-none
+         transition-all hover:-translate-y-1
          hover:shadow-[0_5px_0px_#00000022]"
                     href="/about"
                     text="Learn more"
@@ -72,7 +70,7 @@
                     ><Mail />
                 </a>
             </div>
-        </PageContainer>
+        </Hero>
     </div>
 
     <!-- <p

@@ -37,7 +37,7 @@
     <AnnouncementContainer />
 {/if} -->
 
-<header class="bg-accent flex w-full items-center justify-between px-5 pt-6 pb-40 2xl:px-70">
+<header class={`p-4 absolute top-0 z-2434 w-full flex items-center justify-between`}>
     <!-- Logo -->
     <div
         class="flex w-full flex-row items-center gap-7 sm:w-auto"
