@@ -13,7 +13,7 @@
         loading = false;
     });
 </script>
-<div class="p-4 pt-12 bg-offaccent">
+<div class="p-4 pt-12 lg:p-10 bg-offaccent">
     <h1 class="text-5xl font-bold text-white leading-oneline">Articles.</h1>
 </div>
 <article class="flex w-full flex-col gap-12">

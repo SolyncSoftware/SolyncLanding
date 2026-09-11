@@ -141,7 +141,6 @@
 @layer base {
     p {
         font-weight: 450;
-        font-size: 1.125rem;
     }
     html {
         background-color: var(--color-offwhite);

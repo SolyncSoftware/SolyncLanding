@@ -20,7 +20,7 @@
     }
 </script>
 
-<section class="flex flex-col gap-4">
+<section class="flex flex-col gap-3">
     {#if loading}
         <p class="text-xl">Loading team members...</p>
     {:else if sortedMembers.length === 0}

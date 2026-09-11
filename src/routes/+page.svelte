@@ -32,10 +32,11 @@
             repeat: false
         }}
     > -->
-        <Hero innerClass="flex flex-col gap-4 text-white">
+        <Hero innerClass="flex flex-col gap-4 text-white w-fit">
+            <!-- <div class="debug absolute top-0 left-0 w-full h-full bg-amber-950"></div> -->
             <div class="flex flex-col gap-3 md:max-w-147">
-                <h1 class="text-6xl leading-[1em] font-light md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-                <p class="font-medium">
+                <h1 class="text-6xl leading-[0.9em] font-light">Building what comes next, <span class="font-extrabold">together.</span></h1>
+                <p class="font-medium text-xl">
                     We’re an independent software collective creating user-first experiences. We collaborate to create what’s next.
                 </p>
             </div>
