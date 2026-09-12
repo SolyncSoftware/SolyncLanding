@@ -13,28 +13,26 @@
     const { title, description, link, category, image }: Props = $props();
 </script>
 
-<div
-    class="z-1 flex min-h-118 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition"
-    use:rs={{
-        animation: 'fade-up',
-        duration: 800,
-        repeat: false,
-        delay: 0,
-        offset: 0
-    }}
->
-    <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-3xl p-5 text-lg">
-        <enhanced:img src={image} alt={title} class="absolute inset-0 -z-1 h-full w-full object-cover" loading="lazy" decoding="async" />
-        <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
+<a href={link}>
+    <div
+        class="z-1 flex min-h-118 rounded-4xl bg-white p-2 text-white transition cardshadow-large"
+        use:rs={{
+            animation: 'fade-up',
+            duration: 800,
+            repeat: false,
+            delay: 0,
+            offset: 0
+        }}
+    >
+        <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-3xl p-5 text-lg">
+            <enhanced:img src={image} alt={title} class="absolute inset-0 -z-1 h-full w-full object-cover" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
 
-        <div>
-            <h3 class="text-accent text-3xl font-bold tracking-wide">{title}</h3>
-            <p class="-mt-1.5 text-base font-light tracking-wide text-white/60">{category}</p>
-        </div>
-        <p>{description}</p>
-
-        <div class="flex gap-3">
-            <ButtonSimple text="Read more" href={link} class="self-start text-lg! hover:text-white" />
+            <div>
+                <h3 class="text-accent text-3xl font-bold tracking-wide">{title}</h3>
+                <p class="-mt-1.5 text-base font-light tracking-wide text-white/60">{category}</p>
+            </div>
+            <p>{description}</p>
         </div>
     </div>
-</div>
+</a>

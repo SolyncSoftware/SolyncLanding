@@ -10,7 +10,7 @@
     (project.website !== "#") ? project.website :
     (project.github !== "#") ? project.github : ""}>
     <div
-        class="project__card z-1 flex min-h-118 rounded-3xl bg-white p-1 text-white transition"
+        class="project__card z-1 flex min-h-118 rounded-3xl bg-white p-1 text-white transition cardshadow-large"
         use:rs={{
             animation: 'fade-up',
             duration: 800,
@@ -19,7 +19,7 @@
             offset: 0
         }}
     >
-        <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-[1.25rem] p-4 text-lg">
+        <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-[20px] p-6 text-lg">
             <enhanced:img
                 src={project.imageSrc}
                 alt={project.title}
@@ -46,10 +46,3 @@
             </div>
     </div>
 </a>
-<style>
-    .project__card {
-        box-shadow:
-            0 -2px 32px 0 rgb(0 0 0 / 16%),
-            0 8px 32px 0 rgb(243 101 70 / 32%);
-    }
-</style>

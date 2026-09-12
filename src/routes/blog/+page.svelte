@@ -23,27 +23,17 @@
         <p class="text-error text-xl">No articles found!</p>
     {:else}
         <div class="flex flex-col gap-4">
-            <LargePost
-                title={blogArticles[0].title}
-                description={blogArticles[0].description}
-                link={blogArticles[0].slug}
-                category={blogArticles[0].categories[0]}
-                image={blogArticles[0].image || '/images/articles/fallback.png'}
-            />
-
-            {#if blogArticles.length > 1}
-                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-                    {#each blogArticles.slice(1) as article (article.slug)}
-                        <SmallPost
-                            title={article.title}
-                            description={article.description}
-                            link={article.slug}
-                            category={article.categories[0]}
-                            image={article.image || '/images/articles/fallback.png'}
-                        />
-                    {/each}
-                </div>
-            {/if}
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:[&>*:first-child]:col-span-2">
+                {#each blogArticles as article (article.slug)}
+                    <SmallPost
+                        title={article.title}
+                        description={article.description}
+                        link={article.slug}
+                        category={article.categories[0]}
+                        image={article.image || '/images/articles/fallback.png'}
+                    />
+                {/each}
+            </div>
         </div>
     {/if}
 </article>

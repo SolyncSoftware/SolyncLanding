@@ -198,6 +198,12 @@
     line-height: .8em;
 }
 
+@utility cardshadow-large {
+    box-shadow:
+        0 -2px 32px 0 rgb(0 0 0 / 16%),
+        0 8px 32px 0 rgb(243 101 70 / 32%);
+}
+
 /* fix for firefox because thanks firefox */
 /*.unicorn-embed canvas {
     /*border-radius: 32px;*/
