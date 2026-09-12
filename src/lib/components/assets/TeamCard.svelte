@@ -37,7 +37,7 @@
         ]}
     >
         <enhanced:img
-            class={['w-14 aspect-square rounded-lg outline-2 transition', expanded ? 'outline-accent outline' : 'outline outline-transparent']}
+            class={['w-14 aspect-square rounded-xl outline-2 transition', expanded ? 'outline-accent outline' : 'outline outline-transparent']}
             loading="lazy"
             src={member.avatarSrc}
             alt={member.realName}
