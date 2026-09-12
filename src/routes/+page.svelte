@@ -15,6 +15,8 @@
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
 
+    // why CSR?
+
     onMount(async () => {
         const res = await fetch('/api/articles?type=blog'),
             articles: Article[] = await res.json();
