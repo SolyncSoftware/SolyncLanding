@@ -20,6 +20,10 @@ To begin development and testing locally, please follow these steps in your term
 - Open source
 - Internal initiative-driven tasks with a [Kanban Board](https://github.com/orgs/SolyncSoftware/projects/5/views/1).
 
+## Tests
+
+The tests are in the `test` directory. Since it wasn't working with the main project's dependencies, it is another bun project. While within the `test` directory, you can run tests with `bun i` then `bun run test`.
+
 ## Resources
 
 - [SvelteKit documentation](https://kit.svelte.dev/docs)
