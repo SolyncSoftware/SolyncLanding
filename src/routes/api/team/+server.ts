@@ -39,13 +39,6 @@ const teamData: TeamMember[] = [
         bsky: 'pastaya.dev',
         bio: 'German-branded GNU Emacs zealot. I\'m the Nix guy around here, and I also enjoy high-level and low-level programming like C++, and I dabble in Elixir and other FP languages. My C++ knowledge is probably pretty respectable on the Bjarne Scale. As Alan J. Perlis once said: "A language that doesn\'t affect the way you think about programming, is not worth knowing."'
     },
-    // {
-    //     id: 102817779,
-    //     realName: 'Sup',
-    //     username: 'Sup#2.0',
-    //     github: 'Sup2point0',
-    //     bio: "I interned at CERN working on the Hadron Collider. Now I'm at Solync."
-    // },
     {
         id: 33783503,
         realName: 'Archie',
