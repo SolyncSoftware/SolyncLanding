@@ -39,13 +39,13 @@ const teamData: TeamMember[] = [
         bsky: 'pastaya.dev',
         bio: 'German-branded GNU Emacs zealot. I\'m the Nix guy around here, and I also enjoy high-level and low-level programming like C++, and I dabble in Elixir and other FP languages. My C++ knowledge is probably pretty respectable on the Bjarne Scale. As Alan J. Perlis once said: "A language that doesn\'t affect the way you think about programming, is not worth knowing."'
     },
-    {
-        id: 102817779,
-        realName: 'Sup',
-        username: 'Sup#2.0',
-        github: 'Sup2point0',
-        bio: "I interned at CERN working on the Hadron Collider. Now I'm at Solync."
-    },
+    // {
+    //     id: 102817779,
+    //     realName: 'Sup',
+    //     username: 'Sup#2.0',
+    //     github: 'Sup2point0',
+    //     bio: "I interned at CERN working on the Hadron Collider. Now I'm at Solync."
+    // },
     {
         id: 33783503,
         realName: 'Archie',
@@ -77,6 +77,14 @@ const teamData: TeamMember[] = [
         github: 'LizAinslie',
         bsky: 'mey.yuri.capital',
         bio: 'Full-stack, backend & Kotlin engineer passionate about decentralized, privacy focused technology and user freedom. Obsessed with polish & performance. In my free time I like playing games & watching anime with my friends, reading manga, and making music.'
+    },
+    {
+        id: 64609869,
+        realName: 'Ellie',
+        username: 'p1k0chu',
+        github: 'p1k0chu',
+        bsky: 'p1kachu.bsky.social',
+        bio: "Hi, I'm Ellie! I am a self-taught passionate software engineer from Ukraine. Big fan of Kotlin, I live in the terminal. I like poetry and listen to music all the time!"
     },
     {
         id: 155797753,
