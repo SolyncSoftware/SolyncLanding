@@ -40,6 +40,13 @@ const teamData: TeamMember[] = [
         bio: 'German-branded GNU Emacs zealot. I\'m the Nix guy around here, and I also enjoy high-level and low-level programming like C++, and I dabble in Elixir and other FP languages. My C++ knowledge is probably pretty respectable on the Bjarne Scale. As Alan J. Perlis once said: "A language that doesn\'t affect the way you think about programming, is not worth knowing."'
     },
     {
+        id: 102817779,
+        realName: 'Sup',
+        username: 'Sup#2.0',
+        github: 'Sup2point0',
+        bio: "I'm a creator, developer, musician, and nerd. I love reading, writing, worldbuilding and words. I dream of maths and chemistry after dark, but computer science is the one that's stolen my heart. I'm also a jack-of-all-knives, none of a kind, kind of a none, just having fun. :)"
+    },
+    {
         id: 33783503,
         realName: 'Archie',
         username: 'Tanza',
