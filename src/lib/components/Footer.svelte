@@ -27,8 +27,8 @@
             links: [
                 // { name: 'Privacy Policy', href: '/legal/privacy' },
                 // { name: 'Terms of Service', href: '/legal/terms' },
-                { name: 'Contact us', href: '/contact' },
-                { name: 'Status Page', href: 'https://status.solync.org', external: true }
+                { name: 'Solync Status', href: 'https://status.solync.org', external: true },
+                { name: 'Contact us', href: '/contact' }
             ]
         }
     ]);
