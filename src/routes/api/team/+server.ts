@@ -87,6 +87,14 @@ const teamData: TeamMember[] = [
         bio: "Hi, I'm Ellie! I am a self-taught passionate software engineer from Ukraine. Big fan of Kotlin, I live in the terminal. I like poetry and listen to music all the time!"
     },
     {
+        id: 53254254,
+        realName: 'Vivian',
+        username: 'vivivivixen',
+        github: 'emifloofy',
+        bsky: 'emi.floo.fyi',
+        bio: "Based in Czechia, I'm a self-taught software developer, designer, sysadmin and artist who simply enjoys making things. Obsessed with frontend design and accessibility, with a soft spot for elegant solutions. I also love precision games and music!"
+    },
+    {
         id: 155797753,
         realName: 'Team Solync',
         username: 'Solync',
