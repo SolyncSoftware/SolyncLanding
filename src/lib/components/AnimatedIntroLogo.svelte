@@ -17,7 +17,7 @@
 </script>
 
 <!-- {#if visible}
-    <div class="fullpage-intro">
+    <div class="fullpage-intro" aria-hidden="true">
         <div class="logo-wrapper">
             <svg class="solync-logo" viewBox="0 0 1665 665" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <g class="solync-wordmark">
@@ -37,53 +37,42 @@
 {/if} -->
 
 <style>
-    @keyframes icon-main-fadein {
+    @keyframes logo-stage {
         from {
             opacity: 0;
+            transform: scale(0.86);
         }
         to {
             opacity: 1;
-        }
-    }
-
-    @keyframes border-zoom {
-        from {
-            transform: scale(12);
-        }
-        to {
             transform: scale(1);
         }
     }
 
-    @keyframes dash {
-        to {
-            stroke-dashoffset: 0;
+    @keyframes icon-push {
+        0% {
+            opacity: 1;
+            transform: translateX(32.3%) scale(1);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
         }
     }
 
-    @keyframes wordmark-reveal {
+    @keyframes wordmark-push {
         0% {
-            mask-position: 0%;
+            opacity: 0;
+            transform: translateX(-53%) scale(0.86);
         }
         100% {
-            mask-position: 100%;
-        }
-    }
-
-    @keyframes fullpage-zoom {
-        0% {
-            transform: scale(2);
-        }
-        100% {
-            transform: scale(1);
+            opacity: 1;
+            transform: translateX(0) scale(1);
         }
     }
 
     @keyframes fullpage-fadeout {
-        0% {
-            opacity: 1;
-        }
-        90% {
+        0%,
+        84% {
             opacity: 1;
         }
         100% {
@@ -91,56 +80,74 @@
         }
     }
 
-    /* .fullpage-intro {
+    .fullpage-intro {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        overflow: hidden;
         display: flex;
-        background: var(--color-white);
+        background: var(--color-black);
         z-index: 920;
         align-items: center;
         justify-content: center;
-        animation:
-        fullpage-fadeout 4.8s
-        cubic-bezier(0, 0.033, 1, 1.009) forwards;
+        isolation: isolate;
+        animation: fullpage-fadeout 4.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
         animation-delay: 0.2s;
         animation-fill-mode: both;
         pointer-events: none;
     }
 
-    .fullpage-intro::before {
+    .fullpage-intro::before,
+    .fullpage-intro::after {
         content: '';
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        aspect-ratio: 1/1;
-        background: var(--color-white);
-        filter: blur(140px);
-        opacity: 1;
-        animation:
-            gradient-fadein 1.8s cubic-bezier(0.555, 0.268, 0.311, 0.939) forwards,
-            spin 12s linear infinite;
-        animation-delay: 0.2s;
-        animation-fill-mode: both;
+        inset: 0;
+        pointer-events: none;
     }
 
+    .fullpage-intro::after {
+        background: var(--color-white);
+        z-index: 1;
+    }
     .fullpage-intro .logo-wrapper {
+        position: relative;
+        z-index: 3;
         display: flex;
         align-items: center;
         gap: 5px;
-        animation: border-zoom 1.8s cubic-bezier(0.872, 0.012, 0, 1.002) forwards;
-        animation-delay: 0.2s;
-        animation-fill-mode: both;
+        animation: logo-stage 0.9s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+        transform-origin: center;
+    }
+
+    .fullpage-intro .solync-icon {
+        transform-box: view-box;
+        transform-origin: center;
+        animation: icon-push 1.1s 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .fullpage-intro .solync-wordmark {
+        transform-box: view-box;
+        transform-origin: center;
+        animation: wordmark-push 1.1s 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
     .fullpage-intro .solync-logo {
-        height: 164px;
+        height: clamp(94px, 18vw, 164px);
+        max-width: 84vw;
         width: auto;
         color: var(--color-accent);
-    } */
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .fullpage-intro,
+        .fullpage-intro .logo-wrapper,
+        .fullpage-intro .solync-icon,
+        .fullpage-intro .solync-wordmark,
+        .fullpage-intro .solync-logo {
+            animation-duration: 0.01ms;
+            animation-iteration-count: 1;
+        }
+    }
 </style>
