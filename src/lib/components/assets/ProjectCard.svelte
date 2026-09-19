@@ -19,7 +19,7 @@
             offset: 0
         }}
     >
-        <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-[20px] p-6 text-lg">
+        <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-[20px] p-5 text-lg">
             <enhanced:img
                 src={project.imageSrc}
                 alt={project.title}

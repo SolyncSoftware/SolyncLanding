@@ -15,7 +15,8 @@
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
 
-    // why CSR?
+    // why is it client-side?
+    // TODO: Implement SvelteKit's SSR
 
     onMount(async () => {
         const res = await fetch('/api/articles?type=blog'),
