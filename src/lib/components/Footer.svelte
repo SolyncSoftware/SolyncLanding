@@ -2,6 +2,7 @@
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
     import SolyncLogo from './SolyncLogo.svelte';
     import Button from './Button.svelte';
+    import ButtonNew from './ButtonNew.svelte';
 
     let footerSections = $state([
         {
@@ -56,10 +57,10 @@
     </a>
 
     <!-- Three bold statements -->
-    <div class="mb-18 flex flex-col gap-3 text-center text-2xl font-bold sm:text-4xl md:text-6xl">
-        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">We're an independent software collective</p>
-        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">creating user-first experiences.</p>
-        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">Building what comes next, together.</p>
+    <div class="mb-18 flex flex-col gap-4 text-2xl font-light sm:text-4xl md:text-6xl">
+        <p class=" w-full">We're an independent software collective</p>
+        <p class="w-full">creating user-first experiences.</p>
+        <p class="w-full font-black">Building what comes next, together.</p>
     </div>
 
     <!-- Main footer grid -->
@@ -73,8 +74,9 @@
             </a>
 
             <div class="mt-auto flex w-full flex-col items-center gap-4 text-center font-bold sm:flex-row sm:text-left">
-                <span>Join us on our journey!</span>
-                <Button class="w-full hover:bg-white hover:text-black sm:w-fit" href="/apply" text="Apply to Solync" />
+                <ButtonNew href="/apply">
+                    <span class="leading-5 font-black">Join us on our journey!</span><span class="leading-5">Apply now</span>
+                </ButtonNew>
             </div>
 
             <ul class="flex flex-row items-center gap-4">
@@ -99,7 +101,7 @@
             <div class="flex flex-wrap justify-center gap-8 md:gap-14 xl:justify-end">
                 {#each footerSections as section}
                     <div class="flex flex-col gap-4 text-center sm:text-left">
-                        <span class="font-display text-accent w-auto">
+                        <span class="text-accent w-auto font-black">
                             {section.title}
                         </span>
                         <nav class="flex flex-col gap-3 text-white/75 sm:gap-4">
