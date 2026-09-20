@@ -6,11 +6,9 @@
     let { project } = $props();
 </script>
 
-<a href={(project.page !== "#") ? project.page :
-    (project.website !== "#") ? project.website :
-    (project.github !== "#") ? project.github : ""}>
+<a href={project.page !== '#' ? project.page : project.website !== '#' ? project.website : project.github !== '#' ? project.github : ''}>
     <div
-        class="project__card z-1 flex min-h-118 rounded-3xl bg-white p-1 text-white transition cardshadow-large"
+        class="project__card cardshadow-large z-1 flex min-h-118 rounded-3xl bg-white p-1 text-white transition"
         use:rs={{
             animation: 'fade-up',
             duration: 800,
@@ -28,11 +26,11 @@
                 decoding="async"
             />
             <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
-                <div class="">
-                    <h3 class="text-2xl font-bold leading-[1.25em]">{project.title}</h3>
-                    <p class="text-xl font-book leading-[1.25em]">{project.desc}</p>
-                </div>
-                <!-- <div class="flex gap-3">
+            <div class="">
+                <h3 class="text-2xl leading-[1.25em] font-bold">{project.title}</h3>
+                <p class="font-book text-xl leading-[1.25em]">{project.desc}</p>
+            </div>
+            <!-- <div class="flex gap-3">
                     {#if project.page !== '#'}
                         <ButtonSimple text="Case Study" href={project.page} class="self-start text-lg! hover:text-white" />
                     {/if}
@@ -43,6 +41,6 @@
                         <ButtonSimple text="GitHub" href={project.github} target="_blank" class="self-start text-lg! hover:text-white" />
                     {/if}
                 </div> -->
-            </div>
+        </div>
     </div>
 </a>

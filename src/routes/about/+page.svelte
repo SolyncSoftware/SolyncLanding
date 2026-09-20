@@ -1,10 +1,14 @@
 <script lang="ts">
+    import type { PageProps } from './$types.js';
     import OurPartners from '$lib/components/about/OurPartners.svelte';
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import Button from '$lib/components/Button.svelte';
     import Hero from '$lib/components/assets/Hero.svelte';
+    import ProjectCard from '$lib/components/assets/ProjectCard.svelte';
+
+    const { data }: PageProps = $props();
 </script>
 
 <div class="flex flex-col">
@@ -120,6 +124,11 @@
                     We’re constantly building what’s next. Our project starts as pitches from anyone within the collective. We iterate,
                     refine, and collaborate until a project is something we’re excited to ship.
                 </p>
+            </div>
+            <div class="flex h-72 flex-row gap-4 overflow-y-scroll lg:col-span-3 [&_*]:shrink-0 [&_*]:basis-144">
+                {#each data.projects as project}
+                    <ProjectCard {project} />
+                {/each}
             </div>
         </section>
         <section class="mainsection--grid">
