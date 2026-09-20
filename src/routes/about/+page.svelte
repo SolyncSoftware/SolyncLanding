@@ -23,7 +23,7 @@
             </div>
         </div>
     </Hero>
-    <article class="space-y-14 py-12 text-xl lg:space-y-30 lg:py-24">
+    <article class="space-y-14 text-xl lg:space-y-30 lg:py-24">
         <!-- <section class="flex flex-col gap-14">
             <div class="grid grid-cols-1 gap-4 text-lg md:grid-cols-2 lg:grid-cols-2">
                 <div class="rounded-4xl bg-white p-9 shadow-xl/4">

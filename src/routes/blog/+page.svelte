@@ -13,8 +13,9 @@
         loading = false;
     });
 </script>
-<div class="p-4 pt-12 lg:p-10 bg-offaccent">
-    <h1 class="text-5xl font-bold text-white leading-oneline">Articles.</h1>
+
+<div class="bg-offaccent -mx-70 p-4 pt-12 lg:p-10">
+    <h1 class="leading-oneline text-5xl font-bold text-white">Articles.</h1>
 </div>
 <article class="flex w-full flex-col gap-12">
     {#if loading}

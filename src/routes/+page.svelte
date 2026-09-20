@@ -77,7 +77,7 @@
     </Hero>
     <!-- </div> -->
 
-    <article class="flex flex-col gap-14 px-4 py-12 lg:gap-30 lg:px-10 lg:py-30">
+    <article class="flex flex-col gap-14 lg:gap-30">
         <section>
             <p
                 class="text-3xl leading-[1.2em] font-semibold text-black md:max-w-260 md:text-5xl"

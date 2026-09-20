@@ -29,7 +29,7 @@
 
 <div bind:this={pageContainerEl} class="main--background">
     <div
-        class="relative top-0 z-10 h-[95vh] min-h-[28rem] overflow-hidden lg:h-[70vh] {containerClass} lg:border-offwhite flex flex-col justify-end lg:mx-10
+        class="relative top-0 z-10 h-[95vh] min-h-112 overflow-hidden lg:h-[70vh] {containerClass} lg:border-offwhite flex flex-col justify-end
         lg:rounded-4xl lg:border-4
         "
     >
