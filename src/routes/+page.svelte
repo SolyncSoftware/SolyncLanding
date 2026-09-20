@@ -134,19 +134,6 @@
     <div class="space-y-4">
         <h2 class="text-5xl font-bold">From the Blog.</h2>
         <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
-        <!-- <div>
-            <a
-                href="/blog"
-                class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
-                >see more
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-1"
-                    loading="lazy"
-                />
-            </a>
-        </div> -->
         {#if loading}
             <p class="text-xl">Loading articles...</p>
         {:else if blogArticles.length === 0}

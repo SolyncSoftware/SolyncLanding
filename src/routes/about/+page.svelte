@@ -89,10 +89,10 @@
         <OurPartners />
     </div>
 
-    <div class="rounded-4xl bg-white p-9 shadow-xl/4">
+    <div class="overflow-hidden rounded-4xl bg-white p-9 shadow-xl/4">
         <h2 class="mb-4 text-4xl font-bold" id="our-work">A collection of our work</h2>
         <p class="mb-4 max-w-210 text-lg">A collection of projects that we've created and maintained.</p>
-        <OurProjects count={999} cols={3} />
+        <OurProjects count={999} view="carousel" autoplay autoplayDelay={2000} />
     </div>
 
     <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
