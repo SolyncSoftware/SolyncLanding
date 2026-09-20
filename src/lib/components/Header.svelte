@@ -39,101 +39,94 @@
     <AnnouncementContainer />
 {/if} -->
 <!-- this functions as basically a traditional nav  -->
-<div class={`absolute inset-x-0 top-0 z-50 ${mode === 'overlay' ? 'lg:bg-offaccent bg-transparent' : 'bg-offaccent'}`}>
-    <header class={`top-0 w-full p-4 lg:p-10`}>
-        <div class="z-[2434] flex items-center justify-between">
-            <!-- Logo -->
-            <div
-                class="flex w-full flex-row items-center gap-7 sm:w-auto"
-                use:rs={{
-                    animation: 'fade',
-                    duration: 600,
-                    delay: 200
-                }}
-            >
-                <a href="/" class="group inline-block">
-                    <SolyncLogo
-                        iconOnly={true}
-                        class="w-15 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black"
-                    />
-                </a>
 
-                <!-- Desktop nav  -->
-                <nav class="hidden flex-row items-center gap-7 sm:flex">
-                    {#each navLinks as link, i (link.href)}
-                        <span
-                            use:rs={{
-                                animation: 'fade-up',
-                                duration: 600,
-                                delay: (i + 3) * 200,
-                                offset: 100
-                            }}
-                        >
-                            <ButtonSimple
-                                href={link.href}
-                                text={link.text}
-                                class={`z-0 text-white hover:text-white hover:underline ${isActive(link.href)}`}
-                            />
-                        </span>
-                    {/each}
-                </nav>
+<header class="bg-accent flex w-full items-center justify-between px-5 pt-6 pb-40 2xl:px-70">
+    <!-- Logo -->
+    <div
+        class="flex w-full flex-row items-center gap-7 sm:w-auto"
+        use:rs={{
+            animation: 'fade',
+            duration: 600,
+            delay: 200
+        }}
+    >
+        <a href="/" class="group inline-block">
+            <SolyncLogo
+                iconOnly={true}
+                class="w-20 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black"
+            />
+        </a>
 
-                <!-- hamburger noodle -->
-                <button
-                    onclick={toggleMenu}
-                    class="relative ml-auto h-12 w-12 text-white focus:outline-none sm:hidden"
-                    aria-expanded={isMenuOpen}
-                    aria-controls="mobile-menu"
+        <!-- Desktop nav  -->
+        <nav class="hidden flex-row items-center gap-7 sm:flex">
+            {#each navLinks as link, i (link.href)}
+                <span
+                    use:rs={{
+                        animation: 'fade-up',
+                        duration: 600,
+                        delay: (i + 3) * 200,
+                        offset: 100
+                    }}
                 >
-                    {#if isMenuOpen}
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            transition:fade={{ duration: 200 }}
-                        >
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    {:else}
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            transition:fade={{ duration: 200 }}
-                        >
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    {/if}
-                </button>
-            </div>
+                    <ButtonSimple
+                        href={link.href}
+                        text={link.text}
+                        class={`z-0 text-white hover:text-white hover:underline ${isActive(link.href)}`}
+                    />
+                </span>
+            {/each}
+        </nav>
 
-            <div
-                class="hidden sm:ml-auto sm:flex"
-                use:rs={{
-                    animation: 'fade-up',
-                    duration: 600,
-                    delay: 1200,
-                    offset: 100
-                }}
-            >
-                <Button href="/donate" class="border border-white/50 bg-white/10 shadow-none backdrop-blur-sm" text="Support us" />
-            </div>
-        </div>
-    </header>
-</div>
+        <!-- hamburger noodle -->
+        <button
+            onclick={toggleMenu}
+            class="relative ml-auto h-12 w-12 text-white focus:outline-none sm:hidden"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+        >
+            {#if isMenuOpen}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    transition:fade={{ duration: 200 }}
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            {:else}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    transition:fade={{ duration: 200 }}
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            {/if}
+        </button>
+    </div>
+
+    <div
+        class="hidden sm:ml-auto sm:flex"
+        use:rs={{
+            animation: 'fade-up',
+            duration: 600,
+            delay: 1200,
+            offset: 100
+        }}
+    >
+        <Button href="/donate" class="shadow-none" text="Support us" />
+    </div>
+</header>
 
 <!-- mobile menu -->
 {#if isMenuOpen}
-    <div
-        id="mobile-menu"
-        class={`bg-offaccent px-4 pt-24 pb-4 sm:hidden ${mode === 'solid' && '-mb-24'}`}
-        transition:slide={{ duration: 400, easing: quartInOut }}
-    >
-        <nav class="flex flex-col items-start gap-4 sm:gap-7">
+    <div id="mobile-menu" class="bg-accent -mt-30 px-5 pb-40 sm:hidden" transition:slide={{ duration: 400, easing: quartInOut }}>
+        <nav class="flex flex-col items-start gap-7">
             <ButtonSimple
                 href="/"
                 text="Home"
@@ -148,7 +141,7 @@
             />
             <ButtonSimple
                 href="/about"
-                text="About"
+                text="Learn more"
                 onclick={closeMenu}
                 class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`}
             />
