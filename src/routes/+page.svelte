@@ -92,19 +92,6 @@
         <p class="text-xl font-medium md:max-w-140">
             We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
         </p>
-        <!-- <div>
-            <a
-                href="/about#our-work"
-                class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
-                >see more
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-1"
-                    loading="lazy"
-                />
-            </a>
-        </div> -->
         <OurProjects />
         <div class="flex w-full flex-col items-end">
             <a

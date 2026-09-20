@@ -108,31 +108,28 @@
         </p>
     </div>
 
-    <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
-        <p>Think you'd be a good addition?</p>
-        <Button
-            class="hover:bg-offaccent! self-center! px-14 text-xl! font-bold shadow-none 
-           transition-all hover:-translate-y-1 
-           hover:shadow-[0_5px_0px_#00000022]"
-            href="/apply"
-            text="Join us today!"
-        />
+    <div class="flex w-full flex-col items-end text-3xl font-bold">
+        <p>Think you'd be a good addition? <a href="/apply" class="text-accent hover:underline">Join us today!</a></p>
     </div>
 
-    <div class="rounded-4xl bg-white p-9 shadow-xl/4">
-        <h2 class="mb-4 text-4xl font-bold">Our partners</h2>
-        <p class="mb-4 max-w-210 text-lg">
+    <div class="flex w-full flex-col items-center space-y-4 text-center">
+        <h2 class="text-5xl font-bold">Our partners.</h2>
+        <p class="text-xl font-medium md:max-w-200">
             When partnering with Solync, we share resources, talent, and expertise to create cool stuff. We collaborate on projects,
             exchange ideas, and support one another.
         </p>
-        <p class="mb-4 max-w-210 text-lg">The partner program is currently closed, but we will reopen applications in the future.</p>
+        <p class="mb-4 text-lg font-medium md:max-w-200">
+            The partner program is currently closed, but we will reopen applications in the future.
+        </p>
         <OurPartners />
     </div>
 
-    <div class="rounded-4xl bg-white p-9 shadow-xl/4">
-        <h2 class="mb-4 text-4xl font-bold" id="our-work">A collection of our work</h2>
-        <p class="mb-4 max-w-210 text-lg">A collection of projects that we've created and maintained.</p>
-        <OurProjects count={999} cols={3} />
+    <div class="flex w-full flex-col items-center space-y-4 text-center">
+        <h2 class="text-5xl font-bold" id="our-work">A collection of our work.</h2>
+        <p class="text-xl font-medium md:max-w-140">A collection of projects that we've created and maintained..</p>
+        <div class="text-left">
+            <OurProjects count={999} cols={3} />
+        </div>
     </div>
 
     <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
