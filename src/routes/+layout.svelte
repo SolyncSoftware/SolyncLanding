@@ -82,10 +82,8 @@
 <!-- pretty hard coded for the header but yeah. negative values work best -->
 {#key page.url.pathname}
     <main
-        class={`3xl:mx-auto mx-5 -mt-32.5 mb-32.5 flex
-        max-w-560 flex-col pt-0 font-sans 2xl:mx-70
-        ${headerMode === 'solid' ? 'pt-24' : ''}
-        `}
+        class="3xl:mx-auto mx-5 -mt-32.5 mb-32.5 flex
+        max-w-560 flex-col pt-0 font-sans 2xl:mx-70"
         in:fade={{ duration: 200, delay: 300 }}
         out:fade={{ duration: 200 }}
         onintroend={handleIntroEnd}
