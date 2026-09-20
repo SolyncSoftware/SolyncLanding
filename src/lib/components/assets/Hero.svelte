@@ -30,7 +30,7 @@
 <div bind:this={pageContainerEl} class="main--background">
     <div
         class="relative top-0 z-10 h-[95vh] min-h-112 overflow-hidden lg:h-[70vh] {containerClass} lg:border-offwhite flex flex-col justify-end
-        lg:rounded-4xl lg:border-4
+        lg:rounded-4xl lg:border-8 2xl:-mx-10
         "
     >
         <div bind:this={waveSlotEl} class="absolute inset-0 z-0 h-full w-full"></div>
