@@ -25,7 +25,7 @@
         </div>
     </PageContainer>
 
-    <div class="grid grid-cols-1 gap-4 text-lg md:grid-cols-2 lg:grid-cols-2">
+    <!-- <div class="grid grid-cols-1 gap-4 text-lg md:grid-cols-2 lg:grid-cols-2">
         <div class="rounded-4xl bg-white p-9 shadow-xl/4">
             <h2 class="mb-4 text-3xl font-bold">What we build</h2>
 
@@ -67,7 +67,47 @@
                 We <span class="font-bold">build</span> user-first experiences. Not just because we love it, but because it's ethical.
             </p>
         </div>
+    </div> -->
+
+    <div class="space-y-4">
+        <h2 class="text-5xl font-bold">What we build.</h2>
+        <p class="text-xl font-medium md:max-w-200">
+            We've created software like <a
+                href="https://github.com/SolyncSoftware/porter-wiki-frontend"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline">Porter Robinson Wiki</a
+            >,
+            <a href="https://gardens.wiki" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Gardens Wiki</a>,
+            <a
+                href="https://github.com/SolyncSoftware/KILLALLBOTS"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline">KILLALLBOTS</a
+            >, and we're constantly building what's next.
+        </p>
+        <p class="text-xl font-medium md:max-w-200">
+            Our projects start as pitches from anyone in the collective. We iterate, refine, and collaborate until a project is something
+            we're excited to ship. Sometimes we may scrap everything and start over, but that's part of the process!
+        </p>
     </div>
+
+    <div class="flex w-full flex-col items-end space-y-4 text-right">
+        <h2 class="text-5xl font-bold">How we work.</h2>
+        <p class="text-xl font-medium md:max-w-200">
+            Because of our <a
+                href="https://en.wikipedia.org/wiki/Flat_organization"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline">flat organizational structure</a
+            >, we have the freedom to design, experiment, and learn from each other. We trust people to be creative, self-sufficient, and
+            responsible.
+        </p>
+        <p class="text-xl font-medium md:max-w-200">
+            We <span class="font-bold">build</span> user-first experiences. Not just because we love it, but because it's ethical.
+        </p>
+    </div>
+
     <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
         <p>Think you'd be a good addition?</p>
         <Button
