@@ -45,11 +45,9 @@
         "Solync is a worker-owned organization building what's next. Join us on our journey to create something awesome together.";
     const DEFAULT_IMAGE = '/images/banner.png';
 
-    const absoluteHeaderPaths = ["/"]
+    const absoluteHeaderPaths = ['/'];
 
-    let headerMode = $derived(absoluteHeaderPaths.includes(page.url.pathname)
-        ? 'overlay' : 'solid'
-    );
+    let headerMode = $derived(absoluteHeaderPaths.includes(page.url.pathname) ? 'overlay' : 'solid');
 </script>
 
 <svelte:head>
@@ -75,17 +73,18 @@
         backgroundImage="/images/waves-dark.png"
         backgroundSize="cover"
     />
-        <!-- style= "... mask-image: linear-gradient(to right, #fff6 20%, #fffa, #fff);" -->
+    <!-- style= "... mask-image: linear-gradient(to right, #fff6 20%, #fffa, #fff);" -->
 </div>
 
-<Header mode={headerMode}/>
+<Header mode={headerMode} />
 <AnimatedIntroLogo />
 <div class="progress-bar"></div>
 <!-- pretty hard coded for the header but yeah. negative values work best -->
 {#key page.url.pathname}
     <main
-        class={`flex max-w-560 flex-col font-sans
-        ${headerMode === "solid" ? "pt-24 lg:pt-36" : ""}
+        class={`flex max-w-560 flex-col pt-0 font-sans
+        lg:pt-36
+        ${headerMode === 'solid' ? 'pt-24' : ''}
         `}
         in:fade={{ duration: 200, delay: 300 }}
         out:fade={{ duration: 200 }}

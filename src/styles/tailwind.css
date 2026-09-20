@@ -130,8 +130,8 @@
     --color-error: #f02d31;
 
     /* Typography */
-    --font-sans: 'Cabinet Grotesk', "Cabinet Grotesk Fallback", sans-serif;
-    --font-display: 'Cabinet Grotesk', "Cabinet Grotesk Fallback", sans-serif;
+    --font-sans: 'Cabinet Grotesk', 'Cabinet Grotesk Fallback', sans-serif;
+    --font-display: 'Cabinet Grotesk', 'Cabinet Grotesk Fallback', sans-serif;
     --font-monospace: 'Red Hat Monospace', monospace;
 
     /* Responsiveness */
@@ -186,7 +186,8 @@
     font-weight: bold;
 }
 
-@utility font-book { /* for use with paragraphs; Regular seems too thin for body text */
+@utility font-book {
+    /* for use with paragraphs; Regular seems too thin for body text */
     font-weight: 450;
 }
 
@@ -195,13 +196,17 @@
 }
 
 @utility leading-oneline {
-    line-height: .8em;
+    line-height: 0.8em;
 }
 
 @utility cardshadow-large {
     box-shadow:
         0 -2px 32px 0 rgb(0 0 0 / 16%),
         0 8px 32px 0 rgb(243 101 70 / 32%);
+}
+
+@utility main--background {
+    background: linear-gradient(to bottom, var(--color-offaccent) 4rem, var(--color-offwhite) 4rem);
 }
 
 /* fix for firefox because thanks firefox */

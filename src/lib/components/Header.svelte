@@ -11,8 +11,8 @@
 
     let showAnnouncement = $state(false); // Set to true when we're ready
     let currentPath = $derived(page.url.pathname);
-    let {mode = 'solid'}: {mode?: 'overlay' | 'solid'} = $props();
-    let modeIsOverlay = $derived(mode === "overlay");
+    let { mode = 'solid' }: { mode?: 'overlay' | 'solid' } = $props();
+    let modeIsOverlay = $derived(mode === 'overlay');
 
     function isActive(path: string): string {
         return currentPath === path ? 'bg-white !text-accent font-display px-8 py-2 rounded-full no-underline!' : '';
@@ -39,12 +39,10 @@
     <AnnouncementContainer />
 {/if} -->
 <!-- this functions as basically a traditional nav  -->
-<div class={`absolute inset-x-0 top-0 z-50 ${mode === 'overlay'
-            ? 'bg-transparent'
-            : 'bg-offaccent'}`}>
-    <header class={`p-4 lg:p-10 top-0 w-full`}>
-        <div class="flex items-center justify-between z-[2434]">
-        <!-- Logo -->
+<div class={`absolute inset-x-0 top-0 z-50 ${mode === 'overlay' ? 'lg:bg-offaccent bg-transparent' : 'bg-offaccent'}`}>
+    <header class={`top-0 w-full p-4 lg:p-10`}>
+        <div class="z-[2434] flex items-center justify-between">
+            <!-- Logo -->
             <div
                 class="flex w-full flex-row items-center gap-7 sm:w-auto"
                 use:rs={{
@@ -122,15 +120,19 @@
                     offset: 100
                 }}
             >
-                <Button href="/donate" class="shadow-none bg-white/10 backdrop-blur-sm border border-white/50" text="Support us" />
+                <Button href="/donate" class="border border-white/50 bg-white/10 shadow-none backdrop-blur-sm" text="Support us" />
             </div>
         </div>
     </header>
 </div>
 
-    <!-- mobile menu -->
+<!-- mobile menu -->
 {#if isMenuOpen}
-    <div id="mobile-menu" class={`bg-offaccent px-4 pb-4 sm:hidden pt-24 ${(mode === "solid") && "-mb-24"}`} transition:slide={{ duration: 400, easing: quartInOut }}>
+    <div
+        id="mobile-menu"
+        class={`bg-offaccent px-4 pt-24 pb-4 sm:hidden ${mode === 'solid' && '-mb-24'}`}
+        transition:slide={{ duration: 400, easing: quartInOut }}
+    >
         <nav class="flex flex-col items-start gap-4 sm:gap-7">
             <ButtonSimple
                 href="/"
