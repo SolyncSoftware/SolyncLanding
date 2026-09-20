@@ -26,7 +26,7 @@
     });
 </script>
 
-<div class="debug flex flex-col">
+<div class="flex flex-col">
     <!-- <div
         class="text-white"
         use:rs={{

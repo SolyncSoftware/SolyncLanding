@@ -45,7 +45,7 @@
         "Solync is a worker-owned organization building what's next. Join us on our journey to create something awesome together.";
     const DEFAULT_IMAGE = '/images/banner.png';
 
-    const absoluteHeaderPaths = ['/'];
+    const absoluteHeaderPaths = ['/', '/about'];
 
     let headerMode = $derived(absoluteHeaderPaths.includes(page.url.pathname) ? 'overlay' : 'solid');
 </script>
