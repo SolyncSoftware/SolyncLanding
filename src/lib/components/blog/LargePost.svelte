@@ -28,7 +28,7 @@
         <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
 
         <div>
-            <h3 class="text-accent text-3xl font-bold tracking-wide">{title}</h3>
+            <h3 class="text-3xl font-black tracking-wide">{title}</h3>
             <p class="-mt-1.5 text-base font-light tracking-wide text-white/60">{category}</p>
         </div>
         <p>{description}</p>

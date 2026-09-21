@@ -184,7 +184,7 @@
     </div>
 
     <div class="space-y-4">
-        <h2 class="text-5xl font-bold">From the Blog.</h2>
+        <h2 class="text-5xl font-black">From the Blog.</h2>
         <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
         {#if loading}
             <p class="text-xl">Loading articles...</p>
