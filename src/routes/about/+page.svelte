@@ -83,7 +83,7 @@
          shadow-xl/4 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
         >
             <h2 class="mb-8 text-5xl font-black">Join us!</h2>
-            <p class="max-w-100">
+            <p class="max-w-100 font-medium">
                 Good with programming? Find yourself a bit of an artist? Love some triangles? We're worker-owned, flexible, and
                 experimental. Submit your application to join Solync!
             </p>
@@ -97,7 +97,7 @@
          text-white shadow-xl/4 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
         >
             <h2 class="mb-8 text-5xl font-black">Support Solync</h2>
-            <p class="max-w-100">
+            <p class="max-w-100 font-medium">
                 We're a collective of thinkers who like to showcase our work while staying ethical to the end user. If you send us money,
                 you'll help us scale and build a better Solync.
             </p>
