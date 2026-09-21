@@ -56,7 +56,7 @@
         <div class="bg-accent relative flex flex-col items-end overflow-hidden rounded-4xl p-11 text-right text-xl shadow-xl/4">
             <h2 class="mb-20 max-w-100 text-7xl leading-14 font-black text-white"><span class="font-thin">How we</span> Work</h2>
 
-            <div class="max-w-170 space-y-4">
+            <div class="max-w-170 space-y-4 [&>p]:font-medium">
                 <p>
                     Because of our <a
                         href="https://en.wikipedia.org/wiki/Flat_organization"

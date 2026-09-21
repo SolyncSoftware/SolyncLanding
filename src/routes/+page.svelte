@@ -31,10 +31,10 @@
             repeat: false
         }}
     >
-        <PageContainer innerClass="[&_p]:text-xl">
+        <PageContainer innerClass="[&_p]:text-2xl">
             <SolyncLogo class="mb-10 w-70 fill-white md:mb-24" />
-            <div class="max-w-180">
-                <h1 class="text-4xl font-medium md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+            <div class="max-w-160">
+                <h1 class="text-4xl md:text-7xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
                 <p class="mt-4 font-medium">We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.</p>
                 <p class="mt-4 font-medium">
                     We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
