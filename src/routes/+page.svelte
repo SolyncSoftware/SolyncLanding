@@ -31,14 +31,16 @@
             repeat: false
         }}
     >
-        <PageContainer innerClass="[&>p]:text-xl">
-            <SolyncLogo class="mb-10 w-70 fill-white md:mb-24 md:w-110" />
-            <h1 class="text-4xl font-medium md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-            <p class="mt-4 font-medium md:max-w-170">We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.</p>
-            <p class="mt-4 font-medium md:max-w-170">
-                We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
-                ethical. We collaborate to create what's next.
-            </p>
+        <PageContainer innerClass="[&_p]:text-xl">
+            <SolyncLogo class="mb-10 w-70 fill-white md:mb-24" />
+            <div class="max-w-180">
+                <h1 class="text-4xl font-medium md:text-6xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+                <p class="mt-4 font-medium">We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.</p>
+                <p class="mt-4 font-medium">
+                    We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
+                    ethical. We collaborate to create what's next.
+                </p>
+            </div>
 
             <div class="mt-4 flex flex-row flex-wrap items-center gap-2 align-middle">
                 <Button
@@ -86,7 +88,7 @@
     </p> -->
 
     <div class="space-y-4">
-        <h2 class="text-5xl font-bold">Our projects.</h2>
+        <h2 class="text-5xl font-black">Our projects.</h2>
         <p class="text-xl font-medium md:max-w-140">
             We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
         </p>
@@ -121,7 +123,7 @@
     </div>
 
     <div class="space-y-4">
-        <h2 class="text-5xl font-bold">Meet the team.</h2>
+        <h2 class="text-5xl font-black">Meet the team.</h2>
         <p class="text-xl font-medium md:max-w-110">
             The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a>, and help
             build what's next, together.
