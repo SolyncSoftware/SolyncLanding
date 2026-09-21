@@ -133,6 +133,7 @@
         <div class="flex-1 space-y-4">
             <h2 class="text-accent mb-4 text-7xl font-black">Our Projects</h2>
             <p class="max-w-160 text-xl">A collection of projects that we've created and maintained.</p>
+
             <OurProjects count={999} cols={3} />
         </div>
     </div>

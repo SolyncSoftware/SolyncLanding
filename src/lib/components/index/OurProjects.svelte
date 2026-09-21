@@ -29,6 +29,16 @@
         sortedProjects = filtered;
     }
 
+    // fuck off
+    const colsClass: Record<number, string> = {
+        1: 'md:grid-cols-1',
+        2: 'md:grid-cols-2',
+        3: 'md:grid-cols-3',
+        4: 'md:grid-cols-4',
+        5: 'md:grid-cols-5',
+        6: 'md:grid-cols-6'
+    };
+
     const autoplayPlugin = Autoplay({
         delay: untrack(() => autoplayDelay), // shushes the warning
         stopOnInteraction: false,
@@ -67,7 +77,7 @@
             </div>
         </div>
     {:else}
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-{cols}">
+        <div class="grid grid-cols-1 gap-4 {colsClass[cols] ?? 'md:grid-cols-2'}">
             {#each sortedProjects.slice(0, count) as project}
                 <ProjectCard {project} />
             {/each}
