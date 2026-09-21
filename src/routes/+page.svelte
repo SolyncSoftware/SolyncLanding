@@ -31,7 +31,7 @@
             repeat: false
         }}
     >
-        <PageContainer innerClass="[&_p]:text-2xl">
+        <!-- <PageContainer innerClass="[&_p]:text-2xl">
             <SolyncLogo class="mb-10 w-70 fill-white md:mb-24" />
             <div class="max-w-160">
                 <h1 class="text-4xl md:text-7xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
@@ -72,7 +72,59 @@
                     ><Mail />
                 </a>
             </div>
-        </PageContainer>
+        </PageContainer> -->
+
+        <div
+            class="border-offwhite text-accent relative z-100 mx-0 overflow-hidden rounded-4xl border-8 p-9 shadow-2xl/20 2xl:-mx-10 [&_p]:text-2xl"
+        >
+            <img
+                src="/images/home-banner.png"
+                alt=""
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+            />
+
+            <img src="/images/home-logo.svg" alt="home logo" aria-hidden="true" class="pointer-events-none absolute -m-9 object-cover" />
+
+            <div class="mt-70 max-w-160">
+                <h1 class="text-4xl md:text-7xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+                <p class="mt-4 font-medium">
+                    We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
+                    ethical. We collaborate to create what's next.
+                </p>
+            </div>
+
+            <div class="mt-4 flex flex-row flex-wrap items-center gap-2">
+                <Button
+                    class="bg-accent! hover:bg-accent! w-fit self-center! px-10 text-xl! font-bold text-white! shadow-none transition-all
+                   hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022] sm:px-14"
+                    href="/about"
+                    text="Learn more"
+                />
+                <a
+                    href="https://discord.gg/nUeRyRtDYC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-offwhite/20 border-accent rounded-full border p-3.5 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+                >
+                    <SiDiscord />
+                </a>
+                <a
+                    href="https://github.com/SolyncSoftware"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-offwhite/20 border-accent rounded-full border p-3.5 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+                >
+                    <SiGithub />
+                </a>
+                <a
+                    href="/contact"
+                    class="bg-offwhite/20 border-accent rounded-full border p-3.5 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+                >
+                    <Mail />
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- <p
