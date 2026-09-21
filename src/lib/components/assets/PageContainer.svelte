@@ -34,7 +34,7 @@
     <div bind:this={waveSlotEl} class="absolute inset-0 z-0 h-full w-full rounded-4xl"></div>
     <div class="absolute inset-0 z-1 bg-black/40"></div>
     <div class="{className} absolute inset-0 z-5 mix-blend-plus-lighter"></div>
-    <div class="relative z-10 p-9 {innerClass}">
+    <div class="relative z-10 p-6 pt-8 {innerClass}">
         {@render children()}
     </div>
 </div>

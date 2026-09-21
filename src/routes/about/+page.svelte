@@ -23,11 +23,10 @@
             </div>
         </div>
     </PageContainer>
-
     <div class="space-y-4">
         <div class="relative overflow-hidden rounded-4xl bg-white p-11 text-xl shadow-xl/4">
             <h2 class="text-accent mb-20 max-w-100 text-7xl leading-14 font-black"><span class="font-thin">What we</span> Build</h2>
-            <div class="max-w-170 space-y-4">
+            <div class="max-w-170 space-y-4 [&>p]:font-medium">
                 <p>
                     We've created software like <a
                         href="https://github.com/SolyncSoftware/porter-wiki-frontend"
