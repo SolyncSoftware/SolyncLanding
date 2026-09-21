@@ -26,7 +26,7 @@
         />
         <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
         <div class="space-y-0">
-            <h3 class="text-3xl font-bold tracking-wide text-white">{project.title}</h3>
+            <h3 class="text-3xl font-black tracking-wide text-white">{project.title}</h3>
             <p>{project.desc}</p>
         </div>
 
