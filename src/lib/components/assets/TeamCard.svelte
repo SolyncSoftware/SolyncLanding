@@ -31,16 +31,16 @@
     <div class={['group flex flex-row items-center gap-4 text-black', expanded ? 'text-accent' : 'text-black']}>
         <enhanced:img
             class={[
-                'aspect-square h-auto w-16 rounded-2xl outline-2 transition',
+                'aspect-square h-auto w-19 rounded-3xl outline-2 transition',
                 expanded ? 'outline-accent outline' : 'outline outline-transparent'
             ]}
             loading="lazy"
             src={member.avatarSrc}
             alt={member.realName}
         />
-        <div class="flex flex-col text-left transition [&_p]:leading-[1em]">
+        <div class="flex flex-col text-left transition">
             <p class="text-accent text-3xl font-bold md:text-left md:text-4xl">{member.username}</p>
-            <p class="text-xl font-light md:text-left">{member.realName}</p>
+            <p class="text-2xl font-light md:text-left">{member.realName}</p>
         </div>
 
         <div class="ml-auto flex flex-row items-center gap-4 text-black">
@@ -85,11 +85,11 @@
     </div>
     <div
         class="grid transition-[grid-template-rows,opacity,margin] duration-300 ease-in-out {expanded
-            ? 'mt-4 grid-rows-[1fr] opacity-100'
-            : 'mt-0 grid-rows-[0fr] opacity-0'}"
+            ? 'grid-rows-[1fr] opacity-100'
+            : 'grid-rows-[0fr] opacity-0'}"
     >
         <div class="flex flex-col gap-3 overflow-hidden">
-            <p class="cursor-default text-left font-sans text-xl">
+            <p class="cursor-default text-left font-sans text-xl md:pl-23">
                 {member.bio}
             </p>
             <div class="**:hover:text-accent flex flex-row items-center gap-2 duration-300 **:text-black/80 **:transition-colors md:hidden">
