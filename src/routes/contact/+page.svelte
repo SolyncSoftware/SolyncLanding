@@ -46,7 +46,7 @@
     </PageContainer>
 
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
-        <h2 class="mb-4 text-5xl font-light"><span class="font-black">Contact</span> us</h2>
+        <h2 class="mb-4 text-4xl font-black">Contact us</h2>
         <div class="mb-6 flex flex-col justify-between gap-12 text-lg xl:flex-row">
             <div class="flex w-full flex-col items-start gap-8">
                 <div class="flex items-center gap-4">
