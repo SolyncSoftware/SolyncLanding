@@ -50,7 +50,7 @@
         <a href="/" class="group inline-block">
             <SolyncLogo
                 iconOnly={true}
-                class="w-16 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black"
+                class="w-20 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black"
             />
         </a>
 
