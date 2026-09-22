@@ -1,6 +1,7 @@
 <script lang="ts">
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
+    import Waves from '$lib/components/assets/Waves.svelte';
     import OurTeam from '$lib/components/index/OurTeam.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
@@ -31,45 +32,52 @@
             repeat: false
         }}
     >
-        <!-- <PageContainer innerClass="[&_p]:text-2xl">
-            <SolyncLogo class="mb-10 w-70 fill-white md:mb-24" />
-            <div class="max-w-160">
+        <!-- <PageContainer innerClass="text-accent [&_p]:text-2xl">
+            <img
+                src="/images/home-banner.png"
+                alt=""
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-0 -z-100 h-full w-full object-cover"
+            />
+
+            <img src="/images/home-logo.svg" alt="home logo" aria-hidden="true" class="pointer-events-none absolute -m-9 object-cover" />
+
+            <div class="mt-70 max-w-160">
                 <h1 class="text-4xl md:text-7xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
-                <p class="mt-4 font-medium">We're Solync. We create software like Porter Robinson Wiki, Gardens Wiki, and more.</p>
                 <p class="mt-4 font-medium">
                     We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
                     ethical. We collaborate to create what's next.
                 </p>
             </div>
 
-            <div class="mt-4 flex flex-row flex-wrap items-center gap-2 align-middle">
+            <div class="mt-4 flex flex-row flex-wrap items-center gap-2">
                 <Button
-                    class="bg-offwhite text-accent! hover:bg-offwhite w-fit self-center! px-10 text-xl! font-bold shadow-none transition-all
-         hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]
-         sm:px-14"
+                    class="bg-accent! hover:bg-accent! w-fit self-center! px-10 text-xl! font-bold text-white! shadow-none transition-all
+                   hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022] sm:px-14"
                     href="/about"
                     text="Learn more"
                 />
                 <a
                     href="https://discord.gg/nUeRyRtDYC"
                     target="_blank"
-                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
-         hover:shadow-[0_5px_0px_#00000022]"
-                    ><SiDiscord />
+                    rel="noopener noreferrer"
+                    class="bg-offwhite/20 border-accent rounded-full border p-3.5 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+                >
+                    <SiDiscord />
                 </a>
-
                 <a
                     href="https://github.com/SolyncSoftware"
                     target="_blank"
-                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
-         hover:shadow-[0_5px_0px_#00000022]"
-                    ><SiGithub />
+                    rel="noopener noreferrer"
+                    class="bg-offwhite/20 border-accent rounded-full border p-3.5 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+                >
+                    <SiGithub />
                 </a>
                 <a
                     href="/contact"
-                    class="bg-offwhite/20 rounded-full p-3.5 transition-all hover:-translate-y-1
-         hover:shadow-[0_5px_0px_#00000022]"
-                    ><Mail />
+                    class="bg-offwhite/20 border-accent rounded-full border p-3.5 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+                >
+                    <Mail />
                 </a>
             </div>
         </PageContainer> -->
@@ -83,6 +91,18 @@
                 aria-hidden="true"
                 class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
             />
+
+            <Waves
+                className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+                wavesType="/solync_home.json"
+                backgroundImage="/images/waves-dark.png"
+                backgroundSize="cover"
+            />
+
+            <div
+                class="pointer-events-none absolute inset-0 -z-10"
+                style="background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 70%);"
+            ></div>
 
             <img src="/images/home-logo.svg" alt="home logo" aria-hidden="true" class="pointer-events-none absolute -m-9 object-cover" />
 
