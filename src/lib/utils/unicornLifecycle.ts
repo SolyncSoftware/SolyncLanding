@@ -11,6 +11,7 @@ export async function tryAddScene(unicornOpts: UnicornSceneOpts): Promise<Unicor
         await initIfAllowed();
         let scene = await UnicornStudio.addScene(unicornOpts);
         checkPerfAndMaybeDisable();
+        // this needs to be replaced
         window.scrollBy({ top: -1, behavior: 'instant' });
         setTimeout(() => {
             window.scrollBy({ top: 1, behavior: 'instant' });
