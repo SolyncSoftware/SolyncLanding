@@ -29,7 +29,7 @@
 
         <div>
             <h3 class="text-3xl font-black tracking-wide">{title}</h3>
-            <p class="-mt-1.5 text-base font-light tracking-wide text-white/60">{category}</p>
+            <p class="-mt-1.5 text-base tracking-wide text-white/60">{category}</p>
         </div>
         <p>{description}</p>
 

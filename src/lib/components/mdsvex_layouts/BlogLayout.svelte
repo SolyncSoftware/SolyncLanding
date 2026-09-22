@@ -39,13 +39,13 @@
         class="mb-8 flex min-h-94 flex-col items-start justify-between rounded-4xl bg-cover bg-center p-4 text-lg text-white"
         style="background-image: url({image || '/images/articles/fallback.png'})"
     >
-        <span class="rounded-full bg-black/80 px-6 py-2 font-medium first-letter:uppercase">{categories[0]}</span>
+        <span class="rounded-full bg-black/80 px-6 py-2 font-black first-letter:uppercase">{categories[0]}</span>
 
         <div class="flex flex-row items-center gap-2 rounded-full bg-black/80 py-2 pr-6 pl-2">
             <enhanced:img src={teamMember?.avatarSrc || '/images/avatarplaceholder.svg'} alt="Profile" class=" h-11 w-11 rounded-full" />
             <div class="flex flex-col">
-                <span class="leading-5 font-medium">{teamMember?.realName || 'No name lol'}</span>
-                <span class="text-sm text-white/80">{teamMember?.username || author || 'Please add an author'}</span>
+                <span class="leading-5 font-black">{teamMember?.realName || 'No name lol'}</span>
+                <span class="text-sm font-bold text-white/80">{teamMember?.username || author || 'Please add an author'}</span>
             </div>
         </div>
     </div>
