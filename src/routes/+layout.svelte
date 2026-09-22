@@ -3,10 +3,8 @@
     import DevBanner from '$lib/components/DevBanner.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import Header from '$lib/components/Header.svelte';
-    import Waves from '$lib/components/assets/Waves.svelte';
-    import persistentWaveStore from '$lib/stores/persistentWave.js';
     import AnimatedIntroLogo from '$lib/components/AnimatedIntroLogo.svelte';
-    import { onMount, type Snippet } from 'svelte';
+    import { type Snippet } from 'svelte';
     import { page } from '$app/state';
     import { fade } from 'svelte/transition';
     import { tick } from 'svelte';
@@ -14,18 +12,6 @@
     import '../styles/tailwind.css';
 
     let { children }: { children: Snippet } = $props();
-
-    import runGlobalPerformanceCheck from '$lib/utils/performanceCheck.js';
-
-    let hostEl = $state<HTMLDivElement | null>(null);
-
-    $effect(() => {
-        if (hostEl) persistentWaveStore.setHost(hostEl);
-    });
-
-    onMount(() => {
-        runGlobalPerformanceCheck().catch(console.error);
-    });
 
     // fixes hashes not working
     async function handleIntroEnd() {
@@ -61,15 +47,6 @@
     <meta name="twitter:image" content={meta.image ?? DEFAULT_IMAGE} />
 </svelte:head>
 
-<div bind:this={hostEl} class="pointer-events-none hidden" aria-hidden="true">
-    <Waves
-        className="h-full overflow-hidden mix-blend-plus-lighter"
-        style="z-index: -1; overflow: hidden; mask-image: linear-gradient(to right, #fff6 20%, #fffa, #fff);"
-        wavesType="/solync_waves_dark.json"
-        backgroundImage="/images/waves-dark.png"
-        backgroundSize="cover"
-    />
-</div>
 
 <Header />
 <AnimatedIntroLogo />

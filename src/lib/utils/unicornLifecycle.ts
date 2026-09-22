@@ -11,6 +11,10 @@ export async function tryAddScene(unicornOpts: UnicornSceneOpts): Promise<Unicor
         await initIfAllowed();
         let scene = await UnicornStudio.addScene(unicornOpts);
         checkPerfAndMaybeDisable();
+        window.scrollBy({top: 5});
+        setTimeout(() => {
+            window.scrollBy({top: -5});
+        }, 100);
         return scene
     } catch (error) {
         console.error('Error adding a scene ', error);
