@@ -24,7 +24,7 @@
         </div>
     </PageContainer>
     <div class="space-y-4">
-        <div class="relative overflow-hidden rounded-4xl bg-white p-11 text-xl shadow-xl/4">
+        <div class="relative overflow-hidden rounded-4xl bg-white p-6 pt-8 text-xl shadow-xl/4 sm:p-11">
             <h2 class="text-accent mb-20 max-w-100 text-7xl leading-14 font-black"><span class="font-thin">What we</span> Build</h2>
             <div class="max-w-170 space-y-4 [&>p]:font-medium">
                 <p>
@@ -53,7 +53,7 @@
             <img src="images/wrench-vector.svg" alt="building tools" class="absolute top-1/2 right-0 -translate-y-1/2" />
         </div>
 
-        <div class="bg-accent relative flex flex-col items-end overflow-hidden rounded-4xl p-11 text-right text-xl shadow-xl/4">
+        <div class="bg-accent relative flex flex-col items-end overflow-hidden rounded-4xl p-6 pt-8 text-right text-xl shadow-xl/4 sm:p-11">
             <h2 class="mb-20 max-w-100 text-7xl leading-14 font-black text-white"><span class="font-thin">How we</span> Work</h2>
 
             <div class="max-w-170 space-y-4 [&>p]:font-medium">
@@ -76,27 +76,30 @@
     </div>
     <p class="w-full text-center text-6xl font-thin">And how <span class="text-accent font-black">you</span> can help us;</p>
 
-    <div class="grid grid-cols-2 gap-4 text-xl">
+    <div class="grid gap-4 text-xl sm:grid-cols-2">
         <a
             href="/apply"
-            class="relative rounded-4xl bg-emerald-600 p-9 text-white
-         shadow-xl/4 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+            class="relative space-y-4 rounded-4xl bg-emerald-600 p-6 text-white
+         shadow-xl/4 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]
+         sm:p-8
+         "
         >
-            <h2 class="mb-8 text-5xl font-black">Join us!</h2>
+            <h2 class="text-5xl font-black">Join us!</h2>
             <p class="max-w-100 font-medium">
                 Good with programming? Find yourself a bit of an artist? Love some triangles? We're worker-owned, flexible, and
                 experimental. Submit your application to join Solync!
             </p>
 
-            <img src="/images/circle-icon.svg" alt="circle icon" class="absolute right-0 bottom-0 w-14 -translate-x-4 -translate-y-4" />
+            <img src="/images/circle-icon.svg" alt="circle icon" class="absolute right-4 bottom-4 w-14" />
         </a>
 
         <a
             href="/donate"
-            class="relative rounded-4xl bg-pink-500/90 p-9
-         text-white shadow-xl/4 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+            class="relative space-y-4 rounded-4xl bg-pink-500/90
+         p-6 text-white shadow-xl/4 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]
+         sm:p-8"
         >
-            <h2 class="mb-8 text-5xl font-black">Support Solync</h2>
+            <h2 class="text-5xl font-black">Support Solync</h2>
             <p class="max-w-100 font-medium">
                 We're a collective of thinkers who like to showcase our work while staying ethical to the end user. If you send us money,
                 you'll help us scale and build a better Solync.
