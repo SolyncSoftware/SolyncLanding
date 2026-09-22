@@ -6,13 +6,12 @@ import type { UnicornScene, UnicornSceneOpts } from './unicornTypes.js';
 let initPromise: Promise<void> | null = null;
 let unicornInitialized = false;
 
-export async function tryAddScene(unicornOpts: UnicornSceneOpts) {
+export async function tryAddScene(unicornOpts: UnicornSceneOpts): Promise<UnicornScene> {
     try {
         await initIfAllowed();
-        if (!UnicornStudio.scenes.some((scene) => scene.element == unicornOpts.element)) {
-            await UnicornStudio.addScene(unicornOpts);
-        }
+        let scene = await UnicornStudio.addScene(unicornOpts);
         checkPerfAndMaybeDisable();
+        return scene
     } catch (error) {
         console.error('Error adding a scene ', error);
         throw error

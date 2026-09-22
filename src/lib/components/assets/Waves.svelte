@@ -3,6 +3,7 @@
     import performanceStore from '$lib/stores/performance.js';
     import persistentWaveStore from '$lib/stores/persistentWave.js';
     import { tick } from 'svelte';
+    import type { UnicornScene } from '$lib/utils/unicornTypes.js';
 
     let {
         style = '',
@@ -28,6 +29,7 @@
     );
     const unicornEnabled = $derived(enabled !== undefined ? enabled : autoUnicornEnabled);
     const showPlaceholder = $derived(!unicornEnabled);
+    let scene = $state<UnicornScene | null>(null);
 
     $effect(() => {
         if (waveContainerEl) {
@@ -39,9 +41,9 @@
         let cancelled = false;
 
         if (unicornEnabled) {
-            tick().then(() => {
-                if (!cancelled && embedEl) {
-                    tryAddScene({
+            tick().then(async () => {
+                if (!cancelled && embedEl && !scene) {
+                    scene = await tryAddScene({
                         element: embedEl,
                         filePath: wavesType,
                         lazyLoad: true,
@@ -51,6 +53,9 @@
                         dpi: 1,
                         fps: 60
                     })
+                } else {
+                    scene?.destroy();
+                    scene = null;
                 }
             })
         }
