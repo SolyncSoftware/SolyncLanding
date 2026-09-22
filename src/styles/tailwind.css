@@ -148,7 +148,6 @@
 html {
     background-color: var(--color-offwhite);
     color: var(--color-black);
-    scroll-behavior: smooth;
 }
 
 body {
