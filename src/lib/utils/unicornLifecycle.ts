@@ -11,14 +11,14 @@ export async function tryAddScene(unicornOpts: UnicornSceneOpts): Promise<Unicor
         await initIfAllowed();
         let scene = await UnicornStudio.addScene(unicornOpts);
         checkPerfAndMaybeDisable();
-        window.scrollBy({top: 5});
+        window.scrollBy({ top: -1, behavior: 'instant' });
         setTimeout(() => {
-            window.scrollBy({top: -5});
-        }, 100);
-        return scene
+            window.scrollBy({ top: 1, behavior: 'instant' });
+        }, 60);
+        return scene;
     } catch (error) {
         console.error('Error adding a scene ', error);
-        throw error
+        throw error;
     }
 }
 
@@ -42,7 +42,7 @@ async function initIfAllowed() {
     UnicornStudio.init().catch((error) => {
         stopUnicorn('unicorn-init-error');
         console.error('Error initializing UnicornStudio', error);
-    })
+    });
     unicornInitialized = true;
 }
 
