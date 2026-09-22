@@ -1,51 +1,46 @@
 import performanceStore from '$lib/stores/performance.js';
-import { DEFAULT_FPS_THRESHOLD, fpsMonitor, cachePostInitFpsDecision } from '$lib/utils/performanceCheck.js';
+import { runGlobalCachedPerfCheck } from '$lib/utils/performanceCheck.js';
 import { get } from 'svelte/store';
+import type { UnicornScene, UnicornSceneOpts } from './unicornTypes.js';
 
 let initPromise: Promise<void> | null = null;
 let unicornInitialized = false;
 
-const POST_INIT_SAMPLE_MS = 400;
+export async function tryAddScene(unicornOpts: UnicornSceneOpts) {
+    try {
+        await initIfAllowed();
+        if (!UnicornStudio.scenes.some((scene) => scene.element == unicornOpts.element)) {
+            await UnicornStudio.addScene(unicornOpts);
+        }
+        checkPerfAndMaybeDisable();
+    } catch (error) {
+        console.error('Error adding a scene ', error);
+        throw error
+    }
+}
 
-export async function initIfAllowed(embedEl?: HTMLElement | null) {
-    if (!embedEl) return;
+async function checkPerfAndMaybeDisable() {
+    await runGlobalCachedPerfCheck();
+    const state = get(performanceStore);
+    if (!state.canUseWebgl) {
+        stopUnicorn(state.disableReason ?? 'low-fps');
+    }
+}
+
+async function initIfAllowed() {
     const state = get(performanceStore);
     if (state.globalHardDisabled) throw new Error('Global Unicorn disabled');
-    if (!state.checked || !state.canUseWebgl) return;
+    if (state.checked && !state.canUseWebgl) throw new Error('canUseWebgl is false');
     if (typeof UnicornStudio === 'undefined') return;
     if (unicornInitialized) return;
     if (initPromise) return initPromise;
 
-    initPromise = (async () => {
-        try {
-            await UnicornStudio.init();
-            unicornInitialized = true;
-
-            const postInitFps = await fpsMonitor(POST_INIT_SAMPLE_MS);
-            const shouldDisable = postInitFps < DEFAULT_FPS_THRESHOLD;
-
-            performanceStore.update((s) => ({
-                ...s,
-                postInitFps,
-                checked: true,
-                canUseWebgl: !shouldDisable,
-                disableReason: shouldDisable ? 'post-init-low-fps' : null
-            }));
-
-            cachePostInitFpsDecision(postInitFps, !shouldDisable, shouldDisable ? 'post-init-low-fps' : null);
-
-            if (shouldDisable) {
-                stopUnicorn('post-init-low-fps');
-            }
-        } catch (error) {
-            stopUnicorn('unicorn-init-error');
-            console.error('Error initializing UnicornStudio', error);
-        } finally {
-            initPromise = null;
-        }
-    })();
-
-    return initPromise;
+    // this promise genuinely never resolves
+    UnicornStudio.init().catch((error) => {
+        stopUnicorn('unicorn-init-error');
+        console.error('Error initializing UnicornStudio', error);
+    })
+    unicornInitialized = true;
 }
 
 export function stopUnicorn(reason?: string) {

@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { tick } from 'svelte';
-    import { initIfAllowed } from '$lib/utils/unicornLifecycle.js';
+    import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
     import performanceStore from '$lib/stores/performance.js';
     import persistentWaveStore from '$lib/stores/persistentWave.js';
+    import { tick } from 'svelte';
 
     let {
         style = '',
@@ -24,7 +24,7 @@
     let embedEl = $state<HTMLDivElement | null>(null);
 
     const autoUnicornEnabled = $derived(
-        $performanceStore.checked && $performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled
+        !$performanceStore.checked || $performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled
     );
     const unicornEnabled = $derived(enabled !== undefined ? enabled : autoUnicornEnabled);
     const showPlaceholder = $derived(!unicornEnabled);
@@ -41,9 +41,18 @@
         if (unicornEnabled) {
             tick().then(() => {
                 if (!cancelled && embedEl) {
-                    initIfAllowed(embedEl);
+                    tryAddScene({
+                        element: embedEl,
+                        filePath: wavesType,
+                        lazyLoad: true,
+                        fixed: true,
+                        production: false,
+                        scale: 0.8,
+                        dpi: 1,
+                        fps: 60
+                    })
                 }
-            });
+            })
         }
 
         return () => {
@@ -60,11 +69,6 @@
         <div
             bind:this={embedEl}
             class="unicorn-embed absolute inset-0"
-            data-us-project-src={wavesType}
-            data-us-lazyload="true"
-            data-us-scale="0.8"
-            data-us-dpi="1"
-            data-us-fps="60"
         ></div>
     </div>
     <div
