@@ -1,7 +1,6 @@
 <script lang="ts">
     import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
     import performanceStore from '$lib/stores/performance.js';
-    import persistentWaveStore from '$lib/stores/persistentWave.js';
     import { tick } from 'svelte';
     import type { UnicornScene } from '$lib/utils/unicornTypes.js';
 
@@ -11,7 +10,7 @@
         backgroundImage = '/images/waves-dark.png',
         backgroundSize = 'cover',
         wavesType = '/solync_waves_dark.json',
-        enabled = undefined
+        enabled = undefined,
     } = $props<{
         style?: string;
         className?: string;
@@ -21,7 +20,6 @@
         enabled?: boolean;
     }>();
 
-    let waveContainerEl = $state<HTMLDivElement | null>(null);
     let embedEl = $state<HTMLDivElement | null>(null);
 
     const autoUnicornEnabled = $derived(
@@ -30,12 +28,6 @@
     const unicornEnabled = $derived(enabled !== undefined ? enabled : autoUnicornEnabled);
     const showPlaceholder = $derived(!unicornEnabled);
     let scene = $state<UnicornScene | null>(null);
-
-    $effect(() => {
-        if (waveContainerEl) {
-            persistentWaveStore.setWave(waveContainerEl);
-        }
-    });
 
     $effect(() => {
         let cancelled = false;
@@ -53,20 +45,19 @@
                         dpi: 1,
                         fps: 60
                     })
-                } else {
-                    scene?.destroy();
-                    scene = null;
                 }
             })
         }
 
         return () => {
+            scene?.destroy();
+            scene = null;
             cancelled = true;
         };
     });
 </script>
 
-<div bind:this={waveContainerEl} class="absolute inset-0 overflow-hidden {className}" {style}>
+<div class="absolute inset-0 overflow-hidden {className}" {style}>
     <div
         aria-hidden="true"
         class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300 {unicornEnabled ? 'opacity-100' : 'opacity-0'}"
