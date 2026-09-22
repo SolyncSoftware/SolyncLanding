@@ -39,8 +39,8 @@
             alt={member.realName}
         />
         <div class="flex flex-col space-y-1 text-left transition">
-            <p class="text-accent text-2xl leading-[1em] font-bold md:text-left md:text-4xl">{member.username}</p>
-            <p class="text-xl leading-[1em] font-light md:text-left md:text-2xl">{member.realName}</p>
+            <p class="text-accent text-3xl leading-[1em] font-bold md:text-left md:text-4xl">{member.username}</p>
+            <p class="text-xl leading-[1em] font-light sm:text-2xl md:text-left">{member.realName}</p>
         </div>
 
         <div class="ml-auto flex flex-row items-center gap-4 text-black">

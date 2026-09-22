@@ -14,7 +14,7 @@
     });
 </script>
 
-<h1 class="mb-6 text-5xl font-bold text-white">Latest Articles.</h1>
+<h1 class="mb-6 text-5xl font-black text-white">Latest Articles.</h1>
 <div class="flex w-full flex-col gap-12">
     {#if loading}
         <p class="text-xl text-white">Loading contents please wait...</p>

@@ -83,7 +83,7 @@
         </PageContainer> -->
 
         <div
-            class="border-offwhite text-accent relative z-100 mx-0 overflow-hidden rounded-4xl border-8 p-9 shadow-2xl/20 2xl:-mx-10 [&_p]:text-2xl"
+            class="border-offwhite text-accent relative z-100 mx-0 overflow-hidden rounded-4xl border-8 p-5 shadow-2xl/20 sm:p-9 2xl:-mx-10 [&_p]:text-2xl"
         >
             <img
                 src="/images/home-banner.png"
