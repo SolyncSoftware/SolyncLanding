@@ -26,21 +26,21 @@
         duration: 600,
         repeat: false
     }}
-    class={`flex flex-col rounded-4xl bg-white/80 p-4 shadow-xl/4`}
+    class={`flex flex-col rounded-4xl bg-white/80 p-3 pr-4 pl-3 shadow-xl/4 sm:p-4`}
 >
-    <div class={['group flex flex-row items-center gap-4 text-black', expanded ? 'text-accent' : 'text-black']}>
+    <div class={['group flex flex-row items-center gap-3 text-black sm:gap-4', expanded ? 'text-accent' : 'text-black']}>
         <enhanced:img
             class={[
-                'aspect-square h-auto w-19 rounded-3xl outline-2 transition',
+                'aspect-square h-auto w-16 rounded-3xl outline-2 transition sm:w-19',
                 expanded ? 'outline-accent outline' : 'outline outline-transparent'
             ]}
             loading="lazy"
             src={member.avatarSrc}
             alt={member.realName}
         />
-        <div class="flex flex-col text-left transition">
-            <p class="text-accent text-3xl font-bold md:text-left md:text-4xl">{member.username}</p>
-            <p class="text-2xl font-light md:text-left">{member.realName}</p>
+        <div class="flex flex-col space-y-1 text-left transition">
+            <p class="text-accent text-2xl leading-[1em] font-bold md:text-left md:text-4xl">{member.username}</p>
+            <p class="text-xl leading-[1em] font-light md:text-left md:text-2xl">{member.realName}</p>
         </div>
 
         <div class="ml-auto flex flex-row items-center gap-4 text-black">
@@ -69,14 +69,14 @@
 
             <button
                 onclick={handleToggle}
-                class="bg-accent group cursor-pointer rounded-full p-4 px-4 py-2 shadow-xl/6 transition hover:bg-black md:px-8 md:py-6"
+                class="bg-accent group cursor-pointer rounded-full p-4 px-4 py-3 shadow-xl/6 transition hover:bg-black md:px-8 md:py-6"
                 class:bg-black={expanded}
                 aria-label="arrow"
             >
                 <img
                     src="/images/arrow-default.svg"
                     alt="Arrow"
-                    class="h-4 w-8 overflow-hidden transition-transform duration-200"
+                    class="h-3 w-6 overflow-hidden transition-transform duration-200 md:h-4 md:w-8"
                     class:rotate-180={expanded}
                     loading="lazy"
                 />
