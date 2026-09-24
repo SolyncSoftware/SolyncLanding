@@ -3,6 +3,10 @@
     import SolyncLogo from './SolyncLogo.svelte';
     import Button from './Button.svelte';
     import ButtonNew from './ButtonNew.svelte';
+    import performanceStore from '$lib/stores/performance.js';
+    import type { UnicornScene } from '$lib/utils/unicornTypes.js';
+    import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
+    import { tick } from 'svelte';
 
     let footerSections = [
         {
@@ -41,6 +45,46 @@
         { icon: SiBluesky, href: 'https://bsky.app/profile/solync.org' },
         { icon: SiGithub, href: 'https://github.com/SolyncSoftware' }
     ];
+
+    const unicornSetup = {
+        bg: '/solync_footer.json',
+        bgPlaceholder: '/images/waves-dark.png'
+    };
+
+    let embedEl = $state<HTMLDivElement | null>(null);
+    const autoUnicornEnabled = $derived(
+        !$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled)
+    );
+    const unicornEnabled = $derived(autoUnicornEnabled);
+    const showPlaceholder = $derived(!unicornEnabled);
+    let scene = $state<UnicornScene | null>(null);
+
+    $effect(() => {
+        let cancelled = false;
+
+        if (unicornEnabled) {
+            tick().then(async () => {
+                if (!cancelled && embedEl && !scene) {
+                    scene = await tryAddScene({
+                        element: embedEl,
+                        filePath: unicornSetup.bg,
+                        lazyLoad: true,
+                        fixed: true,
+                        production: false,
+                        scale: 0.8,
+                        dpi: 1,
+                        fps: 60
+                    });
+                }
+            });
+        }
+
+        return () => {
+            scene?.destroy();
+            scene = null;
+            cancelled = true;
+        };
+    });
 </script>
 
 <footer class="bg-deepblack text-xl text-white">
@@ -81,6 +125,9 @@
             <p class="text-accent font-black">&copy; 2026 Solync</p>
             <p class="text-white">Made with <span class="pulse text-red-400">&#10084;</span> in Texas</p>
         </section>
+    </div>
+    <div class="h-[15vh] min-h-24 w-full bg-black md:h-[33dvh] md:min-h-56">
+        <div bind:this={embedEl} class="h-full w-full" data-us-scale="0.75"></div>
     </div>
 </footer>
 
