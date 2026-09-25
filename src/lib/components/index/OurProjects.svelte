@@ -4,30 +4,56 @@
     import ProjectCard from '../assets/ProjectCard.svelte';
     import useEmblaCarousel from 'embla-carousel-svelte';
     import Autoplay from 'embla-carousel-autoplay';
+    import { untrack } from 'svelte';
 
     // default count for the number of projects to display is 6, default number of columns is 2. autoplay is there to silent error
-    let { count = 6, cols = 2, view = 'grid' as 'grid' | 'carousel', autoplay = false, autoplayDelay = 3000 } = $props();
-    import { untrack } from 'svelte';
-    let originalProjects = $state<TransformedProject[]>([]);
-    let sortedProjects = $state<TransformedProject[]>([]);
-    let loading = $state(true);
+    let {
+        projects = [] as TransformedProject[],
+        count = 6,
+        cols = 2,
+        view = 'grid' as 'grid' | 'carousel',
+        autoplay = false,
+        autoplayDelay = 3000
+    } = $props();
+
     let sortType = $state<'title' | 'dateNewest' | 'dateOldest'>('dateNewest');
 
-    function applySort() {
-        let filtered = originalProjects.filter((p) => p.showProject);
-        switch (sortType) {
-            case 'title':
-                filtered.sort((a, b) => a.title.localeCompare(b.title));
-                break;
-            case 'dateNewest':
-                filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-                break;
-            case 'dateOldest':
-                filtered.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-                break;
-        }
-        sortedProjects = filtered;
-    }
+    let sortedProjects = $derived.by(() => {
+        const filtered = projects.filter((project) => project.showProject);
+
+        return filtered.sort((a, b) => {
+            if (sortType === 'title') {
+                return a.title.localeCompare(b.title);
+            }
+
+            if (sortType === 'dateOldest') {
+                return new Date(a.date).getTime() - new Date(b.date).getTime();
+            }
+
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
+    });
+
+    // let originalProjects = $state<TransformedProject[]>([]);
+    // let sortedProjects = $state<TransformedProject[]>([]);
+    // let loading = $state(true);
+    // let sortType = $state<'title' | 'dateNewest' | 'dateOldest'>('dateNewest');
+
+    // function applySort() {
+    //     let filtered = originalProjects.filter((p) => p.showProject);
+    //     switch (sortType) {
+    //         case 'title':
+    //             filtered.sort((a, b) => a.title.localeCompare(b.title));
+    //             break;
+    //         case 'dateNewest':
+    //             filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    //             break;
+    //         case 'dateOldest':
+    //             filtered.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    //             break;
+    //     }
+    //     sortedProjects = filtered;
+    // }
 
     // fuck off
     const colsClass: Record<number, string> = {
@@ -45,18 +71,16 @@
         stopOnMouseEnter: true
     });
 
-    onMount(async () => {
-        const res = await fetch('/api/projects');
-        originalProjects = await res.json();
-        applySort();
-        loading = false;
-    });
+    // onMount(async () => {
+    //     const res = await fetch('/api/projects');
+    //     originalProjects = await res.json();
+    //     applySort();
+    //     loading = false;
+    // });
 </script>
 
 <section class="flex flex-col gap-4">
-    {#if loading}
-        <p class="text-xl">Loading projects...</p>
-    {:else if sortedProjects.length === 0}
+    {#if sortedProjects.length === 0}
         <p class="text-xl text-black">No projects found!</p>
     {:else if view === 'carousel'}
         <div class="embla">

@@ -11,16 +11,18 @@
     import Button from '$lib/components/Button.svelte';
     import { SiDiscord, SiGithub } from '@icons-pack/svelte-simple-icons';
     import { Mail } from '@lucide/svelte';
+    import type { PageProps } from './$types.ts';
 
-    let blogArticles = $state<Article[]>([]);
-    let loading = $state(true);
+    // let blogArticles = $state<Article[]>([]);
+    // let loading = $state(true);
 
-    onMount(async () => {
-        const res = await fetch('/api/articles?type=blog'),
-            articles: Article[] = await res.json();
-        blogArticles = articles.slice(0, 2);
-        loading = false;
-    });
+    // onMount(async () => {
+    //     const res = await fetch('/api/articles?type=blog'),
+    //         articles: Article[] = await res.json();
+    //     blogArticles = articles.slice(0, 2);
+    //     loading = false;
+    // });
+    const { data }: PageProps = $props();
 </script>
 
 <section class="flex flex-col gap-14">
@@ -112,7 +114,7 @@
                 />
             </a>
         </div> -->
-        <OurProjects />
+        <OurProjects projects={data.projects} />
         <div class="flex w-full flex-col items-end">
             <a
                 href="/about#our-work"
@@ -135,19 +137,17 @@
             The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a>, and help
             build what's next, together.
         </p>
-        <OurTeam />
+        <OurTeam members={data.members} />
     </div>
 
     <div class="space-y-4">
         <h2 class="text-5xl font-black">From the Blog.</h2>
         <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
-        {#if loading}
-            <p class="text-xl">Loading articles...</p>
-        {:else if blogArticles.length === 0}
+        {#if data.blogArticles.length === 0}
             <p class="text-xl text-black">No articles found.</p>
         {:else}
             <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
-                {#each blogArticles as article}
+                {#each data.blogArticles as article}
                     <SmallPost
                         title={article.title}
                         description={article.description}

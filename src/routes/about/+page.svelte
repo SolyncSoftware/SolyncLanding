@@ -3,6 +3,9 @@
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import ButtonNew from '$lib/components/ButtonNew.svelte';
+    import type { PageProps } from './$types.ts';
+
+    const { data }: PageProps = $props();
 </script>
 
 <section class="flex flex-col gap-14">
@@ -136,7 +139,7 @@
             <h2 class="text-accent mb-4 text-7xl font-black">Our Projects</h2>
             <p class="max-w-160 text-xl">A collection of projects that we've created and maintained.</p>
 
-            <OurProjects count={999} cols={3} />
+            <OurProjects count={999} cols={3} projects={data.projects} />
         </div>
     </div>
 

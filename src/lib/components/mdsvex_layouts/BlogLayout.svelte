@@ -1,4 +1,4 @@
-<!-- 
+<!--
     Layout used for blog articles.
 -->
 
