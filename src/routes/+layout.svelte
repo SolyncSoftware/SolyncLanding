@@ -47,9 +47,8 @@
     <meta name="twitter:image" content={meta.image ?? DEFAULT_IMAGE} />
 </svelte:head>
 
-
 <Header />
-<AnimatedIntroLogo />
+<!-- <AnimatedIntroLogo /> -->
 <div class="progress-bar"></div>
 <!-- pretty hard coded for the header but yeah. negative values work best -->
 {#key page.url.pathname}

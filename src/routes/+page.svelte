@@ -32,7 +32,13 @@
             repeat: false
         }}
     >
-        <PageContainer wavesType="/solync_home.json" innerClass="text-accent [&_p]:text-2xl" className="" wavesStyle="" showDim={false}>
+        <PageContainer
+            wavesType="/solync_home.json"
+            innerClass="text-accent [&_p]:text-2xl bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0)_70%)]"
+            className=""
+            wavesStyle=""
+            showDim={false}
+        >
             <img src="/images/home-logo.svg" alt="home logo" aria-hidden="true" class="pointer-events-none absolute -m-9 object-cover" />
 
             <div class="mt-70 max-w-160">
