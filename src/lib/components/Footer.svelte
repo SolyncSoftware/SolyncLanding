@@ -12,28 +12,25 @@
         {
             title: 'Navigation',
             links: [
-                { name: 'Home', href: '/' },
                 { name: 'About us', href: '/about' },
                 { name: 'Sponsor us', href: '/donate' },
-                { name: 'Our Blog', href: '/blog' }
+                { name: 'Our blog', href: '/blog' },
+                { name: 'Projects', href: '/about#our-work' }
             ]
         },
         {
-            // title: 'Projects',
-            // links: [
-            //     // { name: 'StreamSkinner', href: 'https://streamskinner.com/', external: true },
-            //     { name: 'Gardens Wiki', href: 'https://gardens.wiki/', external: true },
-            //     { name: 'Potaro Wiki', href: 'https://github.com/SolyncSoftware/porter-wiki-frontend', external: true },
-            //     { name: 'All Projects', href: '/about#our-work' }
-            //     // { name: 'Solync Orbit', href: 'https://orbit.solync.org/' }
-            // ]
+            title: 'Resources',
+            links: [
+                { name: 'Privacy', href: '/legal/privacy' },
+                { name: 'Terms', href: '/legal/terms' },
+                // { name: 'SolyncORBIT', href: 'https://orbit.solync.org/' },
+                { name: 'Status', href: 'https://status.solync.org', external: true }
+            ]
         },
         {
             title: 'More',
             links: [
-                // { name: 'Privacy Policy', href: '/legal/privacy' },
-                // { name: 'Terms of Service', href: '/legal/terms' },
-                { name: 'Solync Status', href: 'https://status.solync.org', external: true },
+                { name: 'Join us', href: '/apply' },
                 { name: 'Contact us', href: '/contact' }
             ]
         }
@@ -71,7 +68,7 @@
                         lazyLoad: true,
                         fixed: true,
                         production: false,
-                        scale: 0.8,
+                        scale: 1,
                         dpi: 1,
                         fps: 60
                     });
@@ -88,21 +85,25 @@
 </script>
 
 <footer class="bg-deepblack text-xl text-white">
-    <div class="bg-accent space-y-12 px-5 py-6 pb-5 2xl:px-70">
-        <p class="text-4xl text-white">
-            We're an independent software collective creating user-first experiences.<br />
-            <span class="font-black">We collaborate to create what's next.</span>
-        </p>
-        <section class="flex flex-row items-center justify-between">
+    <div class="bg-accent flex justify-between px-5 py-8 2xl:px-70">
+        <div class="flex flex-col gap-2 text-5xl font-light text-white">
+            <span>We're an independent software collective</span>
+            <span>creating user-first experiences.</span>
+            <span class="font-black">Building what comes next, together.</span>
+        </div>
+
+        <section class="flex flex-col items-end gap-4 self-end">
+            <div class="flex flex-row flex-wrap justify-end gap-2">
+                <a href="https://brainmade.org" target="_blank">
+                    <img src="/images/badges/brainmade.png" alt="brainmade.org" class="h-8 w-auto" /></a
+                >
+                <img src="/images/badges/csshard.gif" alt="CSS is difficult" class="h-8 w-auto" />
+                <img src="/images/badges/powered-by-debian.gif" alt="Powered by Debian" class="h-8 w-auto" />
+            </div>
             <div class="flex flex-row gap-4">
                 {#each socials as { icon: Icon, href }}
                     <a {href}><Icon class="h-6 w-auto" /></a>
                 {/each}
-            </div>
-            <div class="flex flex-row flex-wrap justify-end gap-2">
-                <img src="/images/badges/brainmade.png" alt="brainmade.org" class="h-8 w-auto" />
-                <img src="/images/badges/csshard.gif" alt="CSS is difficult" class="h-8 w-auto" />
-                <img src="/images/badges/powered-by-debian.gif" alt="Powered by Debian" class="h-8 w-auto" />
             </div>
         </section>
     </div>
@@ -112,7 +113,7 @@
                 class="[&_p]:font-blue [&>*:first-child]:text-accent flex flex-col gap-3 leading-[1em] text-white/70 lg:gap-2 [&_a]:hover:text-white [&>*:first-child]:font-black"
             >
                 <p>{title}</p>
-                <div class="flex flex-col gap-3 lg:flex-row lg:gap-4">
+                <div class="flex flex-col gap-3 lg:flex-row lg:gap-4 [&>*:last-child]:mr-12">
                     {#each links as { name, href }}
                         <p><a {href}>{name}</a></p>
                     {/each}
@@ -132,6 +133,10 @@
 </footer>
 
 <style scoped>
+    .pulse {
+        display: inline-block;
+        animation: pulse 2s ease infinite;
+    }
     @keyframes pulse {
         0%,
         100% {
