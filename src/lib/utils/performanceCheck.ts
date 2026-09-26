@@ -5,7 +5,7 @@ import { get } from 'svelte/store';
 let cachedCheck: Promise<void> | null = null;
 
 export const DEFAULT_FPS_THRESHOLD = 45;
-export const DEFAULT_FPS_SAMPLE_MS = 4000;
+export const DEFAULT_FPS_SAMPLE_MS = 6000;
 export const PERFORMANCE_CHECK_TTL_MS = 24 * 60 * 60 * 1000;
 const PERFORMANCE_CHECK_STORAGE_KEY = 'solync:performance-check:v1';
 
