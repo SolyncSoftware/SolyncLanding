@@ -11,6 +11,7 @@ function makeStore() {
 
 export const stores = {
     homepageCubes: makeStore(),
+    aboutLogo: makeStore(),
     dottyLogo: makeStore() // reused waves on /about and /donate
 };
 
@@ -22,7 +23,7 @@ export function setHost(store: Writable<PersistentWaveStoreState>, el: HTMLEleme
         }
         return next;
     });
-};
+}
 
 export function setWave(store: Writable<PersistentWaveStoreState>, el: HTMLElement | null) {
     store.update((s) => {
@@ -32,7 +33,7 @@ export function setWave(store: Writable<PersistentWaveStoreState>, el: HTMLEleme
         }
         return next;
     });
-};
+}
 
 export function attachTo(store: Writable<PersistentWaveStoreState>, targetEl: HTMLElement | null) {
     store.update((s) => {
@@ -42,7 +43,7 @@ export function attachTo(store: Writable<PersistentWaveStoreState>, targetEl: HT
         }
         return s;
     });
-};
+}
 
 export function resetToHost(store: Writable<PersistentWaveStoreState>, fromEl?: HTMLElement | null) {
     store.update((s) => {
@@ -53,7 +54,7 @@ export function resetToHost(store: Writable<PersistentWaveStoreState>, fromEl?: 
         }
         return s;
     });
-};
+}
 
 export function notifyResize() {
     if (typeof window !== 'undefined') {
@@ -61,4 +62,4 @@ export function notifyResize() {
             window.dispatchEvent(new Event('resize'));
         });
     }
-};
+}
