@@ -7,6 +7,8 @@ categories:
 published: true
 ---
 
+>Note: This document is a work in progress
+
 ## INTRODUCTION
 
 Thank you for being with Solync!
