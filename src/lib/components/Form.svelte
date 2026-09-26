@@ -108,7 +108,7 @@
             {:else}
                 <div class={`flex min-w-0 flex-col gap-1 text-lg ${field.span && field.span > 1 ? 'md:col-span-2' : ''}`}>
                     {#if field.label}
-                        <label for={field.name} class="after:text-accent after:content-['*']">
+                        <label for={field.name} class={field.required ? 'after:text-accent after:content-["*"]' : ''}>
                             {field.label}
                             <span class="text-sm text-black">
                                 {charCount(field) > 0 ? ` ${charCount(field)}` : ''}

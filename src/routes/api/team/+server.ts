@@ -44,7 +44,7 @@ const teamData: TeamMember[] = [
         realName: 'Sup',
         username: 'Sup#2.0',
         github: 'Sup2point0',
-        bio: "I interned at CERN working on the Hadron Collider. Now I'm at Solync."
+        bio: "I'm a creator, developer, musician, and nerd. I love reading, writing, worldbuilding and words. I dream of maths and chemistry after dark, but computer science is the one that's stolen my heart. I'm also a jack-of-all-knives, none of a kind, kind of a none, just having fun. :)"
     },
     {
         id: 33783503,
@@ -77,6 +77,22 @@ const teamData: TeamMember[] = [
         github: 'LizAinslie',
         bsky: 'mey.yuri.capital',
         bio: 'Full-stack, backend & Kotlin engineer passionate about decentralized, privacy focused technology and user freedom. Obsessed with polish & performance. In my free time I like playing games & watching anime with my friends, reading manga, and making music.'
+    },
+    {
+        id: 64609869,
+        realName: 'Ellie',
+        username: 'p1k0chu',
+        github: 'p1k0chu',
+        bsky: 'p1kachu.bsky.social',
+        bio: "Hi, I'm Ellie! I am a self-taught passionate software engineer from Ukraine. Big fan of Kotlin, I live in the terminal. I like poetry and listen to music all the time!"
+    },
+    {
+        id: 53254254,
+        realName: 'Vivian',
+        username: 'vivivivixen',
+        github: 'emifloofy',
+        bsky: 'emi.floo.fyi',
+        bio: "Based in Czechia, I'm a self-taught software developer, designer, sysadmin and artist who simply enjoys making things. Obsessed with frontend design and accessibility, with a soft spot for elegant solutions. I also love precision games and music!"
     },
     {
         id: 155797753,

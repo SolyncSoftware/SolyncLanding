@@ -45,10 +45,7 @@
     async function handleSubmit(formData: Record<string, string>) {
         const file = selectedFile;
 
-        if (!file) {
-            fileError = 'Please attach a file!';
-            throw new Error('Please attach a file.');
-        }
+        fileError = null;
 
         // put the frontend's formData into a payload.
         const payload = new FormData();
@@ -56,8 +53,10 @@
             payload.append(key, value);
         }
 
-        // include the file in the payload.
-        payload.append('resume', file, file.name);
+        // include the file in the payload when provided.
+        if (file) {
+            payload.append('resume', file, file.name);
+        }
 
         const res = await fetch('/api/apply', {
             method: 'POST',
@@ -66,7 +65,8 @@
         const result = await res.json();
 
         if (!res.ok) {
-            throw new Error(result.error || 'Error submitting form.');
+            const message = typeof result.error === 'string' ? result.error : 'Error submitting form.';
+            throw new Error(message);
         }
     }
 </script>
@@ -105,14 +105,11 @@
     <div class="grid grid-cols-1 gap-4 text-lg md:grid-cols-2 lg:grid-cols-2">
         <div class="rounded-4xl bg-white p-9 shadow-xl/4">
             <h2 class="mb-4 text-3xl font-bold">What we offer (so far)</h2>
-
-            <ul class="ml-6 list-disc">
-                <li class="mb-4">An organization where the environment and schedule is extremely flexible.</li>
-                <li class="mb-4">
-                    Opportunity to collaborate with experienced members to gain insight, inspiration, and expansive skillsets.
-                </li>
-
-                <li class="mb-4">
+            <ul class="ml-6 list-disc space-y-4">
+                <li>An organization where the environment and schedule is extremely flexible.</li>
+                <li>Opportunity to collaborate with experienced members to gain insight, inspiration, and expansive skillsets.</li>
+                <li>Access to infrastructure for development.</li>
+                <li>
                     Freedom to explore your own ideas and projects, and the opportunity to pitch them to the collective for feedback and
                     support.
                 </li>
@@ -122,11 +119,12 @@
         <div class="rounded-4xl bg-white p-9 shadow-xl/4">
             <h2 class="mb-4 text-3xl font-bold">What we're looking for</h2>
 
-            <ul class="ml-6 list-disc">
-                <li class="mb-4">Curiosity and a willingness to learn and adapt.</li>
-                <li class="mb-4">Collaboration and working with others.</li>
-                <li class="mb-4">Self-direction, like managing your own work and taking initiative.</li>
-                <li class="mb-4">A belief in ethical user-first experiences.</li>
+            <ul class="ml-6 list-disc space-y-4">
+                <li>Curiosity and a willingness to learn and adapt.</li>
+                <li>Collaboration and working with others.</li>
+                <li>Self-direction, like managing your own work and taking initiative.</li>
+                <li>Experience building real-world applications without relying on GenAI.</li>
+                <li>A belief in ethical user-first experiences.</li>
             </ul>
         </div>
     </div>
@@ -252,11 +250,10 @@
                         },
                         {
                             name: 'message',
-                            label: 'Portfolio / Website',
+                            label: 'Portfolio / Website (optional if you attach a resume)',
                             placeholder: 'Link to your portfolio or website',
                             type: 'url',
                             rows: 1,
-                            required: true,
                             span: 2
                         }
                     ]}
@@ -264,14 +261,14 @@
                 />
                 <div class="flex w-full flex-col gap-2">
                     <label for="fileInput">
-                        Attach your resume (.doc, .docx, .pdf). Must be less than 10MB.<span class="text-accent">*</span>
+                        Attach your resume (.doc, .docx, .pdf). Must be less than 10MB. Leave blank if you already linked a portfolio or
+                        website.
                     </label>
                     <input
                         type="file"
                         id="fileInput"
                         name="resume"
                         form="apply-form"
-                        required
                         accept=".doc,.docx,.pdf"
                         class="file:bg-offaccent file:rounded-full file:px-8 file:py-3 file:text-white file:transition-all file:hover:cursor-pointer file:hover:bg-black"
                         onchange={handleFileChange}
