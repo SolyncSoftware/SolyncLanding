@@ -1,30 +1,28 @@
 <script lang="ts">
     import { dev } from '$app/environment';
+    import { page } from '$app/state';
     import DevBanner from '$lib/components/DevBanner.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import Header from '$lib/components/Header.svelte';
     import Waves from '$lib/components/assets/Waves.svelte';
-    import persistentWaveStore from '$lib/stores/persistentWave.js';
-    import AnimatedIntroLogo from '$lib/components/AnimatedIntroLogo.svelte';
-    import { onMount, type Snippet } from 'svelte';
-    import { page } from '$app/state';
-    import { fade } from 'svelte/transition';
-    import { tick } from 'svelte';
+    import * as persistentWaves from '$lib/stores/persistentWave.js';
     import 'rune-scroller/animations.css';
+    import { tick, type Snippet } from 'svelte';
+    import { fade } from 'svelte/transition';
     import '../styles/tailwind.css';
 
     let { children }: { children: Snippet } = $props();
 
-    import runGlobalPerformanceCheck from '$lib/utils/performanceCheck.js';
-
-    let hostEl = $state<HTMLDivElement | null>(null);
+    let dottyLogoWavesHostEl = $state<HTMLDivElement | null>(null);
+    let homepageCubesHostEl = $state<HTMLDivElement | null>(null);
 
     $effect(() => {
-        if (hostEl) persistentWaveStore.setHost(hostEl);
-    });
-
-    onMount(() => {
-        runGlobalPerformanceCheck().catch(console.error);
+        if (dottyLogoWavesHostEl) {
+            persistentWaves.setHost(persistentWaves.stores.dottyLogo, dottyLogoWavesHostEl);
+        }
+        if (homepageCubesHostEl) {
+            persistentWaves.setHost(persistentWaves.stores.homepageCubes, homepageCubesHostEl);
+        }
     });
 
     // fixes hashes not working
@@ -61,18 +59,29 @@
     <meta name="twitter:image" content={meta.image ?? DEFAULT_IMAGE} />
 </svelte:head>
 
-<div bind:this={hostEl} class="pointer-events-none hidden" aria-hidden="true">
+<div bind:this={dottyLogoWavesHostEl} class="pointer-events-none opacity-0" aria-hidden="true">
     <Waves
         className="h-full overflow-hidden mix-blend-plus-lighter"
         style="z-index: -1; overflow: hidden; mask-image: linear-gradient(to right, #fff6 20%, #fffa, #fff);"
         wavesType="/solync_waves_dark.json"
         backgroundImage="/images/waves-dark.png"
         backgroundSize="cover"
+        waveStore={persistentWaves.stores.dottyLogo}
+        scale={0.8}
+    />
+</div>
+
+<div bind:this={homepageCubesHostEl} class="pointer-events-none opacity-0" aria-hidden="true">
+    <Waves
+        className="h-full overflow-hidden mix-blend-plus-lighter"
+        style="z-index: -1; overflow: hidden"
+        wavesType="/solync_home.json"
+        waveStore={persistentWaves.stores.homepageCubes}
     />
 </div>
 
 <Header />
-<AnimatedIntroLogo />
+<!-- <AnimatedIntroLogo /> -->
 <div class="progress-bar"></div>
 <!-- pretty hard coded for the header but yeah. negative values work best -->
 {#key page.url.pathname}

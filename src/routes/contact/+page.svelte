@@ -3,8 +3,8 @@
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
     import CircleX from '@lucide/svelte/icons/circle-x';
-    import CircleCheckBig from '@lucide/svelte/icons/circle-check-big';
     import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
+    import { stores as waveStores } from '$lib/stores/persistentWave.js';
 
     let isSubmitting = $state(false);
     let response: null | { type: 'success' } | { type: 'error'; message: string } = $state(null);
@@ -23,10 +23,10 @@
 </script>
 
 <section class="flex flex-col gap-14">
-    <PageContainer className="bg-indigo-500">
+    <PageContainer className="bg-indigo-500" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 font-medium">
-                <h1 class="max-w-190 text-4xl md:text-6xl">Contacting Solync.</h1>
+                <h1 class="max-w-190 text-4xl font-black md:text-6xl">Contacting Solync.</h1>
 
                 <p class="mt-4 text-2xl">All of our messages are sent to us via Discord webhooks for centralized communication.</p>
 
@@ -40,21 +40,21 @@
                     </a> and message @ModMail.
                 </p>
                 <p class="mt-4 text-2xl">
-                    For other inquiries, <a href="mailto:john@solync.org" class="underline hover:text-black">Email John</a>.
+                    For other inquiries, <a href="mailto:hello@solync.org" class="underline hover:text-black">Email us</a>.
                 </p>
             </div>
         </div>
     </PageContainer>
 
     <div class="rounded-4xl bg-white p-9 shadow-xl/4">
-        <h2 class="mb-4 text-3xl font-bold">Contact us</h2>
+        <h2 class="mb-4 text-4xl font-black">Contact us</h2>
         <div class="mb-6 flex flex-col justify-between gap-12 text-lg xl:flex-row">
-            <div class="flex w-full flex-col gap-6">
+            <div class="flex w-full flex-col items-start gap-8">
                 <div class="flex items-center gap-4">
                     <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" loading="lazy" />
                     <div class="font-display flex flex-col">
-                        <span class="text-accent text-2xl">Email John</span>
-                        <a href="mailto:john@solync.org" class="hover:text-accent text-xl hover:underline">john@solync.org</a>
+                        <span class="text-accent text-2xl">Email us</span>
+                        <a href="mailto:hello@solync.org" class="hover:text-accent text-xl hover:underline">hello@solync.org </a>
                     </div>
                 </div>
 

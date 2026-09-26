@@ -1,16 +1,21 @@
 <script lang="ts">
-    import { tick } from 'svelte';
-    import { initIfAllowed } from '$lib/utils/unicornLifecycle.js';
     import performanceStore from '$lib/stores/performance.js';
-    import persistentWaveStore from '$lib/stores/persistentWave.js';
+    import type { PersistentWaveStoreState } from '$lib/stores/persistentWave.js';
+    import * as persistentWaves from '$lib/stores/persistentWave.js';
+    import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
+    import type { UnicornScene } from '$lib/utils/unicornTypes.js';
+    import { tick } from 'svelte';
+    import { type Writable } from 'svelte/store';
 
     let {
         style = '',
         className = '',
-        backgroundImage = '/images/waves-dark.png',
-        backgroundSize = 'cover',
+        backgroundImage,
+        backgroundSize,
         wavesType = '/solync_waves_dark.json',
-        enabled = undefined
+        enabled = undefined,
+        scale = 1,
+        waveStore
     } = $props<{
         style?: string;
         className?: string;
@@ -18,20 +23,23 @@
         backgroundSize?: string;
         wavesType?: string;
         enabled?: boolean;
+        scale?: number;
+        waveStore: Writable<PersistentWaveStoreState>;
     }>();
 
     let waveContainerEl = $state<HTMLDivElement | null>(null);
     let embedEl = $state<HTMLDivElement | null>(null);
 
     const autoUnicornEnabled = $derived(
-        $performanceStore.checked && $performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled
+        !$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled)
     );
     const unicornEnabled = $derived(enabled !== undefined ? enabled : autoUnicornEnabled);
     const showPlaceholder = $derived(!unicornEnabled);
+    let scene = $state<UnicornScene | null>(null);
 
     $effect(() => {
         if (waveContainerEl) {
-            persistentWaveStore.setWave(waveContainerEl);
+            persistentWaves.setWave(waveStore, waveContainerEl);
         }
     });
 
@@ -39,14 +47,25 @@
         let cancelled = false;
 
         if (unicornEnabled) {
-            tick().then(() => {
-                if (!cancelled && embedEl) {
-                    initIfAllowed(embedEl);
+            tick().then(async () => {
+                if (!cancelled && embedEl && !scene) {
+                    scene = await tryAddScene({
+                        element: embedEl,
+                        filePath: wavesType,
+                        lazyLoad: true,
+                        fixed: true,
+                        production: false,
+                        scale: scale,
+                        dpi: 1,
+                        fps: 60
+                    });
                 }
             });
         }
 
         return () => {
+            scene?.destroy();
+            scene = null;
             cancelled = true;
         };
     });
@@ -57,18 +76,12 @@
         aria-hidden="true"
         class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300 {unicornEnabled ? 'opacity-100' : 'opacity-0'}"
     >
-        <div
-            bind:this={embedEl}
-            class="unicorn-embed absolute inset-0"
-            data-us-project-src={wavesType}
-            data-us-lazyload="true"
-            data-us-scale="0.8"
-            data-us-dpi="1"
-            data-us-fps="60"
-        ></div>
+        <div bind:this={embedEl} class="unicorn-embed absolute inset-0"></div>
     </div>
-    <div
-        class="absolute inset-0 z-0 transition-opacity duration-300 {showPlaceholder ? 'opacity-100' : 'opacity-0'}"
-        style="background-image: url({backgroundImage}); background-size: {backgroundSize}; background-position: center;"
-    ></div>
+    {#if backgroundImage && backgroundSize}
+        <div
+            class="absolute inset-0 z-0 transition-opacity duration-300 {showPlaceholder ? 'opacity-100' : 'opacity-0'}"
+            style="background-image: url({backgroundImage}); background-size: {backgroundSize}; background-position: center;"
+        ></div>
+    {/if}
 </div>

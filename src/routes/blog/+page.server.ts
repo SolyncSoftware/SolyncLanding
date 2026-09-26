@@ -2,10 +2,10 @@
 import type { PageServerLoad } from '../$types.js';
 
 export const load: PageServerLoad = async ({ fetch }) => {
-    const res = await fetch('/api/articles');
-    const articles = await res.json();
+    const res = await fetch('/api/articles?type=blog');
+    const blogArticles = await res.json();
     return {
-        articles,
+        blogArticles,
         meta: {
             title: 'Solync / Blog',
             description: 'Articles and updates from Solync',

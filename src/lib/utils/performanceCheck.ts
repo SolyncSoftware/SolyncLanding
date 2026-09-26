@@ -73,7 +73,7 @@ export const fpsMonitor = (duration: number): Promise<number> => {
     });
 };
 
-export async function runGlobalPerformanceCheck(opts?: { duration?: number; fpsThreshold?: number }) {
+export async function runGlobalCachedPerfCheck(opts?: { duration?: number; fpsThreshold?: number }) {
     if (!browser) return;
     if (cachedCheck) return cachedCheck;
 
@@ -153,4 +153,4 @@ export function cachePostInitFpsDecision(postInitFps: number | null, canUseWebgl
     }
 }
 
-export default runGlobalPerformanceCheck;
+export default runGlobalCachedPerfCheck;

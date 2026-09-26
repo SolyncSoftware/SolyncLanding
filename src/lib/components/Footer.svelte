@@ -1,153 +1,151 @@
 <script lang="ts">
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
-    import SolyncLogo from './SolyncLogo.svelte';
-    import Button from './Button.svelte';
+    import performanceStore from '$lib/stores/performance.js';
+    import type { UnicornScene } from '$lib/utils/unicornTypes.js';
+    import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
+    import { tick } from 'svelte';
 
-    let footerSections = $state([
+    let footerSections = [
         {
-            title: 'Solync',
+            title: 'Navigation',
             links: [
                 { name: 'About us', href: '/about' },
                 { name: 'Sponsor us', href: '/donate' },
-                { name: 'Our Blog', href: '/blog' }
+                { name: 'Our blog', href: '/blog' },
+                { name: 'Projects', href: '/about#our-work' }
             ]
         },
         {
-            title: 'Projects',
+            title: 'Resources',
             links: [
-                // { name: 'StreamSkinner', href: 'https://streamskinner.com/', external: true },
-                { name: 'Gardens Wiki', href: 'https://gardens.wiki/', external: true },
-                { name: 'Potaro Wiki', href: 'https://github.com/SolyncSoftware/porter-wiki-frontend', external: true },
-                { name: 'All Projects', href: '/about#our-work' }
-                // { name: 'Solync Orbit', href: 'https://orbit.solync.org/' }
+                { name: 'Privacy', href: '/legal/privacy' },
+                { name: 'Terms', href: '/legal/terms' },
+                // { name: 'SolyncORBIT', href: 'https://orbit.solync.org/' },
+                { name: 'Status', href: 'https://status.solync.org', external: true }
             ]
         },
         {
             title: 'More',
             links: [
-                // { name: 'Privacy Policy', href: '/legal/privacy' },
-                // { name: 'Terms of Service', href: '/legal/terms' },
-                { name: 'Solync Status', href: 'https://status.solync.org', external: true },
+                { name: 'Join us', href: '/apply' },
                 { name: 'Contact us', href: '/contact' }
             ]
         }
-    ]);
+    ];
 
-    let socials = $state([
+    let socials = [
         { icon: SiDiscord, href: 'https://discord.gg/nUeRyRtDYC' },
         { icon: SiYoutube, href: 'https://youtube.com/@SolyncSoftware' },
         { icon: SiBluesky, href: 'https://bsky.app/profile/solync.org' },
         { icon: SiGithub, href: 'https://github.com/SolyncSoftware' }
-    ]);
+    ];
+
+    const unicornSetup = {
+        bg: '/solync_footer.json',
+        bgPlaceholder: '/images/waves-dark.png'
+    };
+
+    let embedEl = $state<HTMLDivElement | null>(null);
+    const autoUnicornEnabled = $derived(
+        !$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled)
+    );
+    const unicornEnabled = $derived(autoUnicornEnabled);
+    const showPlaceholder = $derived(!unicornEnabled);
+    let scene = $state<UnicornScene | null>(null);
+
+    $effect(() => {
+        let cancelled = false;
+
+        if (unicornEnabled) {
+            tick().then(async () => {
+                if (!cancelled && embedEl && !scene) {
+                    scene = await tryAddScene({
+                        element: embedEl,
+                        filePath: unicornSetup.bg,
+                        lazyLoad: true,
+                        fixed: true,
+                        production: false,
+                        scale: 1,
+                        dpi: 1,
+                        fps: 60
+                    });
+                }
+            });
+        }
+
+        return () => {
+            scene?.destroy();
+            scene = null;
+            cancelled = true;
+        };
+    });
 </script>
 
-<footer class="bg-black px-5 py-12 text-xl text-white 2xl:px-70">
-    <!-- Donate banner -->
-    <a
-        class="group mb-18 flex flex-col items-center justify-between gap-4 rounded-2xl bg-black px-6 py-6 transition hover:bg-pink-500 sm:flex-row sm:px-12"
-        href="/donate"
-    >
-        <div class="text-center sm:text-left">
-            <p class="text-2xl font-bold sm:text-4xl">Software for everyone since 2024</p>
-            <p class="text-base sm:text-xl">Support us by donating or becoming a sponsor</p>
-        </div>
-        <span class="heart text-error inline-block text-3xl transition group-hover:text-white sm:text-4xl" aria-hidden="true">&#10084;</span
-        >
-    </a>
-
-    <!-- Three bold statements -->
-    <div class="mb-18 flex flex-col gap-3 text-center text-2xl font-bold sm:text-4xl md:text-6xl">
-        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">We're an independent software collective</p>
-        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">creating user-first experiences.</p>
-        <p class="bg-accent w-full px-4 py-4 sm:px-12 sm:py-6 md:w-fit">Building what comes next, together.</p>
-    </div>
-
-    <!-- Main footer grid -->
-    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        <!-- Left side -->
-        <div class="flex flex-col items-center gap-4 sm:items-start">
-            <a href="/" class="group block w-fit">
-                <SolyncLogo
-                    class="group-hover:fill-accent w-60 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 sm:w-80"
-                />
-            </a>
-
-            <div class="mt-auto flex w-full flex-col items-center gap-4 text-center font-bold sm:flex-row sm:text-left">
-                <span>Join us on our journey!</span>
-                <Button class="w-full hover:bg-white hover:text-black sm:w-fit" href="/apply" text="Apply to Solync" />
-            </div>
-
-            <ul class="flex flex-row items-center gap-4">
+<footer class="bg-deepblack text-xl text-white">
+    <div class="bg-accent flex justify-between px-5 py-8 2xl:px-70">
+        <div class="flex flex-col gap-2 text-5xl font-light text-white">
+            <span>We're an independent software collective</span>
+            <span>creating user-first experiences.</span>
+            <span class="font-black">Building what comes next, together.</span>
+            <div class="mt-4 flex flex-row gap-4 sm:mt-0 sm:hidden">
                 {#each socials as { icon: Icon, href }}
-                    <li>
-                        <a
-                            {href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={'Social link'}
-                            class="hover:text-accent flex items-center justify-center transition"
-                        >
-                            <Icon class="h-7 w-7 transition sm:h-6 sm:w-6" />
-                        </a>
-                    </li>
-                {/each}
-            </ul>
-        </div>
-
-        <!-- Right side -->
-        <div class="flex flex-col items-center gap-4 sm:items-end">
-            <div class="flex flex-wrap justify-center gap-8 md:gap-14 xl:justify-end">
-                {#each footerSections as section}
-                    <div class="flex flex-col gap-4 text-center sm:text-left">
-                        <span class="font-display text-accent w-auto">
-                            {section.title}
-                        </span>
-                        <nav class="flex flex-col gap-3 text-white/75 sm:gap-4">
-                            {#each section.links as link}
-                                <a
-                                    href={link.href}
-                                    class="footer-links hover:text-accent transition-colors"
-                                    target={link.external ? '_blank' : undefined}
-                                    rel={link.external ? 'noopener noreferrer' : undefined}
-                                >
-                                    {link.name}
-                                </a>
-                            {/each}
-                        </nav>
-                    </div>
+                    <a {href} target="_blank"><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
                 {/each}
             </div>
-
-            <div class="flex flex-row flex-wrap items-center justify-center gap-3">
-                <img src="/images/badges/csshard.gif" alt="css is hard" class="w-auto" loading="lazy" />
-                <img src="/images/badges/powered-by-debian.gif" alt="powered by debian" class="w-auto" loading="lazy" />
-                <a href="https://brainmade.org/" target="_blank">
-                    <img src="/images/badges/brainmade.png" alt="90% human made" class="w-auto" loading="lazy" />
-                </a>
-            </div>
-
-            <div class="text-center text-sm sm:text-xl">
-                &copy; {new Date().getFullYear()} Solync. Made with
-                <span class="heart text-error inline-block" aria-hidden="true">&#10084;</span>
-                in Texas.
+            <div class="mt-4 flex flex-row flex-wrap gap-2 sm:mt-0 sm:hidden">
+                <a href="https://brainmade.org" target="_blank">
+                    <img src="/images/badges/brainmade.png" alt="brainmade.org" class="h-8 w-auto" /></a
+                >
+                <img src="/images/badges/csshard.gif" alt="CSS is difficult" class="h-8 w-auto" />
+                <img src="/images/badges/powered-by-debian.gif" alt="Powered by Debian" class="h-8 w-auto" />
             </div>
         </div>
+
+        <section class="flex flex-col items-end gap-4 self-end">
+            <div class=" hidden flex-row flex-wrap justify-end gap-2 sm:flex">
+                <a href="https://brainmade.org" target="_blank">
+                    <img src="/images/badges/brainmade.png" alt="brainmade.org" class="h-8 w-auto" /></a
+                >
+                <img src="/images/badges/csshard.gif" alt="CSS is difficult" class="h-8 w-auto" />
+                <img src="/images/badges/powered-by-debian.gif" alt="Powered by Debian" class="h-8 w-auto" />
+            </div>
+            <div class="hidden flex-row gap-4 sm:flex">
+                {#each socials as { icon: Icon, href }}
+                    <a {href} target="_blank"><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
+                {/each}
+            </div>
+        </section>
+    </div>
+    <div class="flex flex-col gap-3 px-5 py-6 lg:flex-row 2xl:px-70 [&_p]:text-xl [&_p]:leading-[1em]">
+        {#each footerSections as { title, links }}
+            <section
+                class="[&_p]:font-blue [&>*:first-child]:text-accent flex flex-col gap-3 leading-[1em] text-white/70 lg:gap-2 [&_a]:hover:text-white [&>*:first-child]:font-black"
+            >
+                <p>{title}</p>
+                <div class="flex flex-col gap-3 lg:flex-row lg:gap-4 [&>*:last-child]:mr-12">
+                    {#each links as { name, href, external }}
+                        <p><a {href} target={external ? '_blank' : undefined}>{name}</a></p>
+                    {/each}
+                </div>
+            </section>
+        {/each}
+        <section
+            class="mt-6 flex flex-row flex-wrap justify-between gap-2 leading-[1em] text-white lg:mt-0 lg:ml-auto lg:flex-col lg:justify-start lg:text-end"
+        >
+            <p class="text-accent font-black">&copy; 2026 Solync</p>
+            <p class="text-white">Made with <span class="pulse text-red-400">&#10084;</span> in Texas</p>
+        </section>
+    </div>
+    <div class="h-[15vh] min-h-24 w-full bg-black md:h-[33dvh] md:min-h-56">
+        <div bind:this={embedEl} class="h-full w-full" data-us-scale="0.75"></div>
     </div>
 </footer>
 
 <style scoped>
-    footer {
-        background-image: linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, #000000 76%), url(/images/articles/fallback.png);
-        background-size: cover;
-        &:img {
-            display: block;
-        }
-    }
-
-    .heart {
+    .pulse {
+        display: inline-block;
         animation: pulse 2s ease infinite;
     }
-
     @keyframes pulse {
         0%,
         100% {
