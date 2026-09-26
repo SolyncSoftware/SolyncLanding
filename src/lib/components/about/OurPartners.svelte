@@ -17,7 +17,7 @@
 </script>
 
 <section>
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-5">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
         {#each partners as partner}
             {#snippet partnerImg()}
                 <enhanced:img src={partner.src} alt={partner.alt} class="h-full w-full object-contain" />

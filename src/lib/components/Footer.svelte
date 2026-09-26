@@ -99,7 +99,7 @@
             </div>
             <div class="flex flex-row gap-4">
                 {#each socials as { icon: Icon, href }}
-                    <a {href}><Icon class="h-6 w-auto" /></a>
+                    <a {href}><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
                 {/each}
             </div>
         </section>

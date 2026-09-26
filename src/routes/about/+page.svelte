@@ -113,7 +113,7 @@
         </a>
     </div>
 
-    <hr class="border-accent -mx-12 rounded-full border-t-4" />
+    <hr class="border-accent rounded-full border-t-4 2xl:-mx-12" />
 
     <div class="-ml-12 flex gap-12">
         <div class="bg-accent relative mt-15 w-2 shrink-0 rounded-full">
