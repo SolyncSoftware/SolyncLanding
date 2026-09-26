@@ -1,8 +1,5 @@
 <script lang="ts">
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
-    import SolyncLogo from './SolyncLogo.svelte';
-    import Button from './Button.svelte';
-    import ButtonNew from './ButtonNew.svelte';
     import performanceStore from '$lib/stores/performance.js';
     import type { UnicornScene } from '$lib/utils/unicornTypes.js';
     import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
@@ -114,8 +111,8 @@
             >
                 <p>{title}</p>
                 <div class="flex flex-col gap-3 lg:flex-row lg:gap-4 [&>*:last-child]:mr-12">
-                    {#each links as { name, href }}
-                        <p><a {href}>{name}</a></p>
+                    {#each links as { name, href, external }}
+                        <p><a {href} target={external ? '_blank' : undefined}>{name}</a></p>
                     {/each}
                 </div>
             </section>
