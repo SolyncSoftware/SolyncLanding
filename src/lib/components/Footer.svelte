@@ -89,7 +89,7 @@
             <span class="font-black">Building what comes next, together.</span>
             <div class="mt-4 flex flex-row gap-4 sm:mt-0 sm:hidden">
                 {#each socials as { icon: Icon, href }}
-                    <a {href}><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
+                    <a {href} target="_blank"><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
                 {/each}
             </div>
             <div class="mt-4 flex flex-row flex-wrap gap-2 sm:mt-0 sm:hidden">
@@ -111,7 +111,7 @@
             </div>
             <div class="hidden flex-row gap-4 sm:flex">
                 {#each socials as { icon: Icon, href }}
-                    <a {href}><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
+                    <a {href} target="_blank"><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
                 {/each}
             </div>
         </section>
