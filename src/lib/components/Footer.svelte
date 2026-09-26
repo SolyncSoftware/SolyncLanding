@@ -87,17 +87,29 @@
             <span>We're an independent software collective</span>
             <span>creating user-first experiences.</span>
             <span class="font-black">Building what comes next, together.</span>
-        </div>
-
-        <section class="flex flex-col items-end gap-4 self-end">
-            <div class="flex flex-row flex-wrap justify-end gap-2">
+            <div class="mt-4 flex flex-row gap-4 sm:mt-0 sm:hidden">
+                {#each socials as { icon: Icon, href }}
+                    <a {href}><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
+                {/each}
+            </div>
+            <div class="mt-4 flex flex-row flex-wrap gap-2 sm:mt-0 sm:hidden">
                 <a href="https://brainmade.org" target="_blank">
                     <img src="/images/badges/brainmade.png" alt="brainmade.org" class="h-8 w-auto" /></a
                 >
                 <img src="/images/badges/csshard.gif" alt="CSS is difficult" class="h-8 w-auto" />
                 <img src="/images/badges/powered-by-debian.gif" alt="Powered by Debian" class="h-8 w-auto" />
             </div>
-            <div class="flex flex-row gap-4">
+        </div>
+
+        <section class="flex flex-col items-end gap-4 self-end">
+            <div class=" hidden flex-row flex-wrap justify-end gap-2 sm:flex">
+                <a href="https://brainmade.org" target="_blank">
+                    <img src="/images/badges/brainmade.png" alt="brainmade.org" class="h-8 w-auto" /></a
+                >
+                <img src="/images/badges/csshard.gif" alt="CSS is difficult" class="h-8 w-auto" />
+                <img src="/images/badges/powered-by-debian.gif" alt="Powered by Debian" class="h-8 w-auto" />
+            </div>
+            <div class="hidden flex-row gap-4 sm:flex">
                 {#each socials as { icon: Icon, href }}
                     <a {href}><Icon class="h-6 w-auto transition duration-200 hover:text-black" /></a>
                 {/each}
