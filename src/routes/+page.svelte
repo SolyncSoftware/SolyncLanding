@@ -82,36 +82,12 @@
         </PageContainer>
     </div>
 
-    <!-- <p
-        class="text-5xl leading-16 font-bold text-black md:max-w-260"
-        use:rs={{
-            animation: 'fade',
-            duration: 1000,
-            repeat: false
-        }}
-    >
-        We're a group of hobbyists who believe in <span class="text-accent">worker-managed software</span> and create things we collectively believe
-        in.
-    </p> -->
-
     <div class="space-y-4">
         <h2 class="text-5xl font-black">Our projects.</h2>
         <p class="text-xl font-medium md:max-w-140">
             We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
         </p>
-        <!-- <div>
-            <a
-                href="/about#our-work"
-                class="text-accent group flex w-fit items-center gap-2 text-2xl font-bold transition-all ease-in-out hover:text-black"
-                >see more
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-all duration-200 group-hover:ml-1"
-                    loading="lazy"
-                />
-            </a>
-        </div> -->
+
         <OurProjects projects={data.projects} />
         <div class="flex w-full flex-col items-end">
             <a
