@@ -4,12 +4,13 @@
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import ButtonNew from '$lib/components/ButtonNew.svelte';
     import type { PageProps } from './$types.ts';
+    import { stores as waveStores } from '$lib/stores/persistentWave.js';
 
     const { data }: PageProps = $props();
 </script>
 
 <section class="flex flex-col gap-14">
-    <PageContainer className="bg-cyan-600">
+    <PageContainer className="bg-cyan-600" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 space-y-4 font-medium">
                 <h1 class="max-w-190 text-4xl font-black md:text-6xl">We're just getting started.</h1>

@@ -3,6 +3,7 @@
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
     import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
+    import { stores as waveStores } from '$lib/stores/persistentWave.js';
     import CircleX from '@lucide/svelte/icons/circle-x';
 
     let selectedFile = $state<File | null>(null);
@@ -72,7 +73,7 @@
 </script>
 
 <section class="flex flex-col gap-14">
-    <PageContainer className="bg-emerald-600">
+    <PageContainer className="bg-emerald-600" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 font-medium">
                 <h1 class="max-w-190 text-4xl font-black md:text-6xl">Applying to Solync.</h1>

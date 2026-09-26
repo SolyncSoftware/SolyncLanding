@@ -1,16 +1,14 @@
 <script lang="ts">
+    import Button from '$lib/components/Button.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import Waves from '$lib/components/assets/Waves.svelte';
-    import OurTeam from '$lib/components/index/OurTeam.svelte';
-    import OurProjects from '$lib/components/index/OurProjects.svelte';
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
-    import type { Article } from '$lib/utils/types.js';
-    import { onMount } from 'svelte';
-    import rs from 'rune-scroller';
-    import Button from '$lib/components/Button.svelte';
+    import OurProjects from '$lib/components/index/OurProjects.svelte';
+    import OurTeam from '$lib/components/index/OurTeam.svelte';
+    import { stores as waveStores } from '$lib/stores/persistentWave.js';
     import { SiDiscord, SiGithub } from '@icons-pack/svelte-simple-icons';
     import { Mail } from '@lucide/svelte';
+    import rs from 'rune-scroller';
     import type { PageProps } from './$types.ts';
 
     // let blogArticles = $state<Article[]>([]);
@@ -35,11 +33,11 @@
         }}
     >
         <PageContainer
-            wavesType="/solync_home.json"
-            innerClass="text-accent [&_p]:text-2xl bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0)_70%)]"
             className=""
+            innerClass="text-accent [&_p]:text-2xl bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0)_70%)]"
             wavesStyle=""
             showDim={false}
+            waveStore={waveStores.homepageCubes}
         >
             <img src="/images/home-logo.svg" alt="home logo" aria-hidden="true" class="pointer-events-none absolute -m-9 object-cover" />
 

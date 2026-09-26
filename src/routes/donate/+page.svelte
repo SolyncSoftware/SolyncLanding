@@ -1,10 +1,11 @@
 <script lang="ts">
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
+    import { stores as waveStores } from '$lib/stores/persistentWave.js';
 </script>
 
 <!-- some of the most batshit stupid shit ever written -->
 <div class="relative overflow-visible">
-    <PageContainer className="bg-pink-500/90 text-white">
+    <PageContainer className="bg-pink-500/90 text-white" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col gap-8 xl:flex-row xl:items-start xl:justify-between">
             <!-- Text Column -->
             <div class="max-w-210 font-medium">

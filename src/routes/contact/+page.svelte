@@ -4,6 +4,7 @@
     import Form from '$lib/components/Form.svelte';
     import CircleX from '@lucide/svelte/icons/circle-x';
     import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
+    import { stores as waveStores } from '$lib/stores/persistentWave.js';
 
     let isSubmitting = $state(false);
     let response: null | { type: 'success' } | { type: 'error'; message: string } = $state(null);
@@ -22,7 +23,7 @@
 </script>
 
 <section class="flex flex-col gap-14">
-    <PageContainer className="bg-indigo-500">
+    <PageContainer className="bg-indigo-500" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 font-medium">
                 <h1 class="max-w-190 text-4xl font-black md:text-6xl">Contacting Solync.</h1>
