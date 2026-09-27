@@ -80,6 +80,8 @@
         className="h-full overflow-hidden mix-blend-plus-lighter"
         style="z-index: -1; overflow: hidden"
         wavesType="/solync_home.json"
+        backgroundImage="/images/placeholder_cube.png"
+        backgroundSize="cover"
         waveStore={persistentWaves.stores.homepageCubes}
         scale={0.8}
     />
@@ -90,8 +92,10 @@
         className="h-full overflow-hidden mix-blend-plus-lighter"
         style="z-index: -1; overflow: hidden"
         wavesType="/solync_about.json"
+        backgroundImage="/images/about_logo.png"
+        backgroundSize="cover"
         waveStore={persistentWaves.stores.aboutLogo}
-        scale={0.8}
+        scale={1}
     />
 </div>
 

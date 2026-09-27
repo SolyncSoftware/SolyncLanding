@@ -10,10 +10,16 @@
 </script>
 
 <section class="flex flex-col gap-14">
-    <PageContainer waveStore={waveStores.aboutLogo} wavesStyle="" showDim={false} className="">
-        <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
-            <div class="max-w-200 space-y-4 font-medium">
-                <h1 class="max-w-190 text-4xl font-black md:text-6xl">We're just getting started.</h1>
+    <PageContainer
+        waveStore={waveStores.aboutLogo}
+        wavesStyle=""
+        showDim={false}
+        className=""
+        innerClass="bg-[linear-gradient(to_top,black_0%,rgba(255,255,255,0)_70%)]"
+    >
+        <div class="flex flex-col justify-center xl:flex-row">
+            <div class="max-w-220 space-y-4 text-center font-medium">
+                <h1 class="mb-55 text-4xl font-black md:text-6xl">We're just getting started.</h1>
 
                 <p class="text-2xl">
                     Solync is an independent software collective driven by passion, curiosity, experimentation, and the belief that creation
@@ -24,6 +30,8 @@
                     We're a group of hobbyists who believe in worker-managed software and create things we collectively believe in. We build
                     tools that spark our curiosity and address human needs. Every product we make is built with the end user in mind.
                 </p>
+
+                <!-- <p class="text-accent text-4xl font-black md:text-4xl">And we're just getting started.</p> -->
             </div>
         </div>
     </PageContainer>
