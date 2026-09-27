@@ -15,6 +15,7 @@
 
     let dottyLogoWavesHostEl = $state<HTMLDivElement | null>(null);
     let homepageCubesHostEl = $state<HTMLDivElement | null>(null);
+    let aboutLogoHostEl = $state<HTMLDivElement | null>(null);
 
     $effect(() => {
         if (dottyLogoWavesHostEl) {
@@ -22,6 +23,9 @@
         }
         if (homepageCubesHostEl) {
             persistentWaves.setHost(persistentWaves.stores.homepageCubes, homepageCubesHostEl);
+        }
+        if (aboutLogoHostEl) {
+            persistentWaves.setHost(persistentWaves.stores.aboutLogo, aboutLogoHostEl);
         }
     });
 
@@ -76,7 +80,22 @@
         className="h-full overflow-hidden mix-blend-plus-lighter"
         style="z-index: -1; overflow: hidden"
         wavesType="/solync_home.json"
+        backgroundImage="/images/placeholder_cube.png"
+        backgroundSize="cover"
         waveStore={persistentWaves.stores.homepageCubes}
+        scale={0.8}
+    />
+</div>
+
+<div bind:this={aboutLogoHostEl} class="pointer-events-none opacity-0" aria-hidden="true">
+    <Waves
+        className="h-full overflow-hidden mix-blend-plus-lighter"
+        style="z-index: -1; overflow: hidden"
+        wavesType="/solync_about.json"
+        backgroundImage="/images/about_logo.png"
+        backgroundSize="cover"
+        waveStore={persistentWaves.stores.aboutLogo}
+        scale={1}
     />
 </div>
 
