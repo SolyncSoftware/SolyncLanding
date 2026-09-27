@@ -42,6 +42,20 @@ async function initIfAllowed() {
     unicornInitialized = true;
 }
 
+function destroyCanvas(canvas: HTMLCanvasElement) {
+    try {
+        canvas.width = 1;
+        canvas.height = 1;
+        const gl = canvas.getContext('webgl') || canvas.getContext('webgl2');
+        if (gl) {
+            gl.getExtension('WEBGL_lose_context')?.loseContext();
+        }
+        canvas.remove();
+    } catch (e) {
+        console.warn('failed to clean up canvas:', e);
+    }
+}
+
 export function stopUnicorn(reason?: string) {
     if (!unicornInitialized) return;
     try {
@@ -49,18 +63,12 @@ export function stopUnicorn(reason?: string) {
             UnicornStudio.destroy();
         }
 
-        const canvases = document.querySelectorAll('canvas');
-        canvases.forEach((canvas) => {
-            canvas.width = 1;
-            canvas.height = 1;
+        const canvases = document.querySelectorAll('.unicorn-embed canvas');
+        canvases.forEach((canvas) => destroyCanvas(canvas as HTMLCanvasElement));
 
-            const gl = canvas.getContext('webgl') || canvas.getContext('webgl2');
-            if (gl) {
-                gl.getExtension('WEBGL_lose_context')?.loseContext();
-            }
+        const killEveryone = document.querySelectorAll('.unicorn-embed');
+        killEveryone.forEach((killEveryone) => killEveryone.remove());
 
-            canvas.remove();
-        });
         unicornInitialized = false;
         performanceStore.update((s) => ({ ...s, globalHardDisabled: true, canUseWebgl: false, disableReason: reason ?? 'global-failure' }));
         console.log('KILLED UNICORN DIE DIE DIE. this should fix the cpu thread issue');
@@ -76,18 +84,11 @@ export function disposeUnicorn() {
             UnicornStudio.destroy();
         }
 
-        const canvases = document.querySelectorAll('canvas');
-        canvases.forEach((canvas) => {
-            canvas.width = 1;
-            canvas.height = 1;
+        const canvases = document.querySelectorAll('.unicorn-embed canvas');
+        canvases.forEach((canvas) => destroyCanvas(canvas as HTMLCanvasElement));
 
-            const gl = canvas.getContext('webgl') || canvas.getContext('webgl2');
-            if (gl) {
-                gl.getExtension('WEBGL_lose_context')?.loseContext();
-            }
-
-            canvas.remove();
-        });
+        const killEveryone = document.querySelectorAll('.unicorn-embed');
+        killEveryone.forEach((killEveryone) => killEveryone.remove());
 
         unicornInitialized = false;
     } catch (e) {
