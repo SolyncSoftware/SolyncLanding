@@ -51,10 +51,16 @@
 
             <div class="mt-4 flex flex-row flex-wrap items-center gap-2">
                 <Button
-                    class="bg-accent! hover:bg-accent! w-fit self-center! px-10 text-xl! font-bold text-white! shadow-none transition-all
-                   hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022] sm:px-14"
+                    class="bg-accent! hover:bg-accent! w-fit self-center! px-8 text-xl! font-medium text-white! shadow-none
+                   transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
                     href="/about"
                     text="Learn more"
+                />
+                <Button
+                    class="bg-accent! hover:bg-accent! w-fit self-center! px-8 text-xl! font-medium text-white! shadow-none
+                   transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+                    href="/services"
+                    text="Our Services"
                 />
                 <a
                     href="https://discord.gg/nUeRyRtDYC"

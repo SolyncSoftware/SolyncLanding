@@ -33,6 +33,7 @@
     const navLinks = [
         { href: '/', text: 'Home' },
         { href: '/blog', text: 'Blog' },
+        { href: '/apply', text: 'Apply' },
         { href: '/about', text: 'Learn more' }
     ];
 </script>
@@ -116,7 +117,7 @@
         use:rs={{
             animation: 'fade-up',
             duration: 600,
-            delay: 1200,
+            delay: 1400,
             offset: 100
         }}
     >
