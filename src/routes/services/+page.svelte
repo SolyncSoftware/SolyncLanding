@@ -51,41 +51,63 @@
         </div>
     </PageContainer>
 
-    <div class="-ml-12 flex gap-12">
-        <div class="bg-accent relative mt-15 w-2 shrink-0 rounded-full">
-            <span class="bg-accent absolute -top-11 -left-4 h-10 w-10 rounded-full"></span>
-        </div>
+    <ol class="relative grid grid-cols-1 gap-y-20 text-xl">
+        {#each services as service, i}
+            {@const flip = i % 2 === 1}
+            {@const first = i === 0}
+            {@const last = i === services.length - 1}
+            <li class="relative">
+                <a href={service.page} class="relative block">
+                    <div class="relative z-1 space-y-2 overflow-hidden rounded-4xl bg-black p-6 text-white shadow-xl/4 sm:p-8">
+                        <img
+                            src="images/services/{service.image}"
+                            alt="service banner"
+                            class="absolute inset-0 -z-1 h-full w-full object-cover object-center"
+                        />
+                        <span class="text-accent block text-2xl font-black">0{i + 1}</span>
+                        <h3 class="text-2xl font-black">{service.title}</h3>
+                        <p class="max-w-120 font-medium">{service.body}</p>
+                    </div>
+                </a>
 
-        <div class="flex-1 space-y-4">
-            <h2 class="text-accent text-7xl font-black" id="process">Our Services</h2>
-            <p class="max-w-160 text-xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+                <!-- stem -->
+                <span
+                    class="bg-accent absolute top-0 h-full w-2 {flip ? '-right-14' : '-left-14'} {first ? 'rounded-t-full' : ''}
+                {last ? 'rounded-b-full' : ''}"
+                >
+                    {#if first}
+                        <span class="bg-accent absolute -top-11 -left-4 h-10 w-10 rounded-full"></span>
+                    {/if}
+                    {#if last}
+                        <span class="bg-accent absolute -bottom-4 -left-4 h-10 w-10 rounded-full"></span>
+                    {/if}
+                </span>
 
-            <ol class="grid grid-cols-1 gap-4 text-xl">
-                {#each services as service, i}
-                    <a href={service.page}>
-                        <li class="relative z-1 space-y-2 overflow-hidden rounded-4xl bg-black p-6 text-white shadow-xl/4 sm:p-8">
-                            <img
-                                src="images/services/{service.image}"
-                                alt="service banner"
-                                class="absolute inset-0 -z-1 h-full w-full object-cover object-center"
-                            />
-                            <span class="text-accent block text-2xl font-black">0{i + 1}</span>
-                            <h3 class="text-2xl font-black">{service.title}</h3>
-                            <p class="max-w-120 font-medium">{service.body}</p>
-                        </li>
-                    </a>
-                {/each}
-            </ol>
-        </div>
-    </div>
+                {#if !last}
+                    <!-- curved connector -->
+                    <div class="pointer-events-none absolute top-full -right-14 -left-14 h-20">
+                        {#if flip}
+                            <!-- right stem to left stem -->
+                            <div class="border-accent absolute top-0 right-0 h-1/2 w-1/2 rounded-br-3xl border-r-8 border-b-8"></div>
+                            <div
+                                class="border-accent absolute bottom-0 left-0 h-[calc(50%+8px)] w-1/2 rounded-tl-3xl border-t-8 border-l-8"
+                            ></div>
+                        {:else}
+                            <!-- left stem to right stem -->
+                            <div class="border-accent absolute top-0 left-0 h-1/2 w-1/2 rounded-bl-3xl border-b-8 border-l-8"></div>
+                            <div
+                                class="border-accent absolute right-0 bottom-0 h-[calc(50%+8px)] w-1/2 rounded-tr-3xl border-t-8 border-r-8"
+                            ></div>
+                        {/if}
+                    </div>
+                {/if}
+            </li>
+        {/each}
+    </ol>
 
     <div class="relative mt-40 flex w-full flex-col items-center justify-center gap-4 text-center">
         <p class="text-accent text-7xl">Sound good?</p>
-        <p class="max-w-400 text-4xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tell us what you're working on and we'll figure out the rest together.
-        </p>
+        <p class="max-w-400 text-4xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Shittttttttttt.</p>
         <ButtonNew href="/contact" class="w-fit self-center!">Get in touch</ButtonNew>
         <img src="images/giant-logo-vector.svg" alt="giant logo" class="absolute -z-1 translate-y-23" />
     </div>
