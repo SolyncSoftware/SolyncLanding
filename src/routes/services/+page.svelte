@@ -88,15 +88,15 @@
                     <div class="pointer-events-none absolute top-full -right-14 -left-14 h-20">
                         {#if flip}
                             <!-- right stem to left stem -->
-                            <div class="border-accent absolute top-0 right-0 h-1/2 w-1/2 rounded-br-3xl border-r-8 border-b-8"></div>
+                            <div class="border-accent absolute top-0 right-0 h-1/2 w-1/2 rounded-br-4xl border-r-8 border-b-8"></div>
                             <div
-                                class="border-accent absolute bottom-0 left-0 h-[calc(50%+8px)] w-1/2 rounded-tl-3xl border-t-8 border-l-8"
+                                class="border-accent absolute bottom-0 left-0 h-[calc(50%+8px)] w-1/2 rounded-tl-4xl border-t-8 border-l-8"
                             ></div>
                         {:else}
                             <!-- left stem to right stem -->
-                            <div class="border-accent absolute top-0 left-0 h-1/2 w-1/2 rounded-bl-3xl border-b-8 border-l-8"></div>
+                            <div class="border-accent absolute top-0 left-0 h-1/2 w-1/2 rounded-bl-4xl border-b-8 border-l-8"></div>
                             <div
-                                class="border-accent absolute right-0 bottom-0 h-[calc(50%+8px)] w-1/2 rounded-tr-3xl border-t-8 border-r-8"
+                                class="border-accent absolute right-0 bottom-0 h-[calc(50%+8px)] w-1/2 rounded-tr-4xl border-t-8 border-r-8"
                             ></div>
                         {/if}
                     </div>
