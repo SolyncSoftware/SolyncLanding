@@ -1,15 +1,14 @@
 <script lang="ts">
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import ButtonNew from '$lib/components/ButtonNew.svelte';
-    import ButtonSimple from '$lib/components/ButtonSimple.svelte';
     import { stores as waveStores } from '$lib/stores/persistentWave.js';
 
     const services = [
         {
             title: 'Lorem Ipsum',
             body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-            page: '/dolar',
-            image: 'theaceae-banner.webp'
+            page: '/dolar'
+            // image: 'theaceae-banner.webp'
         },
         {
             title: 'Dolor Sit Amet',
@@ -20,14 +19,14 @@
         {
             title: 'Consectetur Elit',
             body: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            page: '/dolar',
-            image: 'theaceae-banner.webp'
+            page: '/dolar'
+            // image: 'theaceae-banner.webp'
         },
         {
             title: 'Sed Do Eiusmod',
             body: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.',
-            page: '/dolar',
-            image: 'theaceae-banner.webp'
+            page: '/dolar'
+            // image: 'theaceae-banner.webp'
         }
     ];
 </script>
@@ -58,15 +57,20 @@
             {@const last = i === services.length - 1}
             <li class="relative">
                 <a href={service.page} class="relative block">
-                    <div class="relative z-1 space-y-2 overflow-hidden rounded-4xl bg-black p-6 text-white shadow-xl/4 sm:p-8">
-                        <img
-                            src="images/services/{service.image}"
-                            alt="service banner"
-                            class="absolute inset-0 -z-1 h-full w-full object-cover object-center"
-                        />
+                    <div
+                        class="relative z-1 space-y-2 overflow-hidden rounded-4xl bg-black p-6 text-white shadow-xl/4 transition-transform hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022] sm:p-8
+                        {flip ? 'text-right' : 'text-left'}"
+                    >
+                        {#if service.image}
+                            <img
+                                src="images/services/{service.image}"
+                                alt="service banner"
+                                class="absolute inset-0 -z-1 h-full w-full object-cover object-center"
+                            />
+                        {/if}
                         <span class="text-accent block text-2xl font-black">0{i + 1}</span>
                         <h3 class="text-2xl font-black">{service.title}</h3>
-                        <p class="max-w-120 font-medium">{service.body}</p>
+                        <p class="max-w-120 font-medium {flip ? 'justify-self-end' : 'text-left'}">{service.body}</p>
                     </div>
                 </a>
 
