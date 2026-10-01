@@ -122,7 +122,7 @@
                 class="[&_p]:font-blue [&>*:first-child]:text-accent flex flex-col gap-3 leading-[1em] text-white/70 lg:gap-2 [&_a]:hover:text-white [&>*:first-child]:font-black"
             >
                 <p>{title}</p>
-                <div class="flex flex-col gap-3 lg:flex-row lg:gap-4 [&>*:last-child]:mr-12">
+                <div class="flex flex-col gap-3 lg:flex-row lg:gap-4 [&>*:last-child]:mr-12 [&>*:only-child]:mr-22">
                     {#each links as { name, href, external }}
                         <p><a {href} target={external ? '_blank' : undefined}>{name}</a></p>
                     {/each}
