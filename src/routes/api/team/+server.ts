@@ -59,7 +59,7 @@ const teamData: TeamMember[] = [
         realName: 'Buby',
         username: 'almahbuby',
         github: 'almahbubyanwar',
-        bsky: 'nekobuby.bsky.social',
+        bsky: 'almahbuby.bsky.social',
         bio: "I'm a computer science student who mostly does JS/TS frontend dev, as well as UI/UX and graphic design. I like learning."
     },
     {
