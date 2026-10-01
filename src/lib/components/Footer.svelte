@@ -18,8 +18,8 @@
         {
             title: 'Resources',
             links: [
-                { name: 'Privacy', href: '/legal/privacy' },
-                { name: 'Terms', href: '/legal/terms' },
+                // { name: 'Privacy', href: '/legal/privacy' },
+                // { name: 'Terms', href: '/legal/terms' },
                 // { name: 'SolyncORBIT', href: 'https://orbit.solync.org/' },
                 { name: 'Status', href: 'https://status.solync.org', external: true }
             ]
