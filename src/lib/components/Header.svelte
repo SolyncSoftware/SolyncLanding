@@ -33,7 +33,6 @@
     const navLinks = [
         { href: '/', text: 'Home' },
         { href: '/blog', text: 'Blog' },
-        { href: '/apply', text: 'Apply' },
         { href: '/about', text: 'Learn more' }
     ];
 </script>
