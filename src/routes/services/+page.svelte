@@ -11,8 +11,8 @@
             // image: 'theaceae-banner.webp'
         },
         {
-            title: 'Basic Hosting',
-            body: 'Reliable hosting for websites or online services, with deployment and ongoing maintenance to help keep them available and up to date.',
+            title: 'Solync Hosting',
+            body: 'Basic hosting for websites or online services, with deployment and ongoing maintenance to help keep them available and up to date.',
             page: '/contact',
             image: 'theaceae-banner.webp'
         }
@@ -23,16 +23,19 @@
     <PageContainer className="bg-blue-500" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 space-y-4 font-medium">
-                <h1 class="max-w-190 text-4xl font-black md:text-6xl">See what we offer.</h1>
+                <h1 class="max-w-190 text-4xl font-black md:text-6xl">See what we offer (so far).</h1>
 
                 <p class="text-2xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Because of our ethos, our services are user-centric. Which is why we work directly with <i>you</i> to make sure your needs
+                    are met. Our non-proprietary services are built with you, the owner, in mind. We want you to ensure that you have the best
+                    experience possible with our services while keeping costs down.
                 </p>
 
                 <p class="text-2xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Don't see a software you need? We are constantly building what's next, so if you don't see what you're looking for, <a
+                        href="/contact"
+                        class="underline transition hover:text-black">reach out to us</a
+                    > and we'll work with you to make it happen.
                 </p>
             </div>
         </div>
