@@ -1,6 +1,7 @@
 import { json } from '@sveltejs/kit';
 
 interface SolyncProject {
+    // id: string;
     date: string;
     title: string;
     website?: string;
@@ -15,13 +16,27 @@ interface SolyncProject {
 // it can come later if we implement case study pages
 const projectData: SolyncProject[] = [
     {
-        date: '2024-12-04',
-        title: 'Porter Robinson Wiki',
-        // website: 'https://potaro.wiki/',
-        image: 'potaro.png',
-        desc: 'Our debut started with Porter Robinson Wiki. A website created for showcasing modular wiki design and easy to use functionality unlike other wiki sites. We plan to replace this with our Gardens Wiki project.',
-        github: 'porter-wiki-frontend'
-        // page: 'potaro-wiki'
+        date: '2026-07-20',
+        title: 'IdeaLync',
+        image: 'idealync.png',
+        desc: 'A Discord bot that streamlines our internal workflow such as pitching ideas, scheduling meetings, managing roles, and more. You can self host it for free!',
+        github: 'IdeaLync'
+    },
+    {
+        date: '2026-05-30',
+        title: 'KILLALLBOTS',
+        image: 'killallbots.png',
+        desc: 'A simple Discord moderation bot that bans users/bots when they select a specific role during onboarding.',
+        github: 'KILLALLBOTS'
+    },
+    {
+        date: '2025-10-01',
+        title: 'Gardens Wiki',
+        website: 'https://gardens.wiki/',
+        image: 'gardens.png',
+        desc: 'A user owned wiki builder/platform and social media site with a strong community-first focus for creative freedom. Coming soon!'
+        // github: 'gardens-wiki',
+        // page: 'gardens-wiki'
     },
     {
         date: '2024-12-20',
@@ -33,7 +48,7 @@ const projectData: SolyncProject[] = [
         // page: 'proto-eden'
     },
     {
-        date: '2024-12-4',
+        date: '2024-12-04',
         title: 'yell0w.net',
         website: 'https://yell0w.net/',
         image: 'yellow.png',
@@ -42,35 +57,21 @@ const projectData: SolyncProject[] = [
         // page: 'yell0w-net'
     },
     {
-        date: '2024-11-7',
+        date: '2024-12-04',
+        title: 'Porter Robinson Wiki',
+        // website: 'https://potaro.wiki/',
+        image: 'potaro.png',
+        desc: 'Our debut started with Porter Robinson Wiki. A website created for showcasing modular wiki design and easy to use functionality unlike other wiki sites. We plan to replace this with our Gardens Wiki project.',
+        github: 'porter-wiki-frontend'
+        // page: 'potaro-wiki'
+    },
+    {
+        date: '2024-11-07',
         title: 'Theaceae Home',
         image: 'theaceaeSmileLogoMint.png',
         desc: 'Our old homepage before we rebranded to Solync.',
         github: 'theaceae-home'
         // page: 'theaceae-home'
-    },
-    {
-        date: '2025-10-1',
-        title: 'Gardens Wiki',
-        website: 'https://gardens.wiki/',
-        image: 'gardens.png',
-        desc: 'A user owned wiki builder/platform and social media site with a strong community-first focus for creative freedom. Coming soon!'
-        // github: 'gardens-wiki',
-        // page: 'gardens-wiki'
-    },
-    {
-        date: '5-30-2026',
-        title: 'KILLALLBOTS',
-        image: 'killallbots.png',
-        desc: 'A simple Discord moderation bot that bans users/bots when they select a specific role during onboarding.',
-        github: 'KILLALLBOTS'
-    },
-    {
-        date: '7-20-2026',
-        title: 'IdeaLync',
-        image: 'idealync.png',
-        desc: 'A Discord bot that streamlines our internal workflow such as pitching ideas, scheduling meetings, managing roles, and more. You can self host it for free!',
-        github: 'IdeaLync'
     }
 ];
 

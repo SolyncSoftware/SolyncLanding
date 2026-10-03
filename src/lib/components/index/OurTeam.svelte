@@ -3,16 +3,10 @@
     import { onMount } from 'svelte';
     import TeamCard from '../assets/TeamCard.svelte';
 
-    let sortedMembers = $state<TransformedMember[]>([]);
-    let loading = $state(true);
-
-    onMount(async () => {
-        const res = await fetch('/api/team'),
-            members = await res.json();
-        sortedMembers = [...members].filter((member) => member.showUser).sort((a, b) => a.realName.localeCompare(b.realName));
-        loading = false;
-    });
-
+    let { members } = $props();
+    let sortedMembers = $derived.by(() =>
+        [...members].filter((member) => member.showUser).sort((a, b) => a.realName.localeCompare(b.realName))
+    );
     let expandedIndex = $state<number | null>(null);
 
     function toggleBio(index: number) {
@@ -21,9 +15,7 @@
 </script>
 
 <section class="flex flex-col gap-4">
-    {#if loading}
-        <p class="text-xl">Loading team members...</p>
-    {:else if sortedMembers.length === 0}
+    {#if sortedMembers.length === 0}
         <p class="text-xl text-black">No team members found!</p>
     {:else}
         {#each sortedMembers as member, i}

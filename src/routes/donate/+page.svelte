@@ -1,14 +1,15 @@
 <script lang="ts">
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
+    import { stores as waveStores } from '$lib/stores/persistentWave.js';
 </script>
 
 <!-- some of the most batshit stupid shit ever written -->
 <div class="relative overflow-visible">
-    <PageContainer className="bg-pink-500/90 text-white">
+    <PageContainer className="bg-pink-500/90 text-white" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col gap-8 xl:flex-row xl:items-start xl:justify-between">
             <!-- Text Column -->
             <div class="max-w-210 font-medium">
-                <h1 class="text-4xl md:text-6xl">Build a better Solync.</h1>
+                <h1 class="text-4xl font-black md:text-6xl">Build a better Solync.</h1>
                 <p class="mt-4 text-2xl">
                     Solync is a software startup based in Texas, United States. We're a collective of thinkers who like to showcase our work
                     while staying ethical to the end user. We run scalable services (StreamSkinner, Gardens Wiki) without any CEO, board, or

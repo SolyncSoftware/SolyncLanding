@@ -3,22 +3,15 @@
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
     import type { Article } from '$lib/utils/types.js';
     import { onMount } from 'svelte';
+    import type { PageProps } from './$types.js';
 
-    let blogArticles = $state<Article[]>([]);
-    let loading = $state(true);
-
-    onMount(async () => {
-        const res = await fetch('/api/articles?type=blog');
-        blogArticles = await res.json();
-        loading = false;
-    });
+    let { data }: PageProps = $props();
+    const blogArticles = $derived(data.blogArticles);
 </script>
 
-<h1 class="mb-6 text-5xl font-bold text-white">Latest Articles</h1>
+<h1 class="mb-6 text-5xl font-black text-white">Latest Articles.</h1>
 <div class="flex w-full flex-col gap-12">
-    {#if loading}
-        <p class="text-xl text-white">Loading contents please wait...</p>
-    {:else if blogArticles.length === 0}
+    {#if blogArticles.length === 0}
         <p class="text-error text-xl">No articles found!</p>
     {:else}
         <div class="flex flex-col gap-4">

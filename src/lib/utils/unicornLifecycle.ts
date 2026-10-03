@@ -1,51 +1,59 @@
 import performanceStore from '$lib/stores/performance.js';
-import { DEFAULT_FPS_THRESHOLD, fpsMonitor, cachePostInitFpsDecision } from '$lib/utils/performanceCheck.js';
+import { runGlobalCachedPerfCheck } from '$lib/utils/performanceCheck.js';
 import { get } from 'svelte/store';
+import type { UnicornScene, UnicornSceneOpts } from './unicornTypes.js';
 
 let initPromise: Promise<void> | null = null;
 let unicornInitialized = false;
 
-const POST_INIT_SAMPLE_MS = 400;
+export async function tryAddScene(unicornOpts: UnicornSceneOpts): Promise<UnicornScene> {
+    try {
+        await initIfAllowed();
+        let scene = await UnicornStudio.addScene(unicornOpts);
+        checkPerfAndMaybeDisable();
+        return scene;
+    } catch (error) {
+        console.error('Error adding a scene ', error);
+        throw error;
+    }
+}
 
-export async function initIfAllowed(embedEl?: HTMLElement | null) {
-    if (!embedEl) return;
+async function checkPerfAndMaybeDisable() {
+    await runGlobalCachedPerfCheck();
+    const state = get(performanceStore);
+    if (!state.canUseWebgl) {
+        stopUnicorn(state.disableReason ?? 'low-fps');
+    }
+}
+
+async function initIfAllowed() {
     const state = get(performanceStore);
     if (state.globalHardDisabled) throw new Error('Global Unicorn disabled');
-    if (!state.checked || !state.canUseWebgl) return;
+    if (state.checked && !state.canUseWebgl) throw new Error('canUseWebgl is false');
     if (typeof UnicornStudio === 'undefined') return;
     if (unicornInitialized) return;
     if (initPromise) return initPromise;
 
-    initPromise = (async () => {
-        try {
-            await UnicornStudio.init();
-            unicornInitialized = true;
+    // this promise genuinely never resolves
+    UnicornStudio.init().catch((error) => {
+        stopUnicorn('unicorn-init-error');
+        console.error('Error initializing UnicornStudio', error);
+    });
+    unicornInitialized = true;
+}
 
-            const postInitFps = await fpsMonitor(POST_INIT_SAMPLE_MS);
-            const shouldDisable = postInitFps < DEFAULT_FPS_THRESHOLD;
-
-            performanceStore.update((s) => ({
-                ...s,
-                postInitFps,
-                checked: true,
-                canUseWebgl: !shouldDisable,
-                disableReason: shouldDisable ? 'post-init-low-fps' : null
-            }));
-
-            cachePostInitFpsDecision(postInitFps, !shouldDisable, shouldDisable ? 'post-init-low-fps' : null);
-
-            if (shouldDisable) {
-                stopUnicorn('post-init-low-fps');
-            }
-        } catch (error) {
-            stopUnicorn('unicorn-init-error');
-            console.error('Error initializing UnicornStudio', error);
-        } finally {
-            initPromise = null;
+function destroyCanvas(canvas: HTMLCanvasElement) {
+    try {
+        canvas.width = 1;
+        canvas.height = 1;
+        const gl = canvas.getContext('webgl') || canvas.getContext('webgl2');
+        if (gl) {
+            gl.getExtension('WEBGL_lose_context')?.loseContext();
         }
-    })();
-
-    return initPromise;
+        canvas.remove();
+    } catch (e) {
+        console.warn('failed to clean up canvas:', e);
+    }
 }
 
 export function stopUnicorn(reason?: string) {
@@ -55,18 +63,12 @@ export function stopUnicorn(reason?: string) {
             UnicornStudio.destroy();
         }
 
-        const canvases = document.querySelectorAll('canvas');
-        canvases.forEach((canvas) => {
-            canvas.width = 1;
-            canvas.height = 1;
+        const canvases = document.querySelectorAll('.unicorn-embed canvas');
+        canvases.forEach((canvas) => destroyCanvas(canvas as HTMLCanvasElement));
 
-            const gl = canvas.getContext('webgl') || canvas.getContext('webgl2');
-            if (gl) {
-                gl.getExtension('WEBGL_lose_context')?.loseContext();
-            }
+        const killEveryone = document.querySelectorAll('.unicorn-embed');
+        killEveryone.forEach((killEveryone) => killEveryone.remove());
 
-            canvas.remove();
-        });
         unicornInitialized = false;
         performanceStore.update((s) => ({ ...s, globalHardDisabled: true, canUseWebgl: false, disableReason: reason ?? 'global-failure' }));
         console.log('KILLED UNICORN DIE DIE DIE. this should fix the cpu thread issue');
@@ -82,18 +84,11 @@ export function disposeUnicorn() {
             UnicornStudio.destroy();
         }
 
-        const canvases = document.querySelectorAll('canvas');
-        canvases.forEach((canvas) => {
-            canvas.width = 1;
-            canvas.height = 1;
+        const canvases = document.querySelectorAll('.unicorn-embed canvas');
+        canvases.forEach((canvas) => destroyCanvas(canvas as HTMLCanvasElement));
 
-            const gl = canvas.getContext('webgl') || canvas.getContext('webgl2');
-            if (gl) {
-                gl.getExtension('WEBGL_lose_context')?.loseContext();
-            }
-
-            canvas.remove();
-        });
+        const killEveryone = document.querySelectorAll('.unicorn-embed');
+        killEveryone.forEach((killEveryone) => killEveryone.remove());
 
         unicornInitialized = false;
     } catch (e) {

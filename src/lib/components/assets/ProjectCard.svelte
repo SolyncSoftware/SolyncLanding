@@ -25,9 +25,10 @@
             decoding="async"
         />
         <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
-
-        <h3 class="text-accent text-3xl font-bold tracking-wide">{project.title}</h3>
-        <p>{project.desc}</p>
+        <div class="space-y-0">
+            <h3 class="text-3xl font-black tracking-wide text-white">{project.title}</h3>
+            <p>{project.desc}</p>
+        </div>
 
         <div class="flex gap-3">
             {#if project.page !== '#'}

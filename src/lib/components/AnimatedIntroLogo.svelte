@@ -6,7 +6,7 @@
     onMount(() => {
         const timer = setTimeout(() => {
             visible = false;
-        }, 5000);
+        }, 3000);
 
         if (typeof sessionStorage !== 'undefined') {
             sessionStorage.setItem('solyncintroShown', 'true');
@@ -16,7 +16,7 @@
     });
 </script>
 
-<!-- {#if visible}
+{#if visible}
     <div class="fullpage-intro" aria-hidden="true">
         <div class="logo-wrapper">
             <svg class="solync-logo" viewBox="0 0 1665 665" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
@@ -34,7 +34,7 @@
             </svg>
         </div>
     </div>
-{/if} -->
+{/if}
 
 <style>
     @keyframes logo-stage {
@@ -93,7 +93,7 @@
         align-items: center;
         justify-content: center;
         isolation: isolate;
-        animation: fullpage-fadeout 4.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+        animation: fullpage-fadeout 2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
         animation-delay: 0.2s;
         animation-fill-mode: both;
         pointer-events: none;

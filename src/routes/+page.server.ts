@@ -1,10 +1,20 @@
 import type { Article } from '$lib/utils/types.ts';
+import type { TransformedProject } from './api/projects/+server.js';
+import type { TransformedMember } from './api/team/+server.js';
 
 export async function load({ fetch }) {
-    const response = await fetch('/api/articles');
-    const articles: Article[] = await response.json();
+    const [articlesResponse, projectsResponse, teamResponse] = await Promise.all([
+        fetch('/api/articles?type=blog'),
+        fetch('/api/projects'),
+        fetch('/api/team')
+    ]);
+    const blogArticles: Article[] = await articlesResponse.json();
+    const projects: TransformedProject[] = await projectsResponse.json();
+    const members: TransformedMember[] = await teamResponse.json();
     return {
-        articles,
+        blogArticles,
+        projects,
+        members,
         hideHeader: true,
         meta: {
             title: 'Solync / Building what comes next, together.',

@@ -3,6 +3,7 @@
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
     import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
+    import { stores as waveStores } from '$lib/stores/persistentWave.js';
     import CircleX from '@lucide/svelte/icons/circle-x';
 
     let selectedFile = $state<File | null>(null);
@@ -72,10 +73,10 @@
 </script>
 
 <section class="flex flex-col gap-14">
-    <PageContainer className="bg-emerald-600">
+    <PageContainer className="bg-emerald-600" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
             <div class="max-w-200 font-medium">
-                <h1 class="max-w-190 text-4xl md:text-6xl">Applying to Solync.</h1>
+                <h1 class="max-w-190 text-4xl font-black md:text-6xl">Applying to Solync.</h1>
 
                 <p class="mt-4 text-2xl">
                     We aren't looking for specific skill sets or backgrounds. Instead, we look for curious collaborators. We seek
@@ -102,10 +103,12 @@
         </div>
     </PageContainer>
 
-    <div class="grid grid-cols-1 gap-4 text-lg md:grid-cols-2 lg:grid-cols-2">
-        <div class="rounded-4xl bg-white p-9 shadow-xl/4">
-            <h2 class="mb-4 text-3xl font-bold">What we offer (so far)</h2>
-            <ul class="ml-6 list-disc space-y-4">
+    <div class="space-y-4">
+        <div class="relative overflow-hidden rounded-4xl bg-white p-11 text-xl shadow-xl/4">
+            <h2 class="text-accent mb-20 max-w-100 text-7xl leading-14 font-black">
+                <span class="font-thin">What we</span> Offer <span class="text-2xl font-medium">(so far)</span>
+            </h2>
+            <ul class="ml-6 max-w-170 list-disc space-y-4">
                 <li>An organization where the environment and schedule is extremely flexible.</li>
                 <li>Opportunity to collaborate with experienced members to gain insight, inspiration, and expansive skillsets.</li>
                 <li>Access to infrastructure for development.</li>
@@ -114,24 +117,29 @@
                     support.
                 </li>
             </ul>
+
+            <img src="images/wrench-vector.svg" alt="building tools" class="absolute top-1/2 right-0 -translate-y-1/2" />
         </div>
 
-        <div class="rounded-4xl bg-white p-9 shadow-xl/4">
-            <h2 class="mb-4 text-3xl font-bold">What we're looking for</h2>
-
-            <ul class="ml-6 list-disc space-y-4">
+        <div class="relative overflow-hidden rounded-4xl bg-white p-11 text-xl shadow-xl/4">
+            <h2 class="text-accent mb-20 max-w-100 text-7xl leading-14 font-black">
+                <span class="font-thin">What we're</span> Looking For
+            </h2>
+            <ul class="ml-6 max-w-170 list-disc space-y-4">
                 <li>Curiosity and a willingness to learn and adapt.</li>
                 <li>Collaboration and working with others.</li>
                 <li>Self-direction, like managing your own work and taking initiative.</li>
                 <li>Experience building real-world applications without relying on GenAI.</li>
                 <li>A belief in ethical user-first experiences.</li>
             </ul>
+
+            <img src="images/wrench-vector.svg" alt="building tools" class="absolute top-1/2 right-0 -translate-y-1/2" />
         </div>
     </div>
 
     <div class="flex flex-col gap-4 rounded-4xl bg-white p-9 shadow-xl/4">
         {#if !response || response.type !== 'success'}
-            <h2 class="mb-4 text-3xl font-bold">Apply now!</h2>
+            <h2 class="mb-4 text-4xl font-black">Apply now!</h2>
 
             <div class="bg-offwhite border-l-warning space-y-4 rounded-2xl border-l-4 p-5 text-lg">
                 <p class="text-black/90">
@@ -146,37 +154,37 @@
 
                 <!-- We can honestly make this an api call -->
                 <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-3">
-                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-xl/4 sm:rounded-full">
                         <span class="font-bold">UI/UX</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">Figma / Affinity / Adobe</span>
                     </span>
 
-                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-xl/4 sm:rounded-full">
                         <span class="font-bold">Frontend</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">HTML / JavaScript / TypeScript / Vue / Astro / SvelteKit / Tailwind CSS</span>
                     </span>
 
-                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-xl/4 sm:rounded-full">
                         <span class="font-bold">Backend</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">KTor / Kotlin / SvelteKit / MariaDB</span>
                     </span>
 
-                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-xl/4 sm:rounded-full">
                         <span class="font-bold">SysAdmin</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">Proxmox / Debian / Docker / Nix</span>
                     </span>
 
-                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-xl/4 sm:rounded-full">
                         <span class="font-bold">Social / Marketing</span>
                         <span class="px-1.5 text-black/40">|</span>
                         <span class="text-black/80">TikTok / Bluesky / IG / Twitter / YouTube</span>
                     </span>
 
-                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-sm sm:rounded-full">
+                    <span class="flex flex-wrap items-center gap-2.5 rounded-xl bg-white px-5 py-2 text-base shadow-xl/4 sm:rounded-full">
                         <span class="font-bold">Legal</span>
                         <span class="text-black/40">|</span>
                         <span class="text-black/80">Business Advisor / Lawyer</span>
