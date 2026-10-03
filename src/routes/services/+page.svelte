@@ -101,8 +101,8 @@
     </ol>
 
     <div class="relative mt-40 flex w-full flex-col items-center justify-center gap-4 text-center">
-        <p class="text-accent text-7xl">Sound good?</p>
-        <p class="max-w-400 text-4xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Shittttttttttt.</p>
+        <p class="text-accent text-7xl">Contact us!</p>
+        <p class="max-w-400 text-4xl">Solync provides 24/7 support for all your needs.</p>
         <ButtonNew href="/contact" class="w-fit self-center!">Get in touch</ButtonNew>
         <img src="images/giant-logo-vector.svg" alt="giant logo" class="absolute -z-1 translate-y-23" />
     </div>
