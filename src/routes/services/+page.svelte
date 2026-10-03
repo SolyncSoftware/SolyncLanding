@@ -5,28 +5,16 @@
 
     const services = [
         {
-            title: 'Lorem Ipsum',
-            body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-            page: '/dolar'
+            title: 'Website Creation',
+            body: 'Custom websites designed and built around your goals, with responsive layouts that work across phones, tablets, and desktops.',
+            page: '/contact'
             // image: 'theaceae-banner.webp'
         },
         {
-            title: 'Dolor Sit Amet',
-            body: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.',
-            page: '/dolar',
+            title: 'Basic Hosting',
+            body: 'Reliable hosting for websites or online services, with deployment and ongoing maintenance to help keep them available and up to date.',
+            page: '/contact',
             image: 'theaceae-banner.webp'
-        },
-        {
-            title: 'Consectetur Elit',
-            body: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            page: '/dolar'
-            // image: 'theaceae-banner.webp'
-        },
-        {
-            title: 'Sed Do Eiusmod',
-            body: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.',
-            page: '/dolar'
-            // image: 'theaceae-banner.webp'
         }
     ];
 </script>

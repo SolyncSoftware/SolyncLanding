@@ -106,6 +106,8 @@
                                 options: [
                                     { value: 'support', label: 'Support' },
                                     { value: 'question', label: 'Questions' },
+                                    { value: 'website-creation', label: 'Website Creation' },
+                                    { value: 'hosting', label: 'Basic Hosting' },
                                     { value: 'partners', label: 'Partners' },
                                     { value: 'trust-and-safety', label: 'Trust and Safety' },
                                     { value: 'other', label: 'Other' }
