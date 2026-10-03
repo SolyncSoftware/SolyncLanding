@@ -136,7 +136,7 @@
             <p class="text-white">Made with <span class="pulse text-red-400">&#10084;</span> in Texas</p>
         </section>
     </div>
-    <div class="h-[15vh] min-h-24 w-full bg-black md:h-[33dvh] md:min-h-56">
+    <div class="bg-deepblack h-[15vh] min-h-24 w-full md:h-[33dvh] md:min-h-56">
         <div bind:this={embedEl} class="h-full w-full" data-us-scale="0.75"></div>
     </div>
 </footer>
