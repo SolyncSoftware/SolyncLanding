@@ -91,7 +91,7 @@
                         <ul class="mt-6 space-y-3 border-t border-black/10 pt-5 text-base font-medium sm:text-lg">
                             {#each service.details as detail}
                                 <li class="flex items-start gap-3">
-                                    <span class="bg-accent mt-2.5 h-2 w-2 shrink-0 rounded-full"></span>
+                                    <span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-black"></span>
                                     <span>{detail}</span>
                                 </li>
                             {/each}
