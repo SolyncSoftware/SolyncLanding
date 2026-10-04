@@ -2,6 +2,7 @@
     import Button from '$lib/components/Button.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
+    import NavigationArrow from '$lib/components/assets/NavigationArrow.svelte';
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import OurTeam from '$lib/components/index/OurTeam.svelte';
@@ -96,18 +97,7 @@
 
         <OurProjects projects={data.projects} />
         <div class="flex w-full flex-col items-end">
-            <a
-                href="/about#our-work"
-                class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
-            >
-                see more projects
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
-                    loading="lazy"
-                />
-            </a>
+            <NavigationArrow href="/about#our-work" text="see more projects" />
         </div>
     </div>
 
@@ -139,18 +129,7 @@
             </div>
         {/if}
         <div class="flex w-full flex-col items-end">
-            <a
-                href="/blog"
-                class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
-            >
-                more from the blog
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
-                    loading="lazy"
-                />
-            </a>
+            <NavigationArrow href="/blog" text="more from the blog" />
         </div>
     </div>
 

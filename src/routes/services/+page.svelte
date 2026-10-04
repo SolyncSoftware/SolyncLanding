@@ -1,6 +1,6 @@
 <script lang="ts">
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import ButtonNew from '$lib/components/ButtonNew.svelte';
+    import NavigationArrow from '$lib/components/assets/NavigationArrow.svelte';
     import { stores as waveStores } from '$lib/stores/persistentWave.js';
 
     const services = [
@@ -11,7 +11,7 @@
                 'A custom website shaped around your goals and the people you want to reach. We work with you from the first conversation through launch.',
             details: [
                 'Custom design and development',
-                'Layouts for phones, tablets, and desktops',
+                'Fully responsive layout across mobile, tablet, and desktop',
                 'A collaborative process, built around your needs'
             ],
             className: 'bg-blue-500',
@@ -19,9 +19,8 @@
         },
         {
             number: '02',
-            title: 'Website Maintenance',
-            description:
-                'A home for your website or online service. We can help with deployment and ongoing maintenance so you can focus on what you want to build.',
+            title: 'Deployment & hosting',
+            description: 'We get your application live, point your domain, set up security certificates, and handle background services.',
             details: ['Hosting for websites and online services', 'Deployment support', 'Ongoing maintenance'],
             className: 'bg-accent',
             label: 'Starting at $175/year',
@@ -97,14 +96,9 @@
                             {/each}
                         </ul>
 
-                        <a href="/contact" class="text-accent group mt-8 flex w-fit items-center gap-2 text-lg font-bold hover:text-black">
-                            Ask us about {service.title.toLowerCase()}
-                            <img
-                                src="/images/arrow-sorange.svg"
-                                alt=""
-                                class="h-4 w-4 -rotate-90 transition-transform group-hover:translate-x-1"
-                            />
-                        </a>
+                        <div class="mt-3 flex w-full flex-col items-end">
+                            <NavigationArrow href="/contact" styles="!text-2xl" text="Ask us about {service.title.toLowerCase()}" />
+                        </div>
                     </div>
                 </article>
             {/each}
