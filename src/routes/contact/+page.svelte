@@ -16,7 +16,7 @@
     const selectedReason = $derived(page.url.searchParams.get('service') ?? '');
     const selectedServiceTitle = $derived(serviceTitles[selectedReason] ?? '');
     const initialMessage = $derived(
-        selectedServiceTitle ? `Hello Solync,\n\nI'm interested in learning more about ${selectedServiceTitle}.\n\nMy project details:\n` : ''
+        selectedServiceTitle ? `Hello Solync,\n\nI'd like to learn more about ${selectedServiceTitle}.\n\nMy project details:\n` : ''
     );
 
     let isSubmitting = $state(false);
