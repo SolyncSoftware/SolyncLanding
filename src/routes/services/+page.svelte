@@ -29,7 +29,7 @@
                 'Custom design developed with you'
             ],
             className: 'bg-emerald-500',
-            label: 'Starting at $300 upfront',
+            label: 'Starting at $600 upfront',
             contactValue: 'brochure-website-creation'
         },
         {
