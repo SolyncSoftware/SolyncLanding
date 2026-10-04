@@ -15,16 +15,16 @@
                 'A collaborative process, built around your needs'
             ],
             className: 'bg-blue-500',
-            label: 'Get a quote'
+            label: 'Starting at $300 upfront'
         },
         {
             number: '02',
-            title: 'Solync hosting',
+            title: 'Website Maintenance',
             description:
                 'A home for your website or online service. We can help with deployment and ongoing maintenance so you can focus on what you want to build.',
             details: ['Hosting for websites and online services', 'Deployment support', 'Ongoing maintenance'],
             className: 'bg-accent',
-            label: 'Get a quote',
+            label: 'Starting at $175/year',
             image: '/images/services/theaceae-banner.webp'
         }
     ];
