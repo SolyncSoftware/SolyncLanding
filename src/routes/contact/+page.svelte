@@ -1,10 +1,23 @@
 <script lang="ts">
+    import { page } from '$app/state';
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
     import CircleX from '@lucide/svelte/icons/circle-x';
     import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
     import { stores as waveStores } from '$lib/stores/persistentWave.js';
+
+    const serviceTitles: Record<string, string> = {
+        'landing-page-creation': 'landing page creation',
+        'brochure-website-creation': 'brochure website creation',
+        'deployment-hosting': 'deployment and hosting',
+        'static-hosting': 'static hosting'
+    };
+    const selectedReason = $derived(page.url.searchParams.get('service') ?? '');
+    const selectedServiceTitle = $derived(serviceTitles[selectedReason] ?? '');
+    const initialMessage = $derived(
+        selectedServiceTitle ? `Hello Solync,\n\nI'm interested in learning more about ${selectedServiceTitle}.\n\nMy project details:\n` : ''
+    );
 
     let isSubmitting = $state(false);
     let response: null | { type: 'success' } | { type: 'error'; message: string } = $state(null);
@@ -106,6 +119,10 @@
                                 options: [
                                     { value: 'support', label: 'Support' },
                                     { value: 'question', label: 'Questions' },
+                                    { value: 'landing-page-creation', label: 'Landing page creation' },
+                                    { value: 'brochure-website-creation', label: 'Brochure website creation' },
+                                    { value: 'deployment-hosting', label: 'Deployment & hosting' },
+                                    { value: 'static-hosting', label: 'Static hosting' },
                                     { value: 'website-creation', label: 'Website Creation' },
                                     { value: 'hosting', label: 'Basic Hosting' },
                                     { value: 'partners', label: 'Partners' },
@@ -125,6 +142,7 @@
                                 class: 'rounded-4xl!'
                             }
                         ]}
+                        values={{ reason: selectedServiceTitle ? selectedReason : '', message: initialMessage }}
                         onsubmit={handleSubmit}
                     />
                     <div class="flex w-full min-w-0 flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">

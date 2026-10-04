@@ -15,7 +15,8 @@
                 'A collaborative process, built around your needs'
             ],
             className: 'bg-blue-500',
-            label: 'Starting at $300 upfront'
+            label: 'Starting at $300 upfront',
+            contactValue: 'landing-page-creation'
         },
         {
             number: '02',
@@ -28,7 +29,8 @@
                 'Custom design developed with you'
             ],
             className: 'bg-emerald-500',
-            label: 'Starting at $300 upfront'
+            label: 'Starting at $300 upfront',
+            contactValue: 'brochure-website-creation'
         },
         {
             number: '03',
@@ -36,6 +38,7 @@
             description: 'We get your application live, point your domain, set up security certificates, and handle background services.',
             details: ['Hosting for websites and online services', 'Deployment support', 'Ongoing maintenance'],
             label: 'Starting at $175/year',
+            contactValue: 'deployment-hosting',
             image: '/images/services/teaser.svg'
         },
         {
@@ -44,7 +47,8 @@
             description: 'We deploy your static website, connect your custom domain, and configure HTTPS so it is ready to share.',
             details: ['Hosting for static websites', 'Custom domain setup', 'HTTPS security certificates'],
             className: 'bg-cyan-500',
-            label: 'Starting at $2/month'
+            label: 'Starting at $2/month',
+            contactValue: 'static-hosting'
         }
     ];
 </script>
@@ -118,7 +122,11 @@
                         </ul>
 
                         <div class="mt-3 flex w-full flex-col items-end">
-                            <NavigationArrow href="/contact" styles="!text-2xl" text="ask us about {service.title.toLowerCase()}" />
+                            <NavigationArrow
+                                href="/contact?service={service.contactValue}"
+                                styles="!text-2xl"
+                                text="ask us about {service.title.toLowerCase()}"
+                            />
                         </div>
                     </div>
                 </article>
