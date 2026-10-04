@@ -63,20 +63,19 @@
         <div class="grid gap-5 pt-4 lg:grid-cols-2">
             {#each services as service}
                 <article class="flex h-full flex-col overflow-hidden rounded-4xl bg-white shadow-xl/4">
-                    <div class="relative flex min-h-52 items-end overflow-hidden p-6 text-white sm:min-h-60 sm:p-8 {service.className}">
-                        {#if service.image}
-                            <img
-                                src={service.image}
-                                alt=""
-                                aria-hidden="true"
-                                class="absolute inset-0 h-full w-full object-cover opacity-55"
-                                loading="lazy"
-                            />
-                            <div class="absolute inset-0 bg-black/20"></div>
-                        {:else}
-                            <div class="absolute -top-20 -right-12 h-64 w-64 rounded-full border-24 border-white/15"></div>
-                            <div class="absolute -right-3 -bottom-32 h-64 w-64 rounded-full border-24 border-white/15"></div>
-                        {/if}
+                    <div
+                        class="service-header relative flex min-h-52 items-end overflow-hidden p-6 text-white sm:min-h-60 sm:p-8 {service.className} {!service.image
+                            ? 'service-image-fallback'
+                            : ''}"
+                    >
+                        <img
+                            src={service.image}
+                            alt=""
+                            aria-hidden="true"
+                            class="absolute inset-0 h-full w-full object-cover opacity-55"
+                            loading="lazy"
+                        />
+                        <div class="absolute inset-0 z-1 bg-black/20"></div>
                         <div class="relative z-10 flex w-full items-end justify-between gap-4">
                             <span class="text-6xl font-black sm:text-7xl">{service.number}</span>
                             <span class="rounded-full border border-white/60 bg-black/15 px-4 py-2 text-sm font-bold backdrop-blur-sm">
@@ -116,3 +115,19 @@
         <img src="images/giant-logo-vector.svg" alt="giant logo" class="absolute -z-1 translate-y-23" />
     </div>
 </section>
+
+<style>
+    .service-image-fallback::before {
+        content: '';
+        position: absolute;
+        right: -45px;
+        bottom: -60px;
+        z-index: 0;
+        width: 350px;
+        height: 350px;
+        background: url('/images/white_icon.svg') no-repeat;
+        background-size: contain;
+        opacity: 0.55;
+        pointer-events: none;
+    }
+</style>
