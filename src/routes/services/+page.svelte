@@ -5,16 +5,27 @@
 
     const services = [
         {
-            title: 'Website Creation',
-            body: 'Custom websites designed and built around your goals, with responsive layouts that work across phones, tablets, and desktops.',
-            page: '/contact'
-            // image: 'theaceae-banner.webp'
+            number: '01',
+            title: 'Website creation',
+            description:
+                'A custom website shaped around your goals and the people you want to reach. We work with you from the first conversation through launch.',
+            details: [
+                'Custom design and development',
+                'Layouts for phones, tablets, and desktops',
+                'A collaborative process, built around your needs'
+            ],
+            className: 'bg-blue-500',
+            label: 'Made for your goals'
         },
         {
-            title: 'Solync Hosting',
-            body: 'Basic hosting for websites or online services, with deployment and ongoing maintenance to help keep them available and up to date.',
-            page: '/contact',
-            image: 'theaceae-banner.webp'
+            number: '02',
+            title: 'Solync hosting',
+            description:
+                'A home for your website or online service. We can help with deployment and ongoing maintenance so you can focus on what you want to build.',
+            details: ['Hosting for websites and online services', 'Deployment support', 'Ongoing maintenance'],
+            className: 'bg-accent',
+            label: 'From launch to upkeep',
+            image: '/images/services/theaceae-banner.webp'
         }
     ];
 </script>
@@ -41,64 +52,65 @@
         </div>
     </PageContainer>
 
-    <ol class="relative grid grid-cols-1 gap-y-20 text-xl">
-        {#each services as service, i}
-            {@const flip = i % 2 === 1}
-            {@const first = i === 0}
-            {@const last = i === services.length - 1}
-            <li class="relative">
-                <a href={service.page} class="relative block">
-                    <div
-                        class="relative z-1 space-y-2 overflow-hidden rounded-4xl bg-black p-6 text-white shadow-xl/4 transition-transform hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022] sm:p-8
-                        {flip ? 'text-right' : 'text-left'}"
-                    >
+    <div class="space-y-4">
+        <div class="space-y-3">
+            <h2 class="text-4xl font-black md:text-5xl">Services built around people.</h2>
+            <p class="text-lg font-medium md:text-xl">
+                Every project is different. We'll listen first, work with you to understand what you need, and find a sensible way forward.
+            </p>
+        </div>
+
+        <div class="grid gap-5 pt-4 lg:grid-cols-2">
+            {#each services as service}
+                <article class="flex h-full flex-col overflow-hidden rounded-4xl bg-white shadow-xl/4">
+                    <div class="relative flex min-h-52 items-end overflow-hidden p-6 text-white sm:min-h-60 sm:p-8 {service.className}">
                         {#if service.image}
                             <img
-                                src="images/services/{service.image}"
-                                alt="service banner"
-                                class="absolute inset-0 -z-1 h-full w-full object-cover object-center"
+                                src={service.image}
+                                alt=""
+                                aria-hidden="true"
+                                class="absolute inset-0 h-full w-full object-cover opacity-55"
+                                loading="lazy"
                             />
-                        {/if}
-                        <span class="text-accent block text-2xl font-black">0{i + 1}</span>
-                        <h3 class="text-2xl font-black">{service.title}</h3>
-                        <p class="max-w-120 font-medium {flip ? 'justify-self-end' : 'text-left'}">{service.body}</p>
-                    </div>
-                </a>
-
-                <!-- stem -->
-                <span
-                    class="bg-accent absolute top-0 h-full w-2 {flip ? '-right-14' : '-left-14'} {first ? 'rounded-t-full' : ''}
-                {last ? 'rounded-b-full' : ''}"
-                >
-                    {#if first}
-                        <span class="bg-accent absolute -top-11 -left-4 h-10 w-10 rounded-full"></span>
-                    {/if}
-                    {#if last}
-                        <span class="bg-accent absolute -bottom-4 -left-4 h-10 w-10 rounded-full"></span>
-                    {/if}
-                </span>
-
-                {#if !last}
-                    <!-- curved connector -->
-                    <div class="pointer-events-none absolute top-full -right-14 -left-14 h-20">
-                        {#if flip}
-                            <!-- right stem to left stem -->
-                            <div class="border-accent absolute top-0 right-0 h-1/2 w-1/2 rounded-br-4xl border-r-8 border-b-8"></div>
-                            <div
-                                class="border-accent absolute bottom-0 left-0 h-[calc(50%+8px)] w-1/2 rounded-tl-4xl border-t-8 border-l-8"
-                            ></div>
+                            <div class="absolute inset-0 bg-black/20"></div>
                         {:else}
-                            <!-- left stem to right stem -->
-                            <div class="border-accent absolute top-0 left-0 h-1/2 w-1/2 rounded-bl-4xl border-b-8 border-l-8"></div>
-                            <div
-                                class="border-accent absolute right-0 bottom-0 h-[calc(50%+8px)] w-1/2 rounded-tr-4xl border-t-8 border-r-8"
-                            ></div>
+                            <div class="absolute -top-20 -right-12 h-64 w-64 rounded-full border-24 border-white/15"></div>
+                            <div class="absolute -right-3 -bottom-32 h-64 w-64 rounded-full border-24 border-white/15"></div>
                         {/if}
+                        <div class="relative z-10 flex w-full items-end justify-between gap-4">
+                            <span class="text-6xl font-black sm:text-7xl">{service.number}</span>
+                            <span class="rounded-full border border-white/60 bg-black/15 px-4 py-2 text-sm font-bold backdrop-blur-sm">
+                                {service.label}
+                            </span>
+                        </div>
                     </div>
-                {/if}
-            </li>
-        {/each}
-    </ol>
+
+                    <div class="flex flex-1 flex-col p-6 sm:p-8">
+                        <h3 class="text-3xl font-black sm:text-4xl">{service.title}</h3>
+                        <p class="mt-3 text-lg leading-relaxed font-medium">{service.description}</p>
+
+                        <ul class="mt-6 space-y-3 border-t border-black/10 pt-5 text-base font-medium sm:text-lg">
+                            {#each service.details as detail}
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-accent mt-2.5 h-2 w-2 shrink-0 rounded-full"></span>
+                                    <span>{detail}</span>
+                                </li>
+                            {/each}
+                        </ul>
+
+                        <a href="/contact" class="text-accent group mt-8 flex w-fit items-center gap-2 text-lg font-bold hover:text-black">
+                            Ask us about {service.title.toLowerCase()}
+                            <img
+                                src="/images/arrow-sorange.svg"
+                                alt=""
+                                class="h-4 w-4 -rotate-90 transition-transform group-hover:translate-x-1"
+                            />
+                        </a>
+                    </div>
+                </article>
+            {/each}
+        </div>
+    </div>
 
     <div class="relative mt-40 flex w-full flex-col items-center justify-center gap-4 text-center">
         <p class="text-accent text-7xl">Contact us!</p>
