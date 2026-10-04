@@ -2,6 +2,7 @@
     import Button from '$lib/components/Button.svelte';
     import SolyncLogo from '$lib/components/SolyncLogo.svelte';
     import PageContainer from '$lib/components/assets/PageContainer.svelte';
+    import NavigationArrow from '$lib/components/assets/NavigationArrow.svelte';
     import SmallPost from '$lib/components/blog/SmallPost.svelte';
     import OurProjects from '$lib/components/index/OurProjects.svelte';
     import OurTeam from '$lib/components/index/OurTeam.svelte';
@@ -51,10 +52,16 @@
 
             <div class="mt-4 flex flex-row flex-wrap items-center gap-2">
                 <Button
-                    class="bg-accent! hover:bg-accent! w-fit self-center! px-10 text-xl! font-bold text-white! shadow-none transition-all
-                   hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022] sm:px-14"
+                    class="bg-accent! hover:bg-accent! w-fit self-center! px-8 text-xl! font-medium text-white! shadow-none
+                   transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
                     href="/about"
                     text="Learn more"
+                />
+                <Button
+                    class="bg-accent! hover:bg-accent! w-fit self-center! px-8 text-xl! font-medium text-white! shadow-none
+                   transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
+                    href="/services"
+                    text="Our Services"
                 />
                 <a
                     href="https://discord.gg/nUeRyRtDYC"
@@ -90,18 +97,7 @@
 
         <OurProjects projects={data.projects} />
         <div class="flex w-full flex-col items-end">
-            <a
-                href="/about#our-work"
-                class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
-            >
-                see more projects
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
-                    loading="lazy"
-                />
-            </a>
+            <NavigationArrow href="/about#our-work" text="see more projects" />
         </div>
     </div>
 
@@ -133,18 +129,7 @@
             </div>
         {/if}
         <div class="flex w-full flex-col items-end">
-            <a
-                href="/blog"
-                class="text-accent group flex w-fit items-center gap-2 text-3xl font-bold transition-all ease-in-out hover:text-black"
-            >
-                more from the blog
-                <img
-                    src="/images/arrow-sorange.svg"
-                    alt="Arrow"
-                    class="w-7 -rotate-90 overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
-                    loading="lazy"
-                />
-            </a>
+            <NavigationArrow href="/blog" text="more from the blog" />
         </div>
     </div>
 

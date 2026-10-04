@@ -116,7 +116,7 @@
         use:rs={{
             animation: 'fade-up',
             duration: 600,
-            delay: 1200,
+            delay: 1400,
             offset: 100
         }}
     >

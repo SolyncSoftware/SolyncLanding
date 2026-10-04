@@ -3,16 +3,29 @@
 
     let { class: className = '', type = 'text', placeholder = 'Text...', value = $bindable(''), required = false, ...rest } = $props();
 
-    function grow(node: HTMLTextAreaElement) {
+    function grow(node: HTMLTextAreaElement, value: string) {
         function adjust() {
             node.style.height = 'auto';
             node.style.height = node.scrollHeight + 'px';
         }
-        node.addEventListener('input', adjust);
-        adjust(); // initial
+
+        let frame = requestAnimationFrame(adjust);
+        function scheduleAdjust() {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(adjust);
+        }
+
+        node.addEventListener('input', scheduleAdjust);
         return {
+            update(nextValue: string) {
+                if (nextValue !== value) {
+                    value = nextValue;
+                    scheduleAdjust();
+                }
+            },
             destroy() {
-                node.removeEventListener('input', adjust);
+                cancelAnimationFrame(frame);
+                node.removeEventListener('input', scheduleAdjust);
             }
         };
     }
@@ -20,7 +33,7 @@
 
 {#if type === 'textarea'}
     <textarea
-        use:grow
+        use:grow={value}
         bind:value
         {...rest}
         class={`focus:ring-accent bg-offwhite w-full min-w-0 resize-none overflow-clip rounded-full
