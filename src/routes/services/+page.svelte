@@ -15,7 +15,7 @@
                 'A collaborative process, built around your needs'
             ],
             className: 'bg-blue-500',
-            label: 'Made for your goals'
+            label: 'Get a quote'
         },
         {
             number: '02',
@@ -24,7 +24,7 @@
                 'A home for your website or online service. We can help with deployment and ongoing maintenance so you can focus on what you want to build.',
             details: ['Hosting for websites and online services', 'Deployment support', 'Ongoing maintenance'],
             className: 'bg-accent',
-            label: 'From launch to upkeep',
+            label: 'Get a quote',
             image: '/images/services/theaceae-banner.webp'
         }
     ];
@@ -113,9 +113,6 @@
     </div>
 
     <div class="relative mt-40 flex w-full flex-col items-center justify-center gap-4 text-center">
-        <p class="text-accent text-7xl">Contact us!</p>
-        <p class="max-w-400 text-4xl">Solync provides 24/7 support for all your needs.</p>
-        <ButtonNew href="/contact" class="w-fit self-center!">Get in touch</ButtonNew>
         <img src="images/giant-logo-vector.svg" alt="giant logo" class="absolute -z-1 translate-y-23" />
     </div>
 </section>
