@@ -79,14 +79,6 @@ const teamData: TeamMember[] = [
         bio: 'Full-stack, backend & Kotlin engineer passionate about decentralized, privacy focused technology and user freedom. Obsessed with polish & performance. In my free time I like playing games & watching anime with my friends, reading manga, and making music.'
     },
     {
-        id: 64609869,
-        realName: 'Ellie',
-        username: 'p1k0chu',
-        github: 'p1k0chu',
-        bsky: 'p1kachu.bsky.social',
-        bio: "Hi, I'm Ellie! I am a self-taught passionate software engineer from Ukraine. Big fan of Kotlin, I live in the terminal. I like poetry and listen to music all the time!"
-    },
-    {
         id: 53254254,
         realName: 'Vivian',
         username: 'vivivivixen',
