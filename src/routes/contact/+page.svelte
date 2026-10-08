@@ -4,6 +4,7 @@
     import Button from '$lib/components/Button.svelte';
     import Form from '$lib/components/Form.svelte';
     import CircleX from '@lucide/svelte/icons/circle-x';
+    import { SiDiscord, SiGithub } from '@icons-pack/svelte-simple-icons';
     import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
     import { stores as waveStores } from '$lib/stores/persistentWave.js';
 
@@ -38,72 +39,28 @@
 <section class="flex flex-col gap-14">
     <PageContainer className="bg-indigo-500" waveStore={waveStores.dottyLogo}>
         <div class="flex flex-col justify-between xl:flex-row xl:pr-24">
-            <div class="max-w-200 font-medium">
+            <div class="max-w-200 space-y-4 font-medium">
                 <h1 class="max-w-190 text-4xl font-black md:text-6xl">Contacting Solync.</h1>
 
-                <p class="mt-4 text-2xl">All of our messages are sent to us via Discord webhooks for centralized communication.</p>
+                <p class="text-2xl">All of our messages are sent to us via Discord webhooks for centralized communication.</p>
 
-                <p class="mt-4 text-2xl">
-                    If you need customer service regarding any of our projects, please reach out to us on <a
-                        href="https://discord.gg/nUeRyRtDYC"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="underline hover:text-black"
-                        >Discord
-                    </a> and message @ModMail.
+                <p class="text-2xl">
+                    Have an idea, question, or opportunity to share? Tell us a little about it below, and we'll take it from there.
                 </p>
-                <p class="mt-4 text-2xl">
-                    For other inquiries, <a href="mailto:hello@solync.org" class="underline hover:text-black">Email us</a>.
+
+                <p class="text-2xl">
+                    If you need to see our services, please visit our <a href="/services" class="underline hover:text-black">services</a> page.
                 </p>
             </div>
         </div>
     </PageContainer>
 
-    <div class="rounded-4xl bg-white p-9 shadow-xl/4">
-        <h2 class="mb-4 text-4xl font-black">Contact us</h2>
-        <div class="mb-6 flex flex-col justify-between gap-12 text-lg xl:flex-row">
-            <div class="flex w-full flex-col items-start gap-8">
-                <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="Email" class="h-11 w-11 object-cover" loading="lazy" />
-                    <div class="font-display flex flex-col">
-                        <span class="text-accent text-2xl">Email us</span>
-                        <a href="mailto:hello@solync.org" class="hover:text-accent text-xl hover:underline">hello@solync.org </a>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="Discord" class="h-11 w-11 object-cover" loading="lazy" />
-                    <div class="font-display flex flex-col">
-                        <span class="text-accent text-2xl">Discord</span>
-                        <a
-                            href="https://discord.gg/nUeRyRtDYC"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="hover:text-accent text-xl hover:underline"
-                        >
-                            Click to join our Discord
-                        </a>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <img src="/images/placeholders/@placeholder.svg" alt="GitHub" class="h-11 w-11 object-cover" loading="lazy" />
-                    <div class="font-display flex flex-col">
-                        <span class="text-accent text-2xl">GitHub</span>
-                        <a
-                            href="https://github.com/SolyncSoftware"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="hover:text-accent text-xl hover:underline"
-                        >
-                            Click to visit our GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <div class="grid gap-10 rounded-4xl bg-white p-6 shadow-xl/4 sm:p-9 lg:grid-cols-2 lg:gap-14">
+        <div class="min-w-0">
+            <h2 class="text-4xl font-black">Contact us</h2>
 
             {#if !response || response.type !== 'success'}
-                <div class="flex w-full flex-col gap-6">
+                <div class="mt-5 flex w-full flex-col gap-6">
                     <Form
                         id="contact-form"
                         bind:loading={isSubmitting}
@@ -145,17 +102,17 @@
                         values={{ reason: selectedServiceTitle ? selectedReason : '', message: initialMessage }}
                         onsubmit={handleSubmit}
                     />
-                    <div class="flex w-full min-w-0 flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
+                    <div class="flex w-full min-w-0 flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
                         {#if response && response.type == 'error'}
                             <div class="flex min-w-0 flex-row items-center gap-2">
                                 <CircleX class="text-error shrink-0" />
-                                <p class="text-error max-w-[12em] leading-[1em]">{response?.message}</p>
+                                <p class="text-error leading-[1.2]">{response?.message}</p>
                             </div>
                         {/if}
                         <Button
                             form="contact-form"
                             type="submit"
-                            class="h-fit! shrink-0 self-end! text-lg!"
+                            class="h-fit! shrink-0 self-end! text-lg! sm:self-auto!"
                             text={isSubmitting ? 'Submitting...' : 'Send message'}
                             disabled={isSubmitting ? true : undefined}
                         ></Button>
@@ -165,5 +122,41 @@
                 <SubmittedMessage />
             {/if}
         </div>
+
+        <aside class="flex min-w-0 flex-col border-t-2 border-black/10 pt-8 lg:border-t-0 lg:border-l-2 lg:pt-0 lg:pl-12">
+            <h2 class="text-4xl font-black">Customer Service</h2>
+            <p class="mt-5 max-w-120 text-xl leading-relaxed">
+                If you need customer service regarding any of our projects, please reach out to us on Discord and message @ModMail.
+            </p>
+
+            <a
+                href="https://discord.gg/nUeRyRtDYC"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent border-accent hover:bg-accent mt-8 flex min-h-18 w-full max-w-120 items-center justify-center gap-4 rounded-full border-2 px-6 py-4 text-lg font-bold tracking-wide transition-colors hover:text-white sm:text-xl"
+            >
+                <span>Join our Discord</span>
+                <SiDiscord class="h-7 w-7 shrink-0" aria-hidden="true" />
+            </a>
+
+            <div class="mt-10 border-t border-black/10 pt-6">
+                <p class="text-lg leading-relaxed">
+                    For other inquries Email us at <a
+                        href="mailto:hello@solync.org"
+                        class="hover:text-accent font-bold underline decoration-2 underline-offset-4">hello@solync.org</a
+                    >.
+                </p>
+
+                <a
+                    href="https://github.com/SolyncSoftware"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-accent border-accent hover:bg-accent mt-8 flex min-h-18 w-full max-w-120 items-center justify-center gap-4 rounded-full border-2 px-6 py-4 text-lg font-bold tracking-wide transition-colors hover:text-white sm:text-xl"
+                >
+                    <span>Visit our GitHub</span>
+                    <SiGithub class="h-7 w-7 shrink-0" aria-hidden="true" />
+                </a>
+            </div>
+        </aside>
     </div>
 </section>
