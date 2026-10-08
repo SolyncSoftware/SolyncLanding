@@ -45,7 +45,7 @@
                 <p class="text-2xl">All of our messages are sent to us via Discord webhooks for centralized communication.</p>
 
                 <p class="text-2xl">
-                    Have an idea, question, or opportunity to share? Tell us a little about it below, and we'll take it from there.
+                    Got ideas, questions, or something else to share? Tell us about it below, and we'll take it from there.
                 </p>
 
                 <p class="text-2xl">
