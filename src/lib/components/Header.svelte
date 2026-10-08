@@ -13,7 +13,7 @@
     let currentPath = $derived(page.url.pathname);
 
     function isActive(path: string): string {
-        return currentPath === path ? 'bg-white !text-accent font-display px-8 py-2 rounded-full no-underline!' : '';
+        return currentPath === path ? 'font-black underline decoration-2 underline-offset-8' : '';
     }
 
     function isActiveMobile(path: string): string {
@@ -34,6 +34,7 @@
         { href: '/', text: 'Home' },
         { href: '/blog', text: 'Blog' },
         { href: '/apply', text: 'Apply' },
+        // { href: '/contact', text: 'Contact' },
         { href: '/about', text: 'Learn more' }
     ];
 </script>
@@ -60,7 +61,7 @@
         </a>
 
         <!-- Desktop nav  -->
-        <nav aria-label="Main navigation" class="hidden min-w-0 flex-1 flex-wrap items-center gap-x-4 gap-y-1 sm:ml-2 sm:flex lg:ml-6">
+        <nav aria-label="Main navigation" class="hidden min-w-0 flex-1 flex-wrap items-center gap-x-5 gap-y-1 lg:flex">
             {#each navLinks as link, i (link.href)}
                 <span
                     class="shrink-0"
@@ -75,7 +76,7 @@
                         href={link.href}
                         text={link.text}
                         aria-current={currentPath === link.href ? 'page' : undefined}
-                        class={`z-0 shrink-0 whitespace-nowrap text-white hover:text-white hover:underline ${isActive(link.href)}`}
+                        class={`z-0 shrink-0 whitespace-nowrap text-white underline-offset-8 hover:text-white hover:underline ${isActive(link.href)}`}
                     />
                 </span>
             {/each}
@@ -84,9 +85,10 @@
         <!-- hamburger noodle -->
         <button
             onclick={toggleMenu}
-            class="relative ml-auto h-12 w-12 text-white focus:outline-none sm:hidden"
+            class="relative ml-auto h-12 w-12 text-white focus:outline-none lg:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         >
             {#if isMenuOpen}
                 <svg
@@ -115,7 +117,7 @@
     </div>
 
     <div
-        class="ml-4 hidden shrink-0 sm:ml-6 sm:inline-block"
+        class="ml-6 hidden shrink-0 lg:inline-block"
         use:rs={{
             animation: 'fade-up',
             duration: 600,
@@ -129,35 +131,11 @@
 
 <!-- mobile menu -->
 {#if isMenuOpen}
-    <!-- <div id="mobile-menu" class="bg-accent -mt-30 px-5 pb-40 sm:hidden" transition:slide={{ duration: 400, easing: quartInOut }}>
-        <nav class="flex flex-col items-start gap-7">
-            <ButtonSimple
-                href="/"
-                text="Home"
-                onclick={closeMenu}
-                class={`z-0 text-white hover:text-white hover:underline ${isActive('/')}`}
-            />
-            <ButtonSimple
-                href="/blog"
-                text="Blog"
-                onclick={closeMenu}
-                class={`z-0 text-white hover:text-white hover:underline ${isActive('/blog')}`}
-            />
-            <ButtonSimple
-                href="/about"
-                text="Learn more"
-                onclick={closeMenu}
-                class={`z-0 text-white hover:text-white hover:underline ${isActive('/about')}`}
-            />
-            <ButtonSimple
-                href="/donate"
-                text="Support us"
-                onclick={closeMenu}
-                class={`z-0 text-white hover:text-white hover:underline ${isActive('/donate')}`}
-            />
-        </nav>
-    </div> -->
-    <section class="bg-accent fixed top-0 z-4000 flex h-dvh w-full flex-col p-5 pt-6 sm:hidden" transition:fade={{ duration: 150 }}>
+    <section
+        id="mobile-menu"
+        class="bg-accent fixed top-0 z-4000 flex h-dvh w-full flex-col p-5 pt-6 lg:hidden"
+        transition:fade={{ duration: 150 }}
+    >
         <div class="relative top-0 flex flex-row items-center justify-between">
             <a href="/" class="group inline-block">
                 <SolyncLogo
@@ -194,8 +172,8 @@
                     href={link.href}
                     aria-current={currentPath === link.href ? 'page' : undefined}
                     class={isActiveMobile(link.href)}
-                    onclick={closeMenu}
-                >{link.text}</a>
+                    onclick={closeMenu}>{link.text}</a
+                >
             {/each}
             <a href="/donate" class={isActiveMobile('/donate')} onclick={closeMenu}>Support us</a>
         </nav>
