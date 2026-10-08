@@ -22,7 +22,7 @@
             number: '02',
             title: 'Brochure website creation',
             description:
-                'A polished, multi-page website that introduces your organization, explains what you offer, and gives visitors a clear way to contact you.',
+                'A polished, multi-page website that introduces your organization, explains what you offer, and gives visitors a clear way to get in touch.',
             details: [
                 'Pages for your organization, services, and contact details',
                 'Responsive design for mobile, tablet, and desktop',
@@ -44,7 +44,7 @@
         {
             number: '04',
             title: 'Static hosting',
-            description: "We deploy your static website, connect your custom domain, and configure HTTPS so it's ready to share.",
+            description: 'We deploy your static website, connect your custom domain, and configure HTTPS so it is ready to share.',
             details: ['Hosting for static websites', 'Custom domain setup', 'HTTPS security certificates'],
             className: 'bg-cyan-500',
             label: 'Starting at $2/month',
@@ -134,8 +134,8 @@
         </div>
     </div>
 
-    <div class="relative mt-40 flex w-full flex-col items-center justify-center gap-4 text-center">
-        <img src="images/giant-logo-vector.svg" alt="giant logo" class="absolute -z-1 translate-y-10" />
+    <div class="relative mt-94 flex w-full flex-col items-center justify-center gap-4 text-center">
+        <img src="images/giant-logo-vector.svg" alt="giant logo" class="absolute -z-1" />
     </div>
 </section>
 
