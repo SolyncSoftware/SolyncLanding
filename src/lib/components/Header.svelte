@@ -33,6 +33,7 @@
     const navLinks = [
         { href: '/', text: 'Home' },
         { href: '/blog', text: 'Blog' },
+        { href: '/apply', text: 'Apply' },
         { href: '/about', text: 'Learn more' }
     ];
 </script>
@@ -44,7 +45,7 @@
 <header class="bg-accent flex w-full items-center justify-between px-5 pt-6 pb-40 2xl:px-70">
     <!-- Logo -->
     <div
-        class="relative top-0 flex w-full flex-row items-center gap-7"
+        class="relative top-0 flex min-w-0 flex-1 flex-row items-center gap-5 lg:gap-6"
         use:rs={{
             animation: 'fade',
             duration: 600,
@@ -59,9 +60,10 @@
         </a>
 
         <!-- Desktop nav  -->
-        <nav class="hidden flex-row items-center gap-7 sm:flex">
+        <nav aria-label="Main navigation" class="hidden min-w-0 flex-1 flex-wrap items-center gap-x-4 gap-y-1 sm:ml-2 sm:flex lg:ml-6">
             {#each navLinks as link, i (link.href)}
                 <span
+                    class="shrink-0"
                     use:rs={{
                         animation: 'fade-up',
                         duration: 600,
@@ -72,7 +74,8 @@
                     <ButtonSimple
                         href={link.href}
                         text={link.text}
-                        class={`z-0 text-white hover:text-white hover:underline ${isActive(link.href)}`}
+                        aria-current={currentPath === link.href ? 'page' : undefined}
+                        class={`z-0 shrink-0 whitespace-nowrap text-white hover:text-white hover:underline ${isActive(link.href)}`}
                     />
                 </span>
             {/each}
@@ -112,7 +115,7 @@
     </div>
 
     <div
-        class="hidden shrink-0 sm:ml-auto sm:inline-block"
+        class="ml-4 hidden shrink-0 sm:ml-6 sm:inline-block"
         use:rs={{
             animation: 'fade-up',
             duration: 600,
@@ -186,9 +189,14 @@
             justify-center gap-4 [&_a]:text-4xl [&_a]:text-white
             "
         >
-            <a href="/" class={isActiveMobile('/')} onclick={closeMenu}>Home</a>
-            <a href="/blog" class={isActiveMobile('/blog')} onclick={closeMenu}>Blog</a>
-            <a href="/about" class={isActiveMobile('/about')} onclick={closeMenu}>Learn more</a>
+            {#each navLinks as link (link.href)}
+                <a
+                    href={link.href}
+                    aria-current={currentPath === link.href ? 'page' : undefined}
+                    class={isActiveMobile(link.href)}
+                    onclick={closeMenu}
+                >{link.text}</a>
+            {/each}
             <a href="/donate" class={isActiveMobile('/donate')} onclick={closeMenu}>Support us</a>
         </nav>
     </section>
