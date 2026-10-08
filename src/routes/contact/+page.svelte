@@ -141,9 +141,8 @@
 
             <div class="mt-10 border-t border-black/10 pt-6">
                 <p class="text-lg leading-relaxed">
-                    For other inquries Email us at <a
-                        href="mailto:hello@solync.org"
-                        class="hover:text-accent font-bold underline decoration-2 underline-offset-4">hello@solync.org</a
+                    For other inquries Email us at <a href="mailto:hello@solync.org" class="hover:text-accent font-bold hover:underline"
+                        >hello@solync.org</a
                     >.
                 </p>
 

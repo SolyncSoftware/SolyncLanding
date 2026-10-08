@@ -22,7 +22,7 @@
             number: '02',
             title: 'Brochure website creation',
             description:
-                'A polished, multi-page website that introduces your organization, explains what you offer, and gives visitors a clear way to get in touch.',
+                'A polished, multi-page website that introduces your organization, explains what you offer, and gives visitors a clear way to contact you.',
             details: [
                 'Pages for your organization, services, and contact details',
                 'Responsive design for mobile, tablet, and desktop',
@@ -44,7 +44,7 @@
         {
             number: '04',
             title: 'Static hosting',
-            description: 'We deploy your static website, connect your custom domain, and configure HTTPS so it is ready to share.',
+            description: "We deploy your static website, connect your custom domain, and configure HTTPS so it's ready to share.",
             details: ['Hosting for static websites', 'Custom domain setup', 'HTTPS security certificates'],
             className: 'bg-cyan-500',
             label: 'Starting at $2/month',
