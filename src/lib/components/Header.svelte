@@ -125,7 +125,7 @@
             offset: 100
         }}
     >
-        <Button href="/donate" class="shadow-none" text="Support us" />
+        <Button href="/donate" class="shadow-none">Support us</Button>
     </div>
 </header>
 

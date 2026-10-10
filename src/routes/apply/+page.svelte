@@ -298,9 +298,10 @@
                     form="apply-form"
                     type="submit"
                     class="text-lg!"
-                    text={isSubmitting ? 'Submitting...' : 'Send application'}
                     disabled={isSubmitting ? true : undefined}
-                ></Button>
+                >
+                    {isSubmitting ? 'Submitting...' : 'Send application'}
+                </Button>
             </div>
         {:else}
             <SubmittedMessage />

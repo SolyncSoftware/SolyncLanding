@@ -113,9 +113,10 @@
                             form="contact-form"
                             type="submit"
                             class="h-fit! shrink-0 self-end! text-lg! sm:self-auto!"
-                            text={isSubmitting ? 'Submitting...' : 'Send message'}
                             disabled={isSubmitting ? true : undefined}
-                        ></Button>
+                        >
+                            {isSubmitting ? 'Submitting...' : 'Send message'}
+                        </Button>
                     </div>
                 </div>
             {:else}

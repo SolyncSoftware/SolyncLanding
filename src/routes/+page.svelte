@@ -55,14 +55,16 @@
                     class="bg-accent! hover:bg-accent! w-fit self-center! px-8 text-xl! font-medium text-white! shadow-none
                    transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
                     href="/about"
-                    text="Learn more"
-                />
+                >
+                    Learn more
+                </Button>
                 <Button
                     class="bg-accent! hover:bg-accent! w-fit self-center! px-8 text-xl! font-medium text-white! shadow-none
                    transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]"
                     href="/services"
-                    text="Our Services"
-                />
+                >
+                    Our Services
+                </Button>
                 <a
                     href="https://discord.gg/nUeRyRtDYC"
                     target="_blank"
