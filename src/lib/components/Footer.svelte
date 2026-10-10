@@ -5,7 +5,10 @@
     import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
     import { tick } from 'svelte';
 
-    let footerSections = [
+    let footerSections: {
+        title: string;
+        links: { name: string; href: string; external?: boolean }[]; // death
+    }[] = [
         {
             title: 'Navigation',
             links: [
