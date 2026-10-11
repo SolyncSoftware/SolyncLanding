@@ -1,6 +1,6 @@
 ---
 title: Announcing Solync Hosting
-description: Today, we're ready to talk about our next project and our first legit and cool service, Solync Hosting.
+description: Meet Solync Hosting, our first step into infrastructure, with practical static hosting and deployment support for your projects.
 author: Solync
 date: '2026-10-10T12:00:00.000Z'
 categories:
@@ -40,9 +40,6 @@ published: true
         </p>
     </div>
 </div>
-
-Today, we're ready to talk about our next project and our first legit and cool service, Solync Hosting.
-
 <style scoped>
     .headline-2 {
         background-image: linear-gradient(274deg, #e8b24d 0%, #ecf45e 93%);
@@ -52,3 +49,13 @@ Today, we're ready to talk about our next project and our first legit and cool s
         -webkit-text-fill-color: transparent;
     }
 </style>
+
+Today, we're ready to talk about our next project and our first legit and cool service, Solync Hosting.
+
+Solync hosting is our entry into the VPS industry.
+
+blah blah
+
+## Lorem Ipsum
+
+blah blah
