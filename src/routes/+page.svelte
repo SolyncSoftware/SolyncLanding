@@ -35,7 +35,8 @@
     >
         <PageContainer
             className=""
-            innerClass="text-accent [&_p]:text-2xl bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0)_70%)]"
+            containerClass="home-panel"
+            innerClass="homeintro text-accent [&_p]:text-2xl bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0)_70%)]"
             wavesStyle=""
             showDim={false}
             waveStore={waveStores.homepageCubes}

@@ -8,6 +8,8 @@
     import Button from './Button.svelte';
     import ButtonSimple from './ButtonSimple.svelte';
     import rs from 'rune-scroller';
+    import { onMount } from 'svelte';
+    import { Moon, Sun } from '@lucide/svelte';
 
     let showAnnouncement = $state(false); // Set to true when we're ready
     let currentPath = $derived(page.url.pathname);
@@ -21,6 +23,11 @@
     }
 
     let isMenuOpen = $state(false);
+    let dark = $state(false);
+
+    onMount(() => {
+        dark = document.documentElement.dataset.theme === 'dark';
+    });
 
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
@@ -28,6 +35,14 @@
 
     function closeMenu() {
         isMenuOpen = false;
+    }
+
+    function toggle() {
+        dark = !dark;
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        try {
+            localStorage.setItem('theme', dark ? 'dark' : 'light');
+        } catch {}
     }
 
     const navLinks = [
@@ -117,7 +132,7 @@
     </div>
 
     <div
-        class="ml-6 hidden shrink-0 lg:inline-block"
+        class="ml-6 hidden shrink-0 items-center gap-4 lg:flex"
         use:rs={{
             animation: 'fade-up',
             duration: 600,
@@ -125,6 +140,17 @@
             offset: 100
         }}
     >
+        <button
+            onclick={toggle}
+            aria-label={dark ? 'switch to light mode' : 'switch to dark mode'}
+            class="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full border border-white/50 text-white transition hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white"
+        >
+            {#if dark}
+                <Sun class="h-6 w-6" aria-hidden="true" />
+            {:else}
+                <Moon class="h-6 w-6" aria-hidden="true" />
+            {/if}
+        </button>
         <Button href="/donate" class="shadow-none">Support us</Button>
     </div>
 </header>
@@ -143,6 +169,17 @@
                     class="w-16 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black sm:w-20"
                 />
             </a>
+            <button
+                onclick={toggle}
+                aria-label={dark ? 'switch to light mode' : 'switch to dark mode'}
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/50 text-white transition hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white"
+            >
+                {#if dark}
+                    <Sun class="h-6 w-6" aria-hidden="true" />
+                {:else}
+                    <Moon class="h-6 w-6" aria-hidden="true" />
+                {/if}
+            </button>
             <button
                 onclick={toggleMenu}
                 class="relative ml-auto h-12 w-12 text-white focus:outline-none sm:hidden"

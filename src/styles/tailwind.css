@@ -152,6 +152,80 @@ html {
     scroll-behavior: smooth;
 }
 
+html[data-theme='dark'] {
+    color-scheme: dark;
+    --color-offwhite: #191614;
+    background-color: var(--color-offwhite);
+    color: #fff8f7;
+}
+
+html[data-theme='dark'] .bg-white,
+html[data-theme='dark'] [class~='bg-white/80'] {
+    background-color: #292320 !important;
+}
+
+html[data-theme='dark'] [class~='text-black'] {
+    color: #fff8f7 !important;
+}
+
+html[data-theme='dark'] [class~='text-black/90'] {
+    color: rgb(255 248 247 / 90%) !important;
+}
+
+html[data-theme='dark'] [class~='text-black/80'] {
+    color: rgb(255 248 247 / 80%) !important;
+}
+
+html[data-theme='dark'] [class~='text-black/40'] {
+    color: rgb(255 248 247 / 50%) !important;
+}
+
+html[data-theme='dark'] .markdown {
+    color: #fff8f7;
+    --markdown-heading-border: rgb(255 248 247 / 12%);
+    --markdown-hr-line: rgb(255 248 247 / 24%);
+    --markdown-inline-code-bg: #39312d;
+    --markdown-pre-bg: #100e0d;
+    --markdown-pre-border: #39312d;
+    --markdown-table-border: rgb(255 248 247 / 14%);
+    --markdown-table-header-bg: #39312d;
+    --markdown-table-row-bg: #292320;
+    --markdown-caption-text: rgb(255 248 247 / 70%);
+    --markdown-kbd-bg: #39312d;
+    --markdown-kbd-border: rgb(255 248 247 / 14%);
+    --markdown-kbd-shadow: #100e0d;
+}
+
+html[data-theme='dark'] .markdown pre {
+    color: #fff8f7;
+}
+
+html[data-theme='dark'] .homeintro {
+    background-image: linear-gradient(to right, #191614 0%, rgb(25 22 20 / 0%) 70%);
+}
+
+html[data-theme='dark'] .page-shade {
+    background: rgb(10 8 7 / 12%);
+}
+
+html[data-theme='dark'] .home-panel .page-shade {
+    background: rgb(10 8 7 / 68%);
+}
+
+html[data-theme='dark'] .dark-card {
+    background-image: linear-gradient(rgb(10 8 7 / 14%), rgb(10 8 7 / 14%));
+}
+
+html[data-theme='dark'] a.text-accent:hover,
+html[data-theme='dark'] button.text-accent:hover {
+    color: #fff8f7 !important;
+}
+
+html[data-theme='dark'] .button:hover {
+    background-color: #fff8f7 !important;
+    color: #191614 !important;
+}
+
 body {
     min-height: 100vh;
 }

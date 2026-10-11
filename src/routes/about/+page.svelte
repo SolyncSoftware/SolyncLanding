@@ -65,7 +65,7 @@
             <img src="images/wrench-vector.svg" alt="building tools" class="absolute top-1/2 right-0 -translate-y-1/2" />
         </div>
 
-        <div class="bg-accent relative flex flex-col items-end overflow-hidden rounded-4xl p-6 pt-8 text-right text-xl shadow-xl/4 sm:p-11">
+        <div class="dark-card bg-accent relative flex flex-col items-end overflow-hidden rounded-4xl p-6 pt-8 text-right text-xl shadow-xl/4 sm:p-11">
             <h2 class="mb-20 max-w-100 text-7xl leading-14 font-black text-white"><span class="font-thin">How we</span> Work</h2>
 
             <div class="max-w-170 space-y-4 [&>p]:font-medium">
@@ -91,7 +91,7 @@
     <div class="grid gap-4 text-xl sm:grid-cols-2">
         <a
             href="/apply"
-            class="relative space-y-4 rounded-4xl bg-emerald-600 p-6 text-white
+            class="dark-card relative space-y-4 rounded-4xl bg-emerald-600 p-6 text-white
          shadow-xl/4 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]
          sm:p-8
          "
@@ -107,7 +107,7 @@
 
         <a
             href="/donate"
-            class="relative space-y-4 rounded-4xl bg-pink-500/90
+            class="dark-card relative space-y-4 rounded-4xl bg-pink-500/90
          p-6 text-white shadow-xl/4 transition-all hover:-translate-y-1 hover:shadow-[0_5px_0px_#00000022]
          sm:p-8"
         >

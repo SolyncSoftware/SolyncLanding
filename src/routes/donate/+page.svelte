@@ -96,7 +96,7 @@
         </div>
     </section>
 
-    <section class="overflow-hidden rounded-4xl bg-pink-500 p-5 text-white shadow-xl/10 sm:p-8 lg:p-10">
+    <section class="dark-card overflow-hidden rounded-4xl bg-pink-500 p-5 text-white shadow-xl/10 sm:p-8 lg:p-10">
         <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(320px,400px)] lg:gap-12">
             <div class="max-w-150 py-4">
                 <h2 class="text-4xl leading-tight font-black sm:text-5xl">
