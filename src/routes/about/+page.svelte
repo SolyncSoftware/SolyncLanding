@@ -74,7 +74,7 @@
                         href="https://en.wikipedia.org/wiki/Flat_organization"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-white hover:underline">flat organizational structure</a
+                        class="keep-hover text-white underline">flat organizational structure</a
                     >, we have the freedom to design, experiment, and learn from each other. We trust people to be creative,
                     self-sufficient, and responsible.
                 </p>

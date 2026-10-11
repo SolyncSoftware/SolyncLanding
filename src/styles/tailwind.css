@@ -216,9 +216,17 @@ html[data-theme='dark'] .dark-card {
     background-image: linear-gradient(rgb(10 8 7 / 14%), rgb(10 8 7 / 14%));
 }
 
-html[data-theme='dark'] a.text-accent:hover,
 html[data-theme='dark'] button.text-accent:hover {
     color: #fff8f7 !important;
+}
+
+main a:not(.button):not(.keep-hover):hover {
+    color: var(--color-accent) !important;
+}
+
+main p a:not(.button) {
+    text-decoration-line: underline;
+    text-underline-offset: 0.16em;
 }
 
 html[data-theme='dark'] .button:hover {

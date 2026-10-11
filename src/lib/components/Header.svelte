@@ -172,7 +172,7 @@
             <button
                 onclick={toggle}
                 aria-label={dark ? 'switch to light mode' : 'switch to dark mode'}
-                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/50 text-white transition hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white"
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/50 text-white transition max-sm:translate-x-2 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white"
             >
                 {#if dark}
                     <Sun class="h-6 w-6" aria-hidden="true" />
