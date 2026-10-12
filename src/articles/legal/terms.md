@@ -40,7 +40,7 @@ Some of Our Services, including but not limited to IdeaLync, are interactive (th
 
 Articles, pages, and content that are created by the Collective are Our exclusive property ("Original Content"). You agree to not to sell,
 license, rent, modify, distribute, copy, reproduce, transmit, publicly display, edit or create derivative works from the Original
-Content. User-generated content remains the property of its creator.
+Content. User-generated content remains the property of its creator, unless the user-generated content is under a license (or lack thereof) that says otherwise.
 
 The Collective is not responsible for the content or conduct, whether online or offline, of any user of Our Services, or any Media Content
 or other site or services that may be referenced, or linked to, in Our Services. Because the Collective has no control over such sites and
