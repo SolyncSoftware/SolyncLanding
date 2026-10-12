@@ -56,20 +56,22 @@ Solync Hosting is our new entry into the VPS industry. Our approach to Solync Ho
 
 ## How does it differ?
 
-### Simple to use
+### It's simple to use
 
 We want you to be able to use Solync Hosting with as few clicks as possible. Saving time and making the interface easy to use is one of our top priorities.
 
-Deploying your app to Solync Hosting is as easy to just upload your code and it's ready to be seen.
+Deploying your app to Solync Hosting is as easy as uploading a repository using Git, with a Dockerfile.
 
-### Accessible pricing
+### The pricing is accessible
 
-Pricing is also a massive priority to us. Expect low virtual machine prices starting at $2.00, increasing from there.
+Pricing is also a massive priority to us. Expect low virtual machine prices starting at $2.00, increasing from there with additions or different plans.
 
-### Free subdomain
+### You get a free subdomain
 
-A free subdomain is given for free, on any plan on the solync.host domain but you aren't stuck on our subdomain (*.solync.host). You can bring your own, right here, and we'll do the rest for you
+A subdomain is given for free. With any Solync Hosting plan, you can use the solync.host domain. We also want you to bring your own domain so you aren't stuck on our subdomain (*.solync.host). You can bring your own, right here, and we'll setup the rest for you.
 
-### Privacy/Security
+### It's your data
 
-We here at Solync care about the privacy of our users is secured, all of your data is in-house and encrypted. 
+TLS, encryption, backups. We don't sell, share, or analyze your data. We're a collective, why would we?
+
+## Why hosting?
