@@ -92,7 +92,7 @@ const teamData: TeamMember[] = [
         username: 'realcgcristi',
         github: 'realcgcristi',
         bsky: 'cgcristi.dev',
-        bio: "Full-stack developer from Romania, self-taught and also experienced in scalable systems and cloud infrastructure. Focused on building reliable and high-quality software for the user, not their data."
+        bio: "Full-stack developer from Romania, self-taught and also experienced in scalable systems, Linux and cloud infrastructure. Focused on building reliable and high-quality software for the user, not their data."
     },
     {
         id: 155797753,
