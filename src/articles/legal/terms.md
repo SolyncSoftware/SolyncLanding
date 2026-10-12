@@ -85,3 +85,5 @@ We reserve the right to update or modify these Terms at any time. If such update
 interacting, or by any way, shape, or form utilizing any Services controlled by the Collective. These Terms were last updated on the date
 indicated at the top of this document. Your continued use of any of the Services after any changes or revisions to these Terms shall
 indicate your agreement with the terms of such revised Terms.
+
+**IF YOU ARE UNDER THE LEGAL AGE OF MAJORITY (A “MINOR”) IN YOUR JURISDICTION OR STATE OF RESIDENCE, BEFORE USING THE SERVICES, YOUR PARENT OR LEGAL GUARDIAN MUST READ AND CONSENT TO THE SOLYNC TERMS. BY PERMITTING A MINOR TO USE THE SERVICES, A MINOR’S PARENT OR GUARDIAN BECOMES SUBJECT TO THE SOLYNC TERMS AND AGREES TO BE RESPONSIBLE FOR ALL OF THE MINOR’S ACTIVITIES ON THE SERVICES, INCLUDING THE PURCHASE OF ANY VIRTUAL CONTENT OR SERVICES.**
