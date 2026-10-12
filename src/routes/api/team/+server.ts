@@ -87,6 +87,14 @@ const teamData: TeamMember[] = [
         bio: "Based in Czechia, I'm a self-taught software developer, designer, sysadmin and artist who simply enjoys making things. Obsessed with frontend design and accessibility, with a soft spot for elegant solutions. I also love precision games and music!"
     },
     {
+        id: 106450330,
+        realName: 'Cristian',
+        username: 'realcgcristi',
+        github: 'realcgcristi',
+        bsky: 'cgcristi.dev',
+        bio: "Full-stack developer from Romania, self-taught and also experienced in scalable systems, Linux and cloud infrastructure. Focused on building reliable and high-quality software for the user, not their data."
+    },
+    {
         id: 155797753,
         realName: 'Team Solync',
         username: 'Solync',
