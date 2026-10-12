@@ -50,12 +50,10 @@ published: true
     }
 </style>
 
-Today, we're ready to talk about our next project and our first legit and cool service, Solync Hosting.
+Today, we're ready to talk about our next project and our first cool and legit service, Solync Hosting.
 
-Solync hosting is our entry into the VPS industry.
+Solync Hosting is our new entry into the VPS industry. Our approach to Solync Hosting is to give our users easy-to-use software and a piece of mind when it comes to their virtual machines.
 
-blah blah
+## How does it differ?
 
-## Lorem Ipsum
-
-blah blah
+We want you to be able to use Solync Hosting with as few clicks as possible. Saving time and making the interface easy to use is one of our top priorities. Pricing is also another massive priority to us. Expect low virtual machine prices starting at $2.00, increasing from there.
