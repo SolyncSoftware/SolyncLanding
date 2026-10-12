@@ -1,5 +1,7 @@
 .markdown {
     font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 500;
     line-height: 1.6;
     color: var(--color-black);
     --markdown-heading-border: color-mix(in srgb, var(--color-black) 12%, var(--color-white));
@@ -25,32 +27,37 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.3;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
 .markdown h2 {
-    font-size: 1.875rem;
+    font-size: 3rem;
     border-bottom: 1px solid var(--markdown-heading-border);
     padding-bottom: 0.3rem;
 }
 
 .markdown h3 {
-    font-size: 1.5rem;
+    font-size: 2.25rem;
 }
 
 .markdown h4 {
-    font-size: 1.25rem;
+    font-size: 1.875rem;
 }
 
 .markdown h5 {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
 }
 
 .markdown h6 {
-    font-size: 1rem;
+    font-size: 1.25rem;
+}
+
+.markdown strong,
+.markdown b {
+    font-weight: 800;
 }
 
 /* Paragraphs */
