@@ -78,3 +78,6 @@ The Collective will retain backups as per described to you per agreement, howeve
 maintain your own regular backups of your data.
 We do not guarantee the retention of our backups and we strongly encourage you to have an extra
 copy.
+
+
+**IF YOU ARE UNDER THE LEGAL AGE OF MAJORITY (A “Minor”) IN YOUR JURISDICTION OR STATE OF RESIDENCE, BEFORE USING SolyncHosting, YOUR PARENT OR LEGAL GUARDIAN MUST READ AND CONSENT TO THE SOLYNC ("Solync") TERMS. BY PERMITTING A MINOR TO USE THE SERVICES, A MINOR’S PARENT OR GUARDIAN BECOMES SUBJECT TO THE SOLYNC ("Solync") TERMS AND AGREES TO BE RESPONSIBLE FOR ALL OF THE MINOR’S ACTIVITIES ON THE SERVICES, INCLUDING THE PURCHASE OF ANY VIRTUAL CONTENT OR SERVICES.**
