@@ -50,9 +50,9 @@ published: true
     }
 </style>
 
-Today, we're ready to talk about our next project and our first cool and legit service, Solync Hosting.
+Today, we're ready to talk about our next project and our first *real* product, Solync Hosting.
 
-Solync Hosting is our new entry into the VPS industry. Our approach to Solync Hosting is to give our users easy-to-use software and peace of mind when it comes to their virtual machines.
+Solync Hosting is our new entry into the hosting industry. Our approach to Solync Hosting is to give our users easy-to-use software and peace of mind when it comes to hosting their apps.
 
 ## How does it differ?
 
@@ -64,7 +64,7 @@ Deploying your app to Solync Hosting is as easy as uploading a repository using 
 
 ### The pricing is accessible
 
-Pricing is also a massive priority to us. Expect low virtual machine prices starting at $2.00, increasing from there with additions or different plans.
+Pricing is also a massive priority to us. Expect low virtual machine prices starting at $2.00, increasing from there with additions or different plans. (Soon TM).
 
 ### You get a free subdomain
 
@@ -72,6 +72,12 @@ A subdomain is given for free. With any Solync Hosting plan, you can use the sol
 
 ### It's your data
 
-TLS, encryption, backups. We don't sell, share, or analyze your data. We're a collective, why would we?
+TLS, encryption, backups. We don't sell, share, or analyze your data. We're a collective, not advertisers.
 
 ## Why hosting?
+
+To get Solync on track, we need recurring revenue, and it's infrastructure we need anyway. We started building it before and learned a lot from what didn't work. That experience is why we're focusing on a MVP instead of a fully fledged ecosystem.
+
+You can expect Solync Hosting alpha testing early 2027.
+
+Thank you for reading!

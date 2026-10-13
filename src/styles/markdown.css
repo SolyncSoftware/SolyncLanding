@@ -65,6 +65,10 @@
     margin-bottom: 2rem;
 }
 
+.markdown p:last-of-type {
+    margin-bottom: 0;
+}
+
 /* Links */
 .markdown a {
     color: var(--color-accent);
