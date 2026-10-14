@@ -126,6 +126,7 @@
                         link={article.slug}
                         category={article.categories[0]}
                         image={article.image || '/images/articles/fallback.png'}
+                        mobile={article.mobile}
                     />
                 {/each}
             </div>

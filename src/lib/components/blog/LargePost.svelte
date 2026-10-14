@@ -9,8 +9,9 @@
         link: string;
         category: Article['categories'][number];
         image: Article['image'];
+        mobile?: Article['mobile'];
     }
-    const { title, description, link, category, image }: Props = $props();
+    const { title, description, link, category, image, mobile }: Props = $props();
 </script>
 
 <div
@@ -24,7 +25,10 @@
     }}
 >
     <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-3xl p-5 text-lg">
-        <enhanced:img src={image} alt={title} class="absolute inset-0 -z-1 h-full w-full object-cover" loading="lazy" decoding="async" />
+        <picture class="absolute inset-0 -z-1 h-full w-full bg-black">
+            {#if mobile}<source media="(max-width: 639px)" srcset={mobile} />{/if}
+            <enhanced:img src={image} alt={title} class="h-full w-full object-cover" class:mobile={!!mobile} loading="lazy" decoding="async" />
+        </picture>
         <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
 
         <div>
@@ -38,3 +42,11 @@
         </div>
     </div>
 </div>
+
+<style>
+    @media (max-width: 639px) {
+        .mobile {
+            object-fit: contain;
+        }
+    }
+</style>

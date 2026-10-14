@@ -8,6 +8,7 @@ categories:
     - news
     - blog
 image: /images/articles/solync-hosting.png
+mobile: /images/articles/solync-hosting-mobile.svg
 published: true
 ---
 

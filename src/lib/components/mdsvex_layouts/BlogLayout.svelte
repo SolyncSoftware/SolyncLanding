@@ -9,7 +9,7 @@
     import type { TransformedMember } from '../../../routes/api/team/+server.js';
     import Formatting from '$lib/utils/formatting.js';
 
-    const { title, author, date, categories, image, children }: Article & { children: Snippet } = $props();
+    const { title, author, date, categories, image, mobile, children }: Article & { children: Snippet } = $props();
 
     let blogArticles = $state<Article[]>([]);
     let loading = $state(true);
@@ -36,8 +36,9 @@
 
 <article>
     <div
+        class:square={!!mobile}
         class="mb-8 flex min-h-94 flex-col items-start justify-between rounded-4xl bg-cover bg-center p-4 text-lg text-white"
-        style="background-image: url({image || '/images/articles/fallback.png'})"
+        style="background-image: url({image || '/images/articles/fallback.png'}); --mobile: url({mobile || image || '/images/articles/fallback.png'})"
     >
         <span class="rounded-full bg-black/80 px-6 py-2 font-bold first-letter:uppercase">{categories[0]}</span>
 
@@ -75,9 +76,21 @@
                         link={article.slug}
                         category={article.categories[0]}
                         image={article.image || '/images/articles/fallback.png'}
+                        mobile={article.mobile}
                     />
                 {/each}
             </div>
         {/if}
     </div>
 </article>
+
+<style>
+    @media (max-width: 639px) {
+        .square {
+            background-color: #000;
+            background-image: var(--mobile);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+</style>
