@@ -138,8 +138,7 @@
                             <a
                                 href={link.href}
                                 aria-current={currentPath === link.href ? 'page' : undefined}
-                                onclick={(event) => {
-                                    event.stopPropagation();
+                                onclick={() => {
                                     isLearnMoreOpen = false;
                                 }}
                                 class={`block rounded-full px-4 py-2 text-lg transition-colors hover:bg-white ${currentPath === link.href ? 'text-accent font-bold' : 'text-black'}`}
@@ -265,8 +264,7 @@
                             <a
                                 href={link.href}
                                 class={isActiveMobile(link.href)}
-                                onclick={(event) => {
-                                    event.stopPropagation();
+                                onclick={() => {
                                     closeMenu();
                                 }}>{link.text}</a
                             >
