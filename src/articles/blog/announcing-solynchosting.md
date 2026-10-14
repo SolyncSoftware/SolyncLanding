@@ -56,23 +56,13 @@ Solync Hosting is our new entry into the hosting industry. Our approach to Solyn
 
 ## How does it differ?
 
-### It's simple to use
+- **It's simple to use:** We want you to be able to use Solync Hosting with as few clicks as possible. Saving time and making the interface easy to use is one of our top priorities. Deploying your app to Solync Hosting is as easy as uploading a repository using Git, with a Dockerfile.
 
-We want you to be able to use Solync Hosting with as few clicks as possible. Saving time and making the interface easy to use is one of our top priorities.
+- **The pricing is accessible:** Pricing is also a massive priority to us. Expect low virtual machine prices starting at $2.00, increasing from there with additions or different plans. (Soon TM).
 
-Deploying your app to Solync Hosting is as easy as uploading a repository using Git, with a Dockerfile.
+- **You get a free subdomain:** A subdomain is given for free. With any Solync Hosting plan, you can use the `solync.host` domain. We also want you to bring your own domain so you aren't stuck on our subdomain (`*.solync.host`). You can bring your own, right here, and we'll set up the rest for you.
 
-### The pricing is accessible
-
-Pricing is also a massive priority to us. Expect low virtual machine prices starting at $2.00, increasing from there with additions or different plans. (Soon TM).
-
-### You get a free subdomain
-
-A subdomain is given for free. With any Solync Hosting plan, you can use the solync.host domain. We also want you to bring your own domain so you aren't stuck on our subdomain (*.solync.host). You can bring your own, right here, and we'll setup the rest for you.
-
-### It's your data
-
-TLS, encryption, backups. We don't sell, share, or analyze your data. We're a collective, not advertisers.
+- **It's your data:** TLS, encryption, backups. We don't sell, share, or analyze your data. We're a collective, not advertisers.
 
 ## Why hosting?
 
