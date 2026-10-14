@@ -129,6 +129,21 @@
     --color-offwhite: #f8e8e5;
     --color-warning: #f0c92d;
     --color-error: #f02d31;
+    --color-night: #191614;
+    --color-night-surface: #292320;
+    --color-night-raised: #39312d;
+    --color-night-inset: #100e0d;
+    --color-night-ink: #fff8f7;
+    --color-night-ink-90: rgb(255 248 247 / 90%);
+    --color-night-ink-80: rgb(255 248 247 / 80%);
+    --color-night-ink-50: rgb(255 248 247 / 50%);
+    --color-night-soft: rgb(255 248 247 / 70%);
+    --color-night-border: rgb(255 248 247 / 12%);
+    --color-night-rule: rgb(255 248 247 / 24%);
+    --color-night-edge: rgb(255 248 247 / 14%);
+    --color-night-shade: rgb(10 8 7 / 12%);
+    --color-night-shade-strong: rgb(10 8 7 / 68%);
+    --color-night-tint: rgb(10 8 7 / 14%);
 
     /* Typography */
     --font-sans: 'Cabinet Grotesk', 'Cabinet Grotesk Fallback', sans-serif;
@@ -150,6 +165,88 @@ html {
     background-color: var(--color-offwhite);
     color: var(--color-black);
     scroll-behavior: smooth;
+}
+
+html[data-theme='dark'] {
+    color-scheme: dark;
+    --color-offwhite: var(--color-night);
+    background-color: var(--color-offwhite);
+    color: var(--color-night-ink);
+}
+
+html[data-theme='dark'] .bg-white,
+html[data-theme='dark'] [class~='bg-white/80'] {
+    background-color: var(--color-night-surface) !important;
+}
+
+html[data-theme='dark'] [class~='text-black'] {
+    color: var(--color-night-ink) !important;
+}
+
+html[data-theme='dark'] [class~='text-black/90'] {
+    color: var(--color-night-ink-90) !important;
+}
+
+html[data-theme='dark'] [class~='text-black/80'] {
+    color: var(--color-night-ink-80) !important;
+}
+
+html[data-theme='dark'] [class~='text-black/40'] {
+    color: var(--color-night-ink-50) !important;
+}
+
+html[data-theme='dark'] .markdown {
+    color: var(--color-night-ink);
+    --markdown-heading-border: var(--color-night-border);
+    --markdown-hr-line: var(--color-night-rule);
+    --markdown-inline-code-bg: var(--color-night-raised);
+    --markdown-pre-bg: var(--color-night-inset);
+    --markdown-pre-border: var(--color-night-raised);
+    --markdown-table-border: var(--color-night-edge);
+    --markdown-table-header-bg: var(--color-night-raised);
+    --markdown-table-row-bg: var(--color-night-surface);
+    --markdown-caption-text: var(--color-night-soft);
+    --markdown-kbd-bg: var(--color-night-raised);
+    --markdown-kbd-border: var(--color-night-edge);
+    --markdown-kbd-shadow: var(--color-night-inset);
+}
+
+html[data-theme='dark'] .markdown pre {
+    color: var(--color-night-ink);
+}
+
+html[data-theme='dark'] .homeintro {
+    background-image: linear-gradient(to right, var(--color-night) 0%, transparent 70%);
+}
+
+html[data-theme='dark'] .page-shade {
+    background: var(--color-night-shade);
+}
+
+html[data-theme='dark'] .home-panel .page-shade {
+    background: var(--color-night-shade-strong);
+}
+
+html[data-theme='dark'] .dark-card {
+    background-image: linear-gradient(var(--color-night-tint), var(--color-night-tint));
+}
+
+html[data-theme='dark'] button.text-accent:hover {
+    color: var(--color-night-ink) !important;
+}
+
+main a:not(.button):not(.keep-hover):hover {
+    color: var(--color-accent) !important;
+}
+
+main p a:not(.button) {
+    text-decoration-line: underline;
+    text-underline-offset: 0.16em;
+}
+
+html[data-theme='dark'] .button:hover {
+    background-color: var(--color-night-ink) !important;
+    color: var(--color-night) !important;
 }
 
 body {

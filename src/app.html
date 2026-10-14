@@ -6,6 +6,11 @@
         <meta name="theme-color" content="#f36647" />
         <meta name="author" content="Solync" />
         <meta name="keywords" content="pptek, home, page, theaceae, flowers, music, community, organization, startup, solync, software" />
+        <script>
+            try {
+                if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+            } catch {}
+        </script>
         %sveltekit.head%
         <link rel="icon" href="%sveltekit.assets%/images/favicon.svg" />
         <script src="%sveltekit.assets%/vendor/unicornStudio.umd.js"></script>
