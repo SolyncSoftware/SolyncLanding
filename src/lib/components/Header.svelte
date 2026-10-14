@@ -37,6 +37,10 @@
         isLearnMoreOpen = !isLearnMoreOpen;
     }
 
+    function handleWindowClick() {
+        isLearnMoreOpen = false;
+    }
+
     const navLinks = [
         { href: '/', text: 'Home' },
         { href: '/blog', text: 'Blog' },
@@ -46,9 +50,12 @@
     const learnMoreLinks = [
         { href: '/about', text: 'About us' },
         { href: '/services', text: 'Services' },
+        { href: '/about#our-work', text: 'Projects' },
         { href: '/contact', text: 'Contact' }
     ];
 </script>
+
+<svelte:window onclick={handleWindowClick} />
 
 {#if showAnnouncement}
     <AnnouncementContainer />
@@ -96,7 +103,10 @@
             <div class="relative shrink-0">
                 <button
                     type="button"
-                    onclick={toggleLearnMore}
+                    onclick={(event) => {
+                        event.stopPropagation();
+                        toggleLearnMore();
+                    }}
                     aria-expanded={isLearnMoreOpen}
                     aria-controls="learn-more-menu"
                     class="flex items-center gap-2 text-xl whitespace-nowrap text-white underline-offset-8 transition-all hover:underline"
@@ -108,7 +118,7 @@
                     }}
                 >
                     <span
-                        class={`underline-offset-8 ${learnMoreLinks.some((link) => currentPath === link.href) ? 'font-black underline decoration-2' : ''}`}
+                        class={`underline-offset-8 hover:cursor-pointer ${learnMoreLinks.some((link) => currentPath === link.href) ? 'font-black underline decoration-2' : ''}`}
                     >
                         Learn more
                     </span>
@@ -128,7 +138,10 @@
                             <a
                                 href={link.href}
                                 aria-current={currentPath === link.href ? 'page' : undefined}
-                                onclick={() => (isLearnMoreOpen = false)}
+                                onclick={(event) => {
+                                    event.stopPropagation();
+                                    isLearnMoreOpen = false;
+                                }}
                                 class={`block rounded-full px-4 py-2 text-lg transition-colors hover:bg-white ${currentPath === link.href ? 'text-accent font-bold' : 'text-black'}`}
                             >
                                 {link.text}
@@ -235,7 +248,10 @@
             <div class="w-full">
                 <button
                     type="button"
-                    onclick={toggleLearnMore}
+                    onclick={(event) => {
+                        event.stopPropagation();
+                        toggleLearnMore();
+                    }}
                     aria-expanded={isLearnMoreOpen}
                     aria-controls="mobile-learn-more-menu"
                     class="mb-1 flex items-center gap-3 text-4xl text-white"
@@ -246,7 +262,14 @@
                 {#if isLearnMoreOpen}
                     <div id="mobile-learn-more-menu" class="ml-4 flex flex-col gap-3 pb-2 text-2xl text-white/90">
                         {#each learnMoreLinks as link (link.href)}
-                            <a href={link.href} class={isActiveMobile(link.href)} onclick={closeMenu}>{link.text}</a>
+                            <a
+                                href={link.href}
+                                class={isActiveMobile(link.href)}
+                                onclick={(event) => {
+                                    event.stopPropagation();
+                                    closeMenu();
+                                }}>{link.text}</a
+                            >
                         {/each}
                     </div>
                 {/if}
