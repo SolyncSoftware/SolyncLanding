@@ -21,6 +21,7 @@
                 link={blogArticles[0].slug}
                 category={blogArticles[0].categories[0]}
                 image={blogArticles[0].image || '/images/articles/fallback.png'}
+                mobile={blogArticles[0].mobile}
             />
 
             {#if blogArticles.length > 1}
@@ -32,6 +33,7 @@
                             link={article.slug}
                             category={article.categories[0]}
                             image={article.image || '/images/articles/fallback.png'}
+                            mobile={article.mobile}
                         />
                     {/each}
                 </div>

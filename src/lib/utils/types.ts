@@ -11,6 +11,7 @@ export type Article = {
     categories: Categories[];
     published: boolean;
     image: string;
+    mobile?: string;
 };
 
 export interface MdsvexModule {
