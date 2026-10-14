@@ -15,7 +15,7 @@
         wavesType = '/solync_waves_dark.json',
         enabled = undefined,
         scale = 1,
-        waveStore
+        waveStore = undefined
     } = $props<{
         style?: string;
         className?: string;
@@ -24,7 +24,7 @@
         wavesType?: string;
         enabled?: boolean;
         scale?: number;
-        waveStore: Writable<PersistentWaveStoreState>;
+        waveStore?: Writable<PersistentWaveStoreState>;
     }>();
 
     let waveContainerEl = $state<HTMLDivElement | null>(null);
@@ -38,7 +38,7 @@
     let scene = $state<UnicornScene | null>(null);
 
     $effect(() => {
-        if (waveContainerEl) {
+        if (waveContainerEl && waveStore) {
             persistentWaves.setWave(waveStore, waveContainerEl);
         }
     });

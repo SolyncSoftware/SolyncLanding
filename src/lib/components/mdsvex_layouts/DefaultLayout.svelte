@@ -22,11 +22,6 @@
 <style>
     .markdown :global(h2) {
         font-family: var(--font-display);
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-        font-size: 1.875rem;
-        line-height: 2.25rem;
-        font-weight: 700;
         text-transform: uppercase;
     }
 
