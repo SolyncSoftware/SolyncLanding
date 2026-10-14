@@ -7,6 +7,7 @@
     import SolyncLogo from './SolyncLogo.svelte';
     import Button from './Button.svelte';
     import ButtonSimple from './ButtonSimple.svelte';
+    import { ChevronDown } from '@lucide/svelte';
     import rs from 'rune-scroller';
 
     let showAnnouncement = $state(false); // Set to true when we're ready
@@ -21,6 +22,7 @@
     }
 
     let isMenuOpen = $state(false);
+    let isLearnMoreOpen = $state(false);
 
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
@@ -28,32 +30,42 @@
 
     function closeMenu() {
         isMenuOpen = false;
+        isLearnMoreOpen = false;
+    }
+
+    function toggleLearnMore() {
+        isLearnMoreOpen = !isLearnMoreOpen;
     }
 
     const navLinks = [
         { href: '/', text: 'Home' },
         { href: '/blog', text: 'Blog' },
-        { href: '/apply', text: 'Apply' },
-        // { href: '/contact', text: 'Contact' },
-        { href: '/about', text: 'Learn more' }
+        { href: '/apply', text: 'Apply' }
+    ];
+
+    const learnMoreLinks = [
+        { href: '/about', text: 'About us' },
+        { href: '/services', text: 'Services' },
+        { href: '/contact', text: 'Contact' }
     ];
 </script>
 
-<!-- {#if showAnnouncement == true}
+{#if showAnnouncement}
     <AnnouncementContainer />
-{/if} -->
+{/if}
 
 <header class="bg-accent flex w-full items-center justify-between px-5 pt-6 pb-40 2xl:px-70">
     <!-- Logo -->
-    <div
-        class="relative top-0 flex min-w-0 flex-1 flex-row items-center gap-5 lg:gap-6"
-        use:rs={{
-            animation: 'fade',
-            duration: 600,
-            delay: 200
-        }}
-    >
-        <a href="/" class="group inline-block">
+    <div class="relative top-0 flex min-w-0 flex-1 flex-row items-center gap-5 lg:gap-6">
+        <a
+            href="/"
+            class="group inline-block"
+            use:rs={{
+                animation: 'fade',
+                duration: 600,
+                delay: 200
+            }}
+        >
             <SolyncLogo
                 iconOnly={true}
                 class="w-16 fill-white transition-all duration-300 ease-in-out group-hover:scale-102 group-hover:fill-black sm:w-20"
@@ -80,6 +92,51 @@
                     />
                 </span>
             {/each}
+
+            <div class="relative shrink-0">
+                <button
+                    type="button"
+                    onclick={toggleLearnMore}
+                    aria-expanded={isLearnMoreOpen}
+                    aria-controls="learn-more-menu"
+                    class="flex items-center gap-2 text-xl whitespace-nowrap text-white underline-offset-8 transition-all hover:underline"
+                    use:rs={{
+                        animation: 'fade-up',
+                        duration: 600,
+                        delay: (navLinks.length + 3) * 200,
+                        offset: 100
+                    }}
+                >
+                    <span
+                        class={`underline-offset-8 ${learnMoreLinks.some((link) => currentPath === link.href) ? 'font-black underline decoration-2' : ''}`}
+                    >
+                        Learn more
+                    </span>
+                    <ChevronDown
+                        class={`h-4 w-4 transition-transform duration-200 ${isLearnMoreOpen ? 'rotate-180' : ''}`}
+                        aria-hidden="true"
+                    />
+                </button>
+                {#if isLearnMoreOpen}
+                    <nav
+                        id="learn-more-menu"
+                        aria-label="Learn more"
+                        class="border-accent bg-offwhite absolute top-full left-0 z-200 mt-3 w-56 rounded-3xl border-t-4 p-2 shadow-xl/6"
+                        transition:fade={{ duration: 150 }}
+                    >
+                        {#each learnMoreLinks as link (link.href)}
+                            <a
+                                href={link.href}
+                                aria-current={currentPath === link.href ? 'page' : undefined}
+                                onclick={() => (isLearnMoreOpen = false)}
+                                class={`block rounded-full px-4 py-2 text-lg transition-colors hover:bg-white ${currentPath === link.href ? 'text-accent font-bold' : 'text-black'}`}
+                            >
+                                {link.text}
+                            </a>
+                        {/each}
+                    </nav>
+                {/if}
+            </div>
         </nav>
 
         <!-- hamburger noodle -->
@@ -175,6 +232,25 @@
                     onclick={closeMenu}>{link.text}</a
                 >
             {/each}
+            <div class="w-full">
+                <button
+                    type="button"
+                    onclick={toggleLearnMore}
+                    aria-expanded={isLearnMoreOpen}
+                    aria-controls="mobile-learn-more-menu"
+                    class="mb-1 flex items-center gap-3 text-4xl text-white"
+                >
+                    Learn more
+                    <ChevronDown class={`h-6 w-6 transition-transform ${isLearnMoreOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                </button>
+                {#if isLearnMoreOpen}
+                    <div id="mobile-learn-more-menu" class="ml-4 flex flex-col gap-3 pb-2 text-2xl text-white/90">
+                        {#each learnMoreLinks as link (link.href)}
+                            <a href={link.href} class={isActiveMobile(link.href)} onclick={closeMenu}>{link.text}</a>
+                        {/each}
+                    </div>
+                {/if}
+            </div>
             <a href="/donate" class={isActiveMobile('/donate')} onclick={closeMenu}>Support us</a>
         </nav>
     </section>
