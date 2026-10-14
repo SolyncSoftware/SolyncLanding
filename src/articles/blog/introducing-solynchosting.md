@@ -1,5 +1,5 @@
 ---
-title: Announcing Solync Hosting
+title: Introducing Solync Hosting
 description: Meet Solync Hosting, our first step into infrastructure, with practical static hosting and deployment support for your projects.
 author: Solync
 date: '2026-10-10T12:00:00.000Z'
@@ -68,6 +68,6 @@ Solync Hosting is our new entry into the hosting industry. Our approach to Solyn
 
 To get Solync on track, we need recurring revenue, and it's infrastructure we need anyway. We started building it before and learned a lot from what didn't work. That experience is why we're focusing on a MVP instead of a fully fledged ecosystem.
 
-You can expect Solync Hosting alpha testing early 2027.
+You can expect alpha testing for Solync Hosting early 2027.
 
 Thank you for reading!
