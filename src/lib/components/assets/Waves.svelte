@@ -29,9 +29,19 @@
 
     let waveContainerEl = $state<HTMLDivElement | null>(null);
     let embedEl = $state<HTMLDivElement | null>(null);
+    let waveActive = $state(false);
+
+    $effect(() => {
+        if (!waveStore) return;
+
+        return waveStore.subscribe((state: PersistentWaveStoreState) => {
+            waveActive = state.active;
+        });
+    });
 
     const autoUnicornEnabled = $derived(
-        !$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled)
+        (waveStore ? waveActive : true) &&
+            (!$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled))
     );
     const unicornEnabled = $derived(enabled !== undefined ? enabled : autoUnicornEnabled);
     const showPlaceholder = $derived(!unicornEnabled);
@@ -53,7 +63,7 @@
                         element: embedEl,
                         filePath: wavesType,
                         lazyLoad: true,
-                        fixed: true,
+                        fixed: false,
                         production: false,
                         scale: scale,
                         dpi: 1,

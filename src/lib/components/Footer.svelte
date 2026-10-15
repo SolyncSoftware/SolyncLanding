@@ -49,8 +49,47 @@
     };
 
     let embedEl = $state<HTMLDivElement | null>(null);
+    let nearView = $state(false);
+
+    $effect(() => {
+        const el = embedEl;
+        if (!el || typeof window === 'undefined') return;
+
+        const observerType = Reflect.get(window, 'IntersectionObserver') as typeof IntersectionObserver | undefined;
+        if (observerType) {
+            const observer = new observerType(
+                (entries) => {
+                    if (entries.some((entry) => entry.isIntersecting)) {
+                        nearView = true;
+                        observer.disconnect();
+                    }
+                },
+                { rootMargin: '300px 0px' }
+            );
+            observer.observe(el);
+            return () => observer.disconnect();
+        }
+
+        const check = () => {
+            if (el.getBoundingClientRect().top <= window.innerHeight + 300) {
+                nearView = true;
+                window.removeEventListener('scroll', check);
+                window.removeEventListener('resize', check);
+            }
+        };
+
+        window.addEventListener('scroll', check, { passive: true });
+        window.addEventListener('resize', check);
+        check();
+
+        return () => {
+            window.removeEventListener('scroll', check);
+            window.removeEventListener('resize', check);
+        };
+    });
+
     const autoUnicornEnabled = $derived(
-        !$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled)
+        nearView && (!$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled))
     );
     const unicornEnabled = $derived(autoUnicornEnabled);
     const showPlaceholder = $derived(!unicornEnabled);
@@ -66,7 +105,7 @@
                         element: embedEl,
                         filePath: unicornSetup.bg,
                         lazyLoad: true,
-                        fixed: true,
+                        fixed: false,
                         production: false,
                         scale: 1,
                         dpi: 1,
