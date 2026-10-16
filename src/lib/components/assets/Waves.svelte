@@ -55,11 +55,12 @@
 
     $effect(() => {
         let cancelled = false;
+        let checkFrame: number | null = null;
 
         if (unicornEnabled) {
             tick().then(async () => {
                 if (!cancelled && embedEl && !scene) {
-                    scene = await tryAddScene({
+                    const nextScene = await tryAddScene({
                         element: embedEl,
                         filePath: wavesType,
                         lazyLoad: true,
@@ -69,11 +70,22 @@
                         dpi: 1,
                         fps: 60
                     });
+                    if (cancelled) {
+                        nextScene.destroy();
+                        return;
+                    }
+                    scene = nextScene;
+                    if (waveStore && waveActive) {
+                        checkFrame = requestAnimationFrame(() => {
+                            window.dispatchEvent(new Event('scroll'));
+                        });
+                    }
                 }
             });
         }
 
         return () => {
+            if (checkFrame !== null) cancelAnimationFrame(checkFrame);
             scene?.destroy();
             scene = null;
             cancelled = true;
