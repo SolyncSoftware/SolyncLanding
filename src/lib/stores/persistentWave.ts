@@ -3,10 +3,11 @@ import { writable, type Writable } from 'svelte/store';
 export interface PersistentWaveStoreState {
     hostEl: HTMLElement | null;
     waveEl: HTMLElement | null;
+    active: boolean;
 }
 
 function makeStore() {
-    return writable<PersistentWaveStoreState>({ hostEl: null, waveEl: null });
+    return writable<PersistentWaveStoreState>({ hostEl: null, waveEl: null, active: false });
 }
 
 export const stores = {
@@ -40,6 +41,7 @@ export function attachTo(store: Writable<PersistentWaveStoreState>, targetEl: HT
         if (s.waveEl && targetEl) {
             targetEl.appendChild(s.waveEl);
             notifyResize();
+            return { ...s, active: true };
         }
         return s;
     });
@@ -50,6 +52,7 @@ export function resetToHost(store: Writable<PersistentWaveStoreState>, fromEl?: 
         if (s.waveEl && s.hostEl) {
             if (!fromEl || s.waveEl.parentElement === fromEl) {
                 s.hostEl.appendChild(s.waveEl);
+                return { ...s, active: false };
             }
         }
         return s;

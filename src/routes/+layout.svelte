@@ -39,6 +39,7 @@
                 el.scrollIntoView({ behavior: 'smooth' });
             }
         }
+        requestAnimationFrame(() => window.dispatchEvent(new Event('scroll')));
     }
 
     let meta = $derived(page.data?.meta ?? {});

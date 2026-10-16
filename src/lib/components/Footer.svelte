@@ -49,11 +49,50 @@
     };
 
     let embedEl = $state<HTMLDivElement | null>(null);
+    let nearView = $state(false);
+
+    $effect(() => {
+        const el = embedEl;
+        if (!el || typeof window === 'undefined') return;
+
+        const check = () => {
+            const bounds = el.getBoundingClientRect();
+            nearView = bounds.top <= window.innerHeight + 300 && bounds.bottom >= -300;
+        };
+
+        const observerType = Reflect.get(window, 'IntersectionObserver') as typeof IntersectionObserver | undefined;
+        if (observerType) {
+            const observer = new observerType(
+                (entries) => {
+                    nearView = entries.some((entry) => entry.isIntersecting);
+                },
+                { rootMargin: '300px 0px' }
+            );
+            observer.observe(el);
+            check();
+            const frame = requestAnimationFrame(check);
+            return () => {
+                observer.disconnect();
+                cancelAnimationFrame(frame);
+            };
+        }
+
+        window.addEventListener('scroll', check, { passive: true });
+        window.addEventListener('resize', check);
+        check();
+        const frame = requestAnimationFrame(check);
+
+        return () => {
+            window.removeEventListener('scroll', check);
+            window.removeEventListener('resize', check);
+            cancelAnimationFrame(frame);
+        };
+    });
+
     const autoUnicornEnabled = $derived(
         !$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled)
     );
     const unicornEnabled = $derived(autoUnicornEnabled);
-    const showPlaceholder = $derived(!unicornEnabled);
     let scene = $state<UnicornScene | null>(null);
 
     $effect(() => {
@@ -62,16 +101,22 @@
         if (unicornEnabled) {
             tick().then(async () => {
                 if (!cancelled && embedEl && !scene) {
-                    scene = await tryAddScene({
+                    const nextScene = await tryAddScene({
                         element: embedEl,
                         filePath: unicornSetup.bg,
                         lazyLoad: true,
-                        fixed: true,
+                        fixed: false,
                         production: false,
                         scale: 1,
                         dpi: 1,
                         fps: 60
                     });
+                    if (cancelled) {
+                        nextScene.destroy();
+                        return;
+                    }
+                    nextScene.paused = !nearView;
+                    scene = nextScene;
                 }
             });
         }
@@ -81,6 +126,10 @@
             scene = null;
             cancelled = true;
         };
+    });
+
+    $effect(() => {
+        if (scene) scene.paused = !nearView;
     });
 </script>
 
@@ -140,7 +189,11 @@
         </section>
     </div>
     <div class="bg-deepblack h-[15vh] min-h-24 w-full md:h-[33dvh] md:min-h-56">
-        <div bind:this={embedEl} class="h-full w-full" data-us-scale="0.75"></div>
+        <div
+            bind:this={embedEl}
+            class="h-full w-full transition-opacity duration-300 {nearView && unicornEnabled ? 'opacity-100' : 'opacity-0'}"
+            data-us-scale="0.75"
+        ></div>
     </div>
 </footer>
 
