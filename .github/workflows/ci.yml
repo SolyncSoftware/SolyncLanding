@@ -24,6 +24,9 @@ jobs:
             - name: Install Dependencies
               run: bun install --frozen-lockfile
 
+            - name: Check Svelte
+              run: bun run check
+
             - name: Test prod build
               run: bun run build
 
