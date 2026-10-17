@@ -71,7 +71,9 @@
                 onclick={handleToggle}
                 class="bg-accent group cursor-pointer rounded-full p-4 px-4 py-3 shadow-xl/6 transition hover:bg-black md:px-8 md:py-6"
                 class:bg-black={expanded}
-                aria-label="arrow"
+                aria-label={`${expanded ? 'Collapse' : 'Expand'} ${member.username} bio`}
+                aria-expanded={expanded}
+                aria-controls={`team-bio-${index}`}
             >
                 <img
                     src="/images/arrow-default.svg"
@@ -84,6 +86,7 @@
         </div>
     </div>
     <div
+        id={`team-bio-${index}`}
         class="grid transition-[grid-template-rows,opacity,margin] duration-300 ease-in-out {expanded
             ? 'grid-rows-[1fr] opacity-100'
             : 'grid-rows-[0fr] opacity-0'}"

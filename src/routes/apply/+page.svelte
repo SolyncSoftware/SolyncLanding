@@ -19,11 +19,11 @@
         const input = event.currentTarget as HTMLInputElement;
 
         const file = input.files?.[0] ?? null;
+        selectedFile = null;
+        fileError = null;
         if (!file) {
             return;
         }
-
-        fileError = null;
 
         const extension = file.name.toLowerCase().split('.').pop();
 
@@ -294,12 +294,7 @@
                         <p class="text-error max-w-[12em] leading-[1em]">{response?.message}</p>
                     </div>
                 {/if}
-                <Button
-                    form="apply-form"
-                    type="submit"
-                    class="text-lg!"
-                    disabled={isSubmitting ? true : undefined}
-                >
+                <Button form="apply-form" type="submit" class="text-lg!" disabled={isSubmitting ? true : undefined}>
                     {isSubmitting ? 'Submitting...' : 'Send application'}
                 </Button>
             </div>

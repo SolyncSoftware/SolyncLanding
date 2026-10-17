@@ -93,11 +93,13 @@
                         <label for={field.name}>{field.label}</label>
                     {/if}
                     <select
+                        id={field.name}
+                        name={field.name}
                         bind:value={formData[field.name]}
                         required={field.required}
                         class="peer focus:ring-accent bg-offwhite w-full min-w-0 rounded-full border border-none px-5 py-4 text-black placeholder:text-white/50"
                     >
-                        <option value="" disabled selected>
+                        <option value="" disabled>
                             {field.placeholder || 'Please select one'}
                         </option>
                         {#each field.options ?? [] as opt}
@@ -117,6 +119,8 @@
                     {/if}
                     <Textbox
                         bind:value={formData[field.name]}
+                        id={field.name}
+                        name={field.name}
                         type={field.type}
                         rows={field.type === 'textarea' ? (field.rows ?? 4) : 1}
                         placeholder={field.placeholder}

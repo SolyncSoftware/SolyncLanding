@@ -9,7 +9,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const CONTACT_PAGE_HOOK = env.CONTACT_PAGE_HOOK;
 
     if (!CONTACT_PAGE_HOOK) {
-        console.error('CONTACT_PAGE_HOOK is missing or empty');
+        console.error('contact page hook is missing or empty');
         return json({ error: 'Server misconfigured' }, { status: 500 });
     }
     try {
@@ -40,8 +40,8 @@ export const POST: RequestHandler = async ({ request }) => {
 
         if (!res.ok) {
             const errorText = await res.text();
-            console.error('Discord webhook error:', res.status, errorText);
-            throw new Error('Failed to send to Discord', { cause: { statusCode: 502 } });
+            console.error('discord webhook error:', res.status, errorText);
+            throw new Error('failed to send to discord', { cause: { statusCode: 502 } });
         }
 
         return json({ success: true });
