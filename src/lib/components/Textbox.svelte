@@ -1,7 +1,16 @@
 <script lang="ts">
     let input = $state('world');
 
-    let { class: className = '', type = 'text', placeholder = 'Text...', value = $bindable(''), required = false, ...rest } = $props();
+    let {
+        class: className = '',
+        id = 'fname',
+        name = 'fname',
+        type = 'text',
+        placeholder = 'Text...',
+        value = $bindable(''),
+        required = false,
+        ...rest
+    } = $props();
 
     function grow(node: HTMLTextAreaElement, value: string) {
         function adjust() {
@@ -36,11 +45,11 @@
         use:grow={value}
         bind:value
         {...rest}
+        {id}
+        {name}
         class={`focus:ring-accent bg-offwhite w-full min-w-0 resize-none overflow-clip rounded-full
     px-5 py-4 font-sans text-lg focus:ring-2 focus:outline-none
     ${className}`}
-        id="fname"
-        name="fname"
         {required}
         {placeholder}
     ></textarea>
@@ -48,12 +57,12 @@
     <input
         bind:value
         {...rest}
+        {id}
+        {name}
         {type}
         class={`focus:ring-accent bg-offwhite inline-block w-full min-w-0 resize-none overflow-clip rounded-full
     px-5 py-4 font-sans text-lg focus:ring-2 focus:outline-none
     ${className}`}
-        id="fname"
-        name="fname"
         {required}
         {placeholder}
     />

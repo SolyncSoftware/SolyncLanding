@@ -24,12 +24,17 @@ jobs:
             - name: Install Dependencies
               run: bun install --frozen-lockfile
 
-            #   TODO: add unit tests?
-            # - name: Run Unit Tests
-            #   run: bun test
+            - name: Check Svelte
+              run: bun run check
 
             - name: Test prod build
               run: bun run build
+
+            - name: Install Playwright browser
+              run: node node_modules/playwright/cli.js install --with-deps chromium
+
+            - name: Run browser tests
+              run: bun run test
 
             - name: Test Docker image build
               run: docker build -t solynclanding:pr-test .

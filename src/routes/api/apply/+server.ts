@@ -8,7 +8,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const APPLY_PAGE_HOOK = env.APPLY_PAGE_HOOK;
 
     if (!APPLY_PAGE_HOOK) {
-        console.error('APPLY_PAGE_HOOK is missing or empty');
+        console.error('apply page hook is missing or empty');
         return json({ error: 'Server misconfigured' }, { status: 500 });
     }
 
@@ -76,7 +76,7 @@ export const POST: RequestHandler = async ({ request }) => {
         });
 
         if (!discordResponse.ok) {
-            throw new Error('Failed to send application to Discord.', { cause: { statusCode: 502 } });
+            throw new Error('failed to send application to discord', { cause: { statusCode: 502 } });
         }
 
         return json({ success: true });
