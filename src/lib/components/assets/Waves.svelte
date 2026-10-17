@@ -14,6 +14,7 @@
         backgroundSize,
         wavesType = '/solync_waves_dark.json',
         enabled = undefined,
+        preload = false,
         scale = 1,
         waveStore = undefined
     } = $props<{
@@ -23,6 +24,7 @@
         backgroundSize?: string;
         wavesType?: string;
         enabled?: boolean;
+        preload?: boolean;
         scale?: number;
         waveStore?: Writable<PersistentWaveStoreState>;
     }>();
@@ -30,17 +32,19 @@
     let waveContainerEl = $state<HTMLDivElement | null>(null);
     let embedEl = $state<HTMLDivElement | null>(null);
     let waveActive = $state(false);
+    let initialVariables = $state<Record<string, string> | undefined>(undefined);
 
     $effect(() => {
         if (!waveStore) return;
 
         return waveStore.subscribe((state: PersistentWaveStoreState) => {
             waveActive = state.active;
+            initialVariables = state.initialVariables;
         });
     });
 
     const autoUnicornEnabled = $derived(
-        (waveStore ? waveActive : true) &&
+        (preload || (waveStore ? waveActive : true)) &&
             (!$performanceStore.checked || ($performanceStore.canUseWebgl && !$performanceStore.globalHardDisabled))
     );
     const unicornEnabled = $derived(enabled !== undefined ? enabled : autoUnicornEnabled);
@@ -75,6 +79,7 @@
                         return;
                     }
                     scene = nextScene;
+                    nextScene.paused = waveStore ? !waveActive : false;
                     if (waveStore && waveActive) {
                         checkFrame = requestAnimationFrame(() => {
                             window.dispatchEvent(new Event('scroll'));
@@ -86,10 +91,18 @@
 
         return () => {
             if (checkFrame !== null) cancelAnimationFrame(checkFrame);
-            scene?.destroy();
-            scene = null;
+            if (!preload) {
+                scene?.destroy();
+                scene = null;
+            }
             cancelled = true;
         };
+    });
+
+    $effect(() => {
+        if (!scene) return;
+        scene.paused = waveStore ? !waveActive : false;
+        if (initialVariables && 'setVariables' in scene) scene.setVariables?.(initialVariables);
     });
 </script>
 

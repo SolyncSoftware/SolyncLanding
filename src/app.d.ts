@@ -13,6 +13,7 @@ declare global {
     }
 
     const UnicornStudio: UnicornStudioNamespace;
+    const UnicornStudioNext: UnicornStudioNamespace;
 }
 
 export {};
