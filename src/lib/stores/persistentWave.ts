@@ -4,6 +4,7 @@ export interface PersistentWaveStoreState {
     hostEl: HTMLElement | null;
     waveEl: HTMLElement | null;
     active: boolean;
+    initialVariables?: Record<string, string>;
 }
 
 function makeStore() {
@@ -36,12 +37,16 @@ export function setWave(store: Writable<PersistentWaveStoreState>, el: HTMLEleme
     });
 }
 
-export function attachTo(store: Writable<PersistentWaveStoreState>, targetEl: HTMLElement | null) {
+export function attachTo(
+    store: Writable<PersistentWaveStoreState>,
+    targetEl: HTMLElement | null,
+    initialVariables?: Record<string, string>
+) {
     store.update((s) => {
         if (s.waveEl && targetEl) {
             targetEl.appendChild(s.waveEl);
             notifyResize();
-            return { ...s, active: true };
+            return { ...s, active: true, initialVariables };
         }
         return s;
     });

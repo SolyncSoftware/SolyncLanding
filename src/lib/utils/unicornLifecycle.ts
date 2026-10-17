@@ -5,11 +5,45 @@ import type { UnicornScene, UnicornSceneOpts } from './unicornTypes.js';
 
 let initPromise: Promise<void> | null = null;
 let unicornInitialized = false;
+let nextRuntimePromise: Promise<typeof UnicornStudioNext> | null = null;
+
+async function loadNextRuntime() {
+    if (typeof UnicornStudioNext !== 'undefined') return UnicornStudioNext;
+    if (!nextRuntimePromise) {
+        nextRuntimePromise = new Promise((resolve, reject) => {
+            const baseScript = [...document.scripts].find((script) => script.src.endsWith('/vendor/unicornStudio.umd.js'));
+            if (!baseScript) {
+                nextRuntimePromise = null;
+                reject(new Error('UnicornStudio runtime script not found'));
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.src = new URL('unicornStudio-v2.3.0.umd.js', baseScript.src).href;
+            script.async = true;
+            script.onload = () => {
+                if (typeof UnicornStudioNext === 'undefined') {
+                    nextRuntimePromise = null;
+                    reject(new Error('UnicornStudio v2 runtime failed to load'));
+                    return;
+                }
+                resolve(UnicornStudioNext);
+            };
+            script.onerror = () => {
+                nextRuntimePromise = null;
+                reject(new Error('Unable to load UnicornStudio v2 runtime'));
+            };
+            document.head.appendChild(script);
+        });
+    }
+    return nextRuntimePromise;
+}
 
 export async function tryAddScene(unicornOpts: UnicornSceneOpts): Promise<UnicornScene> {
     try {
         await initIfAllowed();
-        let scene = await UnicornStudio.addScene(unicornOpts);
+        const runtime = unicornOpts.filePath === '/solync_dots.json' ? await loadNextRuntime() : UnicornStudio;
+        const scene = await runtime.addScene(unicornOpts);
         checkPerfAndMaybeDisable();
         return scene;
     } catch (error) {

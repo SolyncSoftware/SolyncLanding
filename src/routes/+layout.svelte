@@ -64,14 +64,13 @@
     <meta name="twitter:image" content={meta.image ?? DEFAULT_IMAGE} />
 </svelte:head>
 
-<div bind:this={dottyLogoWavesHostEl} class="pointer-events-none opacity-0" aria-hidden="true">
+<div bind:this={dottyLogoWavesHostEl} class="pointer-events-none fixed inset-0 overflow-hidden opacity-0" aria-hidden="true">
     <Waves
-        className="h-full overflow-hidden mix-blend-plus-lighter"
+        className="h-full overflow-hidden"
         style="z-index: -1; overflow: hidden; mask-image: linear-gradient(to right, #fff6 20%, #fffa, #fff);"
-        wavesType="/solync_waves_dark.json"
-        backgroundImage="/images/waves-dark.png"
-        backgroundSize="cover"
+        wavesType="/solync_dots.json"
         waveStore={persistentWaves.stores.dottyLogo}
+        preload={true}
         scale={0.8}
     />
 </div>

@@ -16,7 +16,8 @@ export interface UnicornSceneOpts {
     filePath: string,
     lazyLoad: boolean,
     fixed: boolean,
-    production: boolean
+    production: boolean,
+    initialVariables?: Record<string, string>
 }
 
 export interface UnicornScene {
@@ -25,4 +26,5 @@ export interface UnicornScene {
 
     resize(): void;
     destroy(): void;
+    setVariables?(variables: Record<string, string>): void;
 }
