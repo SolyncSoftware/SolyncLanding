@@ -24,19 +24,20 @@
 
     let pageContainerEl = $state<HTMLDivElement | null>(null);
     let waveSlotEl = $state<HTMLDivElement | null>(null);
-    let usesDots = $derived(waveStore === persistentWaves.stores.dottyLogo);
+    let dots = $derived(waveStore === persistentWaves.stores.dottyLogo);
 
-    function getHexColor(color: string) {
-        const value = color.match(/^#([\da-f]{6})$/i)?.[1];
-        if (value) return `#${value}`;
+    function hex(color: string) {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim();
 
-        const channels = color.match(/[\d.]+/g)?.slice(0, 3).map(Number);
-        if (!channels || channels.length < 3) return '#f36647';
+        ctx.fillStyle = getComputedStyle(document.documentElement).backgroundColor;
+        ctx.fillRect(0, 0, 1, 1);
+        ctx.fillStyle = color;
+        ctx.fillRect(0, 0, 1, 1);
 
-        const normalized = color.startsWith('color(') && Math.max(...channels) <= 1;
-        return `#${channels
-            .map((channel) => Math.round(normalized ? channel * 255 : channel))
-            .map((channel) => channel.toString(16).padStart(2, '0'))
+        return `#${Array.from(ctx.getImageData(0, 0, 1, 1).data.slice(0, 3))
+            .map((value) => value.toString(16).padStart(2, '0'))
             .join('')}`;
     }
 
@@ -44,9 +45,9 @@
         const container = pageContainerEl;
         const slot = waveSlotEl;
         if (container && slot) {
-            const variables = usesDots
+            const variables = dots
                 ? {
-                      'Background Color': getHexColor(getComputedStyle(container).backgroundColor),
+                      'Background Color': hex(getComputedStyle(container).backgroundColor),
                       'Dot Color': '#ffffff'
                   }
                 : undefined;
@@ -69,7 +70,7 @@
 
 <div
     bind:this={pageContainerEl}
-    class="border-offwhite relative z-100 mx-0 overflow-hidden rounded-4xl border-8 text-white 2xl:-mx-10 {usesDots ? className : ''} {containerClass}"
+    class="border-offwhite relative z-100 mx-0 overflow-hidden rounded-4xl border-8 text-white 2xl:-mx-10 {dots ? className : ''} {containerClass}"
 >
     <div bind:this={waveSlotEl} style={wavesStyle} class="absolute inset-0 z-0 h-full w-full rounded-4xl"></div>
 
@@ -77,7 +78,7 @@
         <div class="absolute inset-0 z-1 bg-black/40"></div>
     {/if}
 
-    {#if className && !usesDots}
+    {#if className && !dots}
         <div class="{className} pointer-events-none absolute inset-0 z-5 mix-blend-plus-lighter"></div>
     {/if}
 
