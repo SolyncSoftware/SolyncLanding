@@ -99,7 +99,7 @@ const teamData: TeamMember[] = [
         realName: 'Sarah',
         username: 'vainangel',
         github: 'vainangel',
-        bio: "Hello! I'm a researcher and computer programmer. I study computer graphics, system architecture, and optimization. I'm working on a game engine and I like working on infrastructure. Considering watching Steins;Gate!"
+        bio: "Hello! I'm a researcher and computer programmer. I study computer graphics, system architecture, and optimization. I'm working on a game engine and I like working on infrastructure. Consider watching Steins;Gate!"
     },
     {
         id: 155797753,
