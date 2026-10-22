@@ -14,7 +14,9 @@
     let currentPath = $derived(page.url.pathname);
 
     function isActive(path: string): string {
-        return currentPath === path ? 'font-black underline decoration-2 underline-offset-8' : '';
+        return currentPath === path
+            ? "font-black relative after:absolute after:-bottom-2 after:left-0 after:h-1.5 after:w-full after:rounded-full after:bg-current after:content-['']"
+            : '';
     }
 
     function isActiveMobile(path: string): string {
@@ -95,7 +97,7 @@
                         href={link.href}
                         text={link.text}
                         aria-current={currentPath === link.href ? 'page' : undefined}
-                        class={`z-0 shrink-0 whitespace-nowrap text-white underline-offset-8 hover:text-white hover:underline ${isActive(link.href)}`}
+                        class={`z-0 shrink-0 whitespace-nowrap text-white underline-offset-12 hover:text-white hover:underline ${isActive(link.href)}`}
                     />
                 </span>
             {/each}
@@ -109,7 +111,7 @@
                     }}
                     aria-expanded={isLearnMoreOpen}
                     aria-controls="learn-more-menu"
-                    class="flex items-center gap-2 text-xl whitespace-nowrap text-white underline-offset-8 transition-all hover:underline"
+                    class="flex items-center gap-2 text-xl whitespace-nowrap text-white underline-offset-12 transition-all hover:underline"
                     use:rs={{
                         animation: 'fade-up',
                         duration: 600,
@@ -118,7 +120,7 @@
                     }}
                 >
                     <span
-                        class={`underline-offset-8 hover:cursor-pointer ${learnMoreLinks.some((link) => currentPath === link.href) ? 'font-black underline decoration-2' : ''}`}
+                        class={`underline-offset-12 hover:cursor-pointer ${learnMoreLinks.some((link) => currentPath === link.href) ? 'font-black underline decoration-4' : ''}`}
                     >
                         Learn more
                     </span>
