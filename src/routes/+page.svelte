@@ -121,6 +121,7 @@
             <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
                 {#each data.blogArticles as article}
                     <SmallPost
+                        date={article.date}
                         title={article.title}
                         description={article.description}
                         link={article.slug}

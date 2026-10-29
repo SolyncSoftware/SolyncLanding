@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Article } from '$lib/utils/types.js';
     import ButtonSimple from '../ButtonSimple.svelte';
+    import Formatting from '$lib/utils/formatting.js';
     import rs from 'rune-scroller';
 
     interface Props {
@@ -10,8 +11,9 @@
         category: Article['categories'][number];
         image: Article['image'];
         mobile?: Article['mobile'];
+        date: Article['date'];
     }
-    const { title, description, link, category, image, mobile }: Props = $props();
+    const { title, description, link, category, image, mobile, date }: Props = $props();
 </script>
 
 <div
@@ -27,12 +29,22 @@
     <div class="relative flex w-full flex-col justify-end gap-2 overflow-hidden rounded-3xl p-5 text-lg">
         <picture class="absolute inset-0 -z-1 h-full w-full bg-black">
             {#if mobile}<source media="(max-width: 639px)" srcset={mobile} />{/if}
-            <enhanced:img src={image} alt={title} class="h-full w-full object-cover" class:mobile={!!mobile} loading="lazy" decoding="async" />
+            <enhanced:img
+                src={image}
+                alt={title}
+                class="h-full w-full object-cover"
+                class:mobile={!!mobile}
+                loading="lazy"
+                decoding="async"
+            />
         </picture>
         <div class="absolute inset-0 -z-1 bg-linear-to-b from-transparent to-[#000000]"></div>
 
         <div>
-            <h3 class="text-3xl font-black tracking-wide">{title}</h3>
+            <div>
+                <h3 class="text-3xl font-black tracking-wide">{title}</h3>
+                <p class="text-base tracking-wide text-white/60">{Formatting.formatDate(new Date(date).getTime() / 1000)}</p>
+            </div>
             <p class="-mt-1.5 text-base tracking-wide text-white/60">{category}</p>
         </div>
         <p>{description}</p>

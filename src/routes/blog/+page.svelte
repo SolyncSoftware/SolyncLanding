@@ -16,6 +16,7 @@
     {:else}
         <div class="flex flex-col gap-4">
             <LargePost
+                date={blogArticles[0].date}
                 title={blogArticles[0].title}
                 description={blogArticles[0].description}
                 link={blogArticles[0].slug}
@@ -28,6 +29,7 @@
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                     {#each blogArticles.slice(1) as article (article.slug)}
                         <SmallPost
+                            date={article.date}
                             title={article.title}
                             description={article.description}
                             link={article.slug}

@@ -38,7 +38,9 @@
     <div
         class:square={!!mobile}
         class="mb-8 flex min-h-94 flex-col items-start justify-between rounded-4xl bg-cover bg-center p-4 text-lg text-white"
-        style="background-image: url({image || '/images/articles/fallback.png'}); --mobile: url({mobile || image || '/images/articles/fallback.png'})"
+        style="background-image: url({image || '/images/articles/fallback.png'}); --mobile: url({mobile ||
+            image ||
+            '/images/articles/fallback.png'})"
     >
         <span class="rounded-full bg-black/80 px-6 py-2 font-bold first-letter:uppercase">{categories[0]}</span>
 
@@ -71,6 +73,7 @@
             <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
                 {#each blogArticles as article}
                     <SmallPost
+                        date={article.date}
                         title={article.title}
                         description={article.description}
                         link={article.slug}
