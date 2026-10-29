@@ -15,7 +15,7 @@
 
     function isActive(path: string): string {
         return currentPath === path
-            ? "font-black relative after:absolute after:-bottom-1 after:left-0 after:h-1.5 after:w-full after:rounded-full after:bg-current after:content-['']"
+            ? "font-black relative after:absolute after:-bottom-1 after:left-0 after:h-1 after:w-full after:rounded-full after:bg-current after:content-['']"
             : '';
     }
 
@@ -97,7 +97,7 @@
                         href={link.href}
                         text={link.text}
                         aria-current={currentPath === link.href ? 'page' : undefined}
-                        class={`z-0 shrink-0 whitespace-nowrap text-white underline-offset-8 hover:text-white hover:underline ${isActive(link.href)}`}
+                        class={`z-0 shrink-0 whitespace-nowrap text-white underline-offset-10 hover:text-white hover:underline ${isActive(link.href)}`}
                     />
                 </span>
             {/each}
@@ -111,7 +111,7 @@
                     }}
                     aria-expanded={isLearnMoreOpen}
                     aria-controls="learn-more-menu"
-                    class="flex items-center gap-2 text-xl whitespace-nowrap text-white underline-offset-8 transition-all hover:underline"
+                    class="flex items-center gap-2 text-xl whitespace-nowrap text-white underline-offset-10 transition-all hover:underline"
                     use:rs={{
                         animation: 'fade-up',
                         duration: 600,
