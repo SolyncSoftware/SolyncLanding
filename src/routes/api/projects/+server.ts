@@ -38,24 +38,24 @@ const projectData: SolyncProject[] = [
         // github: 'gardens-wiki',
         // page: 'gardens-wiki'
     },
-    {
-        date: '2024-12-20',
-        title: '[PROTO EDEN]',
-        website: 'https://proto-eden.com/',
-        image: 'proto-eden.gif',
-        desc: "[PROTO EDEN] is a personal website that showcases Eden's work and provides a platform for fans to connect with the artist. It is currently maintained by Solync.",
-        github: 'proto-eden'
-        // page: 'proto-eden'
-    },
-    {
-        date: '2024-12-04',
-        title: 'yell0w.net',
-        website: 'https://yell0w.net/',
-        image: 'yellow.png',
-        desc: "The Yell0w Website is a personal website developed by Yell0w and maintained by Solync. It is a simple website that showcases Yell0w's learning progress.",
-        github: 'dayellowwebsite'
-        // page: 'yell0w-net'
-    },
+    // {
+    //     date: '2024-12-20',
+    //     title: '[PROTO EDEN]',
+    //     website: 'https://proto-eden.com/',
+    //     image: 'proto-eden.gif',
+    //     desc: "[PROTO EDEN] is a personal website that showcases Eden's work and provides a platform for fans to connect with the artist. It is currently maintained by Solync.",
+    //     github: 'proto-eden',
+    //     page: 'proto-eden'
+    // },
+    // {
+    //     date: '2024-12-04',
+    //     title: 'yell0w.net',
+    //     website: 'https://yell0w.net/',
+    //     image: 'yellow.png',
+    //     desc: "The Yell0w Website is a personal website developed by Yell0w and maintained by Solync. It is a simple website that showcases Yell0w's learning progress.",
+    //     github: 'dayellowwebsite',
+    //     page: 'yell0w-net'
+    // },
     {
         date: '2024-12-04',
         title: 'Porter Robinson Wiki',
@@ -68,6 +68,7 @@ const projectData: SolyncProject[] = [
     {
         date: '2024-11-07',
         title: 'Theaceae Home',
+        website: 'https://theaceae.org/',
         image: 'theaceaeSmileLogoMint.png',
         desc: 'Our old homepage before we rebranded to Solync.',
         github: 'theaceae-home'
