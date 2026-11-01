@@ -7,7 +7,7 @@ categories:
     - announcement
     - news
     - blog
-image: /images/articles/orbit.png
+image: /images/projects/orbit.png
 published: true
 ---
 
