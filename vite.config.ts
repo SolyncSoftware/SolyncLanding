@@ -3,6 +3,7 @@ import adapter from 'svelte-adapter-bun';
 
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { escapeSvelte, mdsvex } from 'mdsvex';
+// @ts-expect-error rehype-figure does not provide TypeScript declarations.
 import rehypeFigure from 'rehype-figure';
 import { createHighlighter } from 'shiki';
 import path from 'path';
@@ -17,12 +18,12 @@ const dirname = path.resolve(fileURLToPath(import.meta.url), '../');
 /** @type {import('mdsvex').MdsvexOptions} */ const mdsvexOptions = {
     extensions: ['.md'],
     highlight: {
-        highlighter: async (code, lang = 'text') => {
+        highlighter: async (code: string, lang: string | null = 'text') => {
             const highlighter = await createHighlighter({ themes: ['poimandres'], langs: ['javascript', 'typescript'] });
 
             await highlighter.loadLanguage('javascript', 'typescript');
 
-            const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
+            const html = escapeSvelte(highlighter.codeToHtml(code, { lang: lang ?? 'text', theme: 'poimandres' }));
 
             return `{@html \`${html}\` }`;
         }
