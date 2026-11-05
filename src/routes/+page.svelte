@@ -1,12 +1,12 @@
 <script lang="ts">
-    import Button from '$lib/components/Button.svelte';
-    import SolyncLogo from '$lib/components/SolyncLogo.svelte';
-    import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import NavigationArrow from '$lib/components/assets/NavigationArrow.svelte';
-    import SmallPost from '$lib/components/blog/SmallPost.svelte';
-    import OurProjects from '$lib/components/index/OurProjects.svelte';
-    import OurTeam from '$lib/components/index/OurTeam.svelte';
-    import { stores as waveStores } from '$lib/stores/persistentWave.js';
+    import Button from '#lib/components/Button.svelte';
+    import SolyncLogo from '#lib/components/SolyncLogo.svelte';
+    import PageContainer from '#lib/components/assets/PageContainer.svelte';
+    import NavigationArrow from '#lib/components/assets/NavigationArrow.svelte';
+    import SmallPost from '#lib/components/blog/SmallPost.svelte';
+    import OurProjects from '#lib/components/index/OurProjects.svelte';
+    import OurTeam from '#lib/components/index/OurTeam.svelte';
+    import { stores as waveStores } from '#lib/stores/persistentWave.js';
     import { SiDiscord, SiGithub } from '@icons-pack/svelte-simple-icons';
     import { Mail } from '@lucide/svelte';
     import rs from 'rune-scroller';

@@ -1,8 +1,8 @@
 <script lang="ts">
     import { SiBluesky, SiDiscord, SiGithub, SiYoutube } from '@icons-pack/svelte-simple-icons';
-    import performanceStore from '$lib/stores/performance.js';
-    import type { UnicornScene } from '$lib/utils/unicornTypes.js';
-    import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
+    import performanceStore from '#lib/stores/performance.js';
+    import type { UnicornScene } from '#lib/utils/unicornTypes.js';
+    import { tryAddScene } from '#lib/utils/unicornLifecycle.js';
     import { tick } from 'svelte';
 
     let footerSections: {

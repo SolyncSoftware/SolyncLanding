@@ -15,7 +15,7 @@ published: true
 <!-- markdownlint-disable MD033 -->
 
 <script lang="ts">
-    import Waves from '$lib/components/assets/Waves.svelte';
+    import Waves from '#lib/components/assets/Waves.svelte';
 </script>
 
 <div class="relative -mx-9 -my-9 mb-6 flex min-h-136 flex-col items-center justify-between overflow-hidden rounded-t-4xl bg-deepblack px-6 py-8 text-center sm:px-12 sm:py-10">
@@ -51,7 +51,7 @@ published: true
     }
 </style>
 
-Today, we're ready to talk about our next project and our first *real* product, Solync Hosting.
+Today, we're ready to talk about our next project and our first _real_ product, Solync Hosting.
 
 Solync Hosting is our new entry into the hosting industry. Our approach to Solync Hosting is to give our users easy-to-use software and peace of mind when it comes to hosting their apps.
 

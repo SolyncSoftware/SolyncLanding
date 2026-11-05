@@ -1,5 +1,5 @@
-import type { MdsvexModule } from '$lib/utils/types.js';
-import { title as siteTitle } from '$lib/config.js';
+import type { MdsvexModule } from '#lib/utils/types.js';
+import { title as siteTitle } from '#lib/config.js';
 import { error } from '@sveltejs/kit';
 
 const articles = import.meta.glob<MdsvexModule>('/src/articles/**/*.md', { eager: true });
@@ -23,5 +23,3 @@ export function load({ params }) {
         }
     };
 }
-
-

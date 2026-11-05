@@ -1,16 +1,13 @@
-import { json } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
+import { CONTACT_PAGE_HOOK } from '$app/env/private';
 import type { RequestHandler } from './$types.js';
-import contactSchema from '$lib/server/schema/contact.js';
-import validateRequest from '$lib/server/utilities/request/validate.js';
-import processError from '$lib/server/utilities/request/error.js';
+import contactSchema from '#lib/server/schema/contact.js';
+import validateRequest from '#lib/server/utilities/request/validate.js';
+import processError from '#lib/server/utilities/request/error.js';
 
 export const POST: RequestHandler = async ({ request }) => {
-    const CONTACT_PAGE_HOOK = env.CONTACT_PAGE_HOOK;
-
     if (!CONTACT_PAGE_HOOK) {
         console.error('contact page hook is missing or empty');
-        return json({ error: 'Server misconfigured' }, { status: 500 });
+        return Response.json({ error: 'Server misconfigured' }, { status: 500 });
     }
     try {
         // ===== validation. perhaps can be reused within a middleware or something idk
@@ -44,7 +41,7 @@ export const POST: RequestHandler = async ({ request }) => {
             throw new Error('failed to send to discord', { cause: { statusCode: 502 } });
         }
 
-        return json({ success: true });
+        return Response.json({ success: true });
     } catch (err: any) {
         return processError(err);
     }

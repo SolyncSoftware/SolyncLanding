@@ -1,9 +1,9 @@
 <script lang="ts">
-    import performanceStore from '$lib/stores/performance.js';
-    import type { PersistentWaveStoreState } from '$lib/stores/persistentWave.js';
-    import * as persistentWaves from '$lib/stores/persistentWave.js';
-    import { tryAddScene } from '$lib/utils/unicornLifecycle.js';
-    import type { UnicornScene } from '$lib/utils/unicornTypes.js';
+    import performanceStore from '#lib/stores/performance.js';
+    import type { PersistentWaveStoreState } from '#lib/stores/persistentWave.js';
+    import * as persistentWaves from '#lib/stores/persistentWave.js';
+    import { tryAddScene } from '#lib/utils/unicornLifecycle.js';
+    import type { UnicornScene } from '#lib/utils/unicornTypes.js';
     import { tick } from 'svelte';
     import { type Writable } from 'svelte/store';
 

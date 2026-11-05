@@ -1,7 +1,7 @@
 <script lang="ts">
-    import type { Article } from '$lib/utils/types.js';
+    import type { Article } from '#lib/utils/types.js';
     import ButtonSimple from '../ButtonSimple.svelte';
-    import Formatting from '$lib/utils/formatting.js';
+    import Formatting from '#lib/utils/formatting.js';
     import rs from 'rune-scroller';
 
     interface Props {

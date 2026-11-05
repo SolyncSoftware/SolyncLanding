@@ -1,5 +1,3 @@
-import { json } from '@sveltejs/kit';
-
 interface SolyncProject {
     // id: string;
     date: string;
@@ -102,5 +100,5 @@ function transformProject(project: SolyncProject[]): TransformedProject[] {
 
 export async function GET() {
     const projects = transformProject(projectData);
-    return json(projects);
+    return Response.json(projects);
 }

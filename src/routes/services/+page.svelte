@@ -1,7 +1,7 @@
 <script lang="ts">
-    import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import NavigationArrow from '$lib/components/assets/NavigationArrow.svelte';
-    import { stores as waveStores } from '$lib/stores/persistentWave.js';
+    import PageContainer from '#lib/components/assets/PageContainer.svelte';
+    import NavigationArrow from '#lib/components/assets/NavigationArrow.svelte';
+    import { stores as waveStores } from '#lib/stores/persistentWave.js';
 
     const services = [
         {
