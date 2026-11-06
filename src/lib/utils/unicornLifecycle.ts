@@ -1,5 +1,5 @@
-import performanceStore from '$lib/stores/performance.js';
-import { runGlobalCachedPerfCheck } from '$lib/utils/performanceCheck.js';
+import performanceStore from '#lib/stores/performance.js';
+import { runGlobalCachedPerfCheck } from '#lib/utils/performanceCheck.js';
 import { get } from 'svelte/store';
 import type { UnicornScene, UnicornSceneOpts } from './unicornTypes.js';
 

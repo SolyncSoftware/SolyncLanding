@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { dev } from '$app/environment';
+    import { dev } from '$app/env';
     import { page } from '$app/state';
-    import DevBanner from '$lib/components/DevBanner.svelte';
-    import Footer from '$lib/components/Footer.svelte';
-    import Header from '$lib/components/Header.svelte';
-    import Waves from '$lib/components/assets/Waves.svelte';
-    import * as persistentWaves from '$lib/stores/persistentWave.js';
+    import DevBanner from '#lib/components/DevBanner.svelte';
+    import Footer from '#lib/components/Footer.svelte';
+    import Header from '#lib/components/Header.svelte';
+    import Waves from '#lib/components/assets/Waves.svelte';
+    import * as persistentWaves from '#lib/stores/persistentWave.js';
     import 'rune-scroller/animations.css';
     import { tick, type Snippet } from 'svelte';
     import { fade } from 'svelte/transition';
@@ -51,11 +51,15 @@
 
 <svelte:head>
     <title>{`${meta.title ?? DEFAULT_TITLE}`}</title>
+
     <meta name="description" content={meta.description ?? DEFAULT_DESC} />
 
     <meta property="og:title" content={meta.title ?? DEFAULT_TITLE} />
+
     <meta property="og:description" content={meta.description ?? DEFAULT_DESC} />
+
     <meta property="og:image" content={meta.image ?? DEFAULT_IMAGE} />
+
     <meta property="og:type" content={meta.type ?? 'website'} />
 
     <meta name="twitter:card" content="summary_large_image" />

@@ -1,5 +1,4 @@
-import type { Article, MdsvexModule } from '$lib/utils/types.ts';
-import { json } from '@sveltejs/kit';
+import type { Article, MdsvexModule } from '#lib/utils/types.ts';
 
 async function getArticles(articleType?: string) {
     let articles: Article[] = [];
@@ -31,5 +30,5 @@ export async function GET({ url }) {
             // slugs shouldn't need to be more than 16 characters. if so then change
             .slice(0, 16)
     );
-    return json(articles);
+    return Response.json(articles);
 }

@@ -1,10 +1,10 @@
 <script lang="ts">
-    import OurPartners from '$lib/components/about/OurPartners.svelte';
-    import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import OurProjects from '$lib/components/index/OurProjects.svelte';
-    import ButtonNew from '$lib/components/ButtonNew.svelte';
+    import OurPartners from '#lib/components/about/OurPartners.svelte';
+    import PageContainer from '#lib/components/assets/PageContainer.svelte';
+    import OurProjects from '#lib/components/index/OurProjects.svelte';
+    import ButtonNew from '#lib/components/ButtonNew.svelte';
     import type { PageProps } from './$types.ts';
-    import { stores as waveStores } from '$lib/stores/persistentWave.js';
+    import { stores as waveStores } from '#lib/stores/persistentWave.js';
 
     const { data }: PageProps = $props();
 </script>

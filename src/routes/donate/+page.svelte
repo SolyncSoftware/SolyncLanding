@@ -1,7 +1,7 @@
 <script lang="ts">
-    import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import Button from '$lib/components/Button.svelte';
-    import { stores as waveStores } from '$lib/stores/persistentWave.js';
+    import PageContainer from '#lib/components/assets/PageContainer.svelte';
+    import Button from '#lib/components/Button.svelte';
+    import { stores as waveStores } from '#lib/stores/persistentWave.js';
     import { Server, ShieldCheck, UsersRound } from '@lucide/svelte';
 
     const supportCards = [

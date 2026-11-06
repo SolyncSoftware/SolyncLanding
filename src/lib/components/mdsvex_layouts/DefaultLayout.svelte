@@ -3,7 +3,7 @@
 -->
 
 <script lang="ts">
-    import type { Article } from '$lib/utils/types.js';
+    import type { Article } from '#lib/utils/types.js';
     import type { Snippet } from 'svelte';
 
     const { title, date, children }: Article & { children: Snippet } = $props();

@@ -1,4 +1,4 @@
-import type { Article } from '$lib/utils/types.ts';
+import type { Article } from '#lib/utils/types.ts';
 import type { TransformedProject } from './api/projects/+server.js';
 import type { TransformedMember } from './api/team/+server.js';
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-    import LargePost from '$lib/components/blog/LargePost.svelte';
-    import SmallPost from '$lib/components/blog/SmallPost.svelte';
-    import type { Article } from '$lib/utils/types.js';
+    import LargePost from '#lib/components/blog/LargePost.svelte';
+    import SmallPost from '#lib/components/blog/SmallPost.svelte';
+    import type { Article } from '#lib/utils/types.js';
     import { onMount } from 'svelte';
     import type { PageProps } from './$types.js';
 

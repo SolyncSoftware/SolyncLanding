@@ -1,5 +1,3 @@
-import { json } from '@sveltejs/kit';
-
 interface TeamMember {
     id: number;
     realName: string;
@@ -134,5 +132,5 @@ function transformTeam(team: TeamMember[]): TransformedMember[] {
 
 export async function GET() {
     const team = transformTeam(teamData);
-    return json(team);
+    return Response.json(team);
 }

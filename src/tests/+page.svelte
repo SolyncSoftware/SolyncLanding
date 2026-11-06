@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Textbox from '$lib/components/Textbox.svelte';
+    import Textbox from '#lib/components/Textbox.svelte';
 </script>
 
 <Textbox />

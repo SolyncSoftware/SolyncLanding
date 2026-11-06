@@ -1,6 +1,6 @@
 <script lang="ts">
-    import * as persistentWaves from '$lib/stores/persistentWave.js';
-    import type { PersistentWaveStoreState } from '$lib/stores/persistentWave.js';
+    import * as persistentWaves from '#lib/stores/persistentWave.js';
+    import type { PersistentWaveStoreState } from '#lib/stores/persistentWave.js';
     import { type Snippet } from 'svelte';
     import type { Writable } from 'svelte/store';
 

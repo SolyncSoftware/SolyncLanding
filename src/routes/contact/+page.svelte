@@ -1,12 +1,12 @@
 <script lang="ts">
     import { page } from '$app/state';
-    import PageContainer from '$lib/components/assets/PageContainer.svelte';
-    import Button from '$lib/components/Button.svelte';
-    import Form from '$lib/components/Form.svelte';
+    import PageContainer from '#lib/components/assets/PageContainer.svelte';
+    import Button from '#lib/components/Button.svelte';
+    import Form from '#lib/components/Form.svelte';
     import CircleX from '@lucide/svelte/icons/circle-x';
     import { SiDiscord, SiGithub } from '@icons-pack/svelte-simple-icons';
-    import SubmittedMessage from '$lib/components/SubmittedMessage.svelte';
-    import { stores as waveStores } from '$lib/stores/persistentWave.js';
+    import SubmittedMessage from '#lib/components/SubmittedMessage.svelte';
+    import { stores as waveStores } from '#lib/stores/persistentWave.js';
 
     const serviceTitles: Record<string, string> = {
         'landing-page-creation': 'landing page creation',

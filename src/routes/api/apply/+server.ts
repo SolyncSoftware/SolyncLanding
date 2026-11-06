@@ -1,15 +1,12 @@
-import { json } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
+import { APPLY_PAGE_HOOK } from '$app/env/private';
 import type { RequestHandler } from './$types.js';
-import processError from '$lib/server/utilities/request/error.js';
-import applySchema from '$lib/server/schema/apply.js';
+import processError from '#lib/server/utilities/request/error.js';
+import applySchema from '#lib/server/schema/apply.js';
 
 export const POST: RequestHandler = async ({ request }) => {
-    const APPLY_PAGE_HOOK = env.APPLY_PAGE_HOOK;
-
     if (!APPLY_PAGE_HOOK) {
         console.error('apply page hook is missing or empty');
-        return json({ error: 'Server misconfigured' }, { status: 500 });
+        return Response.json({ error: 'Server misconfigured' }, { status: 500 });
     }
 
     try {
@@ -79,7 +76,7 @@ export const POST: RequestHandler = async ({ request }) => {
             throw new Error('failed to send application to discord', { cause: { statusCode: 502 } });
         }
 
-        return json({ success: true });
+        return Response.json({ success: true });
     } catch (err) {
         return processError(err);
     }

@@ -1,7 +1,7 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 
-import { UnicornStudioNamespace } from "$lib/utils/unicornTypes.ts";
+import { UnicornStudioNamespace } from '#lib/utils/unicornTypes.ts';
 
 declare global {
     namespace App {

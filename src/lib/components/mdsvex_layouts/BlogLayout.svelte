@@ -3,11 +3,11 @@
 -->
 
 <script lang="ts">
-    import SmallPost from '$lib/components/blog/SmallPost.svelte';
-    import type { Article } from '$lib/utils/types.js';
+    import SmallPost from '#lib/components/blog/SmallPost.svelte';
+    import type { Article } from '#lib/utils/types.js';
     import { onMount, type Snippet } from 'svelte';
     import type { TransformedMember } from '../../../routes/api/team/+server.js';
-    import Formatting from '$lib/utils/formatting.js';
+    import Formatting from '#lib/utils/formatting.js';
 
     const { title, author, date, categories, image, mobile, children }: Article & { children: Snippet } = $props();
 

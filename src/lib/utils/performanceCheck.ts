@@ -1,5 +1,5 @@
-import performanceStore from '$lib/stores/performance.js';
-import { browser } from '$app/environment';
+import performanceStore from '#lib/stores/performance.js';
+import { browser } from '$app/env';
 import { get } from 'svelte/store';
 
 let cachedCheck: Promise<void> | null = null;
