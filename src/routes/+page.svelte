@@ -26,7 +26,7 @@
 
 <section class="flex flex-col gap-14">
     <div
-        class="text-white shadow-2xl/20"
+        class="relative text-white shadow-2xl/20"
         use:rs={{
             animation: 'fade-up',
             duration: 1000,
@@ -35,15 +35,20 @@
     >
         <PageContainer
             className=""
-            innerClass="text-accent [&_p]:text-2xl bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0)_70%)]"
+            innerClass="text-accent [&_p]:text-2xl bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0)_100%)] md:bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0)_70%)]"
             wavesStyle=""
             showDim={false}
             waveStore={waveStores.homepageCubes}
         >
-            <img src="/images/home-logo.svg" alt="home logo" aria-hidden="true" class="pointer-events-none absolute -m-9 object-cover" />
+            <img
+                src="/images/home-logo.svg"
+                alt="home logo"
+                aria-hidden="true"
+                class="pointer-events-none absolute -z-1 -m-9 object-cover"
+            />
 
-            <div class="mt-70 max-w-160">
-                <h1 class="text-4xl md:text-7xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
+            <div class="xl:text-accent left-0 mt-70 max-w-160 text-black">
+                <h1 class="text-5xl md:text-7xl">Building what comes next, <span class="font-extrabold">together</span>.</h1>
                 <p class="mt-4 font-medium">
                     We're an independent software collective creating user-first experiences. Not just because we love it, but because it's
                     ethical. We collaborate to create what's next.
