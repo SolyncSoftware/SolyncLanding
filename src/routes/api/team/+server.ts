@@ -53,14 +53,6 @@ const teamData: TeamMember[] = [
         bio: "I'm a designer and developer from the UK, working on projects such as osu!, UNTONE, Osekai, and many more. In my spare time, I also work on 3D art and character design, and I dabble a bit in music and electronics."
     },
     {
-        id: 65217023,
-        realName: 'Buby',
-        username: 'almahbuby',
-        github: 'almahbubyanwar',
-        bsky: 'did:plc:vxaf6kykmdftcicpbd5ns53e',
-        bio: "I'm a computer science student who mostly does JS/TS frontend dev, as well as UI/UX and graphic design. I like learning."
-    },
-    {
         id: 145165822,
         realName: 'Maya',
         username: 'λx.Maya',
