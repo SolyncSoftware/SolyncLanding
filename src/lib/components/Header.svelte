@@ -14,9 +14,7 @@
     let currentPath = $derived(page.url.pathname);
 
     function isActive(path: string): string {
-        return currentPath === path
-            ? "font-black relative after:absolute after:-bottom-1 after:left-0 after:h-1 after:w-full after:rounded-full after:bg-current after:content-['']"
-            : '';
+        return currentPath === path ? 'bg-white text-accent! font-display px-8 py-2 rounded-full no-underline!' : '';
     }
 
     function isActiveMobile(path: string): string {
@@ -45,14 +43,14 @@
 
     const navLinks = [
         { href: '/', text: 'Home' },
-        { href: '/blog', text: 'Blog' },
-        { href: '/apply', text: 'Apply' }
+        { href: '/blog', text: 'Blog' }
     ];
 
     const learnMoreLinks = [
         { href: '/about', text: 'About us' },
         { href: '/services', text: 'Services' },
         { href: '/about#our-work', text: 'Projects' },
+        { href: '/apply', text: 'Apply' },
         { href: '/contact', text: 'Contact' }
     ];
 </script>
@@ -82,7 +80,7 @@
         </a>
 
         <!-- Desktop nav  -->
-        <nav aria-label="Main navigation" class="hidden min-w-0 flex-1 flex-wrap items-center gap-x-5 gap-y-1 lg:flex">
+        <nav aria-label="Main navigation" class="hidden min-w-0 flex-1 flex-wrap items-center gap-x-7 lg:flex">
             {#each navLinks as link, i (link.href)}
                 <span
                     class="shrink-0"
@@ -122,7 +120,7 @@
                     <span
                         class={`relative hover:cursor-pointer ${
                             learnMoreLinks.some((link) => currentPath === link.href)
-                                ? "font-black after:absolute after:-bottom-1 after:left-0 after:h-1 after:w-full after:rounded-full after:bg-current after:content-['']"
+                                ? 'text-accent! font-display rounded-full bg-white px-8 py-2 no-underline!'
                                 : ''
                         }`}
                     >
