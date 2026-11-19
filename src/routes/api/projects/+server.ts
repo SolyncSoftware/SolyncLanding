@@ -14,6 +14,13 @@ interface SolyncProject {
 // it can come later if we implement case study pages
 const projectData: SolyncProject[] = [
     {
+        date: '2026-10-31',
+        title: 'SolyncORBIT',
+        image: 'orbit.png',
+        desc: 'A passwordless account system, made for everything Solync. You can also use our API to integrate SolyncORBIT into your own projects.',
+        website: 'https://orbit.solync.org/'
+    },
+    {
         date: '2026-07-20',
         title: 'IdeaLync',
         image: 'idealync.png',
