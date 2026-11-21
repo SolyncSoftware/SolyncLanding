@@ -14,7 +14,7 @@
     let currentPath = $derived(page.url.pathname);
 
     function isActive(path: string): string {
-        return currentPath === path ? 'bg-white text-accent! font-display px-8 py-2 rounded-full no-underline!' : '';
+        return currentPath === path ? 'font-black after:bg-current' : '';
     }
 
     function isActiveMobile(path: string): string {
@@ -43,14 +43,14 @@
 
     const navLinks = [
         { href: '/', text: 'Home' },
-        { href: '/blog', text: 'Blog' }
+        { href: '/blog', text: 'Blog' },
+        { href: '/apply', text: 'Apply' }
     ];
 
     const learnMoreLinks = [
         { href: '/about', text: 'About us' },
         { href: '/services', text: 'Services' },
         { href: '/about#our-work', text: 'Projects' },
-        { href: '/apply', text: 'Apply' },
         { href: '/contact', text: 'Contact' }
     ];
 </script>
@@ -80,7 +80,7 @@
         </a>
 
         <!-- Desktop nav  -->
-        <nav aria-label="Main navigation" class="hidden min-w-0 flex-1 flex-wrap items-center gap-x-7 lg:flex">
+        <nav aria-label="Main navigation" class="hidden min-w-0 flex-1 flex-wrap items-center gap-x-5 gap-y-1 lg:flex">
             {#each navLinks as link, i (link.href)}
                 <span
                     class="shrink-0"
@@ -95,7 +95,7 @@
                         href={link.href}
                         text={link.text}
                         aria-current={currentPath === link.href ? 'page' : undefined}
-                        class={`z-0 shrink-0 whitespace-nowrap text-white underline-offset-10 hover:text-white hover:underline ${isActive(link.href)}`}
+                        class={`relative z-0 shrink-0 whitespace-nowrap text-white underline-offset-10 after:absolute after:right-2 after:-bottom-1 after:left-2 after:h-1 after:rounded-full after:content-[''] hover:text-white hover:after:bg-current ${isActive(link.href)}`}
                     />
                 </span>
             {/each}
@@ -109,7 +109,7 @@
                     }}
                     aria-expanded={isLearnMoreOpen}
                     aria-controls="learn-more-menu"
-                    class="flex items-center gap-2 text-xl whitespace-nowrap text-white underline-offset-10 transition-all hover:underline"
+                    class="flex items-center gap-2 text-xl whitespace-nowrap text-white underline-offset-10 transition-all"
                     use:rs={{
                         animation: 'fade-up',
                         duration: 600,
@@ -118,11 +118,7 @@
                     }}
                 >
                     <span
-                        class={`relative hover:cursor-pointer ${
-                            learnMoreLinks.some((link) => currentPath === link.href)
-                                ? 'text-accent! font-display rounded-full bg-white px-8 py-2 no-underline!'
-                                : ''
-                        }`}
+                        class={`relative z-0 shrink-0 whitespace-nowrap text-white underline-offset-10 after:absolute after:right-2 after:-bottom-1 after:left-2 after:h-1 after:rounded-full after:content-[''] hover:cursor-pointer hover:text-white hover:after:bg-current ${learnMoreLinks.some((link) => currentPath === link.href) ? 'font-black after:bg-current' : ''}`}
                     >
                         Learn more
                     </span>
