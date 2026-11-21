@@ -92,6 +92,14 @@ const teamData: TeamMember[] = [
         bio: "Hello! I'm a researcher and computer programmer. I study computer graphics, system architecture, and optimization. I'm working on a game engine and I like working on infrastructure. Consider watching Steins;Gate!"
     },
     {
+        id: 106980925,
+        realName: 'Sky',
+        username: 'Skyweaver',
+        github: 'Skyweaver-real',
+        bsky: 'skyweaver.nekoweb.org',
+        bio: "Hello! I'm Skyweaver, or Sky for short. I'm a student graphic designer in Texas. Some of my interests include: vocal synths, CDs and physical media, photography, Top Gear, and the indie web (especially forums)."
+    },
+    {
         id: 155797753,
         realName: 'Team Solync',
         username: 'Solync',
