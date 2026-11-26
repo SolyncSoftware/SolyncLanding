@@ -69,12 +69,11 @@ const teamData: TeamMember[] = [
         bio: 'Full-stack, backend & Kotlin engineer passionate about decentralized, privacy focused technology and user freedom. Obsessed with polish & performance. In my free time I like playing games & watching anime with my friends, reading manga, and making music.'
     },
     {
-        id: 53254254,
-        realName: 'Vivian',
-        username: 'vivivivixen',
-        github: 'emifloofy',
-        bsky: 'emi.floo.fyi',
-        bio: "Based in Czechia, I'm a self-taught software developer, designer, sysadmin and artist who simply enjoys making things. Obsessed with frontend design and accessibility, with a soft spot for elegant solutions. I also love precision games and music!"
+        id: 180346581,
+        realName: 'Luka',
+        username: 'masterblue3000',
+        github: 'superthi1',
+        bio: 'Developer and FOSS enthusiast from Serbia who tends to work on way too many things at once. Interested generally in low-level languages and hardware tinkering.'
     },
     {
         id: 106450330,
