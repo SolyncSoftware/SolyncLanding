@@ -14,12 +14,14 @@
     }
 </script>
 
-<section class="flex flex-col gap-4">
+<section class="columns-1 gap-4 sm:columns-2">
     {#if sortedMembers.length === 0}
         <p class="text-xl text-black">No team members found!</p>
     {:else}
         {#each sortedMembers as member, i}
-            <TeamCard {member} index={i} expanded={expandedIndex === i} onToggle={toggleBio} />
+            <div class="mb-4 break-inside-avoid">
+                <TeamCard {member} index={i} expanded={expandedIndex === i} onToggle={toggleBio} />
+            </div>
         {/each}
     {/if}
 </section>

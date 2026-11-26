@@ -108,9 +108,10 @@
         </div>
     </div>
 
-    <div class="space-y-4">
-        <h2 class="text-5xl font-black">Meet the team.</h2>
-        <p class="text-xl font-medium md:max-w-110">
+    <div class="space-y-10">
+        <h2 class="text-accent text-center text-9xl leading-14 font-black">Meet the team</h2>
+
+        <p class="text-center text-xl font-medium">
             The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a>, and help
             build what's next, together.
         </p>

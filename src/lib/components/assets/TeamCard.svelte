@@ -20,7 +20,7 @@
     }
 </script>
 
-<div
+<!-- <div
     use:rs={{
         animation: 'fade-up',
         duration: 600,
@@ -109,4 +109,42 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div
+    class="rounded-[46px] bg-white p-5"
+    use:rs={{
+        animation: 'fade-up',
+        duration: 600,
+        repeat: false
+    }}
+>
+    <div class="flex flex-row items-center gap-3">
+        <enhanced:img class="aspect-square h-auto w-16 rounded-full sm:w-19" loading="lazy" src={member.avatarSrc} alt={member.realName} />
+        <div>
+            <p class="text-accent text-3xl leading-7 font-bold">{member.username}</p>
+            <p class="text-xl">{member.realName}</p>
+        </div>
+        <div class="ml-auto flex flex-row items-center gap-2">
+            {#if member.github !== '#'}
+                <a
+                    href={member.github}
+                    target="_blank"
+                    class="hover:bg-accent bg-offwhite rounded-full p-4 shadow-xl/6 transition-colors hover:text-white"
+                >
+                    <SiGithub class="h-5 w-auto" title="GitHub" />
+                </a>
+            {/if}
+            {#if member.bluesky !== '#'}
+                <a
+                    href={member.bluesky}
+                    target="_blank"
+                    class="hover:bg-accent bg-offwhite rounded-full p-4 shadow-xl/6 transition-colors hover:text-white"
+                >
+                    <SiBluesky class="mt-0.5 h-5 w-auto" title="Bluesky" />
+                </a>
+            {/if}
+        </div>
+    </div>
+    <p class="pt-5 pb-2 text-xl">{member.bio}</p>
 </div>
