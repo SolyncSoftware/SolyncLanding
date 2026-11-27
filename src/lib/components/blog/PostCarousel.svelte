@@ -92,7 +92,7 @@
 
 <style scoped>
     .embla__viewport {
-        overflow-x: hidden;
+        overflow: hidden;
         padding-top: 4rem;
         padding-bottom: 2.8rem;
         padding-left: 1.25rem;
