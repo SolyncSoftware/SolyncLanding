@@ -24,7 +24,7 @@
     const { data }: PageProps = $props();
 </script>
 
-<section class="flex flex-col gap-14">
+<section class="flex flex-col gap-30">
     <div
         class="relative text-white shadow-2xl/20"
         use:rs={{
@@ -97,15 +97,23 @@
     </div>
 
     <div class="space-y-4">
-        <h2 class="text-5xl font-black">Our projects.</h2>
+        <h2 class="text-accent text-9xl font-black">Our work.</h2>
         <p class="text-xl font-medium md:max-w-140">
             We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
         </p>
 
         <OurProjects projects={data.projects} />
-        <div class="flex w-full flex-col items-end">
-            <NavigationArrow href="/about#our-work" text="see more projects" />
-        </div>
+        <!-- <div class="flex w-full flex-col items-end">
+            <Button href="/about#our-work" class="text-accent! w-fit self-center! bg-white font-semibold">
+                see more projects
+                <img
+                    src="/images/arrow-sorange2.svg"
+                    alt="Arrow"
+                    class="overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
+                    loading="lazy"
+                />
+            </Button>
+        </div> -->
     </div>
 
     <div class="space-y-10">
@@ -119,7 +127,7 @@
     </div>
 
     <div class="space-y-4">
-        <h2 class="text-5xl font-black">From the Blog.</h2>
+        <h2 class="text-5xl font-black">What we're up to</h2>
         <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
         {#if data.blogArticles.length === 0}
             <p class="text-xl text-black">No articles found.</p>
