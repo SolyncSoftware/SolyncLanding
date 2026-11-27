@@ -2,6 +2,7 @@
     import type { TransformedProject } from '../../../routes/api/projects/+server.js';
     import { onMount } from 'svelte';
     import ProjectCard from '../assets/ProjectCard.svelte';
+    import ProjectCardBig from '../assets/ProjectCardBig.svelte';
     import useEmblaCarousel from 'embla-carousel-svelte';
     import Autoplay from 'embla-carousel-autoplay';
     import { untrack } from 'svelte';
@@ -102,7 +103,10 @@
         </div>
     {:else}
         <div class="grid grid-cols-1 gap-4 {colsClass[cols] ?? 'md:grid-cols-2'}">
-            {#each sortedProjects.slice(0, count) as project}
+            {#each sortedProjects.slice(0, 2) as project}
+                <ProjectCardBig {project} />
+            {/each}
+            {#each sortedProjects.slice(2, count) as project}
                 <ProjectCard {project} />
             {/each}
         </div>
