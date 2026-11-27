@@ -17,7 +17,7 @@
 </script>
 
 <div
-    class="z-1 flex min-h-118 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition"
+    class="z-1 flex min-h-118 w-full max-w-100 rounded-4xl bg-white p-2 text-white shadow-xl/4 transition"
     use:rs={{
         animation: 'fade-up',
         duration: 800,

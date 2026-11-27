@@ -3,7 +3,7 @@
     import SolyncLogo from '#lib/components/SolyncLogo.svelte';
     import PageContainer from '#lib/components/assets/PageContainer.svelte';
     import NavigationArrow from '#lib/components/assets/NavigationArrow.svelte';
-    import SmallPost from '#lib/components/blog/SmallPost.svelte';
+    import PostCarousel from '#lib/components/blog/PostCarousel.svelte';
     import OurProjects from '#lib/components/index/OurProjects.svelte';
     import OurTeam from '#lib/components/index/OurTeam.svelte';
     import { stores as waveStores } from '#lib/stores/persistentWave.js';
@@ -127,27 +127,19 @@
     </div>
 
     <div class="space-y-4">
-        <h2 class="text-5xl font-black">What we're up to</h2>
-        <p class="text-xl font-medium md:max-w-140">Words from the people behind Solync.</p>
-        {#if data.blogArticles.length === 0}
-            <p class="text-xl text-black">No articles found.</p>
-        {:else}
-            <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
-                {#each data.blogArticles as article}
-                    <SmallPost
-                        date={article.date}
-                        title={article.title}
-                        description={article.description}
-                        link={article.slug}
-                        category={article.categories[0]}
-                        image={article.image || '/images/articles/fallback.png'}
-                        mobile={article.mobile}
-                    />
-                {/each}
-            </div>
-        {/if}
-        <div class="flex w-full flex-col items-end">
-            <NavigationArrow href="/blog" text="more from the blog" />
+        <h2 class="text-accent text-center text-9xl leading-14 font-black">What we're up to</h2>
+        <PostCarousel posts={data.blogArticles} />
+
+        <div class="flex w-full flex-col pt-16">
+            <Button href="/blog" class="text-accent! w-fit self-center! bg-white font-bold">
+                read more at our blog
+                <img
+                    src="/images/arrow-sorange2.svg"
+                    alt="Arrow"
+                    class="overflow-hidden transition-transform duration-200 group-hover:translate-x-2"
+                    loading="lazy"
+                />
+            </Button>
         </div>
     </div>
 
