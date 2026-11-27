@@ -144,8 +144,8 @@
     </div>
 
     <!-- may remove this or make it a component. so far its only in the about page -->
-    <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-4xl font-bold">
-        <p>Building what comes next, together.</p>
-        <SolyncLogo iconOnly={true} class="fill-accent w-30" />
+    <div class="flex w-full flex-col items-center justify-center gap-4 text-center text-6xl text-[#444444]">
+        <p class="font-light">Building what comes next, <span class="font-black">together.</span></p>
+        <SolyncLogo iconOnly={true} class="fill-accent w-50" />
     </div>
 </section>
