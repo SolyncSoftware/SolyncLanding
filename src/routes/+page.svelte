@@ -96,16 +96,18 @@
         </PageContainer>
     </div>
 
-    <div class="space-y-4">
-        <h2 class="text-accent text-9xl font-black">Our work.</h2>
-        <p class="text-xl font-medium md:max-w-140">
-            We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
-        </p>
+    <div class="space-y-10">
+        <div class=" flex items-center justify-between">
+            <h2 class="text-accent text-[180px] leading-7 font-black">Our work.</h2>
+            <p class="text-right text-xl font-medium md:max-w-100">
+                We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
+            </p>
+        </div>
 
         <OurProjects projects={data.projects} />
-        <!-- <div class="flex w-full flex-col items-end">
-            <Button href="/about#our-work" class="text-accent! w-fit self-center! bg-white font-semibold">
-                see more projects
+        <div class="flex w-full flex-col items-end">
+            <Button href="/about#our-work" class="text-accent! w-fit self-center! bg-white font-bold">
+                see more of our projects
                 <img
                     src="/images/arrow-sorange2.svg"
                     alt="Arrow"
@@ -113,7 +115,7 @@
                     loading="lazy"
                 />
             </Button>
-        </div> -->
+        </div>
     </div>
 
     <div class="space-y-10">
