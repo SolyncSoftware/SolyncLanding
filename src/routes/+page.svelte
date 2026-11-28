@@ -97,7 +97,7 @@
     </div>
 
     <div class="space-y-10">
-        <div class="flex flex-col items-center justify-between text-center 2xl:flex-row 2xl:text-right">
+        <div class="flex flex-col items-center justify-between text-center 2xl:flex-row 2xl:text-left">
             <h2 class="text-accent text-[180px] leading-40 font-black 2xl:leading-14">Our work</h2>
             <p class="text-center text-xl font-medium 2xl:max-w-100 2xl:text-right">
                 We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
