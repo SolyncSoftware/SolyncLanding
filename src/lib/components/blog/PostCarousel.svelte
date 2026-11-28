@@ -6,7 +6,7 @@
     import Autoplay from 'embla-carousel-autoplay';
     import { untrack } from 'svelte';
 
-    let { posts = [] as Article[], count = 6, autoplay = true, autoplayDelay = 3000 } = $props();
+    let { posts = [] as Article[], count = 10, autoplay = true, autoplayDelay = 3000 } = $props();
 
     const autoplayPlugin = Autoplay({
         delay: untrack(() => autoplayDelay),
@@ -16,46 +16,48 @@
 
     const MAX_DROP_PX = 45;
 
-    let perCopy = $derived(posts.slice(0, count));
-    let slides = $derived([...perCopy, ...perCopy, ...perCopy]);
-
     let emblaApi: EmblaCarouselType | undefined;
+    let rafId = 0;
 
     function onEmblaInit(event: CustomEvent<EmblaCarouselType>) {
         emblaApi = event.detail;
-        emblaApi.on('scroll', updateStagger).on('select', handleSeam).on('reInit', handleSeam);
-        handleSeam();
+        emblaApi.on('scroll', scheduleStagger).on('reInit', scheduleStagger).on('select', scheduleStagger).on('settle', scheduleStagger);
+        scheduleStagger();
     }
 
-    function handleSeam() {
-        if (!emblaApi) return;
-        const n = perCopy.length;
-        if (n === 0) return;
-        const index = emblaApi.selectedScrollSnap();
-        if (index < n) {
-            emblaApi.scrollTo(index + n, true);
-        } else if (index >= 2 * n) {
-            emblaApi.scrollTo(index - n, true);
-        }
-        updateStagger();
+    // Throttle to one layout pass per frame (scroll fires many times per frame).
+    function scheduleStagger() {
+        if (rafId) return;
+        rafId = requestAnimationFrame(() => {
+            rafId = 0;
+            updateStagger();
+        });
     }
 
     function updateStagger() {
         if (!emblaApi) return;
         const viewportCenter = window.innerWidth / 2;
 
-        for (const card of emblaApi.slideNodes()) {
-            const rect = card.getBoundingClientRect();
+        for (const slide of emblaApi.slideNodes()) {
+            const inner = slide.firstElementChild as HTMLElement | null;
+            if (!inner) continue;
+
+            const rect = slide.getBoundingClientRect();
             const cardCenter = rect.left + rect.width / 2;
             const distanceFromCenter = Math.abs(viewportCenter - cardCenter);
             const normalizedDistance = Math.min(distanceFromCenter / viewportCenter, 1);
             const translateY = normalizedDistance * MAX_DROP_PX;
-            card.style.transform = `translateY(${translateY}px)`;
+
+            inner.style.transform = `translateY(${translateY}px)`;
         }
     }
+
+    const visiblePosts = $derived(posts.slice(0, count));
+
+    const slides = $derived([...visiblePosts, ...visiblePosts]);
 </script>
 
-<svelte:window onresize={updateStagger} />
+<svelte:window onresize={scheduleStagger} />
 
 <section class="-mx-5 flex w-auto flex-col gap-4 2xl:-mx-70">
     {#if posts.length === 0}
@@ -65,23 +67,31 @@
             <div
                 class="embla__viewport"
                 use:useEmblaCarousel={{
-                    options: { align: 'center', loop: false },
-                    plugins: [autoplayPlugin]
+                    options: {
+                        align: 'center',
+                        loop: true,
+                        slidesToScroll: 1,
+                        containScroll: false,
+                        dragFree: true
+                    },
+                    plugins: autoplay ? [autoplayPlugin] : []
                 }}
                 onemblaInit={onEmblaInit}
             >
                 <div class="embla__container flex gap-4">
-                    {#each slides as article}
+                    {#each slides as article, i (i)}
                         <div class="embla__slide">
-                            <SmallPost
-                                date={article.date}
-                                title={article.title}
-                                description={article.description}
-                                link={article.slug}
-                                category={article.categories[0]}
-                                image={article.image || '/images/articles/fallback.png'}
-                                mobile={article.mobile}
-                            />
+                            <div class="embla__slide-inner">
+                                <SmallPost
+                                    date={article.date}
+                                    title={article.title}
+                                    description={article.description}
+                                    link={article.slug}
+                                    category={article.categories[0]}
+                                    image={article.image || '/images/articles/fallback.png'}
+                                    mobile={article.mobile}
+                                />
+                            </div>
                         </div>
                     {/each}
                 </div>
@@ -94,7 +104,7 @@
     .embla__viewport {
         overflow: hidden;
         padding-top: 4rem;
-        padding-bottom: 2.8rem;
+        padding-bottom: 1.25rem;
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
@@ -107,6 +117,10 @@
     .embla__slide {
         flex: 0 0 20rem;
         min-width: 0;
+    }
+
+    .embla__slide-inner {
+        will-change: transform;
     }
 
     @media (min-width: 768px) {
