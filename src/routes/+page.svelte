@@ -97,9 +97,9 @@
     </div>
 
     <div class="space-y-10">
-        <div class=" flex items-center justify-between">
-            <h2 class="text-accent text-[180px] leading-7 font-black">Our work.</h2>
-            <p class="text-right text-xl font-medium md:max-w-100">
+        <div class="flex flex-col items-center justify-between text-center 2xl:flex-row 2xl:text-right">
+            <h2 class="text-accent text-[180px] leading-40 font-black 2xl:leading-14">Our work</h2>
+            <p class="text-center text-xl font-medium 2xl:max-w-100 2xl:text-right">
                 We collaboratively build tools that spark our curiosity and address human needs, with a user-first approach.
             </p>
         </div>
@@ -119,7 +119,7 @@
     </div>
 
     <div class="space-y-10">
-        <h2 class="text-accent text-center text-9xl leading-14 font-black">Meet the team</h2>
+        <h2 class="text-accent text-center text-9xl font-black lg:leading-14">Meet the team</h2>
 
         <p class="text-center text-xl font-medium">
             The people who made all this possible. Interested? <a href="/apply" class="text-accent hover:underline">Join us</a>, and help
@@ -129,7 +129,7 @@
     </div>
 
     <div class="space-y-4">
-        <h2 class="text-accent text-center text-9xl leading-14 font-black">What we're up to</h2>
+        <h2 class="text-accent text-center text-9xl font-black lg:leading-14">What we're up to</h2>
         <PostCarousel posts={data.blogArticles} />
 
         <div class="flex w-full flex-col pt-16">
